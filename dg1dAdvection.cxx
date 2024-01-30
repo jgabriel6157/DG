@@ -3,6 +3,10 @@
 #include <fstream>
 #include <cassert>
 
+void readFile(std::string filename, std::string argName[], std::string argString[], int numberOfVariables);
+int assignInt(std::string varString);
+double assignDouble(std::string varString);
+
 double LegendreP(int n, double x);
 double LegendreP_derivative(int n, double x);
 double LegendrePorthonormal(int n, double x);
@@ -23,19 +27,20 @@ double integrateS(int n_func1, int n_func2, int n, double x[], double w[]);
 
 int main(int argc, char* argv[])
 {
-    double const pi = M_PI;
-    double a = 2*pi;
-    int jMax = 5;
-    int lMax = 5;
-    int tMax = 100000;
-    int quadratureOrder = 20;
-    double dx = 2*pi/jMax;
-    double dt = 0.00001;
+    std::string argName[8] = {"a","jMax","lMax","tMax","quadratureOrder","length","dt","basis"};
+    std::string argString[8];
+    readFile("input.txt",argName,argString,8);
+
+    double a = assignDouble(argString[0]);
+    int jMax = assignInt(argString[1]);
+    int lMax = assignInt(argString[2]);
+    int tMax = assignInt(argString[3]);
+    int quadratureOrder = assignInt(argString[4]);
+    double length = assignDouble(argString[5]);
+    double dt = assignDouble(argString[6]);
+    std::string basis = argString[7];
+    double dx = length/jMax;
     double M[20][20], M_inv[20][20], S[20][20], F1[20][20], F2[20][20];
-    // double M_inv[20][20] = {{1.0/dx,0},{0,3.0/dx}};
-    // double S[20][20] = {{0,0},{2.0,0}};
-    // double F1[20][20] = {{1.0,1.0},{1.0,1.0}};
-    // double F2[20][20] = {{1.0,1.0},{-1.0,-1.0}};
     double M_invS[20][20],M_invF1[20][20],M_invF2[20][20];
     double uPre[lMax][jMax];
     double uPost[lMax][jMax];
@@ -44,6 +49,7 @@ int main(int argc, char* argv[])
     double x_roots[quadratureOrder], w[quadratureOrder];
     double xj, val;
     double F_minus,F_plus;
+    
     std::ofstream write_output("Output.csv");
     assert(write_output.is_open());
 
@@ -104,12 +110,6 @@ int main(int argc, char* argv[])
                 uPost[l][j]/=dx;
                 uPost[l][j]+=uPre[l][j];
             }
-            // uPost[0][j]=0;
-            // uPost[1][j]=0;
-            // F_plus = uPre[0][j]+uPre[1][j];
-            // F_minus = uPre[0][j-1]+uPre[1][j-1];
-            // uPost[0][j] = uPre[0][j]-(a*dt/dx)*(F_plus-F_minus);
-            // uPost[1][j] = uPre[1][j]-3.0*(a*dt/dx)*(F_plus+F_minus)+6.0*(a*dt/dx)*uPre[0][j];
         }
     
         for (int j=0; j<jMax; j++)
@@ -132,6 +132,76 @@ int main(int argc, char* argv[])
     write_output.close();
     
     return 0;
+}
+
+void readFile(std::string filename, std::string argName[], std::string argString[], int numberOfVariables)
+{
+    std::ifstream inputFile(filename);
+    assert(inputFile.is_open());
+
+    std::string word,value,dum1,valueCheck;
+
+    while (inputFile >> word)
+    {
+        for (int i=0;i<numberOfVariables;i++)
+        {
+            if (word==argName[i])
+            {
+                inputFile >> word >> value;
+                argString[i] = value;
+            }
+        }
+    } 
+
+    inputFile.close();
+}
+
+int assignInt(std::string varString)
+{
+    int number = 1;
+    double const pi = M_PI;
+    std::string valueCheck = "*";
+    std::string value = varString;
+    std::string dum1;
+    while (valueCheck.find("*") != std::string::npos)
+    {
+        valueCheck = value;
+        dum1 = value.substr(0,value.find("*"));
+        if (dum1 == "pi")
+        {
+            number*=pi;
+        }
+        else
+        {
+            number*=stoi(dum1);
+        }
+        value = value.substr(value.find("*")+1);
+    }
+    return number;
+}
+
+double assignDouble(std::string varString)
+{
+    double number = 1.0;
+    double const pi = M_PI;
+    std::string valueCheck = "*";
+    std::string value = varString;
+    std::string dum1;
+    while (valueCheck.find("*") != std::string::npos)
+    {
+        valueCheck = value;
+        dum1 = value.substr(0,value.find("*"));
+        if (dum1 == "pi")
+        {
+            number*=pi;
+        }
+        else
+        {
+            number*=stod(dum1);
+        }
+        value = value.substr(value.find("*")+1);
+    }
+    return number;
 }
 
 void MatrixMultiply(double M1[20][10], double M2[10][20], double M[20][20], int order)

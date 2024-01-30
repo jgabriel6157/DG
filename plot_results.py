@@ -5,8 +5,6 @@ import numpy as np
 import os
 import random
 
-fileName = 'Output.csv'
-
 def LegendreP(n,x):
     if n==0:
         return 1
@@ -18,12 +16,48 @@ def LegendreP(n,x):
 def LegendrePorthonormal(n,x):
     return np.sqrt((2.0*n+1.0)/2.0)*LegendreP(n,x)
 
-values = pd.read_csv('/home/jack/Documents/c++/Output.csv',header=None)
+def assignFloat(varString):
+    number = 1.0
+    valueCheck = "*"
+    value = varString
+    while("*" in valueCheck):
+        valueCheck = value
+        if "*" in value:
+            dum1 = value[0:value.index("*")]
+            value = value[value.index("*")+1:]
+        else:
+            dum1 = value
+        if dum1 == "pi":
+            number*=np.pi
+        else:
+            number*=float(dum1)
+        
+        
+    return number
+
+fileName = 'Output.csv'
+inputFile = open('input.txt','r')
+
+while True:
+    inputParam = inputFile.readline()
+
+    if inputParam[0:4]=='jMax':        
+        jMax = int(inputParam[inputParam.index('=')+2:-1])
+    elif inputParam[0:6]=='length':
+        value = inputParam[inputParam.index('=')+2:-1]
+        length = assignFloat(value)
+    elif inputParam[0:4]=='lMax':
+        lMax = int(inputParam[inputParam.index('=')+2:-1])
+
+    if not inputParam:
+        break
+
+inputFile.close()
+
+values = pd.read_csv('/home/jack/Documents/DG1D/Output.csv',header=None)
 values = values[0].to_numpy()
 k = 0
-jMax = 32
-dx = 2*np.pi/jMax
-lMax = 2
+dx = length/jMax
 u = np.zeros((lMax,jMax))
 for j in range(jMax):
     for l in range(lMax):
@@ -38,7 +72,7 @@ for j in range(jMax):
     for i in range(10):
         x[i] = j*dx+i*dx/9.0
         for l in range(lMax):
-            y[i] = y[i] + u[l][j]*LegendrePorthonormal(l,(2/dx)*(x[i]-(j*dx+dx/2)))
+            y[i] = y[i] + u[l][j]*LegendreP(l,(2/dx)*(x[i]-(j*dx+dx/2)))
         sol[i] = np.sin(x[i])
     plt.plot(x,y,color='red')
     plt.plot(x,sol,color='k',linestyle='--')
