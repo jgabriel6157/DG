@@ -5,6 +5,14 @@ import numpy as np
 import os
 import random
 
+def getFunction(basis,n,x):
+    if basis=='Legendre':
+        return LegendreP(n,x)
+    elif basis=='LegendreOrthonormal':
+        return LegendrePorthonormal(n,x)
+    else:
+        return 0
+
 def LegendreP(n,x):
     if n==0:
         return 1
@@ -48,6 +56,8 @@ while True:
         length = assignFloat(value)
     elif inputParam[0:4]=='lMax':
         lMax = int(inputParam[inputParam.index('=')+2:-1])
+    elif inputParam[0:5]=='basis':
+        basis = inputParam[inputParam.index('=')+2:-1]
 
     if not inputParam:
         break
@@ -72,9 +82,10 @@ for j in range(jMax):
     for i in range(10):
         x[i] = j*dx+i*dx/9.0
         for l in range(lMax):
-            y[i] = y[i] + u[l][j]*LegendreP(l,(2/dx)*(x[i]-(j*dx+dx/2)))
+            y[i] = y[i] + u[l][j]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
         sol[i] = np.sin(x[i])
     plt.plot(x,y,color='red')
-    plt.plot(x,sol,color='k',linestyle='--')
+    # plt.xlim((0,1))
+    # plt.plot(x,sol,color='k',linestyle='--')
 
 plt.show()

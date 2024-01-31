@@ -7,12 +7,13 @@ void readFile(std::string filename, std::string argName[], std::string argString
 int assignInt(std::string varString);
 double assignDouble(std::string varString);
 
+double getFunction(std::string basis, int n, double x, bool derivative=false);
 double LegendreP(int n, double x);
 double LegendreP_derivative(int n, double x);
 double LegendrePorthonormal(int n, double x);
 double LegendrePorthonormal_derivative(int n, double x);
 
-void LeastSquares(double uInitialize[], double xj, double dx, int order);
+void LeastSquares(double uInitialize[], double xj, double dx, std::string basis, int order);
 void MatrixMultiply(double M1[20][10], double M2[10][20], double M[20][20], int order);
 void MatrixInverse(double M[20][20], double M_inverse[20][20], int order);
 void MatrixMultiply2(double M1[20][20], double M2[20][10], double M[20][10], int order);
@@ -21,8 +22,7 @@ void MatrixMultiply3(double M1[20][20], double M2[20][20], double M[20][20], int
 void roots_initial(int n, double x[]);
 void roots_final(int n, double x[]);
 void weights(int n, double x[], double w[]);
-double integrate(int n_func1, int n_func2, int n, double x[], double w[]);
-double integrateS(int n_func1, int n_func2, int n, double x[], double w[]);
+double integrate(std::string basis, int n_func1, bool derivative1, int n_func2, bool derivative2, int n, double x[], double w[]);
 
 
 int main(int argc, char* argv[])
@@ -61,10 +61,10 @@ int main(int argc, char* argv[])
     {
         for (int j=0; j<lMax; j++)
         {
-            M[i][j] = integrate(i,j,quadratureOrder,x_roots,w)/2.0;
-            S[i][j] = integrateS(i,j,quadratureOrder,x_roots,w);
-            F1[i][j] = LegendreP(i,1)*LegendreP(j,1);
-            F2[i][j] = LegendreP(i,-1)*LegendreP(j,1);
+            M[i][j] = integrate(basis,i,false,j,false,quadratureOrder,x_roots,w)/2.0;
+            S[i][j] = integrate(basis,i,true,j,false,quadratureOrder,x_roots,w);
+            F1[i][j] = getFunction(basis,i,1)*getFunction(basis,j,1);
+            F2[i][j] = getFunction(basis,i,-1)*getFunction(basis,j,1);
             // if (M[i][j] < 1e-10)
             // {
             //     M[i][j] = 0;
@@ -85,7 +85,7 @@ int main(int argc, char* argv[])
         {
             uInitialize[l] = 0;
         }
-        LeastSquares(uInitialize, xj, dx, lMax);
+        LeastSquares(uInitialize, xj, dx, basis, lMax);
         for (int l=0; l<lMax; l++)
         {
             val = uInitialize[l];
@@ -286,7 +286,7 @@ void MatrixInverse(double M[20][20], double M_inverse[20][20], int order)
 
 }
 
-void LeastSquares(double uInitialize[], double xj, double dx, int order)
+void LeastSquares(double uInitialize[], double xj, double dx, std::string basis, int order)
 {
     //Compute initial condition using Least Squares method
     double x;
@@ -299,11 +299,12 @@ void LeastSquares(double uInitialize[], double xj, double dx, int order)
     for (int i=0; i<10; i++)
     {
         x = xj-dx/2.0+i*dx/9.0;
-        y[i] = sin(x);
+        // y[i] = sin(x);
+        y[i] = exp(-1.5*pow(x-M_PI,2.0));
         for (int l=0; l<order; l++)
         {
-            bigX[i][l] = LegendreP(l,2.0*(x-xj)/dx);
-            bigXT[l][i] = LegendreP(l,2.0*(x-xj)/dx);
+            bigX[i][l] = getFunction(basis,l,2.0*(x-xj)/dx);
+            bigXT[l][i] = getFunction(basis,l,2.0*(x-xj)/dx);
         }
     }
     MatrixMultiply(bigXT,bigX,bigXprod,order);
@@ -332,6 +333,37 @@ void MatrixMultiply3(double M1[20][20], double M2[20][20], double M[20][20], int
             }
         }
     }
+}
+
+double getFunction(std::string basis, int n, double x, bool derivative)
+{
+    if (basis=="Legendre")
+    {
+        if (!derivative)
+        {
+            return LegendreP(n,x);
+        }
+        else
+        {
+            return LegendreP_derivative(n,x);
+        }
+    }
+    else if (basis=="LegendreOrthonormal")
+    {
+        if (!derivative)
+        {
+            return LegendrePorthonormal(n,x);
+        }
+        else
+        {
+            return LegendrePorthonormal_derivative(n,x);
+        }
+    }
+    else
+    {
+        return 0;
+    }
+
 }
 
 double LegendreP(int n, double x)
@@ -423,28 +455,17 @@ void weights(int n, double x[], double w[])
     }
 }
 
-double integrate(int n_func1, int n_func2, int n, double x[], double w[])
+double integrate(std::string basis, int n_func1, bool derivative1, int n_func2, bool derivative2, int n, double x[], double w[])
 {
     //Integrate two Legendre polynomials of order n_func1 and n_func2
     assert(n>=0);
     double y=0;
     for (int i=0; i<n; i++)
     {
-        y+=w[i]*LegendreP(n_func1,x[i])*LegendreP(n_func2,x[i]);
+        y+=w[i]*getFunction(basis,n_func1,x[i],derivative1)*getFunction(basis,n_func2,x[i],derivative2);
     }
     return y;
 }
 
-double integrateS(int n_func1, int n_func2, int n, double x[], double w[])
-{
-    //Integrate the derivative of a Legendre polynomial of order n_func1 with a Legendre polynomial of order n_func2
-    assert(n>=0);
-    double y=0;
-    for (int i=0; i<n; i++)
-    {
-        y+=w[i]*LegendreP_derivative(n_func1,x[i])*LegendreP(n_func2,x[i]);
-    }
-    return y;
-}
 
 
