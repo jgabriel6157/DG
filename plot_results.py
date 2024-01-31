@@ -85,7 +85,6 @@ for j in range(jMax):
             y[i] = y[i] + u[l][j]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
         sol[i] = np.sin(x[i])
     plt.plot(x,y,color='red')
-    # plt.xlim((0,1))
-    # plt.plot(x,sol,color='k',linestyle='--')
+    plt.plot(x,sol,color='k',linestyle='--')
 
 plt.show()

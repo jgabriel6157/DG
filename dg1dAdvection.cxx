@@ -103,7 +103,14 @@ int main(int argc, char* argv[])
                 {
                     uPost[l][j]+=M_invS[l][i]*uPre[i][j];
                     uPost[l][j]-=M_invF1[l][i]*uPre[i][j];
-                    uPost[l][j]+=M_invF2[l][i]*uPre[i][j-1];
+                    if (j==0)
+                    {
+                        uPost[l][j]+=M_invF2[l][i]*uPre[i][jMax-1];
+                    }
+                    else
+                    {
+                        uPost[l][j]+=M_invF2[l][i]*uPre[i][j-1];
+                    }
                 }
                 uPost[l][j]*=a;
                 uPost[l][j]*=dt;
@@ -299,8 +306,7 @@ void LeastSquares(double uInitialize[], double xj, double dx, std::string basis,
     for (int i=0; i<10; i++)
     {
         x = xj-dx/2.0+i*dx/9.0;
-        // y[i] = sin(x);
-        y[i] = exp(-1.5*pow(x-M_PI,2.0));
+        y[i] = sin(x);
         for (int l=0; l<order; l++)
         {
             bigX[i][l] = getFunction(basis,l,2.0*(x-xj)/dx);
