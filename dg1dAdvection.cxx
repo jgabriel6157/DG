@@ -14,11 +14,8 @@ double LegendrePorthonormal(int n, double x);
 double LegendrePorthonormal_derivative(int n, double x);
 
 void LeastSquares(double uInitialize[], double xj, double dx, std::string basis, int order);
-void MatrixMultiply(double M1[20][10], double M2[10][20], double M[20][20], int order);
-void MatrixInverse(double M[20][20], double M_inverse[20][20], int order);
-void MatrixMultiply2(double M1[20][20], double M2[20][10], double M[20][10], int order);
-void MatrixMultiply3(double M1[20][20], double M2[20][20], double M[20][20], int order);
-
+void MatrixMultiply(double** M1, double** M2, double** M, int rowM1, int middleSize, int columnM2, bool debug=false);
+void MatrixInverse(double** M, double** M_inverse, int order);
 void roots_initial(int n, double x[]);
 void roots_final(int n, double x[]);
 void weights(int n, double x[], double w[]);
@@ -40,8 +37,27 @@ int main(int argc, char* argv[])
     double dt = assignDouble(argString[6]);
     std::string basis = argString[7];
     double dx = length/jMax;
-    double M[20][20], M_inv[20][20], S[20][20], F1[20][20], F2[20][20];
-    double M_invS[20][20],M_invF1[20][20],M_invF2[20][20];
+
+    double** M = new double* [lMax];
+    double** M_inv = new double* [lMax];
+    double** S = new double* [lMax];
+    double** F1 = new double* [lMax];
+    double** F2 = new double* [lMax];
+    double** M_invS = new double* [lMax];
+    double** M_invF1 = new double* [lMax];
+    double** M_invF2 = new double* [lMax];
+    for (int l=0; l<lMax; l++)
+    {
+        M[l] = new double [lMax];
+        M_inv[l] = new double [lMax];
+        S[l] = new double [lMax];
+        F1[l] = new double [lMax];
+        F2[l] = new double [lMax];
+        M_invS[l] = new double [lMax];
+        M_invF1[l] = new double [lMax];
+        M_invF2[l] = new double [lMax];
+    }
+
     double uPre[lMax][jMax];
     double uPost[lMax][jMax];
     double uInitialize[lMax];
@@ -73,25 +89,38 @@ int main(int argc, char* argv[])
     }
     
     MatrixInverse(M,M_inv,lMax);
+    for (int l=0; l<lMax; l++)
+    {
+        delete[] M[l];
+    }
+    delete[] M;
 
-    MatrixMultiply3(M_inv,S,M_invS,lMax);
-    MatrixMultiply3(M_inv,F1,M_invF1,lMax);
-    MatrixMultiply3(M_inv,F2,M_invF2,lMax);
+    MatrixMultiply(M_inv,S,M_invS,lMax,lMax,lMax);
+    MatrixMultiply(M_inv,F1,M_invF1,lMax,lMax,lMax);
+    MatrixMultiply(M_inv,F2,M_invF2,lMax,lMax,lMax);
+
+    for (int l=0; l<lMax; l++)
+    {
+        delete[] M_inv[l];
+        delete[] S[l];
+        delete[] F1[l];
+        delete[] F2[l];
+    }
+    delete[] M_inv;
+    delete[] S;
+    delete[] F1;
+    delete[] F2;
 
     for (int j=0; j<jMax; j++)
     {
         xj = j*dx+dx/2.0;
-        for (int l=0; l<lMax; l++)
-        {
-            uInitialize[l] = 0;
-        }
         LeastSquares(uInitialize, xj, dx, basis, lMax);
         for (int l=0; l<lMax; l++)
         {
-            val = uInitialize[l];
-            uPre[l][j] = val;
+            uPre[l][j] = uInitialize[l];
         }
     }
+
     for (int t=0; t<tMax; t++)
     {
         for (int j=0; j<jMax; j++)
@@ -137,7 +166,17 @@ int main(int argc, char* argv[])
     }
 
     write_output.close();
-    
+
+    for (int l=0; l<lMax; l++)
+    {
+        delete[] M_invS[l];
+        delete[] M_invF1[l];
+        delete[] M_invF2[l];
+    }
+    delete[] M_invS;
+    delete[] M_invF1;
+    delete[] M_invF2;
+
     return 0;
 }
 
@@ -211,16 +250,14 @@ double assignDouble(std::string varString)
     return number;
 }
 
-void MatrixMultiply(double M1[20][10], double M2[10][20], double M[20][20], int order)
+void MatrixMultiply(double** M1, double** M2, double** M, int rowM1, int middleSize, int columnM2, bool debug)
 {
-    //Multiply matrix M1 of size order x 10 and matrix M2 of size 10 x order to yield matrix M of size order x order 
-    int count;
-    count = 0;
-    for (int i=0; i<order; i++)
+    for (int i=0; i<rowM1; i++)
     {
-        for (int j=0; j<order; j++)
-        {        
-            for (int k=0; k<10; k++)
+        for (int j=0; j<columnM2; j++)
+        {
+            M[i][j] = 0;        
+            for (int k=0; k<middleSize; k++)
             {
                 M[i][j] += M1[i][k]*M2[k][j];
             }
@@ -228,27 +265,11 @@ void MatrixMultiply(double M1[20][10], double M2[10][20], double M[20][20], int 
     }
 }
 
-void MatrixMultiply2(double M1[20][20], double M2[20][10], double M[20][10], int order)
-{
-    //Multiply matrix M1 of size order x order and matrix M2 of size order x 10 to yield matrix M of size order x 10
-    for (int i=0; i<order; i++)
-    {
-        for (int j=0; j<10; j++)
-        {        
-            for (int k=0; k<order; k++)
-            {
-                M[i][j] += M1[i][k]*M2[k][j];
-
-            }
-        }
-    }
-}
-
-void MatrixInverse(double M[20][20], double M_inverse[20][20], int order)
+void MatrixInverse(double** M, double** M_inverse, int order)
 {
     //Take inverse of Matrix M through Gaussian Jordan elimination
     double ratio;
-    double M_inverse_big[20][20];
+    double M_inverse_big[order][order*2];
     
     // Augmenting Identity Matrix of Order n 
     for(int i=0; i<order; i++)
@@ -290,7 +311,6 @@ void MatrixInverse(double M[20][20], double M_inverse[20][20], int order)
             M_inverse[i][j-order] = M_inverse_big[i][j]/M_inverse_big[i][i];
         }
     }
-
 }
 
 void LeastSquares(double uInitialize[], double xj, double dx, std::string basis, int order)
@@ -298,11 +318,23 @@ void LeastSquares(double uInitialize[], double xj, double dx, std::string basis,
     //Compute initial condition using Least Squares method
     double x;
     double y[10]={0};
-    double bigX[10][20]={0};
-    double bigXT[20][10]={0};
-    double bigXprod[20][20]={0};
-    double bigXprodInv[20][20]={0};
-    double hugeX[20][10]={0};
+    double** bigX = new double* [10];
+    double** bigXT = new double* [order];
+    double** bigXprod = new double* [order];
+    double** bigXprodInv = new double* [order];
+    double** hugeX = new double* [order];
+    for (int i=0; i<10; i++)
+    {
+        bigX[i] = new double [order];
+    }
+    for (int l=0; l<order; l++)
+    {
+        bigXT[l] = new double [10];
+        bigXprod[l] = new double [order];
+        bigXprodInv[l] = new double [order];
+        hugeX[l] = new double [10];
+    }
+
     for (int i=0; i<10; i++)
     {
         x = xj-dx/2.0+i*dx/9.0;
@@ -313,32 +345,43 @@ void LeastSquares(double uInitialize[], double xj, double dx, std::string basis,
             bigXT[l][i] = getFunction(basis,l,2.0*(x-xj)/dx);
         }
     }
-    MatrixMultiply(bigXT,bigX,bigXprod,order);
+
+    MatrixMultiply(bigXT,bigX,bigXprod,order,10,order);
+    for (int i=0; i<10; i++)
+    {
+        delete[] bigX[i];
+    }
+    delete[] bigX;
+
     MatrixInverse(bigXprod,bigXprodInv,order);
-    MatrixMultiply2(bigXprodInv,bigXT,hugeX,order);
+    for (int l=0; l<order; l++)
+    {
+        delete[] bigXprod[l];
+    }
+    delete[] bigXprod;
+
+    MatrixMultiply(bigXprodInv,bigXT,hugeX,order,order,10);
+    for (int l=0; l<order; l++)
+    {
+        delete[] bigXprodInv[l];
+        delete[] bigXT[l];
+    }
+    delete[] bigXprodInv;
+    delete[] bigXT;
 
     for (int i=0; i<order; i++)
-    {      
+    {  
+        uInitialize[i] = 0;    
         for (int j=0; j<10; j++)
         {
             uInitialize[i] += hugeX[i][j]*y[j];
         }
     }
-}
-
-void MatrixMultiply3(double M1[20][20], double M2[20][20], double M[20][20], int order)
-{
-    //Multiply matrix M1 of size order x order and matrix M2 of size order x order to yield matrix M of size order x order
-    for (int i=0; i<order; i++)
+    for (int l=0; l<order; l++)
     {
-        for (int j=0; j<order; j++)
-        {        
-            for (int k=0; k<order; k++)
-            {
-                M[i][j] += M1[i][k]*M2[k][j];
-            }
-        }
+        delete[] hugeX[l];
     }
+    delete[] hugeX;
 }
 
 double getFunction(std::string basis, int n, double x, bool derivative)
