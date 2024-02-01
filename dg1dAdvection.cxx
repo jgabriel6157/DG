@@ -13,8 +13,9 @@ double LegendreP_derivative(int n, double x);
 double LegendrePorthonormal(int n, double x);
 double LegendrePorthonormal_derivative(int n, double x);
 
-void LeastSquares(double uInitialize[], double xj, double dx, std::string basis, int order);
-void MatrixMultiply(double** M1, double** M2, double** M, int rowM1, int middleSize, int columnM2, bool debug=false);
+void LeastSquares(double* uInitialize, double xj, double dx, std::string basis, int order);
+void MatrixMultiply(double** M1, double** M2, double** M, int rowM1, int middleSize, int columnM2);
+void MatrixMultiply(double** M, double* A1, double* A, int rowM1, int middleSize);
 void MatrixInverse(double** M, double** M_inverse, int order);
 void roots_initial(int n, double x[]);
 void roots_final(int n, double x[]);
@@ -46,6 +47,8 @@ int main(int argc, char* argv[])
     double** M_invS = new double* [lMax];
     double** M_invF1 = new double* [lMax];
     double** M_invF2 = new double* [lMax];
+    double** uPre = new double* [lMax];
+    double** uPost = new double* [lMax];
     for (int l=0; l<lMax; l++)
     {
         M[l] = new double [lMax];
@@ -56,15 +59,12 @@ int main(int argc, char* argv[])
         M_invS[l] = new double [lMax];
         M_invF1[l] = new double [lMax];
         M_invF2[l] = new double [lMax];
+        uPre[l] = new double [jMax];
+        uPost[l] = new double [jMax];
     }
-
-    double uPre[lMax][jMax];
-    double uPost[lMax][jMax];
-    double uInitialize[lMax];
-    double u1[lMax], u2[lMax];
+    double* uInitialize = new double [lMax];
     double x_roots[quadratureOrder], w[quadratureOrder];
-    double xj, val;
-    double F_minus,F_plus;
+    double xj;
     
     std::ofstream write_output("Output.csv");
     assert(write_output.is_open());
@@ -120,6 +120,7 @@ int main(int argc, char* argv[])
             uPre[l][j] = uInitialize[l];
         }
     }
+    delete[] uInitialize;
 
     for (int t=0; t<tMax; t++)
     {
@@ -172,10 +173,14 @@ int main(int argc, char* argv[])
         delete[] M_invS[l];
         delete[] M_invF1[l];
         delete[] M_invF2[l];
+        delete[] uPre[l];
+        delete[] uPost[l];
     }
     delete[] M_invS;
     delete[] M_invF1;
     delete[] M_invF2;
+    delete[] uPre;
+    delete[] uPost;
 
     return 0;
 }
@@ -250,7 +255,7 @@ double assignDouble(std::string varString)
     return number;
 }
 
-void MatrixMultiply(double** M1, double** M2, double** M, int rowM1, int middleSize, int columnM2, bool debug)
+void MatrixMultiply(double** M1, double** M2, double** M, int rowM1, int middleSize, int columnM2)
 {
     for (int i=0; i<rowM1; i++)
     {
@@ -261,6 +266,18 @@ void MatrixMultiply(double** M1, double** M2, double** M, int rowM1, int middleS
             {
                 M[i][j] += M1[i][k]*M2[k][j];
             }
+        }
+    }
+}
+
+void MatrixMultiply(double** M, double* A1, double* A, int rowM1, int middleSize)
+{
+    for (int i=0; i<rowM1; i++)
+    {
+        A[i] = 0;
+        for (int j=0; j<middleSize; j++)
+        {
+            A[i] += M[i][j]*A1[j];
         }
     }
 }
@@ -313,11 +330,11 @@ void MatrixInverse(double** M, double** M_inverse, int order)
     }
 }
 
-void LeastSquares(double uInitialize[], double xj, double dx, std::string basis, int order)
+void LeastSquares(double* uInitialize, double xj, double dx, std::string basis, int order)
 {
     //Compute initial condition using Least Squares method
     double x;
-    double y[10]={0};
+    double* y = new double [10];
     double** bigX = new double* [10];
     double** bigXT = new double* [order];
     double** bigXprod = new double* [order];
@@ -369,19 +386,13 @@ void LeastSquares(double uInitialize[], double xj, double dx, std::string basis,
     delete[] bigXprodInv;
     delete[] bigXT;
 
-    for (int i=0; i<order; i++)
-    {  
-        uInitialize[i] = 0;    
-        for (int j=0; j<10; j++)
-        {
-            uInitialize[i] += hugeX[i][j]*y[j];
-        }
-    }
+    MatrixMultiply(hugeX,y,uInitialize,order,10);
     for (int l=0; l<order; l++)
     {
         delete[] hugeX[l];
     }
     delete[] hugeX;
+    delete[] y;
 }
 
 double getFunction(std::string basis, int n, double x, bool derivative)
