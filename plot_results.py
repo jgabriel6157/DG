@@ -58,7 +58,10 @@ while True:
         lMax = int(inputParam[inputParam.index('=')+2:-1])
     elif inputParam[0:5]=='basis':
         basis = inputParam[inputParam.index('=')+2:-1]
-
+    elif inputParam[0:4]=='tMax':
+        tMax = int(inputParam[inputParam.index('=')+2:-1])
+    elif inputParam[0:2]=='dt':
+        dt = float(inputParam[inputParam.index('=')+2:-1])
     if not inputParam:
         break
 
@@ -84,6 +87,9 @@ for j in range(jMax):
         for l in range(lMax):
             y[i] = y[i] + u[l][j]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
         sol[i] = np.sin(x[i])
+        # sol[i] = np.exp(-1.0*(x[i]-4.0*np.pi-2.0*np.pi*(tMax*dt))**2.0)
+    
+    # plt.plot(x,np.abs(sol-y))
     plt.plot(x,y,color='red')
     plt.plot(x,sol,color='k',linestyle='--')
 

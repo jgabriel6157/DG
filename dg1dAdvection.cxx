@@ -23,7 +23,10 @@ void roots_final(int n, double x[]);
 void weights(int n, double x[], double w[]);
 double integrate(std::string basis, int n_func1, bool derivative1, int n_func2, bool derivative2, int n, double x[], double w[]);
 
-double getError(double** u, int jMax, std::string basis, int lMax, double dx);
+double getError(double** u, int jMax, std::string basis, int lMax, double dx, int tMax, double dt);
+
+void firstOrderEulerPlusTimes(double** uPre, double** uPost, double** M_invS, double** M_invF1, double** M_invF2, double** uPlus,
+                              double plusFactor, double timesFactor, double dx, double dt, double a, int jMax, int lMax);
 
 int main(int argc, char* argv[])
 {
@@ -52,6 +55,7 @@ int main(int argc, char* argv[])
     double** M_invF2 = new double* [lMax];
     double** uPre = new double* [lMax];
     double** uPost = new double* [lMax];
+    double** uIntermediate = new double* [lMax];
     for (int l=0; l<lMax; l++)
     {
         M[l] = new double [lMax];
@@ -64,6 +68,7 @@ int main(int argc, char* argv[])
         M_invF2[l] = new double [lMax];
         uPre[l] = new double [jMax];
         uPost[l] = new double [jMax];
+        uIntermediate[l] = new double [jMax];
     }
     double* uInitialize = new double [lMax];
     double x_roots[quadratureOrder], w[quadratureOrder];
@@ -129,30 +134,11 @@ int main(int argc, char* argv[])
 
     for (int t=0; t<tMax; t++)
     {
-        for (int j=0; j<jMax; j++)
-        {
-            for (int l=0; l<lMax; l++)
-            {
-                uPost[l][j]=0;
-                for (int i=0; i<lMax; i++)
-                {
-                    uPost[l][j]+=M_invS[l][i]*uPre[i][j];
-                    uPost[l][j]-=M_invF1[l][i]*uPre[i][j];
-                    if (j==0)
-                    {
-                        uPost[l][j]+=M_invF2[l][i]*uPre[i][jMax-1];
-                    }
-                    else
-                    {
-                        uPost[l][j]+=M_invF2[l][i]*uPre[i][j-1];
-                    }
-                }
-                uPost[l][j]*=a;
-                uPost[l][j]*=dt;
-                uPost[l][j]/=dx;
-                uPost[l][j]+=uPre[l][j];
-            }
-        }
+        firstOrderEulerPlusTimes(uPre,uPost,M_invS,M_invF1,M_invF2,uPre,0.0,1.0,dx,dt,a,jMax,lMax);
+
+        firstOrderEulerPlusTimes(uPost,uIntermediate,M_invS,M_invF1,M_invF2,uPre,3.0/4.0,1.0/4.0,dx,dt,a,jMax,lMax);
+
+        firstOrderEulerPlusTimes(uIntermediate,uPost,M_invS,M_invF1,M_invF2,uPre,1.0/3.0,2.0/3.0,dx,dt,a,jMax,lMax);
     
         for (int j=0; j<jMax; j++)
         {
@@ -172,7 +158,7 @@ int main(int argc, char* argv[])
 
     if (test)
     {
-        std::cout << getError(uPre, jMax, basis, lMax, dx) << "\n";
+        std::cout << getError(uPre, jMax, basis, lMax, dx, tMax, dt) << "\n";
     }
 
     for (int j=0; j<jMax; j++)
@@ -372,8 +358,8 @@ void LeastSquares(double* uInitialize, double xj, double dx, std::string basis, 
     for (int i=0; i<10; i++)
     {
         x = xj-dx/2.0+i*dx/9.0;
-        //y[i] = sin(x);
-        y[i] = exp(-1.5*pow(x-M_PI,2.0));
+        y[i] = sin(x);
+        // y[i] = exp(-1.0*pow(x-4.0*M_PI,2.0));
         for (int l=0; l<order; l++)
         {
             bigX[i][l] = getFunction(basis,l,2.0*(x-xj)/dx);
@@ -545,7 +531,7 @@ double integrate(std::string basis, int n_func1, bool derivative1, int n_func2, 
     return y;
 }
 
-double getError(double** u, int jMax, std::string basis, int lMax, double dx)
+double getError(double** u, int jMax, std::string basis, int lMax, double dx, int tMax, double dt)
 {
     double error = 0;
     double solutionSum = 0;
@@ -559,8 +545,8 @@ double getError(double** u, int jMax, std::string basis, int lMax, double dx)
             {
                 y[i]+=u[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-(j*dx+dx/2.0)));
             }
-            //sol[i] = sin(x[i]);
-            sol[i] = exp(-1.5*pow(x[i]-M_PI,2.0));
+            sol[i] = sin(x[i]);
+            // sol[i] = exp(-1.0*pow(x[i]-4.0*M_PI-2.0*M_PI*(tMax*dt),2.0));
             error+=pow(y[i]-sol[i],2.0);
             solutionSum+=pow(sol[i],2.0);
         }
@@ -568,4 +554,34 @@ double getError(double** u, int jMax, std::string basis, int lMax, double dx)
     return sqrt(error/solutionSum);
 }
 
-
+void firstOrderEulerPlusTimes(double** uPre, double** uPost, double** M_invS, double** M_invF1, double** M_invF2, double** uPlus,
+                              double plusFactor, double timesFactor, double dx, double dt, double a, int jMax, int lMax)
+{
+    for (int j=0; j<jMax; j++)
+    {
+        for (int l=0; l<lMax; l++)
+        {
+            uPost[l][j]=0;
+            for (int i=0; i<lMax; i++)
+            {
+                uPost[l][j]+=M_invS[l][i]*uPre[i][j];
+                uPost[l][j]-=M_invF1[l][i]*uPre[i][j];
+                if (j==0)
+                {
+                    uPost[l][j]+=M_invF2[l][i]*uPre[i][jMax-1];
+                }
+                else
+                {
+                    uPost[l][j]+=M_invF2[l][i]*uPre[i][j-1];
+                }
+            }
+            uPost[l][j]*=a;
+            uPost[l][j]*=dt;
+            uPost[l][j]/=dx;
+            uPost[l][j]+=uPre[l][j];
+            
+            uPost[l][j]*=timesFactor;
+            uPost[l][j]+=plusFactor*uPlus[l][j];
+        }
+    }
+}
