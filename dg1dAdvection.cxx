@@ -2,6 +2,7 @@
 #include <cmath>
 #include <fstream>
 #include <cassert>
+#include <chrono>
 
 void readFile(std::string filename, std::string argName[], std::string argString[], int numberOfVariables);
 int assignInt(std::string varString);
@@ -22,6 +23,7 @@ void roots_final(int n, double x[]);
 void weights(int n, double x[], double w[]);
 double integrate(std::string basis, int n_func1, bool derivative1, int n_func2, bool derivative2, int n, double x[], double w[]);
 
+double getError(double** u, int jMax, std::string basis, int lMax, double dx);
 
 int main(int argc, char* argv[])
 {
@@ -37,6 +39,7 @@ int main(int argc, char* argv[])
     double length = assignDouble(argString[5]);
     double dt = assignDouble(argString[6]);
     std::string basis = argString[7];
+    bool test = true;
     double dx = length/jMax;
 
     double** M = new double* [lMax];
@@ -68,6 +71,8 @@ int main(int argc, char* argv[])
     
     std::ofstream write_output("Output.csv");
     assert(write_output.is_open());
+
+    auto start = std::chrono::high_resolution_clock::now();
 
     roots_initial(quadratureOrder,x_roots);
     roots_final(quadratureOrder,x_roots);
@@ -156,6 +161,18 @@ int main(int argc, char* argv[])
                 uPre[l][j] = uPost[l][j];
             }
         }
+    }
+
+    auto stop = std::chrono::high_resolution_clock::now();
+
+    // auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop-start);
+    auto duration = std::chrono::duration<double, std::milli>(stop-start);
+
+    std::cout << duration.count() << " ms" << "\n";
+
+    if (test)
+    {
+        std::cout << getError(uPre, jMax, basis, lMax, dx) << "\n";
     }
 
     for (int j=0; j<jMax; j++)
@@ -355,7 +372,8 @@ void LeastSquares(double* uInitialize, double xj, double dx, std::string basis, 
     for (int i=0; i<10; i++)
     {
         x = xj-dx/2.0+i*dx/9.0;
-        y[i] = sin(x);
+        //y[i] = sin(x);
+        y[i] = exp(-1.5*pow(x-M_PI,2.0));
         for (int l=0; l<order; l++)
         {
             bigX[i][l] = getFunction(basis,l,2.0*(x-xj)/dx);
@@ -527,5 +545,27 @@ double integrate(std::string basis, int n_func1, bool derivative1, int n_func2, 
     return y;
 }
 
+double getError(double** u, int jMax, std::string basis, int lMax, double dx)
+{
+    double error = 0;
+    double solutionSum = 0;
+    for (int j=0; j<jMax; j++)
+    {
+        double y[10] = {0}, sol[10], x[10];
+        for (int i=0; i<10; i++)
+        {
+            x[i] = j*dx+i*dx/9.0;
+            for (int l=0; l<lMax; l++)
+            {
+                y[i]+=u[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-(j*dx+dx/2.0)));
+            }
+            //sol[i] = sin(x[i]);
+            sol[i] = exp(-1.5*pow(x[i]-M_PI,2.0));
+            error+=pow(y[i]-sol[i],2.0);
+            solutionSum+=pow(sol[i],2.0);
+        }
+    }
+    return sqrt(error/solutionSum);
+}
 
 
