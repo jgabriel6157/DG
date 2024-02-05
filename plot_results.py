@@ -10,6 +10,10 @@ def getFunction(basis,n,x):
         return LegendreP(n,x)
     elif basis=='LegendreOrthonormal':
         return LegendrePorthonormal(n,x)
+    elif basis=='Quadratic':
+        return Quadratic(n,x)
+    elif basis=='linear':
+        return linear(n,x)
     else:
         return 0
 
@@ -23,6 +27,20 @@ def LegendreP(n,x):
     
 def LegendrePorthonormal(n,x):
     return np.sqrt((2.0*n+1.0)/2.0)*LegendreP(n,x)
+
+def Quadratic(n,x):
+    if n==0:
+        return -x*(1.0-x)/2.0
+    elif n==1:
+        return (1.0-x)*(1.0+x)
+    else:
+        return x*(1+x)/2
+    
+def linear(n,x):
+    if n==0:
+        return (1.0-x)/2.0
+    else:
+        return (1+x)/2
 
 def assignFloat(varString):
     number = 1.0
