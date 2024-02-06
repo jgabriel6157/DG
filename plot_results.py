@@ -106,6 +106,10 @@ for j in range(jMax):
             y[i] = y[i] + u[l][j]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
         sol[i] = np.sin(x[i])
         # sol[i] = np.exp(-1.0*(x[i]-4.0*np.pi-2.0*np.pi*(tMax*dt))**2.0)
+        # if ((x[i]<np.pi-1.0)or(x[i]>np.pi+1.0)):
+        #     sol[i] = 0
+        # else:
+        #     sol[i] = 1
     
     # plt.plot(x,np.abs(sol-y))
     plt.plot(x,y,color='red')

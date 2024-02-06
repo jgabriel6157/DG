@@ -18,6 +18,8 @@ double QuadraticDerivative(int n, double x);
 double linear(int n, double x);
 double linearDerivative(int n, double x);
 
+double sign(double x);
+
 void LeastSquares(double* uInitialize, double xj, double dx, std::string basis, int order);
 void MatrixMultiply(double** M1, double** M2, double** M, int rowM1, int middleSize, int columnM2);
 void MatrixMultiply(double** M, double* A1, double* A, int rowM1, int middleSize);
@@ -29,8 +31,8 @@ double integrate(std::string basis, int n_func1, bool derivative1, int n_func2, 
 
 double getError(double** u, int jMax, std::string basis, int lMax, double dx, int tMax, double dt);
 
-void firstOrderEulerPlusTimes(double** uPre, double** uPost, double** M_invS, double** M_invF1, double** M_invF2, double** uPlus,
-                              double plusFactor, double timesFactor, double dx, double dt, double a, int jMax, int lMax);
+void firstOrderEulerPlusTimes(double** uPre, double** uPost, double** M_invS, double** M_invF1, double** M_invF2, double** M_invF3, double** M_invF4,
+                              double** uPlus, double plusFactor, double timesFactor, double dx, double dt, double a, int jMax, int lMax);
 
 int main(int argc, char* argv[])
 {
@@ -47,16 +49,24 @@ int main(int argc, char* argv[])
     double dt = assignDouble(argString[6]);
     std::string basis = argString[7];
     bool test = true;
+    double alpha = 0.0;
+    
     double dx = length/jMax;
+    double fluxFactorPlus = (1.0+sign(a)*(1.0-alpha))/2.0;
+    double fluxFactorMinus = (1.0-sign(a)*(1.0-alpha))/2.0;
 
     double** M = new double* [lMax];
     double** M_inv = new double* [lMax];
     double** S = new double* [lMax];
     double** F1 = new double* [lMax];
     double** F2 = new double* [lMax];
+    double** F3 = new double* [lMax];
+    double** F4 = new double* [lMax];
     double** M_invS = new double* [lMax];
     double** M_invF1 = new double* [lMax];
     double** M_invF2 = new double* [lMax];
+    double** M_invF3 = new double* [lMax];
+    double** M_invF4 = new double* [lMax];
     double** uPre = new double* [lMax];
     double** uPost = new double* [lMax];
     double** uIntermediate = new double* [lMax];
@@ -67,9 +77,13 @@ int main(int argc, char* argv[])
         S[l] = new double [lMax];
         F1[l] = new double [lMax];
         F2[l] = new double [lMax];
+        F3[l] = new double [lMax];
+        F4[l] = new double [lMax];
         M_invS[l] = new double [lMax];
         M_invF1[l] = new double [lMax];
         M_invF2[l] = new double [lMax];
+        M_invF3[l] = new double [lMax];
+        M_invF4[l] = new double [lMax];
         uPre[l] = new double [jMax];
         uPost[l] = new double [jMax];
         uIntermediate[l] = new double [jMax];
@@ -93,8 +107,10 @@ int main(int argc, char* argv[])
         {
             M[i][j] = integrate(basis,i,false,j,false,quadratureOrder,x_roots,w)/2.0;
             S[i][j] = integrate(basis,i,true,j,false,quadratureOrder,x_roots,w);
-            F1[i][j] = getFunction(basis,i,1)*getFunction(basis,j,1);
-            F2[i][j] = getFunction(basis,i,-1)*getFunction(basis,j,1);
+            F1[i][j] = fluxFactorPlus*(basis,i,1)*getFunction(basis,j,1);
+            F2[i][j] = fluxFactorPlus*(basis,i,-1)*getFunction(basis,j,1);
+            F3[i][j] = fluxFactorMinus*(basis,i,1)*getFunction(basis,j,-1);
+            F4[i][j] = fluxFactorMinus*(basis,i,-1)*getFunction(basis,j,-1);
             if (fabs(M[i][j]) < 1e-10)
             {
                 M[i][j] = 0;
@@ -116,6 +132,8 @@ int main(int argc, char* argv[])
     MatrixMultiply(M_inv,S,M_invS,lMax,lMax,lMax);
     MatrixMultiply(M_inv,F1,M_invF1,lMax,lMax,lMax);
     MatrixMultiply(M_inv,F2,M_invF2,lMax,lMax,lMax);
+    MatrixMultiply(M_inv,F3,M_invF3,lMax,lMax,lMax);
+    MatrixMultiply(M_inv,F4,M_invF4,lMax,lMax,lMax);
 
     for (int l=0; l<lMax; l++)
     {
@@ -123,11 +141,15 @@ int main(int argc, char* argv[])
         delete[] S[l];
         delete[] F1[l];
         delete[] F2[l];
+        delete[] F3[l];
+        delete[] F4[l];
     }
     delete[] M_inv;
     delete[] S;
     delete[] F1;
     delete[] F2;
+    delete[] F3;
+    delete[] F4;
 
     for (int j=0; j<jMax; j++)
     {
@@ -142,11 +164,11 @@ int main(int argc, char* argv[])
 
     for (int t=0; t<tMax; t++)
     {
-        firstOrderEulerPlusTimes(uPre,uPost,M_invS,M_invF1,M_invF2,uPre,0.0,1.0,dx,dt,a,jMax,lMax);
+        firstOrderEulerPlusTimes(uPre,uPost,M_invS,M_invF1,M_invF2,M_invF3,M_invF4,uPre,0.0,1.0,dx,dt,a,jMax,lMax);
 
-        firstOrderEulerPlusTimes(uPost,uIntermediate,M_invS,M_invF1,M_invF2,uPre,3.0/4.0,1.0/4.0,dx,dt,a,jMax,lMax);
+        firstOrderEulerPlusTimes(uPost,uIntermediate,M_invS,M_invF1,M_invF2,M_invF3,M_invF4,uPre,3.0/4.0,1.0/4.0,dx,dt,a,jMax,lMax);
 
-        firstOrderEulerPlusTimes(uIntermediate,uPost,M_invS,M_invF1,M_invF2,uPre,1.0/3.0,2.0/3.0,dx,dt,a,jMax,lMax);
+        firstOrderEulerPlusTimes(uIntermediate,uPost,M_invS,M_invF1,M_invF2,M_invF3,M_invF4,uPre,1.0/3.0,2.0/3.0,dx,dt,a,jMax,lMax);
 
         for (int j=0; j<jMax; j++)
         {
@@ -181,12 +203,16 @@ int main(int argc, char* argv[])
         delete[] M_invS[l];
         delete[] M_invF1[l];
         delete[] M_invF2[l];
+        delete[] M_invF3[l];
+        delete[] M_invF4[l];
         delete[] uPre[l];
         delete[] uPost[l];
     }
     delete[] M_invS;
     delete[] M_invF1;
     delete[] M_invF2;
+    delete[] M_invF3;
+    delete[] M_invF4;
     delete[] uPre;
     delete[] uPost;
 
@@ -338,6 +364,23 @@ void MatrixInverse(double** M, double** M_inverse, int order)
     }
 }
 
+double sign(double x)
+{
+    //Return sign of value (0 = 0)
+    if (x>0)
+    {
+        return 1.0;
+    }
+    else if (x<0)
+    {
+        return -1.0;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
 void LeastSquares(double* uInitialize, double xj, double dx, std::string basis, int order)
 {
     //Compute initial condition using Least Squares method
@@ -365,6 +408,14 @@ void LeastSquares(double* uInitialize, double xj, double dx, std::string basis, 
         x = xj-dx/2.0+i*dx/9.0;
         y[i] = sin(x);
         // y[i] = exp(-1.0*pow(x-1.0*M_PI,2.0));
+        // if ((x<M_PI-1)||(x>M_PI+1))
+        // {
+        //     y[i] = 0;
+        // }
+        // else
+        // {
+        //     y[i] = 1;
+        // }
         for (int l=0; l<order; l++)
         {
             bigX[i][l] = getFunction(basis,l,2.0*(x-xj)/dx);
@@ -656,6 +707,14 @@ double getError(double** u, int jMax, std::string basis, int lMax, double dx, in
             }
             sol[i] = sin(x[i]-2.0*M_PI*tMax*dt);
             // sol[i] = exp(-1.0*pow(x[i]-1.0*M_PI-2.0*M_PI*(tMax*dt),2.0));
+            // if ((x[i]<M_PI-1.0)||(x[i]>M_PI+1.0))
+            // {
+            //     sol[i] = 0;
+            // }
+            // else
+            // {
+            //     sol[i] = 1;
+            // }
             error+=pow(y[i]-sol[i],2.0);
             solutionSum+=pow(sol[i],2.0);
         }
@@ -663,8 +722,8 @@ double getError(double** u, int jMax, std::string basis, int lMax, double dx, in
     return sqrt(error/solutionSum);
 }
 
-void firstOrderEulerPlusTimes(double** uPre, double** uPost, double** M_invS, double** M_invF1, double** M_invF2, double** uPlus,
-                              double plusFactor, double timesFactor, double dx, double dt, double a, int jMax, int lMax)
+void firstOrderEulerPlusTimes(double** uPre, double** uPost, double** M_invS, double** M_invF1, double** M_invF2, double** M_invF3, double** M_invF4,
+                              double** uPlus, double plusFactor, double timesFactor, double dx, double dt, double a, int jMax, int lMax)
 {
     for (int j=0; j<jMax; j++)
     {
@@ -683,6 +742,15 @@ void firstOrderEulerPlusTimes(double** uPre, double** uPost, double** M_invS, do
                 {
                     uPost[l][j]+=M_invF2[l][i]*uPre[i][j-1];
                 }
+                if (j==jMax-1)
+                {
+                    uPost[l][j]-=M_invF3[l][i]*uPre[i][0];
+                }
+                else
+                {
+                    uPost[l][j]-=M_invF3[l][i]*uPre[i][j+1];
+                }
+                uPost[l][j]+=M_invF4[l][i]*uPre[i][j];
             }
             uPost[l][j]*=a;
             uPost[l][j]*=dt;
