@@ -7,6 +7,7 @@
 void readFile(std::string filename, std::string argName[], std::string argString[], int numberOfVariables);
 int assignInt(std::string varString);
 double assignDouble(std::string varString);
+bool assignBool(std::string varString);
 
 double getFunction(std::string basis, int n, double x, bool derivative=false);
 double LegendreP(int n, double x);
@@ -36,9 +37,9 @@ void firstOrderEulerPlusTimes(double** uPre, double** uPost, double** M_invS, do
 
 int main(int argc, char* argv[])
 {
-    std::string argName[8] = {"a","jMax","lMax","tMax","quadratureOrder","length","dt","basis"};
-    std::string argString[8];
-    readFile("input.txt",argName,argString,8);
+    std::string argName[10] = {"a","jMax","lMax","tMax","quadratureOrder","length","dt","basis","test","alpha"};
+    std::string argString[10];
+    readFile("input.txt",argName,argString,10);
 
     double a = assignDouble(argString[0]);
     int jMax = assignInt(argString[1]);
@@ -48,8 +49,8 @@ int main(int argc, char* argv[])
     double length = assignDouble(argString[5]);
     double dt = assignDouble(argString[6]);
     std::string basis = argString[7];
-    bool test = true;
-    double alpha = 0.0;
+    bool test = assignBool(argString[8]);
+    double alpha = assignDouble(argString[9]);
     
     double dx = length/jMax;
     double fluxFactorPlus = (1.0+sign(a)*(1.0-alpha))/2.0;
@@ -107,10 +108,10 @@ int main(int argc, char* argv[])
         {
             M[i][j] = integrate(basis,i,false,j,false,quadratureOrder,x_roots,w)/2.0;
             S[i][j] = integrate(basis,i,true,j,false,quadratureOrder,x_roots,w);
-            F1[i][j] = fluxFactorPlus*(basis,i,1)*getFunction(basis,j,1);
-            F2[i][j] = fluxFactorPlus*(basis,i,-1)*getFunction(basis,j,1);
-            F3[i][j] = fluxFactorMinus*(basis,i,1)*getFunction(basis,j,-1);
-            F4[i][j] = fluxFactorMinus*(basis,i,-1)*getFunction(basis,j,-1);
+            F1[i][j] = fluxFactorPlus*getFunction(basis,i,1)*getFunction(basis,j,1);
+            F2[i][j] = fluxFactorPlus*getFunction(basis,i,-1)*getFunction(basis,j,1);
+            F3[i][j] = fluxFactorMinus*getFunction(basis,i,1)*getFunction(basis,j,-1);
+            F4[i][j] = fluxFactorMinus*getFunction(basis,i,-1)*getFunction(basis,j,-1);
             if (fabs(M[i][j]) < 1e-10)
             {
                 M[i][j] = 0;
@@ -287,6 +288,23 @@ double assignDouble(std::string varString)
         value = value.substr(value.find("*")+1);
     }
     return number;
+}
+
+bool assignBool(std::string varString)
+{
+    if (varString=="true")
+    {
+        return true;
+    }
+    else if (varString=="false")
+    {
+        return false;
+    }
+    else
+    {
+        std::cout << "Invalid input for bool, returning false" << "\n";
+        return false;
+    }
 }
 
 void MatrixMultiply(double** M1, double** M2, double** M, int rowM1, int middleSize, int columnM2)
