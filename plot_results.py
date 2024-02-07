@@ -113,6 +113,6 @@ for j in range(jMax):
     
     # plt.plot(x,np.abs(sol-y))
     plt.plot(x,y,color='red')
-    plt.plot(x,sol,color='k',linestyle='--')
+    # plt.plot(x,sol,color='k',linestyle='--')
 
 plt.show()

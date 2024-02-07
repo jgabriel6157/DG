@@ -20,6 +20,8 @@ double linear(int n, double x);
 double linearDerivative(int n, double x);
 
 double sign(double x);
+double minmod(double a, double b, double c);
+double min(double a, double b);
 
 void LeastSquares(double* uInitialize, double xj, double dx, std::string basis, int order);
 void MatrixMultiply(double** M1, double** M2, double** M, int rowM1, int middleSize, int columnM2);
@@ -34,6 +36,7 @@ double getError(double** u, int jMax, std::string basis, int lMax, double dx, in
 
 void firstOrderEulerPlusTimes(double** uPre, double** uPost, double** M_invS, double** M_invF1, double** M_invF2, double** M_invF3, double** M_invF4,
                               double** uPlus, double plusFactor, double timesFactor, double dx, double dt, double a, int jMax, int lMax);
+void slopeLimiter(double** uPost, int jMax, int lMax);
 
 int main(int argc, char* argv[])
 {
@@ -170,6 +173,8 @@ int main(int argc, char* argv[])
         firstOrderEulerPlusTimes(uPost,uIntermediate,M_invS,M_invF1,M_invF2,M_invF3,M_invF4,uPre,3.0/4.0,1.0/4.0,dx,dt,a,jMax,lMax);
 
         firstOrderEulerPlusTimes(uIntermediate,uPost,M_invS,M_invF1,M_invF2,M_invF3,M_invF4,uPre,1.0/3.0,2.0/3.0,dx,dt,a,jMax,lMax);
+
+        slopeLimiter(uPost,jMax,lMax);
 
         for (int j=0; j<jMax; j++)
         {
@@ -399,6 +404,31 @@ double sign(double x)
     }
 }
 
+double minmod(double a, double b, double c)
+{
+    double s = (sign(a)+sign(b)+sign(c))/3.0;
+    if (fabs(s)==1)
+    {
+        return s*fabs(min(min(a,b),c));
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+double min(double a, double b)
+{
+    if (a<b)
+    {
+        return a;
+    }
+    else
+    {
+        return b;
+    }
+}
+
 void LeastSquares(double* uInitialize, double xj, double dx, std::string basis, int order)
 {
     //Compute initial condition using Least Squares method
@@ -424,16 +454,16 @@ void LeastSquares(double* uInitialize, double xj, double dx, std::string basis, 
     for (int i=0; i<10; i++)
     {
         x = xj-dx/2.0+i*dx/9.0;
-        y[i] = sin(x);
+        // y[i] = sin(x);
         // y[i] = exp(-1.0*pow(x-1.0*M_PI,2.0));
-        // if ((x<M_PI-1)||(x>M_PI+1))
-        // {
-        //     y[i] = 0;
-        // }
-        // else
-        // {
-        //     y[i] = 1;
-        // }
+        if ((x<M_PI-1)||(x>M_PI+1))
+        {
+            y[i] = 0;
+        }
+        else
+        {
+            y[i] = 1;
+        }
         for (int l=0; l<order; l++)
         {
             bigX[i][l] = getFunction(basis,l,2.0*(x-xj)/dx);
@@ -723,16 +753,16 @@ double getError(double** u, int jMax, std::string basis, int lMax, double dx, in
             {
                 y[i]+=u[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-(j*dx+dx/2.0)));
             }
-            sol[i] = sin(x[i]-2.0*M_PI*tMax*dt);
+            // sol[i] = sin(x[i]-2.0*M_PI*tMax*dt);
             // sol[i] = exp(-1.0*pow(x[i]-1.0*M_PI-2.0*M_PI*(tMax*dt),2.0));
-            // if ((x[i]<M_PI-1.0)||(x[i]>M_PI+1.0))
-            // {
-            //     sol[i] = 0;
-            // }
-            // else
-            // {
-            //     sol[i] = 1;
-            // }
+            if ((x[i]<M_PI-1.0)||(x[i]>M_PI+1.0))
+            {
+                sol[i] = 0;
+            }
+            else
+            {
+                sol[i] = 1;
+            }
             error+=pow(y[i]-sol[i],2.0);
             solutionSum+=pow(sol[i],2.0);
         }
@@ -777,6 +807,51 @@ void firstOrderEulerPlusTimes(double** uPre, double** uPost, double** M_invS, do
             
             uPost[l][j]*=timesFactor;
             uPost[l][j]+=plusFactor*uPlus[l][j];
+        }
+    }
+}
+
+void slopeLimiter(double** uPost, int jMax, int lMax)
+{
+    double u1Lim;
+
+    for (int j=0; j<jMax; j++)
+    {
+        if (j==0)
+        {
+            u1Lim = minmod(uPost[1][j],uPost[0][j+1]-uPost[0][j],uPost[0][j]-uPost[0][jMax-1]);
+            if (u1Lim-uPost[1][j]>1e-10)
+            {
+                uPost[1][j] = u1Lim;
+                for (int l=2; l<lMax; l++)
+                {
+                    uPost[l][j] = 0;
+                }
+            }
+        }
+        else if (j==jMax-1)
+        {
+            u1Lim = minmod(uPost[1][j],uPost[0][0]-uPost[0][j],uPost[0][j]-uPost[0][j-1]);
+            if (u1Lim-uPost[1][j]>1e-10)
+            {
+                uPost[1][j] = u1Lim;
+                for (int l=2; l<lMax; l++)
+                {
+                    uPost[l][j] = 0;
+                }
+            }
+        }
+        else
+        {
+            u1Lim = minmod(uPost[1][j],uPost[0][j+1]-uPost[0][j],uPost[0][j]-uPost[0][j-1]);
+            if (u1Lim-uPost[1][j]>1e-10)
+            {
+                uPost[1][j] = u1Lim;
+                for (int l=2; l<lMax; l++)
+                {
+                    uPost[l][j] = 0;
+                }
+            }
         }
     }
 }
