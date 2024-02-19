@@ -6,11 +6,11 @@ import os
 import random
 
 def getFunction(basis,n,x):
-    if basis=='Legendre':
+    if basis=='legendre':
         return LegendreP(n,x)
-    elif basis=='LegendreOrthonormal':
+    elif basis=='legendreOrthonormal':
         return LegendrePorthonormal(n,x)
-    elif basis=='Quadratic':
+    elif basis=='quadratic':
         return Quadratic(n,x)
     elif basis=='linear':
         return linear(n,x)
@@ -85,7 +85,7 @@ while True:
 
 inputFile.close()
 
-values = pd.read_csv('/home/jack/Documents/DG1D/Output.csv',header=None)
+values = pd.read_csv('/home/jack/Documents/DG/Output.csv',header=None)
 values = values[0].to_numpy()
 k = 0
 dx = length/jMax

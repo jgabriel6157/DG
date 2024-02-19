@@ -3,36 +3,249 @@
 #include <fstream>
 #include <cassert>
 #include <chrono>
+#include <functional>
+#include <map>
+#include <vector>
+
+class SpecialFunctions
+{
+public:
+    //Constructor
+    SpecialFunctions() {}
+
+    //Function to calculate Legendre polynomial of order n at point x
+    static double legendre(int n, double x)
+    {
+        assert (n>=0);
+        switch (n)
+        {
+            case 0:
+                return 1;
+                break;
+            case 1:
+                return x;
+                break;
+            default:
+                return ((2.0*n-1.0)*x*legendre(n-1,x)-(n-1)*legendre(n-2,x))/n;
+                break;
+        }
+    }
+
+    //Function to calculate orthonormal Legendre polynomial of order n at point x
+    static double legendreOrthonormal(int n, double x)
+    {
+        assert (n>=0);
+        return sqrt((2.0*n+1.0)/2.0)*legendre(n,x);
+    }
+
+    //Function to calculate derivate of the Legendre polynomial of order n at point x
+    static double legendreDerivative(int n, double x)
+    {
+        assert (n>=0);
+        switch (n)
+        {
+            case 0:
+                return 0;
+                break;
+            case 1:
+                return 1;
+                break;
+            default:
+                return ((2.0*n-1.0)*(x*legendreDerivative(n-1,x)+legendre(n-1,x))-(n-1)*legendreDerivative(n-2,x))/n;
+        }
+    }
+
+    //Function to calculate derivative of orthonormal Legendre polynomial of order n at point x
+    static double legendreOrthonormalDerivative(int n, double x)
+    {
+        assert(n>=0);
+        return sqrt((2.0*n+1.0)/2.0)*legendreDerivative(n,x);
+    }
+
+    //Function to calculate quadratic basis function of 'order' n at point x
+    static double quadratic(int n, double x)
+    {
+        assert(n>=0);
+        assert(n<3);
+        switch (n)
+        {
+        case 0:
+            return -x*(1.0-x)/2.0;
+            break;
+        case 1:
+            return (1.0-x)*(1.0+x);
+            break;
+        case 2:
+            return x*(1+x)/2;
+            break;
+        default:
+            return 0;
+            break;
+        }
+    }
+
+    //Function to calculate derivative of the quadratic basis function of 'order' n at point x
+    static double quadraticDerivative(int n, double x)
+    {
+        assert(n>=0);
+        assert(n<3);
+        switch (n)
+        {
+        case 0:
+            return x-1.0/2.0;
+            break;
+        case 1:
+            return -2.0*x;
+            break;
+        case 2:
+            return x+1.0/2.0;
+            break;
+        default:
+            return 0;
+            break;
+        }
+    }
+
+    //Function to calculate linear basis function of 'order' n at point x
+    static double linear(int n, double x)
+    {
+        assert(n>=0);
+        assert(n<2);
+        switch (n)
+        {
+        case 0:
+            return (1.0-x)/2.0;
+            break;
+        case 1:
+            return (1.0+x)/2.0;
+            break;
+        default:
+            return 0;
+            break;
+        }
+    }
+
+    //Function to calculate derivative of linear basis function of 'order' n at point x
+    static double linearDerivative(int n, double x)
+    {
+        assert(n>=0);
+        assert(n<2);
+        switch (n)
+        {
+        case 0:
+            return -1.0/2.0;
+            break;
+        case 1:
+            return 1.0/2.0;
+            break;
+        default:
+            return 0;
+            break;
+        }
+    }
+
+    //Square pulse (top hat) function centered at pi with length 2
+    static double topHat(double x)
+    {
+        if ((x<M_PI-1.0)||(x>M_PI+1.0))
+        {
+            return 0;
+        }
+        else
+        {
+            return 1;
+        }
+    }
+
+    //Gaussian pulse centered at pi
+    static double gaussianPulse(double x)
+    {
+        return exp(-1.0*pow(x-1.0*M_PI,2.0));
+    }
+
+    //Find roots of Legendre polynomial of order n using Newton Raphson method 
+    static std::vector<double> legendreRoots(int n)
+    {
+        std::vector<double> roots;
+
+        for (int i=0; i<n; i++)
+        {
+            double x0 = (1.0-1.0/(8.0*pow(n,2.0))+1.0/(8.0*pow(n,3.0)))*cos(M_PI*(4.0*(i+1.0)-1.0)/(4.0*n+2.0)); //intial guess
+            double x = newtonRaphson(n,x0);
+            roots.push_back(x);
+        }
+
+        return roots;
+    }
+
+private:
+    //Newton Raphson method to find root of Legendre polynomial of root n with initial guess x0
+    static double newtonRaphson(int n, double x0)
+    {
+        double x_root = x0;
+
+        while (fabs(legendre(n,x_root))>1.0e-10)
+        {
+            x_root -= legendre(n,x_root)/legendreDerivative(n,x_root);
+        }
+
+        return x_root;
+    }
+
+};
+
+class GaussianQuadrature
+{
+public:
+    //Perform Gaussian quadrature integration for two specified functions of order n_func1, n_func2 to a certain quadrature order
+    static double integrate(std::function<double(int, double)> func1, int n_func1, std::function<double(int, double)> func2, int n_func2, int quadratureOrder,
+                            std::vector<double> roots, std::vector<double> weights)
+    {
+        double y = 0;
+
+        for (int i=0; i<quadratureOrder; i++)
+        {
+            y += weights[i]*func1(n_func1,roots[i])*func2(n_func2,roots[i]);
+        }
+
+        return y;
+    }
+
+    //Calculate weights for Gaussian quadrature
+    static std::vector<double>calculateWeights(int quadratureOrder, std::vector<double> roots)
+    {
+        std::vector<double> weights;
+
+        double root;
+        double w;
+        for (int i=0; i<quadratureOrder; i++)
+        {
+            
+            root = roots[i];
+            w = 2.0/((1.0-pow(root,2.0))*pow(SpecialFunctions::legendreDerivative(quadratureOrder,root),2.0));
+            
+            weights.push_back(w);
+        }
+
+        return weights;
+    }
+};
 
 void readFile(std::string filename, std::string argName[], std::string argString[], int numberOfVariables);
 int assignInt(std::string varString);
 double assignDouble(std::string varString);
 bool assignBool(std::string varString);
 
-double getFunction(std::string basis, int n, double x, bool derivative=false);
-double LegendreP(int n, double x);
-double LegendreP_derivative(int n, double x);
-double LegendrePorthonormal(int n, double x);
-double LegendrePorthonormal_derivative(int n, double x);
-double Quadratic(int n, double x);
-double QuadraticDerivative(int n, double x);
-double linear(int n, double x);
-double linearDerivative(int n, double x);
-
 double sign(double x);
 double minmod(double a, double b, double c);
 double min(double a, double b);
 
-void LeastSquares(double* uInitialize, double xj, double dx, std::string basis, int order);
+void LeastSquares(double* uInitialize, double xj, double dx, std::function<double(int,double)> basisFunction, int order, std::function<double(double)> inputFunction);
 void MatrixMultiply(double** M1, double** M2, double** M, int rowM1, int middleSize, int columnM2);
 void MatrixMultiply(double** M, double* A1, double* A, int rowM1, int middleSize);
 void MatrixInverse(double** M, double** M_inverse, int order);
-void roots_initial(int n, double x[]);
-void roots_final(int n, double x[]);
-void weights(int n, double x[], double w[]);
-double integrate(std::string basis, int n_func1, bool derivative1, int n_func2, bool derivative2, int n, double x[], double w[]);
 
-double getError(double** u, int jMax, std::string basis, int lMax, double dx, int tMax, double dt);
+double getError(double** u, int jMax, std::function<double(int,double)> basisFunction, int lMax, double dx, int tMax, double dt, std::function<double(double)> inputFunction);
 
 void firstOrderEulerPlusTimes(double** uPre, double** uPost, double** M_invS, double** M_invF1, double** M_invF2, double** M_invF3, double** M_invF4,
                               double** uPlus, double plusFactor, double timesFactor, double dx, double dt, double a, int jMax, int lMax);
@@ -40,9 +253,9 @@ void slopeLimiter(double** uPost, int jMax, int lMax);
 
 int main(int argc, char* argv[])
 {
-    std::string argName[10] = {"a","jMax","lMax","tMax","quadratureOrder","length","dt","basis","test","alpha"};
-    std::string argString[10];
-    readFile("input.txt",argName,argString,10);
+    std::string argName[11] = {"a","jMax","lMax","tMax","quadratureOrder","length","dt","basis","test","alpha","input"};
+    std::string argString[11];
+    readFile("input.txt",argName,argString,11);
 
     double a = assignDouble(argString[0]);
     int jMax = assignInt(argString[1]);
@@ -54,6 +267,7 @@ int main(int argc, char* argv[])
     std::string basis = argString[7];
     bool test = assignBool(argString[8]);
     double alpha = assignDouble(argString[9]);
+    std::string input = argString[10];
     
     double dx = length/jMax;
     double fluxFactorPlus = (1.0+sign(a)*(1.0-alpha))/2.0;
@@ -93,28 +307,63 @@ int main(int argc, char* argv[])
         uIntermediate[l] = new double [jMax];
     }
     double* uInitialize = new double [lMax];
-    double x_roots[quadratureOrder], w[quadratureOrder];
     double xj;
     
     std::ofstream write_output("Output.csv");
     assert(write_output.is_open());
 
+    //Define map for basis string to basis function
+    std::map<std::string, std::function<double(int, double)>> basisFunctionMap = 
+    {
+        {"legendre", SpecialFunctions::legendre},
+        {"legendreDerivative", SpecialFunctions::legendreDerivative},
+        {"legendreOrthonormal", SpecialFunctions::legendreOrthonormal},
+        {"legendreOrthonormalDerivative", SpecialFunctions::legendreOrthonormalDerivative},
+        {"quadratic", SpecialFunctions::quadratic},
+        {"quadraticDerivative", SpecialFunctions::quadraticDerivative},
+        {"linear", SpecialFunctions::linear},
+        {"linearDerivative", SpecialFunctions::linearDerivative}
+    };
+    auto basisFunctionIterator = basisFunctionMap.find(basis);
+    auto basisFunctionIteratorDerivative = basisFunctionMap.find(basis+"Derivative");
+    if (basisFunctionIterator == basisFunctionMap.end())
+    {
+        std::cerr << "Unknown function: " << basis << "\n";
+        return 1;
+    }
+    std::function<double(int, double)> basisFunction = basisFunctionIterator->second; //Grab basis function
+    std::function<double(int, double)> basisFunctionDerivative = basisFunctionIteratorDerivative->second; //Grab basis function derivative
+
+    //Define map for input string to input function
+    std::map<std::string, std::function<double(double)>> inputFunctionMap = 
+    {
+        {"sin", sin},
+        {"topHat", SpecialFunctions::topHat},
+        {"pulse", SpecialFunctions::gaussianPulse}
+    };
+    auto inputFunctionIterator = inputFunctionMap.find(input);
+    if (inputFunctionIterator == inputFunctionMap.end())
+    {
+        std::cerr << "Unknown function: " << input << "\n";
+        return 1;
+    }
+    std::function<double(double)> inputFunction = inputFunctionIterator->second; //Grab input function
+
     auto start = std::chrono::high_resolution_clock::now();
 
-    roots_initial(quadratureOrder,x_roots);
-    roots_final(quadratureOrder,x_roots);
-    weights(quadratureOrder,x_roots,w);
+    std::vector<double> roots = SpecialFunctions::legendreRoots(quadratureOrder);
+    std::vector<double> weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
 
     for (int i=0; i<lMax; i++)
     {
         for (int j=0; j<lMax; j++)
         {
-            M[i][j] = integrate(basis,i,false,j,false,quadratureOrder,x_roots,w)/2.0;
-            S[i][j] = integrate(basis,i,true,j,false,quadratureOrder,x_roots,w);
-            F1[i][j] = fluxFactorPlus*getFunction(basis,i,1)*getFunction(basis,j,1);
-            F2[i][j] = fluxFactorPlus*getFunction(basis,i,-1)*getFunction(basis,j,1);
-            F3[i][j] = fluxFactorMinus*getFunction(basis,i,1)*getFunction(basis,j,-1);
-            F4[i][j] = fluxFactorMinus*getFunction(basis,i,-1)*getFunction(basis,j,-1);
+            M[i][j] = GaussianQuadrature::integrate(basisFunction,i,basisFunction,j,quadratureOrder,roots,weights)/2;
+            S[i][j] = GaussianQuadrature::integrate(basisFunctionDerivative,i,basisFunction,j,quadratureOrder,roots,weights);
+            F1[i][j] = fluxFactorPlus*(basisFunction(i,1))*(basisFunction(j,1));
+            F2[i][j] = fluxFactorPlus*(basisFunction(i,-1))*(basisFunction(j,1));
+            F3[i][j] = fluxFactorMinus*(basisFunction(i,1))*(basisFunction(j,-1));
+            F4[i][j] = fluxFactorMinus*(basisFunction(i,-1))*(basisFunction(j,-1));
             if (fabs(M[i][j]) < 1e-10)
             {
                 M[i][j] = 0;
@@ -158,7 +407,7 @@ int main(int argc, char* argv[])
     for (int j=0; j<jMax; j++)
     {
         xj = j*dx+dx/2.0;
-        LeastSquares(uInitialize, xj, dx, basis, lMax);
+        LeastSquares(uInitialize, xj, dx, basisFunction, lMax, inputFunction);
         for (int l=0; l<lMax; l++)
         {
             uPre[l][j] = uInitialize[l];
@@ -174,7 +423,7 @@ int main(int argc, char* argv[])
 
         firstOrderEulerPlusTimes(uIntermediate,uPost,M_invS,M_invF1,M_invF2,M_invF3,M_invF4,uPre,1.0/3.0,2.0/3.0,dx,dt,a,jMax,lMax);
 
-        slopeLimiter(uPost,jMax,lMax);
+        // slopeLimiter(uPost,jMax,lMax);
 
         for (int j=0; j<jMax; j++)
         {
@@ -191,7 +440,7 @@ int main(int argc, char* argv[])
 
     if (test)
     {
-        std::cout << getError(uPre, jMax, basis, lMax, dx, tMax, dt) << "\n";
+        std::cout << getError(uPre, jMax, basisFunction, lMax, dx, tMax, dt, inputFunction) << "\n";
     }
 
     for (int j=0; j<jMax; j++)
@@ -429,7 +678,7 @@ double min(double a, double b)
     }
 }
 
-void LeastSquares(double* uInitialize, double xj, double dx, std::string basis, int order)
+void LeastSquares(double* uInitialize, double xj, double dx, std::function<double(int,double)> basisFunction, int order, std::function<double(double)> inputFunction)
 {
     //Compute initial condition using Least Squares method
     double x;
@@ -454,20 +703,11 @@ void LeastSquares(double* uInitialize, double xj, double dx, std::string basis, 
     for (int i=0; i<10; i++)
     {
         x = xj-dx/2.0+i*dx/9.0;
-        // y[i] = sin(x);
-        // y[i] = exp(-1.0*pow(x-1.0*M_PI,2.0));
-        if ((x<M_PI-1)||(x>M_PI+1))
-        {
-            y[i] = 0;
-        }
-        else
-        {
-            y[i] = 1;
-        }
+        y[i] = inputFunction(x);
         for (int l=0; l<order; l++)
         {
-            bigX[i][l] = getFunction(basis,l,2.0*(x-xj)/dx);
-            bigXT[l][i] = getFunction(basis,l,2.0*(x-xj)/dx);
+            bigX[i][l] = basisFunction(l,2.0*(x-xj)/dx);
+            bigXT[l][i] = basisFunction(l,2.0*(x-xj)/dx);
         }
     }
 
@@ -503,243 +743,7 @@ void LeastSquares(double* uInitialize, double xj, double dx, std::string basis, 
     delete[] y;
 }
 
-double getFunction(std::string basis, int n, double x, bool derivative)
-{
-    if (basis=="Legendre")
-    {
-        if (!derivative)
-        {
-            return LegendreP(n,x);
-        }
-        else
-        {
-            return LegendreP_derivative(n,x);
-        }
-    }
-    else if (basis=="LegendreOrthonormal")
-    {
-        if (!derivative)
-        {
-            return LegendrePorthonormal(n,x);
-        }
-        else
-        {
-            return LegendrePorthonormal_derivative(n,x);
-        }
-    }
-    else if (basis=="Quadratic")
-    {
-        if (!derivative)
-        {
-            return Quadratic(n,x);
-        }
-        else
-        {
-            return QuadraticDerivative(n,x);
-        }
-    }
-    else if (basis=="linear")
-    {
-        if (!derivative)
-        {
-            return linear(n,x);
-        }
-        else
-        {
-            return linearDerivative(n,x);
-        }
-    }
-    else
-    {
-        return 0;
-    }
-
-}
-
-double LegendreP(int n, double x)
-{
-    //Calculate P_n(x), the n-th order Legendre polynomial at x
-    assert (n>=0);
-    switch (n)
-    {
-        case 0:
-            return 1;
-            break;
-        case 1:
-            return x;
-            break;
-        default:
-            return ((2.0*n-1.0)*x*LegendreP(n-1,x)-(n-1)*LegendreP(n-2,x))/n;
-            break;
-    }
-}
-
-double LegendrePorthonormal(int n, double x)
-{
-    //Make P_n(x), the n-th order Legendre polynomial at x, normal
-    assert (n>=0);
-    return sqrt((2.0*n+1.0)/2.0)*LegendreP(n,x);
-}
-
-double LegendreP_derivative(int n, double x)
-{
-    //Calculate P'_n(x), the first derivative of the n-th order Legendre polynomial at x
-    assert (n>=0);
-    switch (n)
-    {
-        case 0:
-            return 0;
-            break;
-        case 1:
-            return 1;
-            break;
-        default:
-            return ((2.0*n-1.0)*(x*LegendreP_derivative(n-1,x)+LegendreP(n-1,x))-(n-1)*LegendreP_derivative(n-2,x))/n;
-    }
-}
-
-double LegendrePorthonormal_derivative(int n, double x)
-{
-    //Make P'_n(x), the first derivative of the n-th order Legendre polynomial at x, normal
-    assert(n>=0);
-    return sqrt((2.0*n+1.0)/2.0)*LegendreP_derivative(n,x);
-}
-
-double Quadratic(int n, double x)
-{
-    //Quadratic basis functions
-    assert(n>=0);
-    assert(n<3);
-    switch (n)
-    {
-    case 0:
-        return -x*(1.0-x)/2.0;
-        break;
-    case 1:
-        return (1.0-x)*(1.0+x);
-        break;
-    case 2:
-        return x*(1+x)/2;
-        break;
-    default:
-        return 0;
-        break;
-    }
-}
-
-double QuadraticDerivative(int n, double x)
-{
-    //Derivative of quadratic basis functions
-    assert(n>=0);
-    assert(n<3);
-    switch (n)
-    {
-    case 0:
-        return x-1.0/2.0;
-        break;
-    case 1:
-        return -2.0*x;
-        break;
-    case 2:
-        return x+1.0/2.0;
-        break;
-    default:
-        return 0;
-        break;
-    }
-}
-
-double linear(int n, double x)
-{
-    //Linear basis functions
-    assert(n>=0);
-    assert(n<2);
-    switch (n)
-    {
-    case 0:
-        return (1.0-x)/2.0;
-        break;
-    case 1:
-        return (1.0+x)/2.0;
-        break;
-    default:
-        return 0;
-        break;
-    }
-}
-
-double linearDerivative(int n, double x)
-{
-    //Linear basis functions
-    assert(n>=0);
-    assert(n<2);
-    switch (n)
-    {
-    case 0:
-        return -1.0/2.0;
-        break;
-    case 1:
-        return 1.0/2.0;
-        break;
-    default:
-        return 0;
-        break;
-    }
-}
-
-void roots_initial(int n, double x[])
-{
-    //Initial guess of roots of Legendre Polynomial of order n
-    assert(n>=0);
-    for (int i=0; i<n; i++)
-    {
-        x[i] = (1.0-1.0/(8.0*pow(n,2.0))+1.0/(8.0*pow(n,3.0)))*cos(M_PI*(4.0*(i+1.0)-1.0)/(4.0*n+2.0));
-    }
-
-}
-
-void roots_final(int n, double x[])
-{
-    //Newton's method to find roots of Legendre Polynomial of order n
-    double x_root;
-    assert(n>=0);
-    for (int i=0; i<n; i++)
-    {
-        x_root = x[i];
-        while (fabs(LegendreP(n,x_root))>1.0e-10)
-        {
-            x_root = x_root-LegendreP(n,x_root)/LegendreP_derivative(n,x_root);
-        }
-        x[i] = x_root;
-    }
-
-}
-
-void weights(int n, double x[], double w[])
-{
-    //Calculate weights for order n Gaussian Quadrature integration using Legendre points (note order of 2n+1 needed to integrate function of order n)
-    assert(n>=0);
-    double x_root;
-    for (int i=0; i<n; i++)
-    {
-        x_root = x[i];
-        w[i] = 2.0/((1.0-pow(x_root,2.0))*pow(LegendreP_derivative(n,x_root),2.0));
-    }
-}
-
-double integrate(std::string basis, int n_func1, bool derivative1, int n_func2, bool derivative2, int n, double x[], double w[])
-{
-    //Integrate two functions of order n_func1 and n_func2
-    assert(n>=0);
-    double y=0;
-    for (int i=0; i<n; i++)
-    {
-        y+=w[i]*getFunction(basis,n_func1,x[i],derivative1)*getFunction(basis,n_func2,x[i],derivative2);
-    }
-    return y;
-}
-
-double getError(double** u, int jMax, std::string basis, int lMax, double dx, int tMax, double dt)
+double getError(double** u, int jMax, std::function<double(int,double)> basisFunction, int lMax, double dx, int tMax, double dt, std::function<double(double)> inputFunction)
 {
     double error = 0;
     double solutionSum = 0;
@@ -751,18 +755,20 @@ double getError(double** u, int jMax, std::string basis, int lMax, double dx, in
             x[i] = j*dx+i*dx/9.0;
             for (int l=0; l<lMax; l++)
             {
-                y[i]+=u[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-(j*dx+dx/2.0)));
+                y[i]+=u[l][j]*basisFunction(l,(2.0/dx)*(x[i]-(j*dx+dx/2.0)));
             }
+            sol[i] = inputFunction(x[i]);
+            // sol[i] = inputFunction(x[i]-2.0*M_PI*tMax*dt);
             // sol[i] = sin(x[i]-2.0*M_PI*tMax*dt);
             // sol[i] = exp(-1.0*pow(x[i]-1.0*M_PI-2.0*M_PI*(tMax*dt),2.0));
-            if ((x[i]<M_PI-1.0)||(x[i]>M_PI+1.0))
-            {
-                sol[i] = 0;
-            }
-            else
-            {
-                sol[i] = 1;
-            }
+            // if ((x[i]<M_PI-1.0)||(x[i]>M_PI+1.0))
+            // {
+            //     sol[i] = 0;
+            // }
+            // else
+            // {
+            //     sol[i] = 1;
+            // }
             error+=pow(y[i]-sol[i],2.0);
             solutionSum+=pow(sol[i],2.0);
         }
