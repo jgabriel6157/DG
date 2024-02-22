@@ -21,6 +21,10 @@ public:
 
     static double topHat(double x);
     static double gaussianPulse(double x);
+
+    static double sign(double x);
+    static double min(double a, double b);
+    static double minmod(double a, double b, double c);
 };
 
 

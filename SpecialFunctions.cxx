@@ -183,9 +183,49 @@ Vector SpecialFunctions::legendreRoots(int n)
     return roots;
 }
 
+//Return sign of value (0 = 0)
+double SpecialFunctions::sign(double x)
+{
+    if (x>0)
+    {
+        return 1.0;
+    }
+    else if (x<0)
+    {
+        return -1.0;
+    }
+    else
+    {
+        return 0;
+    }
+}
 
+//Return smaller value between a,b
+double SpecialFunctions::min(double a, double b)
+{
+    if (a<b)
+    {
+        return a;
+    }
+    else
+    {
+        return b;
+    }
+}
 
-
+//Return minmod of a,b,c
+double SpecialFunctions::minmod(double a, double b, double c)
+{
+    double s = (sign(a)+sign(b)+sign(c))/3.0;
+    if (fabs(s)==1)
+    {
+        return s*fabs(min(min(a,b),c));
+    }
+    else
+    {
+        return 0;
+    }
+}
 
 
 
