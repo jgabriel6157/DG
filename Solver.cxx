@@ -70,10 +70,6 @@ void Solver::initialize(std::function<double(int,double)> basisFunction, std::fu
         double x;
         Vector y(10);
         Matrix bigX(10,lMax);
-        Matrix bigXT(lMax,10);
-        Matrix bigXprod(lMax,lMax);
-        Matrix bigXprodInv(lMax,lMax);
-        Matrix hugeX(lMax,10);
 
         for (int i=0; i<10; i++)
         {
@@ -82,17 +78,10 @@ void Solver::initialize(std::function<double(int,double)> basisFunction, std::fu
             for (int l=0; l<lMax; l++)
             {
                 bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
-                bigXT(l,i) = basisFunction(l,2.0*(x-xj)/dx);
             }
         }
 
-        bigXprod = bigXT*bigX;
-
-        bigXprodInv = bigXprod.CalculateInverse();
-
-        hugeX = bigXprodInv*bigXT;
-
-        uInitialize = hugeX*y;
+        uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
 
         for (int l=0; l<lMax; l++)
         {

@@ -243,6 +243,19 @@ Matrix Matrix::CalculateInverse() const
     return mInverse;
 }
 
+Matrix Matrix::Transpose() const
+{
+    Matrix transposed(mNumCols, mNumRows);
+    for (int i=0; i<mNumRows; i++)
+    {
+        for (int j=0; j<mNumCols; j++)
+        {
+            transposed(j,i) = mData[i][j];
+        }
+    }
+    return transposed;
+}
+
 // Overloading matrix multiplied by a vector
 Vector operator*(const Matrix& m, const Vector& v)
 {

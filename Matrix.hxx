@@ -25,6 +25,7 @@ public:
     // Matrix multiplication
     Matrix operator*(const Matrix& otherMatrix);
     Matrix CalculateInverse() const;
+    Matrix Transpose() const;
     // declare vector multiplication friendship
     friend Vector operator*(const Matrix& m, const Vector& v);
     friend Vector operator*(const Vector& v, const Matrix& m);
