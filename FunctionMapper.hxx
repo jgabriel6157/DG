@@ -1,65 +1,67 @@
-// #ifndef FUNCTION_MAPPER_HPP
-// #define FUNCTION_MAPPER_HPP
-
-// #include <functional>
-// #include <string>
-// #include <map>
-// #include "SpecialFunctions.hxx"
-
-// class FunctionMapper {
-// public:
-//     // Define the type of function
-//     using FunctionType1 = std::function<double(int, double)>;
-//     using FunctionType2 = std::function<double(double)>;
-
-//     // Initialize the map with function names and corresponding functions
-//     static void initializeMap();
-
-//     // Function to create function based on function name
-//     template<typename FunctionType, typename... Args>
-//     static FunctionType getFunction(const std::string& functionName);
-
-// private:
-//     // Map to store function names and corresponding functions
-//     static std::map<std::string, FunctionType1> functionMap1;
-//     static std::map<std::string, FunctionType2> functionMap2;
-
-//     // Function to get the appropriate map based on function type
-//     template<typename FunctionType>
-//     static auto& getFunctionMap();
-// };
-
-// #endif
-
-#ifndef FUNCTION_FACTORY_HPP
-#define FUNCTION_FACTORY_HPP
+#ifndef FUNCTIONMAPPERHEADERDEF
+#define FUNCTIONMAPPERHEADERDEF
 
 #include <functional>
 #include <string>
 #include <map>
+#include <cmath>
+#include <iostream>
+#include "SpecialFunctions.hxx"
 
-class FunctionFactory {
+class FunctionMapper 
+{
 public:
     // Define the type of function
     using FunctionType1 = std::function<double(int, double)>;
     using FunctionType2 = std::function<double(double)>;
 
     // Initialize the map with function names and corresponding functions
-    static void initializeMaps();
+    static void initializeMap();
 
+    // Template functions must be defined in header file
     // Function to create function based on function name
     template<typename FunctionType, typename... Args>
-    static FunctionType createFunction(const std::string& functionName);
+    static FunctionType getFunction(const std::string& functionName) 
+    {
+        auto& functionMap = getFunctionMap<FunctionType>();
+        auto iterator = functionMap.find(functionName);
+        if (iterator != functionMap.end()) 
+        {
+            return iterator->second;
+        } 
+        else 
+        {
+            std::cerr << "Unknown function: " << functionName << "\n";
+            // Return a default value based on the function type
+            if constexpr (std::is_same_v<FunctionType, FunctionType1>) 
+            {
+                return SpecialFunctions::linear; // Return a default function for FunctionType1
+            } 
+            else 
+            {
+                return [](double x) { return 1.0; }; // Return a default function for FunctionType2
+            }
+        }
+    }
 
 private:
     // Map to store function names and corresponding functions
     static std::map<std::string, FunctionType1> functionMap1;
     static std::map<std::string, FunctionType2> functionMap2;
 
-    // Function to get the appropriate map based on function type
+    // Template functions must be defined in header file
     template<typename FunctionType>
-    static auto& getFunctionMap();
+    static auto& getFunctionMap() 
+    {
+        if constexpr (std::is_same_v<FunctionType, FunctionType1>) 
+        {
+            return functionMap1;
+        } 
+        else if constexpr (std::is_same_v<FunctionType, FunctionType2>) 
+        {
+            return functionMap2;
+        }
+    }
 };
 
 #endif
-

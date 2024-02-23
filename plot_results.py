@@ -85,7 +85,7 @@ while True:
 
 inputFile.close()
 
-values = pd.read_csv('/home/jack/Documents/DG/Output.csv',header=None)
+values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
 k = 0
 dx = length/jMax

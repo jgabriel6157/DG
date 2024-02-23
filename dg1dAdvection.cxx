@@ -11,7 +11,7 @@
 #include "SpecialFunctions.hxx"
 #include "GaussianQuadrature.hxx"
 #include "Solver.hxx"
-// #include "FunctionMapper.hxx"
+#include "FunctionMapper.hxx"
 
 void readFile(std::string filename, std::string argName[], std::string argString[], int numberOfVariables);
 int assignInt(std::string varString);
@@ -37,51 +37,16 @@ int main(int argc, char* argv[])
     std::string input = argString[10];
     bool slopeLimit = assignBool(argString[11]);
 
-    // auto basisFunction = FunctionMapper::getFunction<FunctionMapper::FunctionType1>(basis);
-    // auto basisFunctionDerivative = FunctionMapper::getFunction<FunctionMapper::FunctionType1>(basis+"Derivative");
-    // auto inputFunction = FunctionMapper::getFunction<FunctionMapper::FunctionType2>(input);
+    FunctionMapper::initializeMap();
+
+    auto basisFunction = FunctionMapper::getFunction<std::function<double(int,double)>>(basis);
+    auto basisFunctionDerivative = FunctionMapper::getFunction<FunctionMapper::FunctionType1>(basis+"Derivative");
+    auto inputFunction = FunctionMapper::getFunction<FunctionMapper::FunctionType2>(input);
     
     double dx = length/jMax;
     
     std::ofstream write_output("Output.csv");
     assert(write_output.is_open());
-
-    //Define map for basis string to basis function
-    std::map<std::string, std::function<double(int, double)>> basisFunctionMap = 
-    {
-        {"legendre", SpecialFunctions::legendre},
-        {"legendreDerivative", SpecialFunctions::legendreDerivative},
-        {"legendreOrthonormal", SpecialFunctions::legendreOrthonormal},
-        {"legendreOrthonormalDerivative", SpecialFunctions::legendreOrthonormalDerivative},
-        {"quadratic", SpecialFunctions::quadratic},
-        {"quadraticDerivative", SpecialFunctions::quadraticDerivative},
-        {"linear", SpecialFunctions::linear},
-        {"linearDerivative", SpecialFunctions::linearDerivative}
-    };
-    auto basisFunctionIterator = basisFunctionMap.find(basis);
-    auto basisFunctionIteratorDerivative = basisFunctionMap.find(basis+"Derivative");
-    if (basisFunctionIterator == basisFunctionMap.end())
-    {
-        std::cerr << "Unknown function: " << basis << "\n";
-        return 1;
-    }
-    std::function<double(int, double)> basisFunction = basisFunctionIterator->second; //Grab basis function
-    std::function<double(int, double)> basisFunctionDerivative = basisFunctionIteratorDerivative->second; //Grab basis function derivative
-
-    //Define map for input string to input function
-    std::map<std::string, std::function<double(double)>> inputFunctionMap = 
-    {
-        {"sin", [](double x){return sin(x);}},
-        {"topHat", SpecialFunctions::topHat},
-        {"pulse", SpecialFunctions::gaussianPulse}
-    };
-    auto inputFunctionIterator = inputFunctionMap.find(input);
-    if (inputFunctionIterator == inputFunctionMap.end())
-    {
-        std::cerr << "Unknown function: " << input << "\n";
-        return 1;
-    }
-    std::function<double(double)> inputFunction = inputFunctionIterator->second; //Grab input function
 
     auto start = std::chrono::high_resolution_clock::now();
 
