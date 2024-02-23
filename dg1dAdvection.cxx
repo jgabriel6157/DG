@@ -71,7 +71,7 @@ int main(int argc, char* argv[])
     //Define map for input string to input function
     std::map<std::string, std::function<double(double)>> inputFunctionMap = 
     {
-        {"sin", sin},
+        {"sin", [](double x){return sin(x);}},
         {"topHat", SpecialFunctions::topHat},
         {"pulse", SpecialFunctions::gaussianPulse}
     };

@@ -134,7 +134,7 @@ Vector Vector::operator*(double a) const
 double Vector::operator*(const Vector& v1) const
 {
     assert(mSize == v1.mSize);
-    double result;
+    double result=0;
     for (int i=0; i<mSize; i++)
     {
         result += mData[i] * v1.mData[i];
