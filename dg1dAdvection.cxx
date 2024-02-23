@@ -11,6 +11,7 @@
 #include "SpecialFunctions.hxx"
 #include "GaussianQuadrature.hxx"
 #include "Solver.hxx"
+// #include "FunctionMapper.hxx"
 
 void readFile(std::string filename, std::string argName[], std::string argString[], int numberOfVariables);
 int assignInt(std::string varString);
@@ -19,9 +20,9 @@ bool assignBool(std::string varString);
 
 int main(int argc, char* argv[])
 {
-    std::string argName[11] = {"a","jMax","lMax","tMax","quadratureOrder","length","dt","basis","test","alpha","input"};
-    std::string argString[11];
-    readFile("input.txt",argName,argString,11);
+    std::string argName[12] = {"a","jMax","lMax","tMax","quadratureOrder","length","dt","basis","test","alpha","input","slopeLimiter"};
+    std::string argString[12];
+    readFile("input.txt",argName,argString,12);
 
     double a = assignDouble(argString[0]);
     int jMax = assignInt(argString[1]);
@@ -34,25 +35,13 @@ int main(int argc, char* argv[])
     bool test = assignBool(argString[8]);
     double alpha = assignDouble(argString[9]);
     std::string input = argString[10];
+    bool slopeLimit = assignBool(argString[11]);
 
-    bool slopeLimit = true;
+    // auto basisFunction = FunctionMapper::getFunction<FunctionMapper::FunctionType1>(basis);
+    // auto basisFunctionDerivative = FunctionMapper::getFunction<FunctionMapper::FunctionType1>(basis+"Derivative");
+    // auto inputFunction = FunctionMapper::getFunction<FunctionMapper::FunctionType2>(input);
     
     double dx = length/jMax;
-    double fluxFactorPlus = (1.0+SpecialFunctions::sign(a)*(1.0-alpha))/2.0;
-    double fluxFactorMinus = (1.0-SpecialFunctions::sign(a)*(1.0-alpha))/2.0;
-
-    Matrix M(lMax,lMax);
-    Matrix M_inv(lMax,lMax);
-    Matrix S(lMax,lMax);
-    Matrix F1(lMax,lMax);
-    Matrix F2(lMax,lMax);
-    Matrix F3(lMax,lMax);
-    Matrix F4(lMax,lMax);
-    Matrix M_invS(lMax,lMax);
-    Matrix M_invF1(lMax,lMax);
-    Matrix M_invF2(lMax,lMax);
-    Matrix M_invF3(lMax,lMax);
-    Matrix M_invF4(lMax,lMax);
     
     std::ofstream write_output("Output.csv");
     assert(write_output.is_open());
@@ -96,39 +85,9 @@ int main(int argc, char* argv[])
 
     auto start = std::chrono::high_resolution_clock::now();
 
-    Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
-    Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
+    Solver solver(dx,dt,a,jMax,lMax,alpha);
 
-    for (int i=0; i<lMax; i++)
-    {
-        for (int j=0; j<lMax; j++)
-        {
-            M(i,j) = GaussianQuadrature::integrate(basisFunction,i,basisFunction,j,quadratureOrder,roots,weights)/2;
-            S(i,j) = GaussianQuadrature::integrate(basisFunctionDerivative,i,basisFunction,j,quadratureOrder,roots,weights);
-            F1(i,j) = fluxFactorPlus*(basisFunction(i,1))*(basisFunction(j,1));
-            F2(i,j) = fluxFactorPlus*(basisFunction(i,-1))*(basisFunction(j,1));
-            F3(i,j) = fluxFactorMinus*(basisFunction(i,1))*(basisFunction(j,-1));
-            F4(i,j) = fluxFactorMinus*(basisFunction(i,-1))*(basisFunction(j,-1));
-            if (fabs(M(i,j)) < 1e-10)
-            {
-                M(i,j) = 0;
-            }
-            if (fabs(S(i,j)) < 1e-10)
-            {
-                S(i,j) = 0;
-            }
-        }
-    }
-    
-    M_inv = M.CalculateInverse();
-
-    M_invS = M_inv*S;
-    M_invF1 = M_inv*F1;
-    M_invF2 = M_inv*F2;
-    M_invF3 = M_inv*F3;
-    M_invF4 = M_inv*F4;
-
-    Solver solver(dx, dt, a, jMax, lMax, M_invS, M_invF1, M_invF2, M_invF3, M_invF4);
+    solver.createMatrices(basisFunction, basisFunctionDerivative, quadratureOrder);
 
     solver.initialize(basisFunction, inputFunction);
 

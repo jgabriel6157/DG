@@ -3,15 +3,61 @@
 #include "Matrix.hxx"
 #include "Vector.hxx"
 #include "SpecialFunctions.hxx"
+#include "GaussianQuadrature.hxx"
 #include "Solver.hxx"
 
 //constructor
-Solver::Solver(double dx, double dt, double a, int jMax, int lMax, Matrix& M_invS, Matrix& M_invF1, Matrix& M_invF2, Matrix& M_invF3, Matrix& M_invF4)
-    : dx(dx), dt(dt), a(a), jMax(jMax), lMax(lMax), M_invS(M_invS), M_invF1(M_invF1), M_invF2(M_invF2), M_invF3(M_invF3), M_invF4(M_invF4),
+Solver::Solver(double dx, double dt, double a, int jMax, int lMax, double alpha)
+    : dx(dx), dt(dt), a(a), jMax(jMax), lMax(lMax), alpha(alpha),
+      M_invS(lMax,lMax), M_invF1(lMax,lMax), M_invF2(lMax,lMax), M_invF3(lMax,lMax), M_invF4(lMax,lMax),
       uPre(lMax,jMax), uIntermediate(lMax,jMax), uPost(lMax,jMax) {}
 
 //deconstructor
 Solver::~Solver() {}
+
+void Solver::createMatrices(std::function<double(int,double)> basisFunction, std::function<double(int,double)> basisFunctionDerivative, int quadratureOrder)
+{
+    Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
+    Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
+    Matrix M(lMax,lMax);
+    Matrix S(lMax,lMax);
+    Matrix F1(lMax,lMax);
+    Matrix F2(lMax,lMax);
+    Matrix F3(lMax,lMax);
+    Matrix F4(lMax,lMax);   
+    Matrix M_inv(lMax,lMax);
+    double fluxFactorPlus = (1.0+SpecialFunctions::sign(a)*(1.0-alpha))/2.0;
+    double fluxFactorMinus = (1.0-SpecialFunctions::sign(a)*(1.0-alpha))/2.0;
+
+    for (int i=0; i<lMax; i++)
+    {
+        for (int j=0; j<lMax; j++)
+        {
+            M(i,j) = GaussianQuadrature::integrate(basisFunction,i,basisFunction,j,quadratureOrder,roots,weights)/2;
+            S(i,j) = GaussianQuadrature::integrate(basisFunctionDerivative,i,basisFunction,j,quadratureOrder,roots,weights);
+            F1(i,j) = fluxFactorPlus*(basisFunction(i,1))*(basisFunction(j,1));
+            F2(i,j) = fluxFactorPlus*(basisFunction(i,-1))*(basisFunction(j,1));
+            F3(i,j) = fluxFactorMinus*(basisFunction(i,1))*(basisFunction(j,-1));
+            F4(i,j) = fluxFactorMinus*(basisFunction(i,-1))*(basisFunction(j,-1));
+            if (fabs(M(i,j)) < 1e-10)
+            {
+                M(i,j) = 0;
+            }
+            if (fabs(S(i,j)) < 1e-10)
+            {
+                S(i,j) = 0;
+            }
+        }
+    }
+    
+    M_inv = M.CalculateInverse();
+
+    M_invS = M_inv*S;
+    M_invF1 = M_inv*F1;
+    M_invF2 = M_inv*F2;
+    M_invF3 = M_inv*F3;
+    M_invF4 = M_inv*F4;
+}
 
 //initialize using the Least Squares method
 void Solver::initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunction)

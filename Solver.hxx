@@ -12,6 +12,7 @@ private:
     double a;
     int jMax;
     int lMax;
+    double alpha;
     Matrix M_invS;
     Matrix M_invF1;
     Matrix M_invF2;
@@ -24,10 +25,13 @@ private:
     void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor);
 public:
     //constructor 
-    Solver(double dx, double dt, double a, int jMax, int lMax, Matrix& M_invS, Matrix& M_invF1, Matrix& M_invF2, Matrix& M_invF3, Matrix& M_invF4);
+    Solver(double dx, double dt, double a, int jMax, int lMax, double alpha);
     
     //deconstructor
     ~Solver();
+
+    //create the mass, stiffness and flux matricies as used by the solver
+    void createMatrices(std::function<double(int,double)> basisFunction, std::function<double(int,double)> basisFunctionDerivative, int quadratureOrder);
 
     //initialize using the Least Squares method
     void initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunction);

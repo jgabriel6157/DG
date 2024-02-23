@@ -1,8 +1,8 @@
 CC = g++
-CFLAGS = -std=c++11 -Wall
+CFLAGS = -std=c++17 -Wall
 
 # Source files
-SRCS = Vector.cxx Matrix.cxx SpecialFunctions.cxx GaussianQuadrature.cxx Solver.cxx dg1dAdvection.cxx
+SRCS = Vector.cxx Matrix.cxx SpecialFunctions.cxx GaussianQuadrature.cxx Solver.cxx FunctionMapper.cxx dg1dAdvection.cxx
 
 # Object files
 OBJS = $(SRCS:.cxx=.o)
