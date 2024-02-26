@@ -20,9 +20,9 @@ bool assignBool(std::string varString);
 
 int main(int argc, char* argv[])
 {
-    std::string argName[12] = {"a","jMax","lMax","tMax","quadratureOrder","length","dt","basis","test","alpha","input","slopeLimiter"};
-    std::string argString[12];
-    readFile("input.txt",argName,argString,12);
+    std::string argName[13] = {"a","jMax","lMax","tMax","quadratureOrder","length","dt","basis","test","alpha","input","slopeLimiter","nout"};
+    std::string argString[13];
+    readFile("input.txt",argName,argString,13);
 
     double a = assignDouble(argString[0]);
     int jMax = assignInt(argString[1]);
@@ -36,6 +36,7 @@ int main(int argc, char* argv[])
     double alpha = assignDouble(argString[9]);
     std::string input = argString[10];
     bool slopeLimit = assignBool(argString[11]);
+    int nout = assignInt(argString[12]);
 
     FunctionMapper::initializeMap();
 
@@ -44,6 +45,7 @@ int main(int argc, char* argv[])
     auto inputFunction = FunctionMapper::getFunction<FunctionMapper::FunctionType2>(input);
     
     double dx = length/jMax;
+    int outputTimeStep = tMax/nout;
     
     std::ofstream write_output("Output.csv");
     assert(write_output.is_open());
@@ -56,13 +58,24 @@ int main(int argc, char* argv[])
 
     solver.initialize(basisFunction, inputFunction);
 
-    for (int t=0; t<tMax; t++)
+    for (int t=0; t<=tMax; t++)
     {
         solver.advance();
 
         if (slopeLimit)
         {
             solver.slopeLimiter();
+        }
+
+        if (t%outputTimeStep==0)
+        {
+            for (int j=0; j<jMax; j++)
+            {
+                for (int l=0; l<lMax; l++)
+                {
+                    write_output << solver.getSolution(l,j) << "\n";
+                }
+            }
         }
     }
 
@@ -75,13 +88,13 @@ int main(int argc, char* argv[])
         std::cout << solver.getError(tMax, basisFunction, inputFunction) << "\n";
     }
 
-    for (int j=0; j<jMax; j++)
-    {
-        for (int l=0; l<lMax; l++)
-        {
-            write_output << solver.getSolution(l,j) << "\n";
-        }
-    }
+    // for (int j=0; j<jMax; j++)
+    // {
+    //     for (int l=0; l<lMax; l++)
+    //     {
+    //         write_output << solver.getSolution(l,j) << "\n";
+    //     }
+    // }
 
     write_output.close();
 

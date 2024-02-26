@@ -1,9 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation, PillowWriter
 import fnmatch
 import numpy as np
 import os
 import random
+import time
 
 def getFunction(basis,n,x):
     if basis=='legendre':
@@ -80,39 +82,53 @@ while True:
         tMax = int(inputParam[inputParam.index('=')+2:-1])
     elif inputParam[0:2]=='dt':
         dt = float(inputParam[inputParam.index('=')+2:-1])
+    elif inputParam[0:4]=='nout':
+        nout = int(inputParam[inputParam.index('=')+2:-1])
     if not inputParam:
         break
-
+nout+=1
 inputFile.close()
+
+fig,ax = plt.subplots()
+lines = [ax.plot([], [], lw=2,color='red')[0] for _ in range(jMax)]
+plt.xlim(0,2*np.pi)
+plt.ylim(-1.5,1.5)
 
 values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
 k = 0
 dx = length/jMax
-u = np.zeros((lMax,jMax))
-for j in range(jMax):
-    for l in range(lMax):
-        u[l][j] = values[k]
-        k=k+1
+u = np.zeros((lMax,jMax,nout))
+for t in range(nout):
+    for j in range(jMax):
+        for l in range(lMax):
+            u[l][j][t] = values[k]
+            k=k+1
 
+def init():
+    for line in lines:
+        line.set_data([], [])
+    return lines
 
-for j in range(jMax):
+def generate_data(t,j):
     y = np.zeros(10)
     sol = np.zeros(10)
     x = np.zeros(10)
     for i in range(10):
         x[i] = j*dx+i*dx/9.0
         for l in range(lMax):
-            y[i] = y[i] + u[l][j]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
-        sol[i] = np.sin(x[i])
-        # sol[i] = np.exp(-1.0*(x[i]-4.0*np.pi-2.0*np.pi*(tMax*dt))**2.0)
-        # if ((x[i]<np.pi-1.0)or(x[i]>np.pi+1.0)):
-        #     sol[i] = 0
-        # else:
-        #     sol[i] = 1
-    
-    # plt.plot(x,np.abs(sol-y))
-    plt.plot(x,y,color='red')
-    # plt.plot(x,sol,color='k',linestyle='--')
+            y[i] = y[i] + u[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
+    return x,y
+
+x = np.zeros((jMax,10))
+y = np.zeros((jMax,10))
+def animate(t):
+    for j in range(jMax):
+        x[j],y[j] = generate_data(t,j)
+    for j, line in enumerate(lines):
+        line.set_data(x[j],y[j])
+    return lines
+
+ani = FuncAnimation(fig, animate, frames=nout, init_func=init, repeat=False, interval = 100)
 
 plt.show()
