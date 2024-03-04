@@ -44,15 +44,15 @@ int main(int argc, char* argv[])
     auto basisFunctionDerivative = FunctionMapper::getFunction<FunctionMapper::FunctionType1>(basis+"Derivative");
     auto inputFunction = FunctionMapper::getFunction<FunctionMapper::FunctionType2>(input);
     
-    double dx = length/jMax;
+    lMax+=1;
+    Mesh mesh(jMax, length);
     int outputTimeStep = tMax/nout;
     
     std::ofstream write_output("Output.csv");
     assert(write_output.is_open());
 
     auto start = std::chrono::high_resolution_clock::now();
-
-    Solver solver(dx,dt,a,jMax,lMax,alpha);
+    Solver solver(mesh, dt, a, lMax, alpha);
 
     solver.createMatrices(basisFunction, basisFunctionDerivative, quadratureOrder);
 

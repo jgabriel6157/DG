@@ -5,12 +5,13 @@
 #include "SpecialFunctions.hxx"
 #include "GaussianQuadrature.hxx"
 #include "Solver.hxx"
+#include "Mesh.hxx"
 
 //constructor
-Solver::Solver(double dx, double dt, double a, int jMax, int lMax, double alpha)
-    : dx(dx), dt(dt), a(a), jMax(jMax), lMax(lMax), alpha(alpha),
+Solver::Solver(const Mesh& mesh, double dt, double a, int lMax, double alpha) 
+    : mesh(mesh), dt(dt), a(a), lMax(lMax), alpha(alpha),
       M_invS(lMax,lMax), M_invF1(lMax,lMax), M_invF2(lMax,lMax), M_invF3(lMax,lMax), M_invF4(lMax,lMax),
-      uPre(lMax,jMax), uIntermediate(lMax,jMax), uPost(lMax,jMax) {}
+      uPre(lMax,mesh.getNumCells()), uIntermediate(lMax,mesh.getNumCells()), uPost(lMax,mesh.getNumCells()) {}
 
 //deconstructor
 Solver::~Solver() {}
@@ -62,9 +63,13 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
 //initialize using the Least Squares method
 void Solver::initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunction)
 {
-    for (int j=0; j<jMax; j++)
+    const auto& cells = mesh.getCells();
+
+    for (int j=0; j<mesh.getNumCells(); j++)
     {
-        double xj = j*dx+dx/2.0;
+        double dx = cells[j].cellLength;
+        double leftVertex = cells[j].vertices[0];
+        double xj = leftVertex+dx/2.0;
         Vector uInitialize(lMax);
         
         double x;
@@ -73,7 +78,7 @@ void Solver::initialize(std::function<double(int,double)> basisFunction, std::fu
 
         for (int i=0; i<10; i++)
         {
-            x = xj-dx/2.0+i*dx/9.0;
+            x = leftVertex+i*dx/9.0;
             y[i] = inputFunction(x);
             for (int l=0; l<lMax; l++)
             {
@@ -92,8 +97,13 @@ void Solver::initialize(std::function<double(int,double)> basisFunction, std::fu
 
 void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, double timesFactor)
 {
-    for (int j=0; j<jMax; j++)
+    const auto& cells = mesh.getCells();
+
+    for (int j=0; j<mesh.getNumCells(); j++)
     {
+        int leftNeighborIndex = cells[j].neighbors[0];
+        int rightNeighborIndex = cells[j].neighbors[1];
+        double dx = cells[j].cellLength;
         for (int l=0; l<lMax; l++)
         {
             uAfter(l,j)=0;
@@ -101,22 +111,8 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             {
                 uAfter(l,j)+=M_invS(l,i)*uBefore(i,j);
                 uAfter(l,j)-=M_invF1(l,i)*uBefore(i,j);
-                if (j==0)
-                {
-                    uAfter(l,j)+=M_invF2(l,i)*uBefore(i,jMax-1);
-                }
-                else
-                {
-                    uAfter(l,j)+=M_invF2(l,i)*uBefore(i,j-1);
-                }
-                if (j==jMax-1)
-                {
-                    uAfter(l,j)-=M_invF3(l,i)*uBefore(i,0);
-                }
-                else
-                {
-                    uAfter(l,j)-=M_invF3(l,i)*uBefore(i,j+1);
-                }
+                uAfter(l,j)+=M_invF2(l,i)*uBefore(i,leftNeighborIndex);
+                uAfter(l,j)-=M_invF3(l,i)*uBefore(i,rightNeighborIndex);
                 uAfter(l,j)+=M_invF4(l,i)*uBefore(i,j);
             }
             uAfter(l,j)*=a;
@@ -144,44 +140,20 @@ void Solver::advance()
 
 void Solver::slopeLimiter()
 {
+    const auto& cells = mesh.getCells();
     double u1Lim;
 
-    for (int j=0; j<jMax; j++)
+    for (int j=0; j<mesh.getNumCells(); j++)
     {
-        if (j==0)
+        int leftNeighborIndex = cells[j].neighbors[0];
+        int rightNeighborIndex = cells[j].neighbors[1];
+        u1Lim = SpecialFunctions::minmod(uPre(1,j),uPre(0,rightNeighborIndex)-uPre(0,j),uPre(0,j)-uPre(0,leftNeighborIndex));
+        if (u1Lim-uPre(1,j)>1e-10)
         {
-            u1Lim = SpecialFunctions::minmod(uPre(1,j),uPre(0,j+1)-uPre(0,j),uPre(0,j)-uPre(0,jMax-1));
-            if (u1Lim-uPre(1,j)>1e-10)
+            uPre(1,j) = u1Lim;
+            for (int l=2; l<lMax; l++)
             {
-                uPre(1,j) = u1Lim;
-                for (int l=2; l<lMax; l++)
-                {
-                    uPre(l,j) = 0;
-                }
-            }
-        }
-        else if (j==jMax-1)
-        {
-            u1Lim = SpecialFunctions::minmod(uPre(1,j),uPre(0,0)-uPre(0,j),uPre(0,j)-uPre(0,j-1));
-            if (u1Lim-uPre(1,j)>1e-10)
-            {
-                uPre(1,j) = u1Lim;
-                for (int l=2; l<lMax; l++)
-                {
-                    uPre(l,j) = 0;
-                }
-            }
-        }
-        else
-        {
-            u1Lim = SpecialFunctions::minmod(uPre(1,j),uPre(0,j+1)-uPre(0,j),uPre(0,j)-uPre(0,j-1));
-            if (u1Lim-uPre(1,j)>1e-10)
-            {
-                uPre(1,j) = u1Lim;
-                for (int l=2; l<lMax; l++)
-                {
-                    uPre(l,j) = 0;
-                }
+                uPre(l,j) = 0;
             }
         }
     }
@@ -194,17 +166,21 @@ const double Solver::getSolution(int l, int j)
 
 const double Solver::getError(int tMax, std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunction)
 {
+    const auto& cells = mesh.getCells();
     double error = 0;
     double solutionSum = 0;
-    for (int j=0; j<jMax; j++)
+    for (int j=0; j<mesh.getNumCells(); j++)
     {
         double y[10] = {0}, sol[10], x[10];
+        double dx = cells[j].cellLength;
+        double leftVertex = cells[j].vertices[0];
+        double xj = leftVertex+dx/2.0;
         for (int i=0; i<10; i++)
         {
-            x[i] = j*dx+i*dx/9.0;
+            x[i] = leftVertex+i*dx/9.0;
             for (int l=0; l<lMax; l++)
             {
-                y[i] += uPre(l,j)*basisFunction(l,(2.0/dx)*(x[i]-(j*dx+dx/2.0)));
+                y[i] += uPre(l,j)*basisFunction(l,(2.0/dx)*(x[i]-xj));
             }
             // sol[i] = inputFunction(x[i]);
             sol[i] = inputFunction(x[i]-2.0*M_PI*tMax*dt);

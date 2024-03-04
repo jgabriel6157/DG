@@ -87,11 +87,12 @@ while True:
     if not inputParam:
         break
 nout+=1
+lMax+=1
 inputFile.close()
 
 fig,ax = plt.subplots()
 lines = [ax.plot([], [], lw=2,color='red')[0] for _ in range(jMax)]
-plt.xlim(0,2*np.pi)
+plt.xlim(0,length)
 plt.ylim(-1.5,1.5)
 
 values = pd.read_csv(fileName,header=None)

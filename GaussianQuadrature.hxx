@@ -1,5 +1,6 @@
 #ifndef GAUSSIANQUADRATUREHEADERDEF
 #define GAUSSIANQUADRATUREHEADERDEF
+
 #include "Vector.hxx"
 #include "SpecialFunctions.hxx"
 #include <functional>

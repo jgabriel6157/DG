@@ -1,5 +1,6 @@
 #ifndef SPECIALFUNCTIONSHEADERDEF
 #define SPECIALFUNCTIONSHEADERDEF
+
 #include "Vector.hxx"
 
 class SpecialFunctions

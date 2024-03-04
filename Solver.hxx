@@ -1,16 +1,19 @@
 #ifndef SOLVERHEADERDEF
 #define SOLVERHEADERDEF
+
 #include <functional>
 #include "Matrix.hxx"
 #include "Vector.hxx"
+#include "Mesh.hxx"
 
 class Solver
 {
 private:
-    double dx;
+    Mesh mesh;
+    // double dx;
     double dt;
     double a;
-    int jMax;
+    // int jMax;
     int lMax;
     double alpha;
     Matrix M_invS;
@@ -25,7 +28,8 @@ private:
     void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor);
 public:
     //constructor 
-    Solver(double dx, double dt, double a, int jMax, int lMax, double alpha);
+    // Solver(double dx, double dt, double a, int jMax, int lMax, double alpha);
+    Solver(const Mesh& mesh, double dt, double a, int lMax, double alpha);
     
     //deconstructor
     ~Solver();
