@@ -1,5 +1,6 @@
 #include <functional>
 #include <cmath>
+#include <iostream>
 #include "Matrix.hxx"
 #include "Vector.hxx"
 #include "SpecialFunctions.hxx"
@@ -11,7 +12,7 @@
 Solver::Solver(const Mesh& mesh, double dt, double a, int lMax, double alpha) 
     : mesh(mesh), dt(dt), a(a), lMax(lMax), alpha(alpha),
       M_invS(lMax,lMax), M_invF1(lMax,lMax), M_invF2(lMax,lMax), M_invF3(lMax,lMax), M_invF4(lMax,lMax),
-      uPre(lMax,mesh.getNumCells()), uIntermediate(lMax,mesh.getNumCells()), uPost(lMax,mesh.getNumCells()) {}
+      uPre(lMax*2,mesh.getNX()*mesh.getNVX()), uIntermediate(lMax*2,mesh.getNX()*mesh.getNVX()), uPost(lMax*2,mesh.getNX()*mesh.getNVX()) {}
 
 //deconstructor
 Solver::~Solver() {}
@@ -61,36 +62,55 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
 }
 
 //initialize using the Least Squares method
-void Solver::initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunction)
+void Solver::initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunction, std::string dimension)
 {
     const auto& cells = mesh.getCells();
 
-    for (int j=0; j<mesh.getNumCells(); j++)
+    //initialize the weights
+    double nx = mesh.getNX();
+    double nvx = mesh.getNVX();
+    for (int j=0; j<nx; j++)
     {
-        double dx = cells[j].cellLength;
-        double leftVertex = cells[j].vertices[0];
-        double xj = leftVertex+dx/2.0;
-        Vector uInitialize(lMax);
-        
-        double x;
-        Vector y(10);
-        Matrix bigX(10,lMax);
-
-        for (int i=0; i<10; i++)
+        for (int k=0; k<nvx; k++)
         {
-            x = leftVertex+i*dx/9.0;
-            y[i] = inputFunction(x);
+            double lStart;
+            double dx;
+            double leftVertex;
+            if (dimension=="x") //initialize the x weights
+            {
+                lStart = 0;
+                dx = cells[k+j*nvx].dx;
+                leftVertex = cells[k+j*nvx].vertices[0][0];
+            }
+            else if (dimension=="vx") //initialize the vx weights
+            {
+                lStart = lMax;
+                dx = cells[k+j*nvx].dvx;
+                leftVertex = cells[k+j*nvx].vertices[0][1];
+            }
+            double xj = leftVertex+dx/2.0;
+            Vector uInitialize(lMax);
+            
+            double x;
+            Vector y(10);
+            Matrix bigX(10,lMax);
+
+            for (int i=0; i<10; i++)
+            {
+                x = leftVertex+i*dx/9.0;
+                y[i] = inputFunction(x);
+                for (int l=0; l<lMax; l++)
+                {
+                    bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
+                }
+            }
+
+            uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
+
             for (int l=0; l<lMax; l++)
             {
-                bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
+                uPre(l+lStart,j+k*nx) = uInitialize[l];
             }
-        }
-
-        uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
-
-        for (int l=0; l<lMax; l++)
-        {
-            uPre(l,j) = uInitialize[l];
         }
     }
 }
@@ -99,11 +119,11 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
 {
     const auto& cells = mesh.getCells();
 
-    for (int j=0; j<mesh.getNumCells(); j++)
+    for (int j=0; j<mesh.getNX(); j++)
     {
         int leftNeighborIndex = cells[j].neighbors[0];
         int rightNeighborIndex = cells[j].neighbors[1];
-        double dx = cells[j].cellLength;
+        double dx = cells[j].dx;
         for (int l=0; l<lMax; l++)
         {
             uAfter(l,j)=0;
@@ -143,7 +163,7 @@ void Solver::slopeLimiter()
     const auto& cells = mesh.getCells();
     double u1Lim;
 
-    for (int j=0; j<mesh.getNumCells(); j++)
+    for (int j=0; j<mesh.getNX(); j++)
     {
         int leftNeighborIndex = cells[j].neighbors[0];
         int rightNeighborIndex = cells[j].neighbors[1];
@@ -169,11 +189,11 @@ const double Solver::getError(int tMax, std::function<double(int,double)> basisF
     const auto& cells = mesh.getCells();
     double error = 0;
     double solutionSum = 0;
-    for (int j=0; j<mesh.getNumCells(); j++)
+    for (int j=0; j<mesh.getNX(); j++)
     {
         double y[10] = {0}, sol[10], x[10];
-        double dx = cells[j].cellLength;
-        double leftVertex = cells[j].vertices[0];
+        double dx = cells[j].dx;
+        double leftVertex = cells[j].vertices[0][0];
         double xj = leftVertex+dx/2.0;
         for (int i=0; i<10; i++)
         {

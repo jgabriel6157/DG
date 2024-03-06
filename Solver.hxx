@@ -2,6 +2,7 @@
 #define SOLVERHEADERDEF
 
 #include <functional>
+#include <string>
 #include "Matrix.hxx"
 #include "Vector.hxx"
 #include "Mesh.hxx"
@@ -28,7 +29,6 @@ private:
     void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor);
 public:
     //constructor 
-    // Solver(double dx, double dt, double a, int jMax, int lMax, double alpha);
     Solver(const Mesh& mesh, double dt, double a, int lMax, double alpha);
     
     //deconstructor
@@ -38,7 +38,7 @@ public:
     void createMatrices(std::function<double(int,double)> basisFunction, std::function<double(int,double)> basisFunctionDerivative, int quadratureOrder);
 
     //initialize using the Least Squares method
-    void initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunction);
+    void initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunction, std::string dimension);
 
     //advance time step using 3rd order SSP RK
     void advance();
