@@ -21,8 +21,8 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
 {
     Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
-    Matrix M(lMax,lMax);
-    Matrix S(lMax,lMax);
+    Matrix M(lMax*lMax,lMax*lMax);
+    Matrix S(lMax*lMax,lMax*lMax);
     Matrix F1(lMax,lMax);
     Matrix F2(lMax,lMax);
     Matrix F3(lMax,lMax);
@@ -31,34 +31,42 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
     double fluxFactorPlus = (1.0+SpecialFunctions::sign(a)*(1.0-alpha))/2.0;
     double fluxFactorMinus = (1.0-SpecialFunctions::sign(a)*(1.0-alpha))/2.0;
 
-    for (int i=0; i<lMax; i++)
+    for (int i=0; i<lMax*lMax; i++)
     {
-        for (int j=0; j<lMax; j++)
+        for (int j=0; j<lMax*lMax; j++)
         {
-            M(i,j) = GaussianQuadrature::integrate(basisFunction,i,basisFunction,j,quadratureOrder,roots,weights)/2;
-            S(i,j) = GaussianQuadrature::integrate(basisFunctionDerivative,i,basisFunction,j,quadratureOrder,roots,weights);
-            F1(i,j) = fluxFactorPlus*(basisFunction(i,1))*(basisFunction(j,1));
-            F2(i,j) = fluxFactorPlus*(basisFunction(i,-1))*(basisFunction(j,1));
-            F3(i,j) = fluxFactorMinus*(basisFunction(i,1))*(basisFunction(j,-1));
-            F4(i,j) = fluxFactorMinus*(basisFunction(i,-1))*(basisFunction(j,-1));
-            if (fabs(M(i,j)) < 1e-10)
-            {
-                M(i,j) = 0;
-            }
-            if (fabs(S(i,j)) < 1e-10)
-            {
-                S(i,j) = 0;
-            }
+            int lvxi = i/lMax;
+            int lxi = i-(lvxi*lMax);
+            int lvxj = j/lMax;
+            int lxj = j-(lvxj*lMax);
+
+            M(i,j) = GaussianQuadrature::integrate(basisFunction,lxi,basisFunction,lxj,quadratureOrder,roots,weights)
+                    *GaussianQuadrature::integrate(basisFunction,lvxi,basisFunction,lvxj,quadratureOrder,roots,weights)/4;
+            S(i,j) = GaussianQuadrature::integrate(basisFunctionDerivative,lxi,basisFunction,lxj,quadratureOrder,roots,weights)
+                    *GaussianQuadrature::integrate(basisFunction,lvxi,basisFunction,lvxj,quadratureOrder,roots,weights)/2;
+
+            // F1(i,j) = fluxFactorPlus*(basisFunction(i,1))*(basisFunction(j,1));
+            // F2(i,j) = fluxFactorPlus*(basisFunction(i,-1))*(basisFunction(j,1));
+            // F3(i,j) = fluxFactorMinus*(basisFunction(i,1))*(basisFunction(j,-1));
+            // F4(i,j) = fluxFactorMinus*(basisFunction(i,-1))*(basisFunction(j,-1));
+            // if (fabs(M(i,j)) < 1e-10)
+            // {
+            //     M(i,j) = 0;
+            // }
+            // if (fabs(S(i,j)) < 1e-10)
+            // {
+            //     S(i,j) = 0;
+            // }
         }
     }
     
-    M_inv = M.CalculateInverse();
+    // M_inv = M.CalculateInverse();
 
-    M_invS = M_inv*S;
-    M_invF1 = M_inv*F1;
-    M_invF2 = M_inv*F2;
-    M_invF3 = M_inv*F3;
-    M_invF4 = M_inv*F4;
+    // M_invS = M_inv*S;
+    // M_invF1 = M_inv*F1;
+    // M_invF2 = M_inv*F2;
+    // M_invF3 = M_inv*F3;
+    // M_invF4 = M_inv*F4;
 }
 
 //initialize using the Least Squares method

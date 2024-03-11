@@ -59,7 +59,6 @@ int main(int argc, char* argv[])
     
     solver.createMatrices(basisFunction, basisFunctionDerivative, quadratureOrder);
     solver.initialize(basisFunction, inputFunction, SpecialFunctions::gaussianPulse);
-
     // for (int t=0; t<=tMax; t++)
     // {
     //     solver.advance();

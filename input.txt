@@ -1,11 +1,11 @@
 a = 2*pi
 jMax = 5
-lMax = 3
+lMax = 1
 tMax = 10000
 quadratureOrder = 20
 length = 2*pi
 dt = 0.0001
-basis = legendre
+basis = linear
 test = false
 alpha = 0
 input = sin
