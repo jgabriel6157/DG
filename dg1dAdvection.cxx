@@ -58,9 +58,7 @@ int main(int argc, char* argv[])
     Solver solver(mesh, dt, a, lMax, alpha);
     
     solver.createMatrices(basisFunction, basisFunctionDerivative, quadratureOrder);
-    
-    solver.initialize(basisFunction, inputFunction, "x");
-    solver.initialize(basisFunction, SpecialFunctions::gaussianPulse, "vx");
+    solver.initialize(basisFunction, inputFunction, SpecialFunctions::gaussianPulse);
 
     // for (int t=0; t<=tMax; t++)
     // {
@@ -95,9 +93,12 @@ int main(int argc, char* argv[])
     {
         for (int j=0; j<jMax; j++)
         {
-            for (int l=0; l<lMax*2; l++)
+            for (int lvx=0; lvx<lMax; lvx++)
             {
-                write_output << solver.getSolution(l,j+k*jMax) << "\n";
+                for (int lx=0; lx<lMax; lx++)
+                {
+                    write_output << solver.getSolution(lx+lvx*lMax,j+k*jMax) << "\n";
+                }
             }
         }
     }

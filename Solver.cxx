@@ -12,7 +12,7 @@
 Solver::Solver(const Mesh& mesh, double dt, double a, int lMax, double alpha) 
     : mesh(mesh), dt(dt), a(a), lMax(lMax), alpha(alpha),
       M_invS(lMax,lMax), M_invF1(lMax,lMax), M_invF2(lMax,lMax), M_invF3(lMax,lMax), M_invF4(lMax,lMax),
-      uPre(lMax*2,mesh.getNX()*mesh.getNVX()), uIntermediate(lMax*2,mesh.getNX()*mesh.getNVX()), uPost(lMax*2,mesh.getNX()*mesh.getNVX()) {}
+      uPre(lMax*lMax,mesh.getNX()*mesh.getNVX()), uIntermediate(lMax*lMax,mesh.getNX()*mesh.getNVX()), uPost(lMax*lMax,mesh.getNX()*mesh.getNVX()) {}
 
 //deconstructor
 Solver::~Solver() {}
@@ -62,7 +62,7 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
 }
 
 //initialize using the Least Squares method
-void Solver::initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunction, std::string dimension)
+void Solver::initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunctionX, std::function<double(double)> inputFunctionVX)
 {
     const auto& cells = mesh.getCells();
 
@@ -73,43 +73,46 @@ void Solver::initialize(std::function<double(int,double)> basisFunction, std::fu
     {
         for (int k=0; k<nvx; k++)
         {
-            double lStart;
-            double dx;
-            double leftVertex;
-            if (dimension=="x") //initialize the x weights
-            {
-                lStart = 0;
-                dx = cells[k+j*nvx].dx;
-                leftVertex = cells[k+j*nvx].vertices[0][0];
-            }
-            else if (dimension=="vx") //initialize the vx weights
-            {
-                lStart = lMax;
-                dx = cells[k+j*nvx].dvx;
-                leftVertex = cells[k+j*nvx].vertices[0][1];
-            }
-            double xj = leftVertex+dx/2.0;
-            Vector uInitialize(lMax);
+            Cell cell = cells[k+j*nvx];
+            double dx = cell.dx;
+            double dvx = cell.dvx;
+            double xStart = cell.vertices[0][0];
+            double vxStart = cell.vertices[0][1];
+
+            double xj = xStart+dx/2.0;
+            double vxj = vxStart+dvx/2.0;
+            Vector uInitialize(lMax*lMax);
             
             double x;
-            Vector y(10);
-            Matrix bigX(10,lMax);
+            double vx;
+            Vector y(100);
+            Matrix bigX(100,lMax*lMax);
 
             for (int i=0; i<10; i++)
             {
-                x = leftVertex+i*dx/9.0;
-                y[i] = inputFunction(x);
-                for (int l=0; l<lMax; l++)
+                x = xStart+i*dx/9.0;
+                for (int j=0; j<10; j++)
                 {
-                    bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
+                    vx = vxStart+j*dvx/9.0;
+                    y[i+j*10] = inputFunctionX(x)*inputFunctionVX(vx);
+                    for (int lx=0; lx<lMax; lx++)
+                    {
+                        for (int lvx=0; lvx<lMax; lvx++)
+                        {
+                            bigX(i+j*10,lx+lvx*lMax) = basisFunction(lx,2.0*(x-xj)/dx)*basisFunction(lvx,2.0*(vx-vxj)/dvx);
+                        }
+                    }
                 }
             }
 
             uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
 
-            for (int l=0; l<lMax; l++)
+            for (int lx=0; lx<lMax; lx++)
             {
-                uPre(l+lStart,j+k*nx) = uInitialize[l];
+                for (int lvx=0; lvx<lMax; lvx++)
+                {
+                    uPre(lx+lvx*lMax,j+k*nx) = uInitialize[lx+lvx*lMax];
+                }
             }
         }
     }

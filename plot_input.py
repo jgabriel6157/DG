@@ -99,21 +99,17 @@ values = values[0].to_numpy()
 m = 0
 dx = length/jMax
 dvx = 2*domainMaxVX/nvx
-u = np.zeros((lMax*2,jMax,nvx))
+u = np.zeros((lMax,lMax,jMax,nvx))
 
 fig = plt.figure()
 ax = fig.add_subplot(projection='3d')
 
 for k in range(nvx):
     for j in range(jMax):
-        for l in range(2*lMax):
-            u[l,j,k] = values[m]
-            # print("m="+str(m))
-            # print("l="+str(l))
-            # print("j="+str(j))
-            # print("k="+str(k))
-            # print(values[m])
-            m = m+1
+        for lvx in range(lMax):
+            for lx in range(lMax):
+                u[lx,lvx,j,k] = values[m]
+                m = m+1
 
 for j in range(jMax):
     xj = j*dx+dx/2
@@ -126,12 +122,9 @@ for j in range(jMax):
             for n in range(10):
                 x[i,n] = j*dx+i*dx/9.0
                 vx[i,n] = -domainMaxVX+k*dvx+n*dvx/9.0
-                xContribution = 0
-                vxContribution = 0
-                for l in range(lMax):
-                    xContribution += u[l,j,k]*getFunction(basis,l,(2/dx)*(x[i,n]-xj))
-                    vxContribution += u[l+lMax,j,k]*getFunction(basis,l,(2/dvx)*(vx[i,n]-vx_center))
-                y[i,n] = xContribution*vxContribution
+                for lx in range(lMax):
+                    for lvx in range(lMax):
+                        y[i,n] += u[lx,lvx,j,k]*getFunction(basis,lx,(2/dx)*(x[i,n]-xj))*getFunction(basis,lvx,(2/dvx)*(vx[i,n]-vx_center))
         ax.plot_wireframe(x,vx,y)
 
 plt.show()

@@ -1,6 +1,23 @@
 #include "Mesh.hxx"
 #include <cmath>
 
+/*
+                             N3
+                             ^
+                   v2________|__________v3
+                    |        |          |
+                    |                   |
+                    |                   |
+              N0 <--|--     cell      --|--> N1
+                    |                   |
+                    |                   |                    
+                    |________|__________|
+                   v0        |          v1 
+                             v  
+                             N2   
+*/
+
+
 //Constructor definition
 Mesh::Mesh(int nx, int nvx, double domainLengthX, double domainMaxVX) : nx(nx), nvx(nvx)
 {
@@ -13,28 +30,28 @@ Mesh::Mesh(int nx, int nvx, double domainLengthX, double domainMaxVX) : nx(nx), 
             //Calculate length of each cell
             cell.dx = domainLengthX/nx; //Assuming cells are uniform length in x
             cell.dvx = 2.0*domainMaxVX/nvx; //Assuming cells are uniform length in vx and -domainMaxVX<vx<domainMaxVX
-            //Initialize vertices of the cell
-            cell.vertices.push_back({i*cell.dx, -domainMaxVX+j*cell.dvx}); 
-            cell.vertices.push_back({(i+1)*cell.dx, -domainMaxVX+j*cell.dvx});
-            cell.vertices.push_back({i*cell.dx, -domainMaxVX+(j+1)*cell.dvx});
-            cell.vertices.push_back({(i+1)*cell.dx, -domainMaxVX+(j+1)*cell.dvx});
-            //Initialize neighbors of the cell
-            cell.neighbors.push_back((i-1+nx) % nx); //Periodic BC in x
-            cell.neighbors.push_back((i+1) % nx); //Periodic BC in x
+            //Initialize vertices of the cell 
+            cell.vertices.push_back({i*cell.dx, -domainMaxVX+j*cell.dvx}); //Bottom Left 
+            cell.vertices.push_back({(i+1)*cell.dx, -domainMaxVX+j*cell.dvx}); //Bottom Right
+            cell.vertices.push_back({i*cell.dx, -domainMaxVX+(j+1)*cell.dvx}); //Top Left
+            cell.vertices.push_back({(i+1)*cell.dx, -domainMaxVX+(j+1)*cell.dvx}); //Top Right
+            //Initialize neighbors of the cell {Left, Right, Bottom, Top}
+            cell.neighbors.push_back(((i-1+nx) % nx)+j*nx); //Periodic BC in x (Left Neighbor)
+            cell.neighbors.push_back(((i+1) % nx)+j*nx); //Periodic BC in x (Right Neighbor)
             if (j==0) //0 boundary condition in dvx, neighbors should not be called for j=0, j=nvx-1
             {
-                cell.neighbors.push_back(0);
-                cell.neighbors.push_back(j+1);
+                cell.neighbors.push_back(i+0*nx); //Bottom Neighbor
+                cell.neighbors.push_back(i+(j+1)*nx); //Top Neighbor
             }
             else if (j==nvx-1)
             {
-                cell.neighbors.push_back(j-1);
-                cell.neighbors.push_back(nvx-1);
+                cell.neighbors.push_back(i+(j-1)); //Bottom Neighbor
+                cell.neighbors.push_back(i+(nvx-1)); //Top Neighbor
             }
             else
             {
-                cell.neighbors.push_back(j-1);
-                cell.neighbors.push_back(j+1);
+                cell.neighbors.push_back(i+(j-1)); //Bottom Neighbor
+                cell.neighbors.push_back(i+(j+1)); //Top Neighbor
             }
 
             cells.push_back(cell);

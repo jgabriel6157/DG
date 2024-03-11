@@ -38,7 +38,7 @@ public:
     void createMatrices(std::function<double(int,double)> basisFunction, std::function<double(int,double)> basisFunctionDerivative, int quadratureOrder);
 
     //initialize using the Least Squares method
-    void initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunction, std::string dimension);
+    void initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunctionX, std::function<double(double)> inputFunctionVX);
 
     //advance time step using 3rd order SSP RK
     void advance();
