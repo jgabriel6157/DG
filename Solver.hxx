@@ -18,10 +18,10 @@ private:
     int lMax;
     double alpha;
     Matrix M_invS;
+    Matrix M_invF0;
     Matrix M_invF1;
     Matrix M_invF2;
     Matrix M_invF3;
-    Matrix M_invF4;
     Matrix uPre;
     Matrix uIntermediate;
     Matrix uPost;

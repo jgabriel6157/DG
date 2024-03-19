@@ -11,7 +11,7 @@
 //constructor
 Solver::Solver(const Mesh& mesh, double dt, double a, int lMax, double alpha) 
     : mesh(mesh), dt(dt), a(a), lMax(lMax), alpha(alpha),
-      M_invS(lMax,lMax), M_invF1(lMax,lMax), M_invF2(lMax,lMax), M_invF3(lMax,lMax), M_invF4(lMax,lMax),
+      M_invS(lMax*lMax,lMax*lMax), M_invF0(lMax*lMax,lMax*lMax), M_invF1(lMax*lMax,lMax*lMax), M_invF2(lMax*lMax,lMax*lMax), M_invF3(lMax*lMax,lMax*lMax),
       uPre(lMax*lMax,mesh.getNX()*mesh.getNVX()), uIntermediate(lMax*lMax,mesh.getNX()*mesh.getNVX()), uPost(lMax*lMax,mesh.getNX()*mesh.getNVX()) {}
 
 //deconstructor
@@ -23,11 +23,11 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
     Matrix M(lMax*lMax,lMax*lMax);
     Matrix S(lMax*lMax,lMax*lMax);
-    Matrix F1(lMax,lMax);
-    Matrix F2(lMax,lMax);
-    Matrix F3(lMax,lMax);
-    Matrix F4(lMax,lMax);   
-    Matrix M_inv(lMax,lMax);
+    Matrix F0(lMax*lMax,lMax*lMax);
+    Matrix F1(lMax*lMax,lMax*lMax);
+    Matrix F2(lMax*lMax,lMax*lMax);
+    Matrix F3(lMax*lMax,lMax*lMax);   
+    Matrix M_inv(lMax*lMax,lMax*lMax);
     double fluxFactorPlus = (1.0+SpecialFunctions::sign(a)*(1.0-alpha))/2.0;
     double fluxFactorMinus = (1.0-SpecialFunctions::sign(a)*(1.0-alpha))/2.0;
 
@@ -44,29 +44,36 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
                     *GaussianQuadrature::integrate(basisFunction,lvxi,basisFunction,lvxj,quadratureOrder,roots,weights)/4;
             S(i,j) = GaussianQuadrature::integrate(basisFunctionDerivative,lxi,basisFunction,lxj,quadratureOrder,roots,weights)
                     *GaussianQuadrature::integrate(basisFunction,lvxi,basisFunction,lvxj,quadratureOrder,roots,weights)/2;
-
-            // F1(i,j) = fluxFactorPlus*(basisFunction(i,1))*(basisFunction(j,1));
-            // F2(i,j) = fluxFactorPlus*(basisFunction(i,-1))*(basisFunction(j,1));
-            // F3(i,j) = fluxFactorMinus*(basisFunction(i,1))*(basisFunction(j,-1));
-            // F4(i,j) = fluxFactorMinus*(basisFunction(i,-1))*(basisFunction(j,-1));
-            // if (fabs(M(i,j)) < 1e-10)
-            // {
-            //     M(i,j) = 0;
-            // }
-            // if (fabs(S(i,j)) < 1e-10)
-            // {
-            //     S(i,j) = 0;
-            // }
+            F0(i,j) = basisFunction(lxi,-1)*basisFunction(lxj,-1)
+                     *GaussianQuadrature::integrate(basisFunction,lvxi,basisFunction,lvxj,quadratureOrder,roots,weights)/2;
+            F1(i,j) = basisFunction(lxi,1)*basisFunction(lxj,1)
+                     *GaussianQuadrature::integrate(basisFunction,lvxi,basisFunction,lvxj,quadratureOrder,roots,weights)/2;
+            F2(i,j) = GaussianQuadrature::integrate(basisFunction,lxi,basisFunction,lxj,quadratureOrder,roots,weights)
+                     *basisFunction(lvxi,-1)*basisFunction(lvxj,-1)/2;
+            F3(i,j) = GaussianQuadrature::integrate(basisFunction,lxi,basisFunction,lxj,quadratureOrder,roots,weights)
+                     *basisFunction(lvxi,1)*basisFunction(lvxj,1)/2;
+            // F0(i,j) = fluxFactorPlus*(basisFunction(i,1))*(basisFunction(j,1));
+            // F1(i,j) = fluxFactorPlus*(basisFunction(i,-1))*(basisFunction(j,1));
+            // F2(i,j) = fluxFactorMinus*(basisFunction(i,1))*(basisFunction(j,-1));
+            // F3(i,j) = fluxFactorMinus*(basisFunction(i,-1))*(basisFunction(j,-1));
+            if (fabs(M(i,j)) < 1e-10)
+            {
+                M(i,j) = 0;
+            }
+            if (fabs(S(i,j)) < 1e-10)
+            {
+                S(i,j) = 0;
+            }
         }
     }
     
-    // M_inv = M.CalculateInverse();
+    M_inv = M.CalculateInverse();
 
-    // M_invS = M_inv*S;
-    // M_invF1 = M_inv*F1;
-    // M_invF2 = M_inv*F2;
-    // M_invF3 = M_inv*F3;
-    // M_invF4 = M_inv*F4;
+    M_invS = M_inv*S;
+    M_invF0 = M_inv*F0;
+    M_invF1 = M_inv*F1;
+    M_invF2 = M_inv*F2;
+    M_invF3 = M_inv*F3;
 }
 
 //initialize using the Least Squares method
@@ -141,10 +148,10 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             for (int i=0; i<lMax; i++)
             {
                 uAfter(l,j)+=M_invS(l,i)*uBefore(i,j);
-                uAfter(l,j)-=M_invF1(l,i)*uBefore(i,j);
-                uAfter(l,j)+=M_invF2(l,i)*uBefore(i,leftNeighborIndex);
-                uAfter(l,j)-=M_invF3(l,i)*uBefore(i,rightNeighborIndex);
-                uAfter(l,j)+=M_invF4(l,i)*uBefore(i,j);
+                uAfter(l,j)-=M_invF0(l,i)*uBefore(i,j);
+                uAfter(l,j)+=M_invF1(l,i)*uBefore(i,leftNeighborIndex);
+                uAfter(l,j)-=M_invF2(l,i)*uBefore(i,rightNeighborIndex);
+                uAfter(l,j)+=M_invF3(l,i)*uBefore(i,j);
             }
             uAfter(l,j)*=a;
             uAfter(l,j)*=dt;
