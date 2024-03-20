@@ -220,6 +220,19 @@ double SpecialFunctions::min(double a, double b)
     }
 }
 
+//Return larger value between a,b (Note: -5>-4)
+double SpecialFunctions::max(double a, double b)
+{
+    if (fabs(a)>fabs(b))
+    {
+        return a;
+    }
+    else
+    {
+        return b;
+    }
+}
+
 //Return minmod of a,b,c
 double SpecialFunctions::minmod(double a, double b, double c)
 {

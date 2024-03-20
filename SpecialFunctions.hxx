@@ -26,6 +26,7 @@ public:
 
     static double sign(double x);
     static double min(double a, double b);
+    static double max(double a, double b);
     static double minmod(double a, double b, double c);
 };
 

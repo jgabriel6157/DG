@@ -10,9 +10,10 @@
 
 //constructor
 Solver::Solver(const Mesh& mesh, double dt, double a, int lMax, double alpha) 
-    : mesh(mesh), dt(dt), a(a), lMax(lMax), alpha(alpha),
+    : mesh(mesh), dt(dt), a(a), lMax(lMax), alpha(alpha), M_invT(lMax*lMax,lMax*lMax*lMax*lMax),
       M_invS(lMax*lMax,lMax*lMax), M_invF0(lMax*lMax,lMax*lMax), M_invF1(lMax*lMax,lMax*lMax), M_invF2(lMax*lMax,lMax*lMax), M_invF3(lMax*lMax,lMax*lMax),
-      uPre(lMax*lMax,mesh.getNX()*mesh.getNVX()), uIntermediate(lMax*lMax,mesh.getNX()*mesh.getNVX()), uPost(lMax*lMax,mesh.getNX()*mesh.getNVX()) {}
+      uPre(lMax*lMax,mesh.getNX()*mesh.getNVX()), uIntermediate(lMax*lMax,mesh.getNX()*mesh.getNVX()), uPost(lMax*lMax,mesh.getNX()*mesh.getNVX()), 
+      vxWeights(lMax*lMax,mesh.getNX()*mesh.getNVX()) {}
 
 //deconstructor
 Solver::~Solver() {}
@@ -23,6 +24,7 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
     Matrix M(lMax*lMax,lMax*lMax);
     Matrix S(lMax*lMax,lMax*lMax);
+    Matrix T(lMax*lMax,lMax*lMax*lMax*lMax);
     Matrix F0(lMax*lMax,lMax*lMax);
     Matrix F1(lMax*lMax,lMax*lMax);
     Matrix F2(lMax*lMax,lMax*lMax);
@@ -44,7 +46,15 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
                     *GaussianQuadrature::integrate(basisFunction,lvxi,basisFunction,lvxj,quadratureOrder,roots,weights)/4;
             S(i,j) = GaussianQuadrature::integrate(basisFunctionDerivative,lxi,basisFunction,lxj,quadratureOrder,roots,weights)
                     *GaussianQuadrature::integrate(basisFunction,lvxi,basisFunction,lvxj,quadratureOrder,roots,weights)/2;
-            F0(i,j) = basisFunction(lxi,-1)*basisFunction(lxj,-1)
+            for (int k=0; k<lMax*lMax; k++)
+            {
+                int lvxk = k/lMax;
+                int lxk = k-(lvxk*lMax);
+                T(i,j+k*lMax*lMax) = GaussianQuadrature::integrate(basisFunctionDerivative,lxi,basisFunction,lxj,basisFunction,lxk,quadratureOrder,roots,weights)
+                                    *GaussianQuadrature::integrate(basisFunction,lvxi,basisFunction,lvxj,basisFunction,lvxk,quadratureOrder,roots,weights)/2;
+            }
+
+            F0(i,j) = basisFunction(lxi,-1)*basisFunction(lxj,1)
                      *GaussianQuadrature::integrate(basisFunction,lvxi,basisFunction,lvxj,quadratureOrder,roots,weights)/2;
             F1(i,j) = basisFunction(lxi,1)*basisFunction(lxj,1)
                      *GaussianQuadrature::integrate(basisFunction,lvxi,basisFunction,lvxj,quadratureOrder,roots,weights)/2;
@@ -70,6 +80,7 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
     M_inv = M.CalculateInverse();
 
     M_invS = M_inv*S;
+    M_invT = M_inv*T;
     M_invF0 = M_inv*F0;
     M_invF1 = M_inv*F1;
     M_invF2 = M_inv*F2;
@@ -97,10 +108,12 @@ void Solver::initialize(std::function<double(int,double)> basisFunction, std::fu
             double xj = xStart+dx/2.0;
             double vxj = vxStart+dvx/2.0;
             Vector uInitialize(lMax*lMax);
+            Vector uInitializeW(lMax*lMax);
             
             double x;
             double vx;
             Vector y(100);
+            Vector yW(100);
             Matrix bigX(100,lMax*lMax);
 
             for (int i=0; i<10; i++)
@@ -110,6 +123,7 @@ void Solver::initialize(std::function<double(int,double)> basisFunction, std::fu
                 {
                     vx = vxStart+j*dvx/9.0;
                     y[i+j*10] = inputFunctionX(x)*inputFunctionVX(vx);
+                    yW[i+j*10] = vx;
                     for (int lx=0; lx<lMax; lx++)
                     {
                         for (int lvx=0; lvx<lMax; lvx++)
@@ -121,12 +135,14 @@ void Solver::initialize(std::function<double(int,double)> basisFunction, std::fu
             }
 
             uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
+            uInitializeW = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*yW;
 
             for (int lx=0; lx<lMax; lx++)
             {
                 for (int lvx=0; lvx<lMax; lvx++)
                 {
                     uPre(lx+lvx*lMax,j+k*nx) = uInitialize[lx+lvx*lMax];
+                    vxWeights(lx+lvx*lMax,j+k*nx) = uInitializeW[lx+lvx*lMax];
                 }
             }
         }
@@ -136,30 +152,78 @@ void Solver::initialize(std::function<double(int,double)> basisFunction, std::fu
 void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, double timesFactor)
 {
     const auto& cells = mesh.getCells();
+    double nx = mesh.getNX();
+    double nvx = mesh.getNVX();
 
-    for (int j=0; j<mesh.getNX(); j++)
-    {
-        int leftNeighborIndex = cells[j].neighbors[0];
-        int rightNeighborIndex = cells[j].neighbors[1];
-        double dx = cells[j].dx;
-        for (int l=0; l<lMax; l++)
-        {
-            uAfter(l,j)=0;
-            for (int i=0; i<lMax; i++)
-            {
-                uAfter(l,j)+=M_invS(l,i)*uBefore(i,j);
-                uAfter(l,j)-=M_invF0(l,i)*uBefore(i,j);
-                uAfter(l,j)+=M_invF1(l,i)*uBefore(i,leftNeighborIndex);
-                uAfter(l,j)-=M_invF2(l,i)*uBefore(i,rightNeighborIndex);
-                uAfter(l,j)+=M_invF3(l,i)*uBefore(i,j);
-            }
-            uAfter(l,j)*=a;
-            uAfter(l,j)*=dt;
-            uAfter(l,j)/=dx;
-            uAfter(l,j)+=uBefore(l,j);
+    // for (int j=0; j<mesh.getNX(); j++)
+    // {
+    //     int leftNeighborIndex = cells[j].neighbors[0];
+    //     int rightNeighborIndex = cells[j].neighbors[1];
+    //     double dx = cells[j].dx;
+    //     for (int l=0; l<lMax; l++)
+    //     {
+    //         uAfter(l,j)=0;
+    //         for (int i=0; i<lMax; i++)
+    //         {
+    //             uAfter(l,j)+=M_invS(l,i)*uBefore(i,j);
+    //             uAfter(l,j)-=M_invF0(l,i)*uBefore(i,j);
+    //             uAfter(l,j)+=M_invF1(l,i)*uBefore(i,leftNeighborIndex);
+    //             uAfter(l,j)-=M_invF2(l,i)*uBefore(i,rightNeighborIndex);
+    //             uAfter(l,j)+=M_invF3(l,i)*uBefore(i,j);
+    //         }
+    //         uAfter(l,j)*=a;
+    //         uAfter(l,j)*=dt;
+    //         uAfter(l,j)/=dx;
+    //         uAfter(l,j)+=uBefore(l,j);
             
-            uAfter(l,j)*=timesFactor;
-            uAfter(l,j)+=plusFactor*uPre(l,j); //Note that uPre != uBefore
+    //         uAfter(l,j)*=timesFactor;
+    //         uAfter(l,j)+=plusFactor*uPre(l,j); //Note that uPre != uBefore
+    //     }
+    // }
+
+    for (int j=0; j<nx; j++)
+    {
+        for (int k=0; k<nvx; k++)
+        {
+            Cell cell = cells[k+j*nvx];
+            int leftNeighborIndex = cell.neighbors[0];
+            int rightNeighborIndex = cell.neighbors[1];
+            double dx = cell.dx;
+            double dvx = cell.dvx;
+            double maxVx = SpecialFunctions::max(cell.vertices[0][1],cell.vertices[2][1]);
+
+            for (int lx=0; lx<lMax; lx++)
+            {
+                for (int lvx=0; lvx<lMax; lvx++)
+                {
+                    uAfter(lx+lvx*lMax,j+k*nx)=0;
+                    for (int i=0; i<lMax*lMax; i++)
+                    {
+                        M_invS(lx+lvx*lMax,i)=0;
+                        for (int l=0; l<lMax*lMax; l++)
+                        {
+                            M_invS(lx+lvx*lMax,i)+=M_invT(lx+lvx*lMax,i+l*lMax*lMax)*vxWeights(l,j+k*nx);
+                        }
+                        uAfter(lx+lvx*lMax,j+k*nx)+=M_invS(lx+lvx*lMax,i)*uBefore(i,j+k*nx);
+                        if (maxVx>0)
+                        {
+                            uAfter(lx+lvx*lMax,j+k*nx)-=M_invF1(lx+lvx*lMax,i)*uBefore(i,j+k*nx)*maxVx;
+                            uAfter(lx+lvx*lMax,j+k*nx)+=M_invF0(lx+lvx*lMax,i)*uBefore(i,leftNeighborIndex)*maxVx;
+                        }
+                        else
+                        {
+                            uAfter(lx+lvx*lMax,j+k*nx)-=M_invF1(lx+lvx*lMax,i)*uBefore(i,rightNeighborIndex)*maxVx;
+                            uAfter(lx+lvx*lMax,j+k*nx)+=M_invF0(lx+lvx*lMax,i)*uBefore(i,j+k*nx)*maxVx;
+                        }
+                    }
+                    uAfter(lx+lvx*lMax,j+k*nx)*=dt;
+                    uAfter(lx+lvx*lMax,j+k*nx)/=dx;
+                    uAfter(lx+lvx*lMax,j+k*nx)+=uBefore(lx+lvx*lMax,j+k*nx);
+                    
+                    uAfter(lx+lvx*lMax,j+k*nx)*=timesFactor;
+                    uAfter(lx+lvx*lMax,j+k*nx)+=plusFactor*uPre(lx+lvx*lMax,j+k*nx); //Note that uPre != uBefore
+                }
+            }
         }
     }
 }

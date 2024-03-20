@@ -17,6 +17,7 @@ private:
     // int jMax;
     int lMax;
     double alpha;
+    Matrix M_invT;
     Matrix M_invS;
     Matrix M_invF0;
     Matrix M_invF1;
@@ -25,6 +26,7 @@ private:
     Matrix uPre;
     Matrix uIntermediate;
     Matrix uPost;
+    Matrix vxWeights;
 
     void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor);
 public:

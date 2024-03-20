@@ -58,27 +58,27 @@ int main(int argc, char* argv[])
     Solver solver(mesh, dt, a, lMax, alpha);
     
     solver.createMatrices(basisFunction, basisFunctionDerivative, quadratureOrder);
-    solver.initialize(basisFunction, inputFunction, SpecialFunctions::gaussianPulse);
-    // for (int t=0; t<=tMax; t++)
-    // {
-    //     solver.advance();
+    solver.initialize(basisFunction, inputFunction, SpecialFunctions::constantFunction);
+    for (int t=0; t<tMax; t++)
+    {
+        solver.advance();
 
-    //     if (slopeLimit)
-    //     {
-    //         solver.slopeLimiter();
-    //     }
+        // if (slopeLimit)
+        // {
+        //     solver.slopeLimiter();
+        // }
 
-    //     if (t%outputTimeStep==0)
-    //     {
-    //         for (int j=0; j<jMax; j++)
-    //         {
-    //             for (int l=0; l<lMax; l++)
-    //             {
-    //                 write_output << solver.getSolution(l,j) << "\n";
-    //             }
-    //         }
-    //     }
-    // }
+        // if (t%outputTimeStep==0)
+        // {
+        //     for (int j=0; j<jMax; j++)
+        //     {
+        //         for (int l=0; l<lMax; l++)
+        //         {
+        //             write_output << solver.getSolution(l,j) << "\n";
+        //         }
+        //     }
+        // }
+    }
 
     auto stop = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration<double, std::milli>(stop-start);
