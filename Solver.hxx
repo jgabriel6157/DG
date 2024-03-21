@@ -19,8 +19,10 @@ private:
     double alpha;
     Matrix M_invT;
     Matrix M_invS;
-    Matrix M_invF0;
-    Matrix M_invF1;
+    Matrix M_invF0Minus;
+    Matrix M_invF1Minus;
+    Matrix M_invF0Plus;
+    Matrix M_invF1Plus;
     Matrix M_invF2;
     Matrix M_invF3;
     Matrix uPre;

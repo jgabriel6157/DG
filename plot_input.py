@@ -98,8 +98,8 @@ values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
 m = 0
 dx = length/jMax
-# dvx = 2*domainMaxVX/nvx
-dvx = 0.1/nvx
+dvx = 2*domainMaxVX/nvx
+# dvx = 1.0/nvx
 u = np.zeros((lMax,lMax,jMax,nvx))
 
 fig = plt.figure()
@@ -118,13 +118,13 @@ for j in range(jMax):
         y = np.zeros((10,10))
         x = np.zeros((10,10))
         vx = np.zeros((10,10))
-        # vx_center = -domainMaxVX+k*dvx+dvx/2
-        vx_center = domainMaxVX+k*dvx+dvx/2
+        vx_center = -domainMaxVX+k*dvx+dvx/2
+        # vx_center = domainMaxVX+k*dvx+dvx/2
         for i in range(10):
             for n in range(10):
                 x[i,n] = j*dx+i*dx/9.0
-                # vx[i,n] = -domainMaxVX+k*dvx+n*dvx/9.0
-                vx[i,n] = domainMaxVX+k*dvx+n*dvx/9.0
+                vx[i,n] = -domainMaxVX+k*dvx+n*dvx/9.0
+                # vx[i,n] = domainMaxVX+k*dvx+n*dvx/9.0
                 for lx in range(lMax):
                     for lvx in range(lMax):
                         y[i,n] += u[lx,lvx,j,k]*getFunction(basis,lx,(2/dx)*(x[i,n]-xj))*getFunction(basis,lvx,(2/dvx)*(vx[i,n]-vx_center))

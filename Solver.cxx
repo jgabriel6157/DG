@@ -10,8 +10,10 @@
 
 //constructor
 Solver::Solver(const Mesh& mesh, double dt, double a, int lMax, double alpha) 
-    : mesh(mesh), dt(dt), a(a), lMax(lMax), alpha(alpha), M_invT(lMax*lMax,lMax*lMax*lMax*lMax),
-      M_invS(lMax*lMax,lMax*lMax), M_invF0(lMax*lMax,lMax*lMax), M_invF1(lMax*lMax,lMax*lMax), M_invF2(lMax*lMax,lMax*lMax), M_invF3(lMax*lMax,lMax*lMax),
+    : mesh(mesh), dt(dt), a(a), lMax(lMax), alpha(alpha), 
+      M_invT(lMax*lMax,lMax*lMax*lMax*lMax), M_invS(lMax*lMax,lMax*lMax), 
+      M_invF0Minus(lMax*lMax,lMax*lMax), M_invF1Minus(lMax*lMax,lMax*lMax), M_invF0Plus(lMax*lMax,lMax*lMax), M_invF1Plus(lMax*lMax,lMax*lMax),
+      M_invF2(lMax*lMax,lMax*lMax), M_invF3(lMax*lMax,lMax*lMax),
       uPre(lMax*lMax,mesh.getNX()*mesh.getNVX()), uIntermediate(lMax*lMax,mesh.getNX()*mesh.getNVX()), uPost(lMax*lMax,mesh.getNX()*mesh.getNVX()), 
       vxWeights(lMax*lMax,mesh.getNX()*mesh.getNVX()) {}
 
@@ -25,13 +27,13 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
     Matrix M(lMax*lMax,lMax*lMax);
     Matrix S(lMax*lMax,lMax*lMax);
     Matrix T(lMax*lMax,lMax*lMax*lMax*lMax);
-    Matrix F0(lMax*lMax,lMax*lMax);
-    Matrix F1(lMax*lMax,lMax*lMax);
+    Matrix F0Minus(lMax*lMax,lMax*lMax);
+    Matrix F1Minus(lMax*lMax,lMax*lMax);
+    Matrix F0Plus(lMax*lMax,lMax*lMax);
+    Matrix F1Plus(lMax*lMax,lMax*lMax);
     Matrix F2(lMax*lMax,lMax*lMax);
     Matrix F3(lMax*lMax,lMax*lMax);   
     Matrix M_inv(lMax*lMax,lMax*lMax);
-    double fluxFactorPlus = (1.0+SpecialFunctions::sign(a)*(1.0-alpha))/2.0;
-    double fluxFactorMinus = (1.0-SpecialFunctions::sign(a)*(1.0-alpha))/2.0;
 
     for (int i=0; i<lMax*lMax; i++)
     {
@@ -54,18 +56,19 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
                                     *GaussianQuadrature::integrate(basisFunction,lvxi,basisFunction,lvxj,basisFunction,lvxk,quadratureOrder,roots,weights)/2;
             }
 
-            F0(i,j) = basisFunction(lxi,-1)*basisFunction(lxj,1)
+            F0Minus(i,j) = basisFunction(lxi,-1)*basisFunction(lxj,1)
                      *GaussianQuadrature::integrate(basisFunction,lvxi,basisFunction,lvxj,quadratureOrder,roots,weights)/2;
-            F1(i,j) = basisFunction(lxi,1)*basisFunction(lxj,1)
+            F1Minus(i,j) = basisFunction(lxi,1)*basisFunction(lxj,1)
+                     *GaussianQuadrature::integrate(basisFunction,lvxi,basisFunction,lvxj,quadratureOrder,roots,weights)/2;
+            F0Plus(i,j) = basisFunction(lxi,-1)*basisFunction(lxj,-1)
+                     *GaussianQuadrature::integrate(basisFunction,lvxi,basisFunction,lvxj,quadratureOrder,roots,weights)/2;
+            F1Plus(i,j) = basisFunction(lxi,1)*basisFunction(lxj,-1)
                      *GaussianQuadrature::integrate(basisFunction,lvxi,basisFunction,lvxj,quadratureOrder,roots,weights)/2;
             F2(i,j) = GaussianQuadrature::integrate(basisFunction,lxi,basisFunction,lxj,quadratureOrder,roots,weights)
                      *basisFunction(lvxi,-1)*basisFunction(lvxj,-1)/2;
             F3(i,j) = GaussianQuadrature::integrate(basisFunction,lxi,basisFunction,lxj,quadratureOrder,roots,weights)
                      *basisFunction(lvxi,1)*basisFunction(lvxj,1)/2;
-            // F0(i,j) = fluxFactorPlus*(basisFunction(i,1))*(basisFunction(j,1));
-            // F1(i,j) = fluxFactorPlus*(basisFunction(i,-1))*(basisFunction(j,1));
-            // F2(i,j) = fluxFactorMinus*(basisFunction(i,1))*(basisFunction(j,-1));
-            // F3(i,j) = fluxFactorMinus*(basisFunction(i,-1))*(basisFunction(j,-1));
+
             if (fabs(M(i,j)) < 1e-10)
             {
                 M(i,j) = 0;
@@ -81,8 +84,10 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
 
     M_invS = M_inv*S;
     M_invT = M_inv*T;
-    M_invF0 = M_inv*F0;
-    M_invF1 = M_inv*F1;
+    M_invF0Minus = M_inv*F0Minus;
+    M_invF1Minus = M_inv*F1Minus;
+    M_invF0Plus = M_inv*F0Plus;
+    M_invF1Plus = M_inv*F1Plus;
     M_invF2 = M_inv*F2;
     M_invF3 = M_inv*F3;
 }
@@ -155,32 +160,6 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     double nx = mesh.getNX();
     double nvx = mesh.getNVX();
 
-    // for (int j=0; j<mesh.getNX(); j++)
-    // {
-    //     int leftNeighborIndex = cells[j].neighbors[0];
-    //     int rightNeighborIndex = cells[j].neighbors[1];
-    //     double dx = cells[j].dx;
-    //     for (int l=0; l<lMax; l++)
-    //     {
-    //         uAfter(l,j)=0;
-    //         for (int i=0; i<lMax; i++)
-    //         {
-    //             uAfter(l,j)+=M_invS(l,i)*uBefore(i,j);
-    //             uAfter(l,j)-=M_invF0(l,i)*uBefore(i,j);
-    //             uAfter(l,j)+=M_invF1(l,i)*uBefore(i,leftNeighborIndex);
-    //             uAfter(l,j)-=M_invF2(l,i)*uBefore(i,rightNeighborIndex);
-    //             uAfter(l,j)+=M_invF3(l,i)*uBefore(i,j);
-    //         }
-    //         uAfter(l,j)*=a;
-    //         uAfter(l,j)*=dt;
-    //         uAfter(l,j)/=dx;
-    //         uAfter(l,j)+=uBefore(l,j);
-            
-    //         uAfter(l,j)*=timesFactor;
-    //         uAfter(l,j)+=plusFactor*uPre(l,j); //Note that uPre != uBefore
-    //     }
-    // }
-
     for (int j=0; j<nx; j++)
     {
         for (int k=0; k<nvx; k++)
@@ -191,6 +170,8 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             double dx = cell.dx;
             double dvx = cell.dvx;
             double maxVx = SpecialFunctions::max(cell.vertices[0][1],cell.vertices[2][1]);
+            double fluxFactorMinus = (1.0+SpecialFunctions::sign(maxVx))/2.0;
+            double fluxFactorPlus = (1.0-SpecialFunctions::sign(maxVx))/2.0;
 
             for (int lx=0; lx<lMax; lx++)
             {
@@ -205,16 +186,10 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                             M_invS(lx+lvx*lMax,i)+=M_invT(lx+lvx*lMax,i+l*lMax*lMax)*vxWeights(l,j+k*nx);
                         }
                         uAfter(lx+lvx*lMax,j+k*nx)+=M_invS(lx+lvx*lMax,i)*uBefore(i,j+k*nx);
-                        if (maxVx>0)
-                        {
-                            uAfter(lx+lvx*lMax,j+k*nx)-=M_invF1(lx+lvx*lMax,i)*uBefore(i,j+k*nx)*maxVx;
-                            uAfter(lx+lvx*lMax,j+k*nx)+=M_invF0(lx+lvx*lMax,i)*uBefore(i,leftNeighborIndex)*maxVx;
-                        }
-                        else
-                        {
-                            uAfter(lx+lvx*lMax,j+k*nx)-=M_invF1(lx+lvx*lMax,i)*uBefore(i,rightNeighborIndex)*maxVx;
-                            uAfter(lx+lvx*lMax,j+k*nx)+=M_invF0(lx+lvx*lMax,i)*uBefore(i,j+k*nx)*maxVx;
-                        }
+                        uAfter(lx+lvx*lMax,j+k*nx)-=fluxFactorMinus*M_invF1Minus(lx+lvx*lMax,i)*uBefore(i,j+k*nx)*maxVx;
+                        uAfter(lx+lvx*lMax,j+k*nx)+=fluxFactorMinus*M_invF0Minus(lx+lvx*lMax,i)*uBefore(i,leftNeighborIndex)*maxVx;
+                        uAfter(lx+lvx*lMax,j+k*nx)-=fluxFactorPlus*M_invF1Plus(lx+lvx*lMax,i)*uBefore(i,rightNeighborIndex)*maxVx;
+                        uAfter(lx+lvx*lMax,j+k*nx)+=fluxFactorPlus*M_invF0Plus(lx+lvx*lMax,i)*uBefore(i,j+k*nx)*maxVx;
                     }
                     uAfter(lx+lvx*lMax,j+k*nx)*=dt;
                     uAfter(lx+lvx*lMax,j+k*nx)/=dx;

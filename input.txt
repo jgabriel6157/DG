@@ -1,7 +1,7 @@
 a = 2*pi
 jMax = 5
 lMax = 2
-tMax = 10000
+tMax = 1000
 quadratureOrder = 20
 length = 2*pi
 dt = 0.0001
@@ -11,6 +11,6 @@ alpha = 0
 input = sin
 slopeLimiter = false
 nout = 100
-nvx = 5
+nvx = 6
 maxVX = 2*pi
 
