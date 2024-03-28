@@ -1,5 +1,6 @@
 #include <functional>
 #include <cmath>
+#include <iostream>
 #include "Matrix.hxx"
 #include "Vector.hxx"
 #include "SpecialFunctions.hxx"
@@ -201,8 +202,32 @@ const double Solver::getError(int tMax, std::function<double(int,double)> basisF
     return sqrt(error/solutionSum);
 }
 
+double Solver::getF(Matrix& uPre, std::function<double(int,double)> basisFunction, int lMax, int j, double x)
+{
+    double f = 0;
 
+    for (int l=0; l<lMax; l++)
+    {
+        f += uPre(l,j)*basisFunction(l,x);
+    }
 
+    return f;
+}
 
+double Solver::getMass(int quadratureOrder, std::function<double(int,double)> basisFunction)
+{
+    double mass = 0;
+    Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
+    Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
+
+    for (int j=0; j<mesh.getNumCells(); j++)
+    {
+        for (int i=0; i<quadratureOrder; i++)
+        {
+            mass += weights[i]*getF(uPre, basisFunction, lMax, j, roots[i]);
+        }
+    }
+    return mass;
+}
 
 

@@ -58,7 +58,7 @@ int main(int argc, char* argv[])
 
     solver.initialize(basisFunction, inputFunction);
 
-    for (int t=0; t<=tMax; t++)
+    for (int t=0; t<tMax; t++)
     {
         solver.advance();
 
@@ -76,6 +76,7 @@ int main(int argc, char* argv[])
                     write_output << solver.getSolution(l,j) << "\n";
                 }
             }
+            std::cout << solver.getMass(quadratureOrder, basisFunction) << "\n";
         }
     }
 
@@ -88,13 +89,13 @@ int main(int argc, char* argv[])
         std::cout << solver.getError(tMax, basisFunction, inputFunction) << "\n";
     }
 
-    // for (int j=0; j<jMax; j++)
-    // {
-    //     for (int l=0; l<lMax; l++)
-    //     {
-    //         write_output << solver.getSolution(l,j) << "\n";
-    //     }
-    // }
+    for (int j=0; j<jMax; j++)
+    {
+        for (int l=0; l<lMax; l++)
+        {
+            write_output << solver.getSolution(l,j) << "\n";
+        }
+    }
 
     write_output.close();
 
