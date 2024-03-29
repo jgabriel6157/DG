@@ -59,6 +59,10 @@ int main(int argc, char* argv[])
     
     solver.createMatrices(basisFunction, basisFunctionDerivative, quadratureOrder);
     solver.initialize(basisFunction, inputFunction, SpecialFunctions::constantFunction);
+    double M0 = solver.getMass(quadratureOrder, basisFunction);
+    double P0 = solver.getMomentum(quadratureOrder, basisFunction);
+    double E0 = solver.getEnergy(quadratureOrder, basisFunction);
+    double S0 = solver.getEntropy(quadratureOrder, basisFunction);
     for (int t=0; t<tMax; t++)
     {
         solver.advance();
@@ -68,8 +72,8 @@ int main(int argc, char* argv[])
         //     solver.slopeLimiter();
         // }
 
-        // if (t%outputTimeStep==0)
-        // {
+        if (t%outputTimeStep==0)
+        {
         //     for (int j=0; j<jMax; j++)
         //     {
         //         for (int l=0; l<lMax; l++)
@@ -77,7 +81,13 @@ int main(int argc, char* argv[])
         //             write_output << solver.getSolution(l,j) << "\n";
         //         }
         //     }
-        // }
+            std::cout << (solver.getMass(quadratureOrder, basisFunction)-M0)/M0 << "\n";
+            // std::cout << (solver.getMomentum(quadratureOrder, basisFunction)-P0)/P0 << "\n";
+            std::cout << solver.getMomentum(quadratureOrder, basisFunction);
+            std::cout << (solver.getEnergy(quadratureOrder, basisFunction)-E0)/E0 << "\n";
+            std::cout << (solver.getEntropy(quadratureOrder, basisFunction)-S0)/S0 << "\n\n";
+            // double S = solver.getEntropy(quadratureOrder, basisFunction);
+        }
     }
 
     auto stop = std::chrono::high_resolution_clock::now();

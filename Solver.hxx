@@ -33,7 +33,7 @@ private:
     void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor);
 
     //compute the reconstructed f(x,t)
-    double getF(Matrix& uPre, std::function<double(int,double)> basisFunction, int lMax, int j, double x);
+    double getF(Matrix& uPre, std::function<double(int,double)> basisFunction, int lMax, int j, int k, double x, double vx);
 
 public:
     //constructor 
@@ -62,6 +62,15 @@ public:
 
     //compute the total mass from f
     double getMass(int quadratureOrder, std::function<double(int,double)> basisFunction);
+
+    //compute the total momentum from f
+    double getMomentum(int quadratureOrder, std::function<double(int,double)> basisFunction);
+
+    //copmpute the total energy from f
+    double getEnergy(int quadratureOrder, std::function<double(int,double)> basisFunction);
+
+    //compute the total entropy from f
+    double getEntropy(int quadratureOrder, std::function<double(int,double)> basisFunction);
 
 };
 

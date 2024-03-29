@@ -278,13 +278,17 @@ const double Solver::getError(int tMax, std::function<double(int,double)> basisF
     return sqrt(error/solutionSum);
 }
 
-double Solver::getF(Matrix& uPre, std::function<double(int,double)> basisFunction, int lMax, int j, double x)
+double Solver::getF(Matrix& uPre, std::function<double(int,double)> basisFunction, int lMax, int j, int k, double x, double vx)
 {
     double f = 0;
+    double nx = mesh.getNX();
 
-    for (int l=0; l<lMax; l++)
+    for (int lx=0; lx<lMax; lx++)
     {
-        f += uPre(l,j)*basisFunction(l,x);
+        for (int lvx=0; lvx<lMax; lvx++)
+        {
+            f += uPre(lx+lvx*lMax,j+k*nx)*basisFunction(lx,x)*basisFunction(lvx,vx);
+        }
     }
 
     return f;
@@ -296,14 +300,104 @@ double Solver::getMass(int quadratureOrder, std::function<double(int,double)> ba
     Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
 
-    for (int j=0; j<mesh.getNumCells(); j++)
+    for (int j=0; j<mesh.getNX(); j++)
     {
-        for (int i=0; i<quadratureOrder; i++)
+        for (int k=0; k<mesh.getNVX(); k++)
         {
-            mass += weights[i]*getF(uPre, basisFunction, lMax, j, roots[i]);
+            for (int i=0; i<quadratureOrder; i++)
+            {
+                for (int l=0; l<quadratureOrder; l++)
+                {
+                    mass += weights[l]*weights[i]*getF(uPre, basisFunction, lMax, j, k, roots[i], roots[l]);
+                }
+            }
         }
     }
     return mass;
 }
 
+double Solver::getMomentum(int quadratureOrder, std::function<double(int,double)> basisFunction)
+{
+    double momentum = 0;
+    Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
+    Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
+    const auto& cells = mesh.getCells();
+    double nvx = mesh.getNVX();
 
+    for (int j=0; j<mesh.getNX(); j++)
+    {
+        for (int k=0; k<nvx; k++)
+        {
+            Cell cell = cells[k+j*nvx];
+            double dvx = cell.dvx;
+            double vxStart = cell.vertices[0][1];
+            double vxj = vxStart+dvx/2.0;
+
+            for (int i=0; i<quadratureOrder; i++)
+            {
+                for (int l=0; l<quadratureOrder; l++)
+                {
+                    double vx = vxj+((dvx/2.0)*roots[l]);
+                    momentum += vx*weights[l]*weights[i]*getF(uPre, basisFunction, lMax, j, k, roots[i], roots[l]);
+                }
+            }
+        }
+    }
+    return momentum;
+
+}
+
+double Solver::getEnergy(int quadratureOrder, std::function<double(int,double)> basisFunction)
+{
+    double energy = 0;
+    Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
+    Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
+    const auto& cells = mesh.getCells();
+    double nvx = mesh.getNVX();
+
+    for (int j=0; j<mesh.getNX(); j++)
+    {
+        for (int k=0; k<nvx; k++)
+        {
+            Cell cell = cells[k+j*nvx];
+            double dvx = cell.dvx;
+            double vxStart = cell.vertices[0][1];
+            double vxj = vxStart+dvx/2.0;
+
+            for (int i=0; i<quadratureOrder; i++)
+            {
+                for (int l=0; l<quadratureOrder; l++)
+                {
+                    double vx = vxj+((dvx/2.0)*roots[l]);
+                    energy += pow(vx,2)*weights[l]*weights[i]*getF(uPre, basisFunction, lMax, j, k, roots[i], roots[l]);
+                }
+            }
+        }
+    }
+    return energy;
+
+}
+
+double Solver::getEntropy(int quadratureOrder, std::function<double(int,double)> basisFunction)
+{
+    double entropy = 0;
+    Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
+    Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
+
+    for (int j=0; j<mesh.getNX(); j++)
+    {
+        for (int k=0; k<mesh.getNVX(); k++)
+        {
+            for (int i=0; i<quadratureOrder; i++)
+            {
+                for (int l=0; l<quadratureOrder; l++)
+                {
+                    // std::cout << getF(uPre, basisFunction, lMax, j, k, roots[i], roots[l]) << "\n";
+                    // std::cout << std::log(getF(uPre, basisFunction, lMax, j, k, roots[i], roots[l])) << "\n\n";
+                    entropy -= weights[l]*weights[i]*fabs(getF(uPre, basisFunction, lMax, j, k, roots[i], roots[l]))*std::log(fabs(getF(uPre, basisFunction, lMax, j, k, roots[i], roots[l])));
+                }
+            }
+        }
+    }
+    return entropy;
+}
