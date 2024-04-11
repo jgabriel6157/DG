@@ -50,9 +50,13 @@ int main(int argc, char* argv[])
     lMax+=1;
     Mesh mesh(jMax, nvx, length, domainMaxVX);
     int outputTimeStep = tMax/nout;
+    int outputStep = 0;
 
     std::ofstream write_output("Output.csv");
     assert(write_output.is_open());
+
+    std::ofstream write_output2("Output2.csv");
+    assert(write_output2.is_open());
 
     auto start = std::chrono::high_resolution_clock::now();
     Solver solver(mesh, dt, a, lMax, alpha);
@@ -81,11 +85,13 @@ int main(int argc, char* argv[])
         //             write_output << solver.getSolution(l,j) << "\n";
         //         }
         //     }
-            std::cout << (solver.getMass(quadratureOrder, basisFunction)-M0)/M0 << "\n";
+            std::cout << outputStep << "\n";
+            outputStep+=1;
+            write_output2 << (solver.getMass(quadratureOrder, basisFunction)-M0)/M0 << "\n";
             // std::cout << (solver.getMomentum(quadratureOrder, basisFunction)-P0)/P0 << "\n";
-            std::cout << solver.getMomentum(quadratureOrder, basisFunction);
-            std::cout << (solver.getEnergy(quadratureOrder, basisFunction)-E0)/E0 << "\n";
-            std::cout << (solver.getEntropy(quadratureOrder, basisFunction)-S0)/S0 << "\n\n";
+            write_output2 << solver.getMomentum(quadratureOrder, basisFunction) << "\n";
+            write_output2 << (solver.getEnergy(quadratureOrder, basisFunction)-E0)/E0 << "\n";
+            write_output2 << (solver.getEntropy(quadratureOrder, basisFunction)-S0)/S0 << "\n";
             // double S = solver.getEntropy(quadratureOrder, basisFunction);
         }
     }
