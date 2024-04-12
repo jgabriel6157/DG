@@ -51,32 +51,48 @@ int main(int argc, char* argv[])
     std::ofstream write_output("Output.csv");
     assert(write_output.is_open());
 
+    std::ofstream write_output2("Output2.csv");
+    assert(write_output2.is_open());
+
     auto start = std::chrono::high_resolution_clock::now();
     Solver solver(mesh, dt, a, lMax, alpha);
 
     solver.createMatrices(basisFunction, basisFunctionDerivative, quadratureOrder);
 
     solver.initialize(basisFunction, inputFunction);
+    double M0 = solver.getMass(quadratureOrder, basisFunction);
+    double P0 = solver.getMomentum(quadratureOrder, basisFunction);
+    double E0 = solver.getEnergy(quadratureOrder, basisFunction);
+    double S0 = solver.getEntropy(quadratureOrder, basisFunction);
 
     for (int t=0; t<tMax; t++)
     {
-        solver.advance();
-
-        if (slopeLimit)
-        {
-            solver.slopeLimiter();
-        }
-
         if (t%outputTimeStep==0)
         {
+            std::cout << "t = " << t << "\n";
+            // std::cout << "u(0,23) = " << solver.getSolution(0,23) << "\n\n";
             for (int j=0; j<jMax; j++)
             {
                 for (int l=0; l<lMax; l++)
                 {
                     write_output << solver.getSolution(l,j) << "\n";
+                    // std::cout << solver.getSolution(l,j) << "\n";
                 }
             }
-            std::cout << solver.getMass(quadratureOrder, basisFunction) << "\n";
+            // std::cout << solver.getEnergy(quadratureOrder, basisFunction) << "\n";
+            write_output2 << (solver.getMass(quadratureOrder, basisFunction)-M0)/M0 << "\n";
+            // std::cout << (solver.getMomentum(quadratureOrder, basisFunction)-P0)/P0 << "\n";
+            write_output2 << solver.getMomentum(quadratureOrder, basisFunction) << "\n";
+            write_output2 << (solver.getEnergy(quadratureOrder, basisFunction)-E0)/E0 << "\n";
+            write_output2 << (solver.getEntropy(quadratureOrder, basisFunction)-S0)/S0 << "\n";
+        }
+
+        solver.advance(quadratureOrder,basisFunction);
+        // std::cout << "u(0,26) = " << solver.getSolution(0,26) << "\n\n";
+
+        if (slopeLimit)
+        {
+            solver.slopeLimiter();
         }
     }
 
@@ -98,6 +114,7 @@ int main(int argc, char* argv[])
     }
 
     write_output.close();
+    write_output2.close();
 
     return 0;
 }

@@ -16,19 +16,29 @@ private:
     // int jMax;
     int lMax;
     double alpha;
+    Matrix M_invT;
     Matrix M_invS;
-    Matrix M_invF1;
-    Matrix M_invF2;
-    Matrix M_invF3;
-    Matrix M_invF4;
+    Matrix M_invF1Minus;
+    Matrix M_invF0Minus;
+    Matrix M_invF1Plus;
+    Matrix M_invF0Plus;
     Matrix uPre;
     Matrix uIntermediate;
     Matrix uPost;
+    Matrix vxWeights;
+    Matrix gPre;
+    Matrix gPost;
 
     void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor);
 
     //compute the reconstructed f(x,t)
     double getF(Matrix& uPre, std::function<double(int,double)> basisFunction, int lMax, int j, double x);
+
+    //compute bulk temperature
+    double getTemperature(double mass, double momentum, double energy, double fMax, double fMin);
+
+    //compute bulk velocity
+    double getVelocity(double mass, double momentum, double temperature, double fMax, double fMin);
 
 public:
     //constructor 
@@ -45,7 +55,10 @@ public:
     void initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunction);
 
     //advance time step using 3rd order SSP RK
-    void advance();
+    void advance(int quadratureOrder, std::function<double(int,double)> basisFunction);
+
+    //advance velocity
+    void advanceVelocity(Matrix& uPre, Matrix& uPost, Matrix& gBefore, Matrix& gAfter, int quadratureOrder, std::function<double(int,double)> basisFunction);
 
     //use minmod slope limiter
     void slopeLimiter();
@@ -58,6 +71,15 @@ public:
 
     //compute the total mass from f
     double getMass(int quadratureOrder, std::function<double(int,double)> basisFunction);
+
+    //compute the total momentum from f
+    double getMomentum(int quadratureOrder, std::function<double(int,double)> basisFunction);
+
+    //copmpute the total energy from f
+    double getEnergy(int quadratureOrder, std::function<double(int,double)> basisFunction);
+
+    //compute the total entropy from f
+    double getEntropy(int quadratureOrder, std::function<double(int,double)> basisFunction);
 
 };
 

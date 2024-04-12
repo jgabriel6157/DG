@@ -91,6 +91,7 @@ lMax+=1
 inputFile.close()
 
 fig,ax = plt.subplots()
+title = plt.title("")
 lines = [ax.plot([], [], lw=2,color='red')[0] for _ in range(jMax)]
 plt.xlim(0,length)
 plt.ylim(-1.5,1.5)
@@ -128,7 +129,8 @@ def animate(t):
         x[j],y[j] = generate_data(t,j)
     for j, line in enumerate(lines):
         line.set_data(x[j],y[j])
-    return lines
+    title.set_text(f"Time: {t}")
+    return lines + [title]
 
 ani = FuncAnimation(fig, animate, frames=nout, init_func=init, repeat=False, interval = 100)
 

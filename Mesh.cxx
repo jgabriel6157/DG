@@ -1,18 +1,33 @@
 #include "Mesh.hxx"
 
 //Constructor definition
-Mesh::Mesh(int numCells, double length) : numCells(numCells)
+Mesh::Mesh(int nvx, double domainMaxVX) : nvx(nvx)
 {
     //Generate cells
-    for (int i = 0; i < numCells; i++) {
+    for (int j = 0; j < nvx; j++) {
         Cell cell;
         //Calculate length of each cell
-        cell.cellLength = length/numCells; //Assuming cells are uniform length
+        cell.dvx = 2.0*domainMaxVX/nvx; //Assuming cells are uniform length
         //Initialize vertices of the cell
-        cell.vertices.push_back(i*cell.cellLength); //1D mesh
+        cell.vertices.push_back(-domainMaxVX+j*cell.dvx); //1D mesh
+        cell.vertices.push_back(-domainMaxVX+(j+1)*cell.dvx);
         //Initialize neighbors of the cell
-        cell.neighbors.push_back((i - 1 + numCells) % numCells); //Periodic BC
-        cell.neighbors.push_back((i + 1) % numCells); //Periodic BC
+
+        if (j==0) //0 boundary condition in dvx, neighbors should not be called for j=0, j=nvx-1
+        {
+            cell.neighbors.push_back(0); //Bottom Neighbor
+            cell.neighbors.push_back((j+1)); //Top Neighbor
+        }
+        else if (j==nvx-1)
+        {
+            cell.neighbors.push_back((j-1)); //Bottom Neighbor
+            cell.neighbors.push_back((nvx-1)); //Top Neighbor
+        }
+        else
+        {
+            cell.neighbors.push_back((j-1)); //Bottom Neighbor
+            cell.neighbors.push_back((j+1)); //Top Neighbor
+        }
 
         cells.push_back(cell);
     }
@@ -25,7 +40,7 @@ const std::vector<Cell>& Mesh::getCells() const
 }
 
 //Return the number of cells
-const int& Mesh::getNumCells() const
+const int& Mesh::getNVX() const
 {
-    return numCells;
+    return nvx;
 }

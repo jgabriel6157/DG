@@ -138,7 +138,8 @@ double SpecialFunctions::linearDerivative(int n, double x)
 //Square pulse (top hat) function centered at pi with length 2
 double SpecialFunctions::topHat(double x)
 {
-    if ((x<M_PI-1.0)||(x>M_PI+1.0))
+    // if ((x<M_PI-1.0)||(x>M_PI+1.0))
+    if (fabs(x)>M_PI)
     {
         return 0;
     }
@@ -152,6 +153,14 @@ double SpecialFunctions::topHat(double x)
 double SpecialFunctions::gaussianPulse(double x)
 {
     return exp(-1.0*pow(x-1.0*M_PI,2.0));
+    // return exp(-1.0*pow(x,2.0));
+}
+
+///Two Gaussian pulses centered at +-pi
+double SpecialFunctions::twinGaussianPulses(double x)
+{
+    return exp(-1.0*pow(x-0.5*M_PI,2.0))+exp(-1.0*pow(x+0.5*M_PI,2.0));
+    // return exp(-1.0*pow(x,2.0));
 }
 
 //Newton Raphson method to find root of Legendre polynomial of root n with initial guess x0
