@@ -63,7 +63,7 @@ def assignFloat(varString):
         
     return number
 
-fileName = 'Output.csv'
+fileName = 'Output_hat2.csv'
 inputFile = open('input.txt','r')
 
 while True:
@@ -93,7 +93,7 @@ inputFile.close()
 fig,ax = plt.subplots()
 title = plt.title("")
 lines = [ax.plot([], [], lw=2,color='red')[0] for _ in range(jMax)]
-plt.xlim(0,length)
+plt.xlim(-length,length)
 plt.ylim(-1.5,1.5)
 
 values = pd.read_csv(fileName,header=None)
@@ -120,6 +120,7 @@ def generate_data(t,j):
         x[i] = j*dx+i*dx/9.0
         for l in range(lMax):
             y[i] = y[i] + u[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
+        x[i] = (x[i]-length/2)*2
     return x,y
 
 x = np.zeros((jMax,10))

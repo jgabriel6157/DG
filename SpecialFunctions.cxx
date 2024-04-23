@@ -141,7 +141,7 @@ double SpecialFunctions::topHat(double x)
     // if ((x<M_PI-1.0)||(x>M_PI+1.0))
     if (fabs(x)>M_PI)
     {
-        return 0;
+        return 1e-15;
     }
     else
     {

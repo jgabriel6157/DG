@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-fileName = 'Output2.csv'
+fileName = 'Output2_hat2.csv'
 
 values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
