@@ -20,9 +20,9 @@ bool assignBool(std::string varString);
 
 int main(int argc, char* argv[])
 {
-    std::string argName[13] = {"a","jMax","lMax","tMax","quadratureOrder","length","dt","basis","test","alpha","input","slopeLimiter","nout"};
-    std::string argString[13];
-    readFile("input.txt",argName,argString,13);
+    std::string argName[15] = {"a","jMax","lMax","tMax","quadratureOrder","length","dt","basis","test","alpha","input","slopeLimiter","nout","nvx","maxVX"};
+    std::string argString[15];
+    readFile("input.txt",argName,argString,15);
 
     double a = assignDouble(argString[0]);
     int jMax = assignInt(argString[1]);
@@ -37,6 +37,8 @@ int main(int argc, char* argv[])
     std::string input = argString[10];
     bool slopeLimit = assignBool(argString[11]);
     int nout = assignInt(argString[12]);
+    int nvx = assignInt(argString[13]);
+    double domainMaxVX = assignDouble(argString[14]);
 
     FunctionMapper::initializeMap();
 
@@ -45,7 +47,7 @@ int main(int argc, char* argv[])
     auto inputFunction = FunctionMapper::getFunction<FunctionMapper::FunctionType2>(input);
     
     lMax+=1;
-    Mesh mesh(jMax, length);
+    Mesh mesh(jMax, nvx, length, domainMaxVX);
     int outputTimeStep = tMax/nout;
     
     std::ofstream write_output("Output.csv");
@@ -56,28 +58,31 @@ int main(int argc, char* argv[])
 
     solver.createMatrices(basisFunction, basisFunctionDerivative, quadratureOrder);
 
-    solver.initialize(basisFunction, inputFunction);
+    solver.initialize(basisFunction, inputFunction, SpecialFunctions::constantFunction);
 
     for (int t=0; t<tMax; t++)
     {
         solver.advance();
 
-        if (slopeLimit)
-        {
-            solver.slopeLimiter();
-        }
+        // if (slopeLimit)
+        // {
+        //     solver.slopeLimiter();
+        // }
 
-        if (t%outputTimeStep==0)
-        {
-            for (int j=0; j<jMax; j++)
-            {
-                for (int l=0; l<lMax; l++)
-                {
-                    write_output << solver.getSolution(l,j) << "\n";
-                }
-            }
-            std::cout << solver.getMass(quadratureOrder, basisFunction) << "\n";
-        }
+        // if (t%outputTimeStep==0)
+        // {
+        //     for (int j=0; j<jMax; j++)
+        //     {
+        //         for (int k=0; k<nvx; k++)
+        //         {
+        //             for (int l=0; l<lMax; l++)
+        //             {
+        //                 write_output << solver.getSolution(l,k+j*nvx) << "\n";
+        //             }
+        //         }
+        //     }
+        //     // std::cout << solver.getMass(quadratureOrder, basisFunction) << "\n";
+        // }
     }
 
     auto stop = std::chrono::high_resolution_clock::now();
@@ -91,9 +96,12 @@ int main(int argc, char* argv[])
 
     for (int j=0; j<jMax; j++)
     {
-        for (int l=0; l<lMax; l++)
+        for (int k=0; k<nvx; k++)
         {
-            write_output << solver.getSolution(l,j) << "\n";
+            for (int l=0; l<lMax; l++)
+            {
+                write_output << solver.getSolution(l,k+j*nvx) << "\n";
+            }
         }
     }
 

@@ -11,8 +11,8 @@
 //constructor
 Solver::Solver(const Mesh& mesh, double dt, double a, int lMax, double alpha) 
     : mesh(mesh), dt(dt), a(a), lMax(lMax), alpha(alpha),
-      M_invS(lMax,lMax), M_invF1(lMax,lMax), M_invF2(lMax,lMax), M_invF3(lMax,lMax), M_invF4(lMax,lMax),
-      uPre(lMax,mesh.getNumCells()), uIntermediate(lMax,mesh.getNumCells()), uPost(lMax,mesh.getNumCells()) {}
+      M_invS(lMax,lMax), M_invF1Minus(lMax,lMax), M_invF0Minus(lMax,lMax), M_invF1Plus(lMax,lMax), M_invF0Plus(lMax,lMax),
+      uPre(lMax,mesh.getNX()*mesh.getNVX()), uIntermediate(lMax,mesh.getNX()*mesh.getNVX()), uPost(lMax,mesh.getNX()*mesh.getNVX()) {}
 
 //deconstructor
 Solver::~Solver() {}
@@ -23,13 +23,11 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
     Matrix M(lMax,lMax);
     Matrix S(lMax,lMax);
-    Matrix F1(lMax,lMax);
-    Matrix F2(lMax,lMax);
-    Matrix F3(lMax,lMax);
-    Matrix F4(lMax,lMax);   
+    Matrix F1Minus(lMax,lMax);
+    Matrix F0Minus(lMax,lMax);
+    Matrix F1Plus(lMax,lMax);
+    Matrix F0Plus(lMax,lMax);   
     Matrix M_inv(lMax,lMax);
-    double fluxFactorPlus = (1.0+SpecialFunctions::sign(a)*(1.0-alpha))/2.0;
-    double fluxFactorMinus = (1.0-SpecialFunctions::sign(a)*(1.0-alpha))/2.0;
 
     for (int i=0; i<lMax; i++)
     {
@@ -37,10 +35,10 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
         {
             M(i,j) = GaussianQuadrature::integrate(basisFunction,i,basisFunction,j,quadratureOrder,roots,weights)/2;
             S(i,j) = GaussianQuadrature::integrate(basisFunctionDerivative,i,basisFunction,j,quadratureOrder,roots,weights);
-            F1(i,j) = fluxFactorPlus*(basisFunction(i,1))*(basisFunction(j,1));
-            F2(i,j) = fluxFactorPlus*(basisFunction(i,-1))*(basisFunction(j,1));
-            F3(i,j) = fluxFactorMinus*(basisFunction(i,1))*(basisFunction(j,-1));
-            F4(i,j) = fluxFactorMinus*(basisFunction(i,-1))*(basisFunction(j,-1));
+            F1Minus(i,j) = (basisFunction(i,1))*(basisFunction(j,1));
+            F0Minus(i,j) = (basisFunction(i,-1))*(basisFunction(j,1));
+            F1Plus(i,j) = (basisFunction(i,1))*(basisFunction(j,-1));
+            F0Plus(i,j) = (basisFunction(i,-1))*(basisFunction(j,-1));
             if (fabs(M(i,j)) < 1e-10)
             {
                 M(i,j) = 0;
@@ -55,43 +53,50 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
     M_inv = M.CalculateInverse();
 
     M_invS = M_inv*S;
-    M_invF1 = M_inv*F1;
-    M_invF2 = M_inv*F2;
-    M_invF3 = M_inv*F3;
-    M_invF4 = M_inv*F4;
+    M_invF1Minus = M_inv*F1Minus;
+    M_invF0Minus = M_inv*F0Minus;
+    M_invF1Plus = M_inv*F1Plus;
+    M_invF0Plus = M_inv*F0Plus;
 }
 
 //initialize using the Least Squares method
-void Solver::initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunction)
+void Solver::initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunctionX, std::function<double(double)> inputFunctionVX)
 {
     const auto& cells = mesh.getCells();
 
-    for (int j=0; j<mesh.getNumCells(); j++)
+    double nx = mesh.getNX();
+    double nvx = mesh.getNVX();
+    for (int j=0; j<nx; j++)
     {
-        double dx = cells[j].cellLength;
+        double dx = cells[j].dx;
         double leftVertex = cells[j].vertices[0];
         double xj = leftVertex+dx/2.0;
-        Vector uInitialize(lMax);
         
-        double x;
-        Vector y(10);
-        Matrix bigX(10,lMax);
-
-        for (int i=0; i<10; i++)
+        for (int k=0; k<nvx; k++)
         {
-            x = leftVertex+i*dx/9.0;
-            y[i] = inputFunction(x);
+            double vx = mesh.getVelocity(k);
+            Vector uInitialize(lMax);
+            
+            double x;
+            Vector y(10);
+            Matrix bigX(10,lMax);
+
+            for (int i=0; i<10; i++)
+            {
+                x = leftVertex+i*dx/9.0;
+                y[i] = inputFunctionX(x)*inputFunctionVX(vx);
+                for (int l=0; l<lMax; l++)
+                {
+                    bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
+                }
+            }
+
+            uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
+
             for (int l=0; l<lMax; l++)
             {
-                bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
+                uPre(l,k+j*nvx) = uInitialize[l];
             }
-        }
-
-        uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
-
-        for (int l=0; l<lMax; l++)
-        {
-            uPre(l,j) = uInitialize[l];
         }
     }
 }
@@ -100,29 +105,38 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
 {
     const auto& cells = mesh.getCells();
 
-    for (int j=0; j<mesh.getNumCells(); j++)
+    double nx = mesh.getNX();
+    double nvx = mesh.getNVX();
+    for (int j=0; j<nx; j++)
     {
         int leftNeighborIndex = cells[j].neighbors[0];
         int rightNeighborIndex = cells[j].neighbors[1];
-        double dx = cells[j].cellLength;
-        for (int l=0; l<lMax; l++)
+        double dx = cells[j].dx;
+        for (int k=0; k<nvx; k++)
         {
-            uAfter(l,j)=0;
-            for (int i=0; i<lMax; i++)
+            double vx = mesh.getVelocity(k);
+            double fluxFactorMinus = (1.0+SpecialFunctions::sign(vx))/2.0;
+            double fluxFactorPlus = (1.0-SpecialFunctions::sign(vx))/2.0;
+
+            for (int l=0; l<lMax; l++)
             {
-                uAfter(l,j)+=M_invS(l,i)*uBefore(i,j);
-                uAfter(l,j)-=M_invF1(l,i)*uBefore(i,j);
-                uAfter(l,j)+=M_invF2(l,i)*uBefore(i,leftNeighborIndex);
-                uAfter(l,j)-=M_invF3(l,i)*uBefore(i,rightNeighborIndex);
-                uAfter(l,j)+=M_invF4(l,i)*uBefore(i,j);
+                uAfter(l,k+j*nvx)=0;
+                for (int i=0; i<lMax; i++)
+                {
+                    uAfter(l,k+j*nvx)+=M_invS(l,i)*uBefore(i,k+j*nvx);
+                    uAfter(l,k+j*nvx)-=fluxFactorMinus*M_invF1Minus(l,i)*uBefore(i,k+j*nvx); //F1Minus
+                    uAfter(l,k+j*nvx)+=fluxFactorMinus*M_invF0Minus(l,i)*uBefore(i,k+leftNeighborIndex*nvx); //F0Minus
+                    uAfter(l,k+j*nvx)-=fluxFactorPlus*M_invF1Plus(l,i)*uBefore(i,k+rightNeighborIndex*nvx); //F1Plus
+                    uAfter(l,k+j*nvx)+=fluxFactorPlus*M_invF0Plus(l,i)*uBefore(i,k+j*nvx); //F0Plus
+                }
+                uAfter(l,k+j*nvx)*=vx;
+                uAfter(l,k+j*nvx)*=dt;
+                uAfter(l,k+j*nvx)/=dx;
+                uAfter(l,k+j*nvx)+=uBefore(l,k+j*nvx);
+                
+                uAfter(l,k+j*nvx)*=timesFactor;
+                uAfter(l,k+j*nvx)+=plusFactor*uPre(l,k+j*nvx); //Note that uPre != uBefore
             }
-            uAfter(l,j)*=a;
-            uAfter(l,j)*=dt;
-            uAfter(l,j)/=dx;
-            uAfter(l,j)+=uBefore(l,j);
-            
-            uAfter(l,j)*=timesFactor;
-            uAfter(l,j)+=plusFactor*uPre(l,j); //Note that uPre != uBefore
         }
     }
 }
@@ -144,7 +158,7 @@ void Solver::slopeLimiter()
     const auto& cells = mesh.getCells();
     double u1Lim;
 
-    for (int j=0; j<mesh.getNumCells(); j++)
+    for (int j=0; j<mesh.getNX(); j++)
     {
         int leftNeighborIndex = cells[j].neighbors[0];
         int rightNeighborIndex = cells[j].neighbors[1];
@@ -170,10 +184,10 @@ const double Solver::getError(int tMax, std::function<double(int,double)> basisF
     const auto& cells = mesh.getCells();
     double error = 0;
     double solutionSum = 0;
-    for (int j=0; j<mesh.getNumCells(); j++)
+    for (int j=0; j<mesh.getNX(); j++)
     {
         double y[10] = {0}, sol[10], x[10];
-        double dx = cells[j].cellLength;
+        double dx = cells[j].dx;
         double leftVertex = cells[j].vertices[0];
         double xj = leftVertex+dx/2.0;
         for (int i=0; i<10; i++)
@@ -220,7 +234,7 @@ double Solver::getMass(int quadratureOrder, std::function<double(int,double)> ba
     Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
 
-    for (int j=0; j<mesh.getNumCells(); j++)
+    for (int j=0; j<mesh.getNX(); j++)
     {
         for (int i=0; i<quadratureOrder; i++)
         {

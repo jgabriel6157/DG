@@ -154,6 +154,12 @@ double SpecialFunctions::gaussianPulse(double x)
     return exp(-1.0*pow(x-1.0*M_PI,2.0));
 }
 
+//Constant functions that is = 1 for all x
+double SpecialFunctions::constantFunction(double x)
+{
+    return 1;
+}
+
 //Newton Raphson method to find root of Legendre polynomial of root n with initial guess x0
 double SpecialFunctions::newtonRaphson(int n, double x0)
 {
@@ -183,7 +189,7 @@ Vector SpecialFunctions::legendreRoots(int n)
     return roots;
 }
 
-//Return sign of value (0 = 0)
+//Return sign of value (0 returns 1)
 double SpecialFunctions::sign(double x)
 {
     if (x>0)
@@ -196,7 +202,7 @@ double SpecialFunctions::sign(double x)
     }
     else
     {
-        return 0;
+        return 1;
     }
 }
 

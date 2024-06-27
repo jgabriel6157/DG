@@ -17,10 +17,10 @@ private:
     int lMax;
     double alpha;
     Matrix M_invS;
-    Matrix M_invF1;
-    Matrix M_invF2;
-    Matrix M_invF3;
-    Matrix M_invF4;
+    Matrix M_invF1Minus;
+    Matrix M_invF0Minus;
+    Matrix M_invF1Plus;
+    Matrix M_invF0Plus;
     Matrix uPre;
     Matrix uIntermediate;
     Matrix uPost;
@@ -42,7 +42,7 @@ public:
     void createMatrices(std::function<double(int,double)> basisFunction, std::function<double(int,double)> basisFunctionDerivative, int quadratureOrder);
 
     //initialize using the Least Squares method
-    void initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunction);
+    void initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunctionX, std::function<double(double)> inputFunctionVX);
 
     //advance time step using 3rd order SSP RK
     void advance();
