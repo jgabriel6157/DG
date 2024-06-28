@@ -17,6 +17,8 @@ Mesh::Mesh(int nx, int nvx, double domainLengthX, double domainMaxVX) : nx(nx), 
 
         cells.push_back(cell);
     }
+    //Calculate velocity difference between discrete velocity points
+    dvx = 2.0*domainMaxVX/(nvx-1.0); //Ensures velocity spans [-domainMaxVX, domainMaxVX]
 }
 
 //Accessor function definition for cells
@@ -37,8 +39,12 @@ const int& Mesh::getNVX() const
     return nvx;
 }
 
+double Mesh::getDVX() const
+{
+    return dvx;
+}
+
 double Mesh::getVelocity(int velocityIndex) const
 {
-    double dvx = 2.0*domainMaxVX/(nvx-1.0);
     return -domainMaxVX + velocityIndex*dvx;
 }

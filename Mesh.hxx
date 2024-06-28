@@ -8,7 +8,6 @@ struct Cell
     std::vector<double> vertices; //Vertex coordinates
     std::vector<int> neighbors; //Indices of neighboring cells
     double dx; //Length of cell in x
-    double dvx; //Distance between velocity points
 };
 
 class Mesh
@@ -19,6 +18,7 @@ private:
     int nvx;
     double domainLengthX;
     double domainMaxVX;
+    double dvx; //Distance between velocity points
 
 public:
     //Constructor
@@ -30,6 +30,8 @@ public:
     const int& getNX() const;
 
     const int& getNVX() const;
+
+    double getDVX() const;
 
     double getVelocity(int velocityIndex) const;
 };

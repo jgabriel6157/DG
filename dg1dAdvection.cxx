@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
 
     for (int t=0; t<tMax; t++)
     {
-        solver.advance();
+        solver.advance(basisFunction);
 
         // if (slopeLimit)
         // {
