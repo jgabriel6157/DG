@@ -68,7 +68,7 @@ public:
     double computeMaxwellian(double rho, double u, double rt, double vx);
 
     //fit Maxwellian
-    Vector fitMaxwellian(std::function<double(int,double)> basisFunction, Vector rho, Vector u, Vector rt, double vx);
+    Vector fitMaxwellian(std::function<double(int,double)> basisFunction, Vector rho, Vector u, Vector rt, double vx, int j);
 
 };
 

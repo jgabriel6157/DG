@@ -58,7 +58,7 @@ int main(int argc, char* argv[])
 
     solver.createMatrices(basisFunction, basisFunctionDerivative, quadratureOrder);
 
-    solver.initialize(basisFunction, inputFunction, SpecialFunctions::constantFunction);
+    solver.initialize(basisFunction, SpecialFunctions::constantFunction, inputFunction);
 
     for (int t=0; t<tMax; t++)
     {
@@ -69,20 +69,21 @@ int main(int argc, char* argv[])
         //     solver.slopeLimiter();
         // }
 
-        // if (t%outputTimeStep==0)
-        // {
-        //     for (int j=0; j<jMax; j++)
-        //     {
-        //         for (int k=0; k<nvx; k++)
-        //         {
-        //             for (int l=0; l<lMax; l++)
-        //             {
-        //                 write_output << solver.getSolution(l,k+j*nvx) << "\n";
-        //             }
-        //         }
-        //     }
-        //     // std::cout << solver.getMass(quadratureOrder, basisFunction) << "\n";
-        // }
+        if (t%outputTimeStep==0)
+        {
+            std::cout << t << "\n";
+            // for (int j=0; j<jMax; j++)
+            // {
+            //     for (int k=0; k<nvx; k++)
+            //     {
+            //         for (int l=0; l<lMax; l++)
+            //         {
+            //             write_output << solver.getSolution(l,k+j*nvx) << "\n";
+            //         }
+            //     }
+            // }
+            // // std::cout << solver.getMass(quadratureOrder, basisFunction) << "\n";
+        }
     }
 
     auto stop = std::chrono::high_resolution_clock::now();

@@ -22,6 +22,7 @@ public:
 
     static double topHat(double x);
     static double gaussianPulse(double x);
+    static double twinGaussianPulse(double x);
     static double constantFunction(double x);
 
     static double sign(double x);

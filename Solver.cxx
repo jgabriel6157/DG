@@ -128,6 +128,22 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
         Vector rho = integrator.integrate(fj, lMax, 0);
         Vector u = integrator.integrate(fj, lMax, 1);
         Vector rt = integrator.integrate(fj, lMax, 2);
+        // for (int l=0; l<lMax; l++)
+        // {
+        //     std::cout << rt[l] << "\n";
+        // }
+        // Vector rho(lMax);
+        // Vector u(lMax);
+        // Vector rt(lMax);
+        // rho[0] = 3.54489;
+        // u[0] = 0;
+        // rt[0] = 36.7586;
+        // for (int l=1; l<lMax; l++)
+        // {
+        //     rho[l] = 0;
+        //     u[l] = 0;
+        //     rt[l] = 0;
+        // }
 
         for (int k=0; k<nvx; k++)
         {
@@ -136,9 +152,10 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             double fluxFactorPlus = (1.0-SpecialFunctions::sign(vx))/2.0;
 
             //calculate feq
-            Vector feq = fitMaxwellian(basisFunction, rho, u, rt, vx);
+            Vector feq = fitMaxwellian(basisFunction, rho, u, rt, vx, j);
             for (int l=0; l<lMax; l++)
             {
+                // std::cout << feq[l] << "\n";
                 uAfter(l,k+j*nvx)=0;
                 for (int i=0; i<lMax; i++)
                 {
@@ -148,10 +165,10 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                     uAfter(l,k+j*nvx)-=fluxFactorPlus*M_invF1Plus(l,i)*uBefore(i,k+rightNeighborIndex*nvx);
                     uAfter(l,k+j*nvx)+=fluxFactorPlus*M_invF0Plus(l,i)*uBefore(i,k+j*nvx);
                 }
-                uAfter(l,k+j*nvx)+=nu*(feq[l]-uBefore(l,k+j*nvx));
                 uAfter(l,k+j*nvx)*=vx;
-                uAfter(l,k+j*nvx)*=dt;
                 uAfter(l,k+j*nvx)/=dx;
+                uAfter(l,k+j*nvx)+=nu*(feq[l]-uBefore(l,k+j*nvx));
+                uAfter(l,k+j*nvx)*=dt;
                 uAfter(l,k+j*nvx)+=uBefore(l,k+j*nvx);
                 
                 uAfter(l,k+j*nvx)*=timesFactor;
@@ -283,38 +300,35 @@ double Solver::computeMaxwellian(double rho, double u, double rt, double vx)
 }
 
 //initialize using the Least Squares method
-Vector Solver::fitMaxwellian(std::function<double(int,double)> basisFunction, Vector rho, Vector u, Vector rt, double vx)
+Vector Solver::fitMaxwellian(std::function<double(int,double)> basisFunction, Vector rho, Vector u, Vector rt, double vx, int j)
 {
     const auto& cells = mesh.getCells();
 
-    double nx = mesh.getNX();
-    double nvx = mesh.getNVX();
-    for (int j=0; j<nx; j++)
+
+    double dx = cells[j].dx;
+    double leftVertex = cells[j].vertices[0];
+    double xj = leftVertex+dx/2.0;
+    
+    Vector uInitialize(lMax);
+    
+    double x;
+    Vector y(10);
+    Matrix bigX(10,lMax);
+
+    for (int i=0; i<10; i++)
     {
-        double dx = cells[j].dx;
-        double leftVertex = cells[j].vertices[0];
-        double xj = leftVertex+dx/2.0;
-        
-        Vector uInitialize(lMax);
-        
-        double x;
-        Vector y(10);
-        Matrix bigX(10,lMax);
-
-        for (int i=0; i<10; i++)
+        x = leftVertex+i*dx/9.0;
+        double density = computeMoment(rho, basisFunction,lMax,x);
+        double meanVelocity = computeMoment(u, basisFunction,lMax,x)/density;
+        double temperature = (computeMoment(rt, basisFunction,lMax,x)-density*pow(meanVelocity,2))/density;
+        y[i] = computeMaxwellian(density,meanVelocity,temperature,vx);
+        for (int l=0; l<lMax; l++)
         {
-            x = leftVertex+i*dx/9.0;
-            double density = computeMoment(rho, basisFunction,lMax,x);
-            double meanVelocity = computeMoment(u, basisFunction,lMax,x)/density;
-            double temperature = (computeMoment(rt, basisFunction,lMax,x)-density*pow(meanVelocity,2))/density;
-            y[i] = computeMaxwellian(density,meanVelocity,temperature,vx);
-            for (int l=0; l<lMax; l++)
-            {
-                bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
-            }
+            bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
         }
-
-        return uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
-        
     }
+
+    return uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
+        
+    
 }

@@ -1,6 +1,7 @@
 #include "NewtonCotes.hxx"
 #include "Vector.hxx"
 #include <cmath>
+#include <iostream>
 
 NewtonCotes::NewtonCotes(const Mesh& mesh) : mesh(mesh) {}
 
@@ -8,7 +9,7 @@ Vector NewtonCotes::integrate(Matrix M, int lMax, int power)
 {
     int nvx = mesh.getNVX();
     Vector integral(lMax);
-    for (int l; l<lMax; l++)
+    for (int l=0; l<lMax; l++)
     {
         integral[l] = M(l,0)*pow(mesh.getVelocity(0),power) + M(l,nvx-1)*pow(mesh.getVelocity(nvx-1),power);
 

@@ -130,7 +130,7 @@ for vx in range(nvx):
             x[i] = j*dx+i*dx/9.0
             for l in range(lMax):
                 y[i] += u[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-        y_offset = vx
+        y_offset = -domainMaxVX + vx*dvx
         ax.plot(x,[y_offset]*len(x),y,color='red')
 
 # for j in range(jMax):

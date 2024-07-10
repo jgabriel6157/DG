@@ -17,5 +17,6 @@ void FunctionMapper::initializeMap()
 
     functionMap2["topHat"] = SpecialFunctions::topHat;
     functionMap2["pulse"] = SpecialFunctions::gaussianPulse;
+    functionMap2["twinPulses"] = SpecialFunctions::twinGaussianPulse;
     functionMap2["sin"] = [](double x) { return sin(x); };
 }
