@@ -125,25 +125,9 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             }
         }
 
-        Vector rho = integrator.integrate(fj, lMax, 0);
-        Vector u = integrator.integrate(fj, lMax, 1);
-        Vector rt = integrator.integrate(fj, lMax, 2);
-        // for (int l=0; l<lMax; l++)
-        // {
-        //     std::cout << rt[l] << "\n";
-        // }
-        // Vector rho(lMax);
-        // Vector u(lMax);
-        // Vector rt(lMax);
-        // rho[0] = 3.54489;
-        // u[0] = 0;
-        // rt[0] = 36.7586;
-        // for (int l=1; l<lMax; l++)
-        // {
-        //     rho[l] = 0;
-        //     u[l] = 0;
-        //     rt[l] = 0;
-        // }
+        Vector rho = integrator.integrate(fj, lMax, 0); //rho tilde
+        Vector u = integrator.integrate(fj, lMax, 1); //u tilde
+        Vector rt = integrator.integrate(fj, lMax, 2); //rt tilde
 
         for (int k=0; k<nvx; k++)
         {
@@ -265,20 +249,41 @@ double Solver::getF(Matrix& uPre, std::function<double(int,double)> basisFunctio
     return f;
 }
 
-double Solver::getMass(int quadratureOrder, std::function<double(int,double)> basisFunction)
+Vector Solver::getMoments(int quadratureOrder, std::function<double(int,double)> basisFunction)
 {
+    Vector moments(3);
     double mass = 0;
+    double momentum = 0;
+    double energy = 0;
     Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
 
+    double nvx = mesh.getNVX();
     for (int j=0; j<mesh.getNX(); j++)
     {
+        Matrix fj(lMax,nvx);
+        for (int k=0; k<nvx; k++)
+        {
+            for (int l=0; l<lMax; l++)
+            {
+                fj(l,k) = uPre(l,k+j*nvx);
+            }
+        }
+
+        Vector rho = integrator.integrate(fj, lMax, 0); //rho tilde
+        Vector u = integrator.integrate(fj, lMax, 1); //u tilde
+        Vector rt = integrator.integrate(fj, lMax, 2); //rt tilde
         for (int i=0; i<quadratureOrder; i++)
         {
-            mass += weights[i]*getF(uPre, basisFunction, lMax, j, roots[i]);
+            mass += weights[i]*computeMoment(rho, basisFunction, lMax, roots[i]);
+            momentum += weights[i]*computeMoment(u, basisFunction, lMax, roots[i]);
+            energy += weights[i]*computeMoment(rt, basisFunction, lMax, roots[i]);
         }
     }
-    return mass;
+    moments[0] = mass;
+    moments[1] = momentum;
+    moments[2] = energy;
+    return moments;
 }
 
 
@@ -329,6 +334,4 @@ Vector Solver::fitMaxwellian(std::function<double(int,double)> basisFunction, Ve
     }
 
     return uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
-        
-    
 }

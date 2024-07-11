@@ -58,8 +58,8 @@ public:
     //get error of solution
     const double getError(int tMax, std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunction);
 
-    //compute the total mass from f
-    double getMass(int quadratureOrder, std::function<double(int,double)> basisFunction);
+    //compute the mass, momentum and energy from f
+    Vector getMoments(int quadratureOrder, std::function<double(int,double)> basisFunction);
 
     //compute the value of your moment at spatial point x
     double computeMoment(Vector moment, std::function<double(int,double)> basisFunction, int lMax, double x);

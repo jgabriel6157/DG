@@ -59,6 +59,10 @@ int main(int argc, char* argv[])
     solver.createMatrices(basisFunction, basisFunctionDerivative, quadratureOrder);
 
     solver.initialize(basisFunction, SpecialFunctions::constantFunction, inputFunction);
+    Vector moments = solver.getMoments(quadratureOrder,basisFunction);
+    double M0 = moments[0];
+    double U0 = moments[1];
+    double E0 = moments[2];
 
     for (int t=0; t<tMax; t++)
     {
@@ -72,6 +76,10 @@ int main(int argc, char* argv[])
         if (t%outputTimeStep==0)
         {
             std::cout << t << "\n";
+            Vector moments = solver.getMoments(quadratureOrder,basisFunction);
+            std::cout << (moments[0]-M0)/M0 << "\n";
+            std::cout << moments[1] << "\n";
+            std::cout << (moments[2]-E0)/E0 << "\n\n";
             // for (int j=0; j<jMax; j++)
             // {
             //     for (int k=0; k<nvx; k++)
