@@ -3,6 +3,7 @@
 // Map initialization
 std::map<std::string, FunctionMapper::FunctionType1> FunctionMapper::functionMap1;
 std::map<std::string, FunctionMapper::FunctionType2> FunctionMapper::functionMap2;
+std::map<std::string, FunctionMapper::FunctionType3> FunctionMapper::functionMap3;
 
 void FunctionMapper::initializeMap() 
 {
@@ -19,4 +20,6 @@ void FunctionMapper::initializeMap()
     functionMap2["pulse"] = SpecialFunctions::gaussianPulse;
     functionMap2["twinPulses"] = SpecialFunctions::twinGaussianPulse;
     functionMap2["sin"] = [](double x) { return sin(x); };
+
+    functionMap3["sodShock"] = SpecialFunctions::sodShock;
 }

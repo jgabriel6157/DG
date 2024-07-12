@@ -43,8 +43,11 @@ public:
     //create the mass, stiffness and flux matricies as used by the solver
     void createMatrices(std::function<double(int,double)> basisFunction, std::function<double(int,double)> basisFunctionDerivative, int quadratureOrder);
 
-    //initialize using the Least Squares method
+    //initialize using the Least Squares method for a function that depends independently on x, vx
     void initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunctionX, std::function<double(double)> inputFunctionVX);
+
+    //initialize using Least Squares for a function that depends on both x, vx
+    void initialize(std::function<double(int,double)> basisFunction, std::function<double(double, double)> inputFunctionXVX);
 
     //advance time step using 3rd order SSP RK
     void advance(std::function<double(int,double)> basisFunction);
@@ -63,9 +66,6 @@ public:
 
     //compute the value of your moment at spatial point x
     double computeMoment(Vector moment, std::function<double(int,double)> basisFunction, int lMax, double x);
-
-    //compute the value of f_eq (Maxwellian) from the moments and vx
-    double computeMaxwellian(double rho, double u, double rt, double vx);
 
     //fit Maxwellian
     Vector fitMaxwellian(std::function<double(int,double)> basisFunction, Vector rho, Vector u, Vector rt, double vx, int j);

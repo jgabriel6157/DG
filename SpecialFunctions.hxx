@@ -25,9 +25,13 @@ public:
     static double twinGaussianPulse(double x);
     static double constantFunction(double x);
 
+    static double sodShock(double x, double vx);
+
     static double sign(double x);
     static double min(double a, double b);
     static double minmod(double a, double b, double c);
+
+    static double maxwellian(double rho, double u, double rt, double vx);
 };
 
 

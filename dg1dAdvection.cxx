@@ -44,7 +44,8 @@ int main(int argc, char* argv[])
 
     auto basisFunction = FunctionMapper::getFunction<std::function<double(int,double)>>(basis);
     auto basisFunctionDerivative = FunctionMapper::getFunction<FunctionMapper::FunctionType1>(basis+"Derivative");
-    auto inputFunction = FunctionMapper::getFunction<FunctionMapper::FunctionType2>(input);
+    // auto inputFunction = FunctionMapper::getFunction<FunctionMapper::FunctionType2>(input);
+    auto inputFunction2 = FunctionMapper::getFunction<FunctionMapper::FunctionType3>(input);
     
     lMax+=1;
     Mesh mesh(jMax, nvx, length, domainMaxVX);
@@ -52,13 +53,20 @@ int main(int argc, char* argv[])
     
     std::ofstream write_output("Output.csv");
     assert(write_output.is_open());
+    std::ofstream write_output2("OutputDensity.csv");
+    assert(write_output2.is_open());
+    std::ofstream write_output3("OutputVelocity.csv");
+    assert(write_output3.is_open());
+    std::ofstream write_output4("OutputTemperature.csv");
+    assert(write_output4.is_open());
 
     auto start = std::chrono::high_resolution_clock::now();
     Solver solver(mesh, dt, a, lMax, alpha);
 
     solver.createMatrices(basisFunction, basisFunctionDerivative, quadratureOrder);
 
-    solver.initialize(basisFunction, SpecialFunctions::constantFunction, inputFunction);
+    // solver.initialize(basisFunction, SpecialFunctions::constantFunction, inputFunction);
+    solver.initialize(basisFunction, inputFunction2);
     Vector moments = solver.getMoments(quadratureOrder,basisFunction);
     double M0 = moments[0];
     double U0 = moments[1];
@@ -98,9 +106,33 @@ int main(int argc, char* argv[])
     auto duration = std::chrono::duration<double, std::milli>(stop-start);
     std::cout << duration.count() << " ms" << "\n";
 
-    if (test)
+    // if (test)
+    // {
+    //     std::cout << solver.getError(tMax, basisFunction, inputFunction) << "\n";
+    // }
+
+    NewtonCotes integrator(mesh);
+    for (int j=0; j<jMax; j++)
     {
-        std::cout << solver.getError(tMax, basisFunction, inputFunction) << "\n";
+        Matrix fj(lMax,nvx);
+        for (int k=0; k<nvx; k++)
+        {
+            for (int l=0; l<lMax; l++)
+            {
+                fj(l,k) = solver.getSolution(l,k+j*nvx);
+            }
+        }
+
+        Vector rho = integrator.integrate(fj, lMax, 0); //rho tilde
+        Vector u = integrator.integrate(fj, lMax, 1); //u tilde
+        Vector rt = integrator.integrate(fj, lMax, 2); //rt tilde
+
+        for (int l=0; l<lMax; l++)
+        {
+            write_output2 << rho[l] << "\n";
+            write_output3 << u[l] << "\n";
+            write_output4 << rt[l] << "\n";
+        }
     }
 
     for (int j=0; j<jMax; j++)

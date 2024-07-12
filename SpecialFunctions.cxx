@@ -168,6 +168,26 @@ double SpecialFunctions::constantFunction(double x)
     return 1;
 }
 
+double SpecialFunctions::sodShock(double x, double vx)
+{
+    double density;
+    double meanVelocity = 0;
+    double temperature;
+    if (x<M_PI)
+    {
+        density = 1.0;
+        temperature = 5;
+    }
+    else
+    {
+        density = 0.125;
+        temperature = 4;
+    }
+
+    return maxwellian(density, meanVelocity, temperature, vx);
+
+}
+
 //Newton Raphson method to find root of Legendre polynomial of root n with initial guess x0
 double SpecialFunctions::newtonRaphson(int n, double x0)
 {
@@ -241,5 +261,9 @@ double SpecialFunctions::minmod(double a, double b, double c)
     }
 }
 
-
+//compute the value of f_eq (Maxwellian) from the moments and vx
+double SpecialFunctions::maxwellian(double rho, double u, double rt, double vx)
+{
+    return rho*exp(-pow(vx-u,2)/(2.0*rt))/pow(2.0*M_PI*rt,0.5);
+}
 

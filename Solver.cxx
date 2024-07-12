@@ -102,6 +102,51 @@ void Solver::initialize(std::function<double(int,double)> basisFunction, std::fu
     }
 }
 
+void Solver::initialize(std::function<double(int,double)> basisFunction, std::function<double(double, double)> inputFunctionXVX)
+{
+    const auto& cells = mesh.getCells();
+
+    double nx = mesh.getNX();
+    double nvx = mesh.getNVX();
+    for (int j=0; j<nx; j++)
+    {
+        double dx = cells[j].dx;
+        double leftVertex = cells[j].vertices[0];
+        double xj = leftVertex+dx/2.0;
+        
+        for (int k=0; k<nvx; k++)
+        {
+            double vx = mesh.getVelocity(k);
+            Vector uInitialize(lMax);
+            
+            double x;
+            Vector y(10);
+            Matrix bigX(10,lMax);
+
+            for (int i=0; i<10; i++)
+            {
+                x = leftVertex+i*dx/9.0;
+                if (i==9)
+                {
+                    x-=0.0001;
+                }
+                y[i] = inputFunctionXVX(x,vx);
+                for (int l=0; l<lMax; l++)
+                {
+                    bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
+                }
+            }
+
+            uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
+
+            for (int l=0; l<lMax; l++)
+            {
+                uPre(l,k+j*nvx) = uInitialize[l];
+            }
+        }
+    }
+}
+
 void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, double timesFactor, std::function<double(int,double)> basisFunction)
 {
     double nu = 1.0;
@@ -299,11 +344,6 @@ double Solver::computeMoment(Vector moment, std::function<double(int,double)> ba
     return momentValue;
 }
 
-double Solver::computeMaxwellian(double rho, double u, double rt, double vx)
-{
-    return rho*exp(-pow(vx-u,2)/(2.0*rt))/pow(2.0*M_PI*rt,0.5);
-}
-
 //initialize using the Least Squares method
 Vector Solver::fitMaxwellian(std::function<double(int,double)> basisFunction, Vector rho, Vector u, Vector rt, double vx, int j)
 {
@@ -326,7 +366,7 @@ Vector Solver::fitMaxwellian(std::function<double(int,double)> basisFunction, Ve
         double density = computeMoment(rho, basisFunction,lMax,x);
         double meanVelocity = computeMoment(u, basisFunction,lMax,x)/density;
         double temperature = (computeMoment(rt, basisFunction,lMax,x)-density*pow(meanVelocity,2))/density;
-        y[i] = computeMaxwellian(density,meanVelocity,temperature,vx);
+        y[i] = SpecialFunctions::maxwellian(density,meanVelocity,temperature,vx);
         for (int l=0; l<lMax; l++)
         {
             bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
