@@ -59,6 +59,18 @@ int main(int argc, char* argv[])
     solver.createMatrices(basisFunction, basisFunctionDerivative, quadratureOrder);
 
     solver.initialize(basisFunction, SpecialFunctions::constantFunction, inputFunction);
+
+    // for (int j=0; j<jMax; j++)
+    // {
+    //     for (int k=0; k<nvx; k++)
+    //     {
+    //         for (int l=0; l<lMax; l++)
+    //         {
+    //             write_output << solver.getSolution(l,k+j*nvx) << "\n";
+    //         }
+    //     }
+    // }
+
     Vector moments = solver.getMoments(quadratureOrder,basisFunction);
     double M0 = moments[0];
     double U0 = moments[1];
@@ -73,24 +85,23 @@ int main(int argc, char* argv[])
         //     solver.slopeLimiter();
         // }
 
-        if (t%outputTimeStep==0)
+        if ((t+1)%outputTimeStep==0)
         {
             std::cout << t << "\n";
             Vector moments = solver.getMoments(quadratureOrder,basisFunction);
             std::cout << (moments[0]-M0)/M0 << "\n";
             std::cout << moments[1] << "\n";
             std::cout << (moments[2]-E0)/E0 << "\n\n";
-            // for (int j=0; j<jMax; j++)
-            // {
-            //     for (int k=0; k<nvx; k++)
-            //     {
-            //         for (int l=0; l<lMax; l++)
-            //         {
-            //             write_output << solver.getSolution(l,k+j*nvx) << "\n";
-            //         }
-            //     }
-            // }
-            // // std::cout << solver.getMass(quadratureOrder, basisFunction) << "\n";
+            for (int j=0; j<jMax; j++)
+            {
+                for (int k=0; k<nvx; k++)
+                {
+                    for (int l=0; l<lMax; l++)
+                    {
+                        write_output << solver.getSolution(l,k+j*nvx) << "\n";
+                    }
+                }
+            }
         }
     }
 
@@ -101,17 +112,6 @@ int main(int argc, char* argv[])
     if (test)
     {
         std::cout << solver.getError(tMax, basisFunction, inputFunction) << "\n";
-    }
-
-    for (int j=0; j<jMax; j++)
-    {
-        for (int k=0; k<nvx; k++)
-        {
-            for (int l=0; l<lMax; l++)
-            {
-                write_output << solver.getSolution(l,k+j*nvx) << "\n";
-            }
-        }
     }
 
     write_output.close();
