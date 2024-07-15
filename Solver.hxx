@@ -26,6 +26,8 @@ private:
     Matrix uPre;
     Matrix uIntermediate;
     Matrix uPost;
+    Matrix C;
+    Matrix C_junk;
 
     void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor, std::function<double(int,double)> basisFunction);
 
@@ -42,6 +44,8 @@ public:
 
     //create the mass, stiffness and flux matricies as used by the solver
     void createMatrices(std::function<double(int,double)> basisFunction, std::function<double(int,double)> basisFunctionDerivative, int quadratureOrder);
+
+    void createVelocityMatricies();
 
     //initialize using the Least Squares method
     void initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunctionX, std::function<double(double)> inputFunctionVX);
@@ -69,6 +73,8 @@ public:
 
     //fit Maxwellian
     Vector fitMaxwellian(std::function<double(int,double)> basisFunction, Vector rho, Vector u, Vector rt, double vx, int j);
+
+    Vector fitFeq(std::function<double(int,double)> basisFunction, Vector rho, Vector u, Vector rt, int k, int j);
 
 };
 
