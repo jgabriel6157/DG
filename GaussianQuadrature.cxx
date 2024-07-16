@@ -10,14 +10,14 @@
 double GaussianQuadrature::integrate(std::function<double(int, double)> func1, int n_func1, std::function<double(int, double)> func2, int n_func2, int quadratureOrder,
                         Vector roots, Vector weights)
 {
-    double y = 0;
+    double integral = 0;
 
     for (int i=0; i<quadratureOrder; i++)
     {
-        y += weights[i]*func1(n_func1,roots[i])*func2(n_func2,roots[i]);
+        integral += weights[i]*func1(n_func1,roots[i])*func2(n_func2,roots[i]);
     }
 
-    return y;
+    return integral;
 }
 
 //Calculate weights for Gaussian quadrature
@@ -33,7 +33,6 @@ Vector GaussianQuadrature::calculateWeights(int quadratureOrder, Vector roots)
         root = roots[i];
         w = 2.0/((1.0-pow(root,2.0))*pow(SpecialFunctions::legendreDerivative(quadratureOrder,root),2.0));
         
-        // weights.push_back(w);
         weights[i] = w;
     }
 

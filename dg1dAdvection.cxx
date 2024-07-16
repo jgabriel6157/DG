@@ -33,12 +33,16 @@ int main(int argc, char* argv[])
     double dt = assignDouble(argString[6]);
     std::string basis = argString[7];
     bool test = assignBool(argString[8]);
-    double alpha = assignDouble(argString[9]);
+    double alphaOutdated = assignDouble(argString[9]);
     std::string input = argString[10];
     bool slopeLimit = assignBool(argString[11]);
     int nout = assignInt(argString[12]);
     int nvx = assignInt(argString[13]);
     double domainMaxVX = assignDouble(argString[14]);
+
+    Vector alpha(3);
+    alpha[0] = -1.0;
+    alpha[2] = 0.2;
 
     FunctionMapper::initializeMap();
 
@@ -78,7 +82,7 @@ int main(int argc, char* argv[])
 
     for (int t=0; t<tMax; t++)
     {
-        solver.advance(basisFunction);
+        solver.advance(basisFunction, quadratureOrder);
 
         // if (slopeLimit)
         // {

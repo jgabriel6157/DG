@@ -8,10 +8,11 @@
 #include "Solver.hxx"
 #include "Mesh.hxx"
 #include "NewtonCotes.hxx"
+#include "NewtonSolver.hxx"
 
 //constructor
-Solver::Solver(const Mesh& mesh, double dt, double a, int lMax, double alpha) 
-    : mesh(mesh), integrator(mesh),dt(dt), a(a), lMax(lMax), alpha(alpha),
+Solver::Solver(const Mesh& mesh, double dt, double a, int lMax, Vector alpha) 
+    : mesh(mesh), integrator(mesh), newtonSolver(mesh), dt(dt), a(a), lMax(lMax), alpha(alpha),
       M_invS(lMax,lMax), M_invF1Minus(lMax,lMax), M_invF0Minus(lMax,lMax), M_invF1Plus(lMax,lMax), M_invF0Plus(lMax,lMax),
       uPre(lMax,mesh.getNX()*mesh.getNVX()), uIntermediate(lMax,mesh.getNX()*mesh.getNVX()), uPost(lMax,mesh.getNX()*mesh.getNVX()) {}
 
@@ -102,8 +103,11 @@ void Solver::initialize(std::function<double(int,double)> basisFunction, std::fu
     }
 }
 
-void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, double timesFactor, std::function<double(int,double)> basisFunction)
+void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, double timesFactor, std::function<double(int,double)> basisFunction, int quadratureOrder)
 {
+    Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
+    Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
+
     double nu = 1.0;
 
     const auto& cells = mesh.getCells();
@@ -129,6 +133,8 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
         Vector u = integrator.integrate(fj, lMax, 1); //u tilde
         Vector rt = integrator.integrate(fj, lMax, 2); //rt tilde
 
+        alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-10), 100, basisFunction, quadratureOrder);
+
         for (int k=0; k<nvx; k++)
         {
             double vx = mesh.getVelocity(k);
@@ -136,10 +142,9 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             double fluxFactorPlus = (1.0-SpecialFunctions::sign(vx))/2.0;
 
             //calculate feq
-            Vector feq = fitMaxwellian(basisFunction, rho, u, rt, vx, j);
+            Vector feq = fitMaxwellian(basisFunction, alpha, vx, j);
             for (int l=0; l<lMax; l++)
             {
-                // std::cout << feq[l] << "\n";
                 uAfter(l,k+j*nvx)=0;
                 for (int i=0; i<lMax; i++)
                 {
@@ -162,14 +167,14 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     }
 }
 
-void Solver::advance(std::function<double(int,double)> basisFunction)
+void Solver::advance(std::function<double(int,double)> basisFunction, int quadratureOrder)
 {
     //First stage of solver
-    advanceStage(uPre, uPost, 0.0, 1.0, basisFunction);
+    advanceStage(uPre, uPost, 0.0, 1.0, basisFunction, quadratureOrder);
     //Second stage of solver
-    advanceStage(uPost, uIntermediate, 3.0/4.0, 1.0/4.0, basisFunction);
+    advanceStage(uPost, uIntermediate, 3.0/4.0, 1.0/4.0, basisFunction, quadratureOrder);
     //Third stage of solver
-    advanceStage(uIntermediate, uPost, 1.0/3.0, 2.0/3.0, basisFunction);
+    advanceStage(uIntermediate, uPost, 1.0/3.0, 2.0/3.0, basisFunction, quadratureOrder);
     
     uPre = uPost;
 }
@@ -257,10 +262,12 @@ Vector Solver::getMoments(int quadratureOrder, std::function<double(int,double)>
     double energy = 0;
     Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
+    const auto& cells = mesh.getCells();
 
     double nvx = mesh.getNVX();
     for (int j=0; j<mesh.getNX(); j++)
     {
+        double dx = cells[j].dx;
         Matrix fj(lMax,nvx);
         for (int k=0; k<nvx; k++)
         {
@@ -275,37 +282,19 @@ Vector Solver::getMoments(int quadratureOrder, std::function<double(int,double)>
         Vector rt = integrator.integrate(fj, lMax, 2); //rt tilde
         for (int i=0; i<quadratureOrder; i++)
         {
-            mass += weights[i]*computeMoment(rho, basisFunction, lMax, roots[i]);
-            momentum += weights[i]*computeMoment(u, basisFunction, lMax, roots[i]);
-            energy += weights[i]*computeMoment(rt, basisFunction, lMax, roots[i]);
+            mass += weights[i]*SpecialFunctions::computeMoment(rho, basisFunction, lMax, roots[i])*dx/2.0;
+            momentum += weights[i]*SpecialFunctions::computeMoment(u, basisFunction, lMax, roots[i])*dx/2.0;
+            energy += weights[i]*SpecialFunctions::computeMoment(rt, basisFunction, lMax, roots[i])*dx/2.0;
         }
     }
-    moments[0] = mass;
-    moments[1] = momentum;
-    moments[2] = energy;
+    moments[0] = mass; //return rho
+    moments[1] = momentum/mass; //return u
+    moments[2] = energy; //return E
     return moments;
 }
 
-
-double Solver::computeMoment(Vector moment, std::function<double(int,double)> basisFunction, int lMax, double x)
-{
-    double momentValue = 0;
-
-    for (int l=0; l<lMax; l++)
-    {
-        momentValue += moment[l]*basisFunction(l,x);
-    }
-
-    return momentValue;
-}
-
-double Solver::computeMaxwellian(double rho, double u, double rt, double vx)
-{
-    return rho*exp(-pow(vx-u,2)/(2.0*rt))/pow(2.0*M_PI*rt,0.5);
-}
-
 //initialize using the Least Squares method
-Vector Solver::fitMaxwellian(std::function<double(int,double)> basisFunction, Vector rho, Vector u, Vector rt, double vx, int j)
+Vector Solver::fitMaxwellian(std::function<double(int,double)> basisFunction, Vector alpha, double vx, int j)
 {
     const auto& cells = mesh.getCells();
 
@@ -323,14 +312,13 @@ Vector Solver::fitMaxwellian(std::function<double(int,double)> basisFunction, Ve
     for (int i=0; i<10; i++)
     {
         x = leftVertex+i*dx/9.0;
-        double density = computeMoment(rho, basisFunction,lMax,x);
-        double meanVelocity = computeMoment(u, basisFunction,lMax,x)/density;
-        double temperature = (computeMoment(rt, basisFunction,lMax,x)-density*pow(meanVelocity,2))/density;
-        y[i] = computeMaxwellian(density,meanVelocity,temperature,vx);
+        double exponent = 0;
         for (int l=0; l<lMax; l++)
         {
+            exponent += basisFunction(l,2.0*(x-xj)/dx)*(alpha[0]-vx*alpha[1]-pow(vx,2)*alpha[2]);
             bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
         }
+        y[i] = exp(exponent);
     }
 
     return uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;

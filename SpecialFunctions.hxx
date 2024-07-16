@@ -28,6 +28,12 @@ public:
     static double sign(double x);
     static double min(double a, double b);
     static double minmod(double a, double b, double c);
+
+    //compute the value of your moment at spatial point x
+    static double computeMoment(Vector moment, std::function<double(int,double)> basisFunction, int lMax, double x);
+
+    //compute the value of f_eq (Maxwellian) from the moments and vx
+    static double computeMaxwellian(double rho, double u, double rt, double vx);
 };
 
 

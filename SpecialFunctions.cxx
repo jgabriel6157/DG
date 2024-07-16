@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <cassert>
+#include <functional>
 #include "SpecialFunctions.hxx"
 #include "Vector.hxx"
 
@@ -138,7 +139,8 @@ double SpecialFunctions::linearDerivative(int n, double x)
 //Square pulse (top hat) function centered at pi with length 2
 double SpecialFunctions::topHat(double x)
 {
-    if ((x<M_PI-1.0)||(x>M_PI+1.0))
+    // if ((x<M_PI-1.0)||(x>M_PI+1.0))
+    if ((x<-1.0)||(x>1.0))
     {
         return 0;
     }
@@ -190,7 +192,6 @@ Vector SpecialFunctions::legendreRoots(int n)
     {
         double x0 = (1.0-1.0/(8.0*pow(n,2.0))+1.0/(8.0*pow(n,3.0)))*cos(M_PI*(4.0*(i+1.0)-1.0)/(4.0*n+2.0)); //intial guess
         double x = newtonRaphson(n,x0);
-        // roots.push_back(x);
         roots[i] = x;
     }
 
@@ -241,5 +242,19 @@ double SpecialFunctions::minmod(double a, double b, double c)
     }
 }
 
+double SpecialFunctions::computeMoment(Vector moment, std::function<double(int,double)> basisFunction, int lMax, double x)
+{
+    double momentValue = 0;
 
+    for (int l=0; l<lMax; l++)
+    {
+        momentValue += moment[l]*basisFunction(l,x);
+    }
 
+    return momentValue;
+}
+
+double SpecialFunctions::computeMaxwellian(double rho, double u, double rt, double vx)
+{
+    return rho*exp(-pow(vx-u,2)/(2.0*rt))/pow(2.0*M_PI*rt,0.5);
+}

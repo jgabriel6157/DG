@@ -13,8 +13,12 @@ public:
 
     Vector integrate(Matrix M, int lMax, int power);
 
+    double integrate(Vector alpha, std::function<double(int,double)> basisFunction, int power, double x);
+
 private:
     const Mesh& mesh;
+
+    double testMaxwellian(Vector alpha, std::function<double(int,double)> basisFunction, int power, double x, int k);
 
 
 };
