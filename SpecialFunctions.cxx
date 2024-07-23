@@ -168,6 +168,33 @@ double SpecialFunctions::constantFunction(double x)
     return 1;
 }
 
+//Initial condition for ionization and cx test cases
+double SpecialFunctions::inelasticICx(double x)
+{
+    double n0 = 5.0e18;
+    double Lx = 40.0;
+    double value;
+    if (x>20)
+    {
+        value = pow(cosh(-(Lx/2.0-(x-20.0)-2.0)/2.0),-2)+1e-6;
+    }
+    else
+    {
+        value = pow(cosh((Lx/2.0+(x-20.0)-2.0)/2.0),-2)+1e-6;
+    }
+    value *= n0;
+
+    return value;
+}
+
+double SpecialFunctions::inelasticICvx(double x)
+{
+    double rho = 1.0;
+    double u = 0.0;
+    double rt = 2.0;
+    return rho*exp(-pow(x-u,2)/(2.0*rt))/pow(2.0*M_PI*rt,0.5);
+}
+
 //Newton Raphson method to find root of Legendre polynomial of root n with initial guess x0
 double SpecialFunctions::newtonRaphson(int n, double x0)
 {
@@ -241,5 +268,8 @@ double SpecialFunctions::minmod(double a, double b, double c)
     }
 }
 
-
+double SpecialFunctions::computeMaxwellian(double rho, double u, double rt, double vx)
+{
+    return rho*exp(-pow(vx-u,2)/(2.0*rt))/pow(2.0*M_PI*rt,0.5);
+}
 

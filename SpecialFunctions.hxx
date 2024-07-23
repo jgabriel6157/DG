@@ -24,10 +24,15 @@ public:
     static double gaussianPulse(double x);
     static double twinGaussianPulse(double x);
     static double constantFunction(double x);
+    static double inelasticICx(double x);
+    static double inelasticICvx(double x);
 
     static double sign(double x);
     static double min(double a, double b);
     static double minmod(double a, double b, double c);
+
+    //compute the value of f_eq (Maxwellian) from the moments and vx
+    static double computeMaxwellian(double rho, double u, double rt, double vx);
 };
 
 

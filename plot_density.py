@@ -63,7 +63,7 @@ def assignFloat(varString):
         
     return number
 
-fileName = 'Output.csv'
+fileName = 'Density.csv'
 fileNameSol = 'OutputS.csv'
 inputFile = open('input.txt','r')
 
@@ -103,63 +103,34 @@ m = 0
 dx = length/jMax
 dvx = 2*domainMaxVX/(nvx-1)
 # dvx = 1.0/nvx
-u = np.zeros((lMax,jMax,nvx))
+u = np.zeros((lMax,jMax))
 # uSol = np.zeros((lMax,jMax,nvx))
 
 fig = plt.figure()
-ax = fig.add_subplot(projection='3d')
+ax = fig.gca()
+ax.set_yscale('log')
 
 for j in range(jMax):
-    for k in range(nvx):
-        for lx in range(lMax):
-            u[lx,j,k] = values[m]
-            # uSol[lx,j,k] = valuesSol[m]
-            m = m+1
-# vx = 0
-# for j in range(jMax):
-#     xj = j*dx+dx/2
-#     y = np.zeros(10)
-#     x = np.zeros(10)
-#     for i in range(10):
-#         x[i] = j*dx+i*dx/9.0
-#         for l in range(lMax):
-#             y[i] += u[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-#     plt.plot(x,y,color='red')
+    for lx in range(lMax):
+        u[lx,j] = values[m]
+        # uSol[lx,j,k] = valuesSol[m]
+        m = m+1
+
 res = 2
-for vx in range(nvx):
-    for j in range(jMax):
-        xj = j*dx+dx/2
-        y = np.zeros(res)
-        x = np.zeros(res)
-        # sol = np.zeros(res)
-        for i in range(res):
-            x[i] = j*dx+i*dx/(res-1)
-            for l in range(lMax):
-                y[i] += u[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-                # sol[i] += uSol[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-            if y[i]<1:
-                y[i]=1
-        y_offset = -domainMaxVX + vx*dvx
-        ax.plot(x,[y_offset]*len(x),y,color='red')
+for j in range(jMax):
+    xj = j*dx+dx/2
+    y = np.zeros(res)
+    x = np.zeros(res)
+    # sol = np.zeros(res)
+    for i in range(res):
+        x[i] = j*dx+i*dx/(res-1)
+        for l in range(lMax):
+            y[i] += u[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
+            # print(u[l][j])
+            # sol[i] += uSol[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
+    plt.plot(x,y,color='red')
         # ax.plot(x,[y_offset]*len(x),sol,color='black')
         # ax.plot(x,[y_offset]*len(x),y-sol,color='red')
 
-# for j in range(jMax):
-#     xj = j*dx+dx/2
-#     for k in range(nvx):
-#         y = np.zeros((10,10))
-#         x = np.zeros((10,10))
-#         vx = np.zeros((10,10))
-#         vx_center = -domainMaxVX+k*dvx+dvx/2
-#         # vx_center = domainMaxVX+k*dvx+dvx/2
-#         for i in range(10):
-#             for n in range(10):
-#                 x[i,n] = j*dx+i*dx/9.0
-#                 vx[i,n] = -domainMaxVX+k*dvx+n*dvx/9.0
-#                 # vx[i,n] = domainMaxVX+k*dvx+n*dvx/9.0
-#                 for lx in range(lMax):
-#                     for lvx in range(lMax):
-#                         y[i,n] += u[lx,lvx,j,k]*getFunction(basis,lx,(2/dx)*(x[i,n]-xj))*getFunction(basis,lvx,(2/dvx)*(vx[i,n]-vx_center))
-#         ax.plot_wireframe(x,vx,y)
 
 plt.show()

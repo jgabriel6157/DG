@@ -12,8 +12,24 @@ Mesh::Mesh(int nx, int nvx, double domainLengthX, double domainMaxVX) : nx(nx), 
         //Initialize vertices of the cell
         cell.vertices.push_back(i*cell.dx); //1D mesh
         //Initialize neighbors of the cell
-        cell.neighbors.push_back((i - 1 + nx) % nx); //Periodic BC
-        cell.neighbors.push_back((i + 1) % nx); //Periodic BC
+        if (i==0)
+        {
+            // cell.neighbors.push_back(nx-1); //Periodic BC
+            cell.neighbors.push_back(nx); //Ghost cell left
+            cell.neighbors.push_back(i+1);
+        }
+        else if (i==nx-1)
+        {
+            cell.neighbors.push_back(i-1);
+            // cell.neighbors.push_back(0); //Periodic BC
+            cell.neighbors.push_back(nx+1); //Ghost cell right
+        }
+        else
+        {
+            cell.neighbors.push_back(i - 1); 
+            cell.neighbors.push_back(i + 1); 
+        }
+
 
         cells.push_back(cell);
     }

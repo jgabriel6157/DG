@@ -53,28 +53,32 @@ int main(int argc, char* argv[])
     std::ofstream write_output("Output.csv");
     assert(write_output.is_open());
 
+    std::ofstream write_density("Density.csv");
+    assert(write_density.is_open());
+
     auto start = std::chrono::high_resolution_clock::now();
     Solver solver(mesh, dt, a, lMax, alpha);
 
     solver.createMatrices(basisFunction, basisFunctionDerivative, quadratureOrder);
 
-    solver.initialize(basisFunction, SpecialFunctions::constantFunction, inputFunction);
+    // solver.initialize(basisFunction, SpecialFunctions::gaussianPulse, SpecialFunctions::constantFunction);
+    solver.initialize(basisFunction, SpecialFunctions::inelasticICx, SpecialFunctions::inelasticICvx);
 
-    // for (int j=0; j<jMax; j++)
-    // {
-    //     for (int k=0; k<nvx; k++)
-    //     {
-    //         for (int l=0; l<lMax; l++)
-    //         {
-    //             write_output << solver.getSolution(l,k+j*nvx) << "\n";
-    //         }
-    //     }
-    // }
+    for (int j=0; j<jMax; j++)
+    {
+        Vector rho = solver.getDensity(j);
+        for (int l=0; l<lMax; l++)
+        {
+            write_density << rho[l] << "\n";
+        }
+    }
 
     Vector moments = solver.getMoments(quadratureOrder,basisFunction);
     double M0 = moments[0];
     double U0 = moments[1];
     double E0 = moments[2];
+
+    // std::cout << U0 << "\n";
 
     for (int t=0; t<tMax; t++)
     {
@@ -94,6 +98,11 @@ int main(int argc, char* argv[])
             std::cout << (moments[2]-E0)/E0 << "\n\n";
             for (int j=0; j<jMax; j++)
             {
+                Vector rho = solver.getDensity(j);
+                for (int l=0; l<lMax; l++)
+                {
+                    write_density << rho[l] << "\n";
+                }
                 for (int k=0; k<nvx; k++)
                 {
                     for (int l=0; l<lMax; l++)
@@ -106,8 +115,8 @@ int main(int argc, char* argv[])
     }
 
     auto stop = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration<double, std::milli>(stop-start);
-    std::cout << duration.count() << " ms" << "\n";
+    auto duration = std::chrono::duration<double>(stop-start);
+    std::cout << duration.count() << " s" << "\n";
 
     if (test)
     {
@@ -115,6 +124,7 @@ int main(int argc, char* argv[])
     }
 
     write_output.close();
+    write_density.close();
 
     return 0;
 }
