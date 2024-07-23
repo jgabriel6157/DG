@@ -63,7 +63,7 @@ def assignFloat(varString):
         
     return number
 
-fileName = 'Output.csv'
+fileName = 'Density.csv'
 inputFile = open('input.txt','r')
 
 while True:
@@ -93,7 +93,7 @@ inputFile.close()
 fig,ax = plt.subplots()
 lines = [ax.plot([], [], lw=2,color='red')[0] for _ in range(jMax)]
 plt.xlim(0,length)
-plt.ylim(-1.5,1.5)
+plt.ylim(0,1)
 
 values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
@@ -128,6 +128,7 @@ def animate(t):
         x[j],y[j] = generate_data(t,j)
     for j, line in enumerate(lines):
         line.set_data(x[j],y[j])
+    ax.set_title(f"Timestep: {t}")
     return lines
 
 ani = FuncAnimation(fig, animate, frames=nout, init_func=init, repeat=False, interval = 100)

@@ -57,6 +57,12 @@ int main(int argc, char* argv[])
     std::ofstream write_output("Output.csv");
     assert(write_output.is_open());
 
+    std::ofstream write_density("Density.csv");
+    assert(write_density.is_open());
+
+    std::ofstream write_moments("Moments.csv");
+    assert(write_moments.is_open());
+
     auto start = std::chrono::high_resolution_clock::now();
     Solver solver(mesh, dt, a, lMax, alpha);
 
@@ -64,21 +70,28 @@ int main(int argc, char* argv[])
 
     solver.initialize(basisFunction, SpecialFunctions::constantFunction, inputFunction);
 
-    // for (int j=0; j<jMax; j++)
-    // {
-    //     for (int k=0; k<nvx; k++)
-    //     {
-    //         for (int l=0; l<lMax; l++)
-    //         {
-    //             write_output << solver.getSolution(l,k+j*nvx) << "\n";
-    //         }
-    //     }
-    // }
+
+    for (int j=0; j<jMax; j++)
+    {
+        Vector rho = solver.getDensity(j);
+        for (int l=0; l<lMax; l++)
+        {
+            write_density << rho[l] << "\n";
+        }
+        for (int k=0; k<nvx; k++)
+        {
+            for (int l=0; l<lMax; l++)
+            {
+                write_output << solver.getSolution(l,k+j*nvx) << "\n";
+            }
+        }
+    }
 
     Vector moments = solver.getMoments(quadratureOrder,basisFunction);
     double M0 = moments[0];
     double U0 = moments[1];
     double E0 = moments[2];
+    double S0 = moments[3];
 
     for (int t=0; t<tMax; t++)
     {
@@ -93,11 +106,17 @@ int main(int argc, char* argv[])
         {
             std::cout << t << "\n";
             Vector moments = solver.getMoments(quadratureOrder,basisFunction);
-            std::cout << (moments[0]-M0)/M0 << "\n";
-            std::cout << moments[1] << "\n";
-            std::cout << (moments[2]-E0)/E0 << "\n\n";
+            write_moments << (moments[0]-M0)/M0 << "\n";
+            write_moments << moments[1] << "\n";
+            write_moments << (moments[2]-E0)/E0 << "\n";
+            write_moments << (moments[3]-S0)/S0 << "\n";
             for (int j=0; j<jMax; j++)
             {
+                Vector rho = solver.getDensity(j);
+                for (int l=0; l<lMax; l++)
+                {
+                    write_density << rho[l] << "\n";
+                }
                 for (int k=0; k<nvx; k++)
                 {
                     for (int l=0; l<lMax; l++)
@@ -119,6 +138,7 @@ int main(int argc, char* argv[])
     }
 
     write_output.close();
+    write_density.close();
 
     return 0;
 }

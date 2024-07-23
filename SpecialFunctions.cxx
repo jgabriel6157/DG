@@ -4,6 +4,7 @@
 #include <functional>
 #include "SpecialFunctions.hxx"
 #include "Vector.hxx"
+#include "Matrix.hxx"
 
 //Function to calculate Legendre polynomial of order n at point x
 double SpecialFunctions::legendre(int n, double x)
@@ -257,4 +258,16 @@ double SpecialFunctions::computeMoment(Vector moment, std::function<double(int,d
 double SpecialFunctions::computeMaxwellian(double rho, double u, double rt, double vx)
 {
     return rho*exp(-pow(vx-u,2)/(2.0*rt))/pow(2.0*M_PI*rt,0.5);
+}
+
+double SpecialFunctions::getF(Matrix uPre, int lMax, std::function<double(int,double)> basisFunction, int j, double x)
+{
+    double f = 0;
+
+    for (int l=0; l<lMax; l++)
+    {
+        f += uPre(l,j)*basisFunction(l,x);
+    }
+
+    return f;
 }

@@ -13,6 +13,8 @@ public:
 
     Vector integrate(Matrix M, int lMax, int power);
 
+    double integrate(Matrix f, int lMax, std::function<double(int,double)> basisFunction, double x);
+
     double integrate(Vector alpha, std::function<double(int,double)> basisFunction, int power, double x);
 
 private:

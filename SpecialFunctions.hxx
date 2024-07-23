@@ -2,6 +2,8 @@
 #define SPECIALFUNCTIONSHEADERDEF
 
 #include "Vector.hxx"
+#include "Matrix.hxx"
+#include <functional>
 
 class SpecialFunctions
 {
@@ -34,6 +36,9 @@ public:
 
     //compute the value of f_eq (Maxwellian) from the moments and vx
     static double computeMaxwellian(double rho, double u, double rt, double vx);
+
+    //compute the reconstructed f(x,t)
+    static double getF(Matrix uPre, int lMax, std::function<double(int,double)> basisFunction, int j, double x);
 };
 
 

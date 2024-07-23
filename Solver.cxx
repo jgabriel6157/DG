@@ -242,24 +242,13 @@ const double Solver::getError(int tMax, std::function<double(int,double)> basisF
     return sqrt(error/solutionSum);
 }
 
-double Solver::getF(Matrix& uPre, std::function<double(int,double)> basisFunction, int lMax, int j, double x)
-{
-    double f = 0;
-
-    for (int l=0; l<lMax; l++)
-    {
-        f += uPre(l,j)*basisFunction(l,x);
-    }
-
-    return f;
-}
-
 Vector Solver::getMoments(int quadratureOrder, std::function<double(int,double)> basisFunction)
 {
-    Vector moments(3);
+    Vector moments(4);
     double mass = 0;
     double momentum = 0;
     double energy = 0;
+    double entropy = 0;
     Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
     const auto& cells = mesh.getCells();
@@ -285,11 +274,13 @@ Vector Solver::getMoments(int quadratureOrder, std::function<double(int,double)>
             mass += weights[i]*SpecialFunctions::computeMoment(rho, basisFunction, lMax, roots[i])*dx/2.0;
             momentum += weights[i]*SpecialFunctions::computeMoment(u, basisFunction, lMax, roots[i])*dx/2.0;
             energy += weights[i]*SpecialFunctions::computeMoment(rt, basisFunction, lMax, roots[i])*dx/2.0;
+            entropy += weights[i]*integrator.integrate(fj, lMax, basisFunction, roots[i])*dx/2.0;
         }
     }
     moments[0] = mass; //return rho
     moments[1] = momentum/mass; //return u
     moments[2] = energy; //return E
+    moments[3] = entropy; //return S
     return moments;
 }
 
@@ -322,4 +313,19 @@ Vector Solver::fitMaxwellian(std::function<double(int,double)> basisFunction, Ve
     }
 
     return uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
+}
+
+Vector Solver::getDensity(int j)
+{
+    int nvx = mesh.getNVX();
+    Matrix fj(lMax,nvx);
+    for (int k=0; k<nvx; k++)
+    {
+        for (int l=0; l<lMax; l++)
+        {
+            fj(l,k) = uPre(l,k+j*nvx);
+        }
+    }
+
+    return integrator.integrate(fj, lMax, 0); //rho tilde
 }

@@ -29,9 +29,6 @@ private:
 
     void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor, std::function<double(int,double)> basisFunction, int quadratureOrder);
 
-    //compute the reconstructed f(x,t)
-    double getF(Matrix& uPre, std::function<double(int,double)> basisFunction, int lMax, int j, double x);
-
 public:
     //constructor 
     Solver(const Mesh& mesh, double dt, double a, int lMax, Vector alpha);
@@ -62,6 +59,9 @@ public:
 
     //fit Maxwellian
     Vector fitMaxwellian(std::function<double(int,double)> basisFunction, Vector alpha, double vx, int j);
+
+    //compute the density from f
+    Vector getDensity(int j);
 
 };
 
