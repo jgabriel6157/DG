@@ -146,8 +146,8 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             double fluxFactorPlus = (1.0-SpecialFunctions::sign(vx))/2.0;
 
             // calculate Ghost cells
-            Vector fL = fitMaxwellian1(basisFunction, Crec, cs, 2.0, vx, j);
-            Vector fR = fitMaxwellian1(basisFunction, Crec, -cs, 2.0, vx, j);
+            Vector fL = fitMaxwellian(basisFunction, Crec, cs, 2.0, vx, j);
+            Vector fR = fitMaxwellian(basisFunction, Crec, -cs, 2.0, vx, j);
             for (int l=0; l<lMax; l++)
             {
                 uBefore(l,k+nx*nvx) = fL[l];
@@ -347,7 +347,7 @@ Vector Solver::fitMaxwellian(std::function<double(int,double)> basisFunction, Ve
     return uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
 }
 
-Vector Solver::fitMaxwellian1(std::function<double(int,double)> basisFunction, double density, double meanVelocity, double temperature, double vx, int j)
+Vector Solver::fitMaxwellian(std::function<double(int,double)> basisFunction, double density, double meanVelocity, double temperature, double vx, int j)
 {
     const auto& cells = mesh.getCells();
 

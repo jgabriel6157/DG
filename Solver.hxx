@@ -67,7 +67,7 @@ public:
     //fit Maxwellian
     Vector fitMaxwellian(std::function<double(int,double)> basisFunction, Vector rho, Vector u, Vector rt, double vx, int j);
 
-    Vector fitMaxwellian1(std::function<double(int,double)> basisFunction, double density, double meanVelocity, double temperature, double vx, int j);
+    Vector fitMaxwellian(std::function<double(int,double)> basisFunction, double density, double meanVelocity, double temperature, double vx, int j);
 
     //compute the density from f
     Vector getDensity(int j);
