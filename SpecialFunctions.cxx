@@ -192,7 +192,8 @@ double SpecialFunctions::inelasticICvx(double x)
     double rho = 1.0;
     double u = 0.0;
     double rt = 2.0;
-    return rho*exp(-pow(x-u,2)/(2.0*rt))/pow(2.0*M_PI*rt,0.5);
+    double vt2 = rt*9.58134e7;
+    return rho*exp(-pow(x-u,2)/(2.0*vt2))/sqrt(2.0*M_PI*vt2);
 }
 
 //Newton Raphson method to find root of Legendre polynomial of root n with initial guess x0
@@ -270,6 +271,7 @@ double SpecialFunctions::minmod(double a, double b, double c)
 
 double SpecialFunctions::computeMaxwellian(double rho, double u, double rt, double vx)
 {
-    return rho*exp(-pow(vx-u,2)/(2.0*rt))/pow(2.0*M_PI*rt,0.5);
+    double vt2 = rt*9.58134e7;
+    return rho*exp(-pow(vx-u,2)/(2.0*vt2))/sqrt(2.0*M_PI*vt2);
 }
 

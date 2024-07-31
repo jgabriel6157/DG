@@ -78,8 +78,6 @@ int main(int argc, char* argv[])
     double U0 = moments[1];
     double E0 = moments[2];
 
-    // std::cout << U0 << "\n";
-
     for (int t=0; t<tMax; t++)
     {
         solver.advance(basisFunction);
@@ -93,9 +91,9 @@ int main(int argc, char* argv[])
         {
             std::cout << t << "\n";
             Vector moments = solver.getMoments(quadratureOrder,basisFunction);
-            std::cout << (moments[0]-M0)/M0 << "\n";
-            std::cout << moments[1] << "\n";
-            std::cout << (moments[2]-E0)/E0 << "\n\n";
+            // std::cout << (moments[0]-M0)/M0 << "\n";
+            // std::cout << moments[1] << "\n";
+            // std::cout << (moments[2]-E0)/E0 << "\n\n";
             for (int j=0; j<jMax; j++)
             {
                 Vector rho = solver.getDensity(j);

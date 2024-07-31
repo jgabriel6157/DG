@@ -137,8 +137,6 @@ for vx in range(nvx):
             for l in range(lMax):
                 y[i] += u[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
                 # sol[i] += uSol[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-            if y[i]<1:
-                y[i]=1
         y_offset = -domainMaxVX + vx*dvx
         ax.plot(x,[y_offset]*len(x),y,color='red')
         # ax.plot(x,[y_offset]*len(x),sol,color='black')

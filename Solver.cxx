@@ -110,11 +110,11 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     double X = 0.232;
     double K = 0.39;
     double U = 13.6/20.0;
-    double sigma_iz = A*(1+P*pow(U,0.5))*pow(U,K)*exp(-U)/(X+U);
+    double sigma_iz = A*(1+P*sqrt(U))*pow(U,K)*exp(-U)/(X+U);
     
     double ne = 5.0e18;
     double Crec = 4.98e18;
-    double cs = sqrt(20.0);
+    double cs = sqrt(20.0*9.58134e7);
 
     const auto& cells = mesh.getCells();
 
@@ -155,7 +155,6 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             }
             for (int l=0; l<lMax; l++)
             {
-                // std::cout << feq[l] << "\n";
                 uAfter(l,k+j*nvx)=0;
                 for (int i=0; i<lMax; i++)
                 {
@@ -167,8 +166,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 }
                 uAfter(l,k+j*nvx)*=vx;
                 uAfter(l,k+j*nvx)/=dx;
-                // uAfter(l,k+j*nvx)+=nu*(feq[l]-uBefore(l,k+j*nvx));
-                uAfter(l,k+j*nvx)-=ne*uBefore(l,k+j*nvx)*sigma_iz*1.0e-4;
+                uAfter(l,k+j*nvx)-=ne*uBefore(l,k+j*nvx)*sigma_iz;
                 uAfter(l,k+j*nvx)*=dt;
                 uAfter(l,k+j*nvx)+=uBefore(l,k+j*nvx);
                 
