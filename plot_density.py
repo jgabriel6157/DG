@@ -129,7 +129,7 @@ values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
 valuesSol = pd.read_csv(fileNameSol,header=None)
 valuesSol = valuesSol[0].to_numpy()
-m = 3360
+m = 33600
 dx = length/jMax
 dvx = 2*domainMaxVX/(nvx-1)
 # dvx = 1.0/nvx
@@ -143,7 +143,7 @@ ax.set_yscale('log')
 for j in range(jMax):
     for lx in range(lMax):
         u[lx,j] = values[m]
-        uSol[lx,j] = valuesSol[m]
+        # uSol[lx,j] = valuesSol[m]
         m = m+1
 
 l2Norm = 0
@@ -162,13 +162,13 @@ for j in range(jMax):
         # sol[i] = f(x[i])
         for l in range(lMax):
             y[i] += u[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-            sol[i] += uSol[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
+            # sol[i] += uSol[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
         error[i] = (y[i]-sol[i])**2
         y2[i] = y[i]**2
     l2Norm+=simpson(error,x=x)
     solution+=simpson(y2,x=x)
     plt.plot(x,y,color='red')
-    plt.plot(x,sol,'k:')
+    # plt.plot(x,sol,'k:')
 
 print(np.sqrt(l2Norm/solution))
 

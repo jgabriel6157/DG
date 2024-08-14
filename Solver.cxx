@@ -124,7 +124,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
 
     double nu_cx = 2.2e-14;
     double ni = ne;
-    double ui = 0;
+    double ui = cs;
     double Ti = 20;
 
     const auto& cells = mesh.getCells();
@@ -153,6 +153,15 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
         Vector rho_i(lMax);
         rho_i[0] = ni;
 
+        // if (j<56)
+        // {
+        //     ui = -cs;
+        // }
+        // else
+        // {
+        //     ui = cs;
+        // }
+
         for (int k=0; k<nvx; k++)
         {
             // std::cout << j << "\n";
@@ -166,7 +175,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             Vector fR = fitMaxwellian(basisFunction, Crec, -cs, 2.0, vx, j);
 
             // fit ion distribution function
-            Vector fi = fitMaxwellian(basisFunction, ni, 0, 20, vx, j);
+            Vector fi = fitMaxwellian(basisFunction, ni, ui, Ti, vx, j);
 
             Matrix M_invS1(lMax,lMax*lMax);
             Matrix M_invS2(lMax,lMax*lMax);
@@ -454,7 +463,8 @@ Vector Solver::fitCX(std::function<double(int,double)> basisFunction, double den
         x = leftVertex+i*dx/(res-1.0);
         double density_n = computeMoment(rho_n, basisFunction, lMax, 2.0*(x-xj)/dx);
         double f_n = computeMoment(f_tilde, basisFunction, lMax, 2.0*(x-xj)/dx);
-        y[i] = density_i * f_n - density_n * SpecialFunctions::computeMaxwellian(density_i,meanVelocity_i,temperature_i,vx);
+        double ui = meanVelocity_i*SpecialFunctions::sign(x-cells.back().vertices[1]/2.0);
+        y[i] = density_i * f_n - density_n * SpecialFunctions::computeMaxwellian(density_i,ui,temperature_i,vx)/density_i;
 
         // y[i] = density_n*SpecialFunctions::computeMaxwellian(density_i,meanVelocity_i,temperature_i,vx);
 

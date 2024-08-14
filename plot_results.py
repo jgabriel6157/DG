@@ -94,7 +94,7 @@ fig,ax = plt.subplots()
 ax.set_yscale('log')
 lines = [ax.plot([], [], lw=2,color='red')[0] for _ in range(jMax)]
 plt.xlim(0,length)
-plt.ylim(1e8,1e20)
+plt.ylim(1e5,1e20)
 
 values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
