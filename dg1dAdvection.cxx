@@ -48,6 +48,11 @@ int main(int argc, char* argv[])
     
     lMax+=1;
     Mesh mesh(jMax, nvx, length, domainMaxVX);
+    if (nout>tMax)
+    {
+        std::cout << "Invalid nout (nout > tMax)! nout set equal to tMax" << "\n";
+        nout = tMax;
+    }
     int outputTimeStep = tMax/nout;
     
     std::ofstream write_output("Output.csv");
@@ -64,6 +69,8 @@ int main(int argc, char* argv[])
     // solver.initialize(basisFunction, SpecialFunctions::gaussianPulse, SpecialFunctions::constantFunction);
     solver.initialize(basisFunction, SpecialFunctions::inelasticICx, SpecialFunctions::inelasticICvx);
 
+    std::cout << "Initialization complete" << "\n";
+
     for (int j=0; j<jMax; j++)
     {
         Vector rho = solver.getDensity(j);
@@ -78,6 +85,10 @@ int main(int argc, char* argv[])
     double U0 = moments[1];
     double E0 = moments[2];
 
+    // Vector rho = solver.getDensity(0);
+    // std::cout << solver.computeMoment(rho,basisFunction,lMax,-1) << "\n";
+    // rho = solver.getDensity(jMax-1);
+    // std::cout << solver.computeMoment(rho,basisFunction,lMax,1) << "\n";
     for (int t=0; t<tMax; t++)
     {
         solver.advance(basisFunction);

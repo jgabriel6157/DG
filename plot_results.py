@@ -102,6 +102,7 @@ k = 0
 dx = length/jMax
 u = np.zeros((lMax,jMax,nout))
 for t in range(nout):
+    print(k)
     for j in range(jMax):
         for l in range(lMax):
             u[l][j][t] = values[k]

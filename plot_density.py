@@ -66,7 +66,7 @@ def assignFloat(varString):
     return number
 
 fileName = 'Density.csv'
-fileNameSol = 'OutputS.csv'
+fileNameSol = 'Density1.csv'
 inputFile = open('input.txt','r')
 
 while True:
@@ -127,14 +127,14 @@ def f(z):
 
 values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
-# valuesSol = pd.read_csv(fileNameSol,header=None)
-# valuesSol = valuesSol[0].to_numpy()
-m = 335664
+valuesSol = pd.read_csv(fileNameSol,header=None)
+valuesSol = valuesSol[0].to_numpy()
+m = 3360
 dx = length/jMax
 dvx = 2*domainMaxVX/(nvx-1)
 # dvx = 1.0/nvx
 u = np.zeros((lMax,jMax))
-# uSol = np.zeros((lMax,jMax,nvx))
+uSol = np.zeros((lMax,jMax))
 
 fig = plt.figure()
 ax = fig.gca()
@@ -143,7 +143,7 @@ ax.set_yscale('log')
 for j in range(jMax):
     for lx in range(lMax):
         u[lx,j] = values[m]
-        # uSol[lx,j,k] = valuesSol[m]
+        uSol[lx,j] = valuesSol[m]
         m = m+1
 
 l2Norm = 0
@@ -159,10 +159,10 @@ for j in range(jMax):
     y2 = np.zeros(res)
     for i in range(res):
         x[i] = j*dx+i*dx/(res-1)
-        sol[i] = f(x[i])
+        # sol[i] = f(x[i])
         for l in range(lMax):
             y[i] += u[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-            # sol[i] += uSol[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
+            sol[i] += uSol[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
         error[i] = (y[i]-sol[i])**2
         y2[i] = y[i]**2
     l2Norm+=simpson(error,x=x)

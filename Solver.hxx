@@ -19,6 +19,7 @@ private:
     int lMax;
     double alpha;
     Matrix M_invS;
+    Matrix M_invT;
     Matrix M_invF1Minus;
     Matrix M_invF0Minus;
     Matrix M_invF1Plus;
@@ -30,7 +31,7 @@ private:
     void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor, std::function<double(int,double)> basisFunction);
 
     //compute the reconstructed f(x,t)
-    double getF(Matrix& uPre, std::function<double(int,double)> basisFunction, int lMax, int j, double x);
+    double getF(std::function<double(int,double)> basisFunction, int lMax, int j, int k, double x);
 
 public:
     //constructor 
@@ -71,6 +72,8 @@ public:
 
     //compute the density from f
     Vector getDensity(int j);
+
+    Vector fitCX(std::function<double(int,double)> basisFunction, double density, double meanVelocity, double temperature, Vector rho_n, Vector f_tilde, int k, int j);
 
 };
 

@@ -176,11 +176,13 @@ double SpecialFunctions::inelasticICx(double x)
     double value;
     if (x>20)
     {
-        value = pow(cosh(-(Lx/2.0-(x-20.0)-2.0)/2.0),-2)+1e-6;
+        value = pow(cosh(-(Lx/2.0-(x-20.0)-2.0)/2.0),-2)+1e-6; //ionization
+        // value = pow(cosh(-(Lx/2.0-(x-20.0)-2.0)/2.0),-2)+1e-2; //CX
     }
     else
     {
-        value = pow(cosh((Lx/2.0+(x-20.0)-2.0)/2.0),-2)+1e-6;
+        value = pow(cosh((Lx/2.0+(x-20.0)-2.0)/2.0),-2)+1e-6; //ionization
+        // value = pow(cosh((Lx/2.0+(x-20.0)-2.0)/2.0),-2)+1e-2; //CX
     }
     value *= n0;
 
