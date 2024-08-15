@@ -67,7 +67,7 @@ Vector NewtonSolver::createF(Vector alpha, double nu, Vector rho, Vector u, Vect
 
             double moment = SpecialFunctions::computeMoment(tilde, basisFunction, 1, roots[i]);
 
-            F[m] += weights[i]*(nu*integral-moment)*dx/2.0;
+            F[m] += weights[i]*basisFunction(0,roots[i])*(nu*integral-moment)*dx/2.0;
         }
     }
 
@@ -88,11 +88,11 @@ Matrix NewtonSolver::createJ(Vector alpha, double nu, Vector rho, Vector u, Vect
 
                 if (n==0)
                 {
-                    J(m,n) += weights[i]*basisFunction(0,roots[i])*(nu*integral)*dx/2.0;
+                    J(m,n) += weights[i]*basisFunction(0,roots[i])*basisFunction(0,roots[i])*(nu*integral)*dx/2.0;
                 }
                 else
                 {
-                    J(m,n) -= weights[i]*basisFunction(0,roots[i])*(nu*integral)*dx/2.0;
+                    J(m,n) -= weights[i]*basisFunction(0,roots[i])*basisFunction(0,roots[i])*(nu*integral)*dx/2.0;
                 }
             }
         }

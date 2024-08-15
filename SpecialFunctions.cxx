@@ -266,7 +266,7 @@ double SpecialFunctions::getF(Matrix uPre, int lMax, std::function<double(int,do
 
     for (int l=0; l<lMax; l++)
     {
-        f += uPre(l,j)*basisFunction(l,x);
+        f += uPre(l,j)*basisFunction(l,x); //Should probably be 2.0*(x-xj)/dx
     }
 
     return f;
