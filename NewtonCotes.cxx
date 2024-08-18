@@ -56,21 +56,21 @@ double NewtonCotes::integrate(Matrix f, int lMax, std::function<double(int,doubl
     return integral;
 }
 
-double NewtonCotes::integrate(Vector alpha, std::function<double(int,double)> basisFunction, int power, double x)
+double NewtonCotes::integrate(Matrix alpha, std::function<double(int,double)> basisFunction, int power, double x, int lMax)
 {
     double dvx = mesh.getDVX();
     int nvx = mesh.getNVX();
     double integral;
 
-    integral = testMaxwellian(alpha,basisFunction,power,x,0)+testMaxwellian(alpha,basisFunction,power,x,nvx-1);
+    integral = testMaxwellian(alpha,basisFunction,power,x,0,lMax)+testMaxwellian(alpha,basisFunction,power,x,nvx-1,lMax);
 
     for (int k=1; k<nvx-1; k+=2)
     {
-        integral += 4.0*testMaxwellian(alpha,basisFunction,power,x,k);
+        integral += 4.0*testMaxwellian(alpha,basisFunction,power,x,k,lMax);
     }
     for (int k=2; k<nvx-1; k+=2)
     {
-        integral += 2.0*testMaxwellian(alpha,basisFunction,power,x,k);
+        integral += 2.0*testMaxwellian(alpha,basisFunction,power,x,k,lMax);
     }
 
     integral *= dvx/3.0;
@@ -79,8 +79,15 @@ double NewtonCotes::integrate(Vector alpha, std::function<double(int,double)> ba
 
 }
 
-double NewtonCotes::testMaxwellian(Vector alpha, std::function<double(int,double)> basisFunction, int power, double x, int k)
+double NewtonCotes::testMaxwellian(Matrix alpha, std::function<double(int,double)> basisFunction, int power, double x, int k, int lMax)
 {
     double vx = mesh.getVelocity(k);
-    return pow(vx,power)*exp(basisFunction(0,x)*(alpha[0]-vx*alpha[1]-pow(vx,2)*alpha[2]));
+    double exponent = 0;
+
+    for (int l=0; l<lMax; l++)
+    {
+        exponent += basisFunction(l,x)*(alpha(0,l)-vx*alpha(1,l)-pow(vx,2)*alpha(2,l));
+    }
+
+    return pow(vx,power)*exp(exponent);
 }

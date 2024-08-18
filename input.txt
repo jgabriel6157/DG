@@ -1,10 +1,10 @@
 a = 2*pi
-jMax = 1
-lMax = 0
-tMax = 500
+jMax = 10
+lMax = 2
+tMax = 50000
 quadratureOrder = 20
 length = 2*pi
-dt = 0.01
+dt = 0.001
 basis = legendre
 test = false
 alpha = 0

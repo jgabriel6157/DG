@@ -17,7 +17,7 @@ private:
     double dt;
     double a;
     int lMax;
-    Vector alpha;
+    Matrix alphaDomain;
     Matrix M_invS;
     Matrix M_invF1Minus;
     Matrix M_invF0Minus;
@@ -31,7 +31,7 @@ private:
 
 public:
     //constructor 
-    Solver(const Mesh& mesh, double dt, double a, int lMax, Vector alpha);
+    Solver(const Mesh& mesh, double dt, double a, int lMax);
     
     //deconstructor
     ~Solver();
@@ -41,6 +41,8 @@ public:
 
     //initialize using the Least Squares method
     void initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunctionX, std::function<double(double)> inputFunctionVX);
+
+    void initializeAlpha(std::function<double(int,double)> basisFunction);
 
     //advance time step using 3rd order SSP RK
     void advance(std::function<double(int,double)> basisFunction, int quadratureOrder);
@@ -57,8 +59,17 @@ public:
     //compute the mass, momentum and energy from f
     Vector getMoments(int quadratureOrder, std::function<double(int,double)> basisFunction);
 
+    //compute the value of your moment at normalized point x
+    double computeMoment(Vector moment, std::function<double(int,double)> basisFunction, int lMax, double x);
+
+    //compute the value of f_eq (Maxwellian) from the moments and vx
+    double computeMaxwellian(double rho, double u, double rt, double vx);
+
     //fit Maxwellian
-    Vector fitMaxwellian(std::function<double(int,double)> basisFunction, Vector alpha, double vx, int j);
+    Vector fitMaxwellian(std::function<double(int,double)> basisFunction, Vector rho, Vector u, Vector rt, double vx, int j);
+
+    //fit Maxwellian
+    Vector fitMaxwellian(std::function<double(int,double)> basisFunction, Matrix alpha, double vx, int j);
 
     //compute the density from f
     Vector getDensity(int j);

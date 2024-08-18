@@ -40,10 +40,6 @@ int main(int argc, char* argv[])
     int nvx = assignInt(argString[13]);
     double domainMaxVX = assignDouble(argString[14]);
 
-    Vector alpha(3);
-    alpha[0] = -1.0;
-    alpha[2] = 0.2;
-
     FunctionMapper::initializeMap();
 
     auto basisFunction = FunctionMapper::getFunction<std::function<double(int,double)>>(basis);
@@ -64,12 +60,16 @@ int main(int argc, char* argv[])
     assert(write_moments.is_open());
 
     auto start = std::chrono::high_resolution_clock::now();
-    Solver solver(mesh, dt, a, lMax, alpha);
+
+    Solver solver(mesh, dt, a, lMax);
 
     solver.createMatrices(basisFunction, basisFunctionDerivative, quadratureOrder);
 
-    solver.initialize(basisFunction, SpecialFunctions::constantFunction, inputFunction);
+    // solver.initialize(basisFunction, SpecialFunctions::constantFunction, inputFunction);
 
+    solver.initialize(basisFunction, SpecialFunctions::gaussianPulse, inputFunction);
+
+    solver.initializeAlpha(basisFunction);
 
     for (int j=0; j<jMax; j++)
     {
@@ -129,8 +129,8 @@ int main(int argc, char* argv[])
     }
 
     auto stop = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration<double, std::milli>(stop-start);
-    std::cout << duration.count() << " ms" << "\n";
+    auto duration = std::chrono::duration<double>(stop-start);
+    std::cout << duration.count() << " s" << "\n";
 
     if (test)
     {

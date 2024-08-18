@@ -99,7 +99,7 @@ values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
 # valuesSol = pd.read_csv(fileNameSol,header=None)
 # valuesSol = valuesSol[0].to_numpy()
-m = 12700
+m = 381000
 dx = length/jMax
 dvx = 2*domainMaxVX/(nvx-1)
 # dvx = 1.0/nvx
@@ -115,6 +115,7 @@ for j in range(jMax):
             u[lx,j,k] = values[m]
             # uSol[lx,j,k] = valuesSol[m]
             m = m+1
+print(m)
 # vx = 0
 # for j in range(jMax):
 #     xj = j*dx+dx/2
