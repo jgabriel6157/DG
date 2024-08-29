@@ -56,6 +56,12 @@ int main(int argc, char* argv[])
     std::ofstream write_density("Density.csv");
     assert(write_density.is_open());
 
+    std::ofstream write_velocity("Velocity.csv");
+    assert(write_velocity.is_open());
+
+    std::ofstream write_temperature("Temperature.csv");
+    assert(write_temperature.is_open());
+
     std::ofstream write_moments("Moments.csv");
     assert(write_moments.is_open());
 
@@ -70,13 +76,17 @@ int main(int argc, char* argv[])
     solver.initialize(basisFunction, SpecialFunctions::gaussianPulse, inputFunction);
 
     solver.initializeAlpha(basisFunction);
-
+    std::cout << "initialization complete" << "\n";
     for (int j=0; j<jMax; j++)
     {
-        Vector rho = solver.getDensity(j);
+        Vector rho = solver.getMoment(j,0);
+        Vector u = solver.getMoment(j,1);
+        Vector rt = solver.getMoment(j,2);
         for (int l=0; l<lMax; l++)
         {
             write_density << rho[l] << "\n";
+            write_velocity << u[l] << "\n";
+            write_temperature << rt[l] << "\n";
         }
         for (int k=0; k<nvx; k++)
         {
@@ -92,7 +102,7 @@ int main(int argc, char* argv[])
     double U0 = moments[1];
     double E0 = moments[2];
     double S0 = moments[3];
-
+    std::cout << "start" << "\n";
     for (int t=0; t<tMax; t++)
     {
         solver.advance(basisFunction, quadratureOrder);
@@ -110,12 +120,20 @@ int main(int argc, char* argv[])
             write_moments << moments[1] << "\n";
             write_moments << (moments[2]-E0)/E0 << "\n";
             write_moments << (moments[3]-S0)/S0 << "\n";
+            std::cout << (moments[0]-M0)/M0 << "\n";
+            std::cout << moments[1] << "\n";
+            std::cout << (moments[2]-E0)/E0 << "\n";
+            std::cout << (moments[3]-S0)/S0 << "\n";
             for (int j=0; j<jMax; j++)
             {
-                Vector rho = solver.getDensity(j);
+                Vector rho = solver.getMoment(j,0);
+                Vector u = solver.getMoment(j,1);
+                Vector rt = solver.getMoment(j,2);
                 for (int l=0; l<lMax; l++)
                 {
                     write_density << rho[l] << "\n";
+                    write_velocity << u[l] << "\n";
+                    write_temperature << rt[l] << "\n";
                 }
                 for (int k=0; k<nvx; k++)
                 {
@@ -139,6 +157,9 @@ int main(int argc, char* argv[])
 
     write_output.close();
     write_density.close();
+    write_velocity.close();
+    write_temperature.close();
+    write_moments.close();
 
     return 0;
 }

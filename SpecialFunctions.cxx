@@ -161,8 +161,8 @@ double SpecialFunctions::gaussianPulse(double x)
 //Gaussian pulse centered at +-0.5 pi
 double SpecialFunctions::twinGaussianPulse(double x)
 {
-    return exp(-5.0*pow(x-0.5*M_PI,2.0))+exp(-5.0*pow(x+0.5*M_PI,2.0));
-    // return exp(-1.0*pow(x-2.0,2.0))+exp(-1.0*pow(x+2.0,2.0));
+    // return exp(-5.0*pow(x-0.5*M_PI,2.0))+exp(-5.0*pow(x+0.5*M_PI,2.0));
+    return exp(-1.0*pow(x-1.0,2.0))+exp(-1.0*pow(x+1.0,2.0));
 }
 
 //Constant functions that is = 1 for all x

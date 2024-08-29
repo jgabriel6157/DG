@@ -39,6 +39,9 @@ Matrix NewtonSolver::solve(Matrix alpha, double nu, Vector rho, Vector u, Vector
         }
     }
 
+    // std::cout << count << "\n";
+    // F.Print();
+
     return alpha;
 }
 

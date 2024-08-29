@@ -18,6 +18,7 @@ private:
     double a;
     int lMax;
     Matrix alphaDomain;
+    Vector M_invDiag;
     Matrix M_invS;
     Matrix M_invF1Minus;
     Matrix M_invF0Minus;
@@ -72,7 +73,7 @@ public:
     Vector fitMaxwellian(std::function<double(int,double)> basisFunction, Matrix alpha, double vx, int j);
 
     //compute the density from f
-    Vector getDensity(int j);
+    Vector getMoment(int j, int power);
 
 };
 
