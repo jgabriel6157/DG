@@ -71,9 +71,9 @@ int main(int argc, char* argv[])
 
     solver.createMatrices(basisFunction, basisFunctionDerivative, quadratureOrder);
 
-    // solver.initialize(basisFunction, SpecialFunctions::constantFunction, inputFunction);
+    solver.initialize(basisFunction, SpecialFunctions::gaussianPulse, SpecialFunctions::constantFunction);
 
-    solver.initialize(basisFunction, SpecialFunctions::gaussianPulse, inputFunction);
+    // solver.initialize(basisFunction, SpecialFunctions::gaussianPulse, inputFunction);
 
     solver.initializeAlpha(basisFunction);
     std::cout << "initialization complete" << "\n";
