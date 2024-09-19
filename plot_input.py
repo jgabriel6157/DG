@@ -146,7 +146,7 @@ for vx in range(nvx):
             sumDem+=sol[i]
             # sol[i] = np.exp(-(x[i]-np.pi-tMax*dt*y_offset)**2)
         ax.plot(x,[y_offset]*len(x),y,color='red')
-        ax.plot(x,[y_offset]*len(x),sol,color='black')
+        # ax.plot(x,[y_offset]*len(x),sol,color='black')
         # ax.plot(x,[y_offset]*len(x),y-sol,color='red')
 print(sumNum/sumDem)
 # for j in range(jMax):
@@ -166,5 +166,5 @@ print(sumNum/sumDem)
 #                     for lvx in range(lMax):
 #                         y[i,n] += u[lx,lvx,j,k]*getFunction(basis,lx,(2/dx)*(x[i,n]-xj))*getFunction(basis,lvx,(2/dvx)*(vx[i,n]-vx_center))
 #         ax.plot_wireframe(x,vx,y)
-
+plt.tight_layout()
 plt.show()

@@ -1,6 +1,6 @@
 a = 2*pi
-jMax = 16
-lMax = 4
+jMax = 4
+lMax = 2
 tMax = 200
 quadratureOrder = 7
 length = 2*pi
@@ -11,6 +11,6 @@ alpha = 0
 input = twinPulses
 slopeLimiter = false
 nout = 10
-nvx = 3
+nvx = 5
 maxVX = 10
 

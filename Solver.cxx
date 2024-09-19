@@ -209,39 +209,39 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
         int rightNeighborIndex = cells[j].neighbors[1];
         double dx = cells[j].dx;
 
-        Matrix fj(lMax,nvx);
-        for (int k=0; k<nvx; k++)
-        {
-            for (int l=0; l<lMax; l++)
-            {
-                fj(l,k) = uPre(l,k+j*nvx);
-            }
-        }
+        // Matrix fj(lMax,nvx);
+        // for (int k=0; k<nvx; k++)
+        // {
+        //     for (int l=0; l<lMax; l++)
+        //     {
+        //         fj(l,k) = uPre(l,k+j*nvx);
+        //     }
+        // }
 
-        Matrix feq_tot(lMax,nvx);
+        // Matrix feq_tot(lMax,nvx);
 
-        Vector rho = integrator.integrate(fj, lMax, 0); //rho tilde
-        Vector u = integrator.integrate(fj, lMax, 1); //u tilde
-        Vector rt = integrator.integrate(fj, lMax, 2); //rt tilde
+        // Vector rho = integrator.integrate(fj, lMax, 0); //rho tilde
+        // Vector u = integrator.integrate(fj, lMax, 1); //u tilde
+        // Vector rt = integrator.integrate(fj, lMax, 2); //rt tilde
 
-        Matrix alpha(3,lMax);
-        for (int m=0; m<3; m++)
-        {
-            for (int l=0; l<lMax; l++)
-            {
-                alpha(m,l) = alphaDomain(m+j*3,l);
-            }
-        }
+        // Matrix alpha(3,lMax);
+        // for (int m=0; m<3; m++)
+        // {
+        //     for (int l=0; l<lMax; l++)
+        //     {
+        //         alpha(m,l) = alphaDomain(m+j*3,l);
+        //     }
+        // }
 
-        alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-10), 100, basisFunction, quadratureOrder, lMax);
+        // alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-10), 100, basisFunction, quadratureOrder, lMax);
 
-        for (int m=0; m<3; m++)
-        {
-            for (int l=0; l<lMax; l++)
-            {
-                alphaDomain(m+j*3,l) = alpha(m,l);
-            }
-        }
+        // for (int m=0; m<3; m++)
+        // {
+        //     for (int l=0; l<lMax; l++)
+        //     {
+        //         alphaDomain(m+j*3,l) = alpha(m,l);
+        //     }
+        // }
 
         for (int k=0; k<nvx; k++)
         {
@@ -261,7 +261,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             for (int l=0; l<lMax; l++)
             {
                 // std::cout << feq[l] << "\n";
-                feq_tot(l,k) = GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights);
+                // feq_tot(l,k) = GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights);
                 uAfter(l,k+j*nvx)=0;
                 for (int i=0; i<lMax; i++)
                 {
