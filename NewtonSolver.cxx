@@ -9,7 +9,7 @@
 NewtonSolver::NewtonSolver(const Mesh& mesh) 
                          : integrator(mesh) {}
 
-Matrix NewtonSolver::solve(Matrix alpha, double nu, Vector rho, Vector u, Vector rt, double dx, Vector roots, Vector weights, double tolerance, int maxIteration, std::function<double(int,double)> basisFunction, int quadratureOrder, int lMax)
+Matrix NewtonSolver::solve(Matrix alpha, double nu, Vector rho, Vector u, Vector rt, double dx, Vector roots, Vector weights, double tolerance, int maxIteration, std::function<double(int,double)> basisFunction, int quadratureOrder, int lMax, bool test)
 {
     Vector F(3*lMax);
     Matrix J(3*lMax,3*lMax);
@@ -20,6 +20,7 @@ Matrix NewtonSolver::solve(Matrix alpha, double nu, Vector rho, Vector u, Vector
     while (norm > tolerance)
     {
         count+=1;
+        // std::cout << count << "\n";
         J = createJ(alpha, nu, rho, u, rt, dx, roots, weights, basisFunction, quadratureOrder, lMax);
         G = J.CalculateInverse()*F;
         for (int i=0; i<3; i++)
@@ -31,7 +32,15 @@ Matrix NewtonSolver::solve(Matrix alpha, double nu, Vector rho, Vector u, Vector
         }
         F = createF(alpha, nu, rho, u, rt, dx, roots, weights, basisFunction, quadratureOrder, lMax);
         norm = F.CalculateNorm(1);
-
+        if (test==true)
+        {
+            // alpha.Print();
+            std::cout << norm << "\n";
+        }
+        if (norm != norm)
+        {
+            std::cout << "norm is NaN" << "\n";
+        }
         if (count > maxIteration)
         {
             norm = 0;
@@ -41,6 +50,11 @@ Matrix NewtonSolver::solve(Matrix alpha, double nu, Vector rho, Vector u, Vector
 
     // std::cout << count << "\n";
     // F.Print();
+
+    // if (test==true)
+    // {
+    //     alpha.Print();
+    // }
 
     return alpha;
 }

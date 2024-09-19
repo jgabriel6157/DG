@@ -114,16 +114,16 @@ int main(int argc, char* argv[])
 
         if ((t+1)%outputTimeStep==0)
         {
-            std::cout << t << "\n";
+            std::cout << "t = " << t << "\n";
             Vector moments = solver.getMoments(quadratureOrder,basisFunction);
             write_moments << (moments[0]-M0)/M0 << "\n";
             write_moments << moments[1] << "\n";
             write_moments << (moments[2]-E0)/E0 << "\n";
             write_moments << (moments[3]-S0)/S0 << "\n";
-            std::cout << (moments[0]-M0)/M0 << "\n";
-            std::cout << moments[1] << "\n";
-            std::cout << (moments[2]-E0)/E0 << "\n";
-            std::cout << (moments[3]-S0)/S0 << "\n";
+            // std::cout << (moments[0]-M0)/M0 << "\n";
+            // std::cout << moments[1] << "\n";
+            // std::cout << (moments[2]-E0)/E0 << "\n";
+            // std::cout << (moments[3]-S0)/S0 << "\n";
             for (int j=0; j<jMax; j++)
             {
                 Vector rho = solver.getMoment(j,0);
