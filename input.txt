@@ -11,6 +11,6 @@ alpha = 0
 input = twinPulses
 slopeLimiter = false
 nout = 100
-nvx = 15
+nvx = 127
 maxVX = 200000
 

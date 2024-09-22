@@ -159,7 +159,7 @@ for j in range(jMax):
     y2 = np.zeros(res)
     for i in range(res):
         x[i] = j*dx+i*dx/(res-1)
-        # sol[i] = f(x[i])
+        sol[i] = f(x[i])
         for l in range(lMax):
             y[i] += u[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
             # sol[i] += uSol[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
@@ -168,7 +168,7 @@ for j in range(jMax):
     l2Norm+=simpson(error,x=x)
     solution+=simpson(y2,x=x)
     plt.plot(x,y,color='red')
-    # plt.plot(x,sol,'k:')
+    plt.plot(x,sol,'k:')
 
 print(np.sqrt(l2Norm/solution))
 

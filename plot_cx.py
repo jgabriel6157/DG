@@ -54,7 +54,7 @@ def B_minus(z, z_prime):
     integral, _ = quad(integrand, -np.inf, 0)
     return integral
 
-num_points = 1000
+num_points = 1009
 z_vals = np.linspace(-Lz/2, Lz/2, num_points)
 
 fig = plt.figure()
@@ -201,31 +201,31 @@ for j in range(jMax):
         # uSol[lx,j] = valuesSol[m]
         m = m+1
 
-# l2Norm = 0
-# solution = 0
+l2Norm = 0
+solution = 0
 
-res = 9
+res = 10
 for j in range(jMax):
     xj = j*dx+dx/2
     y = np.zeros(res)
     x = np.zeros(res)
-    # sol = np.zeros(res)
-    # error = np.zeros(res)
-    # y2 = np.zeros(res)
+    sol = np.zeros(res)
+    error = np.zeros(res)
+    y2 = np.zeros(res)
     for i in range(res):
         x[i] = j*dx+i*dx/(res-1)
-        # sol[i] = f(x[i])
+        sol[i] = n[j*(res-1)+i]
         for l in range(lMax):
             y[i] += u[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
             # sol[i] += uSol[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-        # error[i] = (y[i]-sol[i])**2
-        # y2[i] = y[i]**2
-    # l2Norm+=simpson(error,x=x)
-    # solution+=simpson(y2,x=x)
+        error[i] = (y[i]-sol[i])**2
+        y2[i] = y[i]**2
+    l2Norm+=simpson(error,x=x)
+    solution+=simpson(y2,x=x)
     plt.plot(x,y,color='red')
-    # plt.plot(x,sol,'k:')
+    plt.plot(x,sol,'k:')
 
-# print(np.sqrt(l2Norm/solution))
+print(np.sqrt(l2Norm/solution))
 
-plt.plot(z_vals+Lz/2,n, 'k:')
+# plt.plot(z_vals+Lz/2,n, 'k:')
 plt.show()
