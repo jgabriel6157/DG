@@ -1,6 +1,6 @@
 a = 2*pi
 jMax = 16
-lMax = 1
+lMax = 2
 tMax = 20000
 quadratureOrder = 5
 length = 2*pi
