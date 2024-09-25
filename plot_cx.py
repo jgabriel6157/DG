@@ -184,48 +184,51 @@ values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
 # valuesSol = pd.read_csv(fileNameSol,header=None)
 # valuesSol = valuesSol[0].to_numpy()
-m = 33600
-dx = length/jMax
-dvx = 2*domainMaxVX/(nvx-1)
-# dvx = 1.0/nvx
-u = np.zeros((lMax,jMax))
-# uSol = np.zeros((lMax,jMax))
+# m = 33600
+for m in [0,3360,33600]:
+    dx = length/jMax
+    dvx = 2*domainMaxVX/(nvx-1)
+    # dvx = 1.0/nvx
+    u = np.zeros((lMax,jMax))
+    # uSol = np.zeros((lMax,jMax))
 
-# fig = plt.figure()
-# ax = fig.gca()
-# ax.set_yscale('log')
+    # fig = plt.figure()
+    # ax = fig.gca()
+    # ax.set_yscale('log')
 
-for j in range(jMax):
-    for lx in range(lMax):
-        u[lx,j] = values[m]
-        # uSol[lx,j] = valuesSol[m]
-        m = m+1
+    for j in range(jMax):
+        for lx in range(lMax):
+            u[lx,j] = values[m]
+            # uSol[lx,j] = valuesSol[m]
+            m = m+1
+    print(m)
 
-l2Norm = 0
-solution = 0
+    l2Norm = 0
+    solution = 0
 
-res = 10
-for j in range(jMax):
-    xj = j*dx+dx/2
-    y = np.zeros(res)
-    x = np.zeros(res)
-    sol = np.zeros(res)
-    error = np.zeros(res)
-    y2 = np.zeros(res)
-    for i in range(res):
-        x[i] = j*dx+i*dx/(res-1)
-        sol[i] = n[j*(res-1)+i]
-        for l in range(lMax):
-            y[i] += u[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-            # sol[i] += uSol[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-        error[i] = (y[i]-sol[i])**2
-        y2[i] = y[i]**2
-    l2Norm+=simpson(error,x=x)
-    solution+=simpson(y2,x=x)
-    plt.plot(x,y,color='red')
-    plt.plot(x,sol,'k:')
+    res = 10
+    for j in range(jMax):
+        xj = j*dx+dx/2
+        y = np.zeros(res)
+        x = np.zeros(res)
+        sol = np.zeros(res)
+        error = np.zeros(res)
+        y2 = np.zeros(res)
+        for i in range(res):
+            x[i] = j*dx+i*dx/(res-1)
+            sol[i] = n[j*(res-1)+i]
+            for l in range(lMax):
+                y[i] += u[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
+                # sol[i] += uSol[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
+            error[i] = (y[i]-sol[i])**2
+            y2[i] = y[i]**2
+        l2Norm+=simpson(error,x=x)
+        solution+=simpson(y2,x=x)
+        plt.plot(x,y,color='red')
+        # plt.plot(x,sol,'k:')
 
 print(np.sqrt(l2Norm/solution))
+plt.ylim(1e5,1e19)
 
-# plt.plot(z_vals+Lz/2,n, 'k:')
+plt.plot(z_vals+Lz/2,n, 'k:')
 plt.show()

@@ -175,7 +175,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             Vector fR = fitMaxwellian(basisFunction, Crec, -cs, 2.0, vx, j);
 
             // fit ion distribution function
-            Vector fi = fitMaxwellian(basisFunction, ni, ui, Ti, vx, j);
+            // Vector fi = fitMaxwellian(basisFunction, ni, ui, Ti, vx, j);
 
             // Matrix M_invS1(lMax,lMax*lMax);
             // Matrix M_invS2(lMax,lMax*lMax);
@@ -187,7 +187,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 uBefore(l,k+(nx+1)*nvx) = fR[l];
                 f_tilde[l] = uBefore(l,k+j*nvx);
             }
-            Vector fCX = fitCX(basisFunction, ni, ui, Ti, rho, f_tilde, k, j);
+            // Vector fCX = fitCX(basisFunction, ni, ui, Ti, rho, f_tilde, k, j);
             // std::cout << "\n" << k << ":\n";
             for (int l=0; l<lMax; l++)
             {
@@ -202,7 +202,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 }
                 uAfter(l,k+j*nvx)*=vx;
                 uAfter(l,k+j*nvx)/=dx;
-                // uAfter(l,k+j*nvx)-=ne*uBefore(l,k+j*nvx)*sigma_iz; //This line for ionization
+                uAfter(l,k+j*nvx)-=ne*uBefore(l,k+j*nvx)*sigma_iz; //This line for ionization
                 // for (int i=0; i<lMax; i++)
                 // {
                 //     for (int m=0; m<lMax; m++)
@@ -213,7 +213,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 //     uAfter(l,k+j*nvx)-=nu_cx*M_invS1(l,i)*uBefore(i,k+j*nvx);
                 //     uAfter(l,k+j*nvx)+=nu_cx*M_invS2(l,i)*fi[i];
                 // }
-                uAfter(l,k+j*nvx)-=nu_cx*fCX[l]; //This line for CX
+                // uAfter(l,k+j*nvx)-=nu_cx*fCX[l]; //This line for CX
                 // uAfter(l,k+j*nvx) -= ni*nu_cx*uBefore(l,k+j*nvx);
                 // uAfter(l,k+j*nvx) += nu_cx*fCX[l];
                 uAfter(l,k+j*nvx)*=dt;
