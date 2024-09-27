@@ -266,10 +266,17 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 alpha(m,l) = alphaDomain(m+j*3,l);
             }
         }
-        bool test = true;
-        if (j==29)
+        bool test = false;
+        if (j==30)
         {
             test = true;
+            for (int m=0; m<3; m++)
+            {
+                for (int l=0; l<lMax; l++)
+                {
+                    alpha(m,l) = alphaDomain(m+(j-1)*3,l);
+                }
+            }
         }
         // std::cout << "Calculate Alphas" << "\n";
         alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-15), 100, basisFunction, quadratureOrder, lMax, test);
@@ -297,6 +304,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
 
             //calculate feq
             // Vector feq = fitMaxwellian(basisFunction, alpha, vx, j);
+            Vector feq = fitMaxwellian(basisFunction,rho,u,rt,vx,j);
             for (int l=0; l<lMax; l++)
             {
                 // std::cout << feq[l] << "\n";
@@ -529,9 +537,9 @@ Vector Solver::fitMaxwellian(std::function<double(int,double)> basisFunction, Ve
     for (int i=0; i<10; i++)
     {
         x = leftVertex+i*dx/9.0;
-        double density = computeMoment(rho, basisFunction,lMax,x);
-        double meanVelocity = computeMoment(u, basisFunction,lMax,x)/density;
-        double temperature = (computeMoment(rt, basisFunction,lMax,x)-density*pow(meanVelocity,2))/density;
+        double density = computeMoment(rho, basisFunction,lMax,2.0*(x-xj)/dx);
+        double meanVelocity = computeMoment(u, basisFunction,lMax,2.0*(x-xj)/dx)/density;
+        double temperature = (computeMoment(rt, basisFunction,lMax,2.0*(x-xj)/dx)-density*pow(meanVelocity,2))/density;
         y[i] = computeMaxwellian(density,meanVelocity,temperature,vx);
         for (int l=0; l<lMax; l++)
         {

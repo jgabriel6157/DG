@@ -154,8 +154,8 @@ double SpecialFunctions::topHat(double x)
 //Gaussian pulse centered at pi
 double SpecialFunctions::gaussianPulse(double x)
 {
-    // return exp(-1.0*pow(x-1.0*M_PI,2.0));
-    return exp(-1.0*pow(x-1.0,2.0));
+    return exp(-1.0*pow(x-1.0*M_PI,2.0));
+    // return exp(-1.0*pow(x-1.0,2.0));
 }
 
 //Gaussian pulse centered at +-0.5 pi
