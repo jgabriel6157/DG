@@ -7,23 +7,33 @@ struct Cell
 {
     std::vector<double> vertices; //Vertex coordinates
     std::vector<int> neighbors; //Indices of neighboring cells
-    double cellLength; //Length of cell
+    double dx; //Length of cell in x
 };
 
 class Mesh
 {
 private:
     std::vector<Cell> cells;
-    int numCells;
+    int nx;
+    int nvx;
+    double domainLengthX;
+    double domainMaxVX;
+    double dvx; //Distance between velocity points
 
 public:
     //Constructor
-    Mesh(int numCells, double length);
+    Mesh(int nx, int nvx, double domainLengthX, double domainMaxVX);
 
     //Accessor
     const std::vector<Cell>& getCells() const;
 
-    const int& getNumCells() const;
+    const int& getNX() const;
+
+    const int& getNVX() const;
+
+    double getDVX() const;
+
+    double getVelocity(int velocityIndex) const;
 };
 
 

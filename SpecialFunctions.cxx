@@ -152,6 +152,20 @@ double SpecialFunctions::topHat(double x)
 double SpecialFunctions::gaussianPulse(double x)
 {
     return exp(-1.0*pow(x-1.0*M_PI,2.0));
+    // return exp(-1.0*pow(x,2.0));
+}
+
+//Gaussian pulse centered at +-0.5 pi
+double SpecialFunctions::twinGaussianPulse(double x)
+{
+    return exp(-5.0*pow(x-0.5*M_PI,2.0))+exp(-5.0*pow(x+0.5*M_PI,2.0));
+    // return exp(-1.0*pow(x-2.0,2.0))+exp(-1.0*pow(x+2.0,2.0));
+}
+
+//Constant functions that is = 1 for all x
+double SpecialFunctions::constantFunction(double x)
+{
+    return 1;
 }
 
 //Newton Raphson method to find root of Legendre polynomial of root n with initial guess x0
@@ -183,7 +197,7 @@ Vector SpecialFunctions::legendreRoots(int n)
     return roots;
 }
 
-//Return sign of value (0 = 0)
+//Return sign of value (0 returns 1)
 double SpecialFunctions::sign(double x)
 {
     if (x>0)
@@ -196,7 +210,7 @@ double SpecialFunctions::sign(double x)
     }
     else
     {
-        return 0;
+        return 1;
     }
 }
 

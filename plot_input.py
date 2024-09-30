@@ -85,6 +85,10 @@ while True:
         dt = float(inputParam[inputParam.index('=')+2:-1])
     elif inputParam[0:4]=='nout':
         nout = int(inputParam[inputParam.index('=')+2:-1])
+    elif inputParam[0:3]=='nvx':
+        nvx = int(inputParam[inputParam.index('=')+2:-1])
+    elif inputParam[0:5]=='maxVX':
+        domainMaxVX = assignFloat(inputParam[inputParam.index('=')+2:-1])
     if not inputParam:
         break
 nout+=1
@@ -95,21 +99,22 @@ values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
 # valuesSol = pd.read_csv(fileNameSol,header=None)
 # valuesSol = valuesSol[0].to_numpy()
-# m = jMax*lMax*nvx*(nout-1)
-m=288
+m = 0
 dx = length/jMax
+dvx = 2*domainMaxVX/(nvx-1)
 # dvx = 1.0/nvx
-u = np.zeros((lMax,jMax))
+u = np.zeros((lMax,jMax,nvx))
 # uSol = np.zeros((lMax,jMax,nvx))
 
 fig = plt.figure()
 ax = fig.add_subplot(projection='3d')
 
 for j in range(jMax):
-    for lx in range(lMax):
-        u[lx,j] = values[m]
-        # uSol[lx,j,k] = valuesSol[m]
-        m = m+1
+    for k in range(nvx):
+        for lx in range(lMax):
+            u[lx,j,k] = values[m]
+            # uSol[lx,j,k] = valuesSol[m]
+            m = m+1
 print(m)
 # vx = 0
 # for j in range(jMax):
@@ -129,12 +134,12 @@ nQuad = 10
 # Precompute quadrature points and weights on the reference interval [-1, 1]
 quadPoints, quadWeights = np.polynomial.legendre.leggauss(nQuad)
 
-for vx in [2*np.pi]:
+for vx in range(nvx):
     sumNum = 0
     sumDem = 0
     for j in range(jMax):
         xj = j * dx + dx / 2
-        y_offset = vx
+        y_offset = -domainMaxVX + vx*dvx
         y = np.zeros(nQuad)
         sol = np.zeros(nQuad)
         

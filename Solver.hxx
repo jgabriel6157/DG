@@ -5,11 +5,13 @@
 #include "Matrix.hxx"
 #include "Vector.hxx"
 #include "Mesh.hxx"
+#include "NewtonCotes.hxx"
 
 class Solver
 {
 private:
     Mesh mesh;
+    NewtonCotes integrator;
     // double dx;
     double dt;
     double a;
@@ -17,15 +19,15 @@ private:
     int lMax;
     double alpha;
     Matrix M_invS;
-    Matrix M_invF1;
-    Matrix M_invF2;
-    Matrix M_invF3;
-    Matrix M_invF4;
+    Matrix M_invF1Minus;
+    Matrix M_invF0Minus;
+    Matrix M_invF1Plus;
+    Matrix M_invF0Plus;
     Matrix uPre;
     Matrix uIntermediate;
     Matrix uPost;
 
-    void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor);
+    void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor, std::function<double(int,double)> basisFunction);
 
     //compute the reconstructed f(x,t)
     double getF(Matrix& uPre, std::function<double(int,double)> basisFunction, int lMax, int j, double x);
@@ -42,10 +44,10 @@ public:
     void createMatrices(std::function<double(int,double)> basisFunction, std::function<double(int,double)> basisFunctionDerivative, int quadratureOrder);
 
     //initialize using the Least Squares method
-    void initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunction);
+    void initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunctionX, std::function<double(double)> inputFunctionVX);
 
     //advance time step using 3rd order SSP RK
-    void advance();
+    void advance(std::function<double(int,double)> basisFunction);
 
     //use minmod slope limiter
     void slopeLimiter();
@@ -56,8 +58,17 @@ public:
     //get error of solution
     const double getError(int tMax, std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunction);
 
-    //compute the total mass from f
-    double getMass(int quadratureOrder, std::function<double(int,double)> basisFunction);
+    //compute the mass, momentum and energy from f
+    Vector getMoments(int quadratureOrder, std::function<double(int,double)> basisFunction);
+
+    //compute the value of your moment at spatial point x
+    double computeMoment(Vector moment, std::function<double(int,double)> basisFunction, int lMax, double x);
+
+    //compute the value of f_eq (Maxwellian) from the moments and vx
+    double computeMaxwellian(double rho, double u, double rt, double vx);
+
+    //fit Maxwellian
+    Vector fitMaxwellian(std::function<double(int,double)> basisFunction, Vector rho, Vector u, Vector rt, double vx, int j);
 
 };
 

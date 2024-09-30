@@ -6,9 +6,11 @@ quadratureOrder = 15
 length = 2*pi
 dt = 0.001
 basis = legendre
-test = true
+test = false
 alpha = 0
-input = sin
+input = twinPulses
 slopeLimiter = false
-nout = 1
+nout = 100
+nvx = 127
+maxVX = 2*pi
 
