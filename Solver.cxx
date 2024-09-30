@@ -211,9 +211,9 @@ const double Solver::getError(int tMax, std::function<double(int,double)> basisF
         double dx = cells[j].dx;
         double leftVertex = cells[j].vertices[0];
         double xj = leftVertex+dx/2.0;
-        for (int i=0; i<10; i++)
+        for (int i=0; i<100; i++)
         {
-            x[i] = leftVertex+i*dx/9.0;
+            x[i] = leftVertex+i*dx/99.0;
             for (int l=0; l<lMax; l++)
             {
                 y[i] += uPre(l,j)*basisFunction(l,(2.0/dx)*(x[i]-xj));
