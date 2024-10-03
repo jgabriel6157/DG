@@ -99,7 +99,7 @@ values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
 # valuesSol = pd.read_csv(fileNameSol,header=None)
 # valuesSol = valuesSol[0].to_numpy()
-m = 4064*2000
+m = 127*2000
 dx = length/jMax
 dvx = 2*domainMaxVX/(nvx-1)
 # dvx = 1.0/nvx
@@ -109,12 +109,12 @@ u = np.zeros((lMax,jMax,nvx))
 fig = plt.figure()
 ax = fig.add_subplot(projection='3d')
 
-for j in range(jMax):
-    for k in range(nvx):
-        for lx in range(lMax):
-            u[lx,j,k] = values[m]
-            # uSol[lx,j,k] = valuesSol[m]
-            m = m+1
+# for j in range(jMax):
+    # for k in range(nvx):
+    #     for lx in range(lMax):
+    #         u[lx,j,k] = values[m]
+    #         # uSol[lx,j,k] = valuesSol[m]
+    #         m = m+1
 print(m)
 # vx = 0
 # for j in range(jMax):
@@ -127,18 +127,19 @@ print(m)
 #             y[i] += u[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
 #     plt.plot(x,y,color='red')
 
-for vx in range(nvx):
+for vx in range(1):
     for j in range(jMax):
         xj = j*dx+dx/2
         y = np.zeros(10)
         x = np.zeros(10)
-        # sol = np.zeros(10)
+        sol = np.zeros(10)
+        y_offset = -domainMaxVX + vx*dvx
         for i in range(10):
             x[i] = j*dx+i*dx/9.0
             for l in range(lMax):
                 y[i] += u[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
                 # sol[i] += uSol[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-        y_offset = -domainMaxVX + vx*dvx
+    
         ax.plot(x,[y_offset]*len(x),y,color='red')
         # ax.plot(x,[y_offset]*len(x),sol,color='black')
         # ax.plot(x,[y_offset]*len(x),y-sol,color='red')

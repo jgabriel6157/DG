@@ -30,12 +30,12 @@ Matrix NewtonSolver::solve(Matrix alpha, double nu, Vector rho, Vector u, Vector
             }
         }
         F = createF(alpha, nu, rho, u, rt, dx, roots, weights, basisFunction, quadratureOrder, lMax);
-        norm = F.CalculateNorm(1);
+        norm = F.CalculateNorm(1)/rho[0];
 
         if (count > maxIteration)
         {
-            norm = 0;
-            std::cout << "alpha did not converge after " << maxIteration << " iterations\n"; 
+            std::cout << "alpha did not converge after " << maxIteration << " iterations. norm = " << norm << "\n";
+            norm = 0; 
         }
     }
 
