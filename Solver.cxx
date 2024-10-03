@@ -193,9 +193,6 @@ void Solver::initializeAlpha(std::function<double(int,double)> basisFunction)
 
 void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, double timesFactor, std::function<double(int,double)> basisFunction, int quadratureOrder)
 {
-    Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
-    Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
-
     double nu = 1.0;
 
     const auto& cells = mesh.getCells();
@@ -204,48 +201,12 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     double nvx = mesh.getNVX();
     for (int j=0; j<nx; j++)
     {
-        // std::cout << j << "\n";
         int leftNeighborIndex = cells[j].neighbors[0];
         int rightNeighborIndex = cells[j].neighbors[1];
         double dx = cells[j].dx;
 
-        // Matrix fj(lMax,nvx);
-        // for (int k=0; k<nvx; k++)
-        // {
-        //     for (int l=0; l<lMax; l++)
-        //     {
-        //         fj(l,k) = uPre(l,k+j*nvx);
-        //     }
-        // }
-
-        // Matrix feq_tot(lMax,nvx);
-
-        // Vector rho = integrator.integrate(fj, lMax, 0); //rho tilde
-        // Vector u = integrator.integrate(fj, lMax, 1); //u tilde
-        // Vector rt = integrator.integrate(fj, lMax, 2); //rt tilde
-
-        // Matrix alpha(3,lMax);
-        // for (int m=0; m<3; m++)
-        // {
-        //     for (int l=0; l<lMax; l++)
-        //     {
-        //         alpha(m,l) = alphaDomain(m+j*3,l);
-        //     }
-        // }
-
-        // alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-10), 100, basisFunction, quadratureOrder, lMax);
-
-        // for (int m=0; m<3; m++)
-        // {
-        //     for (int l=0; l<lMax; l++)
-        //     {
-        //         alphaDomain(m+j*3,l) = alpha(m,l);
-        //     }
-        // }
-
         for (int k=0; k<nvx; k++)
         {
-            // std::cout << k << "\n";
             double vx = mesh.getVelocity(k);
             double fluxFactorMinus = (1.0+SpecialFunctions::sign(vx))/2.0;
             double fluxFactorPlus = (1.0-SpecialFunctions::sign(vx))/2.0;
@@ -256,12 +217,8 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 uBefore(l,k+(nx+1)*nvx) = uBefore(l,k+(nx-1)*nvx);
             }
 
-            //calculate feq
-            // Vector feq = fitMaxwellian(basisFunction, alpha, vx, j);
             for (int l=0; l<lMax; l++)
             {
-                // std::cout << feq[l] << "\n";
-                // feq_tot(l,k) = GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights);
                 uAfter(l,k+j*nvx)=0;
                 for (int i=0; i<lMax; i++)
                 {
@@ -273,9 +230,6 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 }
                 uAfter(l,k+j*nvx)*=vx;
                 uAfter(l,k+j*nvx)/=dx;
-                // uAfter(l,k+j*nvx)+=nu*(feq[l]-uBefore(l,k+j*nvx));
-                // uAfter(l,k+j*nvx)+=nu*M_invDiag[l]*GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights)/2.0;
-                // uAfter(l,k+j*nvx)-=nu*uBefore(l,k+j*nvx);
                 uAfter(l,k+j*nvx)*=dt;
                 uAfter(l,k+j*nvx)+=uBefore(l,k+j*nvx);
                 
@@ -283,16 +237,6 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 uAfter(l,k+j*nvx)+=plusFactor*uPre(l,k+j*nvx); //Note that uPre != uBefore
             }
         }
-        // Vector rho_eq = integrator.integrate(feq_tot,lMax,0);
-        // Vector u_eq = integrator.integrate(feq_tot,lMax,1);
-        // Vector rt_eq = integrator.integrate(feq_tot,lMax,2);
-        // for (int l=0; l<lMax; l++)
-        // {
-        //     std::cout << "l = " << l << "\n";
-        //     std::cout << rho_eq[l] << "\n";
-        //     std::cout << pow(M_invDiag[l],-1)*rho[l] << "\n";
-        // }
-        // std::cout << (rho_eq[0]-rho[0])
     }
 }
 
@@ -344,33 +288,38 @@ const double Solver::getError(int tMax, std::function<double(int,double)> basisF
     const auto& cells = mesh.getCells();
     double error = 0;
     double solutionSum = 0;
-    for (int j=0; j<mesh.getNX(); j++)
+    for (int k=0; k<mesh.getNVX(); k++)
     {
-        double y[10] = {0}, sol[10], x[10];
-        double dx = cells[j].dx;
-        double leftVertex = cells[j].vertices[0];
-        double xj = leftVertex+dx/2.0;
-        for (int i=0; i<10; i++)
+        double vx = mesh.getVelocity(k);
+        for (int j=0; j<mesh.getNX(); j++)
         {
-            x[i] = leftVertex+i*dx/9.0;
-            for (int l=0; l<lMax; l++)
+            double y[10] = {0}, sol[10], x[10];
+            double dx = cells[j].dx;
+            double leftVertex = cells[j].vertices[0];
+            double xj = leftVertex+dx/2.0;
+            for (int i=0; i<10; i++)
             {
-                y[i] += uPre(l,j)*basisFunction(l,(2.0/dx)*(x[i]-xj));
+                x[i] = leftVertex+i*dx/9.0;
+                for (int l=0; l<lMax; l++)
+                {
+                    y[i] += uPre(l,k+j*mesh.getNVX())*basisFunction(l,(2.0/dx)*(x[i]-xj));
+                }
+                // sol[i] = inputFunction(x[i]);
+                // sol[i] = inputFunction(x[i]-2.0*M_PI*tMax*dt);
+                sol[i] = sin(x[i]-vx*tMax*dt);
+
+                // sol[i] = exp(-1.0*pow(x[i]-1.0*M_PI-2.0*M_PI*(tMax*dt),2.0));
+                // if ((x[i]<M_PI-1.0)||(x[i]>M_PI+1.0))
+                // {
+                //     sol[i] = 0;
+                // }
+                // else
+                // {
+                //     sol[i] = 1;
+                // }
+                error+=pow(y[i]-sol[i],2.0);
+                solutionSum+=pow(sol[i],2.0);
             }
-            // sol[i] = inputFunction(x[i]);
-            sol[i] = inputFunction(x[i]-2.0*M_PI*tMax*dt);
-            // sol[i] = sin(x[i]-2.0*M_PI*tMax*dt);
-            // sol[i] = exp(-1.0*pow(x[i]-1.0*M_PI-2.0*M_PI*(tMax*dt),2.0));
-            // if ((x[i]<M_PI-1.0)||(x[i]>M_PI+1.0))
-            // {
-            //     sol[i] = 0;
-            // }
-            // else
-            // {
-            //     sol[i] = 1;
-            // }
-            error+=pow(y[i]-sol[i],2.0);
-            solutionSum+=pow(sol[i],2.0);
         }
     }
     return sqrt(error/solutionSum);

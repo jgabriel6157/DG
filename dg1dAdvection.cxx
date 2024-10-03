@@ -71,7 +71,7 @@ int main(int argc, char* argv[])
 
     solver.createMatrices(basisFunction, basisFunctionDerivative, quadratureOrder);
 
-    solver.initialize(basisFunction, SpecialFunctions::gaussianPulse, SpecialFunctions::constantFunction);
+    solver.initialize(basisFunction, inputFunction, SpecialFunctions::constantFunction);
 
     // solver.initialize(basisFunction, SpecialFunctions::gaussianPulse, inputFunction);
 
@@ -120,10 +120,10 @@ int main(int argc, char* argv[])
             write_moments << moments[1] << "\n";
             write_moments << (moments[2]-E0)/E0 << "\n";
             write_moments << (moments[3]-S0)/S0 << "\n";
-            std::cout << (moments[0]-M0)/M0 << "\n";
-            std::cout << moments[1] << "\n";
-            std::cout << (moments[2]-E0)/E0 << "\n";
-            std::cout << (moments[3]-S0)/S0 << "\n";
+            // std::cout << (moments[0]-M0)/M0 << "\n";
+            // std::cout << moments[1] << "\n";
+            // std::cout << (moments[2]-E0)/E0 << "\n";
+            // std::cout << (moments[3]-S0)/S0 << "\n";
             for (int j=0; j<jMax; j++)
             {
                 Vector rho = solver.getMoment(j,0);

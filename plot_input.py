@@ -134,66 +134,68 @@ nQuad = 10
 # Precompute quadrature points and weights on the reference interval [-1, 1]
 quadPoints, quadWeights = np.polynomial.legendre.leggauss(nQuad)
 
-# for vx in range(nvx):
-#     sumNum = 0
-#     sumDem = 0
-#     for j in range(jMax):
-#         xj = j * dx + dx / 2
-#         y_offset = -domainMaxVX + vx * dvx
-#         y = np.zeros(nQuad)
-#         sol = np.zeros(nQuad)
-        
-#         # Map quadrature points from [-1, 1] to [j*dx, (j+1)*dx]
-#         x = 0.5 * dx * (quadPoints + 1) + j * dx
-        
-#         for i in range(nQuad):
-#             for l in range(lMax):
-#                 # Apply basis function and sum contributions
-#                 y[i] += u[l][j][vx] * getFunction(basis, l, (2.0 / dx) * (x[i] - xj))
-            
-#             # Define the solution to compare against
-#             sol[i] = max(
-#                 np.exp(-(x[i] - np.pi - tMax * dt * y_offset) ** 2),
-#                 np.exp(-(x[i] + np.pi - tMax * dt * y_offset) ** 2),
-#                 np.exp(-(x[i] - 3 * np.pi - tMax * dt * y_offset) ** 2)
-#             )
-        
-#         # Use Gaussian quadrature weights in the error calculation
-#         for i in range(nQuad):
-#             # L2 error requires squaring the difference for sumNum
-#             sumNum += (y[i] - sol[i]) ** 2 * quadWeights[i] * (0.5 * dx)  # Account for the dx scaling in the transformation
-#             # Also square the solution for sumDem
-#             sumDem += sol[i] ** 2 * quadWeights[i] * (0.5 * dx)
-        
-#         # Plotting the results (optional)
-#         ax.plot(x, [y_offset] * len(x), y-sol, color='red')
-#     print(np.sqrt(sumNum / sumDem))
-
-# # Print the L2 error by taking the square root of the ratio
-# print(np.sqrt(sumNum / sumDem))
-
 for vx in range(nvx):
     sumNum = 0
     sumDem = 0
     for j in range(jMax):
-        xj = j*dx+dx/2
-        y = np.zeros(10)
-        x = np.zeros(10)
-        sol = np.zeros(10)
-        y_offset = -domainMaxVX + vx*dvx
-        for i in range(10):
-            x[i] = j*dx+i*dx/9.0
+        xj = j * dx + dx / 2
+        y_offset = -domainMaxVX + vx * dvx
+        y = np.zeros(nQuad)
+        sol = np.zeros(nQuad)
+        
+        # Map quadrature points from [-1, 1] to [j*dx, (j+1)*dx]
+        x = 0.5 * dx * (quadPoints + 1) + j * dx
+        
+        for i in range(nQuad):
             for l in range(lMax):
-                y[i] += u[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-                # sol[i] += uSol[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-            sol[i] = max(np.exp(-(x[i]-np.pi-tMax*dt*y_offset)**2),np.exp(-(x[i]+np.pi-tMax*dt*y_offset)**2),np.exp(-(x[i]-3*np.pi-tMax*dt*y_offset)**2))
-            sumNum+=(y[i]-sol[i])**2
-            sumDem+=sol[i]**2
-            # sol[i] = np.exp(-(x[i]-np.pi-tMax*dt*y_offset)**2)
-        ax.plot(x,[y_offset]*len(x),y,color='red')
-        # ax.plot(x,[y_offset]*len(x),sol,color='black')
-        # ax.plot(x,[y_offset]*len(x),y-sol,color='red')
-    print(np.sqrt(sumNum/sumDem))
+                # Apply basis function and sum contributions
+                y[i] += u[l][j][vx] * getFunction(basis, l, (2.0 / dx) * (x[i] - xj))
+            
+            # Define the solution to compare against
+            # sol[i] = max(
+            #     np.exp(-(x[i] - np.pi - tMax * dt * y_offset) ** 2),
+            #     np.exp(-(x[i] + np.pi - tMax * dt * y_offset) ** 2),
+            #     np.exp(-(x[i] - 3 * np.pi - tMax * dt * y_offset) ** 2)
+            # )
+            sol[i] = np.sin(x[i] - tMax * dt * y_offset)
+        
+        # Use Gaussian quadrature weights in the error calculation
+        for i in range(nQuad):
+            # L2 error requires squaring the difference for sumNum
+            sumNum += (y[i] - sol[i]) ** 2 * quadWeights[i] * (0.5 * dx)  # Account for the dx scaling in the transformation
+            # Also square the solution for sumDem
+            sumDem += sol[i] ** 2 * quadWeights[i] * (0.5 * dx)
+        
+        # Plotting the results (optional)
+        ax.plot(x, [y_offset] * len(x), y, color='r')
+        ax.plot(x, [y_offset] * len(x), sol, color='k')
+    print(np.sqrt(sumNum / sumDem))
+
+# Print the L2 error by taking the square root of the ratio
+print(np.sqrt(sumNum / sumDem))
+
+# for vx in range(nvx):
+#     sumNum = 0
+#     sumDem = 0
+#     for j in range(jMax):
+#         xj = j*dx+dx/2
+#         y = np.zeros(10)
+#         x = np.zeros(10)
+#         sol = np.zeros(10)
+#         y_offset = -domainMaxVX + vx*dvx
+#         for i in range(10):
+#             x[i] = j*dx+i*dx/9.0
+#             for l in range(lMax):
+#                 y[i] += u[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
+#                 # sol[i] += uSol[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
+#             sol[i] = max(np.exp(-(x[i]-np.pi-tMax*dt*y_offset)**2),np.exp(-(x[i]+np.pi-tMax*dt*y_offset)**2),np.exp(-(x[i]-3*np.pi-tMax*dt*y_offset)**2))
+#             sumNum+=(y[i]-sol[i])**2
+#             sumDem+=sol[i]**2
+#             # sol[i] = np.exp(-(x[i]-np.pi-tMax*dt*y_offset)**2)
+#         ax.plot(x,[y_offset]*len(x),y,color='red')
+#         # ax.plot(x,[y_offset]*len(x),sol,color='black')
+#         # ax.plot(x,[y_offset]*len(x),y-sol,color='red')
+#     print(np.sqrt(sumNum/sumDem))
 
 plt.tight_layout()
 plt.show()
