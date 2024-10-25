@@ -31,7 +31,7 @@ Matrix NewtonSolver::solve(Matrix alpha, double nu, Vector rho, Vector u, Vector
             }
         }
         F = createF(alpha, nu, rho, u, rt, dx, roots, weights, basisFunction, quadratureOrder, lMax);
-        norm = F.CalculateNorm(1);
+        norm = F.CalculateNorm(1)/rho[0];
         if (test==true)
         {
             // alpha.Print();
