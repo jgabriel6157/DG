@@ -30,7 +30,6 @@ Mesh::Mesh(int nx, int nvx, double domainLengthX, double domainMaxVX) : nx(nx), 
             cell.neighbors.push_back(i + 1); 
         }
 
-
         cells.push_back(cell);
     }
     //Calculate velocity difference between discrete velocity points

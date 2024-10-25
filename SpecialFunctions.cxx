@@ -1,8 +1,10 @@
 #include <iostream>
 #include <cmath>
 #include <cassert>
+#include <functional>
 #include "SpecialFunctions.hxx"
 #include "Vector.hxx"
+#include "Matrix.hxx"
 
 //Function to calculate Legendre polynomial of order n at point x
 double SpecialFunctions::legendre(int n, double x)
@@ -138,7 +140,8 @@ double SpecialFunctions::linearDerivative(int n, double x)
 //Square pulse (top hat) function centered at pi with length 2
 double SpecialFunctions::topHat(double x)
 {
-    if ((x<M_PI-1.0)||(x>M_PI+1.0))
+    // if ((x<M_PI-1.0)||(x>M_PI+1.0))
+    if ((x<-1.0)||(x>1.0))
     {
         return 0;
     }
@@ -151,15 +154,15 @@ double SpecialFunctions::topHat(double x)
 //Gaussian pulse centered at pi
 double SpecialFunctions::gaussianPulse(double x)
 {
-    return exp(-1.0*pow(x-1.0*M_PI,2.0));
-    // return exp(-1.0*pow(x,2.0));
+    // return exp(-1.0*pow(x-1.0*M_PI,2.0));
+    return exp(-50.0*pow(x-0.5,2.0));
 }
 
 //Gaussian pulse centered at +-0.5 pi
 double SpecialFunctions::twinGaussianPulse(double x)
 {
-    return exp(-5.0*pow(x-0.5*M_PI,2.0))+exp(-5.0*pow(x+0.5*M_PI,2.0));
-    // return exp(-1.0*pow(x-2.0,2.0))+exp(-1.0*pow(x+2.0,2.0));
+    // return exp(-5.0*pow(x-0.5*M_PI,2.0))+exp(-5.0*pow(x+0.5*M_PI,2.0));
+    return 1e18*(exp(-1.0*pow(x-1.0,2.0))+exp(-1.0*pow(x+1.0,2.0)));
 }
 
 //Constant functions that is = 1 for all x
@@ -220,7 +223,6 @@ Vector SpecialFunctions::legendreRoots(int n)
     {
         double x0 = (1.0-1.0/(8.0*pow(n,2.0))+1.0/(8.0*pow(n,3.0)))*cos(M_PI*(4.0*(i+1.0)-1.0)/(4.0*n+2.0)); //intial guess
         double x = newtonRaphson(n,x0);
-        // roots.push_back(x);
         roots[i] = x;
     }
 
@@ -271,9 +273,33 @@ double SpecialFunctions::minmod(double a, double b, double c)
     }
 }
 
+double SpecialFunctions::computeMoment(Vector moment, std::function<double(int,double)> basisFunction, int lMax, double x)
+{
+    double momentValue = 0;
+
+    for (int l=0; l<lMax; l++)
+    {
+        momentValue += moment[l]*basisFunction(l,x);
+    }
+
+    return momentValue;
+}
+
 double SpecialFunctions::computeMaxwellian(double rho, double u, double rt, double vx)
 {
     double vt2 = rt*9.58134e7;
-    return rho*exp(-pow(vx-u,2)/(2.0*vt2))/sqrt(2.0*M_PI*vt2);
+    // double vt2 = rt;
+    return rho*exp(-pow(vx-u,2)/(2.0*vt2))/pow(2.0*M_PI*vt2,0.5);
 }
 
+double SpecialFunctions::getF(Matrix uPre, int lMax, std::function<double(int,double)> basisFunction, int j, double x)
+{
+    double f = 0;
+
+    for (int l=0; l<lMax; l++)
+    {
+        f += uPre(l,j)*basisFunction(l,x); //Should probably be 2.0*(x-xj)/dx
+    }
+
+    return f;
+}

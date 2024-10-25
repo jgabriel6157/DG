@@ -10,7 +10,7 @@ test = false
 alpha = 0
 input = twinPulses
 slopeLimiter = false
-nout = 100
+nout = 2000
 nvx = 127
 maxVX = 200000
 

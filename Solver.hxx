@@ -6,18 +6,19 @@
 #include "Vector.hxx"
 #include "Mesh.hxx"
 #include "NewtonCotes.hxx"
+#include "NewtonSolver.hxx"
 
 class Solver
 {
 private:
     Mesh mesh;
     NewtonCotes integrator;
-    // double dx;
+    NewtonSolver newtonSolver;
     double dt;
     double a;
-    // int jMax;
     int lMax;
-    double alpha;
+    Matrix alphaDomain;
+    Vector M_invDiag;
     Matrix M_invS;
     Matrix M_invT;
     Matrix M_invF1Minus;
@@ -28,15 +29,13 @@ private:
     Matrix uIntermediate;
     Matrix uPost;
 
-    void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor, std::function<double(int,double)> basisFunction);
-
     //compute the reconstructed f(x,t)
     double getF(std::function<double(int,double)> basisFunction, int lMax, int j, int k, double x);
+    void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor, std::function<double(int,double)> basisFunction, int quadratureOrder);
 
 public:
     //constructor 
-    // Solver(double dx, double dt, double a, int jMax, int lMax, double alpha);
-    Solver(const Mesh& mesh, double dt, double a, int lMax, double alpha);
+    Solver(const Mesh& mesh, double dt, double a, int lMax);
     
     //deconstructor
     ~Solver();
@@ -47,8 +46,10 @@ public:
     //initialize using the Least Squares method
     void initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunctionX, std::function<double(double)> inputFunctionVX);
 
+    void initializeAlpha(std::function<double(int,double)> basisFunction);
+
     //advance time step using 3rd order SSP RK
-    void advance(std::function<double(int,double)> basisFunction);
+    void advance(std::function<double(int,double)> basisFunction, int quadratureOrder);
 
     //use minmod slope limiter
     void slopeLimiter();
@@ -62,7 +63,7 @@ public:
     //compute the mass, momentum and energy from f
     Vector getMoments(int quadratureOrder, std::function<double(int,double)> basisFunction);
 
-    //compute the value of your moment at spatial point x
+    //compute the value of your moment at normalized point x
     double computeMoment(Vector moment, std::function<double(int,double)> basisFunction, int lMax, double x);
 
     //fit Maxwellian
@@ -74,6 +75,11 @@ public:
     Vector getDensity(int j);
 
     Vector fitCX(std::function<double(int,double)> basisFunction, double density, double meanVelocity, double temperature, Vector rho_n, Vector f_tilde, int k, int j);
+    //fit Maxwellian
+    Vector fitMaxwellian(std::function<double(int,double)> basisFunction, Matrix alpha, double vx, int j);
+
+    //compute the density from f
+    Vector getMoment(int j, int power);
 
 };
 

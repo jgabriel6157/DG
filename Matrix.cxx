@@ -1,5 +1,6 @@
 #include <cmath>
 #include <cassert>
+#include <iostream>
 #include "Matrix.hxx"
 #include "Vector.hxx"
 
@@ -55,6 +56,18 @@ Matrix::~Matrix()
         delete[] mData[i];
     }
     delete[] mData;
+}
+
+void Matrix::Print()
+{
+    for (int i=0; i<mNumRows; i++)
+    {
+        for (int j=0; j<mNumCols; j++)
+        {
+            std::cout << mData[i][j] << " ";
+        }
+        std::cout << "\n";
+    }
 }
 
 // Method to get number of rows of matrix

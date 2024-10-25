@@ -13,6 +13,7 @@ public:
     ~Matrix();
     int GetNumberOfRows() const;
     int GetNumberOfColumns() const;
+    void Print();
     double& operator()(int i, int j);
     //overloaded assignment operator
     Matrix& operator=(const Matrix& otherMatrix);

@@ -42,6 +42,14 @@ int Vector::GetSize() const
     return mSize;
 }
 
+void Vector::Print()
+{
+    for (int i=0; i<mSize; i++)
+    {
+        std::cout << mData[i] << "\n";
+    }
+}
+
 // Overloading square brackets
 // Note that this uses ‘zero-based’ indexing,
 // and a check on the validity of the index
