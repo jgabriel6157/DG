@@ -154,8 +154,8 @@ double SpecialFunctions::topHat(double x)
 //Gaussian pulse centered at pi
 double SpecialFunctions::gaussianPulse(double x)
 {
-    return exp(-1.0*pow(x-1.0*M_PI,2.0));
-    // return exp(-1.0*pow(x,2.0));
+    // return exp(-1.0*pow(x-1.0*M_PI,2.0));
+    return exp(-50.0*pow(x-0.5,2.0));
 }
 
 //Gaussian pulse centered at +-0.5 pi
@@ -257,7 +257,9 @@ double SpecialFunctions::computeMoment(Vector moment, std::function<double(int,d
 
 double SpecialFunctions::computeMaxwellian(double rho, double u, double rt, double vx)
 {
-    return rho*exp(-pow(vx-u,2)/(2.0*rt))/pow(2.0*M_PI*rt,0.5);
+    // double vt2 = rt*9.58134e7;
+    double vt2 = rt;
+    return rho*exp(-pow(vx-u,2)/(2.0*vt2))/pow(2.0*M_PI*vt2,0.5);
 }
 
 double SpecialFunctions::getF(Matrix uPre, int lMax, std::function<double(int,double)> basisFunction, int j, double x)

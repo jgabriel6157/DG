@@ -95,7 +95,7 @@ inputFile.close()
 fig,ax = plt.subplots()
 lines = [ax.plot([], [], lw=2,color='red')[0] for _ in range(jMax)]
 plt.xlim(0,length)
-plt.ylim(-2,2)
+plt.ylim(0,2)
 
 valuesDensity = pd.read_csv(fileNameDensity,header=None)
 valuesDensity = valuesDensity[0].to_numpy()
@@ -135,8 +135,8 @@ def generate_data(t,j):
             velocity += rhou[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
             temperature += rt[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
         velocity/=density
-        temperature = (temperature-0.5*density*velocity**2)
-        y[i] = density
+        temperature = (temperature-density*velocity**2)/density
+        y[i] = temperature
     return x,y
 
 x = np.zeros((jMax,10))

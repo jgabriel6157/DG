@@ -93,13 +93,14 @@ void Solver::initialize(std::function<double(int,double)> basisFunction, std::fu
             {
                 x = leftVertex+i*dx/9.0;
                 y[i] = inputFunctionX(x)*inputFunctionVX(vx);
+                // x = leftVertex+i*dx/10.0;
                 // if (x<0.5)
                 // {
-                //     y[i] = SpecialFunctions::computeMaxwellian(1.0,0.0,1.0,vx);
+                //    y[i] = SpecialFunctions::computeMaxwellian(1.0,0.0,1.0,vx);
                 // }
                 // else
                 // {
-                //     y[i] = SpecialFunctions::computeMaxwellian(0.125,0.0,1.0/0.125,vx);
+                //    y[i] = SpecialFunctions::computeMaxwellian(0.125,0.0,0.8,vx);
                 // }
                 for (int l=0; l<lMax; l++)
                 {
@@ -115,6 +116,14 @@ void Solver::initialize(std::function<double(int,double)> basisFunction, std::fu
             }
         }
     }
+    // for (int k=0; k<nvx; k++)
+    // {
+    //     for (int l=0; l<lMax; l++)
+    //     {
+    //         uPre(l,k+nx*nvx) = uPre(l,k+0*nvx); //Left BC
+    //         uPre(l,k+(nx+1)*nvx) = uPre(l,k+(nx-1)*nvx); //Right BC
+    //     }
+    // }
 }
 
 void Solver::initializeAlpha(std::function<double(int,double)> basisFunction)
@@ -157,12 +166,25 @@ void Solver::initializeAlpha(std::function<double(int,double)> basisFunction)
                 double density = computeMoment(rho, basisFunction,lMax,2.0*(x-xj)/dx);
                 double meanVelocity = computeMoment(u, basisFunction,lMax,2.0*(x-xj)/dx)/density;
                 double temperature = (computeMoment(rt, basisFunction,lMax,2.0*(x-xj)/dx)-density*pow(meanVelocity,2))/density;
+                // if (temperature < 0)
+                // {
+                //     temperature = 0.1;
+                // }
                 double arg = computeMaxwellian(density,meanVelocity,temperature,vx);
-                if (arg < 0)
-                {
-                    arg = 1e-10;
-                }
+                // if (arg < 1e-10)
+                // {
+                //     arg = 1e-10;
+                // }
                 y[i+k*10] = log(arg);
+                // if (j==31 && k==0)
+                // {
+                //     std::cout << "x = " << x << "\n";
+                //     std::cout << density << "\n";
+                //     std::cout << meanVelocity << "\n";
+                //     std::cout << temperature << "\n";
+                //     std::cout << arg << "\n";
+                //     std::cout << y[i+k*10] << "\n";
+                // }
                 for (int m=0; m<3; m++)
                 {
                     for (int l=0; l<lMax; l++)
@@ -181,6 +203,16 @@ void Solver::initializeAlpha(std::function<double(int,double)> basisFunction)
         }
 
         uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
+
+        // if (j==31)
+        // {
+        //     rho.Print();
+        //     u.Print();
+        //     rt.Print();
+        //     // ((bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()).Print();
+        //     y.Print();
+        // }
+
         for (int m=0; m<3; m++)
         {
             for (int l=0; l<lMax; l++)
@@ -196,9 +228,11 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
 
-    double nu = 1.0;
+    double nu = 100.0;
 
     const auto& cells = mesh.getCells();
+
+    // initializeAlpha(basisFunction);
 
     double nx = mesh.getNX();
     double nvx = mesh.getNVX();
@@ -232,9 +266,14 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 alpha(m,l) = alphaDomain(m+j*3,l);
             }
         }
-
-        alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-13), 100, basisFunction, quadratureOrder, lMax);
-
+        bool test = false;
+        if (j==8)
+        {
+            test = false;
+        }
+        // std::cout << "Calculate Alphas" << "\n";
+        alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-13), 100, basisFunction, quadratureOrder, lMax, test);
+        // std::cout << "Alphas calculated" << "\n";
         for (int m=0; m<3; m++)
         {
             for (int l=0; l<lMax; l++)
@@ -252,8 +291,8 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
 
             for (int l=0; l<lMax; l++)
             {
-                uBefore(l,k+nx*nvx) = uBefore(l,k+0*nvx);
-                uBefore(l,k+(nx+1)*nvx) = uBefore(l,k+(nx-1)*nvx);
+                uBefore(l,k+nx*nvx) = uBefore(l,k+0*nvx); //Left BC
+                uBefore(l,k+(nx+1)*nvx) = uBefore(l,k+(nx-1)*nvx); //Right BC
             }
 
             //calculate feq
@@ -261,7 +300,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             for (int l=0; l<lMax; l++)
             {
                 // std::cout << feq[l] << "\n";
-                feq_tot(l,k) = GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights);
+                // feq_tot(l,k) = (nu/2.0)*GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights);
                 uAfter(l,k+j*nvx)=0;
                 for (int i=0; i<lMax; i++)
                 {
@@ -276,6 +315,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 // uAfter(l,k+j*nvx)+=nu*(feq[l]-uBefore(l,k+j*nvx));
                 uAfter(l,k+j*nvx)+=nu*M_invDiag[l]*GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights)/2.0;
                 uAfter(l,k+j*nvx)-=nu*uBefore(l,k+j*nvx);
+                // uAfter(l,k+j*nvx)*=nu;
                 uAfter(l,k+j*nvx)*=dt;
                 uAfter(l,k+j*nvx)+=uBefore(l,k+j*nvx);
                 
@@ -288,21 +328,24 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
         // Vector rt_eq = integrator.integrate(feq_tot,lMax,2);
         // for (int l=0; l<lMax; l++)
         // {
-        //     std::cout << "l = " << l << "\n";
-        //     std::cout << rho_eq[l] << "\n";
-        //     std::cout << pow(M_invDiag[l],-1)*rho[l] << "\n";
+            // std::cout << "l = " << l << "\n";
+            // std::cout << rho_eq[l] << "\n";
+            // std::cout << pow(M_invDiag[l],-1)*rho[l] << "\n";
         // }
-        // std::cout << (rho_eq[0]-rho[0])
+        // std::cout << (rho_eq[0]-rho[0]) << "\n";
     }
 }
 
 void Solver::advance(std::function<double(int,double)> basisFunction, int quadratureOrder)
 {
     //First stage of solver
+    // std::cout << "Solver stage 1" << "\n";
     advanceStage(uPre, uPost, 0.0, 1.0, basisFunction, quadratureOrder);
     //Second stage of solver
+    // std::cout << "Solver stage 2" << "\n";
     advanceStage(uPost, uIntermediate, 3.0/4.0, 1.0/4.0, basisFunction, quadratureOrder);
     //Third stage of solver
+    // std::cout << "Solver stage 3" << "\n";
     advanceStage(uIntermediate, uPost, 1.0/3.0, 2.0/3.0, basisFunction, quadratureOrder);
 
     uPre = uPost;
