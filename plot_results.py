@@ -136,7 +136,7 @@ def generate_data(t,j):
             temperature += rt[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
         velocity/=density
         temperature = (temperature-density*velocity**2)/density
-        y[i] = density
+        y[i] = temperature
     return x,y
 
 x = np.zeros((jMax,10))
@@ -147,7 +147,6 @@ def animate(t):
     for j, line in enumerate(lines):
         line.set_data(x[j],y[j])
     ax.set_title(f"Timestep: {t}")
-    print(np.max(y))
     return lines
 
 ani = FuncAnimation(fig, animate, frames=nout, init_func=init, repeat=False, interval = 100)

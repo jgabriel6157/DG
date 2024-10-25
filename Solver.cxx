@@ -91,17 +91,17 @@ void Solver::initialize(std::function<double(int,double)> basisFunction, std::fu
 
             for (int i=0; i<10; i++)
             {
-                // x = leftVertex+i*dx/9.0;
-                // y[i] = inputFunctionX(x)*inputFunctionVX(vx);
-                x = leftVertex+i*dx/10.0;
-                if (x<0.5)
-                {
-                   y[i] = SpecialFunctions::computeMaxwellian(1.0,0.0,1.0,vx);
-                }
-                else
-                {
-                   y[i] = SpecialFunctions::computeMaxwellian(0.125,0.0,0.8,vx);
-                }
+                x = leftVertex+i*dx/9.0;
+                y[i] = inputFunctionX(x)*inputFunctionVX(vx);
+                // x = leftVertex+i*dx/10.0;
+                // if (x<0.5)
+                // {
+                //    y[i] = SpecialFunctions::computeMaxwellian(1.0,0.0,1.0,vx);
+                // }
+                // else
+                // {
+                //    y[i] = SpecialFunctions::computeMaxwellian(0.125,0.0,0.8,vx);
+                // }
                 for (int l=0; l<lMax; l++)
                 {
                     bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
@@ -171,10 +171,10 @@ void Solver::initializeAlpha(std::function<double(int,double)> basisFunction)
                 //     temperature = 0.1;
                 // }
                 double arg = computeMaxwellian(density,meanVelocity,temperature,vx);
-                if (arg < 1e-10)
-                {
-                    arg = 1e-10;
-                }
+                // if (arg < 1e-10)
+                // {
+                //     arg = 1e-10;
+                // }
                 y[i+k*10] = log(arg);
                 // if (j==31 && k==0)
                 // {
@@ -238,7 +238,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     double nvx = mesh.getNVX();
     for (int j=0; j<nx; j++)
     {
-        std::cout << j << "\n";
+        // std::cout << j << "\n";
         int leftNeighborIndex = cells[j].neighbors[0];
         int rightNeighborIndex = cells[j].neighbors[1];
         double dx = cells[j].dx;
@@ -266,13 +266,13 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 alpha(m,l) = alphaDomain(m+j*3,l);
             }
         }
-        bool test = true;
-        if (j==29)
+        bool test = false;
+        if (j==8)
         {
-            test = true;
+            test = false;
         }
         // std::cout << "Calculate Alphas" << "\n";
-        alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-15), 100, basisFunction, quadratureOrder, lMax, test);
+        alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-13), 100, basisFunction, quadratureOrder, lMax, test);
         // std::cout << "Alphas calculated" << "\n";
         for (int m=0; m<3; m++)
         {
@@ -314,8 +314,8 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 uAfter(l,k+j*nvx)/=dx;
                 // uAfter(l,k+j*nvx)+=nu*(feq[l]-uBefore(l,k+j*nvx));
                 uAfter(l,k+j*nvx)+=nu*M_invDiag[l]*GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights)/2.0;
-                uAfter(l,k+j*nvx)-=uBefore(l,k+j*nvx);
-                uAfter(l,k+j*nvx)*=nu;
+                uAfter(l,k+j*nvx)-=nu*uBefore(l,k+j*nvx);
+                // uAfter(l,k+j*nvx)*=nu;
                 uAfter(l,k+j*nvx)*=dt;
                 uAfter(l,k+j*nvx)+=uBefore(l,k+j*nvx);
                 

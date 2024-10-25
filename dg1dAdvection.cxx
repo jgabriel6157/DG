@@ -74,9 +74,9 @@ int main(int argc, char* argv[])
     // solver.initialize(basisFunction, SpecialFunctions::constantFunction, inputFunction);
 
     solver.initialize(basisFunction, SpecialFunctions::gaussianPulse, inputFunction);
-
-    solver.initializeAlpha(basisFunction);
     std::cout << "initialization complete" << "\n";
+    solver.initializeAlpha(basisFunction);
+    std::cout << "alpha initialization complete" << "\n";
     for (int j=0; j<jMax; j++)
     {
         Vector rho = solver.getMoment(j,0);
@@ -119,11 +119,11 @@ int main(int argc, char* argv[])
             write_moments << (moments[0]-M0)/M0 << "\n";
             write_moments << moments[1] << "\n";
             write_moments << (moments[2]-E0)/E0 << "\n";
-            write_moments << (moments[3]-S0)/S0 << "\n";
-            // std::cout << (moments[0]-M0)/M0 << "\n";
-            // std::cout << moments[1] << "\n";
-            // std::cout << (moments[2]-E0)/E0 << "\n";
-            // std::cout << (moments[3]-S0)/S0 << "\n";
+            write_moments << (moments[3]-S0)/fabs(S0) << "\n";
+            std::cout << (moments[0]-M0)/M0 << "\n";
+            std::cout << moments[1] << "\n";
+            std::cout << (moments[2]-E0)/E0 << "\n";
+            std::cout << (moments[3]-S0)/fabs(S0) << "\n";
             for (int j=0; j<jMax; j++)
             {
                 Vector rho = solver.getMoment(j,0);

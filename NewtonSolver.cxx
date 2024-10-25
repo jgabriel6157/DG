@@ -43,8 +43,8 @@ Matrix NewtonSolver::solve(Matrix alpha, double nu, Vector rho, Vector u, Vector
         }
         if (count > maxIteration)
         {
+            std::cout << "alpha did not converge after " << maxIteration << " iterations. Norm is "<< norm <<"\n"; 
             norm = 0;
-            std::cout << "alpha did not converge after " << maxIteration << " iterations\n"; 
         }
     }
 
@@ -90,7 +90,7 @@ Vector NewtonSolver::createF(Matrix alpha, double nu, Vector rho, Vector u, Vect
 
                 double moment = SpecialFunctions::computeMoment(tilde, basisFunction, lMax, roots[i]);
 
-                F[m+l*3] += weights[i]*basisFunction(l,roots[i])*(nu*integral-moment)*dx/2.0;
+                F[m+l*3] += weights[i]*basisFunction(l,roots[i])*nu*(integral-moment)*dx/2.0;
             }
         }
     }

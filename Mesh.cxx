@@ -14,15 +14,15 @@ Mesh::Mesh(int nx, int nvx, double domainLengthX, double domainMaxVX) : nx(nx), 
         //Initialize neighbors of the cell
         if (i==0)
         {
-            // cell.neighbors.push_back(nx-1); //Periodic BC
-            cell.neighbors.push_back(nx); //Ghost cell left
+            cell.neighbors.push_back(nx-1); //Periodic BC
+            // cell.neighbors.push_back(nx); //Ghost cell left
             cell.neighbors.push_back(i+1);
         }
         else if (i==nx-1)
         {
             cell.neighbors.push_back(i-1);
-            // cell.neighbors.push_back(0); //Periodic BC
-            cell.neighbors.push_back(nx+1); //Ghost cell right
+            cell.neighbors.push_back(0); //Periodic BC
+            // cell.neighbors.push_back(nx+1); //Ghost cell right
         }
         else
         {
