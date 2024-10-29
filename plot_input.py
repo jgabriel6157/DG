@@ -100,7 +100,7 @@ values = values[0].to_numpy()
 # valuesSol = pd.read_csv(fileNameSol,header=None)
 # valuesSol = valuesSol[0].to_numpy()
 # m = 0
-m=0
+m=6096*2000
 dx = length/jMax
 dvx = 2*domainMaxVX/(nvx-1)
 # dvx = 1.0/nvx
@@ -110,12 +110,12 @@ u = np.zeros((lMax,jMax,nvx))
 fig = plt.figure()
 ax = fig.add_subplot(projection='3d')
 
-# for j in range(jMax):
-    # for k in range(nvx):
-    #     for lx in range(lMax):
-    #         u[lx,j,k] = values[m]
-    #         # uSol[lx,j,k] = valuesSol[m]
-    #         m = m+1
+for j in range(jMax):
+    for k in range(nvx):
+        for lx in range(lMax):
+            u[lx,j,k] = values[m]
+            # uSol[lx,j,k] = valuesSol[m]
+            m = m+1
 print(m)
 # vx = 0
 # for j in range(jMax):

@@ -93,11 +93,11 @@ lMax+=1
 inputFile.close()
 
 fig,ax = plt.subplots()
-ax.set_yscale('log')
+# ax.set_yscale('log')
 lines = [ax.plot([], [], lw=2,color='red')[0] for _ in range(jMax)]
 plt.xlim(0,length)
-plt.ylim(1e5,1e20)
-# plt.ylim(0,2)
+# plt.ylim(1e5,1e20)
+plt.ylim(0,2)
 
 valuesDensity = pd.read_csv(fileNameDensity,header=None)
 valuesDensity = valuesDensity[0].to_numpy()
@@ -111,7 +111,6 @@ rho = np.zeros((lMax,jMax,nout))
 rhou = np.zeros((lMax,jMax,nout))
 rt = np.zeros((lMax,jMax,nout))
 for t in range(nout):
-    print(k)
     for j in range(jMax):
         for l in range(lMax):
             rho[l][j][t] = valuesDensity[k]
@@ -139,7 +138,8 @@ def generate_data(t,j):
             temperature += rt[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
         velocity/=density
         temperature = (temperature-density*velocity**2)/density
-        y[i] = temperature
+        temperature /= (9.58134e7)
+        y[i] = density
     return x,y
 
 x = np.zeros((jMax,10))

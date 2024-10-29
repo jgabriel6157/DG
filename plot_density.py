@@ -134,7 +134,7 @@ values = values[0].to_numpy()
 valuesSol = pd.read_csv(fileNameSol,header=None)
 valuesSol = valuesSol[0].to_numpy()
 # m = 33600
-for m in [0,3360,33600]:
+for m in [168000]:
     dx = length/jMax
     dvx = 2*domainMaxVX/(nvx-1)
     # dvx = 1.0/nvx

@@ -174,6 +174,7 @@ void Solver::initializeAlpha(std::function<double(int,double)> basisFunction)
                 double density = computeMoment(rho, basisFunction,lMax,2.0*(x-xj)/dx);
                 double meanVelocity = computeMoment(u, basisFunction,lMax,2.0*(x-xj)/dx)/density;
                 double temperature = (computeMoment(rt, basisFunction,lMax,2.0*(x-xj)/dx)-density*pow(meanVelocity,2))/density;
+                temperature /= (9.58134e7);
                 // if (temperature < 0)
                 // {
                 //     temperature = 0.1;
@@ -237,7 +238,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
 
     double nu = 100.0;
-    double nu = 1.0;
+
     double A = 2.91e-14;
     double P = 0;
     double X = 0.232;
@@ -303,7 +304,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             }
         }
         bool test = false;
-        if (j==8)
+        if (j==0)
         {
             test = false;
         }
@@ -338,10 +339,10 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             Vector f_tilde(lMax);
             for (int l=0; l<lMax; l++)
             {
-                uBefore(l,k+nx*nvx) = fL[l];
-                uBefore(l,k+(nx+1)*nvx) = fR[l];
-                // uBefore(l,k+nx*nvx) = uBefore(l,k+0*nvx); //Left BC
-                // uBefore(l,k+(nx+1)*nvx) = uBefore(l,k+(nx-1)*nvx); //Right BC
+                // uBefore(l,k+nx*nvx) = fL[l];
+                // uBefore(l,k+(nx+1)*nvx) = fR[l];
+                uBefore(l,k+nx*nvx) = uBefore(l,k+0*nvx); //Left BC
+                uBefore(l,k+(nx+1)*nvx) = uBefore(l,k+(nx-1)*nvx); //Right BC
                 f_tilde[l] = uBefore(l,k+j*nvx);
             }
             // Vector fCX = fitCX(basisFunction, ni, ui, Ti, rho, f_tilde, k, j);
@@ -362,7 +363,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 }
                 uAfter(l,k+j*nvx)*=vx;
                 uAfter(l,k+j*nvx)/=dx;
-                uAfter(l,k+j*nvx)-=ne*uBefore(l,k+j*nvx)*sigma_iz; //This line for ionization
+                // uAfter(l,k+j*nvx)-=ne*uBefore(l,k+j*nvx)*sigma_iz; //This line for ionization
                 // for (int i=0; i<lMax; i++)
                 // {
                 //     for (int m=0; m<lMax; m++)
@@ -409,10 +410,10 @@ void Solver::advance(std::function<double(int,double)> basisFunction, int quadra
     advanceStage(uPre, uPost, 0.0, 1.0, basisFunction, quadratureOrder);
     //Second stage of solver
     // std::cout << "Solver stage 2" << "\n";
-    advanceStage(uPost, uIntermediate, 3.0/4.0, 1.0/4.0, basisFunction, quadratureOrder);
-    //Third stage of solver
-    // std::cout << "Solver stage 3" << "\n";
-    advanceStage(uIntermediate, uPost, 1.0/3.0, 2.0/3.0, basisFunction, quadratureOrder);
+    // advanceStage(uPost, uIntermediate, 3.0/4.0, 1.0/4.0, basisFunction, quadratureOrder);
+    // //Third stage of solver
+    // // std::cout << "Solver stage 3" << "\n";
+    // advanceStage(uIntermediate, uPost, 1.0/3.0, 2.0/3.0, basisFunction, quadratureOrder);
 
     uPre = uPost;
 }
