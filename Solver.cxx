@@ -228,7 +228,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
 
-    double nu = 100.0;
+    double nu = 1000000.0;
 
     const auto& cells = mesh.getCells();
 
@@ -238,7 +238,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     double nvx = mesh.getNVX();
     for (int j=0; j<nx; j++)
     {
-        // std::cout << j << "\n";
+        std::cout << j << "\n";
         int leftNeighborIndex = cells[j].neighbors[0];
         int rightNeighborIndex = cells[j].neighbors[1];
         double dx = cells[j].dx;
@@ -267,12 +267,12 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             }
         }
         bool test = false;
-        if (j==8)
+        if (j==0)
         {
-            test = false;
+            test = true;
         }
         // std::cout << "Calculate Alphas" << "\n";
-        alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-13), 100, basisFunction, quadratureOrder, lMax, test);
+        alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-10), 100, basisFunction, quadratureOrder, lMax, test);
         // std::cout << "Alphas calculated" << "\n";
         for (int m=0; m<3; m++)
         {
@@ -343,10 +343,10 @@ void Solver::advance(std::function<double(int,double)> basisFunction, int quadra
     advanceStage(uPre, uPost, 0.0, 1.0, basisFunction, quadratureOrder);
     //Second stage of solver
     // std::cout << "Solver stage 2" << "\n";
-    advanceStage(uPost, uIntermediate, 3.0/4.0, 1.0/4.0, basisFunction, quadratureOrder);
-    //Third stage of solver
-    // std::cout << "Solver stage 3" << "\n";
-    advanceStage(uIntermediate, uPost, 1.0/3.0, 2.0/3.0, basisFunction, quadratureOrder);
+    // advanceStage(uPost, uIntermediate, 3.0/4.0, 1.0/4.0, basisFunction, quadratureOrder);
+    // //Third stage of solver
+    // // std::cout << "Solver stage 3" << "\n";
+    // advanceStage(uIntermediate, uPost, 1.0/3.0, 2.0/3.0, basisFunction, quadratureOrder);
 
     uPre = uPost;
 }
