@@ -93,11 +93,11 @@ lMax+=1
 inputFile.close()
 
 fig,ax = plt.subplots()
-# ax.set_yscale('log')
+ax.set_yscale('log')
 lines = [ax.plot([], [], lw=2,color='red')[0] for _ in range(jMax)]
 plt.xlim(0,length)
-# plt.ylim(1e5,1e20)
-plt.ylim(0,2)
+plt.ylim(1e-13,1e1)
+# plt.ylim(0,2)
 
 valuesDensity = pd.read_csv(fileNameDensity,header=None)
 valuesDensity = valuesDensity[0].to_numpy()
@@ -138,7 +138,6 @@ def generate_data(t,j):
             temperature += rt[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
         velocity/=density
         temperature = (temperature-density*velocity**2)/density
-        temperature /= (9.58134e7)
         y[i] = density
     return x,y
 
@@ -152,6 +151,6 @@ def animate(t):
     ax.set_title(f"Timestep: {t}")
     return lines
 
-ani = FuncAnimation(fig, animate, frames=nout, init_func=init, repeat=True, interval = 100)
+ani = FuncAnimation(fig, animate, frames=nout, init_func=init, repeat=False, interval = 100)
 
 plt.show()

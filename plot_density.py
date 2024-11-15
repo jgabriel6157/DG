@@ -106,15 +106,16 @@ P = 0
 U = 13.6 / 20
 X = 0.232
 K = 0.39
-n0 = 5*10**18  
+n0 = 5 
 Tw = 2  
 csL = np.sqrt(20)  
 csR = -np.sqrt(20)  
-Crec = 4.98*10**18  
+Crec = 4.98
 Lz = length  
+errorVal = 1e-10
     
 def sigma(A, P, U, X, K):
-    return A * (1 + P * np.sqrt(U)) * U**K * np.exp(-U) / (X + U) * 1e-6
+    return A * (1 + P * np.sqrt(U)) * U**K * np.exp(-U) / (X + U) * 1e-6 * 1e18
 
 def integrand_1(v, z):
     return (1 / np.sqrt(2 * np.pi * Tw)) * Crec * np.exp(-((v - csL) ** 2) / (2 * Tw)) * \
@@ -125,8 +126,8 @@ def integrand_2(v, z):
            np.exp(-n0 * sigma(A, P, U, X, K) * np.sqrt(1.672e-27 / 1.602e-19) * (z - Lz) / v)
 
 def f(z):
-    integral_1, _ = quad(integrand_1, 0, np.inf, args=(z,))
-    integral_2, _ = quad(integrand_2, -np.inf, 0, args=(z,))
+    integral_1, _ = quad(integrand_1, 0, np.inf, args=(z,),epsabs=errorVal,epsrel=errorVal)
+    integral_2, _ = quad(integrand_2, -np.inf, 0, args=(z,),epsabs=errorVal,epsrel=errorVal)
     return integral_1 + integral_2
 
 values = pd.read_csv(fileName,header=None)
@@ -134,7 +135,7 @@ values = values[0].to_numpy()
 valuesSol = pd.read_csv(fileNameSol,header=None)
 valuesSol = valuesSol[0].to_numpy()
 # m = 33600
-for m in [168000]:
+for m in [96*50]:
     dx = length/jMax
     dvx = 2*domainMaxVX/(nvx-1)
     # dvx = 1.0/nvx
@@ -146,6 +147,7 @@ for m in [168000]:
             u[lx,j] = values[m]
             # uSol[lx,j] = valuesSol[m]
             m = m+1
+    print(m)
 
     l2Norm = 0
     solution = 0
@@ -168,9 +170,9 @@ for m in [168000]:
             y2[i] = y[i]**2
         l2Norm+=simpson(error,x=x)
         solution+=simpson(y2,x=x)
-        plt.plot(x,y,color='red')
-        plt.plot(x,sol,'k:')
-plt.ylim((1e9,1e19))
+        plt.plot(x,y*1e18,color='red')
+        plt.plot(x,sol*1e18,'k:')
+plt.ylim((5e9,1e19))
 print(np.sqrt(l2Norm/solution))
 
 plt.show()

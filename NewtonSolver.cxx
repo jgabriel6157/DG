@@ -43,36 +43,37 @@ Matrix NewtonSolver::solve(Matrix alpha, double nu, Vector rho, Vector u, Vector
             }
         }
         F = createF(alpha, nu, rho, u, rt, dx, roots, weights, basisFunction, quadratureOrder, lMax);
-        FNorm = F;
-        for (int l=0; l<lMax; l++)
-        {
-            for (int m=0; m<3; m++)
-            {
-                double divisor;
-                switch (m)
-                {
-                case 0:
-                    divisor = rho[0];
-                    break;
-                case 1:
-                    divisor = fabs(u[0]);
-                    break;
-                case 2:
-                    divisor = rt[0];
-                    break;
-                default:
-                    std::cout << "******************issue with F******************" << "\n";
-                    break;
-                }
-                divisor = rt[0];
-                if (divisor > 1)
-                {
-                    FNorm[m+l*3] = F[m+l*3]/divisor;
-                }
-            }
-        }
-        // norm = F.CalculateNorm(1)/rho[0];
-        norm = FNorm.CalculateNorm(1);
+        // FNorm = F;
+        // for (int l=0; l<lMax; l++)
+        // {
+        //     for (int m=0; m<3; m++)
+        //     {
+        //         double divisor;
+        //         switch (m)
+        //         {
+        //         case 0:
+        //             divisor = rho[0];
+        //             break;
+        //         case 1:
+        //             divisor = fabs(u[0]);
+        //             break;
+        //         case 2:
+        //             divisor = rt[0];
+        //             break;
+        //         default:
+        //             std::cout << "******************issue with F******************" << "\n";
+        //             break;
+        //         }
+        //         divisor = rt[0];
+        //         if (divisor > 1)
+        //         {
+        //             FNorm[m+l*3] = F[m+l*3]/divisor;
+        //         }
+        //     }
+        // }
+        // // norm = F.CalculateNorm(1)/rho[0];
+        // norm = FNorm.CalculateNorm(1);
+        norm = F.CalculateNorm(1);
         if (test==true)
         {
             // alpha.Print();

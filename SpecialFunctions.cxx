@@ -174,7 +174,7 @@ double SpecialFunctions::constantFunction(double x)
 //Initial condition for ionization and cx test cases
 double SpecialFunctions::inelasticICx(double x)
 {
-    double n0 = 5.0e18;
+    double n0 = 5.0;
     double Lx = 40.0;
     double value;
     if (x>20)
@@ -197,7 +197,7 @@ double SpecialFunctions::inelasticICvx(double x)
     double rho = 1.0;
     double u = 0.0;
     double rt = 2.0;
-    double vt2 = rt*9.58134e7;
+    double vt2 = rt;
     return rho*exp(-pow(x-u,2)/(2.0*vt2))/sqrt(2.0*M_PI*vt2);
 }
 
@@ -287,8 +287,8 @@ double SpecialFunctions::computeMoment(Vector moment, std::function<double(int,d
 
 double SpecialFunctions::computeMaxwellian(double rho, double u, double rt, double vx)
 {
-    double vt2 = rt*9.58134e7;
-    // double vt2 = rt;
+    // double vt2 = rt*9.58134e7;
+    double vt2 = rt;
     return rho*exp(-pow(vx-u,2)/(2.0*vt2))/pow(2.0*M_PI*vt2,0.5);
 }
 

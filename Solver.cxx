@@ -174,7 +174,7 @@ void Solver::initializeAlpha(std::function<double(int,double)> basisFunction)
                 double density = computeMoment(rho, basisFunction,lMax,2.0*(x-xj)/dx);
                 double meanVelocity = computeMoment(u, basisFunction,lMax,2.0*(x-xj)/dx)/density;
                 double temperature = (computeMoment(rt, basisFunction,lMax,2.0*(x-xj)/dx)-density*pow(meanVelocity,2))/density;
-                temperature /= (9.58134e7);
+                // temperature /= (9.58134e7);
                 // if (temperature < 0)
                 // {
                 //     temperature = 0.1;
@@ -245,12 +245,15 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     double K = 0.39;
     double U = 13.6/20.0;
     double sigma_iz = A*(1+P*sqrt(U))*pow(U,K)*exp(-U)/(X+U);
-    
-    double ne = 5.0e18;
-    double Crec = 4.98e18;
-    double cs = sqrt(20.0*9.58134e7);
 
-    double nu_cx = 2.2e-14;
+    sigma_iz *= 1e18;
+    sigma_iz /= 9822.766369779;
+    
+    double ne = 5.0;
+    double Crec = 4.98;
+    double cs = sqrt(20.0);
+
+    double nu_cx = (2.2e-14)*(1e18)/(9822.766369779);
     double ni = ne;
     double ui = cs;
     double Ti = 20;
@@ -286,7 +289,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
         Vector rho_i(lMax);
         rho_i[0] = ni;
 
-        // if (j<56)
+        // if (j<32)
         // {
         //     ui = -cs;
         // }
@@ -309,7 +312,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             test = false;
         }
         // std::cout << "Calculate Alphas" << "\n";
-        alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-13), 100, basisFunction, quadratureOrder, lMax, test);
+        // alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-13), 100, basisFunction, quadratureOrder, lMax, test);
         // std::cout << "Alphas calculated" << "\n";
         for (int m=0; m<3; m++)
         {
@@ -327,8 +330,8 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             double fluxFactorPlus = (1.0-SpecialFunctions::sign(vx))/2.0;
 
             // calculate Ghost cells
-            Vector fL = fitMaxwellian(basisFunction, Crec, cs, 2.0, vx, j);
-            Vector fR = fitMaxwellian(basisFunction, Crec, -cs, 2.0, vx, j);
+            Vector fL = fitMaxwellian(basisFunction, Crec, cs, 10.0, vx, j);
+            Vector fR = fitMaxwellian(basisFunction, Crec, -cs, 10.0, vx, j);
 
             // fit ion distribution function
             // Vector fi = fitMaxwellian(basisFunction, ni, ui, Ti, vx, j);
@@ -339,13 +342,13 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             Vector f_tilde(lMax);
             for (int l=0; l<lMax; l++)
             {
-                // uBefore(l,k+nx*nvx) = fL[l];
-                // uBefore(l,k+(nx+1)*nvx) = fR[l];
-                uBefore(l,k+nx*nvx) = uBefore(l,k+0*nvx); //Left BC
-                uBefore(l,k+(nx+1)*nvx) = uBefore(l,k+(nx-1)*nvx); //Right BC
+                uBefore(l,k+nx*nvx) = fL[l];
+                uBefore(l,k+(nx+1)*nvx) = fR[l];
+                // uBefore(l,k+nx*nvx) = uBefore(l,k+0*nvx); //Left BC
+                // uBefore(l,k+(nx+1)*nvx) = uBefore(l,k+(nx-1)*nvx); //Right BC
                 f_tilde[l] = uBefore(l,k+j*nvx);
             }
-            // Vector fCX = fitCX(basisFunction, ni, ui, Ti, rho, f_tilde, k, j);
+            Vector fCX = fitCX(basisFunction, ni, ui, Ti, rho, f_tilde, k, j);
             // std::cout << "\n" << k << ":\n";
             //calculate feq
             // Vector feq = fitMaxwellian(basisFunction, alpha, vx, j);
@@ -374,13 +377,12 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 //     uAfter(l,k+j*nvx)-=nu_cx*M_invS1(l,i)*uBefore(i,k+j*nvx);
                 //     uAfter(l,k+j*nvx)+=nu_cx*M_invS2(l,i)*fi[i];
                 // }
-                // uAfter(l,k+j*nvx)-=nu_cx*fCX[l]; //This line for CX
+                uAfter(l,k+j*nvx)-=nu_cx*fCX[l]; //This line for CX
                 // uAfter(l,k+j*nvx) -= ni*nu_cx*uBefore(l,k+j*nvx);
                 // uAfter(l,k+j*nvx) += nu_cx*fCX[l];
                 // uAfter(l,k+j*nvx)+=nu*(feq[l]-uBefore(l,k+j*nvx));
-                uAfter(l,k+j*nvx)+=nu*M_invDiag[l]*GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights)/2.0;
-                uAfter(l,k+j*nvx)-=nu*uBefore(l,k+j*nvx);
-                // uAfter(l,k+j*nvx)*=nu;
+                // uAfter(l,k+j*nvx)+=nu*M_invDiag[l]*GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights)/2.0;
+                // uAfter(l,k+j*nvx)-=nu*uBefore(l,k+j*nvx);
                 uAfter(l,k+j*nvx)*=dt;
                 uAfter(l,k+j*nvx)+=uBefore(l,k+j*nvx);
                 
@@ -410,10 +412,10 @@ void Solver::advance(std::function<double(int,double)> basisFunction, int quadra
     advanceStage(uPre, uPost, 0.0, 1.0, basisFunction, quadratureOrder);
     //Second stage of solver
     // std::cout << "Solver stage 2" << "\n";
-    // advanceStage(uPost, uIntermediate, 3.0/4.0, 1.0/4.0, basisFunction, quadratureOrder);
-    // //Third stage of solver
-    // // std::cout << "Solver stage 3" << "\n";
-    // advanceStage(uIntermediate, uPost, 1.0/3.0, 2.0/3.0, basisFunction, quadratureOrder);
+    advanceStage(uPost, uIntermediate, 3.0/4.0, 1.0/4.0, basisFunction, quadratureOrder);
+    //Third stage of solver
+    // std::cout << "Solver stage 3" << "\n";
+    advanceStage(uIntermediate, uPost, 1.0/3.0, 2.0/3.0, basisFunction, quadratureOrder);
 
     uPre = uPost;
 }
@@ -682,7 +684,7 @@ Vector Solver::fitCX(std::function<double(int,double)> basisFunction, double den
         double density_n = computeMoment(rho_n, basisFunction, lMax, 2.0*(x-xj)/dx);
         double f_n = computeMoment(f_tilde, basisFunction, lMax, 2.0*(x-xj)/dx);
         double ui = meanVelocity_i*SpecialFunctions::sign(x-cells.back().vertices[1]/2.0);
-        y[i] = density_i * f_n - density_n * SpecialFunctions::computeMaxwellian(density_i,ui,temperature_i,vx)/density_i;
+        y[i] = density_i * f_n - density_n * SpecialFunctions::computeMaxwellian(density_i,ui,temperature_i,vx);
 
         // y[i] = density_n*SpecialFunctions::computeMaxwellian(density_i,meanVelocity_i,temperature_i,vx);
 

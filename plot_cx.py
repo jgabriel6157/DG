@@ -4,57 +4,58 @@ from matplotlib.animation import FuncAnimation, PillowWriter
 import fnmatch
 import numpy as np
 from scipy.integrate import quad
-from scipy.integrate import simpson
+from scipy import integrate
 import os
 import random
 import time
 
-n0 = 5*10**18 
+n0 = 5*1e18
 T = 20
-u = np.sqrt(20) 
-nu_cx = 2.2*10**-14
-Tw = 2  
-csL = np.sqrt(20)  
-csR = -np.sqrt(20)  
-Crec = 4.98*10**18  
+u = np.sqrt(20)
+nu_cx = (2.2*10**-14) * np.sqrt(1.672e-27 / 1.602e-19)
+Tw = 2
+csL = np.sqrt(20)
+csR = -np.sqrt(20)
+Crec = 4.98*1e18
 Lz = 40
+errorVal = 1e-8
 
 def integrand_1(v, z):
     return (1 / np.sqrt(2 * np.pi * Tw)) * Crec * np.exp(-((v - csL) ** 2) / (2 * Tw)) * \
-           np.exp(-n0 * nu_cx * np.sqrt(1.672e-27 / 1.602e-19) * (z+Lz/2) / v)
+           np.exp(-n0 * nu_cx * (z+Lz/2) / v)
 
 def integrand_2(v, z):
     return (1 / np.sqrt(2 * np.pi * Tw)) * Crec * np.exp(-((v - csR) ** 2) / (2 * Tw)) * \
-           np.exp(-n0 * nu_cx * np.sqrt(1.672e-27 / 1.602e-19) * (z - Lz/2) / v)
+           np.exp(-n0 * nu_cx * (z - Lz/2) / v)
 
 def n_minus(z):
-    integral_1, _ = quad(integrand_1, 0, np.inf, args=(z,))
+    integral_1, _ = quad(integrand_1, 0, np.inf, args=(z,),epsabs=errorVal,epsrel=errorVal)
     return integral_1
 
 def n_plus(z):
-    integral_2, _ = quad(integrand_2, -np.inf, 0, args=(z,))
+    integral_2, _ = quad(integrand_2, -np.inf, 0, args=(z,),epsabs=errorVal,epsrel=errorVal)
     return integral_2
 
-def G(v, z):
+def G(v, z): #really G*n_i(z)
     if z < 0:
         ug = -u
     else:
         ug = u
-    return np.exp(-((v - ug) ** 2) / (2 * T))/np.sqrt(2 * np.pi * Tw * 9.58134*10**7)
+    return np.exp(-((v - ug) ** 2) / (2 * T))/np.sqrt(2 * np.pi * T)
 
 def B_plus(z, z_prime):
     def integrand(v_prime):
-        return (nu_cx / v_prime) * G(v_prime, z_prime) * np.exp(nu_cx*n0 / v_prime * (z_prime - z))
-    integral, _ = quad(integrand, 0, np.inf)
+        return (nu_cx*n0 / v_prime) * G(v_prime, z_prime) * np.exp(nu_cx*n0 / v_prime * (z_prime - z))
+    integral, _ = quad(integrand, 0, np.inf,epsabs=errorVal,epsrel=errorVal)
     return integral
 
 def B_minus(z, z_prime):
     def integrand(v_prime):
-        return (nu_cx / v_prime) * G(v_prime, z_prime) * np.exp(nu_cx*n0 / v_prime * (z_prime - z))
-    integral, _ = quad(integrand, -np.inf, 0)
+        return (nu_cx*n0 / v_prime) * G(v_prime, z_prime) * np.exp(nu_cx*n0 / v_prime * (z_prime - z))
+    integral, _ = quad(integrand, -np.inf, 0,epsabs=errorVal,epsrel=errorVal)
     return integral
 
-num_points = 1009
+num_points = 1009 #jMax*(res-1)+1
 z_vals = np.linspace(-Lz/2, Lz/2, num_points)
 
 fig = plt.figure()
@@ -63,34 +64,47 @@ ax.set_yscale('log')
 
 n = np.zeros(num_points)
 for i, z in enumerate(z_vals):
-    if z <= 0:
-        n[i] = n0 #* (np.square(1 / np.cosh(-(Lz/2 + z - 2) / 2)) + 1e-6)
-    else:
-        n[i] = n0 #* (np.square(1 / np.cosh((Lz/2 - z - 2) / 2)) + 1e-6)
+    # if z <= 0:
+    #     n[i] = n0 * (np.square(1 / np.cosh(-(Lz/2 + z - 2) / 2)) + 1e-6)
+    # else:
+    #     n[i] = n0 * (np.square(1 / np.cosh((Lz/2 - z - 2) / 2)) + 1e-6)
+    n[i] = n_minus(z)+n_plus(z)
 
-tol = 1e-6
-max_iter = 100
-for iter in range(max_iter):
-    print(iter)
-    n_old = n.copy()
+# i = num_points-1
+# z = 20.0
+# integral_plus = np.trapz([n[j] * B_plus(z, z_vals[j]) for j in range(i)], x=z_vals[:i])
+# integral_minus = np.trapz([n[j] * B_minus(z, z_vals[j]) for j in range(i, num_points)], z_vals[i:])
+# print(B_plus(z,z))
+# print(integral_plus)
 
-    # Update each n(z) value
-    for i, z in enumerate(z_vals):
-        # Calculate integrals
-        if i==0:
-            integral_plus = np.trapz([n[j] * B_plus(z, z_vals[j]) for j in range(i)], z_vals[:i])
-            integral_minus = np.trapz([n[j] * B_minus(z, z_vals[j]) for j in range(i, num_points)], z_vals[i:])
+# tol = 1e-6
+# max_iter = 100
+# for iter in range(max_iter):
+#     print(iter)
+#     n_old = n.copy()
+
+#     # Update each n(z) value
+#     for i, z in enumerate(z_vals):
+#         # Calculate integrals
+#         # if i==0:
+#         integral_plus = np.trapz([n_old[j] * B_plus(z, z_vals[j]) for j in range(i)], z_vals[:i])
+#         integral_minus = np.trapz([n_old[j] * B_minus(z, z_vals[j]) for j in range(i, num_points)], z_vals[i:])
         
-        # Update n(z)
-        n[i] = n_minus(z) + n_plus(z) + integral_plus - integral_minus
+#         # Update n(z)
+#         n[i] = n_minus(z) + n_plus(z) + integral_plus - integral_minus
+#         # print(i)
+#         # print(z)
+#         # print(integral_plus)
+#         # print(integral_minus)
+#         print(n[i])
 
-    # Check for convergence
-    print(np.linalg.norm(n - n_old))
-    if np.linalg.norm(n - n_old) < tol:
-        print(f"Converged in {iter} iterations.")
-        break
-else:
-    print("Did not converge within the maximum number of iterations.")
+#     # Check for convergence
+#     print(np.linalg.norm(n - n_old))
+#     if np.linalg.norm(n - n_old) < tol:
+#         print(f"Converged in {iter} iterations.")
+#         break
+# else:
+#     print("Did not converge within the maximum number of iterations.")
 
 def getFunction(basis,n,x):
     if basis=='legendre':
@@ -185,7 +199,20 @@ values = values[0].to_numpy()
 # valuesSol = pd.read_csv(fileNameSol,header=None)
 # valuesSol = valuesSol[0].to_numpy()
 # m = 33600
-for m in [168000]:
+zvals = np.linspace(0,Lz,73)
+#tw = 2
+sol = [9.530037918593606e+18,3.443585377795066e+18,1.1798778383970465e+18,4.230035393563359e+17,1.582902613583898e+17,6.149948822451518e+16,2.472530326865515e+16,
+       1.0255050148172988e+16,4380327202107013.0,1923718648188707.2,867818305504052.6,401746227850319.7,190725403969430.44,92780866066238.86,46213707070264.734,
+       23548111437137.75,12262806802297.824,6519188821336.82,3533903271155.998,1950887233760.4268,1095407474005.471,624794875291.5898,361564797707.91644,
+       212038887327.73297,125878241642.13467,75570061369.60495,45835537586.36156,28062240135.22628,17327437665.918846,10780669536.719915,6751335947.825615,
+       4249109178.072075,2680495390.223425,1685151768.5609396,1043217405.1694884,602606475.811542,302962114.23153406,602606475.8111047,1043217405.1681938,
+       1685151768.5584273,2680495390.218846,4249109178.0642195,6751335947.81239,10780669536.698355,17327437665.88374,28062240135.16903,45835537586.2684,
+       75570061369.4519,125878241641.89076,212038887327.32016,361564797707.2179,624794875290.4581,1095407474003.4694,1950887233756.92,3533903271149.823,
+       6519188821325.937,12262806802278.195,23548111437110.336,46213707070202.67,92780866066119.61,190725403969180.28,401746227849867.94,867818305503060.1,
+       1923718648186979.5,4380327202101790.5,1.0255050148166076e+16,2.4725303268610548e+16,6.149948822447443e+16,1.582902613581344e+17,4.230035393560502e+17,
+       1.1798778383881987e+18,3.4435853777890196e+18,9.530037918590149e+18]
+
+for m in [96*50]:
     dx = length/jMax
     dvx = 2*domainMaxVX/(nvx-1)
     # dvx = 1.0/nvx
@@ -211,24 +238,24 @@ for m in [168000]:
         xj = j*dx+dx/2
         y = np.zeros(res)
         x = np.zeros(res)
-        sol = np.zeros(res)
+        # sol = np.zeros(res)
         error = np.zeros(res)
         y2 = np.zeros(res)
         for i in range(res):
             x[i] = j*dx+i*dx/(res-1)
-            sol[i] = n[j*(res-1)+i]
+            # sol[i] = n[j*(res-1)+i]/(1e18)
             for l in range(lMax):
                 y[i] += u[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
                 # sol[i] += uSol[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-            error[i] = (y[i]-sol[i])**2
-            y2[i] = y[i]**2
-        l2Norm+=simpson(error,x=x)
-        solution+=simpson(y2,x=x)
-        plt.plot(x,y,color='red')
+            # error[i] = (y[i]-sol[i])**2
+            # y2[i] = y[i]**2
+        # l2Norm+=integrate.simpson(error,x=x)
+        # solution+=integrate.simpson(y2,x=x)
+        plt.plot(x,y*1e18,color='red')
         # plt.plot(x,sol,'k:')
 
-print(np.sqrt(l2Norm/solution))
-plt.ylim(1e5,1e19)
-
-plt.plot(z_vals+Lz/2,n, 'k:')
+# print(np.sqrt(l2Norm/solution))
+plt.ylim(1e8,1e19)
+plt.plot(zvals,sol,'k:')
+# plt.plot(z_vals+Lz/2,n/(1e18), 'k:')
 plt.show()
