@@ -237,7 +237,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
 
-    double nu = 100.0;
+    double nu = 1.0;
 
     double A = 2.91e-14;
     double P = 0;
@@ -262,8 +262,9 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
 
     // initializeAlpha(basisFunction);
 
-    double nx = mesh.getNX();
-    double nvx = mesh.getNVX();
+    int nx = mesh.getNX();
+    int nvx = mesh.getNVX();
+    #pragma omp parallel for schedule(dynamic)
     for (int j=0; j<nx; j++)
     {
         // std::cout << j << "\n";
@@ -312,7 +313,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             test = false;
         }
         // std::cout << "Calculate Alphas" << "\n";
-        // alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-13), 100, basisFunction, quadratureOrder, lMax, test);
+        alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-15), 100, basisFunction, quadratureOrder, lMax, test);
         // std::cout << "Alphas calculated" << "\n";
         for (int m=0; m<3; m++)
         {
@@ -342,13 +343,13 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             Vector f_tilde(lMax);
             for (int l=0; l<lMax; l++)
             {
-                uBefore(l,k+nx*nvx) = fL[l];
-                uBefore(l,k+(nx+1)*nvx) = fR[l];
-                // uBefore(l,k+nx*nvx) = uBefore(l,k+0*nvx); //Left BC
-                // uBefore(l,k+(nx+1)*nvx) = uBefore(l,k+(nx-1)*nvx); //Right BC
+                // uBefore(l,k+nx*nvx) = fL[l];
+                // uBefore(l,k+(nx+1)*nvx) = fR[l];
+                uBefore(l,k+nx*nvx) = uBefore(l,k+0*nvx); //Left BC
+                uBefore(l,k+(nx+1)*nvx) = uBefore(l,k+(nx-1)*nvx); //Right BC
                 f_tilde[l] = uBefore(l,k+j*nvx);
             }
-            Vector fCX = fitCX(basisFunction, ni, ui, Ti, rho, f_tilde, k, j);
+            // Vector fCX = fitCX(basisFunction, ni, ui, Ti, rho, f_tilde, k, j);
             // std::cout << "\n" << k << ":\n";
             //calculate feq
             // Vector feq = fitMaxwellian(basisFunction, alpha, vx, j);
@@ -377,12 +378,12 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 //     uAfter(l,k+j*nvx)-=nu_cx*M_invS1(l,i)*uBefore(i,k+j*nvx);
                 //     uAfter(l,k+j*nvx)+=nu_cx*M_invS2(l,i)*fi[i];
                 // }
-                uAfter(l,k+j*nvx)-=nu_cx*fCX[l]; //This line for CX
+                // uAfter(l,k+j*nvx)-=nu_cx*fCX[l]; //This line for CX
                 // uAfter(l,k+j*nvx) -= ni*nu_cx*uBefore(l,k+j*nvx);
                 // uAfter(l,k+j*nvx) += nu_cx*fCX[l];
                 // uAfter(l,k+j*nvx)+=nu*(feq[l]-uBefore(l,k+j*nvx));
-                // uAfter(l,k+j*nvx)+=nu*M_invDiag[l]*GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights)/2.0;
-                // uAfter(l,k+j*nvx)-=nu*uBefore(l,k+j*nvx);
+                uAfter(l,k+j*nvx)+=nu*M_invDiag[l]*GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights)/2.0;
+                uAfter(l,k+j*nvx)-=nu*uBefore(l,k+j*nvx);
                 uAfter(l,k+j*nvx)*=dt;
                 uAfter(l,k+j*nvx)+=uBefore(l,k+j*nvx);
                 

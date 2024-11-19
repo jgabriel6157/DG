@@ -162,7 +162,7 @@ double SpecialFunctions::gaussianPulse(double x)
 double SpecialFunctions::twinGaussianPulse(double x)
 {
     // return exp(-5.0*pow(x-0.5*M_PI,2.0))+exp(-5.0*pow(x+0.5*M_PI,2.0));
-    return 1e18*(exp(-(1e-8)*pow(x-20000.0,2.0))+exp(-(1e-8)*pow(x+20000.0,2.0)));
+    return exp(-5.0*pow(x-0.1*M_PI,2.0))+exp(-5.0*pow(x+0.6*M_PI,2.0));
 }
 
 //Constant functions that is = 1 for all x
