@@ -99,7 +99,7 @@ values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
 # valuesSol = pd.read_csv(fileNameSol,header=None)
 # valuesSol = valuesSol[0].to_numpy()
-m = 6096*0
+m = 6096*50
 dx = length/jMax
 dvx = 2*domainMaxVX/(nvx-1)
 # dvx = 1.0/nvx
@@ -127,18 +127,18 @@ print(m)
 #         for l in range(lMax):
 #             y[i] += u[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
 #     plt.plot(x,y,color='red')
-sumNum = 0
-sumDem = 0
+# sumNum = 0
+# sumDem = 0
 
-# Number of quadrature points
-nQuad = 10
-# Precompute quadrature points and weights on the reference interval [-1, 1]
-quadPoints, quadWeights = np.polynomial.legendre.leggauss(nQuad)
+# # Number of quadrature points
+# nQuad = 10
+# # Precompute quadrature points and weights on the reference interval [-1, 1]
+# quadPoints, quadWeights = np.polynomial.legendre.leggauss(nQuad)
 
-res = 2
+res = 10
 for vx in range(nvx):
-    sumNum = 0
-    sumDem = 0
+    # sumNum = 0
+    # sumDem = 0
     for j in range(jMax):
         xj = j*dx+dx/2
         y = np.zeros(res)
@@ -151,37 +151,37 @@ for vx in range(nvx):
                 # sol[i] += uSol[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
 
         y_offset = -domainMaxVX + vx*dvx
-        y = np.zeros(nQuad)
-        sol = np.zeros(nQuad)
+        # y = np.zeros(nQuad)
+        # sol = np.zeros(nQuad)
         
-        # Map quadrature points from [-1, 1] to [j*dx, (j+1)*dx]
-        x = 0.5 * dx * (quadPoints + 1) + j * dx
+        # # Map quadrature points from [-1, 1] to [j*dx, (j+1)*dx]
+        # x = 0.5 * dx * (quadPoints + 1) + j * dx
         
-        for i in range(nQuad):
-            for l in range(lMax):
-                # Apply basis function and sum contributions
-                y[i] += u[l][j] * getFunction(basis, l, (2.0 / dx) * (x[i] - xj))
+        # for i in range(nQuad):
+        #     for l in range(lMax):
+        #         # Apply basis function and sum contributions
+        #         y[i] += u[l][j] * getFunction(basis, l, (2.0 / dx) * (x[i] - xj))
             
-            # Define the solution to compare against
-            # sol[i] = max(
-            #     np.exp(-(x[i] - np.pi - tMax * dt * y_offset) ** 2),
-            #     np.exp(-(x[i] + np.pi - tMax * dt * y_offset) ** 2),
-            #     np.exp(-(x[i] - 3 * np.pi - tMax * dt * y_offset) ** 2)
-            # )
-            sol[i] = np.sin(x[i] - tMax * dt * y_offset)
+        #     # Define the solution to compare against
+        #     # sol[i] = max(
+        #     #     np.exp(-(x[i] - np.pi - tMax * dt * y_offset) ** 2),
+        #     #     np.exp(-(x[i] + np.pi - tMax * dt * y_offset) ** 2),
+        #     #     np.exp(-(x[i] - 3 * np.pi - tMax * dt * y_offset) ** 2)
+        #     # )
+        #     sol[i] = np.sin(x[i] - tMax * dt * y_offset)
         
-        # Use Gaussian quadrature weights in the error calculation
-        for i in range(nQuad):
-            # L2 error requires squaring the difference for sumNum
-            sumNum += (y[i] - sol[i]) ** 2 * quadWeights[i] * (0.5 * dx)  # Account for the dx scaling in the transformation
-            # Also square the solution for sumDem
-            sumDem += sol[i] ** 2 * quadWeights[i] * (0.5 * dx)
+        # # Use Gaussian quadrature weights in the error calculation
+        # for i in range(nQuad):
+        #     # L2 error requires squaring the difference for sumNum
+        #     sumNum += (y[i] - sol[i]) ** 2 * quadWeights[i] * (0.5 * dx)  # Account for the dx scaling in the transformation
+        #     # Also square the solution for sumDem
+        #     sumDem += sol[i] ** 2 * quadWeights[i] * (0.5 * dx)
         
         # Plotting the results (optional)
-        ax.plot(x, [y_offset] * len(x), y-sol, color='red')
-    print(np.sqrt(sumNum / sumDem))
+        ax.plot(x, [y_offset] * len(x), y, color='red')
+    # print(np.sqrt(sumNum / sumDem))
 
 # Print the L2 error by taking the square root of the ratio
-print(np.sqrt(sumNum / sumDem))
+# print(np.sqrt(sumNum / sumDem))
 
 plt.show()

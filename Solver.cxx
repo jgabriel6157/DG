@@ -349,10 +349,10 @@ void Solver::advance(std::function<double(int,double)> basisFunction, int quadra
     advanceStage(uPre, uPost, 0.0, 1.0, basisFunction, quadratureOrder);
     //Second stage of solver
     // std::cout << "Solver stage 2" << "\n";
-    // advanceStage(uPost, uIntermediate, 3.0/4.0, 1.0/4.0, basisFunction, quadratureOrder);
+    advanceStage(uPost, uIntermediate, 3.0/4.0, 1.0/4.0, basisFunction, quadratureOrder);
     // //Third stage of solver
     // // std::cout << "Solver stage 3" << "\n";
-    // advanceStage(uIntermediate, uPost, 1.0/3.0, 2.0/3.0, basisFunction, quadratureOrder);
+    advanceStage(uIntermediate, uPost, 1.0/3.0, 2.0/3.0, basisFunction, quadratureOrder);
 
     uPre = uPost;
 }

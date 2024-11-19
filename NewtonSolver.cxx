@@ -17,7 +17,6 @@ Matrix NewtonSolver::solve(Matrix alpha, double nu, Vector rho, Vector u, Vector
     double norm = 1;
     int count = 0;
     F = createF(alpha, nu, rho, u, rt, dx, roots, weights, basisFunction, quadratureOrder, lMax);
-    MomentF = createMomentF(alpha, nu, rho, u, rt, dx, roots, weights, basisFunction, quadratureOrder, lMax);
     while (norm > tolerance)
     {
         count+=1;
@@ -44,9 +43,7 @@ Matrix NewtonSolver::solve(Matrix alpha, double nu, Vector rho, Vector u, Vector
         }
         if (count > maxIteration)
         {
-            std::cout << "alpha did not converge after " << maxIteration << " iterations. Norm is "<< norm <<"\n"; 
-            // std::cout << rt[0] << "\n";
-            NormF.Print();
+            std::cout << "alpha did not converge after " << maxIteration << " iterations. Norm is "<< norm <<"\n";
             norm = 0;
         }
     }
@@ -86,60 +83,11 @@ Vector NewtonSolver::createF(Matrix alpha, double nu, Vector rho, Vector u, Vect
                 double moment = SpecialFunctions::computeMoment(tilde, basisFunction, lMax, roots[i]);
 
                 F[m+l*3] += weights[i]*basisFunction(l,roots[i])*nu*(integral-moment)*dx/2.0;
-                MomentF[m+l*3] += weights[i]*basisFunction(l,roots[i])*nu*(moment)*dx/2.0;
             }
         }
     }
-
-    // std::cout << "F is " << "\n";
-    // F.Print();
-    // std::cout << "MomentF is " << "\n";
-    // MomentF.Print();
 
     return F;
-}
-
-Vector NewtonSolver::createMomentF(Matrix alpha, double nu, Vector rho, Vector u, Vector rt, double dx, Vector roots, Vector weights, std::function<double(int,double)> basisFunction, int quadratureOrder, int lMax)
-{
-    Vector MomentF(3*lMax);
-    Vector tilde(lMax);
-    
-    for (int l=0; l<lMax; l++)
-    {
-        for (int m=0; m<3; m++)
-        {
-            switch (m)
-            {
-            case 0:
-                tilde = rho;
-                break;
-            case 1:
-                tilde = u;
-                break;
-            case 2:
-                tilde = rt;
-                break;
-            default:
-                std::cout << "******************issue with F******************" << "\n";
-                break;
-            }
-            for (int i=0; i<quadratureOrder; i++)
-            {
-                double moment = SpecialFunctions::computeMoment(tilde, basisFunction, lMax, roots[i]);
-
-                MomentF[m+l*3] += weights[i]*basisFunction(l,roots[i])*nu*(moment)*dx/2.0;
-            }
-        }
-    }
-
-    if (MomentF[1] < MomentF[0]) //u ~ 0 so should keep u ~ 0
-    {
-        MomentF[1] = MomentF[0];
-        MomentF[4] = MomentF[0];
-        MomentF[7] = MomentF[0];
-    }
-
-    return MomentF;
 }
 
 Matrix NewtonSolver::createJ(Matrix alpha, double nu, Vector rho, Vector u, Vector rt, double dx, Vector roots, Vector weights, std::function<double(int,double)> basisFunction, int quadratureOrder, int lMax)
