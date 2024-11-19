@@ -9,102 +9,11 @@ import os
 import random
 import time
 
-n0 = 5*1e18
-T = 20
-u = np.sqrt(20)
-nu_cx = (2.2*10**-14) * np.sqrt(1.672e-27 / 1.602e-19)
-Tw = 2
-csL = np.sqrt(20)
-csR = -np.sqrt(20)
-Crec = 4.98*1e18
 Lz = 40
-errorVal = 1e-8
-
-def integrand_1(v, z):
-    return (1 / np.sqrt(2 * np.pi * Tw)) * Crec * np.exp(-((v - csL) ** 2) / (2 * Tw)) * \
-           np.exp(-n0 * nu_cx * (z+Lz/2) / v)
-
-def integrand_2(v, z):
-    return (1 / np.sqrt(2 * np.pi * Tw)) * Crec * np.exp(-((v - csR) ** 2) / (2 * Tw)) * \
-           np.exp(-n0 * nu_cx * (z - Lz/2) / v)
-
-def n_minus(z):
-    integral_1, _ = quad(integrand_1, 0, np.inf, args=(z,),epsabs=errorVal,epsrel=errorVal)
-    return integral_1
-
-def n_plus(z):
-    integral_2, _ = quad(integrand_2, -np.inf, 0, args=(z,),epsabs=errorVal,epsrel=errorVal)
-    return integral_2
-
-def G(v, z): #really G*n_i(z)
-    if z < 0:
-        ug = -u
-    else:
-        ug = u
-    return np.exp(-((v - ug) ** 2) / (2 * T))/np.sqrt(2 * np.pi * T)
-
-def B_plus(z, z_prime):
-    def integrand(v_prime):
-        return (nu_cx*n0 / v_prime) * G(v_prime, z_prime) * np.exp(nu_cx*n0 / v_prime * (z_prime - z))
-    integral, _ = quad(integrand, 0, np.inf,epsabs=errorVal,epsrel=errorVal)
-    return integral
-
-def B_minus(z, z_prime):
-    def integrand(v_prime):
-        return (nu_cx*n0 / v_prime) * G(v_prime, z_prime) * np.exp(nu_cx*n0 / v_prime * (z_prime - z))
-    integral, _ = quad(integrand, -np.inf, 0,epsabs=errorVal,epsrel=errorVal)
-    return integral
-
-num_points = 1009 #jMax*(res-1)+1
-z_vals = np.linspace(-Lz/2, Lz/2, num_points)
 
 fig = plt.figure()
 ax = fig.gca()
 ax.set_yscale('log')
-
-n = np.zeros(num_points)
-for i, z in enumerate(z_vals):
-    # if z <= 0:
-    #     n[i] = n0 * (np.square(1 / np.cosh(-(Lz/2 + z - 2) / 2)) + 1e-6)
-    # else:
-    #     n[i] = n0 * (np.square(1 / np.cosh((Lz/2 - z - 2) / 2)) + 1e-6)
-    n[i] = n_minus(z)+n_plus(z)
-
-# i = num_points-1
-# z = 20.0
-# integral_plus = np.trapz([n[j] * B_plus(z, z_vals[j]) for j in range(i)], x=z_vals[:i])
-# integral_minus = np.trapz([n[j] * B_minus(z, z_vals[j]) for j in range(i, num_points)], z_vals[i:])
-# print(B_plus(z,z))
-# print(integral_plus)
-
-# tol = 1e-6
-# max_iter = 100
-# for iter in range(max_iter):
-#     print(iter)
-#     n_old = n.copy()
-
-#     # Update each n(z) value
-#     for i, z in enumerate(z_vals):
-#         # Calculate integrals
-#         # if i==0:
-#         integral_plus = np.trapz([n_old[j] * B_plus(z, z_vals[j]) for j in range(i)], z_vals[:i])
-#         integral_minus = np.trapz([n_old[j] * B_minus(z, z_vals[j]) for j in range(i, num_points)], z_vals[i:])
-        
-#         # Update n(z)
-#         n[i] = n_minus(z) + n_plus(z) + integral_plus - integral_minus
-#         # print(i)
-#         # print(z)
-#         # print(integral_plus)
-#         # print(integral_minus)
-#         print(n[i])
-
-#     # Check for convergence
-#     print(np.linalg.norm(n - n_old))
-#     if np.linalg.norm(n - n_old) < tol:
-#         print(f"Converged in {iter} iterations.")
-#         break
-# else:
-#     print("Did not converge within the maximum number of iterations.")
 
 def getFunction(basis,n,x):
     if basis=='legendre':

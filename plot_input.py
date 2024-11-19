@@ -117,16 +117,7 @@ for j in range(jMax):
             # uSol[lx,j,k] = valuesSol[m]
             m = m+1
 print(m)
-# vx = 0
-# for j in range(jMax):
-#     xj = j*dx+dx/2
-#     y = np.zeros(10)
-#     x = np.zeros(10)
-#     for i in range(10):
-#         x[i] = j*dx+i*dx/9.0
-#         for l in range(lMax):
-#             y[i] += u[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-#     plt.plot(x,y,color='red')
+
 res = 2
 for vx in range(nvx):
     for j in range(jMax):
@@ -143,23 +134,5 @@ for vx in range(nvx):
         ax.plot(x,[y_offset]*len(x),y,color='red')
         # ax.plot(x,[y_offset]*len(x),sol,color='black')
         # ax.plot(x,[y_offset]*len(x),y-sol,color='red')
-
-# for j in range(jMax):
-#     xj = j*dx+dx/2
-#     for k in range(nvx):
-#         y = np.zeros((10,10))
-#         x = np.zeros((10,10))
-#         vx = np.zeros((10,10))
-#         vx_center = -domainMaxVX+k*dvx+dvx/2
-#         # vx_center = domainMaxVX+k*dvx+dvx/2
-#         for i in range(10):
-#             for n in range(10):
-#                 x[i,n] = j*dx+i*dx/9.0
-#                 vx[i,n] = -domainMaxVX+k*dvx+n*dvx/9.0
-#                 # vx[i,n] = domainMaxVX+k*dvx+n*dvx/9.0
-#                 for lx in range(lMax):
-#                     for lvx in range(lMax):
-#                         y[i,n] += u[lx,lvx,j,k]*getFunction(basis,lx,(2/dx)*(x[i,n]-xj))*getFunction(basis,lvx,(2/dvx)*(vx[i,n]-vx_center))
-#         ax.plot_wireframe(x,vx,y)
 
 plt.show()

@@ -179,13 +179,11 @@ double SpecialFunctions::inelasticICx(double x)
     double value;
     if (x>20)
     {
-        value = pow(cosh(-(Lx/2.0-(x-20.0)-2.0)/2.0),-2)+1e-6; //ionization
-        // value = pow(cosh(-(Lx/2.0-(x-20.0)-2.0)/2.0),-2)+1e-2; //CX
+        value = pow(cosh(-(Lx/2.0-(x-20.0)-2.0)/2.0),-2)+1e-6;
     }
     else
     {
-        value = pow(cosh((Lx/2.0+(x-20.0)-2.0)/2.0),-2)+1e-6; //ionization
-        // value = pow(cosh((Lx/2.0+(x-20.0)-2.0)/2.0),-2)+1e-2; //CX
+        value = pow(cosh((Lx/2.0+(x-20.0)-2.0)/2.0),-2)+1e-6;
     }
     value *= n0;
 
@@ -287,7 +285,6 @@ double SpecialFunctions::computeMoment(Vector moment, std::function<double(int,d
 
 double SpecialFunctions::computeMaxwellian(double rho, double u, double rt, double vx)
 {
-    // double vt2 = rt*9.58134e7;
     double vt2 = rt;
     return rho*exp(-pow(vx-u,2)/(2.0*vt2))/pow(2.0*M_PI*vt2,0.5);
 }

@@ -20,7 +20,6 @@ private:
     Matrix alphaDomain;
     Vector M_invDiag;
     Matrix M_invS;
-    Matrix M_invT;
     Matrix M_invF1Minus;
     Matrix M_invF0Minus;
     Matrix M_invF1Plus;

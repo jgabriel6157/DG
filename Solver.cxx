@@ -14,7 +14,7 @@
 //constructor
 Solver::Solver(const Mesh& mesh, double dt, double a, int lMax) 
     : mesh(mesh), integrator(mesh), newtonSolver(mesh), dt(dt), a(a), lMax(lMax), alphaDomain(3*mesh.getNX(), lMax),
-      M_invDiag(lMax), M_invS(lMax,lMax), M_invT(lMax,lMax*lMax), M_invF1Minus(lMax,lMax), M_invF0Minus(lMax,lMax), M_invF1Plus(lMax,lMax), M_invF0Plus(lMax,lMax),
+      M_invDiag(lMax), M_invS(lMax,lMax), M_invF1Minus(lMax,lMax), M_invF0Minus(lMax,lMax), M_invF1Plus(lMax,lMax), M_invF0Plus(lMax,lMax),
       uPre(lMax,(mesh.getNX()+2)*mesh.getNVX()), uIntermediate(lMax,(mesh.getNX()+2)*mesh.getNVX()), uPost(lMax,(mesh.getNX()+2)*mesh.getNVX()) {}
 
 //deconstructor
@@ -26,7 +26,6 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
     Matrix M(lMax,lMax);
     Matrix S(lMax,lMax);
-    Matrix T(lMax,lMax*lMax);
     Matrix F1Minus(lMax,lMax);
     Matrix F0Minus(lMax,lMax);
     Matrix F1Plus(lMax,lMax);
@@ -39,10 +38,6 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
         {
             M(i,j) = GaussianQuadrature::integrate(basisFunction,i,basisFunction,j,quadratureOrder,roots,weights)/2;
             S(i,j) = GaussianQuadrature::integrate(basisFunctionDerivative,i,basisFunction,j,quadratureOrder,roots,weights);
-            for (int k=0; k<lMax; k++)
-            {
-                T(i,j+k*lMax) = GaussianQuadrature::integrate(basisFunction,i,basisFunction,j,basisFunction,k,quadratureOrder,roots,weights)/2;
-            }
             F1Minus(i,j) = (basisFunction(i,1))*(basisFunction(j,1));
             F0Minus(i,j) = (basisFunction(i,-1))*(basisFunction(j,1));
             F1Plus(i,j) = (basisFunction(i,1))*(basisFunction(j,-1));
@@ -66,7 +61,6 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
     }
 
     M_invS = M_inv*S;
-    M_invT = M_inv*T;
     M_invF1Minus = M_inv*F1Minus;
     M_invF0Minus = M_inv*F0Minus;
     M_invF1Plus = M_inv*F1Plus;
@@ -163,8 +157,6 @@ void Solver::initializeAlpha(std::function<double(int,double)> basisFunction)
         
         for (int k=0; k<nvx; k++)
         {
-            // std::cout << j << "\n";
-            // std::cout << k << "\n";
             double vx = mesh.getVelocity(k);
             double x;
 
@@ -174,26 +166,11 @@ void Solver::initializeAlpha(std::function<double(int,double)> basisFunction)
                 double density = computeMoment(rho, basisFunction,lMax,2.0*(x-xj)/dx);
                 double meanVelocity = computeMoment(u, basisFunction,lMax,2.0*(x-xj)/dx)/density;
                 double temperature = (computeMoment(rt, basisFunction,lMax,2.0*(x-xj)/dx)-density*pow(meanVelocity,2))/density;
-                // temperature /= (9.58134e7);
-                // if (temperature < 0)
-                // {
-                //     temperature = 0.1;
-                // }
+
                 double arg = SpecialFunctions::computeMaxwellian(density,meanVelocity,temperature,vx);
-                // if (arg < 1e-10)
-                // {
-                //     arg = 1e-10;
-                // }
+
                 y[i+k*10] = log(arg);
-                // if (j==31 && k==0)
-                // {
-                //     std::cout << "x = " << x << "\n";
-                //     std::cout << density << "\n";
-                //     std::cout << meanVelocity << "\n";
-                //     std::cout << temperature << "\n";
-                //     std::cout << arg << "\n";
-                //     std::cout << y[i+k*10] << "\n";
-                // }
+
                 for (int m=0; m<3; m++)
                 {
                     for (int l=0; l<lMax; l++)
@@ -212,15 +189,6 @@ void Solver::initializeAlpha(std::function<double(int,double)> basisFunction)
         }
 
         uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
-
-        // if (j==31)
-        // {
-        //     rho.Print();
-        //     u.Print();
-        //     rt.Print();
-        //     // ((bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()).Print();
-        //     y.Print();
-        // }
 
         for (int m=0; m<3; m++)
         {
@@ -290,15 +258,6 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
         Vector rho_i(lMax);
         rho_i[0] = ni;
 
-        // if (j<32)
-        // {
-        //     ui = -cs;
-        // }
-        // else
-        // {
-        //     ui = cs;
-        // }
-
         Matrix alpha(3,lMax);
         for (int m=0; m<3; m++)
         {
@@ -334,12 +293,6 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             Vector fL = fitMaxwellian(basisFunction, Crec, cs, 10.0, vx, j);
             Vector fR = fitMaxwellian(basisFunction, Crec, -cs, 10.0, vx, j);
 
-            // fit ion distribution function
-            // Vector fi = fitMaxwellian(basisFunction, ni, ui, Ti, vx, j);
-
-            // Matrix M_invS1(lMax,lMax*lMax);
-            // Matrix M_invS2(lMax,lMax*lMax);
-
             Vector f_tilde(lMax);
             for (int l=0; l<lMax; l++)
             {
@@ -351,8 +304,6 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             }
             // Vector fCX = fitCX(basisFunction, ni, ui, Ti, rho, f_tilde, k, j);
             // std::cout << "\n" << k << ":\n";
-            //calculate feq
-            // Vector feq = fitMaxwellian(basisFunction, alpha, vx, j);
             for (int l=0; l<lMax; l++)
             {
                 // feq_tot(l,k) = (nu/2.0)*GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights);
@@ -368,30 +319,15 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 uAfter(l,k+j*nvx)*=vx;
                 uAfter(l,k+j*nvx)/=dx;
                 // uAfter(l,k+j*nvx)-=ne*uBefore(l,k+j*nvx)*sigma_iz; //This line for ionization
-                // for (int i=0; i<lMax; i++)
-                // {
-                //     for (int m=0; m<lMax; m++)
-                //     {
-                //         M_invS1(l,i)+=M_invT(l,i+m*lMax)*rho_i[m];
-                //         M_invS2(l,i)+=M_invT(l,i+m*lMax)*rho[m];
-                //     }
-                //     uAfter(l,k+j*nvx)-=nu_cx*M_invS1(l,i)*uBefore(i,k+j*nvx);
-                //     uAfter(l,k+j*nvx)+=nu_cx*M_invS2(l,i)*fi[i];
-                // }
                 // uAfter(l,k+j*nvx)-=nu_cx*fCX[l]; //This line for CX
-                // uAfter(l,k+j*nvx) -= ni*nu_cx*uBefore(l,k+j*nvx);
-                // uAfter(l,k+j*nvx) += nu_cx*fCX[l];
-                // uAfter(l,k+j*nvx)+=nu*(feq[l]-uBefore(l,k+j*nvx));
-                uAfter(l,k+j*nvx)+=nu*M_invDiag[l]*GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights)/2.0;
-                uAfter(l,k+j*nvx)-=nu*uBefore(l,k+j*nvx);
+                uAfter(l,k+j*nvx)+=nu*M_invDiag[l]*GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights)/2.0; //BGK
+                uAfter(l,k+j*nvx)-=nu*uBefore(l,k+j*nvx); //BGK
                 uAfter(l,k+j*nvx)*=dt;
                 uAfter(l,k+j*nvx)+=uBefore(l,k+j*nvx);
                 
                 uAfter(l,k+j*nvx)*=timesFactor;
                 uAfter(l,k+j*nvx)+=plusFactor*uPre(l,k+j*nvx); //Note that uPre != uBefore
             }
-            // std::cout << fCX[0] << "\n";
-            // std::cout << uAfter(0,k+j*nvx) << "\n";
         }
         // Vector rho_eq = integrator.integrate(feq_tot,lMax,0);
         // Vector u_eq = integrator.integrate(feq_tot,lMax,1);
@@ -677,8 +613,6 @@ Vector Solver::fitCX(std::function<double(int,double)> basisFunction, double den
     Vector y(res);
     Matrix bigX(res,lMax);
 
-    // std::cout << vx << ":\n\n";
-
     for (int i=0; i<res; i++)
     {
         x = leftVertex+i*dx/(res-1.0);
@@ -687,14 +621,6 @@ Vector Solver::fitCX(std::function<double(int,double)> basisFunction, double den
         double ui = meanVelocity_i*SpecialFunctions::sign(x-cells.back().vertices[1]/2.0);
         y[i] = density_i * f_n - density_n * SpecialFunctions::computeMaxwellian(density_i,ui,temperature_i,vx);
 
-        // y[i] = density_n*SpecialFunctions::computeMaxwellian(density_i,meanVelocity_i,temperature_i,vx);
-
-        // std::cout << x << "       " << y[i] << "\n";
-        // std::cout << x << "\n";
-        // std::cout << density_i << "\n";
-        // std::cout << f_n << "\n";
-        // std::cout << density_n << "\n";
-        // std::cout << SpecialFunctions::computeMaxwellian(density_i,meanVelocity_i,temperature_i,vx) << "\n\n";
         for (int l=0; l<lMax; l++)
         {
             bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
