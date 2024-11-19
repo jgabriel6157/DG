@@ -12,8 +12,6 @@ NewtonSolver::NewtonSolver(const Mesh& mesh)
 Matrix NewtonSolver::solve(Matrix alpha, double nu, Vector rho, Vector u, Vector rt, double dx, Vector roots, Vector weights, double tolerance, int maxIteration, std::function<double(int,double)> basisFunction, int quadratureOrder, int lMax, bool test)
 {
     Vector F(3*lMax);
-    Vector MomentF(3*lMax);
-    Vector NormF(3*lMax);
     Matrix J(3*lMax,3*lMax);
     Vector G(3*lMax);
     double norm = 1;
@@ -34,14 +32,7 @@ Matrix NewtonSolver::solve(Matrix alpha, double nu, Vector rho, Vector u, Vector
             }
         }
         F = createF(alpha, nu, rho, u, rt, dx, roots, weights, basisFunction, quadratureOrder, lMax);
-        for (int l=0; l<lMax; l++)
-        {
-            for (int m=0; m<3; m++)
-            {
-                NormF[m+l*3] = F[m+l*3]/MomentF[m+l*3];
-            }
-        }
-        norm = NormF.CalculateNorm(1);
+        norm = F.CalculateNorm(1);
         if (test==true)
         {
             // alpha.Print();
@@ -58,17 +49,6 @@ Matrix NewtonSolver::solve(Matrix alpha, double nu, Vector rho, Vector u, Vector
             NormF.Print();
             norm = 0;
         }
-    }
-
-    // std::cout << count << "\n";
-    // F.Print();
-
-    if (test==true)
-    {
-        std::cout << "F is " << "\n";
-        F.Print();
-        std::cout << "MomentF is " << "\n";
-        MomentF.Print();
     }
 
     return alpha;

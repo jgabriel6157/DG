@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -std=c++17 -Wall
+CFLAGS = -std=c++17 -Wall -fopenmp
 
 # Source files
 SRCS = Vector.cxx Matrix.cxx NewtonCotes.cxx NewtonSolver.cxx SpecialFunctions.cxx GaussianQuadrature.cxx FunctionMapper.cxx Mesh.cxx Solver.cxx dg1dAdvection.cxx

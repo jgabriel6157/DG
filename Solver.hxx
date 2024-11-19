@@ -28,6 +28,8 @@ private:
     Matrix uIntermediate;
     Matrix uPost;
 
+    //compute the reconstructed f(x,t)
+    double getF(std::function<double(int,double)> basisFunction, int lMax, int j, int k, double x);
     void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor, std::function<double(int,double)> basisFunction, int quadratureOrder);
 
 public:
@@ -63,12 +65,15 @@ public:
     //compute the value of your moment at normalized point x
     double computeMoment(Vector moment, std::function<double(int,double)> basisFunction, int lMax, double x);
 
-    //compute the value of f_eq (Maxwellian) from the moments and vx
-    double computeMaxwellian(double rho, double u, double rt, double vx);
-
     //fit Maxwellian
     Vector fitMaxwellian(std::function<double(int,double)> basisFunction, Vector rho, Vector u, Vector rt, double vx, int j);
 
+    Vector fitMaxwellian(std::function<double(int,double)> basisFunction, double density, double meanVelocity, double temperature, double vx, int j);
+
+    //compute the density from f
+    Vector getDensity(int j);
+
+    Vector fitCX(std::function<double(int,double)> basisFunction, double density, double meanVelocity, double temperature, Vector rho_n, Vector f_tilde, int k, int j);
     //fit Maxwellian
     Vector fitMaxwellian(std::function<double(int,double)> basisFunction, Matrix alpha, double vx, int j);
 

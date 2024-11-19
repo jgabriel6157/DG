@@ -11,6 +11,7 @@ Mesh::Mesh(int nx, int nvx, double domainLengthX, double domainMaxVX) : nx(nx), 
         cell.dx = domainLengthX/nx; //Assuming cells are uniform length
         //Initialize vertices of the cell
         cell.vertices.push_back(i*cell.dx); //1D mesh
+        cell.vertices.push_back((i+1)*cell.dx); 
         //Initialize neighbors of the cell
         if (i==0)
         {

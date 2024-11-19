@@ -162,15 +162,41 @@ double SpecialFunctions::gaussianPulse(double x)
 double SpecialFunctions::twinGaussianPulse(double x)
 {
     // return exp(-5.0*pow(x-0.5*M_PI,2.0))+exp(-5.0*pow(x+0.5*M_PI,2.0));
-    // return 1e18*(exp(-(1.0e-8)*pow(x-10000.0,2.0))+exp(-(1.0e-8)*pow(x+10000.0,2.0)));
-    return 1e18*(exp(-(1.0e-8)*pow(x-00000,2.0)));
-    // return 1e18*(exp(-(1.0)*pow(x-1.0,2.0))+exp(-(1.0)*pow(x+1.0,2.0)));
+    return exp(-5.0*pow(x-0.1*M_PI,2.0))+exp(-5.0*pow(x+0.6*M_PI,2.0));
 }
 
 //Constant functions that is = 1 for all x
 double SpecialFunctions::constantFunction(double x)
 {
     return 1;
+}
+
+//Initial condition for ionization and cx test cases
+double SpecialFunctions::inelasticICx(double x)
+{
+    double n0 = 5.0;
+    double Lx = 40.0;
+    double value;
+    if (x>20)
+    {
+        value = pow(cosh(-(Lx/2.0-(x-20.0)-2.0)/2.0),-2)+1e-6;
+    }
+    else
+    {
+        value = pow(cosh((Lx/2.0+(x-20.0)-2.0)/2.0),-2)+1e-6;
+    }
+    value *= n0;
+
+    return value;
+}
+
+double SpecialFunctions::inelasticICvx(double x)
+{
+    double rho = 1.0;
+    double u = 0.0;
+    double rt = 2.0;
+    double vt2 = rt;
+    return rho*exp(-pow(x-u,2)/(2.0*vt2))/sqrt(2.0*M_PI*vt2);
 }
 
 //Newton Raphson method to find root of Legendre polynomial of root n with initial guess x0
@@ -259,7 +285,6 @@ double SpecialFunctions::computeMoment(Vector moment, std::function<double(int,d
 
 double SpecialFunctions::computeMaxwellian(double rho, double u, double rt, double vx)
 {
-    // double vt2 = rt*9.58134e7;
     double vt2 = rt;
     return rho*exp(-pow(vx-u,2)/(2.0*vt2))/pow(2.0*M_PI*vt2,0.5);
 }
