@@ -63,7 +63,9 @@ def assignFloat(varString):
         
     return number
 
-fileName = 'Output.csv'
+fileNameDensity = 'Density.csv'
+fileNameVelocity = 'Velocity.csv'
+fileNameTemperature = 'Temperature.csv'
 inputFile = open('input.txt','r')
 
 while True:
@@ -91,19 +93,29 @@ lMax+=1
 inputFile.close()
 
 fig,ax = plt.subplots()
+# ax.set_yscale('log')
 lines = [ax.plot([], [], lw=2,color='red')[0] for _ in range(jMax)]
 plt.xlim(0,length)
-plt.ylim(-1.5,1.5)
+# plt.ylim(1e-13,1e1)
+plt.ylim(0,2)
 
-values = pd.read_csv(fileName,header=None)
-values = values[0].to_numpy()
+valuesDensity = pd.read_csv(fileNameDensity,header=None)
+valuesDensity = valuesDensity[0].to_numpy()
+valuesVelocity = pd.read_csv(fileNameVelocity,header=None)
+valuesVelocity = valuesVelocity[0].to_numpy()
+valuesTemperature = pd.read_csv(fileNameTemperature,header=None)
+valuesTemperature = valuesTemperature[0].to_numpy()
 k = 0
 dx = length/jMax
-u = np.zeros((lMax,jMax,nout))
+rho = np.zeros((lMax,jMax,nout))
+rhou = np.zeros((lMax,jMax,nout))
+rt = np.zeros((lMax,jMax,nout))
 for t in range(nout):
     for j in range(jMax):
         for l in range(lMax):
-            u[l][j][t] = values[k]
+            rho[l][j][t] = valuesDensity[k]
+            rhou[l][j][t] = valuesVelocity[k]
+            rt[l][j][t] = valuesTemperature[k]
             k=k+1
 
 def init():
@@ -117,8 +129,16 @@ def generate_data(t,j):
     x = np.zeros(10)
     for i in range(10):
         x[i] = j*dx+i*dx/9.0
+        density = 0
+        velocity = 0
+        temperature = 0
         for l in range(lMax):
-            y[i] = y[i] + u[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
+            density += rho[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
+            velocity += rhou[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
+            temperature += rt[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
+        velocity/=density
+        temperature = (temperature-density*velocity**2)/density
+        y[i] = velocity
     return x,y
 
 x = np.zeros((jMax,10))
@@ -128,6 +148,7 @@ def animate(t):
         x[j],y[j] = generate_data(t,j)
     for j, line in enumerate(lines):
         line.set_data(x[j],y[j])
+    ax.set_title(f"Timestep: {t}")
     return lines
 
 ani = FuncAnimation(fig, animate, frames=nout, init_func=init, repeat=False, interval = 100)

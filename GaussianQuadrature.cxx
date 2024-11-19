@@ -10,11 +10,49 @@
 double GaussianQuadrature::integrate(std::function<double(int, double)> func1, int n_func1, std::function<double(int, double)> func2, int n_func2, int quadratureOrder,
                         Vector roots, Vector weights)
 {
+    double integral = 0;
+
+    for (int i=0; i<quadratureOrder; i++)
+    {
+        integral += weights[i]*func1(n_func1,roots[i])*func2(n_func2,roots[i]);
+    }
+
+    return integral;
+}
+
+double GaussianQuadrature::integrate(std::function<double(int, double)> func1, int n_func1, Matrix alpha, double vx, int lMax, int quadratureOrder, Vector roots, Vector weights)
+{
+    double integral = 0;
+
+    Vector alphaSum(lMax);
+
+    for (int l=0; l<lMax; l++)
+    {
+        alphaSum[l] = alpha(0,l)-vx*alpha(1,l)-pow(vx,2)*alpha(2,l);
+    }
+
+    for (int i=0; i<quadratureOrder; i++)
+    {
+        double exponent = 0;
+        for (int l=0; l<lMax; l++)
+        {
+            exponent += func1(l,roots[i])*alphaSum[l];
+        }
+        integral += weights[i]*func1(n_func1,roots[i])*exp(exponent);
+    }
+
+    return integral;
+}
+
+//Perform Gaussian quadrature integration for three specified functions of order n_func1, n_func2, n_func3 to a certain quadrature order
+double GaussianQuadrature::integrate(std::function<double(int, double)> func1, int n_func1, std::function<double(int, double)> func2, int n_func2, 
+                        std::function<double(int, double)> func3, int n_func3, int quadratureOrder, Vector roots, Vector weights)
+{
     double y = 0;
 
     for (int i=0; i<quadratureOrder; i++)
     {
-        y += weights[i]*func1(n_func1,roots[i])*func2(n_func2,roots[i]);
+        y += weights[i]*func1(n_func1,roots[i])*func2(n_func2,roots[i])*func3(n_func3,roots[i]);
     }
 
     return y;
@@ -33,7 +71,6 @@ Vector GaussianQuadrature::calculateWeights(int quadratureOrder, Vector roots)
         root = roots[i];
         w = 2.0/((1.0-pow(root,2.0))*pow(SpecialFunctions::legendreDerivative(quadratureOrder,root),2.0));
         
-        // weights.push_back(w);
         weights[i] = w;
     }
 

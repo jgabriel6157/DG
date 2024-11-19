@@ -11,6 +11,7 @@ public:
     Vector(int size);
     ~Vector();
     int GetSize() const;
+    void Print();
     double& operator[](int i); // zero-based indexing
     // read-only zero-based indexing
     double Read(int i) const;

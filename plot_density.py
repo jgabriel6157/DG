@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation, PillowWriter
 import fnmatch
 import numpy as np
+from scipy.integrate import quad
+from scipy.integrate import simpson
 import os
 import random
 import time
@@ -63,8 +65,12 @@ def assignFloat(varString):
         
     return number
 
-fileName = 'Output.csv'
-fileNameSol = 'OutputS.csv'
+fig = plt.figure()
+ax = fig.gca()
+ax.set_yscale('log')
+
+fileName = 'Density.csv'
+fileNameSol = 'Density1.csv'
 inputFile = open('input.txt','r')
 
 while True:
@@ -95,93 +101,78 @@ nout+=1
 lMax+=1
 inputFile.close()
 
+A = 0.291e-7
+P = 0
+U = 13.6 / 20
+X = 0.232
+K = 0.39
+n0 = 5 
+Tw = 2  
+csL = np.sqrt(20)  
+csR = -np.sqrt(20)  
+Crec = 4.98
+Lz = length  
+errorVal = 1e-10
+    
+def sigma(A, P, U, X, K):
+    return A * (1 + P * np.sqrt(U)) * U**K * np.exp(-U) / (X + U) * 1e-6 * 1e18
+
+def integrand_1(v, z):
+    return (1 / np.sqrt(2 * np.pi * Tw)) * Crec * np.exp(-((v - csL) ** 2) / (2 * Tw)) * \
+           np.exp(-n0 * sigma(A, P, U, X, K) * np.sqrt(1.672e-27 / 1.602e-19) * (z) / v)
+
+def integrand_2(v, z):
+    return (1 / np.sqrt(2 * np.pi * Tw)) * Crec * np.exp(-((v - csR) ** 2) / (2 * Tw)) * \
+           np.exp(-n0 * sigma(A, P, U, X, K) * np.sqrt(1.672e-27 / 1.602e-19) * (z - Lz) / v)
+
+def f(z):
+    integral_1, _ = quad(integrand_1, 0, np.inf, args=(z,),epsabs=errorVal,epsrel=errorVal)
+    integral_2, _ = quad(integrand_2, -np.inf, 0, args=(z,),epsabs=errorVal,epsrel=errorVal)
+    return integral_1 + integral_2
+
 values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
-# valuesSol = pd.read_csv(fileNameSol,header=None)
-# valuesSol = valuesSol[0].to_numpy()
-m = 6096*0
-dx = length/jMax
-dvx = 2*domainMaxVX/(nvx-1)
-# dvx = 1.0/nvx
-u = np.zeros((lMax,jMax,nvx))
-# uSol = np.zeros((lMax,jMax,nvx))
+valuesSol = pd.read_csv(fileNameSol,header=None)
+valuesSol = valuesSol[0].to_numpy()
+# m = 33600
+for m in [96*50]:
+    dx = length/jMax
+    dvx = 2*domainMaxVX/(nvx-1)
+    # dvx = 1.0/nvx
+    u = np.zeros((lMax,jMax))
+    uSol = np.zeros((lMax,jMax))
 
-fig = plt.figure()
-ax = fig.add_subplot(projection='3d')
-
-for j in range(jMax):
-    for k in range(nvx):
+    for j in range(jMax):
         for lx in range(lMax):
-            u[lx,j,k] = values[m]
-            # uSol[lx,j,k] = valuesSol[m]
+            u[lx,j] = values[m]
+            # uSol[lx,j] = valuesSol[m]
             m = m+1
-print(m)
+    print(m)
 
-# vx = 0
-# for j in range(jMax):
-#     xj = j*dx+dx/2
-#     y = np.zeros(10)
-#     x = np.zeros(10)
-#     for i in range(10):
-#         x[i] = j*dx+i*dx/9.0
-#         for l in range(lMax):
-#             y[i] += u[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-#     plt.plot(x,y,color='red')
-sumNum = 0
-sumDem = 0
+    l2Norm = 0
+    solution = 0
 
-# Number of quadrature points
-nQuad = 10
-# Precompute quadrature points and weights on the reference interval [-1, 1]
-quadPoints, quadWeights = np.polynomial.legendre.leggauss(nQuad)
-
-res = 2
-for vx in range(nvx):
-    sumNum = 0
-    sumDem = 0
+    res = 9
     for j in range(jMax):
         xj = j*dx+dx/2
         y = np.zeros(res)
         x = np.zeros(res)
-        # sol = np.zeros(res)
+        sol = np.zeros(res)
+        error = np.zeros(res)
+        y2 = np.zeros(res)
         for i in range(res):
             x[i] = j*dx+i*dx/(res-1)
+            sol[i] = f(x[i])
             for l in range(lMax):
-                y[i] += u[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-                # sol[i] += uSol[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-
-        y_offset = -domainMaxVX + vx*dvx
-        y = np.zeros(nQuad)
-        sol = np.zeros(nQuad)
-        
-        # Map quadrature points from [-1, 1] to [j*dx, (j+1)*dx]
-        x = 0.5 * dx * (quadPoints + 1) + j * dx
-        
-        for i in range(nQuad):
-            for l in range(lMax):
-                # Apply basis function and sum contributions
-                y[i] += u[l][j] * getFunction(basis, l, (2.0 / dx) * (x[i] - xj))
-            
-            # Define the solution to compare against
-            # sol[i] = max(
-            #     np.exp(-(x[i] - np.pi - tMax * dt * y_offset) ** 2),
-            #     np.exp(-(x[i] + np.pi - tMax * dt * y_offset) ** 2),
-            #     np.exp(-(x[i] - 3 * np.pi - tMax * dt * y_offset) ** 2)
-            # )
-            sol[i] = np.sin(x[i] - tMax * dt * y_offset)
-        
-        # Use Gaussian quadrature weights in the error calculation
-        for i in range(nQuad):
-            # L2 error requires squaring the difference for sumNum
-            sumNum += (y[i] - sol[i]) ** 2 * quadWeights[i] * (0.5 * dx)  # Account for the dx scaling in the transformation
-            # Also square the solution for sumDem
-            sumDem += sol[i] ** 2 * quadWeights[i] * (0.5 * dx)
-        
-        # Plotting the results (optional)
-        ax.plot(x, [y_offset] * len(x), y-sol, color='red')
-    print(np.sqrt(sumNum / sumDem))
-
-# Print the L2 error by taking the square root of the ratio
-print(np.sqrt(sumNum / sumDem))
+                y[i] += u[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
+                # sol[i] += uSol[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
+            error[i] = (y[i]-sol[i])**2
+            y2[i] = y[i]**2
+        l2Norm+=simpson(error,x=x)
+        solution+=simpson(y2,x=x)
+        plt.plot(x,y*1e18,color='red')
+        plt.plot(x,sol*1e18,'k:')
+plt.ylim((5e9,1e19))
+print(np.sqrt(l2Norm/solution))
 
 plt.show()

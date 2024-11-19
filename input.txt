@@ -1,16 +1,17 @@
 a = 2*pi
-jMax = 32
-lMax = 8
-tMax = 1000
-quadratureOrder = 15
-length = 2*pi
-dt = 0.001
+jMax = 16
+lMax = 2
+tMax = 6250
+quadratureOrder = 3
+length = 1
+dt = 0.0008
 basis = legendre
 test = false
 alpha = 0
 input = twinPulses
 slopeLimiter = false
-nout = 100
+nout = 50
 nvx = 127
-maxVX = 2*pi
+maxVX = 5
+
 
