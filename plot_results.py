@@ -138,7 +138,7 @@ def generate_data(t,j):
             temperature += rt[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
         velocity/=density
         temperature = (temperature-density*velocity**2)/density
-        y[i] = velocity
+        y[i] = density
     return x,y
 
 x = np.zeros((jMax,10))

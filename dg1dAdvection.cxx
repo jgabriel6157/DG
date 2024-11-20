@@ -20,25 +20,22 @@ bool assignBool(std::string varString);
 
 int main(int argc, char* argv[])
 {
-    std::string argName[15] = {"a","jMax","lMax","tMax","quadratureOrder","length","dt","basis","test","alpha","input","slopeLimiter","nout","nvx","maxVX"};
-    std::string argString[15];
-    readFile("input.txt",argName,argString,15);
+    std::string argName[12] = {"jMax","lMax","tMax","quadratureOrder","length","dt","basis","input","slopeLimiter","nout","nvx","maxVX"};
+    std::string argString[12];
+    readFile("input.txt",argName,argString,12);
 
-    double a = assignDouble(argString[0]);
-    int jMax = assignInt(argString[1]);
-    int lMax = assignInt(argString[2]);
-    int tMax = assignInt(argString[3]);
-    int quadratureOrder = assignInt(argString[4]);
-    double length = assignDouble(argString[5]);
-    double dt = assignDouble(argString[6]);
-    std::string basis = argString[7];
-    bool test = assignBool(argString[8]);
-    double alphaOutdated = assignDouble(argString[9]);
-    std::string input = argString[10];
-    bool slopeLimit = assignBool(argString[11]);
-    int nout = assignInt(argString[12]);
-    int nvx = assignInt(argString[13]);
-    double domainMaxVX = assignDouble(argString[14]);
+    int jMax = assignInt(argString[0]);
+    int lMax = assignInt(argString[1]);
+    int tMax = assignInt(argString[2]);
+    int quadratureOrder = assignInt(argString[3]);
+    double length = assignDouble(argString[4]);
+    double dt = assignDouble(argString[5]);
+    std::string basis = argString[6];
+    std::string input = argString[7];
+    bool slopeLimit = assignBool(argString[8]);
+    int nout = assignInt(argString[9]);
+    int nvx = assignInt(argString[10]);
+    double domainMaxVX = assignDouble(argString[11]);
 
     FunctionMapper::initializeMap();
 
@@ -72,13 +69,13 @@ int main(int argc, char* argv[])
 
     auto start = std::chrono::high_resolution_clock::now();
 
-    Solver solver(mesh, dt, a, lMax);
+    Solver solver(mesh, dt, lMax);
 
     solver.createMatrices(basisFunction, basisFunctionDerivative, quadratureOrder);
 
-    // solver.initialize(basisFunction, SpecialFunctions::inelasticICx, SpecialFunctions::inelasticICvx);
+    solver.initialize(basisFunction, SpecialFunctions::inelasticICx, SpecialFunctions::inelasticICvx);
 
-    solver.initialize(basisFunction, SpecialFunctions::gaussianPulse, inputFunction);
+    // solver.initialize(basisFunction, SpecialFunctions::gaussianPulse, inputFunction);
 
     std::cout << "initialization complete" << "\n";
     solver.initializeAlpha(basisFunction);
@@ -117,11 +114,6 @@ int main(int argc, char* argv[])
     {
         solver.advance(basisFunction, quadratureOrder);
 
-        // if (slopeLimit)
-        // {
-        //     solver.slopeLimiter();
-        // }
-
         if ((t+1)%outputTimeStep==0)
         {
             std::cout << "t = " << t << "\n";
@@ -130,10 +122,10 @@ int main(int argc, char* argv[])
             write_moments << (moments[1]-U0)/U0 << "\n";
             write_moments << (moments[2]-E0)/E0 << "\n";
             write_moments << (moments[3]-S0)/fabs(S0) << "\n";
-            std::cout << (moments[0]-M0)/M0 << "\n";
-            std::cout << (moments[1]-U0)/U0 << "\n";
-            std::cout << (moments[2]-E0)/E0 << "\n";
-            std::cout << (moments[3]-S0)/fabs(S0) << "\n";
+            // std::cout << (moments[0]-M0)/M0 << "\n";
+            // std::cout << (moments[1]-U0)/U0 << "\n";
+            // std::cout << (moments[2]-E0)/E0 << "\n";
+            // std::cout << (moments[3]-S0)/fabs(S0) << "\n";
             for (int j=0; j<jMax; j++)
             {
                 Vector rho = solver.getMoment(j,0);
@@ -159,11 +151,6 @@ int main(int argc, char* argv[])
     auto stop = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration<double>(stop-start);
     std::cout << duration.count() << " s" << "\n";
-
-    if (test)
-    {
-        std::cout << solver.getError(tMax, basisFunction, inputFunction) << "\n";
-    }
 
     write_output.close();
     write_density.close();
