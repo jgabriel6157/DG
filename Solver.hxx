@@ -16,6 +16,8 @@ private:
     NewtonSolver newtonSolver;
     double dt;
     int lMax;
+    std::function<double(int,double)> basisFunction;
+    int quadratureOrder;
     Matrix alphaDomain;
     Vector M_invDiag;
     Matrix M_invS;
@@ -27,25 +29,25 @@ private:
     Matrix uIntermediate;
     Matrix uPost;
 
-    void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor, std::function<double(int,double)> basisFunction, int quadratureOrder);
+    void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor);
 
 public:
     //constructor 
-    Solver(const Mesh& mesh, double dt, int lMax);
+    Solver(const Mesh& mesh, double dt, int lMax, std::function<double(int,double)> basisFunction, int quadratureOrder);
     
     //deconstructor
     ~Solver();
 
     //create the mass, stiffness and flux matricies as used by the solver
-    void createMatrices(std::function<double(int,double)> basisFunction, std::function<double(int,double)> basisFunctionDerivative, int quadratureOrder);
+    void createMatrices();
 
     //initialize using the Least Squares method
-    void initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunctionX, std::function<double(double)> inputFunctionVX);
+    void initialize(std::function<double(double)> inputFunctionX, std::function<double(double)> inputFunctionVX);
 
-    void initializeAlpha(std::function<double(int,double)> basisFunction);
+    void initializeAlpha();
 
     //advance time step using 3rd order SSP RK
-    void advance(std::function<double(int,double)> basisFunction, int quadratureOrder);
+    void advance();
 
     //use minmod slope limiter
     void slopeLimiter();
@@ -54,22 +56,23 @@ public:
     const double getSolution(int l, int j);
 
     //compute the mass, momentum and energy from f
-    Vector getMoments(int quadratureOrder, std::function<double(int,double)> basisFunction);
+    Vector getMoments();
 
     //compute the density from f
     Vector getMoment(int j, int power);
 
     //fit Maxwellian
-    Vector fitMaxwellian(std::function<double(int,double)> basisFunction, Vector rho, Vector u, Vector rt, double vx, int j);
+    Vector fitMaxwellian(Vector rho, Vector u, Vector rt, double vx, int j);
 
-    Vector fitMaxwellian(std::function<double(int,double)> basisFunction, double density, double meanVelocity, double temperature, double vx, int j);
+    Vector fitMaxwellian(double density, double meanVelocity, double temperature, double vx, int j);
 
     //compute the density from f
     Vector getDensity(int j);
 
-    Vector fitCX(std::function<double(int,double)> basisFunction, double density, double meanVelocity, double temperature, Vector rho_n, Vector f_tilde, int k, int j);
+    Vector fitCX(double density, double meanVelocity, double temperature, Vector rho_n, Vector f_tilde, int k, int j);
+    
     //fit Maxwellian
-    Vector fitMaxwellian(std::function<double(int,double)> basisFunction, Matrix alpha, double vx, int j);
+    Vector fitMaxwellian(Matrix alpha, double vx, int j);
 
 };
 

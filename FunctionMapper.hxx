@@ -44,9 +44,16 @@ public:
         }
     }
 
+    // Retrieve the derivative of a given function
+    static FunctionType1 getDerivative(const std::string& functionName);
+
+    // Function to map from function to its string representation
+    static std::string getFunctionName(const FunctionType1& function);
+
 private:
     // Map to store function names and corresponding functions
     static std::map<std::string, FunctionType1> functionMap1;
+    static std::map<std::string, FunctionType1> derivativeMap;
     static std::map<std::string, FunctionType2> functionMap2;
 
     // Template functions must be defined in header file

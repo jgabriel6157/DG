@@ -69,16 +69,16 @@ int main(int argc, char* argv[])
 
     auto start = std::chrono::high_resolution_clock::now();
 
-    Solver solver(mesh, dt, lMax);
+    Solver solver(mesh, dt, lMax, basisFunction, quadratureOrder);
 
-    solver.createMatrices(basisFunction, basisFunctionDerivative, quadratureOrder);
+    solver.createMatrices();
 
-    solver.initialize(basisFunction, SpecialFunctions::inelasticICx, SpecialFunctions::inelasticICvx);
+    solver.initialize(SpecialFunctions::inelasticICx, SpecialFunctions::inelasticICvx);
 
-    // solver.initialize(basisFunction, SpecialFunctions::gaussianPulse, inputFunction);
+    // solver.initialize(SpecialFunctions::gaussianPulse, inputFunction);
 
     std::cout << "initialization complete" << "\n";
-    solver.initializeAlpha(basisFunction);
+    solver.initializeAlpha();
     std::cout << "alpha initialization complete" << "\n";
     for (int j=0; j<jMax; j++)
     {
@@ -100,7 +100,7 @@ int main(int argc, char* argv[])
         }
     }
 
-    Vector moments = solver.getMoments(quadratureOrder,basisFunction);
+    Vector moments = solver.getMoments();
     double M0 = moments[0];
     double U0 = moments[1];
     double E0 = moments[2];
@@ -112,12 +112,12 @@ int main(int argc, char* argv[])
     std::cout << "start" << "\n";
     for (int t=0; t<tMax; t++)
     {
-        solver.advance(basisFunction, quadratureOrder);
+        solver.advance();
 
         if ((t+1)%outputTimeStep==0)
         {
             std::cout << "t = " << t << "\n";
-            Vector moments = solver.getMoments(quadratureOrder,basisFunction);
+            Vector moments = solver.getMoments();
             write_moments << (moments[0]-M0)/M0 << "\n";
             write_moments << (moments[1]-U0)/U0 << "\n";
             write_moments << (moments[2]-E0)/E0 << "\n";

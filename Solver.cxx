@@ -10,18 +10,20 @@
 #include "Mesh.hxx"
 #include "NewtonCotes.hxx"
 #include "NewtonSolver.hxx"
+#include "FunctionMapper.hxx"
 
 //constructor
-Solver::Solver(const Mesh& mesh, double dt, int lMax) 
-    : mesh(mesh), integrator(mesh), newtonSolver(mesh), dt(dt), lMax(lMax), alphaDomain(3*mesh.getNX(), lMax),
+Solver::Solver(const Mesh& mesh, double dt, int lMax, std::function<double(int,double)> basisFunction, int quadratureOrder) 
+    : mesh(mesh), integrator(mesh), newtonSolver(mesh), dt(dt), lMax(lMax), basisFunction(basisFunction), quadratureOrder(quadratureOrder), alphaDomain(3*mesh.getNX(), lMax),
       M_invDiag(lMax), M_invS(lMax,lMax), M_invF1Minus(lMax,lMax), M_invF0Minus(lMax,lMax), M_invF1Plus(lMax,lMax), M_invF0Plus(lMax,lMax),
       uPre(lMax,(mesh.getNX()+2)*mesh.getNVX()), uIntermediate(lMax,(mesh.getNX()+2)*mesh.getNVX()), uPost(lMax,(mesh.getNX()+2)*mesh.getNVX()) {}
 
 //deconstructor
 Solver::~Solver() {}
 
-void Solver::createMatrices(std::function<double(int,double)> basisFunction, std::function<double(int,double)> basisFunctionDerivative, int quadratureOrder)
+void Solver::createMatrices()
 {
+    auto basisFunctionDerivative = FunctionMapper::getDerivative(FunctionMapper::getFunctionName(basisFunction));
     Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
     Matrix M(lMax,lMax);
@@ -68,7 +70,7 @@ void Solver::createMatrices(std::function<double(int,double)> basisFunction, std
 }
 
 //initialize using the Least Squares method
-void Solver::initialize(std::function<double(int,double)> basisFunction, std::function<double(double)> inputFunctionX, std::function<double(double)> inputFunctionVX)
+void Solver::initialize(std::function<double(double)> inputFunctionX, std::function<double(double)> inputFunctionVX)
 {
     const auto& cells = mesh.getCells();
 
@@ -126,7 +128,7 @@ void Solver::initialize(std::function<double(int,double)> basisFunction, std::fu
     // }
 }
 
-void Solver::initializeAlpha(std::function<double(int,double)> basisFunction)
+void Solver::initializeAlpha()
 {
     const auto& cells = mesh.getCells();
 
@@ -200,7 +202,7 @@ void Solver::initializeAlpha(std::function<double(int,double)> basisFunction)
     }
 }
 
-void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, double timesFactor, std::function<double(int,double)> basisFunction, int quadratureOrder)
+void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, double timesFactor)
 {
     Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
@@ -290,8 +292,8 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             double fluxFactorPlus = (1.0-SpecialFunctions::sign(vx))/2.0;
 
             // calculate Ghost cells
-            Vector fL = fitMaxwellian(basisFunction, Crec, cs, 2.0, vx, j);
-            Vector fR = fitMaxwellian(basisFunction, Crec, -cs, 2.0, vx, j);
+            Vector fL = fitMaxwellian(Crec, cs, 2.0, vx, j);
+            Vector fR = fitMaxwellian(Crec, -cs, 2.0, vx, j);
 
             Vector f_tilde(lMax);
             for (int l=0; l<lMax; l++)
@@ -302,7 +304,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 // uBefore(l,k+(nx+1)*nvx) = uBefore(l,k+(nx-1)*nvx); //Right BC
                 f_tilde[l] = uBefore(l,k+j*nvx);
             }
-            Vector fCX = fitCX(basisFunction, ni, ui, Ti, rho, f_tilde, k, j);
+            Vector fCX = fitCX(ni, ui, Ti, rho, f_tilde, k, j);
             // std::cout << "\n" << k << ":\n";
             for (int l=0; l<lMax; l++)
             {
@@ -342,14 +344,14 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     }
 }
 
-void Solver::advance(std::function<double(int,double)> basisFunction, int quadratureOrder)
+void Solver::advance()
 {
     //First stage of solver
-    advanceStage(uPre, uPost, 0.0, 1.0, basisFunction, quadratureOrder);
+    advanceStage(uPre, uPost, 0.0, 1.0);
     //Second stage of solver
-    advanceStage(uPost, uIntermediate, 3.0/4.0, 1.0/4.0, basisFunction, quadratureOrder);
+    advanceStage(uPost, uIntermediate, 3.0/4.0, 1.0/4.0);
     //Third stage of solver
-    advanceStage(uIntermediate, uPost, 1.0/3.0, 2.0/3.0, basisFunction, quadratureOrder);
+    advanceStage(uIntermediate, uPost, 1.0/3.0, 2.0/3.0);
 
     uPre = uPost;
 }
@@ -385,7 +387,7 @@ const double Solver::getSolution(int l, int j)
     return uPre(l,j);
 }
 
-Vector Solver::getMoments(int quadratureOrder, std::function<double(int,double)> basisFunction)
+Vector Solver::getMoments()
 {
     Vector moments(4);
     double mass = 0;
@@ -443,7 +445,7 @@ Vector Solver::getMoment(int j, int power)
 }
 
 //initialize using the Least Squares method
-Vector Solver::fitMaxwellian(std::function<double(int,double)> basisFunction, Matrix alpha, double vx, int j)
+Vector Solver::fitMaxwellian(Matrix alpha, double vx, int j)
 {
     const auto& cells = mesh.getCells();
 
@@ -473,7 +475,7 @@ Vector Solver::fitMaxwellian(std::function<double(int,double)> basisFunction, Ma
     return uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
 }
 
-Vector Solver::fitMaxwellian(std::function<double(int,double)> basisFunction, Vector rho, Vector u, Vector rt, double vx, int j)
+Vector Solver::fitMaxwellian(Vector rho, Vector u, Vector rt, double vx, int j)
 {
     const auto& cells = mesh.getCells();
 
@@ -503,7 +505,7 @@ Vector Solver::fitMaxwellian(std::function<double(int,double)> basisFunction, Ve
     return uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
 }
 
-Vector Solver::fitMaxwellian(std::function<double(int,double)> basisFunction, double density, double meanVelocity, double temperature, double vx, int j)
+Vector Solver::fitMaxwellian(double density, double meanVelocity, double temperature, double vx, int j)
 {
     const auto& cells = mesh.getCells();
 
@@ -545,7 +547,7 @@ Vector Solver::getDensity(int j)
     return integrator.integrate(fj, lMax, 0); //rho tilde
 }
 
-Vector Solver::fitCX(std::function<double(int,double)> basisFunction, double density_i, double meanVelocity_i, double temperature_i, Vector rho_n, Vector f_tilde, int k, int j)
+Vector Solver::fitCX(double density_i, double meanVelocity_i, double temperature_i, Vector rho_n, Vector f_tilde, int k, int j)
 {
     const auto& cells = mesh.getCells();
 
