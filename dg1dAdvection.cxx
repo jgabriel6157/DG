@@ -20,9 +20,10 @@ bool assignBool(std::string varString);
 
 int main(int argc, char* argv[])
 {
-    std::string argName[12] = {"jMax","lMax","tMax","quadratureOrder","length","dt","basis","input","slopeLimiter","nout","nvx","maxVX"};
-    std::string argString[12];
-    readFile("input.txt",argName,argString,12);
+    std::string argName[16] = {"jMax","lMax","tMax","quadratureOrder","length","dt","basis","input","slopeLimiter","nout","nvx","maxVX",
+                               "ionization","cx","bgk","bc"};
+    std::string argString[16];
+    readFile("input.txt",argName,argString,16);
 
     int jMax = assignInt(argString[0]);
     int lMax = assignInt(argString[1]);
@@ -36,6 +37,10 @@ int main(int argc, char* argv[])
     int nout = assignInt(argString[9]);
     int nvx = assignInt(argString[10]);
     double domainMaxVX = assignDouble(argString[11]);
+    bool ionization = assignBool(argString[12]);
+    bool cx = assignBool(argString[13]);
+    bool bgk = assignBool(argString[14]);
+    int bc = assignBC(argString[15]);
 
     FunctionMapper::initializeMap();
 
@@ -44,7 +49,7 @@ int main(int argc, char* argv[])
     auto inputFunction = FunctionMapper::getFunction<FunctionMapper::FunctionType2>(input);
     
     lMax+=1;
-    Mesh mesh(jMax, nvx, length, domainMaxVX);
+    Mesh mesh(jMax, nvx, length, domainMaxVX, bc);
     if (nout>tMax)
     {
         std::cout << "Invalid nout (nout > tMax)! nout set equal to tMax" << "\n";
@@ -69,7 +74,7 @@ int main(int argc, char* argv[])
 
     auto start = std::chrono::high_resolution_clock::now();
 
-    Solver solver(mesh, dt, lMax, basisFunction, quadratureOrder);
+    Solver solver(mesh, dt, lMax, basisFunction, quadratureOrder, ionization, cx, bgk, bc);
 
     solver.createMatrices();
 
@@ -246,4 +251,22 @@ bool assignBool(std::string varString)
         std::cout << "Invalid input for bool, returning false" << "\n";
         return false;
     }
+}
+
+int assignBC(std::string varString)
+{
+    int bc = 0;
+    if (varString=="periodic")
+    {
+        bc = 0;
+    }
+    else if (varString=="source")
+    {
+        bc = 1;
+    }
+    else
+    {
+        std::cout << "Invalid Boundary Condition, defaulting to periodic boundary conditions" << "\n";
+    }
+    return bc;
 }

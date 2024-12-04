@@ -18,11 +18,12 @@ private:
     int nvx;
     double domainLengthX;
     double domainMaxVX;
+    int bc;
     double dvx; //Distance between velocity points
 
 public:
     //Constructor
-    Mesh(int nx, int nvx, double domainLengthX, double domainMaxVX);
+    Mesh(int nx, int nvx, double domainLengthX, double domainMaxVX, int bc);
 
     //Accessor
     const std::vector<Cell>& getCells() const;

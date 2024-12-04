@@ -13,8 +13,10 @@
 #include "FunctionMapper.hxx"
 
 //constructor
-Solver::Solver(const Mesh& mesh, double dt, int lMax, std::function<double(int,double)> basisFunction, int quadratureOrder) 
-    : mesh(mesh), integrator(mesh), newtonSolver(mesh), dt(dt), lMax(lMax), basisFunction(basisFunction), quadratureOrder(quadratureOrder), alphaDomain(3*mesh.getNX(), lMax),
+Solver::Solver(const Mesh& mesh, double dt, int lMax, std::function<double(int,double)> basisFunction, int quadratureOrder,
+               bool ionization, bool cx, bool bgk, int bc) 
+    : mesh(mesh), integrator(mesh), newtonSolver(mesh), dt(dt), lMax(lMax), basisFunction(basisFunction), quadratureOrder(quadratureOrder), 
+      ionization(ionization), cx(cx), bgk(bgk), bc(bc), alphaDomain(3*mesh.getNX(), lMax),
       M_invDiag(lMax), M_invS(lMax,lMax), M_invF1Minus(lMax,lMax), M_invF0Minus(lMax,lMax), M_invF1Plus(lMax,lMax), M_invF0Plus(lMax,lMax),
       uPre(lMax,(mesh.getNX()+2)*mesh.getNVX()), uIntermediate(lMax,(mesh.getNX()+2)*mesh.getNVX()), uPost(lMax,(mesh.getNX()+2)*mesh.getNVX()) {}
 
@@ -93,17 +95,17 @@ void Solver::initialize(std::function<double(double)> inputFunctionX, std::funct
 
             for (int i=0; i<10; i++)
             {
-                x = leftVertex+i*dx/9.0;
-                y[i] = inputFunctionX(x)*inputFunctionVX(vx);
-                // x = leftVertex+i*dx/10.0;
-                // if (x<0.5)
-                // {
-                //    y[i] = SpecialFunctions::computeMaxwellian(1.0,0.0,1.0,vx);
-                // }
-                // else
-                // {
-                //    y[i] = SpecialFunctions::computeMaxwellian(0.125,0.0,0.8,vx);
-                // }
+                // x = leftVertex+i*dx/9.0;
+                // y[i] = inputFunctionX(x)*inputFunctionVX(vx);
+                x = leftVertex+i*dx/10.0;
+                if (x<0.5)
+                {
+                   y[i] = SpecialFunctions::computeMaxwellian(1.0,0.0,1.0,vx);
+                }
+                else
+                {
+                   y[i] = SpecialFunctions::computeMaxwellian(0.125,0.0,0.8,vx);
+                }
                 for (int l=0; l<lMax; l++)
                 {
                     bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
@@ -230,8 +232,6 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
 
     const auto& cells = mesh.getCells();
 
-    // initializeAlpha(basisFunction);
-
     int nx = mesh.getNX();
     int nvx = mesh.getNVX();
     #pragma omp parallel for schedule(dynamic)
@@ -261,26 +261,29 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
         rho_i[0] = ni;
 
         Matrix alpha(3,lMax);
-        for (int m=0; m<3; m++)
+        if (bgk == true)
         {
-            for (int l=0; l<lMax; l++)
+            for (int m=0; m<3; m++)
             {
-                alpha(m,l) = alphaDomain(m+j*3,l);
+                for (int l=0; l<lMax; l++)
+                {
+                    alpha(m,l) = alphaDomain(m+j*3,l);
+                }
             }
-        }
-        bool test = false;
-        if (j==0)
-        {
-            test = false;
-        }
-        // std::cout << "Calculate Alphas" << "\n";
-        // alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-10), 100, basisFunction, quadratureOrder, lMax, test);
-        // std::cout << "Alphas calculated" << "\n";
-        for (int m=0; m<3; m++)
-        {
-            for (int l=0; l<lMax; l++)
+            bool test = false;
+            if (j==0)
             {
-                alphaDomain(m+j*3,l) = alpha(m,l);
+                test = false;
+            }
+            // std::cout << "Calculate Alphas" << "\n";
+            alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-10), 100, basisFunction, quadratureOrder, lMax, test);
+            // std::cout << "Alphas calculated" << "\n";
+            for (int m=0; m<3; m++)
+            {
+                for (int l=0; l<lMax; l++)
+                {
+                    alphaDomain(m+j*3,l) = alpha(m,l);
+                }
             }
         }
 
@@ -298,13 +301,29 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             Vector f_tilde(lMax);
             for (int l=0; l<lMax; l++)
             {
-                uBefore(l,k+nx*nvx) = fL[l];
-                uBefore(l,k+(nx+1)*nvx) = fR[l];
-                // uBefore(l,k+nx*nvx) = uBefore(l,k+0*nvx); //Left BC
-                // uBefore(l,k+(nx+1)*nvx) = uBefore(l,k+(nx-1)*nvx); //Right BC
+                if (bc==0)
+                {
+                    uBefore(l,k+nx*nvx) = uBefore(l,k+0*nvx); //Left BC
+                    uBefore(l,k+(nx+1)*nvx) = uBefore(l,k+(nx-1)*nvx); //Right BC
+                }
+                else if (bc==1)
+                {
+                    uBefore(l,k+nx*nvx) = fL[l];
+                    uBefore(l,k+(nx+1)*nvx) = fR[l];
+                }
+                else
+                {
+                    std::cout << "Error with boundary conditions" << "\n";
+                }
                 f_tilde[l] = uBefore(l,k+j*nvx);
             }
-            Vector fCX = fitCX(ni, ui, Ti, rho, f_tilde, k, j);
+
+            Vector fCX(lMax);
+            if (cx == true)
+            {
+                fCX = fitCX(ni, ui, Ti, rho, f_tilde, k, j);
+            }
+
             // std::cout << "\n" << k << ":\n";
             for (int l=0; l<lMax; l++)
             {
@@ -320,10 +339,19 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 }
                 uAfter(l,k+j*nvx)*=vx;
                 uAfter(l,k+j*nvx)/=dx;
-                // uAfter(l,k+j*nvx)-=ne*uBefore(l,k+j*nvx)*sigma_iz; //This line for ionization
-                uAfter(l,k+j*nvx)-=nu_cx*fCX[l]; //This line for CX
-                // uAfter(l,k+j*nvx)+=nu*M_invDiag[l]*GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights)/2.0; //BGK
-                // uAfter(l,k+j*nvx)-=nu*uBefore(l,k+j*nvx); //BGK
+                if (ionization == true)
+                {
+                    uAfter(l,k+j*nvx)-=ne*uBefore(l,k+j*nvx)*sigma_iz; //This line for ionization
+                }
+                if (cx == true)
+                {
+                    uAfter(l,k+j*nvx)-=nu_cx*fCX[l]; //This line for CX
+                }
+                if (bgk == true)
+                {
+                    uAfter(l,k+j*nvx)+=nu*M_invDiag[l]*GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights)/2.0; //BGK
+                    uAfter(l,k+j*nvx)-=nu*uBefore(l,k+j*nvx); //BGK
+                }
                 uAfter(l,k+j*nvx)*=dt;
                 uAfter(l,k+j*nvx)+=uBefore(l,k+j*nvx);
                 

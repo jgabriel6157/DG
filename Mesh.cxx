@@ -1,7 +1,8 @@
 #include "Mesh.hxx"
+#include <iostream>
 
 //Constructor definition
-Mesh::Mesh(int nx, int nvx, double domainLengthX, double domainMaxVX) : nx(nx), nvx(nvx), domainLengthX(domainLengthX), domainMaxVX(domainMaxVX)
+Mesh::Mesh(int nx, int nvx, double domainLengthX, double domainMaxVX, int bc) : nx(nx), nvx(nvx), domainLengthX(domainLengthX), domainMaxVX(domainMaxVX), bc(bc)
 {
     //Generate cells
     for (int i = 0; i < nx; i++) 
@@ -15,15 +16,35 @@ Mesh::Mesh(int nx, int nvx, double domainLengthX, double domainMaxVX) : nx(nx), 
         //Initialize neighbors of the cell
         if (i==0)
         {
-            // cell.neighbors.push_back(nx-1); //Periodic BC
-            cell.neighbors.push_back(nx); //Ghost cell left
+            if (bc==0)
+            {
+                cell.neighbors.push_back(nx-1); //Periodic BC
+            }
+            else if (bc==1)
+            {
+                cell.neighbors.push_back(nx); //Ghost cell left
+            }
+            else
+            {
+                std::cout << "Error with boundary conditions" << "\n";
+            }
             cell.neighbors.push_back(i+1);
         }
         else if (i==nx-1)
         {
             cell.neighbors.push_back(i-1);
-            // cell.neighbors.push_back(0); //Periodic BC
-            cell.neighbors.push_back(nx+1); //Ghost cell right
+            if (bc==0)
+            {
+                cell.neighbors.push_back(0); //Periodic BC
+            }
+            else if (bc==1)
+            {
+                cell.neighbors.push_back(nx+1); //Ghost cell right
+            }
+            else
+            {
+                std::cout << "Error with boundary conditions" << "\n";
+            }
         }
         else
         {
