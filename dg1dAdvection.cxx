@@ -17,6 +17,7 @@ void readFile(std::string filename, std::string argName[], std::string argString
 int assignInt(std::string varString);
 double assignDouble(std::string varString);
 bool assignBool(std::string varString);
+int assignBC(std::string varString);
 
 int main(int argc, char* argv[])
 {
@@ -45,7 +46,6 @@ int main(int argc, char* argv[])
     FunctionMapper::initializeMap();
 
     auto basisFunction = FunctionMapper::getFunction<std::function<double(int,double)>>(basis);
-    auto basisFunctionDerivative = FunctionMapper::getFunction<FunctionMapper::FunctionType1>(basis+"Derivative");
     auto inputFunction = FunctionMapper::getFunction<FunctionMapper::FunctionType2>(input);
     
     lMax+=1;
@@ -263,6 +263,10 @@ int assignBC(std::string varString)
     else if (varString=="source")
     {
         bc = 1;
+    }
+    else if (varString=="neumann")
+    {
+        bc = 2;
     }
     else
     {

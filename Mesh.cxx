@@ -20,13 +20,9 @@ Mesh::Mesh(int nx, int nvx, double domainLengthX, double domainMaxVX, int bc) : 
             {
                 cell.neighbors.push_back(nx-1); //Periodic BC
             }
-            else if (bc==1)
-            {
-                cell.neighbors.push_back(nx); //Ghost cell left
-            }
             else
             {
-                std::cout << "Error with boundary conditions" << "\n";
+                cell.neighbors.push_back(nx); //Ghost cell left
             }
             cell.neighbors.push_back(i+1);
         }
@@ -37,13 +33,9 @@ Mesh::Mesh(int nx, int nvx, double domainLengthX, double domainMaxVX, int bc) : 
             {
                 cell.neighbors.push_back(0); //Periodic BC
             }
-            else if (bc==1)
-            {
-                cell.neighbors.push_back(nx+1); //Ghost cell right
-            }
             else
             {
-                std::cout << "Error with boundary conditions" << "\n";
+                cell.neighbors.push_back(nx+1); //Ghost cell right
             }
         }
         else

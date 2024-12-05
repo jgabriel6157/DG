@@ -209,7 +209,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
 
-    double nu = 1000.0;
+    double nu = 500.0;
 
     double A = 2.91e-14;
     double P = 0;
@@ -276,7 +276,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 test = false;
             }
             // std::cout << "Calculate Alphas" << "\n";
-            alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-10), 100, basisFunction, quadratureOrder, lMax, test);
+            alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-14), 100, basisFunction, quadratureOrder, lMax, test);
             // std::cout << "Alphas calculated" << "\n";
             for (int m=0; m<3; m++)
             {
@@ -301,19 +301,15 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             Vector f_tilde(lMax);
             for (int l=0; l<lMax; l++)
             {
-                if (bc==0)
-                {
-                    uBefore(l,k+nx*nvx) = uBefore(l,k+0*nvx); //Left BC
-                    uBefore(l,k+(nx+1)*nvx) = uBefore(l,k+(nx-1)*nvx); //Right BC
-                }
-                else if (bc==1)
+                if (bc==1)
                 {
                     uBefore(l,k+nx*nvx) = fL[l];
                     uBefore(l,k+(nx+1)*nvx) = fR[l];
                 }
-                else
+                else if (bc==2)
                 {
-                    std::cout << "Error with boundary conditions" << "\n";
+                    uBefore(l,k+nx*nvx) = uBefore(l,k+0*nvx); //Left BC
+                    uBefore(l,k+(nx+1)*nvx) = uBefore(l,k+(nx-1)*nvx); //Right BC
                 }
                 f_tilde[l] = uBefore(l,k+j*nvx);
             }
