@@ -99,7 +99,7 @@ values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
 # valuesSol = pd.read_csv(fileNameSol,header=None)
 # valuesSol = valuesSol[0].to_numpy()
-m = 6096*50
+m = 10323*100
 dx = length/jMax
 dvx = 2*domainMaxVX/(nvx-1)
 # dvx = 1.0/nvx
@@ -140,6 +140,7 @@ for vx in range(nvx):
     # sumNum = 0
     # sumDem = 0
     for j in range(jMax):
+    # for j in [60,61,62,63,64]:
         xj = j*dx+dx/2
         y = np.zeros(res)
         x = np.zeros(res)

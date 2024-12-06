@@ -95,10 +95,9 @@ void Solver::initialize(std::function<double(double)> inputFunctionX, std::funct
 
             for (int i=0; i<10; i++)
             {
-                // x = leftVertex+i*dx/9.0;
+                x = leftVertex+i*dx/9.0;
                 // y[i] = inputFunctionX(x)*inputFunctionVX(vx);
-                x = leftVertex+i*dx/10.0;
-                if (x<0.5)
+                if (x<0.5) //classic sod test
                 {
                    y[i] = SpecialFunctions::computeMaxwellian(1.0,0.0,1.0,vx);
                 }
@@ -106,6 +105,14 @@ void Solver::initialize(std::function<double(double)> inputFunctionX, std::funct
                 {
                    y[i] = SpecialFunctions::computeMaxwellian(0.125,0.0,0.8,vx);
                 }
+                // if (fabs(x-1.0)<0.3) //periodic sod test
+                // {
+                //    y[i] = SpecialFunctions::computeMaxwellian(1.0,0.75,1.0,vx);
+                // }
+                // else
+                // {
+                //    y[i] = SpecialFunctions::computeMaxwellian(0.125,0.0,0.8,vx);
+                // }
                 for (int l=0; l<lMax; l++)
                 {
                     bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
@@ -166,7 +173,7 @@ void Solver::initializeAlpha()
 
             for (int i=0; i<10; i++)
             {
-                x = leftVertex+i*dx/9.0;
+                x = leftVertex+(i+1)*dx/11.0; //Ignores end points which are more likely to be NaN in certain edge cases
                 double density = SpecialFunctions::computeMoment(rho, basisFunction,lMax,2.0*(x-xj)/dx);
                 double meanVelocity = SpecialFunctions::computeMoment(u, basisFunction,lMax,2.0*(x-xj)/dx)/density;
                 double temperature = (SpecialFunctions::computeMoment(rt, basisFunction,lMax,2.0*(x-xj)/dx)-density*pow(meanVelocity,2))/density;
@@ -199,6 +206,11 @@ void Solver::initializeAlpha()
             for (int l=0; l<lMax; l++)
             {
                 alphaDomain(m+j*3,l) = uInitialize[m+l*3];
+                if (uInitialize[m+l*3]!=uInitialize[m+l*3])
+                {
+                    std::cout << j << "\n";
+                }
+                assert(uInitialize[m+l*3]==uInitialize[m+l*3]);
             }
         }
     }
@@ -209,7 +221,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
 
-    double nu = 500.0;
+    double nu = 1000.0;
 
     double A = 2.91e-14;
     double P = 0;
@@ -276,7 +288,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 test = false;
             }
             // std::cout << "Calculate Alphas" << "\n";
-            alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-14), 100, basisFunction, quadratureOrder, lMax, test);
+            alpha = newtonSolver.solve(alpha, nu, rho, u, rt, dx, roots, weights, pow(10,-13), 100, basisFunction, quadratureOrder, lMax, test);
             // std::cout << "Alphas calculated" << "\n";
             for (int m=0; m<3; m++)
             {

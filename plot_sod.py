@@ -206,22 +206,29 @@ for j in range(jMax):
 # Plotting
 plt.figure(figsize=(12, 8))
 
-plt.subplot(3, 1, 1)
+plt.subplot(4, 1, 1)
 plt.plot(xSol, rhoSol, label="Solution", color="blue", linestyle="-")
 plt.plot(x,densitySim, label="Simulation", color="blue", linestyle="--")
 plt.ylabel("Density")
 plt.legend()
 
-plt.subplot(3, 1, 2)
+plt.subplot(4, 1, 2)
 plt.plot(xSol, velocity, label="Solution", color="orange", linestyle="-")
 plt.plot(x,velocitySim, label="Simulation", color="orange", linestyle="--")
 plt.ylabel("Velocity")
 plt.legend()
 
-plt.subplot(3, 1, 3)
-plt.plot(xSol, temperature*rhoSol, label="Solution", color="green", linestyle="-")
-plt.plot(x,temperatureSim*densitySim, label="Simulation", color="green", linestyle="--")
+plt.subplot(4, 1, 3)
+plt.plot(xSol, temperature, label="Solution", color="green", linestyle="-")
+plt.plot(x,temperatureSim, label="Simulation", color="green", linestyle="--")
 plt.ylabel("Temperature")
+plt.xlabel("Position")
+plt.legend()
+
+plt.subplot(4, 1, 4)
+plt.plot(xSol, temperature*rhoSol, label="Solution", color="red", linestyle="-")
+plt.plot(x,temperatureSim*densitySim, label="Simulation", color="red", linestyle="--")
+plt.ylabel("Pressure")
 plt.xlabel("Position")
 plt.legend()
 
