@@ -47,7 +47,7 @@ public:
     void createMatrices();
 
     //initialize using the Least Squares method
-    void initialize(std::function<double(double)> inputFunctionX, std::function<double(double)> inputFunctionVX);
+    void initialize(std::function<double(double, double)> inputFunction);
 
     void initializeAlpha();
 

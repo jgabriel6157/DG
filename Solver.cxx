@@ -72,7 +72,7 @@ void Solver::createMatrices()
 }
 
 //initialize using the Least Squares method
-void Solver::initialize(std::function<double(double)> inputFunctionX, std::function<double(double)> inputFunctionVX)
+void Solver::initialize(std::function<double(double, double)> inputFunction)
 {
     const auto& cells = mesh.getCells();
 
@@ -96,15 +96,16 @@ void Solver::initialize(std::function<double(double)> inputFunctionX, std::funct
             for (int i=0; i<10; i++)
             {
                 x = leftVertex+i*dx/9.0;
+                y[i] = inputFunction(x,vx);
                 // y[i] = inputFunctionX(x)*inputFunctionVX(vx);
-                if (x<0.5) //classic sod test
-                {
-                   y[i] = SpecialFunctions::computeMaxwellian(1.0,0.0,1.0,vx);
-                }
-                else
-                {
-                   y[i] = SpecialFunctions::computeMaxwellian(0.125,0.0,0.8,vx);
-                }
+                // if (x<0.5) //classic sod test
+                // {
+                //    y[i] = SpecialFunctions::computeMaxwellian(1.0,0.0,1.0,vx);
+                // }
+                // else
+                // {
+                //    y[i] = SpecialFunctions::computeMaxwellian(0.125,0.0,0.8,vx);
+                // }
                 // if (fabs(x-1.0)<0.3) //periodic sod test
                 // {
                 //    y[i] = SpecialFunctions::computeMaxwellian(1.0,0.75,1.0,vx);
@@ -273,7 +274,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
         rho_i[0] = ni;
 
         Matrix alpha(3,lMax);
-        if (bgk == true)
+        if (bgk)
         {
             for (int m=0; m<3; m++)
             {
@@ -327,7 +328,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             }
 
             Vector fCX(lMax);
-            if (cx == true)
+            if (cx)
             {
                 fCX = fitCX(ni, ui, Ti, rho, f_tilde, k, j);
             }
@@ -347,15 +348,15 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 }
                 uAfter(l,k+j*nvx)*=vx;
                 uAfter(l,k+j*nvx)/=dx;
-                if (ionization == true)
+                if (ionization)
                 {
                     uAfter(l,k+j*nvx)-=ne*uBefore(l,k+j*nvx)*sigma_iz; //This line for ionization
                 }
-                if (cx == true)
+                if (cx)
                 {
                     uAfter(l,k+j*nvx)-=nu_cx*fCX[l]; //This line for CX
                 }
-                if (bgk == true)
+                if (bgk)
                 {
                     uAfter(l,k+j*nvx)+=nu*M_invDiag[l]*GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights)/2.0; //BGK
                     uAfter(l,k+j*nvx)-=nu*uBefore(l,k+j*nvx); //BGK
@@ -415,7 +416,7 @@ void Solver::slopeLimiter() // Needs updating
 
 const double Solver::getSolution(int l, int j)
 {
-    // assert(uPre(l,j)==uPre(l,j)); //Might be better ways to ensure value is not NaN
+    assert(uPre(l,j)==uPre(l,j)); //Might be better ways to ensure value is not NaN
     if (uPre(l,j)!=uPre(l,j))
     {
         std::cout << "NaN at l=" << l << "; k+j*nvx=" << j << "\n";

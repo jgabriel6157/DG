@@ -12,12 +12,16 @@
 #include "GaussianQuadrature.hxx"
 #include "Solver.hxx"
 #include "FunctionMapper.hxx"
+#include "Parser.hxx"
+
+#include "muParser.h"
 
 void readFile(std::string filename, std::string argName[], std::string argString[], int numberOfVariables);
 int assignInt(std::string varString);
 double assignDouble(std::string varString);
 bool assignBool(std::string varString);
 int assignBC(std::string varString);
+// std::function<double(double, double)> parseFunction(const std::string& expression);
 
 int main(int argc, char* argv[])
 {
@@ -44,9 +48,11 @@ int main(int argc, char* argv[])
     int bc = assignBC(argString[15]);
 
     FunctionMapper::initializeMap();
-
     auto basisFunction = FunctionMapper::getFunction<std::function<double(int,double)>>(basis);
-    auto inputFunction = FunctionMapper::getFunction<FunctionMapper::FunctionType2>(input);
+
+    Parser functionParser;
+    functionParser.setExpression(input);
+    auto inputFunction = functionParser.getFunction();
     
     lMax+=1;
     Mesh mesh(jMax, nvx, length, domainMaxVX, bc);
@@ -78,13 +84,14 @@ int main(int argc, char* argv[])
 
     solver.createMatrices();
 
-    solver.initialize(SpecialFunctions::inelasticICx, SpecialFunctions::inelasticICvx);
-
-    // solver.initialize(SpecialFunctions::gaussianPulse, inputFunction);
+    solver.initialize(inputFunction);
 
     std::cout << "initialization complete" << "\n";
-    solver.initializeAlpha();
-    std::cout << "alpha initialization complete" << "\n";
+    if (bgk)
+    {
+        solver.initializeAlpha();
+        std::cout << "alpha initialization complete" << "\n";
+    }
     for (int j=0; j<jMax; j++)
     {
         Vector rho = solver.getMoment(j,0);
@@ -274,3 +281,25 @@ int assignBC(std::string varString)
     }
     return bc;
 }
+
+// std::function<double(double, double)> parseFunction(const std::string& expression) 
+// {
+//     auto parser = std::make_shared<mu::Parser>(); // Use a shared_ptr for safety
+
+//     // Add variables for the user to define
+//     auto x = std::make_shared<double>(0.0);
+//     auto v = std::make_shared<double>(0.0);
+//     parser->DefineVar("x", x.get());
+//     parser->DefineVar("v", v.get());
+
+//     // Set the expression
+//     parser->SetExpr(expression);
+
+//     // Return a lambda function that evaluates the expression
+//     return [parser, x, v](double x_val, double v_val) mutable 
+//     {
+//         *x = x_val;
+//         *v = v_val;
+//         return parser->Eval();
+//     };
+// }

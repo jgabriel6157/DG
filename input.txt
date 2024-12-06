@@ -1,18 +1,17 @@
-jMax = 511
+jMax = 112
 lMax = 2
-tMax = 10000
+tMax = 1
 quadratureOrder = 3
 length = 1
 dt = 0.00001
 basis = legendre
-input = twinPulses
+input = sin(x*(2*_pi))*exp(-v*v)
 slopeLimiter = false
 nout = 100
 nvx = 31
 maxVX = 5
 ionization = false
 cx = false
-bgk = true
-bc = neumann
-
+bgk = false
+bc = periodic
 
