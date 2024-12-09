@@ -1,17 +1,17 @@
-jMax = 112
-lMax = 2
-tMax = 1
+jMax = 501
+lMax = 1
+tMax = 10000
 quadratureOrder = 3
 length = 1
 dt = 0.00001
 basis = legendre
-input = sin(x*(2*_pi))*exp(-v*v)
+input = -0.5*(sign(x-0.5)-1)*(exp(-(v*v/(2*1)))/sqrt(2*_pi*1))+0.5*(sign(x-0.5)+1)*0.125*(exp(-(v*v/(2*0.8)))/sqrt(2*_pi*0.8))
 slopeLimiter = false
 nout = 100
-nvx = 31
+nvx = 15
 maxVX = 5
 ionization = false
 cx = false
-bgk = false
-bc = periodic
+bgk = true
+bc = neumann
 

@@ -2,6 +2,8 @@
 #include <cmath>
 #include <iostream>
 #include <cassert>
+#include <chrono>
+
 #include "Matrix.hxx"
 #include "Vector.hxx"
 #include "SpecialFunctions.hxx"

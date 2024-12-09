@@ -5,6 +5,7 @@
 #include <cmath>
 #include <iostream>
 #include <functional>
+#include <chrono>
 
 NewtonSolver::NewtonSolver(const Mesh& mesh) 
                          : integrator(mesh) {}

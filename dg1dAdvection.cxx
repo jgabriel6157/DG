@@ -21,7 +21,6 @@ int assignInt(std::string varString);
 double assignDouble(std::string varString);
 bool assignBool(std::string varString);
 int assignBC(std::string varString);
-// std::function<double(double, double)> parseFunction(const std::string& expression);
 
 int main(int argc, char* argv[])
 {
@@ -117,10 +116,6 @@ int main(int argc, char* argv[])
     double U0 = moments[1];
     double E0 = moments[2];
     double S0 = moments[3];
-    // std::cout << M0 << "\n";
-    // std::cout << U0 << "\n";
-    // std::cout << E0 << "\n";
-    // std::cout << S0 << "\n";
     std::cout << "start" << "\n";
     for (int t=0; t<tMax; t++)
     {
@@ -281,25 +276,3 @@ int assignBC(std::string varString)
     }
     return bc;
 }
-
-// std::function<double(double, double)> parseFunction(const std::string& expression) 
-// {
-//     auto parser = std::make_shared<mu::Parser>(); // Use a shared_ptr for safety
-
-//     // Add variables for the user to define
-//     auto x = std::make_shared<double>(0.0);
-//     auto v = std::make_shared<double>(0.0);
-//     parser->DefineVar("x", x.get());
-//     parser->DefineVar("v", v.get());
-
-//     // Set the expression
-//     parser->SetExpr(expression);
-
-//     // Return a lambda function that evaluates the expression
-//     return [parser, x, v](double x_val, double v_val) mutable 
-//     {
-//         *x = x_val;
-//         *v = v_val;
-//         return parser->Eval();
-//     };
-// }
