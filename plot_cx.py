@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+from scipy.interpolate import interp1d
 from matplotlib.animation import FuncAnimation, PillowWriter
 import fnmatch
 import numpy as np
@@ -131,7 +132,7 @@ sol = [9.530037918593606e+18,3.443585377795066e+18,1.1798778383970465e+18,4.2300
 #        54108963673046.71,90007234113566.84,150906047778987.78,255142715477515.3,435267778721187.4,749739790080367.8,1304838202117811.5,2296485632385492.0,
 #        4090955994446296.5,7384923039433890.0,1.3524586186453012e+16,2.5171769786939908e+16,4.76795543367135e+16,9.21811376674128e+16,1.822157351490363e+17,
 #        3.703097076227858e+17,7.754379043650042e+17,1.6932338616167905e+18,3.875442808894982e+18,9.271348489836345e+18]
-
+f_sol = interp1d(zvals,sol, kind='cubic')
 for m in [336*50]:
     dx = length/jMax
     dvx = 2*domainMaxVX/(nvx-1)
@@ -167,15 +168,17 @@ for m in [336*50]:
             for l in range(lMax):
                 y[i] += u[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
                 # sol[i] += uSol[l][j]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-            # error[i] = (y[i]-sol[i])**2
-            # y2[i] = y[i]**2
-        # l2Norm+=integrate.simpson(error,x=x)
-        # solution+=integrate.simpson(y2,x=x)
-        plt.plot(x,y*1e18,color='red')
+            y[i]*=1e18
+            error[i] = (y[i]-f_sol(x[i]))**2
+            y2[i] = y[i]**2
+        l2Norm+=integrate.simpson(error,x=x)
+        solution+=integrate.simpson(y2,x=x)
+        plt.plot(x,y,color='red')
+        plt.plot(x,f_sol(x),'k:')
         # plt.plot(x,sol,'k:')
 
-# print(np.sqrt(l2Norm/solution))
+print(np.sqrt(l2Norm/solution))
 plt.ylim(9e7,3e19)
-plt.plot(zvals,sol,'k:')
+# plt.plot(zvals,sol,'k:')
 # plt.plot(z_vals+Lz/2,n/(1e18), 'k:')
 plt.show()

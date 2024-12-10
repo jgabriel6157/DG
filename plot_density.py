@@ -70,7 +70,7 @@ ax = fig.gca()
 ax.set_yscale('log')
 
 fileName = 'Density.csv'
-fileNameSol = 'Density1.csv'
+# fileNameSol = 'Density1.csv'
 inputFile = open('input.txt','r')
 
 while True:
@@ -132,10 +132,10 @@ def f(z):
 
 values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
-valuesSol = pd.read_csv(fileNameSol,header=None)
-valuesSol = valuesSol[0].to_numpy()
+# valuesSol = pd.read_csv(fileNameSol,header=None)
+# valuesSol = valuesSol[0].to_numpy()
 # m = 33600
-for m in [96*50]:
+for m in [336*50]:
     dx = length/jMax
     dvx = 2*domainMaxVX/(nvx-1)
     # dvx = 1.0/nvx

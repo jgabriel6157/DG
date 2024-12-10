@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from math import sqrt
 import pandas as pd
+from scipy.interpolate import interp1d
 
 # Define constants
 # gamma = 5.0 / 3  # Ratio of specific heats
@@ -77,6 +78,11 @@ for i, xi in enumerate(xSol):
         pressure[i] = P5
 
 temperature = pressure / rhoSol
+
+rho_interp = interp1d(xSol,rhoSol,kind='cubic')
+vel_interp = interp1d(xSol,velocity,kind='cubic')
+pressure_interp = interp1d(xSol,pressure,kind='cubic')
+temp_interp = interp1d(xSol,temperature,kind='cubic')
 
 def getFunction(basis,n,x):
     if basis=='legendre':
@@ -186,6 +192,7 @@ x = np.zeros(10*jMax)
 densitySim = np.zeros(10*jMax)
 velocitySim = np.zeros(10*jMax)
 temperatureSim = np.zeros(10*jMax)
+pressureSim = np.zeros(10*jMax)
 t = 100
 for j in range(jMax):
     for i in range(10):
@@ -202,6 +209,7 @@ for j in range(jMax):
         densitySim[i+j*10] = densityFoo
         velocitySim[i+j*10] = velocityFoo
         temperatureSim[i+j*10] = temperatureFoo
+        pressureSim[i+j*10] = densityFoo*temperatureFoo
 
 # Plotting
 plt.figure(figsize=(12, 8))
