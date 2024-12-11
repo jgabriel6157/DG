@@ -1,5 +1,5 @@
-jMax = 501
-lMax = 1
+jMax = 65
+lMax = 2
 tMax = 10000
 quadratureOrder = 3
 length = 1
@@ -8,10 +8,10 @@ basis = legendre
 input = -0.5*(sign(x-0.5)-1)*(exp(-(v*v/(2*1)))/sqrt(2*_pi*1))+0.5*(sign(x-0.5)+1)*0.125*(exp(-(v*v/(2*0.8)))/sqrt(2*_pi*0.8))
 slopeLimiter = false
 nout = 100
-nvx = 15
+nvx = 127
 maxVX = 5
 ionization = false
 cx = false
 bgk = true
-bc = neumann
+bc = copy
 

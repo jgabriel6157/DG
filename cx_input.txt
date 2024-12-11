@@ -10,8 +10,8 @@ slopeLimiter = false
 nout = 50
 nvx = 31
 maxVX = 20
-ionization = true
-cx = false
+ionization = false
+cx = true
 bgk = false
 bc = source
 

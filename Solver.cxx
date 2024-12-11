@@ -98,6 +98,7 @@ void Solver::initialize(std::function<double(double, double)> inputFunction)
             for (int i=0; i<10; i++)
             {
                 x = leftVertex+i*dx/9.0;
+                // x = leftVertex+(i+1)*dx/11.0;
                 y[i] = inputFunction(x,vx);
                 // y[i] = inputFunctionX(x)*inputFunctionVX(vx);
                 // if (x<0.5) //classic sod test
@@ -177,11 +178,17 @@ void Solver::initializeAlpha()
             for (int i=0; i<10; i++)
             {
                 x = leftVertex+(i+1)*dx/11.0; //Ignores end points which are more likely to be NaN in certain edge cases
+                // x = leftVertex+(i+2)*dx/13.0; //Ignores end points which are more likely to be NaN in certain edge cases
                 double density = SpecialFunctions::computeMoment(rho, basisFunction,lMax,2.0*(x-xj)/dx);
                 double meanVelocity = SpecialFunctions::computeMoment(u, basisFunction,lMax,2.0*(x-xj)/dx)/density;
                 double temperature = (SpecialFunctions::computeMoment(rt, basisFunction,lMax,2.0*(x-xj)/dx)-density*pow(meanVelocity,2))/density;
 
                 double arg = SpecialFunctions::computeMaxwellian(density,meanVelocity,temperature,vx);
+                // std::cout << "i = " << i << "\n";
+                // std::cout << density << "\n";
+                // std::cout << meanVelocity << "\n";
+                // std::cout << temperature << "\n";
+                // std::cout << arg << "\n";
 
                 y[i+k*10] = log(arg);
 
@@ -224,7 +231,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
 
-    double nu = 10.0;
+    double nu = 1000.0;
 
     double A = 2.91e-14;
     double P = 0;
