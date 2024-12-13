@@ -16,14 +16,20 @@ private:
     std::vector<Cell> cells;
     int nx;
     int nvx;
+    int nvy;
+    int nvz;
     double domainLengthX;
     double domainMaxVX;
+    double domainMaxVY;
+    double domainMaxVZ;
     int bc;
     double dvx; //Distance between velocity points
+    double dvy;
+    double dvz;
 
 public:
     //Constructor
-    Mesh(int nx, int nvx, double domainLengthX, double domainMaxVX, int bc);
+    Mesh(int nx, int nvx, int nvy, int nvz, double domainLengthX, double domainMaxVX, double domainMaxVY, double domainMaxVZ, int bc);
 
     //Accessor
     const std::vector<Cell>& getCells() const;
@@ -32,9 +38,21 @@ public:
 
     const int& getNVX() const;
 
+    const int& getNVY() const;
+
+    const int& getNVZ() const;
+
     double getDVX() const;
 
-    double getVelocity(int velocityIndex) const;
+    double getDVY() const;
+
+    double getDVZ() const;
+
+    double getVelocityX(int velocityIndex) const;
+
+    double getVelocityY(int velocityIndex) const;
+
+    double getVelocityZ(int velocityIndex) const;
 };
 
 

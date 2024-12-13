@@ -47,7 +47,7 @@ public:
     void createMatrices();
 
     //initialize using the Least Squares method
-    void initialize(std::function<double(double, double)> inputFunction);
+    void initialize(std::function<double(double, double, double, double)> inputFunction);
 
     void initializeAlpha();
 
@@ -66,15 +66,23 @@ public:
     //compute the density from f
     Vector getMoment(int j, int power);
 
+    Vector getRho(int j);
+
+    Vector getU(int j, int coord);
+
+    Vector getE(int j);
+
     //fit Maxwellian
     Vector fitMaxwellian(Vector rho, Vector u, Vector rt, double vx, int j);
 
     Vector fitMaxwellian(double density, double meanVelocity, double temperature, double vx, int j);
 
+    Vector fitMaxwellian3(double density, double meanVelocity, double temperature, double vx, double vy, double vz, int j);
+
     //compute the density from f
     Vector getDensity(int j);
 
-    Vector fitCX(double density, double meanVelocity, double temperature, Vector rho_n, Vector f_tilde, int k, int j);
+    Vector fitCX(double density, double meanVelocity, double temperature, Vector rho_n, Vector f_tilde, int kx, int ky, int kz, int j);
     
     //fit Maxwellian
     Vector fitMaxwellian(Matrix alpha, double vx, int j);

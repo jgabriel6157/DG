@@ -289,6 +289,12 @@ double SpecialFunctions::computeMaxwellian(double rho, double u, double rt, doub
     return rho*exp(-pow(vx-u,2)/(2.0*vt2))/pow(2.0*M_PI*vt2,0.5);
 }
 
+double SpecialFunctions::computeMaxwellian3(double rho, double u, double rt, double vx, double vy, double vz)
+{
+    double vt2 = rt;
+    return rho*exp(-(pow(vx-u,2)+pow(vy-u,2)+pow(vz-u,2))/(2.0*vt2))/pow(2.0*M_PI*vt2,1.5);
+}
+
 double SpecialFunctions::getF(Matrix uPre, int lMax, std::function<double(int,double)> basisFunction, int j, double x)
 {
     double f = 0;

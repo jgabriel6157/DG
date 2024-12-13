@@ -24,10 +24,10 @@ int assignBC(std::string varString);
 
 int main(int argc, char* argv[])
 {
-    std::string argName[16] = {"jMax","lMax","tMax","quadratureOrder","length","dt","basis","input","slopeLimiter","nout","nvx","maxVX",
+    std::string argName[20] = {"jMax","lMax","tMax","quadratureOrder","length","dt","basis","input","slopeLimiter","nout","nvx","maxVX","nvy","maxVY","nvz","maxVZ",
                                "ionization","cx","bgk","bc"};
-    std::string argString[16];
-    readFile("input.txt",argName,argString,16);
+    std::string argString[20];
+    readFile("input.txt",argName,argString,20);
 
     int jMax = assignInt(argString[0]);
     int lMax = assignInt(argString[1]);
@@ -41,10 +41,14 @@ int main(int argc, char* argv[])
     int nout = assignInt(argString[9]);
     int nvx = assignInt(argString[10]);
     double domainMaxVX = assignDouble(argString[11]);
-    bool ionization = assignBool(argString[12]);
-    bool cx = assignBool(argString[13]);
-    bool bgk = assignBool(argString[14]);
-    int bc = assignBC(argString[15]);
+    int nvy = assignInt(argString[12]);
+    double domainMaxVY = assignDouble(argString[13]);
+    int nvz = assignInt(argString[14]);
+    double domainMaxVZ = assignDouble(argString[15]);
+    bool ionization = assignBool(argString[16]);
+    bool cx = assignBool(argString[17]);
+    bool bgk = assignBool(argString[18]);
+    int bc = assignBC(argString[19]);
 
     FunctionMapper::initializeMap();
     auto basisFunction = FunctionMapper::getFunction<std::function<double(int,double)>>(basis);
@@ -54,7 +58,7 @@ int main(int argc, char* argv[])
     auto inputFunction = functionParser.getFunction();
     
     lMax+=1;
-    Mesh mesh(jMax, nvx, length, domainMaxVX, bc);
+    Mesh mesh(jMax, nvx, nvy, nvz, length, domainMaxVX, domainMaxVY, domainMaxVZ,bc);
     if (nout>tMax)
     {
         std::cout << "Invalid nout (nout > tMax)! nout set equal to tMax" << "\n";
@@ -68,8 +72,14 @@ int main(int argc, char* argv[])
     std::ofstream write_density("Density.csv");
     assert(write_density.is_open());
 
-    std::ofstream write_velocity("Velocity.csv");
-    assert(write_velocity.is_open());
+    std::ofstream write_velocity_x("VelocityX.csv");
+    assert(write_velocity_x.is_open());
+
+    std::ofstream write_velocity_y("VelocityY.csv");
+    assert(write_velocity_y.is_open());
+
+    std::ofstream write_velocity_z("VelocityZ.csv");
+    assert(write_velocity_z.is_open());
 
     std::ofstream write_temperature("Temperature.csv");
     assert(write_temperature.is_open());
@@ -93,29 +103,43 @@ int main(int argc, char* argv[])
     }
     for (int j=0; j<jMax; j++)
     {
-        Vector rho = solver.getMoment(j,0);
-        Vector u = solver.getMoment(j,1);
-        Vector rt = solver.getMoment(j,2);
+        // Vector rho = solver.getMoment(j,0);
+        // Vector u = solver.getMoment(j,1);
+        // Vector rt = solver.getMoment(j,2);
+        Vector rho = solver.getRho(j);
+        Vector ux = solver.getU(j,0);
+        Vector uy = solver.getU(j,1);
+        Vector uz = solver.getU(j,2);
+        Vector rt = solver.getE(j);
         for (int l=0; l<lMax; l++)
         {
             write_density << rho[l] << "\n";
-            write_velocity << u[l] << "\n";
+            write_velocity_x << ux[l] << "\n";
+            write_velocity_y << uy[l] << "\n";
+            write_velocity_z << uz[l] << "\n";
             write_temperature << rt[l] << "\n";
         }
-        for (int k=0; k<nvx; k++)
+        for (int kx=0; kx<nvx; kx++)
         {
-            for (int l=0; l<lMax; l++)
+            for (int ky=0; ky<nvy; ky++)
             {
-                write_output << solver.getSolution(l,k+j*nvx) << "\n";
+                for (int kz=0; kz<nvz; kz++)
+                {
+                    for (int l=0; l<lMax; l++)
+                    {
+                        write_output << solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy) << "\n";
+                    }
+                }
             }
         }
     }
-
-    Vector moments = solver.getMoments();
-    double M0 = moments[0];
-    double U0 = moments[1];
-    double E0 = moments[2];
-    double S0 = moments[3];
+    // Vector moments = solver.getMoments();
+    // double M0 = moments[0];
+    // double UX0 = moments[1];
+    // double UY0 = moments[2];
+    // double UZ0 = moments[3];
+    // double E0 = moments[4];
+    // double S0 = moments[5];
     std::cout << "start" << "\n";
     for (int t=0; t<tMax; t++)
     {
@@ -124,34 +148,51 @@ int main(int argc, char* argv[])
         if ((t+1)%outputTimeStep==0)
         {
             std::cout << "t = " << t << "\n";
-            Vector moments = solver.getMoments();
-            write_moments << (moments[0]-M0)/M0 << "\n";
-            write_moments << (moments[1]-U0)/U0 << "\n";
-            write_moments << (moments[2]-E0)/E0 << "\n";
-            write_moments << (moments[3]-S0)/fabs(S0) << "\n";
-            if (bc==0)
-            {
-                std::cout << (moments[0]-M0)/M0 << "\n";
-                std::cout << (moments[1]-U0)/U0 << "\n";
-                std::cout << (moments[2]-E0)/E0 << "\n";
-                std::cout << (moments[3]-S0)/fabs(S0) << "\n";
-            }
+            // Vector moments = solver.getMoments();
+            // write_moments << (moments[0]-M0)/M0 << "\n";
+            // write_moments << (moments[1]-UX0)/UX0 << "\n";
+            // write_moments << (moments[2]-UY0)/UY0 << "\n";
+            // write_moments << (moments[3]-UZ0)/UZ0 << "\n";
+            // write_moments << (moments[4]-E0)/E0 << "\n";
+            // write_moments << (moments[5]-S0)/fabs(S0) << "\n";
+            // if (bc==0)
+            // {
+            //     std::cout << (moments[0]-M0)/M0 << "\n";
+            //     std::cout << (moments[1]-UX0)/UX0 << "\n";
+            //     std::cout << (moments[2]-UY0)/UY0 << "\n";
+            //     std::cout << (moments[3]-UZ0)/UZ0 << "\n";
+            //     std::cout << (moments[4]-E0)/E0 << "\n";
+            //     std::cout << (moments[5]-S0)/fabs(S0) << "\n";
+            // }
             for (int j=0; j<jMax; j++)
             {
-                Vector rho = solver.getMoment(j,0);
-                Vector u = solver.getMoment(j,1);
-                Vector rt = solver.getMoment(j,2);
+                // Vector rho = solver.getMoment(j,0);
+                // Vector u = solver.getMoment(j,1);
+                // Vector rt = solver.getMoment(j,2);
+                Vector rho = solver.getRho(j);
+                Vector ux = solver.getU(j,0);
+                Vector uy = solver.getU(j,1);
+                Vector uz = solver.getU(j,2);
+                Vector rt = solver.getE(j);
                 for (int l=0; l<lMax; l++)
                 {
                     write_density << rho[l] << "\n";
-                    write_velocity << u[l] << "\n";
+                    write_velocity_x << ux[l] << "\n";
+                    write_velocity_y << uy[l] << "\n";
+                    write_velocity_z << uz[l] << "\n";
                     write_temperature << rt[l] << "\n";
                 }
-                for (int k=0; k<nvx; k++)
+                for (int kx=0; kx<nvx; kx++)
                 {
-                    for (int l=0; l<lMax; l++)
+                    for (int ky=0; ky<nvy; ky++)
                     {
-                        write_output << solver.getSolution(l,k+j*nvx) << "\n";
+                        for (int kz=0; kz<nvz; kz++)
+                        {
+                            for (int l=0; l<lMax; l++)
+                            {
+                                write_output << solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy) << "\n";
+                            }
+                        }
                     }
                 }
             }
@@ -164,7 +205,9 @@ int main(int argc, char* argv[])
 
     write_output.close();
     write_density.close();
-    write_velocity.close();
+    write_velocity_x.close();
+    write_velocity_y.close();
+    write_velocity_z.close();
     write_temperature.close();
     write_moments.close();
 

@@ -2,7 +2,8 @@
 #include <iostream>
 
 //Constructor definition
-Mesh::Mesh(int nx, int nvx, double domainLengthX, double domainMaxVX, int bc) : nx(nx), nvx(nvx), domainLengthX(domainLengthX), domainMaxVX(domainMaxVX), bc(bc)
+Mesh::Mesh(int nx, int nvx, int nvy, int nvz, double domainLengthX, double domainMaxVX, double domainMaxVY, double domainMaxVZ, int bc) : 
+            nx(nx), nvx(nvx), nvy(nvy), nvz(nvz), domainLengthX(domainLengthX), domainMaxVX(domainMaxVX), domainMaxVY(domainMaxVY), domainMaxVZ(domainMaxVZ), bc(bc)
 {
     //Generate cells
     for (int i = 0; i < nx; i++) 
@@ -48,6 +49,8 @@ Mesh::Mesh(int nx, int nvx, double domainLengthX, double domainMaxVX, int bc) : 
     }
     //Calculate velocity difference between discrete velocity points
     dvx = 2.0*domainMaxVX/(nvx-1.0); //Ensures velocity spans [-domainMaxVX, domainMaxVX]
+    dvy = 2.0*domainMaxVY/(nvy-1.0);
+    dvz = 2.0*domainMaxVZ/(nvz-1.0);
 }
 
 //Accessor function definition for cells
@@ -68,12 +71,42 @@ const int& Mesh::getNVX() const
     return nvx;
 }
 
+const int& Mesh::getNVY() const
+{
+    return nvy;
+}
+
+const int& Mesh::getNVZ() const
+{
+    return nvz;
+}
+
 double Mesh::getDVX() const
 {
     return dvx;
 }
 
-double Mesh::getVelocity(int velocityIndex) const
+double Mesh::getDVY() const
+{
+    return dvy;
+}
+
+double Mesh::getDVZ() const
+{
+    return dvz;
+}
+
+double Mesh::getVelocityX(int velocityIndex) const
 {
     return -domainMaxVX + velocityIndex*dvx;
+}
+
+double Mesh::getVelocityY(int velocityIndex) const
+{
+    return -domainMaxVY + velocityIndex*dvy;
+}
+
+double Mesh::getVelocityZ(int velocityIndex) const
+{
+    return -domainMaxVZ + velocityIndex*dvz;
 }

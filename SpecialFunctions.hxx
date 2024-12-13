@@ -39,6 +39,8 @@ public:
     //compute the value of f_eq (Maxwellian) from the moments and vx
     static double computeMaxwellian(double rho, double u, double rt, double vx);
 
+    static double computeMaxwellian3(double rho, double u, double rt, double vx, double vy, double vz);
+
     //compute the reconstructed f(x,t)
     static double getF(Matrix uPre, int lMax, std::function<double(int,double)> basisFunction, int j, double x);
 };

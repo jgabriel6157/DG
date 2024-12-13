@@ -64,7 +64,7 @@ def assignFloat(varString):
     return number
 
 fileNameDensity = 'Density.csv'
-fileNameVelocity = 'Velocity.csv'
+fileNameVelocity = 'VelocityX.csv'
 fileNameTemperature = 'Temperature.csv'
 inputFile = open('input.txt','r')
 
@@ -93,11 +93,11 @@ lMax+=1
 inputFile.close()
 
 fig,ax = plt.subplots()
-# ax.set_yscale('log')
+ax.set_yscale('log')
 lines = [ax.plot([], [], lw=2,color='red')[0] for _ in range(jMax)]
 plt.xlim(0,length)
-# plt.ylim(1e-13,1e1)
-plt.ylim(-0.25,1.25)
+plt.ylim(1e8,1e19)
+# plt.ylim(-0.25,1.25)
 
 valuesDensity = pd.read_csv(fileNameDensity,header=None)
 valuesDensity = valuesDensity[0].to_numpy()
@@ -138,7 +138,7 @@ def generate_data(t,j):
             temperature += rt[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
         velocity/=density
         temperature = (temperature-density*velocity**2)/density
-        y[i] = velocity
+        y[i] = density*1e18
     return x,y
 
 x = np.zeros((jMax,10))
