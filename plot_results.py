@@ -98,6 +98,7 @@ lines = [ax.plot([], [], lw=2,color='red')[0] for _ in range(jMax)]
 plt.xlim(0,length)
 plt.ylim(1e8,1e19)
 # plt.ylim(-0.25,1.25)
+# plt.ylim(0,40)
 
 valuesDensity = pd.read_csv(fileNameDensity,header=None)
 valuesDensity = valuesDensity[0].to_numpy()
@@ -137,7 +138,7 @@ def generate_data(t,j):
             velocity += rhou[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
             temperature += rt[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
         velocity/=density
-        temperature = (temperature-density*velocity**2)/density
+        temperature = (temperature-density*velocity**2)/(3*density)
         y[i] = density*1e18
     return x,y
 

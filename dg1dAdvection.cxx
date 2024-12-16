@@ -119,19 +119,19 @@ int main(int argc, char* argv[])
             write_velocity_z << uz[l] << "\n";
             write_temperature << rt[l] << "\n";
         }
-        for (int kx=0; kx<nvx; kx++)
-        {
-            for (int ky=0; ky<nvy; ky++)
-            {
-                for (int kz=0; kz<nvz; kz++)
-                {
-                    for (int l=0; l<lMax; l++)
-                    {
-                        write_output << solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy) << "\n";
-                    }
-                }
-            }
-        }
+        // for (int kx=0; kx<nvx; kx++)
+        // {
+        //     for (int ky=0; ky<nvy; ky++)
+        //     {
+        //         for (int kz=0; kz<nvz; kz++)
+        //         {
+        //             for (int l=0; l<lMax; l++)
+        //             {
+        //                 write_output << solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy) << "\n";
+        //             }
+        //         }
+        //     }
+        // }
     }
     // Vector moments = solver.getMoments();
     // double M0 = moments[0];
@@ -182,19 +182,19 @@ int main(int argc, char* argv[])
                     write_velocity_z << uz[l] << "\n";
                     write_temperature << rt[l] << "\n";
                 }
-                for (int kx=0; kx<nvx; kx++)
-                {
-                    for (int ky=0; ky<nvy; ky++)
-                    {
-                        for (int kz=0; kz<nvz; kz++)
-                        {
-                            for (int l=0; l<lMax; l++)
-                            {
-                                write_output << solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy) << "\n";
-                            }
-                        }
-                    }
-                }
+                // for (int kx=0; kx<nvx; kx++)
+                // {
+                //     for (int ky=0; ky<nvy; ky++)
+                //     {
+                //         for (int kz=0; kz<nvz; kz++)
+                //         {
+                //             for (int l=0; l<lMax; l++)
+                //             {
+                //                 write_output << solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy) << "\n";
+                //             }
+                //         }
+                //     }
+                // }
             }
         }
     }

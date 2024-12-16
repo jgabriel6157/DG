@@ -225,13 +225,15 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     double X = 0.232;
     double K = 0.39;
     double U = 13.6/20.0;
-    double sigma_iz = A*(1+P*sqrt(U))*pow(U,K)*exp(-U)/(X+U);
+    // double sigma_iz = A*(1+P*sqrt(U))*pow(U,K)*exp(-U)/(X+U);
+    double sigma_iz = 2.147e-14;
 
     sigma_iz *= 1e18;
     sigma_iz /= 9822.766369779;
     
     double ne = 5.0;
-    double Crec = 4.98;
+    // double Crec = 4.98;
+    double Crec = 8e3;
     double cs = sqrt(20.0);
 
     double nu_cx = (2.2e-14)*(1e18)/(9822.766369779);
@@ -334,6 +336,9 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 {
                     double vz = mesh.getVelocityZ(kz);
 
+                    int k_index = kz+ky*nvz+kx*nvz*nvy;
+                    int index = k_index+j*nvz*nvy*nvx;
+
                     // calculate Ghost cells
                     // Vector fL = fitMaxwellian(Crec, cs, 2.0, vx, j);
                     // Vector fR = fitMaxwellian(Crec, -cs, 2.0, vx, j);
@@ -345,15 +350,15 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                     {
                         if (bc==1)
                         {
-                            uBefore(l,kz+ky*nvz+kx*nvz*nvy+nx*nvz*nvy*nvx) = fL[l];
-                            uBefore(l,kz+ky*nvz+kx*nvz*nvy+(nx+1)*nvz*nvy*nvx) = fR[l];
+                            uBefore(l,k_index+nx*nvz*nvy*nvx) = fL[l];
+                            uBefore(l,k_index+(nx+1)*nvz*nvy*nvx) = fR[l];
                         }
                         else if (bc==2)
                         {
-                            uBefore(l,kz+ky*nvz+kx*nvz*nvy+nx*nvz*nvy*nvx) = uBefore(l,kz+ky*nvz+kx*nvz*nvy+0*nvz*nvy*nvx); //Left BC
-                            uBefore(l,kz+ky*nvz+kx*nvz*nvy+(nx+1)*nvz*nvy*nvx) = uBefore(l,kz+ky*nvz+kx*nvz*nvy+(nx-1)*nvz*nvy*nvx); //Right BC
+                            uBefore(l,k_index+nx*nvz*nvy*nvx) = uBefore(l,k_index+0*nvz*nvy*nvx); //Left BC
+                            uBefore(l,k_index+(nx+1)*nvz*nvy*nvx) = uBefore(l,k_index+(nx-1)*nvz*nvy*nvx); //Right BC
                         }
-                        f_tilde[l] = uBefore(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx);
+                        f_tilde[l] = uBefore(l,index);
                     }
 
                     Vector fCX(lMax);
@@ -364,35 +369,35 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
 
                     for (int l=0; l<lMax; l++)
                     {
-                        uAfter(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx)=0;
+                        uAfter(l,index)=0;
                         for (int i=0; i<lMax; i++)
                         {
-                            uAfter(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx)+=M_invS(l,i)*uBefore(i,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx);
-                            uAfter(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx)-=fluxFactorMinus*M_invF1Minus(l,i)*uBefore(i,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx);
-                            uAfter(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx)+=fluxFactorMinus*M_invF0Minus(l,i)*uBefore(i,kz+ky*nvz+kx*nvz*nvy+leftNeighborIndex*nvz*nvy*nvx);
-                            uAfter(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx)-=fluxFactorPlus*M_invF1Plus(l,i)*uBefore(i,kz+ky*nvz+kx*nvz*nvy+rightNeighborIndex*nvz*nvy*nvx);
-                            uAfter(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx)+=fluxFactorPlus*M_invF0Plus(l,i)*uBefore(i,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx);
+                            uAfter(l,index)+=M_invS(l,i)*uBefore(i,index);
+                            uAfter(l,index)-=fluxFactorMinus*M_invF1Minus(l,i)*uBefore(i,index);
+                            uAfter(l,index)+=fluxFactorMinus*M_invF0Minus(l,i)*uBefore(i,k_index+leftNeighborIndex*nvz*nvy*nvx);
+                            uAfter(l,index)-=fluxFactorPlus*M_invF1Plus(l,i)*uBefore(i,k_index+rightNeighborIndex*nvz*nvy*nvx);
+                            uAfter(l,index)+=fluxFactorPlus*M_invF0Plus(l,i)*uBefore(i,index);
                         }
-                        uAfter(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx)*=vx;
-                        uAfter(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx)/=dx;
+                        uAfter(l,index)*=vx;
+                        uAfter(l,index)/=dx;
                         if (ionization)
                         {
-                            uAfter(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx)-=ne*uBefore(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx)*sigma_iz; //This line for ionization
+                            uAfter(l,index)-=ne*uBefore(l,index)*sigma_iz; //This line for ionization
                         }
                         if (cx)
                         {
-                            uAfter(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx)-=nu_cx*fCX[l]; //This line for CX
+                            uAfter(l,index)-=nu_cx*fCX[l]; //This line for CX
                         }
                         if (bgk)
                         {
                             // uAfter(l,k+j*nvx)+=nu*M_invDiag[l]*GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights)/2.0; //BGK
                             // uAfter(l,k+j*nvx)-=nu*uBefore(l,k+j*nvx); //BGK
                         }
-                        uAfter(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx)*=dt;
-                        uAfter(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx)+=uBefore(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx);
+                        uAfter(l,index)*=dt;
+                        uAfter(l,index)+=uBefore(l,index);
                         
-                        uAfter(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx)*=timesFactor;
-                        uAfter(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx)+=plusFactor*uPre(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx); //Note that uPre != uBefore
+                        uAfter(l,index)*=timesFactor;
+                        uAfter(l,index)+=plusFactor*uPre(l,index); //Note that uPre != uBefore
                     }
                 }
             }
