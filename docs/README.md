@@ -1,4 +1,0 @@
-Guernica manuel
-===============
-
-Test
