@@ -32,6 +32,7 @@ private:
     Matrix uPre;
     Matrix uIntermediate;
     Matrix uPost;
+    Matrix fSource;
 
     void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor);
 
@@ -48,6 +49,8 @@ public:
 
     //initialize using the Least Squares method
     void initialize(std::function<double(double, double, double, double)> inputFunction);
+
+    void initializeSource();
 
     void initializeAlpha();
 
@@ -77,7 +80,7 @@ public:
 
     Vector fitMaxwellian(double density, double meanVelocity, double temperature, double vx, int j);
 
-    Vector fitMaxwellian3(double density, double meanVelocity, double temperature, double vx, double vy, double vz, int j);
+    Vector fitMaxwellian3(double density, double meanVelocity, double temperature, double vx, double vy, double vz);
 
     //compute the density from f
     Vector getDensity(int j);

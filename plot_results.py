@@ -64,7 +64,9 @@ def assignFloat(varString):
     return number
 
 fileNameDensity = 'Density.csv'
-fileNameVelocity = 'VelocityX.csv'
+fileNameVelocityX = 'VelocityX.csv'
+fileNameVelocityY = 'VelocityY.csv'
+fileNameVelocityZ = 'VelocityZ.csv'
 fileNameTemperature = 'Temperature.csv'
 inputFile = open('input.txt','r')
 
@@ -93,29 +95,37 @@ lMax+=1
 inputFile.close()
 
 fig,ax = plt.subplots()
-ax.set_yscale('log')
+# ax.set_yscale('log')
 lines = [ax.plot([], [], lw=2,color='red')[0] for _ in range(jMax)]
 plt.xlim(0,length)
-plt.ylim(1e8,1e19)
+# plt.ylim(1e12,2e19)
 # plt.ylim(-0.25,1.25)
-# plt.ylim(0,40)
+plt.ylim(7,19)
 
 valuesDensity = pd.read_csv(fileNameDensity,header=None)
 valuesDensity = valuesDensity[0].to_numpy()
-valuesVelocity = pd.read_csv(fileNameVelocity,header=None)
-valuesVelocity = valuesVelocity[0].to_numpy()
+valuesVelocityX = pd.read_csv(fileNameVelocityX,header=None)
+valuesVelocityX = valuesVelocityX[0].to_numpy()
+valuesVelocityY = pd.read_csv(fileNameVelocityY,header=None)
+valuesVelocityY = valuesVelocityY[0].to_numpy()
+valuesVelocityZ = pd.read_csv(fileNameVelocityZ,header=None)
+valuesVelocityZ = valuesVelocityZ[0].to_numpy()
 valuesTemperature = pd.read_csv(fileNameTemperature,header=None)
 valuesTemperature = valuesTemperature[0].to_numpy()
 k = 0
 dx = length/jMax
 rho = np.zeros((lMax,jMax,nout))
-rhou = np.zeros((lMax,jMax,nout))
+rhouX = np.zeros((lMax,jMax,nout))
+rhouY = np.zeros((lMax,jMax,nout))
+rhouZ = np.zeros((lMax,jMax,nout))
 rt = np.zeros((lMax,jMax,nout))
 for t in range(nout):
     for j in range(jMax):
         for l in range(lMax):
             rho[l][j][t] = valuesDensity[k]
-            rhou[l][j][t] = valuesVelocity[k]
+            rhouX[l][j][t] = valuesVelocityX[k]
+            rhouY[l][j][t] = valuesVelocityY[k]
+            rhouZ[l][j][t] = valuesVelocityZ[k]
             rt[l][j][t] = valuesTemperature[k]
             k=k+1
 
@@ -131,15 +141,22 @@ def generate_data(t,j):
     for i in range(10):
         x[i] = j*dx+i*dx/9.0
         density = 0
-        velocity = 0
+        velocityX = 0
+        velocityY = 0
+        velocityZ = 0
         temperature = 0
         for l in range(lMax):
             density += rho[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
-            velocity += rhou[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
+            velocityX += rhouX[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
+            velocityY += rhouY[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
+            velocityZ += rhouZ[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
             temperature += rt[l][j][t]*getFunction(basis,l,(2/dx)*(x[i]-(j*dx+dx/2)))
-        velocity/=density
-        temperature = (temperature-density*velocity**2)/(3*density)
-        y[i] = density*1e18
+        velocityX/=density
+        velocityY/=density
+        velocityZ/=density
+        temperature = (temperature-density*(velocityX**2+velocityY**2+velocityZ**2))/(3*density)
+        # y[i] = density*1e18
+        y[i] = temperature
     return x,y
 
 x = np.zeros((jMax,10))

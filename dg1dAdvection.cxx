@@ -94,8 +94,11 @@ int main(int argc, char* argv[])
     solver.createMatrices();
 
     solver.initialize(inputFunction);
-
     std::cout << "initialization complete" << "\n";
+
+    solver.initializeSource();
+    std::cout << "Source initialization complete" << "\n";
+    
     if (bgk)
     {
         solver.initializeAlpha();
@@ -198,6 +201,23 @@ int main(int argc, char* argv[])
             }
         }
     }
+
+for (int j=0; j<jMax; j++)
+{
+    for (int kx=0; kx<nvx; kx++)
+    {
+        for (int ky=0; ky<nvy; ky++)
+        {
+            for (int kz=0; kz<nvz; kz++)
+            {
+                for (int l=0; l<lMax; l++)
+                {
+                    write_output << solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy) << "\n";
+                }
+            }
+        }
+    }
+}
 
     auto stop = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration<double>(stop-start);
