@@ -52,6 +52,8 @@ public:
     //initialize using the Least Squares method
     void initialize(std::function<double(double, double, double, double)> inputFunction);
 
+    void resume(std::function<double(double, double, double, double)> inputFunction, double* values);
+
     void initializeSource();
 
     void initializeIons();

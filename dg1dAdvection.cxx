@@ -17,6 +17,7 @@
 #include "muParser.h"
 
 void readFile(std::string filename, std::string argName[], std::string argString[], int numberOfVariables);
+void readOutput(std::string filename, double* values);
 int assignInt(std::string varString);
 double assignDouble(std::string varString);
 bool assignBool(std::string varString);
@@ -24,10 +25,10 @@ int assignBC(std::string varString);
 
 int main(int argc, char* argv[])
 {
-    std::string argName[20] = {"jMax","lMax","tMax","quadratureOrder","length","dt","basis","input","slopeLimiter","nout","nvx","maxVX","nvy","maxVY","nvz","maxVZ",
-                               "ionization","cx","bgk","bc"};
-    std::string argString[20];
-    readFile("input.txt",argName,argString,20);
+    std::string argName[21] = {"jMax","lMax","tMax","quadratureOrder","length","dt","basis","input","slopeLimiter","nout","nvx","maxVX","nvy","maxVY","nvz","maxVZ",
+                               "ionization","cx","bgk","bc","resume"};
+    std::string argString[21];
+    readFile("input.txt",argName,argString,21);
 
     int jMax = assignInt(argString[0]);
     int lMax = assignInt(argString[1]);
@@ -49,6 +50,7 @@ int main(int argc, char* argv[])
     bool cx = assignBool(argString[17]);
     bool bgk = assignBool(argString[18]);
     int bc = assignBC(argString[19]);
+    bool resume = assignBool(argString[20]);
 
     FunctionMapper::initializeMap();
     auto basisFunction = FunctionMapper::getFunction<std::function<double(int,double)>>(basis);
@@ -65,26 +67,48 @@ int main(int argc, char* argv[])
         nout = tMax;
     }
     int outputTimeStep = tMax/nout;
-    
-    std::ofstream write_output("Output.csv");
+
+    double* flattenedOutput = new double [jMax*nvx*nvy*nvz*lMax];  
+    if (resume)
+    {
+        readOutput("lastOutput.csv",flattenedOutput);
+    }
+
+
+    std::ofstream write_output;
+    std::ofstream write_density;
+    std::ofstream write_velocity_x;
+    std::ofstream write_velocity_y;
+    std::ofstream write_velocity_z;
+    std::ofstream write_temperature;
+    std::ofstream write_moments;
+    if (resume)
+    {
+        write_output.open("Output.csv", std::ios::app);
+        write_density.open("Density.csv", std::ios::app);
+        write_velocity_x.open("VelocityX.csv", std::ios::app);
+        write_velocity_y.open("VelocityY.csv", std::ios::app);
+        write_velocity_z.open("VelocityZ.csv", std::ios::app);
+        write_temperature.open("Temperature.csv", std::ios::app);
+        write_moments.open("Moments.csv", std::ios::app);
+    }
+    else
+    {
+        write_output.open("Output.csv");
+        write_density.open("Density.csv");
+        write_velocity_x.open("VelocityX.csv");
+        write_velocity_y.open("VelocityY.csv");
+        write_velocity_z.open("VelocityZ.csv");
+        write_temperature.open("Temperature.csv");
+        write_moments.open("Moments.csv");
+    }
+
     assert(write_output.is_open());
-
-    std::ofstream write_density("Density.csv");
     assert(write_density.is_open());
-
-    std::ofstream write_velocity_x("VelocityX.csv");
     assert(write_velocity_x.is_open());
-
-    std::ofstream write_velocity_y("VelocityY.csv");
     assert(write_velocity_y.is_open());
-
-    std::ofstream write_velocity_z("VelocityZ.csv");
     assert(write_velocity_z.is_open());
-
-    std::ofstream write_temperature("Temperature.csv");
     assert(write_temperature.is_open());
-
-    std::ofstream write_moments("Moments.csv");
     assert(write_moments.is_open());
 
     auto start = std::chrono::high_resolution_clock::now();
@@ -92,8 +116,15 @@ int main(int argc, char* argv[])
     Solver solver(mesh, dt, lMax, basisFunction, quadratureOrder, ionization, cx, bgk, bc);
 
     solver.createMatrices();
-
-    solver.initialize(inputFunction);
+    if (resume)
+    {
+        solver.resume(inputFunction, flattenedOutput);
+        delete[] flattenedOutput;
+    }
+    else
+    {
+        solver.initialize(inputFunction);
+    }
     std::cout << "initialization complete" << "\n";
 
     solver.initializeSource();
@@ -109,9 +140,6 @@ int main(int argc, char* argv[])
     }
     for (int j=0; j<jMax; j++)
     {
-        // Vector rho = solver.getMoment(j,0);
-        // Vector u = solver.getMoment(j,1);
-        // Vector rt = solver.getMoment(j,2);
         Vector rho = solver.getRho(j);
         Vector ux = solver.getU(j,0);
         Vector uy = solver.getU(j,1);
@@ -147,13 +175,14 @@ int main(int argc, char* argv[])
     // double E0 = moments[4];
     // double S0 = moments[5];
     std::cout << "start" << "\n";
+    auto startLoop = std::chrono::high_resolution_clock::now();
+    double lastTime = 0;
     for (int t=0; t<tMax; t++)
     {
         solver.advance();
 
         if ((t+1)%outputTimeStep==0)
         {
-            std::cout << "t = " << t << "\n";
             // Vector moments = solver.getMoments();
             // write_moments << (moments[0]-M0)/M0 << "\n";
             // write_moments << (moments[1]-UX0)/UX0 << "\n";
@@ -172,9 +201,6 @@ int main(int argc, char* argv[])
             // }
             for (int j=0; j<jMax; j++)
             {
-                // Vector rho = solver.getMoment(j,0);
-                // Vector u = solver.getMoment(j,1);
-                // Vector rt = solver.getMoment(j,2);
                 Vector rho = solver.getRho(j);
                 Vector ux = solver.getU(j,0);
                 Vector uy = solver.getU(j,1);
@@ -202,30 +228,40 @@ int main(int argc, char* argv[])
                 //     }
                 // }
             }
+            auto stopLoop = std::chrono::high_resolution_clock::now();
+            auto durationLoop = std::chrono::duration<double>(stopLoop-startLoop);
+            double timePerIter = (durationLoop.count()-lastTime)/outputTimeStep;
+            lastTime = durationLoop.count();
+            std::cout << "t = " << t << "\n";
+            std::cout << "ETA: " << timePerIter*(tMax-t) << " s\n"; 
         }
     }
 
-    // for (int j=0; j<jMax; j++)
-    // {
-    //     for (int kx=0; kx<nvx; kx++)
-    //     {
-    //         for (int ky=0; ky<nvy; ky++)
-    //         {
-    //             for (int kz=0; kz<nvz; kz++)
-    //             {
-    //                 for (int l=0; l<lMax; l++)
-    //                 {
-    //                     write_output << solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx) << "\n";
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
+    std::ofstream write_lastOutput;
+    write_lastOutput.open("lastOutput.csv");
+    assert(write_lastOutput.is_open());
+    for (int j=0; j<jMax; j++)
+    {
+        for (int kx=0; kx<nvx; kx++)
+        {
+            for (int ky=0; ky<nvy; ky++)
+            {
+                for (int kz=0; kz<nvz; kz++)
+                {
+                    for (int l=0; l<lMax; l++)
+                    {
+                        write_lastOutput << solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx) << "\n";
+                    }
+                }
+            }
+        }
+    }
 
     auto stop = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration<double>(stop-start);
     std::cout << duration.count() << " s" << "\n";
 
+    write_lastOutput.close();
     write_output.close();
     write_density.close();
     write_velocity_x.close();
@@ -256,6 +292,20 @@ void readFile(std::string filename, std::string argName[], std::string argString
         }
     } 
 
+    inputFile.close();
+}
+
+void readOutput(std::string filename, double* values)
+{
+    std::ifstream inputFile(filename);
+    assert(inputFile.is_open());
+    double value;
+    int i=0;
+    while (inputFile >> value)
+    {
+        values[i] = value;
+        i++;
+    }
     inputFile.close();
 }
 

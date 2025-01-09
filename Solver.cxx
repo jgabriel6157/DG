@@ -185,6 +185,85 @@ void Solver::initialize(std::function<double(double, double, double, double)> in
     }
 }
 
+void Solver::resume(std::function<double(double, double, double, double)> inputFunction, double* values)
+{
+    const auto& cells = mesh.getCells();
+
+    double nx = mesh.getNX();
+    double nvx = mesh.getNVX();
+    double nvy = mesh.getNVY();
+    double nvz = mesh.getNVZ();
+    int m = 0;
+    for (int j=0; j<nx; j++)
+    {
+        for (int kx=0; kx<nvx; kx++)
+        {
+            for (int ky=0; ky<nvy; ky++)
+            {
+                for (int kz=0; kz<nvz; kz++)
+                {
+                    for (int l=0; l<lMax; l++)
+                    {
+                        uPre(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx) = values[m];
+                        m++;
+                    }
+                }
+            }
+        }
+    }
+
+    double Crec = 21.60593301338712;
+    double cs = sqrt(30.0);
+    double Tn = 10.0;
+    for (int kx=0; kx<nvx; kx++)
+    {
+        double vx = mesh.getVelocityX(kx);
+        for (int ky = 0; ky<nvy; ky++)
+        {
+            double vy = mesh.getVelocityY(ky);
+            for (int kz = 0; kz<nvz; kz++)
+            {
+                double vz = mesh.getVelocityZ(kz);
+                Vector uInitialize(lMax);
+                Vector uInitialize2(lMax);
+                
+                double xNorm;
+                Vector y(10);
+                Matrix bigX(10,lMax);
+                Vector y2(10);
+
+                for (int i=0; i<10; i++)
+                {
+                    // x = leftVertex+i*dx/9.0;
+                    xNorm = i/9.0;
+                    // y[i] = SpecialFunctions::computeMaxwellian3(Crec,cs,Tn,vx,vy,vz);
+                    // y2[i] = SpecialFunctions::computeMaxwellian3(Crec,-cs,Tn,vx,vy,vz);
+                    y[i] = SpecialFunctions::computeMaxwellian3(Crec,0,0,0,Tn,vx,vy,vz);
+                    y2[i] = SpecialFunctions::computeMaxwellian3(Crec,-0,0,0,Tn,vx,vy,vz);
+                    for (int l=0; l<lMax; l++)
+                    {
+                        // bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
+                        bigX(i,l) = basisFunction(l,2.0*(xNorm-0.5));
+                    }
+                }
+
+                uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
+                uInitialize2 = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y2;
+
+                for (int l=0; l<lMax; l++)
+                {
+                    uPre(l,kz+ky*nvz+kx*nvz*nvy+nx*nvz*nvy*nvx) = uInitialize[l];
+                    uPre(l,kz+ky*nvz+kx*nvz*nvy+(nx+1)*nvz*nvy*nvx) = uInitialize2[l];
+                    uIntermediate(l,kz+ky*nvz+kx*nvz*nvy+nx*nvz*nvy*nvx) = uInitialize[l];
+                    uIntermediate(l,kz+ky*nvz+kx*nvz*nvy+(nx+1)*nvz*nvy*nvx) = uInitialize2[l];
+                    uPost(l,kz+ky*nvz+kx*nvz*nvy+nx*nvz*nvy*nvx) = uInitialize[l];
+                    uPost(l,kz+ky*nvz+kx*nvz*nvy+(nx+1)*nvz*nvy*nvx) = uInitialize2[l];
+                }
+            }
+        }
+    }
+}
+
 void Solver::initializeSource()
 {
     int nvx = mesh.getNVX();
