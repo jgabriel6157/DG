@@ -25,6 +25,7 @@ private:
     Matrix alphaDomain;
     Vector M_invDiag;
     Matrix M_invS;
+    Matrix M_invT;
     Matrix M_invF1Minus;
     Matrix M_invF0Minus;
     Matrix M_invF1Plus;
@@ -33,6 +34,7 @@ private:
     Matrix uIntermediate;
     Matrix uPost;
     Matrix fSource;
+    Matrix fi;
 
     void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor);
 
@@ -51,6 +53,8 @@ public:
     void initialize(std::function<double(double, double, double, double)> inputFunction);
 
     void initializeSource();
+
+    void initializeIons();
 
     void initializeAlpha();
 
@@ -80,12 +84,14 @@ public:
 
     Vector fitMaxwellian(double density, double meanVelocity, double temperature, double vx, int j);
 
-    Vector fitMaxwellian3(double density, double meanVelocity, double temperature, double vx, double vy, double vz);
+    Vector fitMaxwellian3(double density, double meanVelocityX, double meanVelocityY, double meanVelocityZ, double temperature, double vx, double vy, double vz);
 
     //compute the density from f
     Vector getDensity(int j);
 
-    Vector fitCX(double density, double meanVelocity, double temperature, Vector rho_n, Vector f_tilde, int kx, int ky, int kz, int j);
+    Vector fitCX(double density_i, double meanVelocity_i, double temperature_i, Vector rho_n, Vector f_tilde, int kx, int ky, int kz, int j);
+
+    Vector fitCX(double density_i, double meanVelocity_i, double temperature_i, Vector f_tilde, Vector fnCXavg, double vx, double vy, double vz, int j);
     
     //fit Maxwellian
     Vector fitMaxwellian(Matrix alpha, double vx, int j);

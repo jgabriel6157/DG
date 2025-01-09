@@ -226,6 +226,41 @@ Matrix NewtonCotes::integrateMoments(Matrix M, int lMax)
     return integral;
 }
 
+Vector NewtonCotes::integrate3fnCXavg(Matrix M, int lMax, double Ti)
+{
+    double dvx = mesh.getDVX();
+    int nvx = mesh.getNVX();
+    double dvy = mesh.getDVY();
+    int nvy = mesh.getNVY();
+    double dvz = mesh.getDVZ();
+    int nvz = mesh.getNVZ();
+    Vector weightsX = computeWeights(nvx);
+    Vector weightsY = computeWeights(nvy);
+    Vector weightsZ = computeWeights(nvz);
+
+    Vector integral(lMax);
+    for (int l=0; l<lMax; l++)
+    {
+        for (int kx=0; kx<nvx; kx++)
+        {
+            double vx = mesh.getVelocityX(kx);
+            for (int ky=0; ky<nvy; ky++)
+            {
+                double vy = mesh.getVelocityY(ky);
+                for (int kz=0; kz<nvz; kz++)
+                {
+                    double vz = mesh.getVelocityZ(kz);
+                    double E = 0.5*(vx*vx+vy*vy+vz*vz)*(1.66054e-27)/(1.6022e-19); //Convert to correct units for computeSigmav
+                    double sigmavg = SpecialFunctions::computeSigmav(Ti,E)*(1e18)/(9822.766369779);
+                    integral[l] += weightsX[kx]*weightsY[ky]*weightsZ[kz]*M(l,kz+ky*nvz+kx*nvz*nvy)*sigmavg;
+                }
+            }
+        }
+        integral[l] *= dvx*dvy*dvz/27.0;
+    }
+    return integral;
+} 
+
 double NewtonCotes::integrate(Matrix f, int lMax, std::function<double(int,double)> basisFunction, double x)
 {
     double dvx = mesh.getDVX();

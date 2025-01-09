@@ -20,6 +20,8 @@ public:
     Vector integrate3v2f(Matrix M, int lMax);
     Matrix integrateMoments(Matrix M, int lMax);
 
+    Vector integrate3fnCXavg(Matrix M, int lMax, double Ti);
+
     double integrate(Matrix f, int lMax, std::function<double(int,double)> basisFunction, double x);
 
     double integrate(Matrix alpha, std::function<double(int,double)> basisFunction, int power, double x, int lMax);

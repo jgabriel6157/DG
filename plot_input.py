@@ -87,6 +87,10 @@ while True:
         nout = int(inputParam[inputParam.index('=')+2:-1])
     elif inputParam[0:3]=='nvx':
         nvx = int(inputParam[inputParam.index('=')+2:-1])
+    elif inputParam[0:3]=='nvy':
+        nvy = int(inputParam[inputParam.index('=')+2:-1])
+    elif inputParam[0:3]=='nvz':
+        nvz = int(inputParam[inputParam.index('=')+2:-1])
     elif inputParam[0:5]=='maxVX':
         domainMaxVX = assignFloat(inputParam[inputParam.index('=')+2:-1])
     if not inputParam:
@@ -99,22 +103,24 @@ values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
 # valuesSol = pd.read_csv(fileNameSol,header=None)
 # valuesSol = valuesSol[0].to_numpy()
-m = 0*100
+m = 10*10009776
 dx = length/jMax
 dvx = 2*domainMaxVX/(nvx-1)
 # dvx = 1.0/nvx
-u = np.zeros((lMax,jMax,nvx))
+u = np.zeros((lMax,jMax,nvx,nvy,nvz))
 # uSol = np.zeros((lMax,jMax,nvx))
 
 fig = plt.figure()
 ax = fig.add_subplot(projection='3d')
 
 for j in range(jMax):
-    for k in range(nvx):
-        for lx in range(lMax):
-            u[lx,j,k] = values[m]
-            # uSol[lx,j,k] = valuesSol[m]
-            m = m+1
+    for kx in range(nvx):
+        for ky in range(nvy):
+            for kz in range(nvz):
+                for lx in range(lMax):
+                    u[lx,j,kx,ky,kz] = values[m]
+                    # uSol[lx,j,k] = valuesSol[m]
+                    m = m+1
 print(m)
 
 # vx = 0
@@ -136,11 +142,13 @@ print(m)
 # quadPoints, quadWeights = np.polynomial.legendre.leggauss(nQuad)
 
 res = 10
+vz = 16
+vy = 16
 for vx in range(nvx):
     # sumNum = 0
     # sumDem = 0
-    for j in range(jMax):
-    # for j in [60,61,62,63,64]:
+    # for j in range(jMax):
+    for j in [0,1,2]:
         xj = j*dx+dx/2
         y = np.zeros(res)
         x = np.zeros(res)
@@ -148,7 +156,7 @@ for vx in range(nvx):
         for i in range(res):
             x[i] = j*dx+i*dx/(res-1)
             for l in range(lMax):
-                y[i] += u[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
+                y[i] += u[l][j][vx][vy][vz]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
                 # sol[i] += uSol[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
 
         y_offset = -domainMaxVX + vx*dvx
