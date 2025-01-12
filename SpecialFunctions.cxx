@@ -364,3 +364,31 @@ double SpecialFunctions::computeSigmav(double T, double E)
 
     return exp(result)*1e-6;
 }
+
+double SpecialFunctions::computeSigma(double E)
+{
+    //Janev-Smith 1993 Pg.78
+    double E_min = 0.1;
+    double E_max = 1e4;
+    double A1 = 3.2345;
+    double A2 = 235.88;
+    double A3 = 0.038371;
+    double A4 = 3.8068e-6;
+    double A5 = 1.1832e-10;
+    double A6 = 2.3713;
+
+    E = std::max(E,E_min);
+    E = std::min(E,E_max);
+
+    return ((1e-16)*A1*log(A2/E+A6)/(1+(A3*E)+(A4*pow(E,3.5))+(A5*pow(E,5.4))))*(1e-4); //returns sigma in units of m^2
+
+    //Krstic and Shchultz 1998 Pg.78
+    // double E_min = 0.1;
+    // double E_max = 100;
+    // double a0 = 0.160892e3;
+    // double a1 = -0.156336e2;
+    // double b1 = 0.108112e-1;
+
+    // return ((a0+a1*log(E))/(1+b1*log(E)))*2.80028e-17*1e-4; //returns sigma in units of m^2
+
+}

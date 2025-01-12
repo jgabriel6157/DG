@@ -63,11 +63,11 @@ def assignFloat(varString):
         
     return number
 
-fileNameDensity = 'Density.csv'
-fileNameVelocityX = 'VelocityX.csv'
-fileNameVelocityY = 'VelocityY.csv'
-fileNameVelocityZ = 'VelocityZ.csv'
-fileNameTemperature = 'Temperature.csv'
+fileNameDensity = 'DensityCXapprox.csv'
+fileNameVelocityX = 'VelocityXCXapprox.csv'
+fileNameVelocityY = 'VelocityYCXapprox.csv'
+fileNameVelocityZ = 'VelocityZCXapprox.csv'
+fileNameTemperature = 'TemperatureCXapprox.csv'
 inputFile = open('input.txt','r')
 
 while True:
@@ -98,9 +98,9 @@ fig,ax = plt.subplots()
 # ax.set_yscale('log')
 lines = [ax.plot([], [], lw=2,color='red')[0] for _ in range(jMax)]
 plt.xlim(0,length)
-# plt.ylim(1e12,2e19)
+# plt.ylim(5e13,2e19)
 # plt.ylim(-0.25,1.25)
-plt.ylim(6,20)
+plt.ylim(28,70)
 
 valuesDensity = pd.read_csv(fileNameDensity,header=None)
 valuesDensity = valuesDensity[0].to_numpy()

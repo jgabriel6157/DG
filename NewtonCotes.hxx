@@ -21,6 +21,7 @@ public:
     Matrix integrateMoments(Matrix M, int lMax);
 
     Vector integrate3fnCXavg(Matrix M, int lMax, double Ti);
+    Vector integrate3fnCX(Matrix M, int lMax, double vx, double vy, double vz);
 
     double integrate(Matrix f, int lMax, std::function<double(int,double)> basisFunction, double x);
 

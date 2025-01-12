@@ -45,6 +45,7 @@ public:
     static double getF(Matrix uPre, int lMax, std::function<double(int,double)> basisFunction, int j, double x);
 
     static double computeSigmav(double T, double E);
+    static double computeSigma(double E);
 };
 
 

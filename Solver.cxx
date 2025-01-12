@@ -489,7 +489,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     #pragma omp parallel for schedule(dynamic)
     for (int j=0; j<nx; j++)
     {
-        // std::cout << j << "\n";
+        std::cout << j << "\n";
         int leftNeighborIndex = cells[j].neighbors[0];
         int rightNeighborIndex = cells[j].neighbors[1];
         double dx = cells[j].dx;
@@ -564,7 +564,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
         Vector fnCXavg(lMax);
         if (cx)
         {
-            fnCXavg = integrator.integrate3fnCXavg(fj,lMax,Ti);
+            // fnCXavg = integrator.integrate3fnCXavg(fj,lMax,Ti);
         }
 
         for (int kx=0; kx<nvx; kx++)
@@ -593,7 +593,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                     //     fL = fitMaxwellian3(Crec, cs, 10.0, vx, vy, vz);
                     //     fR = fitMaxwellian3(Crec, -cs, 10.0, vx, vy, vz);
                     // }
-                    Vector f_tilde(lMax);
+                    // Vector f_tilde(lMax);
                     for (int l=0; l<lMax; l++)
                     {
                         if (bc==1)
@@ -606,14 +606,21 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                             uBefore(l,k_index+nx*nvz*nvy*nvx) = uBefore(l,k_index+0*nvz*nvy*nvx); //Left BC
                             uBefore(l,k_index+(nx+1)*nvz*nvy*nvx) = uBefore(l,k_index+(nx-1)*nvz*nvy*nvx); //Right BC
                         }
-                        f_tilde[l] = uBefore(l,index);
+                        // f_tilde[l] = uBefore(l,index);
                     }
 
-                    Vector fCX(lMax);
+                    // Vector fCX(lMax);
+                    Vector fnCX(lMax);
+                    double sigmavg;
                     if (cx)
                     {
                         // fCX = fitCX(ni, ui, Ti, rho, f_tilde, kx, ky, kz, j);
                         // fCX = fitCX(ni,ui,Ti,f_tilde,fnCXavg,vx,vy,vz,j);
+
+                        // Janev-Smith w/out approximation
+                        fnCX = integrator.integrate3fnCX(fj,lMax,vx,vy,vz);
+                        double E = 0.5*(vx*vx+vy*vy+vz*vz)*(9822.766369779)*(9822.766369779)*(1.66054e-27)/(1.6022e-19); //Convert to correct units for computeSigmav
+                        sigmavg = SpecialFunctions::computeSigmav(Ti,E)*(1e18)/(9822.766369779);
                     }
 
                     Matrix M_invC(lMax,lMax*lMax);
@@ -644,15 +651,29 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                             // uAfter(l,index)-=fCX[l]; //This line for CX
 
                             //Janev-Smith w/ avg sigma approximation
-                            double E = 0.5*(vx*vx+vy*vy+vz*vz)*(1.66054e-27)/(1.6022e-19); //Convert to correct units for computeSigmav
-                            double sigmavg = SpecialFunctions::computeSigmav(Ti,E)*(1e18)/(9822.766369779);
+                            // double E = 0.5*(vx*vx+vy*vy+vz*vz)*(9822.766369779)*(9822.766369779)*(1.66054e-27)/(1.6022e-19); //Convert to correct units for computeSigmav
+                            // double sigmavg = SpecialFunctions::computeSigmav(Ti,E)*(1e18)/(9822.766369779);
+                            // for (int i=0; i<lMax; i++)
+                            // {
+                            //     for (int m=0; m<lMax; m++)
+                            //     {
+                            //         M_invC(l,i)+=M_invT(l,i+m*lMax)*fi(m,index);
+                            //     }
+                            //     uAfter(l,index)+=M_invC(l,i)*fnCXavg[i];
+                            // }
+                            // uAfter(l,index)-=ni*sigmavg*uBefore(l,index);
+
+                            //Janev-Smith w/out approximation
+                            // Vector fnCX = integrator.integrate3fnCX(fj,lMax,vx,vy,vz);
+                            // double E = 0.5*(vx*vx+vy*vy+vz*vz)*(9822.766369779)*(9822.766369779)*(1.66054e-27)/(1.6022e-19); //Convert to correct units for computeSigmav
+                            // double sigmavg = SpecialFunctions::computeSigmav(Ti,E)*(1e18)/(9822.766369779);
                             for (int i=0; i<lMax; i++)
                             {
                                 for (int m=0; m<lMax; m++)
                                 {
                                     M_invC(l,i)+=M_invT(l,i+m*lMax)*fi(m,index);
                                 }
-                                uAfter(l,index)+=M_invC(l,i)*fnCXavg[i];
+                                uAfter(l,index)+=M_invC(l,i)*fnCX[i];
                             }
                             uAfter(l,index)-=ni*sigmavg*uBefore(l,index);
                         }

@@ -138,34 +138,38 @@ int main(int argc, char* argv[])
         solver.initializeAlpha();
         std::cout << "alpha initialization complete" << "\n";
     }
-    for (int j=0; j<jMax; j++)
+
+    if (!resume)
     {
-        Vector rho = solver.getRho(j);
-        Vector ux = solver.getU(j,0);
-        Vector uy = solver.getU(j,1);
-        Vector uz = solver.getU(j,2);
-        Vector rt = solver.getE(j);
-        for (int l=0; l<lMax; l++)
+        for (int j=0; j<jMax; j++)
         {
-            write_density << rho[l] << "\n";
-            write_velocity_x << ux[l] << "\n";
-            write_velocity_y << uy[l] << "\n";
-            write_velocity_z << uz[l] << "\n";
-            write_temperature << rt[l] << "\n";
+            Vector rho = solver.getRho(j);
+            Vector ux = solver.getU(j,0);
+            Vector uy = solver.getU(j,1);
+            Vector uz = solver.getU(j,2);
+            Vector rt = solver.getE(j);
+            for (int l=0; l<lMax; l++)
+            {
+                write_density << rho[l] << "\n";
+                write_velocity_x << ux[l] << "\n";
+                write_velocity_y << uy[l] << "\n";
+                write_velocity_z << uz[l] << "\n";
+                write_temperature << rt[l] << "\n";
+            }
+            // for (int kx=0; kx<nvx; kx++)
+            // {
+            //     for (int ky=0; ky<nvy; ky++)
+            //     {
+            //         for (int kz=0; kz<nvz; kz++)
+            //         {
+            //             for (int l=0; l<lMax; l++)
+            //             {
+            //                 write_output << solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx) << "\n";
+            //             }
+            //         }
+            //     }
+            // }
         }
-        // for (int kx=0; kx<nvx; kx++)
-        // {
-        //     for (int ky=0; ky<nvy; ky++)
-        //     {
-        //         for (int kz=0; kz<nvz; kz++)
-        //         {
-        //             for (int l=0; l<lMax; l++)
-        //             {
-        //                 write_output << solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx) << "\n";
-        //             }
-        //         }
-        //     }
-        // }
     }
     // Vector moments = solver.getMoments();
     // double M0 = moments[0];
