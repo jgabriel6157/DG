@@ -19,7 +19,7 @@ private:
     std::function<double(int,double)> basisFunction;
     int quadratureOrder;
     bool ionization;
-    bool cx;
+    int cx;
     bool bgk;
     int bc;
     Matrix alphaDomain;
@@ -41,7 +41,7 @@ private:
 public:
     //constructor 
     Solver(const Mesh& mesh, double dt, int lMax, std::function<double(int,double)> basisFunction, int quadratureOrder,
-           bool ionization, bool cx, bool bgk, int bc);
+           bool ionization, int cx, bool bgk, int bc);
     
     //deconstructor
     ~Solver();

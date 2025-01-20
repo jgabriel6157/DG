@@ -226,7 +226,7 @@ Matrix NewtonCotes::integrateMoments(Matrix M, int lMax)
     return integral;
 }
 
-Vector NewtonCotes::integrate3fnCXavg(Matrix M, int lMax, double Ti)
+Vector NewtonCotes::integrate3fnCXavg(Matrix M, int lMax, double Ti, double ui)
 {
     double dvx = mesh.getDVX();
     int nvx = mesh.getNVX();
@@ -243,18 +243,21 @@ Vector NewtonCotes::integrate3fnCXavg(Matrix M, int lMax, double Ti)
     
     for (int kx=0; kx<nvx; kx++)
     {
-        double vx = mesh.getVelocityX(kx)*9822.766369779;
+        double vx = mesh.getVelocityX(kx);
+        double vx_ui2 = (vx-ui)*(vx-ui);
         for (int ky=0; ky<nvy; ky++)
         {
-            double vy = mesh.getVelocityY(ky)*9822.766369779;
+            double vy2 = mesh.getVelocityY(ky)*mesh.getVelocityY(ky);
+            double weightXY = weightsX[kx]*weightsY[ky];
             for (int kz=0; kz<nvz; kz++)
             {
-                double vz = mesh.getVelocityZ(kz)*9822.766369779;
-                double E = 0.5*(vx*vx+vy*vy+vz*vz)*(1.66054e-27)/(1.6022e-19); //Convert to correct units for computeSigmav
-                double sigmavg = SpecialFunctions::computeSigmav(Ti,E)*(1e18)/(9822.766369779);
+                double vz2 = mesh.getVelocityZ(kz)*mesh.getVelocityZ(kz);
+                double weightXYZ = weightXY*weightsZ[kz];
+                double E = 0.5*(vx_ui2+vy2+vz2);
+                double sigmavg = weightXYZ*SpecialFunctions::computeSigmav(Ti,E)*(1e18)/(9822.766369779);
                 for (int l=0; l<lMax; l++)
                 {
-                    integral[l] += weightsX[kx]*weightsY[ky]*weightsZ[kz]*M(l,kz+ky*nvz+kx*nvz*nvy)*sigmavg;
+                    integral[l] += M(l,kz+ky*nvz+kx*nvz*nvy)*sigmavg;
                 }
             }
         }
@@ -276,25 +279,24 @@ Vector NewtonCotes::integrate3fnCX(Matrix M, int lMax, double vx, double vy, dou
     Vector weightsY = computeWeights(nvy);
     Vector weightsZ = computeWeights(nvz);
 
-    vx*=9822.766369779;
-    vy*=9822.766369779;
-    vz*=9822.766369779;
-
     Vector integral(lMax);
     for (int kx=0; kx<nvx; kx++)
     {
-        double vxPrime = mesh.getVelocityX(kx)*9822.766369779;
+        double vxRel2 = (vx-mesh.getVelocityX(kx))*(vx-mesh.getVelocityX(kx));
         for (int ky=0; ky<nvy; ky++)
         {
-            double vyPrime = mesh.getVelocityY(ky)*9822.766369779;
+            double vyRel2 = (vy-mesh.getVelocityY(ky))*(vy-mesh.getVelocityY(ky));
+            double weightXY = weightsX[kx]*weightsY[ky];
             for (int kz=0; kz<nvz; kz++)
             {
-                double vzPrime = mesh.getVelocityZ(kz)*9822.766369779;
-                double relVelocity = sqrt(pow(vx-vxPrime,2)+pow(vy-vyPrime,2)+pow(vz-vzPrime,2));
-                double sigma = SpecialFunctions::computeSigma(0.5*pow(relVelocity,2)*(1.66054e-27)/(1.6022e-19))*(1e18)/(9822.766369779);
+                double vzRel2 = (vz-mesh.getVelocityZ(kz))*(vz-mesh.getVelocityZ(kz));
+                double weightXYZ = weightXY*weightsZ[kz];
+                double relVelocity = sqrt(vxRel2+vyRel2+vzRel2);
+                double sigma = SpecialFunctions::computeSigma(0.5*relVelocity*relVelocity)*(1e18);
+                double sigmaVelocity = weightXYZ*relVelocity*sigma;
                 for (int l=0; l<lMax; l++)
                 {
-                    integral[l] += weightsX[kx]*weightsY[ky]*weightsZ[kz]*M(l,kz+ky*nvz+kx*nvz*nvy)*relVelocity*sigma/(9822.766369779);
+                    integral[l] += M(l,kz+ky*nvz+kx*nvz*nvy)*sigmaVelocity;
                 }
             }
         }

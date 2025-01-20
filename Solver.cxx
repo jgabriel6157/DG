@@ -16,7 +16,7 @@
 
 //constructor
 Solver::Solver(const Mesh& mesh, double dt, int lMax, std::function<double(int,double)> basisFunction, int quadratureOrder,
-               bool ionization, bool cx, bool bgk, int bc) 
+               bool ionization, int cx, bool bgk, int bc) 
     : mesh(mesh), integrator(mesh), newtonSolver(mesh), dt(dt), lMax(lMax), basisFunction(basisFunction), quadratureOrder(quadratureOrder), 
       ionization(ionization), cx(cx), bgk(bgk), bc(bc), alphaDomain(3*mesh.getNX(), lMax),
       M_invDiag(lMax), M_invS(lMax,lMax), M_invT(lMax,lMax*lMax),M_invF1Minus(lMax,lMax), M_invF0Minus(lMax,lMax), M_invF1Plus(lMax,lMax), M_invF0Plus(lMax,lMax),
@@ -489,7 +489,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     #pragma omp parallel for schedule(dynamic)
     for (int j=0; j<nx; j++)
     {
-        std::cout << j << "\n";
+        // std::cout << j << "\n";
         int leftNeighborIndex = cells[j].neighbors[0];
         int rightNeighborIndex = cells[j].neighbors[1];
         double dx = cells[j].dx;
@@ -562,9 +562,36 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             // }
         }
         Vector fnCXavg(lMax);
-        if (cx)
+        double sigmaVcx;
+        double uxiAvg;
+        if (cx) //cx != 0
         {
-            // fnCXavg = integrator.integrate3fnCXavg(fj,lMax,Ti);
+            if (cx==2)
+            {
+                uxiAvg = cs*(cells[j].vertices[0]+dx/2.0-(cells.back().vertices[1]/2.0))/(cells.back().vertices[1]/2.0);
+                fnCXavg = integrator.integrate3fnCXavg(fj,lMax,Ti,uxiAvg);
+            }
+
+            // Gkeyll (Meier 2011)
+            if (cx==1)
+            {
+                Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
+                Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
+                double vthn2=0;
+                for (int i=0; i<quadratureOrder; i++)
+                {
+                    double rtVal = SpecialFunctions::computeMoment(rt,basisFunction,lMax,roots[i]);
+                    double rhoVal = SpecialFunctions::computeMoment(rho,basisFunction,lMax,roots[i]);
+                    double uxVal = SpecialFunctions::computeMoment(ux,basisFunction,lMax,roots[i])/rhoVal;
+                    double uyVal = SpecialFunctions::computeMoment(uy,basisFunction,lMax,roots[i])/rhoVal;
+                    double uzVal = SpecialFunctions::computeMoment(uz,basisFunction,lMax,roots[i])/rhoVal;
+                    vthn2 += weights[i]*((rtVal-(rhoVal*(uxVal*uxVal+uyVal*uyVal+uzVal*uzVal)))/(3.0*rhoVal))/2.0; //Entire integral is divided by dx
+                }
+                uxiAvg = cs*(cells[j].vertices[0]+dx/2.0-(cells.back().vertices[1]/2.0))/(cells.back().vertices[1]/2.0);
+                double uRel = (ux[0]/rho[0]-uxiAvg)*(ux[0]/rho[0]-uxiAvg)+(uy[0]/rho[0])*(uy[0]/rho[0])+(uz[0]/rho[0])*(uz[0]/rho[0]);
+                double Vcx = sqrt((4/M_PI)*(vthn2+Ti)+uRel);
+                sigmaVcx = (1.12e-18-7.15e-20*log(Vcx*9822.766369779))*Vcx*(1e18);
+            }
         }
 
         for (int kx=0; kx<nvx; kx++)
@@ -617,10 +644,20 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                         // fCX = fitCX(ni, ui, Ti, rho, f_tilde, kx, ky, kz, j);
                         // fCX = fitCX(ni,ui,Ti,f_tilde,fnCXavg,vx,vy,vz,j);
 
+                        //Janev-Smith w/ approximation
+                        if (cx==2)
+                        {
+                            double E = 0.5*((vx-uxiAvg)*(vx-uxiAvg)+vy*vy+vz*vz);
+                            sigmavg = SpecialFunctions::computeSigmav(Ti,E)*(1e18)/(9822.766369779);
+                        }
+
                         // Janev-Smith w/out approximation
-                        fnCX = integrator.integrate3fnCX(fj,lMax,vx,vy,vz);
-                        double E = 0.5*(vx*vx+vy*vy+vz*vz)*(9822.766369779)*(9822.766369779)*(1.66054e-27)/(1.6022e-19); //Convert to correct units for computeSigmav
-                        sigmavg = SpecialFunctions::computeSigmav(Ti,E)*(1e18)/(9822.766369779);
+                        if (cx==3)
+                        {
+                            fnCX = integrator.integrate3fnCX(fj,lMax,vx-uxiAvg,vy,vz);
+                            double E = 0.5*((vx-uxiAvg)*(vx-uxiAvg)+vy*vy+vz*vz);
+                            sigmavg = SpecialFunctions::computeSigmav(Ti,E)*(1e18)/(9822.766369779);
+                        }
                     }
 
                     Matrix M_invC(lMax,lMax*lMax);
@@ -651,31 +688,46 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                             // uAfter(l,index)-=fCX[l]; //This line for CX
 
                             //Janev-Smith w/ avg sigma approximation
-                            // double E = 0.5*(vx*vx+vy*vy+vz*vz)*(9822.766369779)*(9822.766369779)*(1.66054e-27)/(1.6022e-19); //Convert to correct units for computeSigmav
-                            // double sigmavg = SpecialFunctions::computeSigmav(Ti,E)*(1e18)/(9822.766369779);
-                            // for (int i=0; i<lMax; i++)
-                            // {
-                            //     for (int m=0; m<lMax; m++)
-                            //     {
-                            //         M_invC(l,i)+=M_invT(l,i+m*lMax)*fi(m,index);
-                            //     }
-                            //     uAfter(l,index)+=M_invC(l,i)*fnCXavg[i];
-                            // }
-                            // uAfter(l,index)-=ni*sigmavg*uBefore(l,index);
+                            if (cx==2)
+                            {
+                                for (int i=0; i<lMax; i++)
+                                {
+                                    for (int m=0; m<lMax; m++)
+                                    {
+                                        M_invC(l,i)+=M_invT(l,i+m*lMax)*fi(m,index);
+                                    }
+                                    uAfter(l,index)+=M_invC(l,i)*fnCXavg[i];
+                                }
+                                uAfter(l,index)-=ni*sigmavg*uBefore(l,index);
+                            }
 
                             //Janev-Smith w/out approximation
-                            // Vector fnCX = integrator.integrate3fnCX(fj,lMax,vx,vy,vz);
-                            // double E = 0.5*(vx*vx+vy*vy+vz*vz)*(9822.766369779)*(9822.766369779)*(1.66054e-27)/(1.6022e-19); //Convert to correct units for computeSigmav
-                            // double sigmavg = SpecialFunctions::computeSigmav(Ti,E)*(1e18)/(9822.766369779);
-                            for (int i=0; i<lMax; i++)
+                            if (cx==3)
                             {
-                                for (int m=0; m<lMax; m++)
+                                for (int i=0; i<lMax; i++)
                                 {
-                                    M_invC(l,i)+=M_invT(l,i+m*lMax)*fi(m,index);
+                                    for (int m=0; m<lMax; m++)
+                                    {
+                                        M_invC(l,i)+=M_invT(l,i+m*lMax)*fi(m,index);
+                                    }
+                                    uAfter(l,index)+=M_invC(l,i)*fnCX[i];
                                 }
-                                uAfter(l,index)+=M_invC(l,i)*fnCX[i];
+                                uAfter(l,index)-=ni*sigmavg*uBefore(l,index);
                             }
-                            uAfter(l,index)-=ni*sigmavg*uBefore(l,index);
+
+                            //Gkeyll (Meier 2011)
+                            if (cx==1)
+                            {
+                                for (int i=0; i<lMax; i++)
+                                {
+                                    for (int m=0; m<lMax; m++)
+                                    {
+                                        M_invC(l,i)+=M_invT(l,i+m*lMax)*fi(m,index);
+                                    }
+                                    uAfter(l,index)+=M_invC(l,i)*rho[i]*sigmaVcx;
+                                }
+                                uAfter(l,index)-=ni*sigmaVcx*uBefore(l,index);
+                            }
                         }
                         if (bgk)
                         {
@@ -1086,7 +1138,7 @@ Vector Solver::fitCX(double density_i, double meanVelocity_i, double temperature
 
     Vector uInitialize(lMax);
 
-    int res = 10;
+    int res = 5;
     double x;
     Vector y(res);
     Matrix bigX(res,lMax);
@@ -1097,8 +1149,8 @@ Vector Solver::fitCX(double density_i, double meanVelocity_i, double temperature
         double f_n = SpecialFunctions::computeMoment(f_tilde, basisFunction, lMax, 2.0*(x-xj)/dx);
         double ui = meanVelocity_i*(x-(cells.back().vertices[1]/2.0))/(cells.back().vertices[1]/2.0);
         double f_avg = SpecialFunctions::computeMoment(fnCXavg, basisFunction, lMax, 2.0*(x-xj)/dx);
-        double E = 0.5*(vx*vx+vy*vy+vz*vz)*(1.66054e-27)/(1.6022e-19); //Convert to correct units for computeSigmav
         double f_i = SpecialFunctions::computeMaxwellian3(density_i,ui,0,0,temperature_i,vx,vy,vz);
+        double E = 0.5*((vx-ui)*(vx-ui)+vy*vy+vz*vz);
         double sigmavg = SpecialFunctions::computeSigmav(temperature_i,E)*(1e18)/(9822.766369779);
 
         y[i] = density_i*sigmavg*f_n-f_i*f_avg;

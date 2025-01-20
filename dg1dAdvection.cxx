@@ -22,6 +22,7 @@ int assignInt(std::string varString);
 double assignDouble(std::string varString);
 bool assignBool(std::string varString);
 int assignBC(std::string varString);
+int assignCX(std::string varString);
 
 int main(int argc, char* argv[])
 {
@@ -47,7 +48,7 @@ int main(int argc, char* argv[])
     int nvz = assignInt(argString[14]);
     double domainMaxVZ = assignDouble(argString[15]);
     bool ionization = assignBool(argString[16]);
-    bool cx = assignBool(argString[17]);
+    int cx = assignCX(argString[17]);
     bool bgk = assignBool(argString[18]);
     int bc = assignBC(argString[19]);
     bool resume = assignBool(argString[20]);
@@ -218,26 +219,28 @@ int main(int argc, char* argv[])
                     write_velocity_z << uz[l] << "\n";
                     write_temperature << rt[l] << "\n";
                 }
-                // for (int kx=0; kx<nvx; kx++)
-                // {
-                //     for (int ky=0; ky<nvy; ky++)
-                //     {
-                //         for (int kz=0; kz<nvz; kz++)
-                //         {
-                //             for (int l=0; l<lMax; l++)
-                //             {
-                //                 write_output << solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx) << "\n";
-                //             }
-                //         }
-                //     }
-                // }
+                for (int kx=0; kx<nvx; kx++)
+                {
+                    for (int ky=0; ky<nvy; ky++)
+                    {
+                        for (int kz=0; kz<nvz; kz++)
+                        {
+                            for (int l=0; l<lMax; l++)
+                            {
+                                double dum;
+                                dum = solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx); //checking for nan
+                                // write_output << solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx) << "\n";
+                            }
+                        }
+                    }
+                }
             }
             auto stopLoop = std::chrono::high_resolution_clock::now();
             auto durationLoop = std::chrono::duration<double>(stopLoop-startLoop);
             double timePerIter = (durationLoop.count()-lastTime)/outputTimeStep;
             lastTime = durationLoop.count();
             std::cout << "t = " << t << "\n";
-            std::cout << "ETA: " << timePerIter*(tMax-t) << " s\n"; 
+            std::cout << "ETA: " << timePerIter*(tMax-t-1) << " s\n"; 
         }
     }
 
@@ -398,4 +401,31 @@ int assignBC(std::string varString)
         std::cout << "Invalid Boundary Condition, defaulting to periodic boundary conditions" << "\n";
     }
     return bc;
+}
+
+int assignCX(std::string varString)
+{
+    int cx = 0;
+    if (varString=="false")
+    {
+        cx = 0;
+    }
+    else if (varString=="gkeyll")
+    {
+        cx = 1;
+    }
+    else if (varString=="js")
+    {
+        cx = 2;
+    }
+    else if (varString=="jsFull")
+    {
+        cx = 3;
+    }
+    else
+    {
+        std::cout << "Invalid CX implementation, defaulting to Janev-Smith approximation\n";
+        cx = 2;
+    }
+    return cx;
 }
