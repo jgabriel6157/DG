@@ -22,7 +22,8 @@ Solver::Solver(const Mesh& mesh, double dt, int lMax, std::function<double(int,d
       M_invDiag(lMax), M_invS(lMax,lMax), M_invT(lMax,lMax*lMax),M_invF1Minus(lMax,lMax), M_invF0Minus(lMax,lMax), M_invF1Plus(lMax,lMax), M_invF0Plus(lMax,lMax),
       uPre(lMax,(mesh.getNX()+2)*mesh.getNVX()*mesh.getNVY()*mesh.getNVZ()), uIntermediate(lMax,(mesh.getNX()+2)*mesh.getNVX()*mesh.getNVY()*mesh.getNVZ()), 
       uPost(lMax,(mesh.getNX()+2)*mesh.getNVX()*mesh.getNVY()*mesh.getNVZ()), 
-      fSource(lMax,mesh.getNVX()*mesh.getNVY()*mesh.getNVZ()),fi(lMax,mesh.getNX()*mesh.getNVX()*mesh.getNVY()*mesh.getNVZ()) {}
+      fSource(lMax,mesh.getNVX()*mesh.getNVY()*mesh.getNVZ()),fi(lMax,mesh.getNX()*mesh.getNVX()*mesh.getNVY()*mesh.getNVZ()),
+      fiCX(lMax,mesh.getNX()*mesh.getNVX()*mesh.getNVY()*mesh.getNVZ()) {}
 
 //deconstructor
 Solver::~Solver() {}
@@ -365,6 +366,53 @@ void Solver::initializeIons()
             }
         }
     }
+
+    if (cx==3) //Should be cx=3, changed to 2 for half plus approximation
+    {
+        #pragma omp parallel for schedule(dynamic)
+        for (int j=0; j<mesh.getNX(); j++)
+        {
+            // std::cout << j << "\n";
+            double dx = cells[j].dx;
+            double leftVertex = cells[j].vertices[0];
+            double xj = leftVertex+dx/2.0;
+            double uxiAvg = cs*(cells[j].vertices[0]+dx/2.0-(cells.back().vertices[1]/2.0))/(cells.back().vertices[1]/2.0);
+
+            Matrix fj(lMax,nvx*nvy*nvz);
+            for (int kx=0; kx<nvx; kx++)
+            {
+                for (int ky=0; ky<nvy; ky++)
+                {
+                    for (int kz=0; kz<nvz; kz++)
+                    {
+                        for (int l=0; l<lMax; l++)
+                        {
+                            fj(l,kz+ky*nvz+kx*nvz*nvy) = fi(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx);
+                        }
+                    }
+                }
+            }
+
+            for (int kx=0; kx<nvx; kx++)
+            {
+                double vx = mesh.getVelocityX(kx);
+                for (int ky = 0; ky<nvy; ky++)
+                {
+                    double vy = mesh.getVelocityY(ky);
+                    for (int kz = 0; kz<nvz; kz++)
+                    {
+                        double vz = mesh.getVelocityZ(kz);
+                        Vector fiCXv(lMax);
+                        fiCXv = integrator.integrate3fnCX(fj,lMax,vx-uxiAvg,vy,vz);
+                        for (int l=0; l<lMax; l++)
+                        {
+                            fiCX(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx) = fiCXv[l];
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 void Solver::initializeAlpha()
@@ -655,12 +703,13 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                         if (cx==3)
                         {
                             fnCX = integrator.integrate3fnCX(fj,lMax,vx-uxiAvg,vy,vz);
-                            double E = 0.5*((vx-uxiAvg)*(vx-uxiAvg)+vy*vy+vz*vz);
-                            sigmavg = SpecialFunctions::computeSigmav(Ti,E)*(1e18)/(9822.766369779);
+                            // double E = 0.5*((vx-uxiAvg)*(vx-uxiAvg)+vy*vy+vz*vz);
+                            // sigmavg = ni*SpecialFunctions::computeSigmav(Ti,E)*(1.018043148e14);//*(1e18)/(9822.766369779)
                         }
                     }
 
                     Matrix M_invC(lMax,lMax*lMax);
+                    Matrix M_invC2(lMax,lMax*lMax);
 
                     // Vector fSource(lMax);
                     // fSource = fitMaxwellian3(0.000020361,0,10,vx,vy,vz); //0.000020361?
@@ -695,8 +744,10 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                                     for (int m=0; m<lMax; m++)
                                     {
                                         M_invC(l,i)+=M_invT(l,i+m*lMax)*fi(m,index);
+                                        // M_invC2(l,i)+=M_invT(l,i+m*lMax)*fiCX(m,index); //Half plus approximation
                                     }
                                     uAfter(l,index)+=M_invC(l,i)*fnCXavg[i];
+                                    // uAfter(l,index)-=M_invC2(l,i)*uBefore(l,index); //Half plus approximation
                                 }
                                 uAfter(l,index)-=ni*sigmavg*uBefore(l,index);
                             }
@@ -709,10 +760,12 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                                     for (int m=0; m<lMax; m++)
                                     {
                                         M_invC(l,i)+=M_invT(l,i+m*lMax)*fi(m,index);
+                                        M_invC2(l,i)+=M_invT(l,i+m*lMax)*fiCX(m,index);
                                     }
                                     uAfter(l,index)+=M_invC(l,i)*fnCX[i];
+                                    uAfter(l,index)-=M_invC2(l,i)*uBefore(l,index);
                                 }
-                                uAfter(l,index)-=ni*sigmavg*uBefore(l,index);
+                                // uAfter(l,index)-=sigmavg*uBefore(l,index); //sigmavg = ni*sigmavg
                             }
 
                             //Gkeyll (Meier 2011)

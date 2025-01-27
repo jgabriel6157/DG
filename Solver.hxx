@@ -35,6 +35,7 @@ private:
     Matrix uPost;
     Matrix fSource;
     Matrix fi;
+    Matrix fiCX;
 
     void advanceStage(Matrix& uPre, Matrix& uPost, double plusFactor, double timesFactor);
 
