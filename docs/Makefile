@@ -26,4 +26,4 @@ publish:
 	@rm -rf $(BUILDDIR)
 	@git add .
 	@git commit -m "Update Sphinx docs"
-	@git push origin main
+	@git push origin ghPages
