@@ -62,15 +62,16 @@ fig = plt.figure()
 ax = fig.gca()
 
 # Define vectors for parameters and file suffixes
-suffixes = ['CXapprox','Gkeyll','JSFull','k']
-labels = ["Janev-Smith approximation","Meier (Gkeyll)","Janev-Smith","Krstic and Schultz"]
-jMaxVector = [112, 112, 60,60]
-lengthVector = [40.0, 40.0, 40.0,40]
-basisVector = ['legendre', 'legendre', 'legendre','legendre']
-noutVector = [100, 100, 47,80]
+suffixes = ['CXapprox','Gkeyll','JSFull','k','e']
+labels = ["Janev-Smith approximation","Meier (Gkeyll)","Janev-Smith","Krstic and Schultz","ke"]
+jMaxVector = [112, 120, 60,60,96]
+lengthVector = [40.0, 40.0, 40.0,40,40]
+basisVector = ['legendre', 'legendre', 'legendre','legendre','legendre']
+noutVector = [100, 68, 47,80,116]
+tVector = [-1,-1,40,-1,-1]
 dxVector = [l / j for l, j in zip(lengthVector, jMaxVector)]
-colorVector = ['red','black', 'green','blue']
-lMaxVector = [2,2,2,2]
+colorVector = ['red','black','green','blue','orange']
+lMaxVector = [2,2,2,2,2]
 
 # Initialize data structures
 results = []
@@ -113,7 +114,10 @@ for i, suffix in enumerate(suffixes):
                 k += 1
 
     # Evaluate and plot results for the current suffix
-    t = -1  # Output step
+    t = tVector[i]  # Output step
+    if (t>nout):
+        t = -1
+        print(label+" output at t = "+str(nout))
     y = np.zeros(10)
     x = np.zeros(10)
     for j in range(jMax):

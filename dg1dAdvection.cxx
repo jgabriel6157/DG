@@ -126,18 +126,18 @@ int main(int argc, char* argv[])
     {
         solver.initialize(inputFunction);
     }
-    std::cout << "initialization complete" << "\n";
+    std::cout << "initialization complete" << std::endl;
 
     solver.initializeSource();
-    std::cout << "Source initialization complete" << "\n";
+    std::cout << "Source initialization complete" << std::endl;
 
     solver.initializeIons();
-    std::cout << "Ion initialization complete" << "\n";
+    std::cout << "Ion initialization complete" << std::endl;
     
     if (bgk)
     {
         solver.initializeAlpha();
-        std::cout << "alpha initialization complete" << "\n";
+        std::cout << "alpha initialization complete" << std::endl;
     }
 
     if (!resume)
@@ -179,7 +179,7 @@ int main(int argc, char* argv[])
     // double UZ0 = moments[3];
     // double E0 = moments[4];
     // double S0 = moments[5];
-    std::cout << "start" << "\n";
+    std::cout << "start" << std::endl;
     auto startLoop = std::chrono::high_resolution_clock::now();
     double lastTime = 0;
     for (int t=0; t<tMax; t++)
@@ -240,7 +240,7 @@ int main(int argc, char* argv[])
             double timePerIter = (durationLoop.count()-lastTime)/outputTimeStep;
             lastTime = durationLoop.count();
             std::cout << "t = " << t << "\n";
-            std::cout << "ETA: " << timePerIter*(tMax-t-1) << " s\n"; 
+            std::cout << "ETA: " << timePerIter*(tMax-t-1) << " s" << std::endl; 
         }
     }
 
