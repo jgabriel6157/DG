@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_newton_cotes_8hxx" kind="file" language="C++">
+    <compoundname>NewtonCotes.hxx</compoundname>
+    <includes local="no">functional</includes>
+    <includes refid="_mesh_8hxx" local="yes">Mesh.hxx</includes>
+    <includes refid="_vector_8hxx" local="yes">Vector.hxx</includes>
+    <includes refid="_matrix_8hxx" local="yes">Matrix.hxx</includes>
+    <includedby refid="_newton_cotes_8cxx" local="yes">/Users/jackgabriel/Desktop/DG/NewtonCotes.cxx</includedby>
+    <includedby refid="_newton_solver_8cxx" local="yes">/Users/jackgabriel/Desktop/DG/NewtonSolver.cxx</includedby>
+    <includedby refid="_newton_solver_8hxx" local="yes">/Users/jackgabriel/Desktop/DG/NewtonSolver.hxx</includedby>
+    <includedby refid="_solver_8cxx" local="yes">/Users/jackgabriel/Desktop/DG/Solver.cxx</includedby>
+    <includedby refid="_solver_8hxx" local="yes">/Users/jackgabriel/Desktop/DG/Solver.hxx</includedby>
+    <incdepgraph>
+      <node id="6">
+        <label>Matrix.hxx</label>
+        <link refid="_matrix_8hxx_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Mesh.hxx</label>
+        <link refid="_mesh_8hxx_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/Users/jackgabriel/Desktop/DG/NewtonCotes.hxx</label>
+        <link refid="_newton_cotes_8hxx"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Vector.hxx</label>
+        <link refid="_vector_8hxx_source"/>
+      </node>
+      <node id="2">
+        <label>functional</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>/Users/jackgabriel/Desktop/DG/NewtonCotes.hxx</label>
+        <link refid="_newton_cotes_8hxx"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/Users/jackgabriel/Desktop/DG/NewtonSolver.hxx</label>
+        <link refid="_newton_solver_8hxx_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/Users/jackgabriel/Desktop/DG/Solver.hxx</label>
+        <link refid="_solver_8hxx_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_newton_cotes" prot="public">NewtonCotes</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>NEWTONCOTES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NEWTONCOTES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Mesh.hxx&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Vector.hxx&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Matrix.hxx&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="class_newton_cotes" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">NewtonCotes<sp/></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>NewtonCotes(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_mesh" kindref="compound">Mesh</ref>&amp;<sp/>mesh);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>integrate(<ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>M,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lMax,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>power);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>integrate3f(<ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>M,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lMax);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>integrate3vxf(<ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>M,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lMax);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>integrate3vyf(<ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>M,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lMax);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>integrate3vzf(<ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>M,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lMax);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>integrate3v2f(<ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>M,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lMax);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>integrateMoments(<ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>M,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lMax);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>integrate(<ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>f,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lMax,<sp/>std::function&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)&gt;<sp/>basisFunction,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>integrate(<ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>alpha,<sp/>std::function&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)&gt;<sp/>basisFunction,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>power,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lMax);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_mesh" kindref="compound">Mesh</ref>&amp;<sp/>mesh;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>testMaxwellian(<ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>alpha,<sp/>std::function&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)&gt;<sp/>basisFunction,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>power,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lMax);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>computeWeights(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nv);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>NEWTONCOTES_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/jackgabriel/Desktop/DG/NewtonCotes.hxx"/>
+  </compounddef>
+</doxygen>

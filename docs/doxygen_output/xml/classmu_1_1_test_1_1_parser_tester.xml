@@ -1,0 +1,1712 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classmu_1_1_test_1_1_parser_tester" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>mu::Test::ParserTester</compoundname>
+    <includes refid="mu_parser_test_8h" local="no">muParserTest.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classmu_1_1_test_1_1_parser_tester_1a57273757098109977ee5f151caef66a8" prot="public" static="no">
+        <type>int(ParserTester::*</type>
+        <definition>typedef int(ParserTester::* mu::Test::ParserTester::testfun_type) ()</definition>
+        <argsstring>)()</argsstring>
+        <name>testfun_type</name>
+        <qualifiedname>mu::Test::ParserTester::testfun_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="266" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="266" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classmu_1_1_test_1_1_parser_tester_1a8c7475f12fceac73cdf780a8e79a1799" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::c_iCount</definition>
+        <argsstring></argsstring>
+        <name>c_iCount</name>
+        <qualifiedname>mu::Test::ParserTester::c_iCount</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="57" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmu_1_1_test_1_1_parser_tester_1a31acd0638f4509385ba0e4d0c069bd0b" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; testfun_type &gt;</type>
+        <definition>std::vector&lt;testfun_type&gt; mu::Test::ParserTester::m_vTestFun</definition>
+        <argsstring></argsstring>
+        <name>m_vTestFun</name>
+        <qualifiedname>mu::Test::ParserTester::m_vTestFun</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="272" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="272" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a0250100d0eae5ee18eaa0b918e1a501f" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::f0</definition>
+        <argsstring>()</argsstring>
+        <name>f0</name>
+        <qualifiedname>mu::Test::ParserTester::f0</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="59" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="59" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1acb4b3ad9850ad8070e59e7325287091d" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::f1of1</definition>
+        <argsstring>(value_type v)</argsstring>
+        <name>f1of1</name>
+        <qualifiedname>mu::Test::ParserTester::f1of1</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="62" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1ae4153a7b67d70f73ef9773a2f02bee64" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::f1of2</definition>
+        <argsstring>(value_type v, value_type)</argsstring>
+        <name>f1of2</name>
+        <qualifiedname>mu::Test::ParserTester::f1of2</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="64" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="64" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a97b9dde695d87c41e33cb0495a2e5f7e" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::f2of2</definition>
+        <argsstring>(value_type, value_type v)</argsstring>
+        <name>f2of2</name>
+        <qualifiedname>mu::Test::ParserTester::f2of2</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="65" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="65" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1acaf907a6f8d92eb81f53cc1f0f2d2851" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::f1of3</definition>
+        <argsstring>(value_type v, value_type, value_type)</argsstring>
+        <name>f1of3</name>
+        <qualifiedname>mu::Test::ParserTester::f1of3</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="67" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="67" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a27866f097b82d086c9349c2302fa2b7b" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::f2of3</definition>
+        <argsstring>(value_type, value_type v, value_type)</argsstring>
+        <name>f2of3</name>
+        <qualifiedname>mu::Test::ParserTester::f2of3</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="68" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a7f314bc9668edfa60860f570e182d664" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::f3of3</definition>
+        <argsstring>(value_type, value_type, value_type v)</argsstring>
+        <name>f3of3</name>
+        <qualifiedname>mu::Test::ParserTester::f3of3</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="69" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="69" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a9bf3eade29ea7c54866ff6b15b4caec2" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::f1of4</definition>
+        <argsstring>(value_type v, value_type, value_type, value_type)</argsstring>
+        <name>f1of4</name>
+        <qualifiedname>mu::Test::ParserTester::f1of4</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="71" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="71" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a0257cea0bb20832eba420b25d0180bea" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::f2of4</definition>
+        <argsstring>(value_type, value_type v, value_type, value_type)</argsstring>
+        <name>f2of4</name>
+        <qualifiedname>mu::Test::ParserTester::f2of4</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="72" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="72" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1aae40cefff558faa118a53e6fe9c2d765" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::f3of4</definition>
+        <argsstring>(value_type, value_type, value_type v, value_type)</argsstring>
+        <name>f3of4</name>
+        <qualifiedname>mu::Test::ParserTester::f3of4</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="73" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="73" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a984f4cf2e9c29a5577dd1ee42ed8513c" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::f4of4</definition>
+        <argsstring>(value_type, value_type, value_type, value_type v)</argsstring>
+        <name>f4of4</name>
+        <qualifiedname>mu::Test::ParserTester::f4of4</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="74" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="74" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1af8bdb38c88e069fb7392f96d9dea1d79" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::f1of5</definition>
+        <argsstring>(value_type v, value_type, value_type, value_type, value_type)</argsstring>
+        <name>f1of5</name>
+        <qualifiedname>mu::Test::ParserTester::f1of5</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="76" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="76" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1ab14c833b5b0d9a2f1bf990d7886f6377" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::f2of5</definition>
+        <argsstring>(value_type, value_type v, value_type, value_type, value_type)</argsstring>
+        <name>f2of5</name>
+        <qualifiedname>mu::Test::ParserTester::f2of5</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="77" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="77" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1ace864b2200e0afcbba653f3d8493b79f" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::f3of5</definition>
+        <argsstring>(value_type, value_type, value_type v, value_type, value_type)</argsstring>
+        <name>f3of5</name>
+        <qualifiedname>mu::Test::ParserTester::f3of5</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="78" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="78" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a67002629f3f85fcd0e716998cc86fcfb" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::f4of5</definition>
+        <argsstring>(value_type, value_type, value_type, value_type v, value_type)</argsstring>
+        <name>f4of5</name>
+        <qualifiedname>mu::Test::ParserTester::f4of5</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="79" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="79" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1ae1a0d95a122403b08fb8b753e28ecc71" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::f5of5</definition>
+        <argsstring>(value_type, value_type, value_type, value_type, value_type v)</argsstring>
+        <name>f5of5</name>
+        <qualifiedname>mu::Test::ParserTester::f5of5</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="80" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="80" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a55a4a717b8abacc54b267a5acf72c95a" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::Min</definition>
+        <argsstring>(value_type a_fVal1, value_type a_fVal2)</argsstring>
+        <name>Min</name>
+        <qualifiedname>mu::Test::ParserTester::Min</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>a_fVal1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>a_fVal2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="82" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="82" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a9dec89ce07548a5f1602fd6537844a07" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::Max</definition>
+        <argsstring>(value_type a_fVal1, value_type a_fVal2)</argsstring>
+        <name>Max</name>
+        <qualifiedname>mu::Test::ParserTester::Max</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>a_fVal1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>a_fVal2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="83" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="83" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a8316463ac69ea8350e6dc9c081f27168" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::plus2</definition>
+        <argsstring>(value_type v1)</argsstring>
+        <name>plus2</name>
+        <qualifiedname>mu::Test::ParserTester::plus2</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="85" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="85" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a87d0121ff121ff9feb9f23afe3caa6db" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::times3</definition>
+        <argsstring>(value_type v1)</argsstring>
+        <name>times3</name>
+        <qualifiedname>mu::Test::ParserTester::times3</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="86" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="86" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1aed012286134684eff0e89df713e29b5d" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::sqr</definition>
+        <argsstring>(value_type v1)</argsstring>
+        <name>sqr</name>
+        <qualifiedname>mu::Test::ParserTester::sqr</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="87" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="87" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a9fef01b1a71d605f6cc68451cb59293c" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::sign</definition>
+        <argsstring>(value_type v)</argsstring>
+        <name>sign</name>
+        <qualifiedname>mu::Test::ParserTester::sign</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="88" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="88" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a662628c804deef7f8512d24af5993897" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::add</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>add</name>
+        <qualifiedname>mu::Test::ParserTester::add</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="89" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="89" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a8638066f85fb2bcc6e9be2a3dfeecfb9" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::land</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>land</name>
+        <qualifiedname>mu::Test::ParserTester::land</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="90" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="90" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a8216278735fdeb702b9810bd2de9d919" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::FirstArg</definition>
+        <argsstring>(const value_type *a_afArg, int a_iArgc)</argsstring>
+        <name>FirstArg</name>
+        <qualifiedname>mu::Test::ParserTester::FirstArg</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *</type>
+          <declname>a_afArg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iArgc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="93" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="93" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a923c0b4bb7292a87e8681ea32f70494e" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::LastArg</definition>
+        <argsstring>(const value_type *a_afArg, int a_iArgc)</argsstring>
+        <name>LastArg</name>
+        <qualifiedname>mu::Test::ParserTester::LastArg</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *</type>
+          <declname>a_afArg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iArgc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="101" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="101" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a1dbb4ea6f544993bef62bd93bea855b0" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::Sum</definition>
+        <argsstring>(const value_type *a_afArg, int a_iArgc)</argsstring>
+        <name>Sum</name>
+        <qualifiedname>mu::Test::ParserTester::Sum</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *</type>
+          <declname>a_afArg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iArgc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="109" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="109" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a976f8026d5058d72d67cb9be63b9b237" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::Rnd</definition>
+        <argsstring>(value_type v)</argsstring>
+        <name>Rnd</name>
+        <qualifiedname>mu::Test::ParserTester::Rnd</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="119" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="119" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a8aa4bc13681dd9478626d48cf3bf6bfa" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::RndWithString</definition>
+        <argsstring>(const char_type *)</argsstring>
+        <name>RndWithString</name>
+        <qualifiedname>mu::Test::ParserTester::RndWithString</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="124" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="124" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a964a32b7ec0c47fd8f2092d0dcac5f6d" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::Ping</definition>
+        <argsstring>()</argsstring>
+        <name>Ping</name>
+        <qualifiedname>mu::Test::ParserTester::Ping</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="129" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="129" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a167b3d59ead5df91cb0dda6cea171096" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::ValueOf</definition>
+        <argsstring>(const char_type *)</argsstring>
+        <name>ValueOf</name>
+        <qualifiedname>mu::Test::ParserTester::ValueOf</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="134" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="134" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1ab86488ebe8a3490460f9a39698139a09" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::StrFun1</definition>
+        <argsstring>(const char_type *v1)</argsstring>
+        <name>StrFun1</name>
+        <qualifiedname>mu::Test::ParserTester::StrFun1</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="139" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="139" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1afdc3f1cd0b15258fe9432920fa16d65a" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::StrFun2</definition>
+        <argsstring>(const char_type *v1, value_type v2)</argsstring>
+        <name>StrFun2</name>
+        <qualifiedname>mu::Test::ParserTester::StrFun2</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="146" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="146" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a2bc00f1c5fbd0cd340f02ff2d3dc90f3" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::StrFun3</definition>
+        <argsstring>(const char_type *v1, value_type v2, value_type v3)</argsstring>
+        <name>StrFun3</name>
+        <qualifiedname>mu::Test::ParserTester::StrFun3</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v3</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="153" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="153" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a35900716b3764c323623a6f878d1c577" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::StrFun4</definition>
+        <argsstring>(const char_type *v1, value_type v2, value_type v3, value_type v4)</argsstring>
+        <name>StrFun4</name>
+        <qualifiedname>mu::Test::ParserTester::StrFun4</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v3</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v4</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="160" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="160" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1aaedb2436e0c40613cd01f40f7b0e35e0" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::StrFun5</definition>
+        <argsstring>(const char_type *v1, value_type v2, value_type v3, value_type v4, value_type v5)</argsstring>
+        <name>StrFun5</name>
+        <qualifiedname>mu::Test::ParserTester::StrFun5</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v3</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v4</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v5</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="167" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="167" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1ae11570da30dee64ac6db748abf335ba4" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::StrFun6</definition>
+        <argsstring>(const char_type *v1, value_type v2, value_type v3, value_type v4, value_type v5, value_type v6)</argsstring>
+        <name>StrFun6</name>
+        <qualifiedname>mu::Test::ParserTester::StrFun6</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v3</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v4</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v5</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v6</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="174" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="174" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1ad21f88f261e0f7970c6ff3e9c40d374d" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::StrToFloat</definition>
+        <argsstring>(const char_type *a_szMsg)</argsstring>
+        <name>StrToFloat</name>
+        <qualifiedname>mu::Test::ParserTester::StrToFloat</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+          <declname>a_szMsg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="181" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="181" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a45d672c2d45ba2d9d7915467c915b093" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::Mega</definition>
+        <argsstring>(value_type a_fVal)</argsstring>
+        <name>Mega</name>
+        <qualifiedname>mu::Test::ParserTester::Mega</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>a_fVal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="189" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="189" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a6a0deda0621a10a2a2ef10a19096d53f" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::Micro</definition>
+        <argsstring>(value_type a_fVal)</argsstring>
+        <name>Micro</name>
+        <qualifiedname>mu::Test::ParserTester::Micro</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>a_fVal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="194" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="194" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a9ac5176f2272522399cff825742aabbe" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::Milli</definition>
+        <argsstring>(value_type a_fVal)</argsstring>
+        <name>Milli</name>
+        <qualifiedname>mu::Test::ParserTester::Milli</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>a_fVal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="199" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="199" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1afedff605b5a30fd894feeda812b2dbbd" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::IsHexVal</definition>
+        <argsstring>(const char_type *a_szExpr, int *a_iPos, value_type *a_fVal)</argsstring>
+        <name>IsHexVal</name>
+        <qualifiedname>mu::Test::ParserTester::IsHexVal</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+          <declname>a_szExpr</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>a_iPos</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *</type>
+          <declname>a_fVal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="205" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="71" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a67fe072177bfac49b2322f0237f3edd3" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::FunUd0</definition>
+        <argsstring>(void *data)</argsstring>
+        <name>FunUd0</name>
+        <qualifiedname>mu::Test::ParserTester::FunUd0</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="208" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="208" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a551784566c7b390bebca7cea478e86a6" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::FunUd1</definition>
+        <argsstring>(void *data, value_type v)</argsstring>
+        <name>FunUd1</name>
+        <qualifiedname>mu::Test::ParserTester::FunUd1</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="213" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="213" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a662e4905ae6335fa73c3750c88541790" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::FunUd2</definition>
+        <argsstring>(void *data, value_type v1, value_type v2)</argsstring>
+        <name>FunUd2</name>
+        <qualifiedname>mu::Test::ParserTester::FunUd2</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="218" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="218" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a190d62dd374cd5fc8b9411dd42d80a95" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::FunUd10</definition>
+        <argsstring>(void *data, value_type v1, value_type v2, value_type v3, value_type v4, value_type v5, value_type v6, value_type v7, value_type v8, value_type v9, value_type v10)</argsstring>
+        <name>FunUd10</name>
+        <qualifiedname>mu::Test::ParserTester::FunUd10</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v3</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v4</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v5</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v6</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v7</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v8</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v9</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v10</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="223" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="223" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1ae89bf8562142695bd5885b440c768013" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::StrFunUd3</definition>
+        <argsstring>(void *data, const char_type *v1, value_type v2, value_type v3)</argsstring>
+        <name>StrFunUd3</name>
+        <qualifiedname>mu::Test::ParserTester::StrFunUd3</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v3</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="228" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="228" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1ad97103dd901149f6f60150604fd6f8cb" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::Test::ParserTester::SumUd</definition>
+        <argsstring>(void *data, const value_type *a_afArg, int a_iArgc)</argsstring>
+        <name>SumUd</name>
+        <qualifiedname>mu::Test::ParserTester::SumUd</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *</type>
+          <declname>a_afArg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iArgc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="235" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="235" bodyend="245"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1ac123e04a09d03a0e58c994dda091d376" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::TestNames</definition>
+        <argsstring>()</argsstring>
+        <name>TestNames</name>
+        <qualifiedname>mu::Test::ParserTester::TestNames</qualifiedname>
+        <briefdescription>
+<para>Check muParser name restriction enforcement. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="247" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="423" bodyend="537"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a8af55174c5824ad457f07c2f5caa3f3d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::TestSyntax</definition>
+        <argsstring>()</argsstring>
+        <name>TestSyntax</name>
+        <qualifiedname>mu::Test::ParserTester::TestSyntax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="248" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="540" bodyend="586"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a267f1c8d19d90eebdd3e4ac4e99c7099" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::TestMultiArg</definition>
+        <argsstring>()</argsstring>
+        <name>TestMultiArg</name>
+        <qualifiedname>mu::Test::ParserTester::TestMultiArg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="249" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="698" bodyend="808"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1abc370c64e00f3a2b309adbefec04b46c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::TestPostFix</definition>
+        <argsstring>()</argsstring>
+        <name>TestPostFix</name>
+        <qualifiedname>mu::Test::ParserTester::TestPostFix</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="250" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="884" bodyend="932"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a194c43b0a266bfe0fc20d5bf2602b958" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::TestExpression</definition>
+        <argsstring>()</argsstring>
+        <name>TestExpression</name>
+        <qualifiedname>mu::Test::ParserTester::TestExpression</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="251" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="935" bodyend="1018"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a4fc4dfc452a1dc0788983b9a1d322c30" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::TestInfixOprt</definition>
+        <argsstring>()</argsstring>
+        <name>TestInfixOprt</name>
+        <qualifiedname>mu::Test::ParserTester::TestInfixOprt</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="252" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="812" bodyend="880"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a45a0af51155459231dccf92c3c007743" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::TestBinOprt</definition>
+        <argsstring>()</argsstring>
+        <name>TestBinOprt</name>
+        <qualifiedname>mu::Test::ParserTester::TestBinOprt</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="253" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="286" bodyend="419"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a8f756857af4eaf5b6ae260454f6f1317" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::TestVarConst</definition>
+        <argsstring>()</argsstring>
+        <name>TestVarConst</name>
+        <qualifiedname>mu::Test::ParserTester::TestVarConst</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="254" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="589" bodyend="695"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1ac354d2541e67434815964aba8cc25ece" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::TestInterface</definition>
+        <argsstring>()</argsstring>
+        <name>TestInterface</name>
+        <qualifiedname>mu::Test::ParserTester::TestInterface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="255" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="93" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1ab0c5d88359086d353f52c4d90e1d4ef9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::TestException</definition>
+        <argsstring>()</argsstring>
+        <name>TestException</name>
+        <qualifiedname>mu::Test::ParserTester::TestException</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="256" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="1155" bodyend="1229"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a587b110321b7e4a1e69772c4accda08f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::TestStrArg</definition>
+        <argsstring>()</argsstring>
+        <name>TestStrArg</name>
+        <qualifiedname>mu::Test::ParserTester::TestStrArg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="257" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="190" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a116956c5250beb6fd3e6719c87ba506a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::TestIfThenElse</definition>
+        <argsstring>()</argsstring>
+        <name>TestIfThenElse</name>
+        <qualifiedname>mu::Test::ParserTester::TestIfThenElse</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="258" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="1023" bodyend="1152"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1ae048476c041fda79e76d65c9cd514e38" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::TestBulkMode</definition>
+        <argsstring>()</argsstring>
+        <name>TestBulkMode</name>
+        <qualifiedname>mu::Test::ParserTester::TestBulkMode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="259" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="252" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a29d47a952831600102fecca4ab20671c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::TestOssFuzzTestCases</definition>
+        <argsstring>()</argsstring>
+        <name>TestOssFuzzTestCases</name>
+        <qualifiedname>mu::Test::ParserTester::TestOssFuzzTestCases</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="260" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1af665d27711542f9d59e742eae262ea58" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::TestOptimizer</definition>
+        <argsstring>()</argsstring>
+        <name>TestOptimizer</name>
+        <qualifiedname>mu::Test::ParserTester::TestOptimizer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="261" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="135" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a4835361a0fe79f2774d56aa31d7711ee" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::Test::ParserTester::Abort</definition>
+        <argsstring>() const</argsstring>
+        <name>Abort</name>
+        <qualifiedname>mu::Test::ParserTester::Abort</qualifiedname>
+        <briefdescription>
+<para>Internal error in test class <ref refid="namespacemu_1_1_test" kindref="compound">Test</ref> is going to be aborted. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="263" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="1710" bodyend="1715"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1aa715f82646f674ad1d37eb9a5b6a4c3a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::Test::ParserTester::AddTest</definition>
+        <argsstring>(testfun_type a_pFun)</argsstring>
+        <name>AddTest</name>
+        <qualifiedname>mu::Test::ParserTester::AddTest</qualifiedname>
+        <param>
+          <type>testfun_type</type>
+          <declname>a_pFun</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="273" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="1233" bodyend="1236"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1aabca8944978b7874102f083f1ae433ce" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::EqnTest</definition>
+        <argsstring>(const string_type &amp;a_str, double a_fRes, bool a_fPass)</argsstring>
+        <name>EqnTest</name>
+        <qualifiedname>mu::Test::ParserTester::EqnTest</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_str</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>a_fRes</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_fPass</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate a tet expression. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>1 in case of a failure, 0 otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="276" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="1392" bodyend="1598"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1ab29c2f11eb4e45476161064865dd97dc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::EqnTestWithVarChange</definition>
+        <argsstring>(const string_type &amp;a_str, double a_fRes1, double a_fVar1, double a_fRes2, double a_fVar2)</argsstring>
+        <name>EqnTestWithVarChange</name>
+        <qualifiedname>mu::Test::ParserTester::EqnTestWithVarChange</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_str</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>a_fRes1</declname>
+          <defname>a_fVar1</defname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>a_fVar1</declname>
+          <defname>a_fRes1</defname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>a_fRes2</declname>
+          <defname>a_fVar2</defname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>a_fVar2</declname>
+          <defname>a_fRes2</defname>
+        </param>
+        <briefdescription>
+<para>Evaluate a tet expression. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>1 in case of a failure, 0 otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="277" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="1337" bodyend="1385"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a598de332d1a57cbbd1ca77349a2e7b16" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::ThrowTest</definition>
+        <argsstring>(const string_type &amp;a_str, int a_iErrc, bool a_bFail=true)</argsstring>
+        <name>ThrowTest</name>
+        <qualifiedname>mu::Test::ParserTester::ThrowTest</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iErrc</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bFail</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="278" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="1280" bodyend="1330"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a5c14f312ba56ee32bb4786f0c64de56f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::EqnTestInt</definition>
+        <argsstring>(const string_type &amp;a_str, double a_fRes, bool a_fPass)</argsstring>
+        <name>EqnTestInt</name>
+        <qualifiedname>mu::Test::ParserTester::EqnTestInt</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_str</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>a_fRes</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_fPass</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="281" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="1601" bodyend="1649"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a27ce8793d1dc3c1155571cc468700056" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::EqnTestBulk</definition>
+        <argsstring>(const string_type &amp;a_str, double a_fRes[4], bool a_fPass)</argsstring>
+        <name>EqnTestBulk</name>
+        <qualifiedname>mu::Test::ParserTester::EqnTestBulk</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_str</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>a_fRes</declname>
+          <array>[4]</array>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_fPass</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="namespacemu_1_1_test" kindref="compound">Test</ref> an expression in Bulk Mode. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="284" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="1653" bodyend="1706"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a88a0af846d537fc5c35af7301ca9f322" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::Test::ParserTester::ParserTester</definition>
+        <argsstring>()</argsstring>
+        <name>ParserTester</name>
+        <qualifiedname>mu::Test::ParserTester::ParserTester</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="268" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="49" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_test_1_1_parser_tester_1a16864f836276936223a8f1530e1f2aaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::Test::ParserTester::Run</definition>
+        <argsstring>()</argsstring>
+        <name>Run</name>
+        <qualifiedname>mu::Test::ParserTester::Run</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="269" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp" bodystart="1239" bodyend="1276"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="namespacemu_1_1_test" kindref="compound">Test</ref> cases for unit testing. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" line="54" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h" bodystart="55" bodyend="286"/>
+    <listofallmembers>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a4835361a0fe79f2774d56aa31d7711ee" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>Abort</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a662628c804deef7f8512d24af5993897" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>add</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1aa715f82646f674ad1d37eb9a5b6a4c3a" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>AddTest</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a8c7475f12fceac73cdf780a8e79a1799" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>c_iCount</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1aabca8944978b7874102f083f1ae433ce" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>EqnTest</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a27ce8793d1dc3c1155571cc468700056" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>EqnTestBulk</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a5c14f312ba56ee32bb4786f0c64de56f" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>EqnTestInt</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1ab29c2f11eb4e45476161064865dd97dc" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>EqnTestWithVarChange</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a0250100d0eae5ee18eaa0b918e1a501f" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>f0</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1acb4b3ad9850ad8070e59e7325287091d" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>f1of1</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1ae4153a7b67d70f73ef9773a2f02bee64" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>f1of2</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1acaf907a6f8d92eb81f53cc1f0f2d2851" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>f1of3</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a9bf3eade29ea7c54866ff6b15b4caec2" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>f1of4</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1af8bdb38c88e069fb7392f96d9dea1d79" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>f1of5</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a97b9dde695d87c41e33cb0495a2e5f7e" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>f2of2</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a27866f097b82d086c9349c2302fa2b7b" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>f2of3</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a0257cea0bb20832eba420b25d0180bea" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>f2of4</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1ab14c833b5b0d9a2f1bf990d7886f6377" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>f2of5</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a7f314bc9668edfa60860f570e182d664" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>f3of3</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1aae40cefff558faa118a53e6fe9c2d765" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>f3of4</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1ace864b2200e0afcbba653f3d8493b79f" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>f3of5</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a984f4cf2e9c29a5577dd1ee42ed8513c" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>f4of4</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a67002629f3f85fcd0e716998cc86fcfb" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>f4of5</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1ae1a0d95a122403b08fb8b753e28ecc71" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>f5of5</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a8216278735fdeb702b9810bd2de9d919" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>FirstArg</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a67fe072177bfac49b2322f0237f3edd3" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>FunUd0</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a551784566c7b390bebca7cea478e86a6" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>FunUd1</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a190d62dd374cd5fc8b9411dd42d80a95" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>FunUd10</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a662e4905ae6335fa73c3750c88541790" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>FunUd2</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1afedff605b5a30fd894feeda812b2dbbd" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>IsHexVal</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a8638066f85fb2bcc6e9be2a3dfeecfb9" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>land</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a923c0b4bb7292a87e8681ea32f70494e" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>LastArg</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a31acd0638f4509385ba0e4d0c069bd0b" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>m_vTestFun</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a9dec89ce07548a5f1602fd6537844a07" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>Max</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a45d672c2d45ba2d9d7915467c915b093" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>Mega</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a6a0deda0621a10a2a2ef10a19096d53f" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>Micro</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a9ac5176f2272522399cff825742aabbe" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>Milli</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a55a4a717b8abacc54b267a5acf72c95a" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>Min</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a88a0af846d537fc5c35af7301ca9f322" prot="public" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>ParserTester</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a964a32b7ec0c47fd8f2092d0dcac5f6d" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>Ping</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a8316463ac69ea8350e6dc9c081f27168" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>plus2</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a976f8026d5058d72d67cb9be63b9b237" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>Rnd</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a8aa4bc13681dd9478626d48cf3bf6bfa" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>RndWithString</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a16864f836276936223a8f1530e1f2aaa" prot="public" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>Run</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a9fef01b1a71d605f6cc68451cb59293c" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>sign</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1aed012286134684eff0e89df713e29b5d" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>sqr</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1ab86488ebe8a3490460f9a39698139a09" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>StrFun1</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1afdc3f1cd0b15258fe9432920fa16d65a" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>StrFun2</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a2bc00f1c5fbd0cd340f02ff2d3dc90f3" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>StrFun3</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a35900716b3764c323623a6f878d1c577" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>StrFun4</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1aaedb2436e0c40613cd01f40f7b0e35e0" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>StrFun5</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1ae11570da30dee64ac6db748abf335ba4" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>StrFun6</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1ae89bf8562142695bd5885b440c768013" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>StrFunUd3</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1ad21f88f261e0f7970c6ff3e9c40d374d" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>StrToFloat</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a1dbb4ea6f544993bef62bd93bea855b0" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>Sum</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1ad97103dd901149f6f60150604fd6f8cb" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>SumUd</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a45a0af51155459231dccf92c3c007743" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>TestBinOprt</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1ae048476c041fda79e76d65c9cd514e38" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>TestBulkMode</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1ab0c5d88359086d353f52c4d90e1d4ef9" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>TestException</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a194c43b0a266bfe0fc20d5bf2602b958" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>TestExpression</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a57273757098109977ee5f151caef66a8" prot="public" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>testfun_type</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a116956c5250beb6fd3e6719c87ba506a" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>TestIfThenElse</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a4fc4dfc452a1dc0788983b9a1d322c30" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>TestInfixOprt</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1ac354d2541e67434815964aba8cc25ece" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>TestInterface</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a267f1c8d19d90eebdd3e4ac4e99c7099" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>TestMultiArg</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1ac123e04a09d03a0e58c994dda091d376" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>TestNames</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1af665d27711542f9d59e742eae262ea58" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>TestOptimizer</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a29d47a952831600102fecca4ab20671c" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>TestOssFuzzTestCases</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1abc370c64e00f3a2b309adbefec04b46c" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>TestPostFix</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a587b110321b7e4a1e69772c4accda08f" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>TestStrArg</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a8af55174c5824ad457f07c2f5caa3f3d" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>TestSyntax</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a8f756857af4eaf5b6ae260454f6f1317" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>TestVarConst</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a598de332d1a57cbbd1ca77349a2e7b16" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>ThrowTest</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a87d0121ff121ff9feb9f23afe3caa6db" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>times3</name></member>
+      <member refid="classmu_1_1_test_1_1_parser_tester_1a167b3d59ead5df91cb0dda6cea171096" prot="private" virt="non-virtual"><scope>mu::Test::ParserTester</scope><name>ValueOf</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

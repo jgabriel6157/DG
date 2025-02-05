@@ -1,0 +1,1609 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="mu_parser_d_l_l_8h" kind="file" language="C++">
+    <compoundname>muParserDLL.h</compoundname>
+    <includes refid="mu_parser_fixes_8h" local="yes">muParserFixes.h</includes>
+    <includedby refid="example2_8c" local="yes">/Users/jackgabriel/Desktop/DG/muparser-2.3.4/samples/example2/example2.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h</label>
+        <link refid="mu_parser_d_l_l_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>muParserFixes.h</label>
+        <link refid="mu_parser_fixes_8h"/>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a0080665019ff2aa78a98bc03679a412b" prot="public" static="no">
+        <type>void *</type>
+        <definition>typedef void* muParserHandle_t</definition>
+        <argsstring></argsstring>
+        <name>muParserHandle_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="44" column="14" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a2fbf7a38a77995d88c5ac2d159471a01" prot="public" static="no">
+        <type>char</type>
+        <definition>typedef char muChar_t</definition>
+        <argsstring></argsstring>
+        <name>muChar_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="47" column="16" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1ae54c5a96cb3847738d1fcee95a397094" prot="public" static="no">
+        <type>int</type>
+        <definition>typedef int muBool_t</definition>
+        <argsstring></argsstring>
+        <name>muBool_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="52" column="16" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a912a67144820522d9931ce3a16a4dfef" prot="public" static="no">
+        <type>int</type>
+        <definition>typedef int muInt_t</definition>
+        <argsstring></argsstring>
+        <name>muInt_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="53" column="16" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a72bc4a725eaca58daa5aa4fa22cc4e93" prot="public" static="no">
+        <type>double</type>
+        <definition>typedef double muFloat_t</definition>
+        <argsstring></argsstring>
+        <name>muFloat_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="54" column="16" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a964418d2405d82e1c82e42c4a2f1a64f" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFun0_t) (void)</definition>
+        <argsstring>)(void)</argsstring>
+        <name>muFun0_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="57" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1aacfc156ee872dc79bc290097a2202edd" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFun1_t) (muFloat_t)</definition>
+        <argsstring>)(muFloat_t)</argsstring>
+        <name>muFun1_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="58" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a324231999f64f449d209b12759c3ae94" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFun2_t) (muFloat_t, muFloat_t)</definition>
+        <argsstring>)(muFloat_t, muFloat_t)</argsstring>
+        <name>muFun2_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="59" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1aa923fbc0683c7d05fa130690327a0404" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFun3_t) (muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muFun3_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="60" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1afef4f72973600163a9606e863bec67fe" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFun4_t) (muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muFun4_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="61" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1ac02edd51057c759c6b8c44e3af356617" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFun5_t) (muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muFun5_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="62" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1ae133e5a9fbd044768319002e5e518efe" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFun6_t) (muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muFun6_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="63" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a84ff4b939d9df9ab21c99f1b66de8e2e" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFun7_t) (muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muFun7_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="64" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a8ed4188a9b32fd8094d5d43494c19d7a" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFun8_t) (muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muFun8_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="65" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1af6614db1a53ef41d64c2744c46241d83" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFun9_t) (muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muFun9_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="66" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1ad63c2d745fde2072ee2f79f019bdad65" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFun10_t) (muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muFun10_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="67" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1abdd10c12336bce5fe0ea8a2eaefd3cad" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFunUserData0_t) (void *)</definition>
+        <argsstring>)(void *)</argsstring>
+        <name>muFunUserData0_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="69" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a629fdd1b6f662f9a041325a2ff3dd90a" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFunUserData1_t) (void *, muFloat_t)</definition>
+        <argsstring>)(void *, muFloat_t)</argsstring>
+        <name>muFunUserData1_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="70" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1ad55978b4ce83a75b1931136ae364a3c2" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFunUserData2_t) (void *, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, muFloat_t, muFloat_t)</argsstring>
+        <name>muFunUserData2_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="71" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1ae0065092d747bac91b197dc674e16205" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFunUserData3_t) (void *, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muFunUserData3_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="72" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a68da14ba87c176a2d4a728d31d21c9ba" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFunUserData4_t) (void *, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muFunUserData4_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="73" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1aff4b3e3e86d32be231f4163b1cb11979" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFunUserData5_t) (void *, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muFunUserData5_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="74" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a3ab75f58afe2ed02341d6a4cad3f9133" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFunUserData6_t) (void *, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muFunUserData6_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="75" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1afb28d9f7e94415208e083e149814e15f" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFunUserData7_t) (void *, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muFunUserData7_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="76" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a72c65a2ddb7431126bc00c0bfbb27778" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFunUserData8_t) (void *, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muFunUserData8_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="77" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a891f8c9ae498dac38237b2303e0922dd" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFunUserData9_t) (void *, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muFunUserData9_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="78" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a57c08cf301bcee31dabb007ddccd9c8d" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muFunUserData10_t) (void *, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muFunUserData10_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="79" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a629ff8e34a9f6744296229c74a527047" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFun0_t) (int, int)</definition>
+        <argsstring>)(int, int)</argsstring>
+        <name>muBulkFun0_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="82" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a1b77af43b75fb11526c8828da88b1e7e" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFun1_t) (int, int, muFloat_t)</definition>
+        <argsstring>)(int, int, muFloat_t)</argsstring>
+        <name>muBulkFun1_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="83" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a1531659c901ee56c0607c6032afd2156" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFun2_t) (int, int, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(int, int, muFloat_t, muFloat_t)</argsstring>
+        <name>muBulkFun2_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="84" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a8c17d6702b1cb78c5c2c3f564320e6d6" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFun3_t) (int, int, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(int, int, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muBulkFun3_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="85" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1aaba6643890614f58a5050916b3d5012f" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFun4_t) (int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muBulkFun4_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="86" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a9c6d8ae396c3916cef528c433a62e475" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFun5_t) (int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muBulkFun5_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="87" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1ab769f4f161617c54fab923480dc3a7f7" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFun6_t) (int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muBulkFun6_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="88" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a17cd22bdd7b22a56150d784a07451042" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFun7_t) (int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muBulkFun7_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="89" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a6ae8eef51b4ef1463412bdae861d8154" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFun8_t) (int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muBulkFun8_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="90" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a7aae33e5d0e481baed647187b83fa587" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFun9_t) (int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muBulkFun9_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="91" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a53418388935ee6a8aff6046493a417b2" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFun10_t) (int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muBulkFun10_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="92" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a120f6fbadbae44d681097bb9ab7e311e" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFunUserData0_t) (void *, int, int)</definition>
+        <argsstring>)(void *, int, int)</argsstring>
+        <name>muBulkFunUserData0_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="94" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1af258091655ca774099ce5bacadbe77f4" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFunUserData1_t) (void *, int, int, muFloat_t)</definition>
+        <argsstring>)(void *, int, int, muFloat_t)</argsstring>
+        <name>muBulkFunUserData1_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="95" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1af8c708058d483d63a10272c76b7e3e6e" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFunUserData2_t) (void *, int, int, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, int, int, muFloat_t, muFloat_t)</argsstring>
+        <name>muBulkFunUserData2_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="96" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a2ec77d893159af7d9b458c6415d997cc" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFunUserData3_t) (void *, int, int, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, int, int, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muBulkFunUserData3_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="97" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a0dde978f7b829c67ac7fda3d59ae1777" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFunUserData4_t) (void *, int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muBulkFunUserData4_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="98" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1ab7f3e470cfa15994ba136bd28bc84278" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFunUserData5_t) (void *, int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muBulkFunUserData5_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="99" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1ac8c75281ab99e1c86e836c640ce2d3da" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFunUserData6_t) (void *, int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muBulkFunUserData6_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="100" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a6bbab04b1e4a03209917ede2fa9e6f17" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFunUserData7_t) (void *, int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muBulkFunUserData7_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="101" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1acdc0ec30329f0041fc6808ede5fed1e4" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFunUserData8_t) (void *, int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muBulkFunUserData8_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="102" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1ad32b53aa9fb668be5e017b2b6df5f393" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFunUserData9_t) (void *, int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muBulkFunUserData9_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="103" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1ad16c684f409f6da565c8e2aa63d12409" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muBulkFunUserData10_t) (void *, int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, int, int, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muBulkFunUserData10_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="104" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1accb0ffd5b845884de8a2e79a597a25d2" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muMultFun_t) (const muFloat_t *, muInt_t)</definition>
+        <argsstring>)(const muFloat_t *, muInt_t)</argsstring>
+        <name>muMultFun_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="106" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1aeb804182300fbb8b568513462b65a0bf" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muMultFunUserData_t) (void *, const muFloat_t *, muInt_t)</definition>
+        <argsstring>)(void *, const muFloat_t *, muInt_t)</argsstring>
+        <name>muMultFunUserData_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="107" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a6c0241dfeb12e47f479f8500d76f1966" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muStrFun1_t) (const muChar_t *)</definition>
+        <argsstring>)(const muChar_t *)</argsstring>
+        <name>muStrFun1_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="109" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a5819b5113e88034b7b95d215ddb70ef9" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muStrFun2_t) (const muChar_t *, muFloat_t)</definition>
+        <argsstring>)(const muChar_t *, muFloat_t)</argsstring>
+        <name>muStrFun2_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="110" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a0fb78ecc46808698c3825d8589ba3cea" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muStrFun3_t) (const muChar_t *, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(const muChar_t *, muFloat_t, muFloat_t)</argsstring>
+        <name>muStrFun3_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="111" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a366a67245be5f93d765bc4844811facc" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muStrFun4_t) (const muChar_t *, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(const muChar_t *, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muStrFun4_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="112" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a1c2cdedf4b301b1becabad3256c4aa5b" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muStrFun5_t) (const muChar_t *, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(const muChar_t *, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muStrFun5_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="113" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a2cf1d62f836f7c17865329fdd66abcfb" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muStrFunUserData1_t) (void *, const muChar_t *)</definition>
+        <argsstring>)(void *, const muChar_t *)</argsstring>
+        <name>muStrFunUserData1_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="115" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a968009fad8dda78a41661256b268c8c7" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muStrFunUserData2_t) (void *, const muChar_t *, muFloat_t)</definition>
+        <argsstring>)(void *, const muChar_t *, muFloat_t)</argsstring>
+        <name>muStrFunUserData2_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="116" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a15fb8feef459904577020ba493d27e18" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muStrFunUserData3_t) (void *, const muChar_t *, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, const muChar_t *, muFloat_t, muFloat_t)</argsstring>
+        <name>muStrFunUserData3_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="117" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1af4a1ab19178a541353abaaec11aa7902" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muStrFunUserData4_t) (void *, const muChar_t *, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, const muChar_t *, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muStrFunUserData4_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="118" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a6d81cdfa1e0d6f552f35943df9b083ec" prot="public" static="no">
+        <type>muFloat_t(*</type>
+        <definition>typedef muFloat_t(* muStrFunUserData5_t) (void *, const muChar_t *, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</definition>
+        <argsstring>)(void *, const muChar_t *, muFloat_t, muFloat_t, muFloat_t, muFloat_t)</argsstring>
+        <name>muStrFunUserData5_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="119" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1aa7751cac7929862ef465ed0a08daf638" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* muErrorHandler_t) (muParserHandle_t a_hParser)</definition>
+        <argsstring>)(muParserHandle_t a_hParser)</argsstring>
+        <name>muErrorHandler_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="122" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a35dee6dd7c13bf1022711c108494b7a0" prot="public" static="no">
+        <type>muFloat_t *(*</type>
+        <definition>typedef muFloat_t *(* muFacFun_t) (const muChar_t *, void *)</definition>
+        <argsstring>)(const muChar_t *, void *)</argsstring>
+        <name>muFacFun_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="123" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mu_parser_d_l_l_8h_1a55fd67175b34718a5b056b89f8bee18b" prot="public" static="no">
+        <type>muInt_t(*</type>
+        <definition>muIdentFun_t</definition>
+        <argsstring>)(const muChar_t *, muInt_t *, muFloat_t *)</argsstring>
+        <name>muIdentFun_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="124" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1aebfd23e7d0562eb90146cd2c8ce3c89d" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int muOPRT_ASCT_LEFT</definition>
+        <argsstring></argsstring>
+        <name>muOPRT_ASCT_LEFT</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="128" column="18" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1a5cfa2eac3114b3ad57cf983545111473" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int muOPRT_ASCT_RIGHT</definition>
+        <argsstring></argsstring>
+        <name>muOPRT_ASCT_RIGHT</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="129" column="18" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1aeda6eb6e50d86673821abe088eb46a27" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int muBASETYPE_FLOAT</definition>
+        <argsstring></argsstring>
+        <name>muBASETYPE_FLOAT</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="131" column="18" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1a831f9452d1e4b66c9bef7af87476cfda" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int muBASETYPE_INT</definition>
+        <argsstring></argsstring>
+        <name>muBASETYPE_INT</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="132" column="18" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1a70627044ecb2b675fbd242e8bf1747b3" prot="public" static="no" mutable="no">
+        <type>const muChar_t *</type>
+        <definition>const muChar_t* a_szExpr</definition>
+        <argsstring></argsstring>
+        <name>a_szExpr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="147" column="29" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1af7bdd6658661ca9fa9e157a21f70d550" prot="public" static="no" mutable="no">
+        <type>muFacFun_t</type>
+        <definition>muFacFun_t a_pFactory</definition>
+        <argsstring></argsstring>
+        <name>a_pFactory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="148" column="25" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1af2fe0b3322818bbb3e6f8b0457f1b802" prot="public" static="no" mutable="no">
+        <type>muFacFun_t void *</type>
+        <definition>muFacFun_t void* pUserData</definition>
+        <argsstring></argsstring>
+        <name>pUserData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="148" column="41" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1a414d80453eba1954ae1300dc3c988229" prot="public" static="no" mutable="no">
+        <type>int *</type>
+        <definition>int* nNum</definition>
+        <argsstring></argsstring>
+        <name>nNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="151" column="18" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1a11266539756b56c4d489ed3d2a614b8e" prot="public" static="no" mutable="no">
+        <type>muFloat_t *</type>
+        <definition>muFloat_t* a_fResult</definition>
+        <argsstring></argsstring>
+        <name>a_fResult</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="152" column="24" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1af738afe1aa7c19e596796e9957c2d12d" prot="public" static="no" mutable="no">
+        <type>muFloat_t int</type>
+        <definition>muFloat_t int nSize</definition>
+        <argsstring></argsstring>
+        <name>nSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="152" column="38" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1a64bc01627fb53ac9bd824ade2e8cb99d" prot="public" static="no" mutable="no">
+        <type>const muChar_t *</type>
+        <definition>const muChar_t * a_szName</definition>
+        <argsstring></argsstring>
+        <name>a_szName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="155" column="29" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1ab3a3ed85edf393f2b8ad69081fe538e8" prot="public" static="no" mutable="no">
+        <type>const muChar_t muFun0_t</type>
+        <definition>const muChar_t muFun2_t a_pFun</definition>
+        <argsstring></argsstring>
+        <name>a_pFun</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="155" column="47" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1a9475bebe4725f2edd386fff9db72f3ea" prot="public" static="no" mutable="no">
+        <type>const muChar_t muFun0_t muBool_t</type>
+        <definition>const muChar_t muFun1_t muBool_t a_bOptimize</definition>
+        <argsstring></argsstring>
+        <name>a_bOptimize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="155" column="63" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1afe901bad8287c187b2408b0cb25d3869" prot="public" static="no" mutable="no">
+        <type>const muChar_t muFunUserData0_t void *</type>
+        <definition>const muChar_t muMultFunUserData_t void * a_pUserData</definition>
+        <argsstring></argsstring>
+        <name>a_pUserData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="167" column="67" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1a7beacbf8b135305cb7a11a9731de4b0d" prot="public" static="no" mutable="no">
+        <type>const muChar_t muFun2_t muInt_t</type>
+        <definition>const muChar_t muFun2_t muInt_t a_nPrec</definition>
+        <argsstring></argsstring>
+        <name>a_nPrec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="231" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1ad6d2c1604ab605b1ddbe5e54874cc282" prot="public" static="no" mutable="no">
+        <type>const muChar_t muFun2_t muInt_t muInt_t</type>
+        <definition>const muChar_t muFun2_t muInt_t muInt_t a_nOprtAsct</definition>
+        <argsstring></argsstring>
+        <name>a_nOprtAsct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="232" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1a8ed6c2f8e84831a06620ad0546609ae6" prot="public" static="no" mutable="no">
+        <type>const muChar_t muFloat_t</type>
+        <definition>const muChar_t muFloat_t a_fVal</definition>
+        <argsstring></argsstring>
+        <name>a_fVal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="237" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1ab0408457b4645fcfce7c0b08d936f162" prot="public" static="no" mutable="no">
+        <type>const muChar_t const muChar_t *</type>
+        <definition>const muChar_t const muChar_t* a_sVal</definition>
+        <argsstring></argsstring>
+        <name>a_sVal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="241" column="16" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1a0b10cccae0b2da3678c7a7f0cd7fbc73" prot="public" static="no" mutable="no">
+        <type>const muChar_t muFloat_t *</type>
+        <definition>const muChar_t muFloat_t * a_fVar</definition>
+        <argsstring></argsstring>
+        <name>a_fVar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="245" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1ae106b6975be89f5cf1d116ebca53cccc" prot="public" static="no" mutable="no">
+        <type>const muChar_t muFun1_t</type>
+        <definition>const muChar_t muFun1_t a_pOprt</definition>
+        <argsstring></argsstring>
+        <name>a_pOprt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="253" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="253" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1af2a0f2aed8dce1692e103c958ae233d3" prot="public" static="no" mutable="no">
+        <type>const muChar_t *</type>
+        <definition>const muChar_t * a_szCharset</definition>
+        <argsstring></argsstring>
+        <name>a_szCharset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="263" column="29" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1af04cfefeaec07ac513734d08cfa2ad0a" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned a_iVar</definition>
+        <argsstring></argsstring>
+        <name>a_iVar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="278" column="23" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="278" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1a9702acb48b4561c9a4ed7d7c538d8516" prot="public" static="no" mutable="no">
+        <type>unsigned const muChar_t **</type>
+        <definition>unsigned const muChar_t ** a_pszName</definition>
+        <argsstring></argsstring>
+        <name>a_pszName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="278" column="45" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="278" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1a3712e893ac2c28322464f6eebc1a0862" prot="public" static="no" mutable="no">
+        <type>unsigned const muChar_t muFloat_t **</type>
+        <definition>unsigned const muChar_t muFloat_t * a_pVar</definition>
+        <argsstring></argsstring>
+        <name>a_pVar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="278" column="65" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="278" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1a76c4c148d54d5b7e5728ec911432a1c3" prot="public" static="no" mutable="no">
+        <type>const muChar_t</type>
+        <definition>const muChar_t cArgSep</definition>
+        <argsstring></argsstring>
+        <name>cArgSep</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="281" column="29" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="281" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mu_parser_d_l_l_8h_1a992b8e2f461d50b05baccd4f91a81e9b" prot="public" static="no" mutable="no">
+        <type>muErrorHandler_t</type>
+        <definition>muErrorHandler_t a_pErrHandler</definition>
+        <argsstring></argsstring>
+        <name>a_pErrHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="292" column="31" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" bodystart="292" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="mu_parser_d_l_l_8h_1a23d52ebb18facb489ec8425f148549a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>API_EXPORT</definition>
+        <argsstring>(muParserHandle_t) mupCreate(int nBaseType)</argsstring>
+        <name>API_EXPORT</name>
+        <param>
+          <type>muParserHandle_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="144" column="1" declfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" declline="144" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="mu_parser_d_l_l_8h_1a38d3c7c2b531e72d9b7fd6985a6c176b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>API_EXPORT</definition>
+        <argsstring>(void) mupRelease(muParserHandle_t a_hParser)</argsstring>
+        <name>API_EXPORT</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="147" column="1" declfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" declline="302" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="mu_parser_d_l_l_8h_1ac7f7d5ed6e71a21f4981721f606282b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>API_EXPORT</definition>
+        <argsstring>(const muChar_t *) mupGetExpr(muParserHandle_t a_hParser)</argsstring>
+        <name>API_EXPORT</name>
+        <param>
+          <type>const muChar_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="146" column="1" declfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" declline="146" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="mu_parser_d_l_l_8h_1a07fd2d7da20cd814d522ae583261e0f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>API_EXPORT</definition>
+        <argsstring>(muFloat_t) mupEval(muParserHandle_t a_hParser)</argsstring>
+        <name>API_EXPORT</name>
+        <param>
+          <type>muFloat_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="150" column="1" declfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" declline="150" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="mu_parser_d_l_l_8h_1a1b4abd0acc75f45b9efc038a81e41172" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>API_EXPORT</definition>
+        <argsstring>(muFloat_t *) mupEvalMulti(muParserHandle_t a_hParser</argsstring>
+        <name>API_EXPORT</name>
+        <param>
+          <type>muFloat_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="151" column="1" declfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" declline="301" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="mu_parser_d_l_l_8h_1a34154418377e6de7a60e6424d3b50780" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>API_EXPORT</definition>
+        <argsstring>(int) mupGetExprVarNum(muParserHandle_t a_hParser)</argsstring>
+        <name>API_EXPORT</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" line="275" column="1" declfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h" declline="275" declcolumn="1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This file contains the DLL interface of muparser. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"></highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>_____<sp/><sp/>__<sp/>_____________<sp/>_______<sp/><sp/>______<sp/>___________</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>/<sp/><sp/><sp/><sp/><sp/>\|<sp/><sp/>|<sp/><sp/>\____<sp/>\__<sp/><sp/>\\_<sp/><sp/>__<sp/>\/<sp/><sp/>___//<sp/>__<sp/>\_<sp/><sp/>__<sp/>\</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/>|<sp/><sp/>Y<sp/>Y<sp/><sp/>\<sp/><sp/>|<sp/><sp/>/<sp/><sp/>|_&gt;<sp/>&gt;<sp/>__<sp/>\|<sp/><sp/>|<sp/>\/\___<sp/>\\<sp/><sp/>___/|<sp/><sp/>|<sp/>\/</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/>|__|_|<sp/><sp/>/____/|<sp/><sp/><sp/>__(____<sp/><sp/>/__|<sp/><sp/>/____<sp/><sp/>&gt;\___<sp/><sp/>&gt;__|</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\/<sp/><sp/><sp/><sp/><sp/><sp/>|__|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>\/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\/<sp/><sp/><sp/><sp/><sp/>\/</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/>Copyright<sp/>(C)<sp/>2004<sp/>-<sp/>2022<sp/>Ingo<sp/>Berg</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without<sp/>modification,<sp/>are<sp/>permitted</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/><sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/>this<sp/>list<sp/>of</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/>this<sp/>list<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/><sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/><sp/><sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/><sp/><sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDER<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/><sp/><sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/><sp/><sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/><sp/><sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/><sp/><sp/><sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/><sp/><sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MU_PARSER_DLL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MU_PARSER_DLL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mu_parser_fixes_8h" kindref="compound">muParserFixes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Basic<sp/>types</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>muParserHandle_t;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>parser<sp/>handle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_UNICODE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/>muChar_t;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>character<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal"><sp/><sp/><sp/>muChar_t;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>character<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>muBool_t;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>boolean<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>muInt_t;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>integer<sp/>type<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>muFloat_t;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>floating<sp/>point<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>function<sp/>types<sp/>for<sp/>calculation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFun0_t)(void);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFun1_t)(muFloat_t);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFun2_t)(muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFun3_t)(muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFun4_t)(muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFun5_t)(muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFun6_t)(muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFun7_t)(muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFun8_t)(muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFun9_t)(muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFun10_t)(muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>with<sp/>user<sp/>data<sp/>(not<sp/>null)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFunUserData0_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFunUserData1_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFunUserData2_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFunUserData3_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFunUserData4_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFunUserData5_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFunUserData6_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFunUserData7_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFunUserData8_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFunUserData9_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muFunUserData10_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Function<sp/>prototypes<sp/>for<sp/>bulkmode<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFun0_t)(int,<sp/>int);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFun1_t)(int,<sp/>int,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFun2_t)(int,<sp/>int,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFun3_t)(int,<sp/>int,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFun4_t)(int,<sp/>int,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFun5_t)(int,<sp/>int,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFun6_t)(int,<sp/>int,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFun7_t)(int,<sp/>int,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFun8_t)(int,<sp/>int,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFun9_t)(int,<sp/>int,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFun10_t)(int,<sp/>int,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>with<sp/>user<sp/>data<sp/>(not<sp/>null)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFunUserData0_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>int,<sp/>int);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFunUserData1_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>int,<sp/>int,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFunUserData2_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>int,<sp/>int,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFunUserData3_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>int,<sp/>int,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFunUserData4_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>int,<sp/>int,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFunUserData5_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>int,<sp/>int,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFunUserData6_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>int,<sp/>int,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFunUserData7_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>int,<sp/>int,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFunUserData8_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>int,<sp/>int,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFunUserData9_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>int,<sp/>int,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muBulkFunUserData10_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/>int,<sp/>int,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muMultFun_t)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muFloat_t*,<sp/>muInt_t);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muMultFunUserData_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muFloat_t*,<sp/>muInt_t);<sp/></highlight><highlight class="comment">//<sp/>with<sp/>user<sp/>data<sp/>(not<sp/>null)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muStrFun1_t)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muStrFun2_t)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muStrFun3_t)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muStrFun4_t)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muStrFun5_t)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>with<sp/>user<sp/>data<sp/>(not<sp/>null)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muStrFunUserData1_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muStrFunUserData2_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muStrFunUserData3_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muStrFunUserData4_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t(*muStrFunUserData5_t)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t,<sp/>muFloat_t);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Functions<sp/>for<sp/>parser<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*muErrorHandler_t)(muParserHandle_t<sp/>a_hParser);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[optional]<sp/>callback<sp/>to<sp/>an<sp/>error<sp/>handler</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muFloat_t*<sp/>(*muFacFun_t)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[optional]<sp/>callback<sp/>for<sp/>creating<sp/>new<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>muInt_t(*muIdentFun_t)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*,<sp/>muInt_t*,<sp/>muFloat_t*);<sp/></highlight><highlight class="comment">//<sp/>[optional]<sp/>value<sp/>identification<sp/>callbacks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//-----------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constants</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>muOPRT_ASCT_LEFT<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>muOPRT_ASCT_RIGHT<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>muBASETYPE_FLOAT<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>muBASETYPE_INT<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//-----------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>muParser<sp/>C<sp/>compatible<sp/>bindings</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//-----------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Basic<sp/>operations<sp/>/<sp/>initialization<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(muParserHandle_t)<sp/>mupCreate(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nBaseType);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupRelease(muParserHandle_t<sp/>a_hParser);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*)<sp/>mupGetExpr(muParserHandle_t<sp/>a_hParser);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupSetExpr(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szExpr);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupSetVarFactory(muParserHandle_t<sp/>a_hParser,<sp/>muFacFun_t<sp/>a_pFactory,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>pUserData);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*)<sp/>mupGetVersion(muParserHandle_t<sp/>a_hParser);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(muFloat_t)<sp/>mupEval(muParserHandle_t<sp/>a_hParser);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(muFloat_t*)<sp/>mupEvalMulti(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>nNum);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupEvalBulk(muParserHandle_t<sp/>a_hParser,<sp/>muFloat_t*<sp/>a_fResult,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nSize);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Defining<sp/>callbacks<sp/>/<sp/>variables<sp/>/<sp/>constants</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFun0(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFun0_t<sp/>a_pFun,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFun1(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFun1_t<sp/>a_pFun,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFun2(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFun2_t<sp/>a_pFun,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFun3(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFun3_t<sp/>a_pFun,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFun4(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFun4_t<sp/>a_pFun,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFun5(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFun5_t<sp/>a_pFun,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFun6(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFun6_t<sp/>a_pFun,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFun7(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFun7_t<sp/>a_pFun,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFun8(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFun8_t<sp/>a_pFun,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFun9(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFun9_t<sp/>a_pFun,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFun10(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFun10_t<sp/>a_pFun,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>with<sp/>user<sp/>data<sp/>(not<sp/>null)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFunUserData0(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFunUserData0_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFunUserData1(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFunUserData1_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFunUserData2(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFunUserData2_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFunUserData3(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFunUserData3_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFunUserData4(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFunUserData4_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFunUserData5(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFunUserData5_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFunUserData6(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFunUserData6_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFunUserData7(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFunUserData7_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFunUserData8(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFunUserData8_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFunUserData9(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFunUserData9_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineFunUserData10(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muFunUserData10_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Defining<sp/>bulkmode<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFun0(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFun0_t<sp/>a_pFun);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFun1(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFun1_t<sp/>a_pFun);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFun2(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFun2_t<sp/>a_pFun);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFun3(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFun3_t<sp/>a_pFun);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFun4(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFun4_t<sp/>a_pFun);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFun5(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFun5_t<sp/>a_pFun);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFun6(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFun6_t<sp/>a_pFun);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFun7(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFun7_t<sp/>a_pFun);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFun8(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFun8_t<sp/>a_pFun);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFun9(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFun9_t<sp/>a_pFun);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFun10(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFun10_t<sp/>a_pFun);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>with<sp/>user<sp/>data<sp/>(not<sp/>null)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFunUserData0(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFunUserData0_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFunUserData1(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFunUserData1_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFunUserData2(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFunUserData2_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFunUserData3(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFunUserData3_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFunUserData4(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFunUserData4_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFunUserData5(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFunUserData5_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFunUserData6(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFunUserData6_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFunUserData7(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFunUserData7_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFunUserData8(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFunUserData8_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFunUserData9(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFunUserData9_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkFunUserData10(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muBulkFunUserData10_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>string<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineStrFun1(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muStrFun1_t<sp/>a_pFun);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineStrFun2(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muStrFun2_t<sp/>a_pFun);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineStrFun3(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muStrFun3_t<sp/>a_pFun);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineStrFun4(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muStrFun4_t<sp/>a_pFun);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineStrFun5(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muStrFun5_t<sp/>a_pFun);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>with<sp/>user<sp/>data<sp/>(not<sp/>null)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineStrFunUserData1(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muStrFunUserData1_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineStrFunUserData2(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muStrFunUserData2_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineStrFunUserData3(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muStrFunUserData3_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineStrFunUserData4(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muStrFunUserData4_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineStrFunUserData5(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,<sp/>muStrFunUserData5_t<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineMultFun(muParserHandle_t<sp/>a_hParser,</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>muMultFun_t<sp/>a_pFun,</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>with<sp/>user<sp/>data<sp/>(not<sp/>null)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineMultFunUserData(muParserHandle_t<sp/>a_hParser,</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>muMultFunUserData_t<sp/>a_pFun,</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineOprt(muParserHandle_t<sp/>a_hParser,</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>muFun2_t<sp/>a_pFun,</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>muInt_t<sp/>a_nPrec,</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>muInt_t<sp/>a_nOprtAsct,</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineConst(muParserHandle_t<sp/>a_hParser,</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>muFloat_t<sp/>a_fVal);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineStrConst(muParserHandle_t<sp/>a_hParser,</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_sVal);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineVar(muParserHandle_t<sp/>a_hParser,</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>muFloat_t*<sp/>a_fVar);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineBulkVar(muParserHandle_t<sp/>a_hParser,</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>muFloat_t*<sp/>a_fVar);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefinePostfixOprt(muParserHandle_t<sp/>a_hParser,</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>muFun1_t<sp/>a_pOprt,</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineInfixOprt(muParserHandle_t<sp/>a_hParser,</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName,</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>muFun1_t<sp/>a_pOprt,</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>muBool_t<sp/>a_bOptimize);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Define<sp/>character<sp/>sets<sp/>for<sp/>identifiers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineNameChars(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szCharset);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineOprtChars(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szCharset);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupDefineInfixOprtChars(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szCharset);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Remove<sp/>all<sp/>/<sp/>single<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupRemoveVar(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*<sp/>a_szName);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupClearVar(muParserHandle_t<sp/>a_hParser);</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupClearConst(muParserHandle_t<sp/>a_hParser);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupClearOprt(muParserHandle_t<sp/>a_hParser);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupClearFun(muParserHandle_t<sp/>a_hParser);</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Querying<sp/>variables<sp/>/<sp/>expression<sp/>variables<sp/>/<sp/>constants</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>mupGetExprVarNum(muParserHandle_t<sp/>a_hParser);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>mupGetVarNum(muParserHandle_t<sp/>a_hParser);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>mupGetConstNum(muParserHandle_t<sp/>a_hParser);</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupGetExprVar(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>a_iVar,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t**<sp/>a_pszName,<sp/>muFloat_t**<sp/>a_pVar);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupGetVar(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>a_iVar,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t**<sp/>a_pszName,<sp/>muFloat_t**<sp/>a_pVar);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupGetConst(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>a_iVar,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t**<sp/>a_pszName,<sp/>muFloat_t*<sp/>a_pVar);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupSetArgSep(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t<sp/>cArgSep);</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupSetDecSep(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t<sp/>cArgSep);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupSetThousandsSep(muParserHandle_t<sp/>a_hParser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t<sp/>cArgSep);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupResetLocale(muParserHandle_t<sp/>a_hParser);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>value<sp/>recognition<sp/>callbacks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupAddValIdent(muParserHandle_t<sp/>a_hParser,<sp/>muIdentFun_t);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>handling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(muBool_t)<sp/>mupError(muParserHandle_t<sp/>a_hParser);</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupErrorReset(muParserHandle_t<sp/>a_hParser);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupSetErrorHandler(muParserHandle_t<sp/>a_hParser,<sp/>muErrorHandler_t<sp/>a_pErrHandler);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*)<sp/>mupGetErrorMsg(muParserHandle_t<sp/>a_hParser);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(muInt_t)<sp/>mupGetErrorCode(muParserHandle_t<sp/>a_hParser);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(muInt_t)<sp/>mupGetErrorPos(muParserHandle_t<sp/>a_hParser);</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>muChar_t*)<sp/>mupGetErrorToken(muParserHandle_t<sp/>a_hParser);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//API_EXPORT(const<sp/>muChar_t*)<sp/>mupGetErrorExpr(muParserHandle_t<sp/>a_hParser);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>used<sp/>for<sp/>.NET<sp/>only.<sp/>It<sp/>creates<sp/>a<sp/>new<sp/>variable<sp/>allowing<sp/>the<sp/>dll<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>manage<sp/>the<sp/>variable<sp/>rather<sp/>than<sp/>the<sp/>.NET<sp/>garbage<sp/>collector.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(muFloat_t*)<sp/>mupCreateVar(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/>API_EXPORT(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>mupReleaseVar(muFloat_t*);</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>include<sp/>guard</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDLL.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_solver_8hxx" kind="file" language="C++">
+    <compoundname>Solver.hxx</compoundname>
+    <includes local="no">functional</includes>
+    <includes refid="_matrix_8hxx" local="yes">Matrix.hxx</includes>
+    <includes refid="_vector_8hxx" local="yes">Vector.hxx</includes>
+    <includes refid="_mesh_8hxx" local="yes">Mesh.hxx</includes>
+    <includes refid="_newton_cotes_8hxx" local="yes">NewtonCotes.hxx</includes>
+    <includes refid="_newton_solver_8hxx" local="yes">NewtonSolver.hxx</includes>
+    <includedby refid="_solver_8cxx" local="yes">/Users/jackgabriel/Desktop/DG/Solver.cxx</includedby>
+    <includedby refid="dg1d_advection_8cxx" local="yes">/Users/jackgabriel/Desktop/DG/dg1dAdvection.cxx</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>Matrix.hxx</label>
+        <link refid="_matrix_8hxx_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Mesh.hxx</label>
+        <link refid="_mesh_8hxx_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>NewtonCotes.hxx</label>
+        <link refid="_newton_cotes_8hxx_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>NewtonSolver.hxx</label>
+        <link refid="_newton_solver_8hxx_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/Users/jackgabriel/Desktop/DG/Solver.hxx</label>
+        <link refid="_solver_8hxx"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>SpecialFunctions.hxx</label>
+        <link refid="_special_functions_8hxx_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Vector.hxx</label>
+        <link refid="_vector_8hxx_source"/>
+      </node>
+      <node id="2">
+        <label>functional</label>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_solver" prot="public">Solver</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>SOLVERHEADERDEF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SOLVERHEADERDEF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Matrix.hxx&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Vector.hxx&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Mesh.hxx&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;NewtonCotes.hxx&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;NewtonSolver.hxx&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="class_solver" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Solver</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mesh" kindref="compound">Mesh</ref><sp/>mesh;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_newton_cotes" kindref="compound">NewtonCotes</ref><sp/>integrator;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_newton_solver" kindref="compound">NewtonSolver</ref><sp/>newtonSolver;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lMax;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;double(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)&gt;<sp/>basisFunction;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>quadratureOrder;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ionization;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>cx;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bgk;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bc;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>alphaDomain;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>M_invDiag;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>M_invS;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>M_invF1Minus;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>M_invF0Minus;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>M_invF1Plus;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>M_invF0Plus;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>uPre;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>uIntermediate;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>uPost;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>fSource;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>advanceStage(<ref refid="class_matrix" kindref="compound">Matrix</ref>&amp;<sp/>uPre,<sp/><ref refid="class_matrix" kindref="compound">Matrix</ref>&amp;<sp/>uPost,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>plusFactor,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>timesFactor);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//constructor<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>Solver(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_mesh" kindref="compound">Mesh</ref>&amp;<sp/>mesh,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lMax,<sp/>std::function&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)&gt;<sp/>basisFunction,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>quadratureOrder,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ionization,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>cx,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bgk,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bc);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//deconstructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>~Solver();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//create<sp/>the<sp/>mass,<sp/>stiffness<sp/>and<sp/>flux<sp/>matricies<sp/>as<sp/>used<sp/>by<sp/>the<sp/>solver</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>createMatrices();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//initialize<sp/>using<sp/>the<sp/>Least<sp/>Squares<sp/>method</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initialize(std::function&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)&gt;<sp/>inputFunction);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initializeSource();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initializeAlpha();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//advance<sp/>time<sp/>step<sp/>using<sp/>3rd<sp/>order<sp/>SSP<sp/>RK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>advance();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//use<sp/>minmod<sp/>slope<sp/>limiter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>slopeLimiter();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//get<sp/>solution<sp/>at<sp/>(l,j)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>getSolution(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>l,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//compute<sp/>the<sp/>mass,<sp/>momentum<sp/>and<sp/>energy<sp/>from<sp/>f</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>getMoments();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//compute<sp/>the<sp/>density<sp/>from<sp/>f</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>getMoment(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>power);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>getRho(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>getU(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>coord);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>getE(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//fit<sp/>Maxwellian</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>fitMaxwellian(<ref refid="class_vector" kindref="compound">Vector</ref><sp/>rho,<sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>u,<sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>rt,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>fitMaxwellian(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>density,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>meanVelocity,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>temperature,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>fitMaxwellian3(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>density,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>meanVelocity,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>temperature,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vz);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//compute<sp/>the<sp/>density<sp/>from<sp/>f</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>getDensity(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>fitCX(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>density,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>meanVelocity,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>temperature,<sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>rho_n,<sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>f_tilde,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>kx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ky,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>kz,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//fit<sp/>Maxwellian</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>fitMaxwellian(<ref refid="class_matrix" kindref="compound">Matrix</ref><sp/>alpha,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx"/>
+  </compounddef>
+</doxygen>

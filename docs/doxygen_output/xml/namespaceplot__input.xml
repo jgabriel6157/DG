@@ -1,0 +1,551 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespaceplot__input" kind="namespace" language="Python">
+    <compoundname>plot_input</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="plot__input_8py_1ac2e6d56ed0773ef0938f717de5251951" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_input.fileName</definition>
+        <argsstring></argsstring>
+        <name>fileName</name>
+        <qualifiedname>plot_input.fileName</qualifiedname>
+        <initializer>=  &apos;Output.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="66" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1a2516a4047c4c3bfcf4c613e2a1590ad6" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_input.fileNameSol</definition>
+        <argsstring></argsstring>
+        <name>fileNameSol</name>
+        <qualifiedname>plot_input.fileNameSol</qualifiedname>
+        <initializer>=  &apos;OutputS.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="67" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1a3573831d93b15b4bf5a48c49937ea388" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.inputFile</definition>
+        <argsstring></argsstring>
+        <name>inputFile</name>
+        <qualifiedname>plot_input.inputFile</qualifiedname>
+        <initializer>=  open(&apos;input.txt&apos;,&apos;r&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="68" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1aaa0972cbe81b94096f3817306ad0b091" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.inputParam</definition>
+        <argsstring></argsstring>
+        <name>inputParam</name>
+        <qualifiedname>plot_input.inputParam</qualifiedname>
+        <initializer>=  inputFile.readline()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="71" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1ac9dc47b7214370150060dd4ea4941512" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.jMax</definition>
+        <argsstring></argsstring>
+        <name>jMax</name>
+        <qualifiedname>plot_input.jMax</qualifiedname>
+        <initializer>=  int(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="74" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1a80e47d830ada6c74297f5844b093074c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>plot_input.value</qualifiedname>
+        <initializer>=  inputParam[inputParam.index(&apos;=&apos;)+2:-1]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="76" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1a66ace3e1d664d9a8fce8d5eb0fea165e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <qualifiedname>plot_input.length</qualifiedname>
+        <initializer>=  assignFloat(value)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="77" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1a66d8a57a9db325181c4e1afa20ccbfac" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.lMax</definition>
+        <argsstring></argsstring>
+        <name>lMax</name>
+        <qualifiedname>plot_input.lMax</qualifiedname>
+        <initializer>=  int(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="79" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1abdab1a4b046a505dc6a9ab5acb83333f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.basis</definition>
+        <argsstring></argsstring>
+        <name>basis</name>
+        <qualifiedname>plot_input.basis</qualifiedname>
+        <initializer>=  inputParam[inputParam.index(&apos;=&apos;)+2:-1]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="81" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1a4696fa573b9cdd93f52e1591492105ae" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.tMax</definition>
+        <argsstring></argsstring>
+        <name>tMax</name>
+        <qualifiedname>plot_input.tMax</qualifiedname>
+        <initializer>=  int(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="83" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1a8cedb604edc9038cf39d24db257e75dd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.dt</definition>
+        <argsstring></argsstring>
+        <name>dt</name>
+        <qualifiedname>plot_input.dt</qualifiedname>
+        <initializer>=  float(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="85" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1aaf2bb75a2e886252fe46623aab71595c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.nout</definition>
+        <argsstring></argsstring>
+        <name>nout</name>
+        <qualifiedname>plot_input.nout</qualifiedname>
+        <initializer>=  int(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="87" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1a1e5b2458289e7ed9b6b007da8cfe2351" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.nvx</definition>
+        <argsstring></argsstring>
+        <name>nvx</name>
+        <qualifiedname>plot_input.nvx</qualifiedname>
+        <initializer>=  int(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="89" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1a586458607cc9ba4d224750ccec94b2cb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.domainMaxVX</definition>
+        <argsstring></argsstring>
+        <name>domainMaxVX</name>
+        <qualifiedname>plot_input.domainMaxVX</qualifiedname>
+        <initializer>=  assignFloat(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="91" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1aa8344fbb810ccb174081f5fdf4de56fd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.values</definition>
+        <argsstring></argsstring>
+        <name>values</name>
+        <qualifiedname>plot_input.values</qualifiedname>
+        <initializer>=  pd.read_csv(fileName,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="98" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1a825df93fdce35ed53512d1e9114be134" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_input::m</definition>
+        <argsstring></argsstring>
+        <name>m</name>
+        <qualifiedname>plot_input.m</qualifiedname>
+        <initializer>=  0*100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="102" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1a31c109ce475f0a079bfe997e3bd77c09" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.dx</definition>
+        <argsstring></argsstring>
+        <name>dx</name>
+        <qualifiedname>plot_input.dx</qualifiedname>
+        <initializer>=  length/jMax</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="103" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1a2848d76b35c4f187cc13795e9eb9a51a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_input.dvx</definition>
+        <argsstring></argsstring>
+        <name>dvx</name>
+        <qualifiedname>plot_input.dvx</qualifiedname>
+        <initializer>=  2*domainMaxVX/(nvx-1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="104" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1a39991df9183bf7eaf3874c8e5fedae9e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.u</definition>
+        <argsstring></argsstring>
+        <name>u</name>
+        <qualifiedname>plot_input.u</qualifiedname>
+        <initializer>=  np.zeros((lMax,jMax,nvx))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="106" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1affba0a6072f570907120e0b29ce3b08e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.fig</definition>
+        <argsstring></argsstring>
+        <name>fig</name>
+        <qualifiedname>plot_input.fig</qualifiedname>
+        <initializer>=  plt.figure()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="109" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1ad7052bb0b90c2bd1b0feb830d3d84fdd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.ax</definition>
+        <argsstring></argsstring>
+        <name>ax</name>
+        <qualifiedname>plot_input.ax</qualifiedname>
+        <initializer>=  fig.add_subplot(projection=&apos;3d&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="110" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1ae6deb4032ba8939f0f85ad6d5748a7d4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_input.res</definition>
+        <argsstring></argsstring>
+        <name>res</name>
+        <qualifiedname>plot_input.res</qualifiedname>
+        <initializer>=  10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="138" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1a1ad13fdb5083c516f4c6e09fd9990748" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_input.xj</definition>
+        <argsstring></argsstring>
+        <name>xj</name>
+        <qualifiedname>plot_input.xj</qualifiedname>
+        <initializer>=  j*dx+dx/2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="144" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1a0ee685fcbd3cf72dd14d761afd6ca857" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>plot_input.y</qualifiedname>
+        <initializer>=  np.zeros(res)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="145" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1a075a4ab45b844a0563d1ef77f5dc005a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>plot_input.x</qualifiedname>
+        <initializer>=  np.zeros(res)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="146" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1adb9ac4c2cdeb0ce351c866f215525156" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_input.y_offset</definition>
+        <argsstring></argsstring>
+        <name>y_offset</name>
+        <qualifiedname>plot_input.y_offset</qualifiedname>
+        <initializer>=  -domainMaxVX + vx*dvx</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="154" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__input_8py_1afcf4130a565cbea6b8fbbe04be7242f3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_input.color</definition>
+        <argsstring></argsstring>
+        <name>color</name>
+        <qualifiedname>plot_input.color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="182" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="182" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="plot__input_8py_1a60245e4771f2705aa3a56a30ba3f28ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_input.getFunction</definition>
+        <argsstring>(basis, n, x)</argsstring>
+        <name>getFunction</name>
+        <qualifiedname>plot_input.getFunction</qualifiedname>
+        <param>
+          <type>basis</type>
+          <defname>basis</defname>
+        </param>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="10" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="10" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__input_8py_1aa9b3550cc6defce5793b63145ff3f561" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_input.LegendreP</definition>
+        <argsstring>(n, x)</argsstring>
+        <name>LegendreP</name>
+        <qualifiedname>plot_input.LegendreP</qualifiedname>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="22" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="22" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__input_8py_1aedf230976032c98d586148591f02d043" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_input.LegendrePorthonormal</definition>
+        <argsstring>(n, x)</argsstring>
+        <name>LegendrePorthonormal</name>
+        <qualifiedname>plot_input.LegendrePorthonormal</qualifiedname>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="30" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="30" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__input_8py_1acfdaddefc69caccd021a6aaa968072b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_input.Quadratic</definition>
+        <argsstring>(n, x)</argsstring>
+        <name>Quadratic</name>
+        <qualifiedname>plot_input.Quadratic</qualifiedname>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="33" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="33" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__input_8py_1a4784a01024f6afb689823e478fbec9f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_input.linear</definition>
+        <argsstring>(n, x)</argsstring>
+        <name>linear</name>
+        <qualifiedname>plot_input.linear</qualifiedname>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="41" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="41" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__input_8py_1a37742bd5cdf27a18a15423b4061eb2db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_input.assignFloat</definition>
+        <argsstring>(varString)</argsstring>
+        <name>assignFloat</name>
+        <qualifiedname>plot_input.assignFloat</qualifiedname>
+        <param>
+          <type>varString</type>
+          <defname>varString</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="47" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_input.py" bodystart="47" bodyend="65"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/plot_input.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,868 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_solver" kind="class" language="C++" prot="public">
+    <compoundname>Solver</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_solver_1aa124268a9636548b731b7be6339c26ed" prot="private" static="no" mutable="no">
+        <type><ref refid="class_mesh" kindref="compound">Mesh</ref></type>
+        <definition>Mesh Solver::mesh</definition>
+        <argsstring></argsstring>
+        <name>mesh</name>
+        <qualifiedname>Solver::mesh</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="14" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1a0a5de396c78cf29b340897974cdc7ac0" prot="private" static="no" mutable="no">
+        <type><ref refid="class_newton_cotes" kindref="compound">NewtonCotes</ref></type>
+        <definition>NewtonCotes Solver::integrator</definition>
+        <argsstring></argsstring>
+        <name>integrator</name>
+        <qualifiedname>Solver::integrator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="15" column="17" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1a6162ca436804547c36e7ef43fbbd0077" prot="private" static="no" mutable="no">
+        <type><ref refid="class_newton_solver" kindref="compound">NewtonSolver</ref></type>
+        <definition>NewtonSolver Solver::newtonSolver</definition>
+        <argsstring></argsstring>
+        <name>newtonSolver</name>
+        <qualifiedname>Solver::newtonSolver</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="16" column="18" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1add4f87d630ba162d042c38bbd2071a5e" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Solver::dt</definition>
+        <argsstring></argsstring>
+        <name>dt</name>
+        <qualifiedname>Solver::dt</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="17" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1a0ee4a311e4c66b6ff9362e2570580de7" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Solver::lMax</definition>
+        <argsstring></argsstring>
+        <name>lMax</name>
+        <qualifiedname>Solver::lMax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="18" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1a37bf7f23d58add50b447b9c359475821" prot="private" static="no" mutable="no">
+        <type>std::function&lt; double(int, double)&gt;</type>
+        <definition>std::function&lt;double(int,double)&gt; Solver::basisFunction</definition>
+        <argsstring></argsstring>
+        <name>basisFunction</name>
+        <qualifiedname>Solver::basisFunction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="19" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1a7d49bde282f4cc634256ad23334389de" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Solver::quadratureOrder</definition>
+        <argsstring></argsstring>
+        <name>quadratureOrder</name>
+        <qualifiedname>Solver::quadratureOrder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="20" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1a777d7556cb6f746a6487d7b0a7170ef7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Solver::ionization</definition>
+        <argsstring></argsstring>
+        <name>ionization</name>
+        <qualifiedname>Solver::ionization</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="21" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1a44f67e242f94a2df3fcee62a0328c8c5" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Solver::cx</definition>
+        <argsstring></argsstring>
+        <name>cx</name>
+        <qualifiedname>Solver::cx</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="22" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1af93fe244c803f51b5688e9dfdbd0eb05" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Solver::bgk</definition>
+        <argsstring></argsstring>
+        <name>bgk</name>
+        <qualifiedname>Solver::bgk</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="23" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1ace0bc09a2cd6496fc37cbb43d8f2ca8b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Solver::bc</definition>
+        <argsstring></argsstring>
+        <name>bc</name>
+        <qualifiedname>Solver::bc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="24" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1aff47a0f0a6edd9daaf1a76ed5e14d7a0" prot="private" static="no" mutable="no">
+        <type><ref refid="class_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix Solver::alphaDomain</definition>
+        <argsstring></argsstring>
+        <name>alphaDomain</name>
+        <qualifiedname>Solver::alphaDomain</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="25" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1a532bdb330b386e74d79a3804ea2d4a3c" prot="private" static="no" mutable="no">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector Solver::M_invDiag</definition>
+        <argsstring></argsstring>
+        <name>M_invDiag</name>
+        <qualifiedname>Solver::M_invDiag</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="26" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1a782e3d2e7b69ad7219246fe2dc6d0d67" prot="private" static="no" mutable="no">
+        <type><ref refid="class_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix Solver::M_invS</definition>
+        <argsstring></argsstring>
+        <name>M_invS</name>
+        <qualifiedname>Solver::M_invS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="27" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1a5f6eab679dfb18622a00f3b0aa328851" prot="private" static="no" mutable="no">
+        <type><ref refid="class_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix Solver::M_invF1Minus</definition>
+        <argsstring></argsstring>
+        <name>M_invF1Minus</name>
+        <qualifiedname>Solver::M_invF1Minus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="28" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1a92105df6d54078d275f5cf9af4ecc935" prot="private" static="no" mutable="no">
+        <type><ref refid="class_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix Solver::M_invF0Minus</definition>
+        <argsstring></argsstring>
+        <name>M_invF0Minus</name>
+        <qualifiedname>Solver::M_invF0Minus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="29" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1a7f12010a17eac0a89d88eb83691a8b1c" prot="private" static="no" mutable="no">
+        <type><ref refid="class_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix Solver::M_invF1Plus</definition>
+        <argsstring></argsstring>
+        <name>M_invF1Plus</name>
+        <qualifiedname>Solver::M_invF1Plus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="30" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1adb37ccec4f227d0c5201eb46209b7266" prot="private" static="no" mutable="no">
+        <type><ref refid="class_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix Solver::M_invF0Plus</definition>
+        <argsstring></argsstring>
+        <name>M_invF0Plus</name>
+        <qualifiedname>Solver::M_invF0Plus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="31" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1a1bd041d6b62e666876028ce9aaec5544" prot="private" static="no" mutable="no">
+        <type><ref refid="class_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix Solver::uPre</definition>
+        <argsstring></argsstring>
+        <name>uPre</name>
+        <qualifiedname>Solver::uPre</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="32" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1acf13998c4e3bb6d48279e483a06f2f07" prot="private" static="no" mutable="no">
+        <type><ref refid="class_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix Solver::uIntermediate</definition>
+        <argsstring></argsstring>
+        <name>uIntermediate</name>
+        <qualifiedname>Solver::uIntermediate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="33" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1a1038383a6005910b8cb0e65541991d57" prot="private" static="no" mutable="no">
+        <type><ref refid="class_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix Solver::uPost</definition>
+        <argsstring></argsstring>
+        <name>uPost</name>
+        <qualifiedname>Solver::uPost</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="34" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_solver_1a0c11c392bf9a16f813f66889dfd9364d" prot="private" static="no" mutable="no">
+        <type><ref refid="class_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix Solver::fSource</definition>
+        <argsstring></argsstring>
+        <name>fSource</name>
+        <qualifiedname>Solver::fSource</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="35" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="35" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_solver_1a9973ae6b7f4af1a341d2c4f899baa636" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Solver::advanceStage</definition>
+        <argsstring>(Matrix &amp;uPre, Matrix &amp;uPost, double plusFactor, double timesFactor)</argsstring>
+        <name>advanceStage</name>
+        <qualifiedname>Solver::advanceStage</qualifiedname>
+        <param>
+          <type><ref refid="class_matrix" kindref="compound">Matrix</ref> &amp;</type>
+          <declname>uPre</declname>
+        </param>
+        <param>
+          <type><ref refid="class_matrix" kindref="compound">Matrix</ref> &amp;</type>
+          <declname>uPost</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>plusFactor</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>timesFactor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="37" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="310" bodyend="511"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_solver_1aebfc5dabdb0536124a9d316c4d41115d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Solver::Solver</definition>
+        <argsstring>(const Mesh &amp;mesh, double dt, int lMax, std::function&lt; double(int, double)&gt; basisFunction, int quadratureOrder, bool ionization, bool cx, bool bgk, int bc)</argsstring>
+        <name>Solver</name>
+        <qualifiedname>Solver::Solver</qualifiedname>
+        <param>
+          <type>const <ref refid="class_mesh" kindref="compound">Mesh</ref> &amp;</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lMax</declname>
+        </param>
+        <param>
+          <type>std::function&lt; double(int, double)&gt;</type>
+          <declname>basisFunction</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>quadratureOrder</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>ionization</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>cx</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>bgk</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="41" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="18" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1aba52d3c92fafceb6fe39f937f2d73db3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Solver::~Solver</definition>
+        <argsstring>()</argsstring>
+        <name>~Solver</name>
+        <qualifiedname>Solver::~Solver</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="45" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="27" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1ad8e6d01396f87207937b44f102ca3ada" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Solver::createMatrices</definition>
+        <argsstring>()</argsstring>
+        <name>createMatrices</name>
+        <qualifiedname>Solver::createMatrices</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="48" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="29" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1ab0cdc2149496b62aa3c42c636f2b2128" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Solver::initialize</definition>
+        <argsstring>(std::function&lt; double(double, double, double, double)&gt; inputFunction)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>Solver::initialize</qualifiedname>
+        <param>
+          <type>std::function&lt; double(double, double, double, double)&gt;</type>
+          <declname>inputFunction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="51" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="78" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1a7381174f6c37f56c081da19c9f4fb1fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Solver::initializeSource</definition>
+        <argsstring>()</argsstring>
+        <name>initializeSource</name>
+        <qualifiedname>Solver::initializeSource</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="53" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="181" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1ae27a54026dfc80ae5f28a596900f7f82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Solver::initializeAlpha</definition>
+        <argsstring>()</argsstring>
+        <name>initializeAlpha</name>
+        <qualifiedname>Solver::initializeAlpha</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="55" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="225" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1a6c3c06c31b10ca38c5b1f7c780d35463" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Solver::advance</definition>
+        <argsstring>()</argsstring>
+        <name>advance</name>
+        <qualifiedname>Solver::advance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="58" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="513" bodyend="523"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1a1dca59a3589469e48864f8e88a807945" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Solver::slopeLimiter</definition>
+        <argsstring>()</argsstring>
+        <name>slopeLimiter</name>
+        <qualifiedname>Solver::slopeLimiter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="61" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="525" bodyend="544"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1a753b19d5fa20049cecd5b90f07f710d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const double</type>
+        <definition>const double Solver::getSolution</definition>
+        <argsstring>(int l, int j)</argsstring>
+        <name>getSolution</name>
+        <qualifiedname>Solver::getSolution</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>j</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="64" column="18" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="546" bodyend="554"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1a6905ad9f8f0abfb95ff140de308265cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector Solver::getMoments</definition>
+        <argsstring>()</argsstring>
+        <name>getMoments</name>
+        <qualifiedname>Solver::getMoments</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="67" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="556" bodyend="624"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1a62fb49bad497208d19c53d06ef2e3542" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector Solver::getMoment</definition>
+        <argsstring>(int j, int power)</argsstring>
+        <name>getMoment</name>
+        <qualifiedname>Solver::getMoment</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>power</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="70" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="626" bodyend="639"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1af68c4509e4c34d29407b9014917c26a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector Solver::getRho</definition>
+        <argsstring>(int j)</argsstring>
+        <name>getRho</name>
+        <qualifiedname>Solver::getRho</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>j</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="72" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="641" bodyend="662"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1a08c6e2bbca104233e5c6203976d1e400" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector Solver::getU</definition>
+        <argsstring>(int j, int coord)</argsstring>
+        <name>getU</name>
+        <qualifiedname>Solver::getU</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>coord</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="74" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="664" bodyend="698"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1a86d9479df1c206b177fcdbea3a17fc76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector Solver::getE</definition>
+        <argsstring>(int j)</argsstring>
+        <name>getE</name>
+        <qualifiedname>Solver::getE</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>j</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="76" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="700" bodyend="721"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1ac703bf6d32dfe63c034c6a46e0eea032" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector Solver::fitMaxwellian</definition>
+        <argsstring>(Vector rho, Vector u, Vector rt, double vx, int j)</argsstring>
+        <name>fitMaxwellian</name>
+        <qualifiedname>Solver::fitMaxwellian</qualifiedname>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>rho</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>rt</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>vx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>j</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="79" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="754" bodyend="782"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1a75af65c52aa611ed94c9a79eaf604a8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector Solver::fitMaxwellian</definition>
+        <argsstring>(double density, double meanVelocity, double temperature, double vx, int j)</argsstring>
+        <name>fitMaxwellian</name>
+        <qualifiedname>Solver::fitMaxwellian</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>density</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>meanVelocity</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>temperature</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>vx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>j</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="81" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="784" bodyend="809"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1a51e32b1f0865c98368609dd2883ae9c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector Solver::fitMaxwellian3</definition>
+        <argsstring>(double density, double meanVelocity, double temperature, double vx, double vy, double vz)</argsstring>
+        <name>fitMaxwellian3</name>
+        <qualifiedname>Solver::fitMaxwellian3</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>density</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>meanVelocity</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>temperature</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>vx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>vy</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>vz</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="83" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="811" bodyend="838"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1a6c8eb5e7b5cd9a2556ef8655ba01b1df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector Solver::getDensity</definition>
+        <argsstring>(int j)</argsstring>
+        <name>getDensity</name>
+        <qualifiedname>Solver::getDensity</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>j</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="86" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="840" bodyend="853"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1a8849f592b3792dbbf89086147958c1c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector Solver::fitCX</definition>
+        <argsstring>(double density, double meanVelocity, double temperature, Vector rho_n, Vector f_tilde, int kx, int ky, int kz, int j)</argsstring>
+        <name>fitCX</name>
+        <qualifiedname>Solver::fitCX</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>density</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>meanVelocity</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>temperature</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>rho_n</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>f_tilde</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>kx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ky</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>kz</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>j</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="88" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="855" bodyend="889"/>
+      </memberdef>
+      <memberdef kind="function" id="class_solver_1a067d619759342884e55ade1aaf239f08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector Solver::fitMaxwellian</definition>
+        <argsstring>(Matrix alpha, double vx, int j)</argsstring>
+        <name>fitMaxwellian</name>
+        <qualifiedname>Solver::fitMaxwellian</qualifiedname>
+        <param>
+          <type><ref refid="class_matrix" kindref="compound">Matrix</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>vx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>j</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="91" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.cxx" bodystart="724" bodyend="752"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/Solver.hxx" line="11" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/Solver.hxx" bodystart="12" bodyend="93"/>
+    <listofallmembers>
+      <member refid="class_solver_1a6c3c06c31b10ca38c5b1f7c780d35463" prot="public" virt="non-virtual"><scope>Solver</scope><name>advance</name></member>
+      <member refid="class_solver_1a9973ae6b7f4af1a341d2c4f899baa636" prot="private" virt="non-virtual"><scope>Solver</scope><name>advanceStage</name></member>
+      <member refid="class_solver_1aff47a0f0a6edd9daaf1a76ed5e14d7a0" prot="private" virt="non-virtual"><scope>Solver</scope><name>alphaDomain</name></member>
+      <member refid="class_solver_1a37bf7f23d58add50b447b9c359475821" prot="private" virt="non-virtual"><scope>Solver</scope><name>basisFunction</name></member>
+      <member refid="class_solver_1ace0bc09a2cd6496fc37cbb43d8f2ca8b" prot="private" virt="non-virtual"><scope>Solver</scope><name>bc</name></member>
+      <member refid="class_solver_1af93fe244c803f51b5688e9dfdbd0eb05" prot="private" virt="non-virtual"><scope>Solver</scope><name>bgk</name></member>
+      <member refid="class_solver_1ad8e6d01396f87207937b44f102ca3ada" prot="public" virt="non-virtual"><scope>Solver</scope><name>createMatrices</name></member>
+      <member refid="class_solver_1a44f67e242f94a2df3fcee62a0328c8c5" prot="private" virt="non-virtual"><scope>Solver</scope><name>cx</name></member>
+      <member refid="class_solver_1add4f87d630ba162d042c38bbd2071a5e" prot="private" virt="non-virtual"><scope>Solver</scope><name>dt</name></member>
+      <member refid="class_solver_1a8849f592b3792dbbf89086147958c1c1" prot="public" virt="non-virtual"><scope>Solver</scope><name>fitCX</name></member>
+      <member refid="class_solver_1ac703bf6d32dfe63c034c6a46e0eea032" prot="public" virt="non-virtual"><scope>Solver</scope><name>fitMaxwellian</name></member>
+      <member refid="class_solver_1a75af65c52aa611ed94c9a79eaf604a8a" prot="public" virt="non-virtual"><scope>Solver</scope><name>fitMaxwellian</name></member>
+      <member refid="class_solver_1a067d619759342884e55ade1aaf239f08" prot="public" virt="non-virtual"><scope>Solver</scope><name>fitMaxwellian</name></member>
+      <member refid="class_solver_1a51e32b1f0865c98368609dd2883ae9c6" prot="public" virt="non-virtual"><scope>Solver</scope><name>fitMaxwellian3</name></member>
+      <member refid="class_solver_1a0c11c392bf9a16f813f66889dfd9364d" prot="private" virt="non-virtual"><scope>Solver</scope><name>fSource</name></member>
+      <member refid="class_solver_1a6c8eb5e7b5cd9a2556ef8655ba01b1df" prot="public" virt="non-virtual"><scope>Solver</scope><name>getDensity</name></member>
+      <member refid="class_solver_1a86d9479df1c206b177fcdbea3a17fc76" prot="public" virt="non-virtual"><scope>Solver</scope><name>getE</name></member>
+      <member refid="class_solver_1a62fb49bad497208d19c53d06ef2e3542" prot="public" virt="non-virtual"><scope>Solver</scope><name>getMoment</name></member>
+      <member refid="class_solver_1a6905ad9f8f0abfb95ff140de308265cd" prot="public" virt="non-virtual"><scope>Solver</scope><name>getMoments</name></member>
+      <member refid="class_solver_1af68c4509e4c34d29407b9014917c26a2" prot="public" virt="non-virtual"><scope>Solver</scope><name>getRho</name></member>
+      <member refid="class_solver_1a753b19d5fa20049cecd5b90f07f710d1" prot="public" virt="non-virtual"><scope>Solver</scope><name>getSolution</name></member>
+      <member refid="class_solver_1a08c6e2bbca104233e5c6203976d1e400" prot="public" virt="non-virtual"><scope>Solver</scope><name>getU</name></member>
+      <member refid="class_solver_1ab0cdc2149496b62aa3c42c636f2b2128" prot="public" virt="non-virtual"><scope>Solver</scope><name>initialize</name></member>
+      <member refid="class_solver_1ae27a54026dfc80ae5f28a596900f7f82" prot="public" virt="non-virtual"><scope>Solver</scope><name>initializeAlpha</name></member>
+      <member refid="class_solver_1a7381174f6c37f56c081da19c9f4fb1fc" prot="public" virt="non-virtual"><scope>Solver</scope><name>initializeSource</name></member>
+      <member refid="class_solver_1a0a5de396c78cf29b340897974cdc7ac0" prot="private" virt="non-virtual"><scope>Solver</scope><name>integrator</name></member>
+      <member refid="class_solver_1a777d7556cb6f746a6487d7b0a7170ef7" prot="private" virt="non-virtual"><scope>Solver</scope><name>ionization</name></member>
+      <member refid="class_solver_1a0ee4a311e4c66b6ff9362e2570580de7" prot="private" virt="non-virtual"><scope>Solver</scope><name>lMax</name></member>
+      <member refid="class_solver_1a532bdb330b386e74d79a3804ea2d4a3c" prot="private" virt="non-virtual"><scope>Solver</scope><name>M_invDiag</name></member>
+      <member refid="class_solver_1a92105df6d54078d275f5cf9af4ecc935" prot="private" virt="non-virtual"><scope>Solver</scope><name>M_invF0Minus</name></member>
+      <member refid="class_solver_1adb37ccec4f227d0c5201eb46209b7266" prot="private" virt="non-virtual"><scope>Solver</scope><name>M_invF0Plus</name></member>
+      <member refid="class_solver_1a5f6eab679dfb18622a00f3b0aa328851" prot="private" virt="non-virtual"><scope>Solver</scope><name>M_invF1Minus</name></member>
+      <member refid="class_solver_1a7f12010a17eac0a89d88eb83691a8b1c" prot="private" virt="non-virtual"><scope>Solver</scope><name>M_invF1Plus</name></member>
+      <member refid="class_solver_1a782e3d2e7b69ad7219246fe2dc6d0d67" prot="private" virt="non-virtual"><scope>Solver</scope><name>M_invS</name></member>
+      <member refid="class_solver_1aa124268a9636548b731b7be6339c26ed" prot="private" virt="non-virtual"><scope>Solver</scope><name>mesh</name></member>
+      <member refid="class_solver_1a6162ca436804547c36e7ef43fbbd0077" prot="private" virt="non-virtual"><scope>Solver</scope><name>newtonSolver</name></member>
+      <member refid="class_solver_1a7d49bde282f4cc634256ad23334389de" prot="private" virt="non-virtual"><scope>Solver</scope><name>quadratureOrder</name></member>
+      <member refid="class_solver_1a1dca59a3589469e48864f8e88a807945" prot="public" virt="non-virtual"><scope>Solver</scope><name>slopeLimiter</name></member>
+      <member refid="class_solver_1aebfc5dabdb0536124a9d316c4d41115d" prot="public" virt="non-virtual"><scope>Solver</scope><name>Solver</name></member>
+      <member refid="class_solver_1acf13998c4e3bb6d48279e483a06f2f07" prot="private" virt="non-virtual"><scope>Solver</scope><name>uIntermediate</name></member>
+      <member refid="class_solver_1a1038383a6005910b8cb0e65541991d57" prot="private" virt="non-virtual"><scope>Solver</scope><name>uPost</name></member>
+      <member refid="class_solver_1a1bd041d6b62e666876028ce9aaec5544" prot="private" virt="non-virtual"><scope>Solver</scope><name>uPre</name></member>
+      <member refid="class_solver_1aba52d3c92fafceb6fe39f937f2d73db3" prot="public" virt="non-virtual"><scope>Solver</scope><name>~Solver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

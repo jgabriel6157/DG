@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_matrix_8hxx" kind="file" language="C++">
+    <compoundname>Matrix.hxx</compoundname>
+    <includes refid="_vector_8hxx" local="yes">Vector.hxx</includes>
+    <includedby refid="_matrix_8cxx" local="yes">/Users/jackgabriel/Desktop/DG/Matrix.cxx</includedby>
+    <includedby refid="_newton_cotes_8hxx" local="yes">/Users/jackgabriel/Desktop/DG/NewtonCotes.hxx</includedby>
+    <includedby refid="_newton_solver_8hxx" local="yes">/Users/jackgabriel/Desktop/DG/NewtonSolver.hxx</includedby>
+    <includedby refid="_solver_8cxx" local="yes">/Users/jackgabriel/Desktop/DG/Solver.cxx</includedby>
+    <includedby refid="_solver_8hxx" local="yes">/Users/jackgabriel/Desktop/DG/Solver.hxx</includedby>
+    <includedby refid="_special_functions_8cxx" local="yes">/Users/jackgabriel/Desktop/DG/SpecialFunctions.cxx</includedby>
+    <includedby refid="_special_functions_8hxx" local="yes">/Users/jackgabriel/Desktop/DG/SpecialFunctions.hxx</includedby>
+    <includedby refid="dg1d_advection_8cxx" local="yes">/Users/jackgabriel/Desktop/DG/dg1dAdvection.cxx</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/jackgabriel/Desktop/DG/Matrix.hxx</label>
+        <link refid="_matrix_8hxx"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Vector.hxx</label>
+        <link refid="_vector_8hxx_source"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx</label>
+        <link refid="_function_mapper_8hxx_source"/>
+      </node>
+      <node id="7">
+        <label>/Users/jackgabriel/Desktop/DG/GaussianQuadrature.hxx</label>
+        <link refid="_gaussian_quadrature_8hxx_source"/>
+      </node>
+      <node id="1">
+        <label>/Users/jackgabriel/Desktop/DG/Matrix.hxx</label>
+        <link refid="_matrix_8hxx"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/Users/jackgabriel/Desktop/DG/NewtonCotes.hxx</label>
+        <link refid="_newton_cotes_8hxx_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/Users/jackgabriel/Desktop/DG/NewtonSolver.hxx</label>
+        <link refid="_newton_solver_8hxx_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/Users/jackgabriel/Desktop/DG/Solver.hxx</label>
+        <link refid="_solver_8hxx_source"/>
+      </node>
+      <node id="5">
+        <label>/Users/jackgabriel/Desktop/DG/SpecialFunctions.hxx</label>
+        <link refid="_special_functions_8hxx_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_matrix" prot="public">Matrix</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_matrix_8hxx_1aba3cd0a83fbf1f9e84597574f3fafda8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector operator*</definition>
+        <argsstring>(const Matrix &amp;m, const Vector &amp;v)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="class_matrix" kindref="compound">Matrix</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Matrix.hxx" line="35" column="8" bodyfile="/Users/jackgabriel/Desktop/DG/Matrix.cxx" bodystart="273" bodyend="289" declfile="/Users/jackgabriel/Desktop/DG/Matrix.hxx" declline="35" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_matrix_8hxx_1ace378deb9a1c23e7eabf44aca0947118" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector operator*</definition>
+        <argsstring>(const Vector &amp;v, const Matrix &amp;m)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="class_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_matrix" kindref="compound">Matrix</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Matrix.hxx" line="36" column="8" bodyfile="/Users/jackgabriel/Desktop/DG/Matrix.cxx" bodystart="292" bodyend="308" declfile="/Users/jackgabriel/Desktop/DG/Matrix.hxx" declline="36" declcolumn="8"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>MATRIXHEADERDEF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MATRIXHEADERDEF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Vector.hxx&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="class_matrix" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Matrix</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">**<sp/>mData;<sp/></highlight><highlight class="comment">//<sp/>entries<sp/>of<sp/>matrix</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mNumRows,<sp/>mNumCols;<sp/></highlight><highlight class="comment">//<sp/>dimensions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>Matrix(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Matrix&amp;<sp/>otherMatrix);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>Matrix(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numRows,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numCols);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>~Matrix();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>GetNumberOfRows()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>GetNumberOfColumns()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Print();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>operator()(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//overloaded<sp/>assignment<sp/>operator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>Matrix&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Matrix&amp;<sp/>otherMatrix);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>Matrix<sp/>operator+(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>constant)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>unary<sp/>+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>Matrix<sp/>operator-(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>constant)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>unary<sp/>-</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>Matrix<sp/>operator+(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Matrix&amp;<sp/>m1)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>binary<sp/>+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>Matrix<sp/>operator-(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Matrix&amp;<sp/>m1)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>binary<sp/>-</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>scalar<sp/>multiplication</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>Matrix<sp/>operator*(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Matrix<sp/>multiplication</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>Matrix<sp/>operator*(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Matrix&amp;<sp/>otherMatrix);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>Matrix<sp/>CalculateInverse()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>Matrix<sp/>Transpose()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>declare<sp/>vector<sp/>multiplication<sp/>friendship</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>operator*(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Matrix&amp;<sp/>m,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_vector" kindref="compound">Vector</ref>&amp;<sp/>v);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="class_vector" kindref="compound">Vector</ref><sp/>operator*(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_vector" kindref="compound">Vector</ref>&amp;<sp/>v,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Matrix&amp;<sp/>m);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//<sp/>prototype<sp/>signatures<sp/>for<sp/>friend<sp/>operators</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><ref refid="class_vector" kindref="compound">Vector</ref><sp/>operator*(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_matrix" kindref="compound">Matrix</ref>&amp;<sp/>m,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_vector" kindref="compound">Vector</ref>&amp;<sp/>v);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><ref refid="class_vector" kindref="compound">Vector</ref><sp/>operator*(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_vector" kindref="compound">Vector</ref>&amp;<sp/>v,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_matrix" kindref="compound">Matrix</ref>&amp;<sp/>m);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/jackgabriel/Desktop/DG/Matrix.hxx"/>
+  </compounddef>
+</doxygen>

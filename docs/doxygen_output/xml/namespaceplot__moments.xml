@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespaceplot__moments" kind="namespace" language="Python">
+    <compoundname>plot_moments</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="plot__moments_8py_1a61c086b4516fb2807c5f28793fee6f00" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_moments.fileName</definition>
+        <argsstring></argsstring>
+        <name>fileName</name>
+        <qualifiedname>plot_moments.fileName</qualifiedname>
+        <initializer>=  &apos;Moments.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_moments.py" line="5" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_moments.py" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__moments_8py_1a96844b8ad39bae1859e7ee4b0454230d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_moments.values</definition>
+        <argsstring></argsstring>
+        <name>values</name>
+        <qualifiedname>plot_moments.values</qualifiedname>
+        <initializer>=  pd.read_csv(fileName,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_moments.py" line="7" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_moments.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__moments_8py_1ac905c6e29fd7fd174dad7faec8a48ce8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_moments.mass</definition>
+        <argsstring></argsstring>
+        <name>mass</name>
+        <qualifiedname>plot_moments.mass</qualifiedname>
+        <initializer>=  np.zeros(int(len(values)/4))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_moments.py" line="9" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_moments.py" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__moments_8py_1a20357354fd4bd1382b631ec3a5654ae5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_moments.momentum</definition>
+        <argsstring></argsstring>
+        <name>momentum</name>
+        <qualifiedname>plot_moments.momentum</qualifiedname>
+        <initializer>=  np.zeros(int(len(values)/4))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_moments.py" line="10" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_moments.py" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__moments_8py_1af6b7ba24fda4fe1d9014700b2b31f655" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_moments.energy</definition>
+        <argsstring></argsstring>
+        <name>energy</name>
+        <qualifiedname>plot_moments.energy</qualifiedname>
+        <initializer>=  np.zeros(int(len(values)/4))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_moments.py" line="11" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_moments.py" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__moments_8py_1a3fdda894dec4b24459fda9f67d56e6eb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_moments.entropy</definition>
+        <argsstring></argsstring>
+        <name>entropy</name>
+        <qualifiedname>plot_moments.entropy</qualifiedname>
+        <initializer>=  np.zeros(int(len(values)/4))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_moments.py" line="12" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_moments.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__moments_8py_1a0afa94745e52440bbd2ed7d98f70a757" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_moments::count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <qualifiedname>plot_moments.count</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_moments.py" line="13" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_moments.py" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__moments_8py_1ac4506d65518f8f9f83d65970afa6a20f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_moments.counter</definition>
+        <argsstring></argsstring>
+        <name>counter</name>
+        <qualifiedname>plot_moments.counter</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_moments.py" line="14" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_moments.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__moments_8py_1a3818388a0741deb2897848cec177383d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_moments.fig</definition>
+        <argsstring></argsstring>
+        <name>fig</name>
+        <qualifiedname>plot_moments.fig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_moments.py" line="29" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_moments.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__moments_8py_1adef3d095b52f3e7056cc82ac3fc186a1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_moments.axs</definition>
+        <argsstring></argsstring>
+        <name>axs</name>
+        <qualifiedname>plot_moments.axs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_moments.py" line="29" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_moments.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/plot_moments.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

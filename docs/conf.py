@@ -1,32 +1,39 @@
 # Configuration file for the Sphinx documentation builder.
-#
-# For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
+
+import os
+import sys
 
 # -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-
 project = 'Guernica'
 copyright = '2024, Jack Gabriel'
 author = 'Jack Gabriel'
 
 # -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-
 extensions = [
-    'sphinx.ext.autodoc',  # For generating docs from docstrings
-    'sphinx.ext.napoleon',  # For Google-style or NumPy-style docstrings
+    'sphinx.ext.autodoc',  # Generate documentation from docstrings
+    'sphinx.ext.napoleon',  # Support for NumPy and Google docstrings
     'sphinx.ext.viewcode',  # Adds links to source code
-    'sphinx.ext.githubpages',  # For GitHub Pages integration
+    'sphinx.ext.githubpages',  # Enable GitHub Pages integration
+    'breathe',  # Integrate Doxygen XML output
 ]
 
+# Paths for templates and static files
 templates_path = ['_templates']
+html_static_path = ['_static']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-
-
 # -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-
 html_theme = 'alabaster'
-html_static_path = ['_static']
+
+# -- Breathe Configuration (For Doxygen Integration) -------------------------
+breathe_projects = {"Guernica": "doxygen_output/xml"}
+breathe_default_project = "Guernica"
+
+# -- Doxygen Setup -----------------------------------------------------------
+# Automatically run Doxygen when Sphinx is built
+def run_doxygen():
+    """Run Doxygen to generate XML documentation."""
+    print("Running Doxygen...")
+    os.system("doxygen Doxyfile")
+
+run_doxygen()

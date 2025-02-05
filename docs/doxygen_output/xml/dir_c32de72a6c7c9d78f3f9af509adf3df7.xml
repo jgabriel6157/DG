@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_c32de72a6c7c9d78f3f9af509adf3df7" kind="dir">
+    <compoundname>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include</compoundname>
+    <innerfile refid="mu_parser_8h">muParser.h</innerfile>
+    <innerfile refid="mu_parser_base_8h">muParserBase.h</innerfile>
+    <innerfile refid="mu_parser_bytecode_8h">muParserBytecode.h</innerfile>
+    <innerfile refid="mu_parser_callback_8h">muParserCallback.h</innerfile>
+    <innerfile refid="mu_parser_def_8h">muParserDef.h</innerfile>
+    <innerfile refid="mu_parser_d_l_l_8h">muParserDLL.h</innerfile>
+    <innerfile refid="mu_parser_error_8h">muParserError.h</innerfile>
+    <innerfile refid="mu_parser_fixes_8h">muParserFixes.h</innerfile>
+    <innerfile refid="mu_parser_int_8h">muParserInt.h</innerfile>
+    <innerfile refid="mu_parser_template_magic_8h">muParserTemplateMagic.h</innerfile>
+    <innerfile refid="mu_parser_test_8h">muParserTest.h</innerfile>
+    <innerfile refid="mu_parser_token_8h">muParserToken.h</innerfile>
+    <innerfile refid="mu_parser_token_reader_8h">muParserTokenReader.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/"/>
+  </compounddef>
+</doxygen>

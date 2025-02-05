@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structmu_1_1_s_token" kind="struct" language="C++" prot="public">
+    <compoundname>mu::SToken</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmu_1_1_s_token_1ae65874515716fe53e71fcae813b8fc5f" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40e" kindref="member">ECmdCode</ref></type>
+        <definition>ECmdCode mu::SToken::Cmd</definition>
+        <argsstring></argsstring>
+        <name>Cmd</name>
+        <qualifiedname>mu::SToken::Cmd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="49" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmu_1_1_s_token_1a0e49777c76e20ba5856ed7d6a499691f" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *</type>
+        <definition>value_type* mu::SToken::ptr</definition>
+        <argsstring></argsstring>
+        <name>ptr</name>
+        <qualifiedname>mu::SToken::ptr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="55" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmu_1_1_s_token_1ac8a30600d0f3721e676d2fe706f4520b" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::SToken::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <qualifiedname>mu::SToken::data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="56" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmu_1_1_s_token_1aac6f7c4c29647a815a3ecdcf66f5ac06" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::SToken::data2</definition>
+        <argsstring></argsstring>
+        <name>data2</name>
+        <qualifiedname>mu::SToken::data2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="57" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmu_1_1_s_token_1a3f1deff1a06c9e5c3650094cde019a01" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structmu_1_1_s_token" kindref="compound">mu::SToken</ref></type>
+        <definition>struct mu::SToken mu::SToken::Val</definition>
+        <argsstring></argsstring>
+        <name>Val</name>
+        <qualifiedname>mu::SToken::Val</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="58" column="5"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmu_1_1_s_token_1a23e22581cb5800b822611f665eaca4c0" prot="public" static="no" mutable="no">
+        <type><ref refid="structmu_1_1generic__callable__type" kindref="compound">generic_callable_type</ref></type>
+        <definition>generic_callable_type mu::SToken::cb</definition>
+        <argsstring></argsstring>
+        <name>cb</name>
+        <qualifiedname>mu::SToken::cb</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="66" column="23" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmu_1_1_s_token_1a88e90c6610efb6d7b7a7a8c3461bbc00" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mu::SToken::argc</definition>
+        <argsstring></argsstring>
+        <name>argc</name>
+        <qualifiedname>mu::SToken::argc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="67" column="7" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmu_1_1_s_token_1a4bc527db03b2689a19cba6b5d679b2e4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mu::SToken::idx</definition>
+        <argsstring></argsstring>
+        <name>idx</name>
+        <qualifiedname>mu::SToken::idx</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="68" column="7" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmu_1_1_s_token_1a52a40522d749c1d2104f9c0b1ece9133" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structmu_1_1_s_token" kindref="compound">mu::SToken</ref></type>
+        <definition>struct mu::SToken mu::SToken::Fun</definition>
+        <argsstring></argsstring>
+        <name>Fun</name>
+        <qualifiedname>mu::SToken::Fun</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="69" column="5"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmu_1_1_s_token_1a404867cb6511e90c552a0be2ff011119" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mu::SToken::offset</definition>
+        <argsstring></argsstring>
+        <name>offset</name>
+        <qualifiedname>mu::SToken::offset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="74" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmu_1_1_s_token_1aeca1d81c527ee005db174b95fb112e90" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structmu_1_1_s_token" kindref="compound">mu::SToken</ref></type>
+        <definition>struct mu::SToken mu::SToken::Oprt</definition>
+        <argsstring></argsstring>
+        <name>Oprt</name>
+        <qualifiedname>mu::SToken::Oprt</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="75" column="6"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmu_1_1_s_token_1ad2688c1c3871467e8a4d075d9347082b" prot="public" static="no" mutable="no">
+        <type>union <ref refid="structmu_1_1_s_token" kindref="compound">mu::SToken</ref></type>
+        <definition>union mu::SToken mu::SToken</definition>
+        <argsstring></argsstring>
+        <name></name>
+        <qualifiedname>mu::SToken</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="76" column="1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>mu::SToken</label>
+        <link refid="structmu_1_1_s_token"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>cb</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>mu::generic_callable_type</label>
+        <link refid="structmu_1_1generic__callable__type"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="47" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" bodystart="48" bodyend="77"/>
+    <listofallmembers>
+      <member refid="structmu_1_1_s_token_1a88e90c6610efb6d7b7a7a8c3461bbc00" prot="public" virt="non-virtual"><scope>mu::SToken</scope><name>argc</name></member>
+      <member refid="structmu_1_1_s_token_1a23e22581cb5800b822611f665eaca4c0" prot="public" virt="non-virtual"><scope>mu::SToken</scope><name>cb</name></member>
+      <member refid="structmu_1_1_s_token_1ae65874515716fe53e71fcae813b8fc5f" prot="public" virt="non-virtual"><scope>mu::SToken</scope><name>Cmd</name></member>
+      <member refid="structmu_1_1_s_token_1ac8a30600d0f3721e676d2fe706f4520b" prot="public" virt="non-virtual"><scope>mu::SToken</scope><name>data</name></member>
+      <member refid="structmu_1_1_s_token_1aac6f7c4c29647a815a3ecdcf66f5ac06" prot="public" virt="non-virtual"><scope>mu::SToken</scope><name>data2</name></member>
+      <member refid="structmu_1_1_s_token_1a52a40522d749c1d2104f9c0b1ece9133" prot="public" virt="non-virtual"><scope>mu::SToken</scope><name>Fun</name></member>
+      <member refid="structmu_1_1_s_token_1a4bc527db03b2689a19cba6b5d679b2e4" prot="public" virt="non-virtual"><scope>mu::SToken</scope><name>idx</name></member>
+      <member refid="structmu_1_1_s_token_1a404867cb6511e90c552a0be2ff011119" prot="public" virt="non-virtual"><scope>mu::SToken</scope><name>offset</name></member>
+      <member refid="structmu_1_1_s_token_1aeca1d81c527ee005db174b95fb112e90" prot="public" virt="non-virtual"><scope>mu::SToken</scope><name>Oprt</name></member>
+      <member refid="structmu_1_1_s_token_1a0e49777c76e20ba5856ed7d6a499691f" prot="public" virt="non-virtual"><scope>mu::SToken</scope><name>ptr</name></member>
+      <member refid="structmu_1_1_s_token_1a3f1deff1a06c9e5c3650094cde019a01" prot="public" virt="non-virtual"><scope>mu::SToken</scope><name>Val</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

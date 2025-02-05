@@ -1,0 +1,766 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classmu_1_1_parser_token" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>mu::ParserToken</compoundname>
+    <includes refid="mu_parser_token_8h" local="no">muParserToken.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename TBase</type>
+      </param>
+      <param>
+        <type>typename TString</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmu_1_1_parser_token_1ace14b59711cdb94bd2872a47a2349028" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40e" kindref="member">ECmdCode</ref></type>
+        <definition>ECmdCode mu::ParserToken&lt; TBase, TString &gt;::m_iCode</definition>
+        <argsstring></argsstring>
+        <name>m_iCode</name>
+        <qualifiedname>mu::ParserToken::m_iCode</qualifiedname>
+        <briefdescription>
+<para>Type of the token; The token type is a constant of type <ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40e" kindref="member">ECmdCode</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="174" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_1ad21b2555db06b128c4327c94558a60f8" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1ac3ccf6a749baacffd48fe97b9c2af302" kindref="member">ETypeCode</ref></type>
+        <definition>ETypeCode mu::ParserToken&lt; TBase, TString &gt;::m_iType</definition>
+        <argsstring></argsstring>
+        <name>m_iType</name>
+        <qualifiedname>mu::ParserToken::m_iType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="175" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_1a46e31bb6feca023dceddc61772c6d13e" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* mu::ParserToken&lt; TBase, TString &gt;::m_pTok</definition>
+        <argsstring></argsstring>
+        <name>m_pTok</name>
+        <qualifiedname>mu::ParserToken::m_pTok</qualifiedname>
+        <briefdescription>
+<para>Stores Token pointer; not applicable for all tokens. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="176" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_1a389b933434fbbc2af63fe07fdb5eb48c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mu::ParserToken&lt; TBase, TString &gt;::m_iIdx</definition>
+        <argsstring></argsstring>
+        <name>m_iIdx</name>
+        <qualifiedname>mu::ParserToken::m_iIdx</qualifiedname>
+        <briefdescription>
+<para>An otional index to an external buffer storing the token data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="177" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_1aa8183bff99c86603957899cc3503551f" prot="private" static="no" mutable="no">
+        <type>TString</type>
+        <definition>TString mu::ParserToken&lt; TBase, TString &gt;::m_strTok</definition>
+        <argsstring></argsstring>
+        <name>m_strTok</name>
+        <qualifiedname>mu::ParserToken::m_strTok</qualifiedname>
+        <briefdescription>
+<para>Token string. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="178" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_1a6a0ca8937b6b3a9c78a53d2ea0eaf4d1" prot="private" static="no" mutable="no">
+        <type>TString</type>
+        <definition>TString mu::ParserToken&lt; TBase, TString &gt;::m_strVal</definition>
+        <argsstring></argsstring>
+        <name>m_strVal</name>
+        <qualifiedname>mu::ParserToken::m_strVal</qualifiedname>
+        <briefdescription>
+<para>Value for string variables. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="179" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_1ac872c4d99e63b735bacbb6080b7fd5ab" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserToken&lt; TBase, TString &gt;::m_fVal</definition>
+        <argsstring></argsstring>
+        <name>m_fVal</name>
+        <qualifiedname>mu::ParserToken::m_fVal</qualifiedname>
+        <briefdescription>
+<para>the value </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="180" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_1a43867c4909a12ffc718450163f184c01" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classmu_1_1_parser_callback" kindref="compound">ParserCallback</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;ParserCallback&gt; mu::ParserToken&lt; TBase, TString &gt;::m_pCallback</definition>
+        <argsstring></argsstring>
+        <name>m_pCallback</name>
+        <qualifiedname>mu::ParserToken::m_pCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="181" column="17" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmu_1_1_parser_token_1a0ce34ca6a1833441e8fd9840b3cde140" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserToken&lt; TBase, TString &gt;::ParserToken</definition>
+        <argsstring>()</argsstring>
+        <name>ParserToken</name>
+        <qualifiedname>mu::ParserToken::ParserToken</qualifiedname>
+        <briefdescription>
+<para>Constructor (default). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets token to an neutral state of type cmUNKNOWN. <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40e" kindref="member">ECmdCode</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="191" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="191" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1a17dfc71fe5750f61e9cdd5c2a3355ac0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserToken&lt; TBase, TString &gt;::ParserToken</definition>
+        <argsstring>(const ParserToken &amp;a_Tok)</argsstring>
+        <name>ParserToken</name>
+        <qualifiedname>mu::ParserToken::ParserToken</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_token" kindref="compound">ParserToken</ref> &amp;</type>
+          <declname>a_Tok</declname>
+        </param>
+        <briefdescription>
+<para>Create token from another one. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Implemented by calling Assign(...) <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="post"><para>m_iType==cmUNKNOWN </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classmu_1_1_parser_token_1a40b7e717927c58d03a6665184ff5cc52" kindref="member">Assign</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="210" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="210" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1a3b92813160f6ef5b8e9aa63e75b9c120" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classmu_1_1_parser_token" kindref="compound">ParserToken</ref> &amp;</type>
+        <definition>ParserToken &amp; mu::ParserToken&lt; TBase, TString &gt;::operator=</definition>
+        <argsstring>(const ParserToken &amp;a_Tok)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>mu::ParserToken::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_token" kindref="compound">ParserToken</ref> &amp;</type>
+          <declname>a_Tok</declname>
+        </param>
+        <briefdescription>
+<para>Assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Copy token state from another token and return this. Implemented by calling Assign(...). <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="222" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="222" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1a40b7e717927c58d03a6665184ff5cc52" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserToken&lt; TBase, TString &gt;::Assign</definition>
+        <argsstring>(const ParserToken &amp;a_Tok)</argsstring>
+        <name>Assign</name>
+        <qualifiedname>mu::ParserToken::Assign</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_token" kindref="compound">ParserToken</ref> &amp;</type>
+          <declname>a_Tok</declname>
+        </param>
+        <briefdescription>
+<para>Copy token information from argument. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="233" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="233" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1ac5855525d53fc88ed8468d6f7f907868" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classmu_1_1_parser_token" kindref="compound">ParserToken</ref> &amp;</type>
+        <definition>ParserToken &amp; mu::ParserToken&lt; TBase, TString &gt;::Set</definition>
+        <argsstring>(ECmdCode a_iType, const TString &amp;a_strTok=TString())</argsstring>
+        <name>Set</name>
+        <qualifiedname>mu::ParserToken::Set</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40e" kindref="member">ECmdCode</ref></type>
+          <declname>a_iType</declname>
+        </param>
+        <param>
+          <type>const TString &amp;</type>
+          <declname>a_strTok</declname>
+          <defval>TString()</defval>
+        </param>
+        <briefdescription>
+<para>Assign a token type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Token may not be of type value, variable or function. Those have separate set functions.</para>
+<para><simplesect kind="pre"><para>[assert] a_iType!=cmVAR </para>
+</simplesect>
+<simplesect kind="pre"><para>[assert] a_iType!=cmVAL </para>
+</simplesect>
+<simplesect kind="pre"><para>[assert] a_iType!=cmFUNC </para>
+</simplesect>
+<simplesect kind="post"><para>m_fVal = 0 </para>
+</simplesect>
+<simplesect kind="post"><para>m_pTok = 0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="257" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="257" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1a8a20971a015948c3333a67c432c70dba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classmu_1_1_parser_token" kindref="compound">ParserToken</ref> &amp;</type>
+        <definition>ParserToken &amp; mu::ParserToken&lt; TBase, TString &gt;::Set</definition>
+        <argsstring>(const ParserCallback &amp;a_pCallback, const TString &amp;a_sTok)</argsstring>
+        <name>Set</name>
+        <qualifiedname>mu::ParserToken::Set</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_callback" kindref="compound">ParserCallback</ref> &amp;</type>
+          <declname>a_pCallback</declname>
+        </param>
+        <param>
+          <type>const TString &amp;</type>
+          <declname>a_sTok</declname>
+        </param>
+        <briefdescription>
+<para>Set Callback type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="275" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="275" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1a93553b9ec7d77f8f4e3fb635113cf615" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classmu_1_1_parser_token" kindref="compound">ParserToken</ref> &amp;</type>
+        <definition>ParserToken &amp; mu::ParserToken&lt; TBase, TString &gt;::SetVal</definition>
+        <argsstring>(TBase a_fVal, const TString &amp;a_strTok=TString())</argsstring>
+        <name>SetVal</name>
+        <qualifiedname>mu::ParserToken::SetVal</qualifiedname>
+        <param>
+          <type>TBase</type>
+          <declname>a_fVal</declname>
+        </param>
+        <param>
+          <type>const TString &amp;</type>
+          <declname>a_strTok</declname>
+          <defval>TString()</defval>
+        </param>
+        <briefdescription>
+<para>Make this token a value token. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Member variables not necessary for value tokens will be invalidated. <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="296" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="296" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1a788045cd9177a3bcf44cc6a33525afff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classmu_1_1_parser_token" kindref="compound">ParserToken</ref> &amp;</type>
+        <definition>ParserToken &amp; mu::ParserToken&lt; TBase, TString &gt;::SetVar</definition>
+        <argsstring>(TBase *a_pVar, const TString &amp;a_strTok)</argsstring>
+        <name>SetVar</name>
+        <qualifiedname>mu::ParserToken::SetVar</qualifiedname>
+        <param>
+          <type>TBase *</type>
+          <declname>a_pVar</declname>
+        </param>
+        <param>
+          <type>const TString &amp;</type>
+          <declname>a_strTok</declname>
+        </param>
+        <briefdescription>
+<para>make this token a variable token. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Member variables not necessary for variable tokens will be invalidated. <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="316" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="316" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1a448fb9ed5a4e39795945523bd3c06687" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classmu_1_1_parser_token" kindref="compound">ParserToken</ref> &amp;</type>
+        <definition>ParserToken &amp; mu::ParserToken&lt; TBase, TString &gt;::SetString</definition>
+        <argsstring>(const TString &amp;a_strTok, std::size_t a_iSize)</argsstring>
+        <name>SetString</name>
+        <qualifiedname>mu::ParserToken::SetString</qualifiedname>
+        <param>
+          <type>const TString &amp;</type>
+          <declname>a_strTok</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>a_iSize</declname>
+        </param>
+        <briefdescription>
+<para>Make this token a variable token. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Member variables not necessary for variable tokens will be invalidated. <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="333" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="333" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1ac2e70ba039bc033722ea946342649881" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserToken&lt; TBase, TString &gt;::SetIdx</definition>
+        <argsstring>(int a_iIdx)</argsstring>
+        <name>SetIdx</name>
+        <qualifiedname>mu::ParserToken::SetIdx</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>a_iIdx</declname>
+        </param>
+        <briefdescription>
+<para>Set an index associated with the token related data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In cmSTRFUNC - This is the index to a string table in the main parser. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_iIdx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index the string function result will take in the bytecode parser. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>exception_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if #a_iIdx&lt;0 or m_iType!=cmSTRING </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="352" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="352" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1ab6c2fa80af1a8b1d79d832351e27df99" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::ParserToken&lt; TBase, TString &gt;::GetIdx</definition>
+        <argsstring>() const</argsstring>
+        <name>GetIdx</name>
+        <qualifiedname>mu::ParserToken::GetIdx</qualifiedname>
+        <briefdescription>
+<para>Return Index associated with the token related data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In cmSTRFUNC - This is the index to a string table in the main parser.</para>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>exception_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if m_iIdx&lt;0 or m_iType!=cmSTRING </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The index the result will take in the Bytecode calculatin array (m_iIdx). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="368" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="368" bodyend="374"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1a11784bdd95e766f4b9691b5b3cd36ab4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40e" kindref="member">ECmdCode</ref></type>
+        <definition>ECmdCode mu::ParserToken&lt; TBase, TString &gt;::GetCode</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCode</name>
+        <qualifiedname>mu::ParserToken::GetCode</qualifiedname>
+        <briefdescription>
+<para>Return the token type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>m_iType </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="382" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="382" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1ab64436d71016619cec2ed971201f1bb7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1ac3ccf6a749baacffd48fe97b9c2af302" kindref="member">ETypeCode</ref></type>
+        <definition>ETypeCode mu::ParserToken&lt; TBase, TString &gt;::GetType</definition>
+        <argsstring>() const</argsstring>
+        <name>GetType</name>
+        <qualifiedname>mu::ParserToken::GetType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="395" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="395" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1af17edb6b16fd40ca43f90b847ed551a7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::ParserToken&lt; TBase, TString &gt;::GetPri</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPri</name>
+        <qualifiedname>mu::ParserToken::GetPri</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="408" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="408" bodyend="417"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1acb4fc4cc13bf12b469af7af2b0345ebc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1aff435b0c277f66041374f93a3803e1f1" kindref="member">EOprtAssociativity</ref></type>
+        <definition>EOprtAssociativity mu::ParserToken&lt; TBase, TString &gt;::GetAssociativity</definition>
+        <argsstring>() const</argsstring>
+        <name>GetAssociativity</name>
+        <qualifiedname>mu::ParserToken::GetAssociativity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="420" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="420" bodyend="426"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1a3b2e76a79bf3a9c6b60328cd92893f69" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structmu_1_1generic__callable__type" kindref="compound">generic_callable_type</ref></type>
+        <definition>generic_callable_type mu::ParserToken&lt; TBase, TString &gt;::GetFuncAddr</definition>
+        <argsstring>() const</argsstring>
+        <name>GetFuncAddr</name>
+        <qualifiedname>mu::ParserToken::GetFuncAddr</qualifiedname>
+        <briefdescription>
+<para>Return the address of the callback function assoziated with function and operator tokens. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The pointer stored in m_pTok. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>exception_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if token type is non of: <itemizedlist>
+<listitem>
+<para>cmFUNC </para>
+</listitem>
+<listitem>
+<para>cmSTRFUNC </para>
+</listitem>
+<listitem>
+<para>cmPOSTOP </para>
+</listitem>
+<listitem>
+<para>cmINFIXOP </para>
+</listitem>
+<listitem>
+<para>cmOPRT_BIN </para>
+</listitem>
+</itemizedlist>
+</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40e" kindref="member">ECmdCode</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="443" column="23" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="443" bodyend="449"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1ab7269a9ba2b82672a34ad907ea9f2d1a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>TBase</type>
+        <definition>TBase mu::ParserToken&lt; TBase, TString &gt;::GetVal</definition>
+        <argsstring>() const</argsstring>
+        <name>GetVal</name>
+        <qualifiedname>mu::ParserToken::GetVal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>\biref Get value of the token.</para>
+<para>Only applicable to variable and value tokens. <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>exception_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if token is no value/variable token. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="457" column="7" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="457" bodyend="465"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1a8358a7637b7e63154a19be21be1ef017" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>TBase *</type>
+        <definition>TBase * mu::ParserToken&lt; TBase, TString &gt;::GetVar</definition>
+        <argsstring>() const</argsstring>
+        <name>GetVar</name>
+        <qualifiedname>mu::ParserToken::GetVar</qualifiedname>
+        <briefdescription>
+<para>Get address of a variable token. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Valid only if m_iType==CmdVar. <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>exception_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if token is no variable token. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="473" column="7" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="473" bodyend="479"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1a8a90a994f3285d45a29f5a27635264f8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::ParserToken&lt; TBase, TString &gt;::GetArgCount</definition>
+        <argsstring>() const</argsstring>
+        <name>GetArgCount</name>
+        <qualifiedname>mu::ParserToken::GetArgCount</qualifiedname>
+        <briefdescription>
+<para>Return the number of function arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Valid only if m_iType==CmdFUNC. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="486" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="486" bodyend="494"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1a827c268185a391099248247bdc676119" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::ParserToken&lt; TBase, TString &gt;::IsOptimizable</definition>
+        <argsstring>() const</argsstring>
+        <name>IsOptimizable</name>
+        <qualifiedname>mu::ParserToken::IsOptimizable</qualifiedname>
+        <briefdescription>
+<para>Return true if the token is a function token that can be optimized. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="499" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="499" bodyend="502"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_1aca2b02f01b19fcdc6119c1666475bbb7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const TString &amp;</type>
+        <definition>const TString &amp; mu::ParserToken&lt; TBase, TString &gt;::GetAsString</definition>
+        <argsstring>() const</argsstring>
+        <name>GetAsString</name>
+        <qualifiedname>mu::ParserToken::GetAsString</qualifiedname>
+        <briefdescription>
+<para>Return the token identifier. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If m_iType is cmSTRING the token identifier is the value of the string argument for a string function. <simplesect kind="return"><para>m_strTok </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>m_strTok </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="513" column="15" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="513" bodyend="516"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Encapsulation of the data for a single formula token. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Formula token implementation. Part of the Math <ref refid="classmu_1_1_parser" kindref="compound">Parser</ref> Package. Formula tokens can be either one of the following: <itemizedlist>
+<listitem>
+<para>value </para>
+</listitem>
+<listitem>
+<para>variable </para>
+</listitem>
+<listitem>
+<para>function with numerical arguments </para>
+</listitem>
+<listitem>
+<para>functions with a string as argument </para>
+</listitem>
+<listitem>
+<para>prefix operators </para>
+</listitem>
+<listitem>
+<para>infix operators </para>
+</listitem>
+<listitem>
+<para>binary operator </para>
+</listitem>
+</itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="170" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="171" bodyend="517"/>
+    <listofallmembers>
+      <member refid="classmu_1_1_parser_token_1a40b7e717927c58d03a6665184ff5cc52" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>Assign</name></member>
+      <member refid="classmu_1_1_parser_token_1a8a90a994f3285d45a29f5a27635264f8" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>GetArgCount</name></member>
+      <member refid="classmu_1_1_parser_token_1acb4fc4cc13bf12b469af7af2b0345ebc" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>GetAssociativity</name></member>
+      <member refid="classmu_1_1_parser_token_1aca2b02f01b19fcdc6119c1666475bbb7" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>GetAsString</name></member>
+      <member refid="classmu_1_1_parser_token_1a11784bdd95e766f4b9691b5b3cd36ab4" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>GetCode</name></member>
+      <member refid="classmu_1_1_parser_token_1a3b2e76a79bf3a9c6b60328cd92893f69" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>GetFuncAddr</name></member>
+      <member refid="classmu_1_1_parser_token_1ab6c2fa80af1a8b1d79d832351e27df99" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>GetIdx</name></member>
+      <member refid="classmu_1_1_parser_token_1af17edb6b16fd40ca43f90b847ed551a7" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>GetPri</name></member>
+      <member refid="classmu_1_1_parser_token_1ab64436d71016619cec2ed971201f1bb7" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>GetType</name></member>
+      <member refid="classmu_1_1_parser_token_1ab7269a9ba2b82672a34ad907ea9f2d1a" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>GetVal</name></member>
+      <member refid="classmu_1_1_parser_token_1a8358a7637b7e63154a19be21be1ef017" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>GetVar</name></member>
+      <member refid="classmu_1_1_parser_token_1a827c268185a391099248247bdc676119" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>IsOptimizable</name></member>
+      <member refid="classmu_1_1_parser_token_1ac872c4d99e63b735bacbb6080b7fd5ab" prot="private" virt="non-virtual"><scope>mu::ParserToken</scope><name>m_fVal</name></member>
+      <member refid="classmu_1_1_parser_token_1ace14b59711cdb94bd2872a47a2349028" prot="private" virt="non-virtual"><scope>mu::ParserToken</scope><name>m_iCode</name></member>
+      <member refid="classmu_1_1_parser_token_1a389b933434fbbc2af63fe07fdb5eb48c" prot="private" virt="non-virtual"><scope>mu::ParserToken</scope><name>m_iIdx</name></member>
+      <member refid="classmu_1_1_parser_token_1ad21b2555db06b128c4327c94558a60f8" prot="private" virt="non-virtual"><scope>mu::ParserToken</scope><name>m_iType</name></member>
+      <member refid="classmu_1_1_parser_token_1a43867c4909a12ffc718450163f184c01" prot="private" virt="non-virtual"><scope>mu::ParserToken</scope><name>m_pCallback</name></member>
+      <member refid="classmu_1_1_parser_token_1a46e31bb6feca023dceddc61772c6d13e" prot="private" virt="non-virtual"><scope>mu::ParserToken</scope><name>m_pTok</name></member>
+      <member refid="classmu_1_1_parser_token_1aa8183bff99c86603957899cc3503551f" prot="private" virt="non-virtual"><scope>mu::ParserToken</scope><name>m_strTok</name></member>
+      <member refid="classmu_1_1_parser_token_1a6a0ca8937b6b3a9c78a53d2ea0eaf4d1" prot="private" virt="non-virtual"><scope>mu::ParserToken</scope><name>m_strVal</name></member>
+      <member refid="classmu_1_1_parser_token_1a3b92813160f6ef5b8e9aa63e75b9c120" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>operator=</name></member>
+      <member refid="classmu_1_1_parser_token_1a0ce34ca6a1833441e8fd9840b3cde140" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>ParserToken</name></member>
+      <member refid="classmu_1_1_parser_token_1a17dfc71fe5750f61e9cdd5c2a3355ac0" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>ParserToken</name></member>
+      <member refid="classmu_1_1_parser_token_1ac5855525d53fc88ed8468d6f7f907868" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>Set</name></member>
+      <member refid="classmu_1_1_parser_token_1a8a20971a015948c3333a67c432c70dba" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>Set</name></member>
+      <member refid="classmu_1_1_parser_token_1ac2e70ba039bc033722ea946342649881" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>SetIdx</name></member>
+      <member refid="classmu_1_1_parser_token_1a448fb9ed5a4e39795945523bd3c06687" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>SetString</name></member>
+      <member refid="classmu_1_1_parser_token_1a93553b9ec7d77f8f4e3fb635113cf615" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>SetVal</name></member>
+      <member refid="classmu_1_1_parser_token_1a788045cd9177a3bcf44cc6a33525afff" prot="public" virt="non-virtual"><scope>mu::ParserToken</scope><name>SetVar</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

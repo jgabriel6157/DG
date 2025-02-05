@@ -1,0 +1,694 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespaceplot__results" kind="namespace" language="Python">
+    <compoundname>plot_results</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="plot__results_8py_1a0e97b0735fd1a9ae9102ba868affbb58" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_results.fileNameDensity</definition>
+        <argsstring></argsstring>
+        <name>fileNameDensity</name>
+        <qualifiedname>plot_results.fileNameDensity</qualifiedname>
+        <initializer>=  &apos;Density.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="66" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1a2e69a58aba3815f33815e7bf6dc6b2ad" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_results.fileNameVelocityX</definition>
+        <argsstring></argsstring>
+        <name>fileNameVelocityX</name>
+        <qualifiedname>plot_results.fileNameVelocityX</qualifiedname>
+        <initializer>=  &apos;VelocityX.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="67" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1a0d112f240c18056d990945488af88291" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_results.fileNameVelocityY</definition>
+        <argsstring></argsstring>
+        <name>fileNameVelocityY</name>
+        <qualifiedname>plot_results.fileNameVelocityY</qualifiedname>
+        <initializer>=  &apos;VelocityY.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="68" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1adbc73bb8b92ef1a561657b12dd198829" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_results.fileNameVelocityZ</definition>
+        <argsstring></argsstring>
+        <name>fileNameVelocityZ</name>
+        <qualifiedname>plot_results.fileNameVelocityZ</qualifiedname>
+        <initializer>=  &apos;VelocityZ.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="69" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1a4f8776904a9b44ba89d8aa67fbdd56ac" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_results.fileNameTemperature</definition>
+        <argsstring></argsstring>
+        <name>fileNameTemperature</name>
+        <qualifiedname>plot_results.fileNameTemperature</qualifiedname>
+        <initializer>=  &apos;Temperature.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="70" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1a7d548b29f1832d27120269de0e425d1b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.inputFile</definition>
+        <argsstring></argsstring>
+        <name>inputFile</name>
+        <qualifiedname>plot_results.inputFile</qualifiedname>
+        <initializer>=  open(&apos;input.txt&apos;,&apos;r&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="71" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1acd16d332e82e2523899591c1e6130987" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.inputParam</definition>
+        <argsstring></argsstring>
+        <name>inputParam</name>
+        <qualifiedname>plot_results.inputParam</qualifiedname>
+        <initializer>=  inputFile.readline()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="74" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1abe6d505fd71e9175f56520ba29f3eac4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.jMax</definition>
+        <argsstring></argsstring>
+        <name>jMax</name>
+        <qualifiedname>plot_results.jMax</qualifiedname>
+        <initializer>=  int(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="77" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1ae37ccd9f2b9592157b7778785622b465" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>plot_results.value</qualifiedname>
+        <initializer>=  inputParam[inputParam.index(&apos;=&apos;)+2:-1]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="79" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1a5f1a490cc82da003ba3697731874ce4d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <qualifiedname>plot_results.length</qualifiedname>
+        <initializer>=  assignFloat(value)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="80" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1adff178234bce1b0e6a3dfb7839e1ad1d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.lMax</definition>
+        <argsstring></argsstring>
+        <name>lMax</name>
+        <qualifiedname>plot_results.lMax</qualifiedname>
+        <initializer>=  int(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="82" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1a0201dad42d895f5854610ebbf1723733" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.basis</definition>
+        <argsstring></argsstring>
+        <name>basis</name>
+        <qualifiedname>plot_results.basis</qualifiedname>
+        <initializer>=  inputParam[inputParam.index(&apos;=&apos;)+2:-1]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="84" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1a6895ed46f6d6e9c37bd7bfcd5c9c7bdf" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.tMax</definition>
+        <argsstring></argsstring>
+        <name>tMax</name>
+        <qualifiedname>plot_results.tMax</qualifiedname>
+        <initializer>=  int(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="86" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1aa1842a0d4dccc8a14ab96af8f19436a0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.dt</definition>
+        <argsstring></argsstring>
+        <name>dt</name>
+        <qualifiedname>plot_results.dt</qualifiedname>
+        <initializer>=  float(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="88" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1ac018b5d67ef58b0ad901b764c226a5c1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.nout</definition>
+        <argsstring></argsstring>
+        <name>nout</name>
+        <qualifiedname>plot_results.nout</qualifiedname>
+        <initializer>=  int(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="90" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1a40895357264ca0920f7219f5bd1f4e3e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.fig</definition>
+        <argsstring></argsstring>
+        <name>fig</name>
+        <qualifiedname>plot_results.fig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="97" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1a5232432c1134077f73d827217339991b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.ax</definition>
+        <argsstring></argsstring>
+        <name>ax</name>
+        <qualifiedname>plot_results.ax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="97" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1a67a9269741fdca384e1a7ad47c7f1e7d" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list plot_results.lines</definition>
+        <argsstring></argsstring>
+        <name>lines</name>
+        <qualifiedname>plot_results.lines</qualifiedname>
+        <initializer>=  [ax.plot([], [], lw=2,color=&apos;red&apos;)[0] for _ in range(jMax)]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="99" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1a068c0ddc470ad98b6adf466918d17676" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.valuesDensity</definition>
+        <argsstring></argsstring>
+        <name>valuesDensity</name>
+        <qualifiedname>plot_results.valuesDensity</qualifiedname>
+        <initializer>=  pd.read_csv(fileNameDensity,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="105" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1ad8f54aac6161cf1fc31d8787efcce48a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.valuesVelocityX</definition>
+        <argsstring></argsstring>
+        <name>valuesVelocityX</name>
+        <qualifiedname>plot_results.valuesVelocityX</qualifiedname>
+        <initializer>=  pd.read_csv(fileNameVelocityX,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="107" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1acd4371ee3abf7332a3d1de3766921c98" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.valuesVelocityY</definition>
+        <argsstring></argsstring>
+        <name>valuesVelocityY</name>
+        <qualifiedname>plot_results.valuesVelocityY</qualifiedname>
+        <initializer>=  pd.read_csv(fileNameVelocityY,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="109" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1a6d168d1defb0c258501a0599b01c7968" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.valuesVelocityZ</definition>
+        <argsstring></argsstring>
+        <name>valuesVelocityZ</name>
+        <qualifiedname>plot_results.valuesVelocityZ</qualifiedname>
+        <initializer>=  pd.read_csv(fileNameVelocityZ,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="111" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1a96b35d7319ef8bf55ec5ca17ee8c735e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.valuesTemperature</definition>
+        <argsstring></argsstring>
+        <name>valuesTemperature</name>
+        <qualifiedname>plot_results.valuesTemperature</qualifiedname>
+        <initializer>=  pd.read_csv(fileNameTemperature,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="113" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1aac6063a1f411af56f32a90f5a186f36b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_results::k</definition>
+        <argsstring></argsstring>
+        <name>k</name>
+        <qualifiedname>plot_results.k</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="115" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1ac8645c5b517196904d8ca15c1ce687fd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.dx</definition>
+        <argsstring></argsstring>
+        <name>dx</name>
+        <qualifiedname>plot_results.dx</qualifiedname>
+        <initializer>=  length/jMax</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="116" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1ab39a8ee23cd575dc6bc84795320b9404" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.rho</definition>
+        <argsstring></argsstring>
+        <name>rho</name>
+        <qualifiedname>plot_results.rho</qualifiedname>
+        <initializer>=  np.zeros((lMax,jMax,nout))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="117" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1af406fb45850666389671fc89ddd6d8e8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.rhouX</definition>
+        <argsstring></argsstring>
+        <name>rhouX</name>
+        <qualifiedname>plot_results.rhouX</qualifiedname>
+        <initializer>=  np.zeros((lMax,jMax,nout))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="118" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1a4978ef610d8ffda9ab98adfc7d59ccd5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.rhouY</definition>
+        <argsstring></argsstring>
+        <name>rhouY</name>
+        <qualifiedname>plot_results.rhouY</qualifiedname>
+        <initializer>=  np.zeros((lMax,jMax,nout))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="119" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1a7131dd290c65128013f505c4d21b6153" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.rhouZ</definition>
+        <argsstring></argsstring>
+        <name>rhouZ</name>
+        <qualifiedname>plot_results.rhouZ</qualifiedname>
+        <initializer>=  np.zeros((lMax,jMax,nout))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="120" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1a7dd3502448d92ad29d4dbd6d65ce204d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.rt</definition>
+        <argsstring></argsstring>
+        <name>rt</name>
+        <qualifiedname>plot_results.rt</qualifiedname>
+        <initializer>=  np.zeros((lMax,jMax,nout))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="121" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1a0a289038ec0457889deffa980a3fbc45" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>plot_results.x</qualifiedname>
+        <initializer>=  np.zeros((jMax,10))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="162" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1addc4cf6a73186ce3b698e8fb951a369a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>plot_results.y</qualifiedname>
+        <initializer>=  np.zeros((jMax,10))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="163" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__results_8py_1aaa7c427bdd012ee1ae73836fceed67bb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_results.ani</definition>
+        <argsstring></argsstring>
+        <name>ani</name>
+        <qualifiedname>plot_results.ani</qualifiedname>
+        <initializer>=  FuncAnimation(fig, animate, frames=nout, init_func=init, repeat=False, interval = 100)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="172" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="172" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="plot__results_8py_1aad8957d1a8afac36e3d717e36a407556" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_results.getFunction</definition>
+        <argsstring>(basis, n, x)</argsstring>
+        <name>getFunction</name>
+        <qualifiedname>plot_results.getFunction</qualifiedname>
+        <param>
+          <type>basis</type>
+          <defname>basis</defname>
+        </param>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="10" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="10" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__results_8py_1afdfee48e3c4cb85bdb791726d850a5b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_results.LegendreP</definition>
+        <argsstring>(n, x)</argsstring>
+        <name>LegendreP</name>
+        <qualifiedname>plot_results.LegendreP</qualifiedname>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="22" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="22" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__results_8py_1a2ae780e40d00ebf247a0fbcae04c15da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_results.LegendrePorthonormal</definition>
+        <argsstring>(n, x)</argsstring>
+        <name>LegendrePorthonormal</name>
+        <qualifiedname>plot_results.LegendrePorthonormal</qualifiedname>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="30" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="30" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__results_8py_1a97936846a66f43d681d5635c75b8c009" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_results.Quadratic</definition>
+        <argsstring>(n, x)</argsstring>
+        <name>Quadratic</name>
+        <qualifiedname>plot_results.Quadratic</qualifiedname>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="33" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="33" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__results_8py_1a86d2ded4b277b37e31dda0f07dbeb780" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_results.linear</definition>
+        <argsstring>(n, x)</argsstring>
+        <name>linear</name>
+        <qualifiedname>plot_results.linear</qualifiedname>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="41" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="41" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__results_8py_1aae7955de7e7ad831cdd0ab2ec700b207" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_results.assignFloat</definition>
+        <argsstring>(varString)</argsstring>
+        <name>assignFloat</name>
+        <qualifiedname>plot_results.assignFloat</qualifiedname>
+        <param>
+          <type>varString</type>
+          <defname>varString</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="47" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="47" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__results_8py_1a0e4d5f02ec8a0ff8e9fdb3596d06f9a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_results.init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <qualifiedname>plot_results.init</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="132" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="132" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__results_8py_1a596067b7169f783c9d2c3102b662f274" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_results.generate_data</definition>
+        <argsstring>(t, j)</argsstring>
+        <name>generate_data</name>
+        <qualifiedname>plot_results.generate_data</qualifiedname>
+        <param>
+          <type>t</type>
+          <defname>t</defname>
+        </param>
+        <param>
+          <type>j</type>
+          <defname>j</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="137" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="137" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__results_8py_1a9130e6bfdfd90acfd2c50244f1feabe5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_results.animate</definition>
+        <argsstring>(t)</argsstring>
+        <name>animate</name>
+        <qualifiedname>plot_results.animate</qualifiedname>
+        <param>
+          <type>t</type>
+          <defname>t</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="164" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_results.py" bodystart="164" bodyend="171"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/plot_results.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

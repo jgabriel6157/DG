@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structmu_1_1_tpl_call_type" kind="struct" language="C++" prot="public">
+    <compoundname>mu::TplCallType</compoundname>
+    <templateparamlist>
+      <param>
+        <type>std::size_t</type>
+        <declname>NbParams</declname>
+        <defname>NbParams</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="54" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="54" bodyend="-1"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

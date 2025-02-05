@@ -1,0 +1,399 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespacecx__int" kind="namespace" language="Python">
+    <compoundname>cx_int</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="cx__int_8py_1ac22f48f1e43c05776526e9ec0fea75d4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cx_int.Lz</definition>
+        <argsstring></argsstring>
+        <name>Lz</name>
+        <qualifiedname>cx_int.Lz</qualifiedname>
+        <initializer>=  40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="8" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cx__int_8py_1a62997c0988941b6fe7e67108bfffee62" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cx_int.T</definition>
+        <argsstring></argsstring>
+        <name>T</name>
+        <qualifiedname>cx_int.T</qualifiedname>
+        <initializer>=  20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="9" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cx__int_8py_1add4893f690655e827e67bc9debae6319" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cx_int.n0</definition>
+        <argsstring></argsstring>
+        <name>n0</name>
+        <qualifiedname>cx_int.n0</qualifiedname>
+        <initializer>=  5 * 10**18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="10" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cx__int_8py_1a2356e59b666d20bf1544b67ba5e40635" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float cx_int.Crec</definition>
+        <argsstring></argsstring>
+        <name>Crec</name>
+        <qualifiedname>cx_int.Crec</qualifiedname>
+        <initializer>=  4.98 * 10**18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="11" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cx__int_8py_1addd6bde382efc10faedc25beaf7f47e9" prot="public" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple cx_int.nuCX</definition>
+        <argsstring></argsstring>
+        <name>nuCX</name>
+        <qualifiedname>cx_int.nuCX</qualifiedname>
+        <initializer>=  (2.2 * 10**-14) * np.sqrt(1.672 * 10**-27 / (1.602 * 10**-19))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="12" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cx__int_8py_1adcf7b8827dd7c5affee948c21f8a9bca" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>cx_int.csL</definition>
+        <argsstring></argsstring>
+        <name>csL</name>
+        <qualifiedname>cx_int.csL</qualifiedname>
+        <initializer>=  np.sqrt(20)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="13" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cx__int_8py_1abb65b9617bdfb3527b612f7f31f0f87c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>cx_int.csR</definition>
+        <argsstring></argsstring>
+        <name>csR</name>
+        <qualifiedname>cx_int.csR</qualifiedname>
+        <initializer>=  -np.sqrt(20)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="14" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cx__int_8py_1a03f1919f2a73b8916c460d65f7a0a1af" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cx_int.Tw</definition>
+        <argsstring></argsstring>
+        <name>Tw</name>
+        <qualifiedname>cx_int.Tw</qualifiedname>
+        <initializer>=  10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="15" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cx__int_8py_1aa7dfca09fa71fc179d7be98b102363dc" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cx_int.errorVal</definition>
+        <argsstring></argsstring>
+        <name>errorVal</name>
+        <qualifiedname>cx_int.errorVal</qualifiedname>
+        <initializer>=  1e-8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="16" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cx__int_8py_1afdab0493062b8bdcd8de77996b05b3cf" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cx_int.num_points</definition>
+        <argsstring></argsstring>
+        <name>num_points</name>
+        <qualifiedname>cx_int.num_points</qualifiedname>
+        <initializer>=  73</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="41" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cx__int_8py_1a38ef3353289cdacd24569db9958083a8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>cx_int.z_vals</definition>
+        <argsstring></argsstring>
+        <name>z_vals</name>
+        <qualifiedname>cx_int.z_vals</qualifiedname>
+        <initializer>=  np.linspace(-Lz/2, Lz/2, num_points)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="42" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cx__int_8py_1a6a334e8c43ef762ddb3e962d5bcee84c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>cx_int.nPoints</definition>
+        <argsstring></argsstring>
+        <name>nPoints</name>
+        <qualifiedname>cx_int.nPoints</qualifiedname>
+        <initializer>=  np.zeros(num_points)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="44" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cx__int_8py_1ad2f86d837546927d3e8cc8546fdb6c44" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cx_int.tol</definition>
+        <argsstring></argsstring>
+        <name>tol</name>
+        <qualifiedname>cx_int.tol</qualifiedname>
+        <initializer>=  1e6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="52" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cx__int_8py_1aff9bddfadb5210e810530702e02fbc74" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cx_int.maxIter</definition>
+        <argsstring></argsstring>
+        <name>maxIter</name>
+        <qualifiedname>cx_int.maxIter</qualifiedname>
+        <initializer>=  100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="53" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cx__int_8py_1a0657aa730a005cca031f3b104b5e19bd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>cx_int.nOld</definition>
+        <argsstring></argsstring>
+        <name>nOld</name>
+        <qualifiedname>cx_int.nOld</qualifiedname>
+        <initializer>=  nPoints.copy()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="57" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cx__int_8py_1a73f4f55004c2336acf55626c4b326c02" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>cx_int.nInterp</definition>
+        <argsstring></argsstring>
+        <name>nInterp</name>
+        <qualifiedname>cx_int.nInterp</qualifiedname>
+        <initializer>=  make_interp_spline(z_vals,nPoints,k=3)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="58" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cx__int_8py_1a1039b5e7235274285cd364c9efa2dcdc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>cx_int.integralPlus</definition>
+        <argsstring></argsstring>
+        <name>integralPlus</name>
+        <qualifiedname>cx_int.integralPlus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="61" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cx__int_8py_1afc1459e4e9208fe7d956a363027f2b0c" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>cx_int._</definition>
+        <argsstring></argsstring>
+        <name>_</name>
+        <qualifiedname>cx_int._</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="61" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cx__int_8py_1a1d82217f86ead6e6a8b2d52ca1dfa9bb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>cx_int.integralMinus</definition>
+        <argsstring></argsstring>
+        <name>integralMinus</name>
+        <qualifiedname>cx_int.integralMinus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="62" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="62" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="cx__int_8py_1a1ebb5f879aad801956820eabc4dddc4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cx_int.integrand_1</definition>
+        <argsstring>(v, z)</argsstring>
+        <name>integrand_1</name>
+        <qualifiedname>cx_int.integrand_1</qualifiedname>
+        <param>
+          <type>v</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>z</type>
+          <defname>z</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="18" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="cx__int_8py_1a22384bbc979dd1e0f9c4906d1cf63f9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cx_int.integrand_2</definition>
+        <argsstring>(v, z)</argsstring>
+        <name>integrand_2</name>
+        <qualifiedname>cx_int.integrand_2</qualifiedname>
+        <param>
+          <type>v</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>z</type>
+          <defname>z</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="22" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="cx__int_8py_1ae04584181f5bc21f2a50a85af3c6c652" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cx_int.n_minus</definition>
+        <argsstring>(z)</argsstring>
+        <name>n_minus</name>
+        <qualifiedname>cx_int.n_minus</qualifiedname>
+        <param>
+          <type>z</type>
+          <defname>z</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="26" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="cx__int_8py_1ae353e0e0a32b4cc40e846506979c1f2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cx_int.n_plus</definition>
+        <argsstring>(z)</argsstring>
+        <name>n_plus</name>
+        <qualifiedname>cx_int.n_plus</qualifiedname>
+        <param>
+          <type>z</type>
+          <defname>z</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="30" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="30" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="cx__int_8py_1a68705eeafb855d3fd18589926a119b1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cx_int.inner_integrand</definition>
+        <argsstring>(vp, zp)</argsstring>
+        <name>inner_integrand</name>
+        <qualifiedname>cx_int.inner_integrand</qualifiedname>
+        <param>
+          <type>vp</type>
+          <defname>vp</defname>
+        </param>
+        <param>
+          <type>zp</type>
+          <defname>zp</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="35" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/cx_int.py" bodystart="35" bodyend="40"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/cx_int.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

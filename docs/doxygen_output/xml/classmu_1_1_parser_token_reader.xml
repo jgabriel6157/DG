@@ -1,0 +1,1506 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classmu_1_1_parser_token_reader" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>mu::ParserTokenReader</compoundname>
+    <includes refid="mu_parser_token_reader_8h" local="no">muParserTokenReader.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822f" prot="private" static="no" strong="no">
+        <type></type>
+        <name>ESynCodes</name>
+        <qualifiedname>mu::ParserTokenReader::ESynCodes</qualifiedname>
+        <enumvalue id="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822faad7e9f81b8e964f8f1e2883e98d9d008" prot="private">
+          <name>noBO</name>
+          <initializer>= 1 &lt;&lt; 0</initializer>
+          <briefdescription>
+<para>to avoid i.e. &quot;cos(7)(&quot; </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822faf857fb43778a0612a8891d5ea92e707a" prot="private">
+          <name>noBC</name>
+          <initializer>= 1 &lt;&lt; 1</initializer>
+          <briefdescription>
+<para>to avoid i.e. &quot;sin)&quot; or &quot;()&quot; </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fae016ee5b95f305086421014fa14078ea" prot="private">
+          <name>noVAL</name>
+          <initializer>= 1 &lt;&lt; 2</initializer>
+          <briefdescription>
+<para>to avoid i.e. &quot;tan 2&quot; or &quot;sin(8)3.14&quot; </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fa9db8d5756662945fd366db954ec1b4e5" prot="private">
+          <name>noVAR</name>
+          <initializer>= 1 &lt;&lt; 3</initializer>
+          <briefdescription>
+<para>to avoid i.e. &quot;sin a&quot; or &quot;sin(8)a&quot; </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822faed5aa4791a640dbc1ca01299e77543f9" prot="private">
+          <name>noARG_SEP</name>
+          <initializer>= 1 &lt;&lt; 4</initializer>
+          <briefdescription>
+<para>to avoid i.e. &quot;,,&quot; or &quot;+,&quot; ... </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fafe16d52a27d59109cd46342de8943b5e" prot="private">
+          <name>noFUN</name>
+          <initializer>= 1 &lt;&lt; 5</initializer>
+          <briefdescription>
+<para>to avoid i.e. &quot;sqrt cos&quot; or &quot;(1)sin&quot; </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fac28d4f46932aec0d77e7c3bc93b3fbbc" prot="private">
+          <name>noOPT</name>
+          <initializer>= 1 &lt;&lt; 6</initializer>
+          <briefdescription>
+<para>to avoid i.e. &quot;(+)&quot; </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fae1904024d9fe6cf19c183711d4c53068" prot="private">
+          <name>noPOSTOP</name>
+          <initializer>= 1 &lt;&lt; 7</initializer>
+          <briefdescription>
+<para>to avoid i.e. &quot;(5!!)&quot; &quot;sin!&quot; </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fa82f21996422e6107588134d986d0cc22" prot="private">
+          <name>noINFIXOP</name>
+          <initializer>= 1 &lt;&lt; 8</initializer>
+          <briefdescription>
+<para>to avoid i.e. &quot;++4&quot; &quot;!!4&quot; </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fa566af141c9c351dcab1b9a3e08f02f43" prot="private">
+          <name>noEND</name>
+          <initializer>= 1 &lt;&lt; 9</initializer>
+          <briefdescription>
+<para>to avoid unexpected end of formula </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fa68e0202379f70d81b87218fac8e77eba" prot="private">
+          <name>noSTR</name>
+          <initializer>= 1 &lt;&lt; 10</initializer>
+          <briefdescription>
+<para>to block numeric arguments on string functions </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fa221ca1a59d6e4d4b567f5dd36c1351ac" prot="private">
+          <name>noASSIGN</name>
+          <initializer>= 1 &lt;&lt; 11</initializer>
+          <briefdescription>
+<para>to block assignment to constant i.e. &quot;4=7&quot; </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822faeff2e216849d471e2d1dca7ac9910b52" prot="private">
+          <name>noIF</name>
+          <initializer>= 1 &lt;&lt; 12</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fa7319e816ded8d35ce3d42db63fc8995c" prot="private">
+          <name>noELSE</name>
+          <initializer>= 1 &lt;&lt; 13</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fa31aeb288ab904d0ad98592c74d1f619a" prot="private">
+          <name>sfSTART_OF_LINE</name>
+          <initializer>= noOPT | noBC | noPOSTOP | noASSIGN | noIF | noELSE | noARG_SEP</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fad618057a4dd7aa51bdef7928d1b39362" prot="private">
+          <name>noANY</name>
+          <initializer>= ~0</initializer>
+          <briefdescription>
+<para>All of he above flags set. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Syntax codes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The syntax codes control the syntax check done during the first time parsing of the expression string. They are flags that indicate which tokens are allowed next if certain tokens are identified. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="87" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="88" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classmu_1_1_parser_token_reader_1a97392e7d7c3d0d5aabbf8a0b456bd3ef" prot="private" static="no">
+        <type><ref refid="classmu_1_1_parser_token" kindref="compound">ParserToken</ref>&lt; <ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>, <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &gt;</type>
+        <definition>typedef ParserToken&lt;value_type, string_type&gt; mu::ParserTokenReader::token_type</definition>
+        <argsstring></argsstring>
+        <name>token_type</name>
+        <qualifiedname>mu::ParserTokenReader::token_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="58" column="21" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1af97f22c7094f8abbb866d1232a668f30" prot="private" static="no" mutable="no">
+        <type><ref refid="classmu_1_1_parser_base" kindref="compound">ParserBase</ref> *</type>
+        <definition>ParserBase* mu::ParserTokenReader::m_pParser</definition>
+        <argsstring></argsstring>
+        <name>m_pParser</name>
+        <qualifiedname>mu::ParserTokenReader::m_pParser</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="131" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1abd973be0b28f134f481c384a1a89add1" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref></type>
+        <definition>string_type mu::ParserTokenReader::m_strFormula</definition>
+        <argsstring></argsstring>
+        <name>m_strFormula</name>
+        <qualifiedname>mu::ParserTokenReader::m_strFormula</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="132" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1a9f32109539922d2b3621fa729915db76" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mu::ParserTokenReader::m_iPos</definition>
+        <argsstring></argsstring>
+        <name>m_iPos</name>
+        <qualifiedname>mu::ParserTokenReader::m_iPos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="133" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1a5321f9adf434821a498c3d9e9fd3ec6d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mu::ParserTokenReader::m_iSynFlags</definition>
+        <argsstring></argsstring>
+        <name>m_iSynFlags</name>
+        <qualifiedname>mu::ParserTokenReader::m_iSynFlags</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="134" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1a4bc8a43b3249ab9b555f1499a4ea73fd" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool mu::ParserTokenReader::m_bIgnoreUndefVar</definition>
+        <argsstring></argsstring>
+        <name>m_bIgnoreUndefVar</name>
+        <qualifiedname>mu::ParserTokenReader::m_bIgnoreUndefVar</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="135" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1a5f300768599075dcf25fe3a93bb79571" prot="private" static="no" mutable="no">
+        <type>const <ref refid="namespacemu_1aa38fb627ca71e44a49de0f2fe4d9031d" kindref="member">funmap_type</ref> *</type>
+        <definition>const funmap_type* mu::ParserTokenReader::m_pFunDef</definition>
+        <argsstring></argsstring>
+        <name>m_pFunDef</name>
+        <qualifiedname>mu::ParserTokenReader::m_pFunDef</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="137" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1a0c7d0f716007eec860ad1dce2b3fce95" prot="private" static="no" mutable="no">
+        <type>const <ref refid="namespacemu_1aa38fb627ca71e44a49de0f2fe4d9031d" kindref="member">funmap_type</ref> *</type>
+        <definition>const funmap_type* mu::ParserTokenReader::m_pPostOprtDef</definition>
+        <argsstring></argsstring>
+        <name>m_pPostOprtDef</name>
+        <qualifiedname>mu::ParserTokenReader::m_pPostOprtDef</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="138" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1a101b98165371f6540175f23eaa6017a8" prot="private" static="no" mutable="no">
+        <type>const <ref refid="namespacemu_1aa38fb627ca71e44a49de0f2fe4d9031d" kindref="member">funmap_type</ref> *</type>
+        <definition>const funmap_type* mu::ParserTokenReader::m_pInfixOprtDef</definition>
+        <argsstring></argsstring>
+        <name>m_pInfixOprtDef</name>
+        <qualifiedname>mu::ParserTokenReader::m_pInfixOprtDef</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="139" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1a6485c9177f8d698cbc5ce92aeac0ae44" prot="private" static="no" mutable="no">
+        <type>const <ref refid="namespacemu_1aa38fb627ca71e44a49de0f2fe4d9031d" kindref="member">funmap_type</ref> *</type>
+        <definition>const funmap_type* mu::ParserTokenReader::m_pOprtDef</definition>
+        <argsstring></argsstring>
+        <name>m_pOprtDef</name>
+        <qualifiedname>mu::ParserTokenReader::m_pOprtDef</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="140" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1afe8b95efd8cc7f4b672a37d409281442" prot="private" static="no" mutable="no">
+        <type>const <ref refid="namespacemu_1a5940d281286a01342cf773f74481843c" kindref="member">valmap_type</ref> *</type>
+        <definition>const valmap_type* mu::ParserTokenReader::m_pConstDef</definition>
+        <argsstring></argsstring>
+        <name>m_pConstDef</name>
+        <qualifiedname>mu::ParserTokenReader::m_pConstDef</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="141" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1aa90445a5391b90ddb8ea860e05dc4c10" prot="private" static="no" mutable="no">
+        <type>const <ref refid="namespacemu_1aea1c20093e51d3dc13de10f3c17ae5b1" kindref="member">strmap_type</ref> *</type>
+        <definition>const strmap_type* mu::ParserTokenReader::m_pStrVarDef</definition>
+        <argsstring></argsstring>
+        <name>m_pStrVarDef</name>
+        <qualifiedname>mu::ParserTokenReader::m_pStrVarDef</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="142" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1aa8e5ef734f7fab8389417163f33bbb5b" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1ab57755354e948a664ad94d38546dbb10" kindref="member">varmap_type</ref> *</type>
+        <definition>varmap_type* mu::ParserTokenReader::m_pVarDef</definition>
+        <argsstring></argsstring>
+        <name>m_pVarDef</name>
+        <qualifiedname>mu::ParserTokenReader::m_pVarDef</qualifiedname>
+        <briefdescription>
+<para>The only non const pointer to parser internals. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="144" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1a31b53474962d2d340c0f07aa38d625b1" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1a1fd46d8ffefdf8913e3c5e8dc499d031" kindref="member">facfun_type</ref></type>
+        <definition>facfun_type mu::ParserTokenReader::m_pFactory</definition>
+        <argsstring></argsstring>
+        <name>m_pFactory</name>
+        <qualifiedname>mu::ParserTokenReader::m_pFactory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="145" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1a4e26d32f82d78a003c9e4844722ecd97" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* mu::ParserTokenReader::m_pFactoryData</definition>
+        <argsstring></argsstring>
+        <name>m_pFactoryData</name>
+        <qualifiedname>mu::ParserTokenReader::m_pFactoryData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="146" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1a1614ef8679a2e6a6ea29107d6641e177" prot="private" static="no" mutable="no">
+        <type>std::list&lt; <ref refid="namespacemu_1a0e40974644c0e6488d76229ca0f4ce23" kindref="member">identfun_type</ref> &gt;</type>
+        <definition>std::list&lt;identfun_type&gt; mu::ParserTokenReader::m_vIdentFun</definition>
+        <argsstring></argsstring>
+        <name>m_vIdentFun</name>
+        <qualifiedname>mu::ParserTokenReader::m_vIdentFun</qualifiedname>
+        <briefdescription>
+<para>Value token identification function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="147" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1a5310f87a9512bf0b827560f38f876db9" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1ab57755354e948a664ad94d38546dbb10" kindref="member">varmap_type</ref></type>
+        <definition>varmap_type mu::ParserTokenReader::m_UsedVar</definition>
+        <argsstring></argsstring>
+        <name>m_UsedVar</name>
+        <qualifiedname>mu::ParserTokenReader::m_UsedVar</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="148" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1a5a21a279b96fd257cc49b3eccd94969b" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserTokenReader::m_fZero</definition>
+        <argsstring></argsstring>
+        <name>m_fZero</name>
+        <qualifiedname>mu::ParserTokenReader::m_fZero</qualifiedname>
+        <briefdescription>
+<para>Dummy value of zero, referenced by undefined variables. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="149" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1adfdd31335b42e28f4b46f831f67b801d" prot="private" static="no" mutable="no">
+        <type>std::stack&lt; int &gt;</type>
+        <definition>std::stack&lt;int&gt; mu::ParserTokenReader::m_bracketStack</definition>
+        <argsstring></argsstring>
+        <name>m_bracketStack</name>
+        <qualifiedname>mu::ParserTokenReader::m_bracketStack</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="151" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1a8806dbafa4bb43e59b3925dbf29756ec" prot="private" static="no" mutable="no">
+        <type><ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref></type>
+        <definition>token_type mu::ParserTokenReader::m_lastTok</definition>
+        <argsstring></argsstring>
+        <name>m_lastTok</name>
+        <qualifiedname>mu::ParserTokenReader::m_lastTok</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="153" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_token_reader_1a46f6ddfbbecc1487ef8bb7beaf8fb9c8" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref></type>
+        <definition>char_type mu::ParserTokenReader::m_cArgSep</definition>
+        <argsstring></argsstring>
+        <name>m_cArgSep</name>
+        <qualifiedname>mu::ParserTokenReader::m_cArgSep</qualifiedname>
+        <briefdescription>
+<para>The character used for separating function arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="154" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a1e72a60fc0bfccf885a066ed0578922d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserTokenReader::ParserTokenReader</definition>
+        <argsstring>(ParserBase *a_pParent)</argsstring>
+        <name>ParserTokenReader</name>
+        <qualifiedname>mu::ParserTokenReader::ParserTokenReader</qualifiedname>
+        <param>
+          <type><ref refid="classmu_1_1_parser_base" kindref="compound">ParserBase</ref> *</type>
+          <declname>a_pParent</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a Token reader and bind it to a parser object.</para>
+<para><simplesect kind="pre"><para>[assert] a_pParser may not be NULL </para>
+</simplesect>
+<simplesect kind="post"><para>m_pParser==a_pParser </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_pParent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parent parser object of the token reader. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="62" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="120" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a6979e460c0191c6a46ced4712a2551aa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmu_1_1_parser_token_reader" kindref="compound">ParserTokenReader</ref> *</type>
+        <definition>ParserTokenReader * mu::ParserTokenReader::Clone</definition>
+        <argsstring>(ParserBase *a_pParent) const</argsstring>
+        <name>Clone</name>
+        <qualifiedname>mu::ParserTokenReader::Clone</qualifiedname>
+        <param>
+          <type><ref refid="classmu_1_1_parser_base" kindref="compound">ParserBase</ref> *</type>
+          <declname>a_pParent</declname>
+        </param>
+        <briefdescription>
+<para>Create instance of a <ref refid="classmu_1_1_parser_token_reader" kindref="compound">ParserTokenReader</ref> identical with this and return its pointer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a factory method the calling function must take care of the object destruction.</para>
+<para><simplesect kind="return"><para>A new <ref refid="classmu_1_1_parser_token_reader" kindref="compound">ParserTokenReader</ref> object. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="63" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="155" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1ae7c87757b4244e20b2c32c4173cc8284" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserTokenReader::AddValIdent</definition>
+        <argsstring>(identfun_type a_pCallback)</argsstring>
+        <name>AddValIdent</name>
+        <qualifiedname>mu::ParserTokenReader::AddValIdent</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a0e40974644c0e6488d76229ca0f4ce23" kindref="member">identfun_type</ref></type>
+          <declname>a_pCallback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="65" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="170" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a6275551cf90f88ee6e0b992cc8027fb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserTokenReader::SetVarCreator</definition>
+        <argsstring>(facfun_type a_pFactory, void *pUserData)</argsstring>
+        <name>SetVarCreator</name>
+        <qualifiedname>mu::ParserTokenReader::SetVarCreator</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a1fd46d8ffefdf8913e3c5e8dc499d031" kindref="member">facfun_type</ref></type>
+          <declname>a_pFactory</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pUserData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="66" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="182" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a73c2f7d995520961afe22c9f3f4113d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserTokenReader::SetFormula</definition>
+        <argsstring>(const string_type &amp;a_strFormula)</argsstring>
+        <name>SetFormula</name>
+        <qualifiedname>mu::ParserTokenReader::SetFormula</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_strFormula</declname>
+        </param>
+        <briefdescription>
+<para>Initialize the token Reader. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the formula position index to zero and set Syntax flags to default for initial formula parsing. <simplesect kind="pre"><para>[assert] triggered if a_szFormula==0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="67" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="223" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a5c6df951c19e7cbbe381312a15ab3ddc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserTokenReader::SetArgSep</definition>
+        <argsstring>(char_type cArgSep)</argsstring>
+        <name>SetArgSep</name>
+        <qualifiedname>mu::ParserTokenReader::SetArgSep</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref></type>
+          <declname>cArgSep</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="68" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="983" bodyend="986"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a8d64ffb96860999f18234c4d2763f74f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::ParserTokenReader::GetPos</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPos</name>
+        <qualifiedname>mu::ParserTokenReader::GetPos</qualifiedname>
+        <briefdescription>
+<para>Return the current position of the token reader in the formula string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>m_iPos </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="70" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="194" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1af1da3f32817acefa4b5a290a66497cf6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+        <definition>const string_type &amp; mu::ParserTokenReader::GetExpr</definition>
+        <argsstring>() const</argsstring>
+        <name>GetExpr</name>
+        <qualifiedname>mu::ParserTokenReader::GetExpr</qualifiedname>
+        <briefdescription>
+<para>Return a reference to the formula. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>m_strFormula </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="71" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="205" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1ae7076f6bda1d7ea11a89e9bc11b92aa4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1ab57755354e948a664ad94d38546dbb10" kindref="member">varmap_type</ref> &amp;</type>
+        <definition>varmap_type &amp; mu::ParserTokenReader::GetUsedVar</definition>
+        <argsstring>()</argsstring>
+        <name>GetUsedVar</name>
+        <qualifiedname>mu::ParserTokenReader::GetUsedVar</qualifiedname>
+        <briefdescription>
+<para>Return a map containing the used variables only. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="72" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="212" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a92ebf92a5758267cdc5dbfaebe1bec9b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref></type>
+        <definition>char_type mu::ParserTokenReader::GetArgSep</definition>
+        <argsstring>() const</argsstring>
+        <name>GetArgSep</name>
+        <qualifiedname>mu::ParserTokenReader::GetArgSep</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="73" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="989" bodyend="992"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a62cd2361502098231dcb9893a09e9de0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserTokenReader::IgnoreUndefVar</definition>
+        <argsstring>(bool bIgnore)</argsstring>
+        <name>IgnoreUndefVar</name>
+        <qualifiedname>mu::ParserTokenReader::IgnoreUndefVar</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>bIgnore</declname>
+        </param>
+        <briefdescription>
+<para>Set Flag that controls behaviour in case of undefined variables being found. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If true, the parser does not throw an exception if an undefined variable is found. otherwise it does. This variable is used internally only! It suppresses a &quot;undefined variable&quot; exception in <ref refid="classmu_1_1_parser_token_reader_1ae7076f6bda1d7ea11a89e9bc11b92aa4" kindref="member">GetUsedVar()</ref>. Those function should return a complete list of variables including those the are not defined by the time of it&apos;s call. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="75" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="238" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1ac991cffd605b837020a732a026b009bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserTokenReader::ReInit</definition>
+        <argsstring>()</argsstring>
+        <name>ReInit</name>
+        <qualifiedname>mu::ParserTokenReader::ReInit</qualifiedname>
+        <briefdescription>
+<para>Reset the token reader to the start of the formula. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The syntax flags will be reset to a value appropriate for the start of a formula. <simplesect kind="post"><para>m_iPos==0, m_iSynFlags = noOPT | noBC | noPOSTOP | noSTR </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>ESynCodes </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="76" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="252" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a36861d4d08fc658b210c1a18e80052e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref></type>
+        <definition>ParserTokenReader::token_type mu::ParserTokenReader::ReadNextToken</definition>
+        <argsstring>()</argsstring>
+        <name>ReadNextToken</name>
+        <qualifiedname>mu::ParserTokenReader::ReadNextToken</qualifiedname>
+        <briefdescription>
+<para>Read the next token from the string. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="77" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="263" bodyend="346"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1ac10af9b71f614f118eff62ae0ca34bed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserTokenReader::ParserTokenReader</definition>
+        <argsstring>(const ParserTokenReader &amp;a_Reader)</argsstring>
+        <name>ParserTokenReader</name>
+        <qualifiedname>mu::ParserTokenReader::ParserTokenReader</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_token_reader" kindref="compound">ParserTokenReader</ref> &amp;</type>
+          <declname>a_Reader</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para>Assign </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="107" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="59" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a605423c3d6e1356a2b7fb0dd159b8003" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmu_1_1_parser_token_reader" kindref="compound">ParserTokenReader</ref> &amp;</type>
+        <definition>ParserTokenReader &amp; mu::ParserTokenReader::operator=</definition>
+        <argsstring>(const ParserTokenReader &amp;a_Reader)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>mu::ParserTokenReader::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_token_reader" kindref="compound">ParserTokenReader</ref> &amp;</type>
+          <declname>a_Reader</declname>
+        </param>
+        <briefdescription>
+<para>Assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Self assignment will be suppressed otherwise Assign is called.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_Reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Object to copy to this token reader. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="108" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="72" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a516a7c5774390b3ae2ba6370758f37b4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserTokenReader::Assign</definition>
+        <argsstring>(const ParserTokenReader &amp;a_Reader)</argsstring>
+        <name>Assign</name>
+        <qualifiedname>mu::ParserTokenReader::Assign</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_token_reader" kindref="compound">ParserTokenReader</ref> &amp;</type>
+          <declname>a_Reader</declname>
+        </param>
+        <briefdescription>
+<para>Assign state of a token reader to this token reader. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_Reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Object from which the state should be copied. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="109" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="86" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a3f26b0e02b519a139dd1c17005dfa915" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserTokenReader::SetParent</definition>
+        <argsstring>(ParserBase *a_pParent)</argsstring>
+        <name>SetParent</name>
+        <qualifiedname>mu::ParserTokenReader::SetParent</qualifiedname>
+        <param>
+          <type><ref refid="classmu_1_1_parser_base" kindref="compound">ParserBase</ref> *</type>
+          <declname>a_pParent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="111" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="349" bodyend="359"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1ae82f9cade50b0f0d228e7bd00c831d11" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::ParserTokenReader::ExtractToken</definition>
+        <argsstring>(const char_type *a_szCharSet, string_type &amp;a_strTok, std::size_t a_iPos) const</argsstring>
+        <name>ExtractToken</name>
+        <qualifiedname>mu::ParserTokenReader::ExtractToken</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+          <declname>a_szCharSet</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_strTok</declname>
+          <defname>a_sTok</defname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>a_iPos</declname>
+        </param>
+        <briefdescription>
+<para>Extract all characters that belong to a certain charset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_szCharSet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[in] Const char array of the characters allowed in the token. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_strTok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] The string that consists entirely of characters listed in a_szCharSet. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_iPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[in] Position in the string from where to start reading. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The Position of the first character not listed in a_szCharSet. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="112" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="370" bodyend="382"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a097589b1f95852990328436fbdee79f0" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::ParserTokenReader::ExtractOperatorToken</definition>
+        <argsstring>(string_type &amp;a_sTok, std::size_t a_iPos) const</argsstring>
+        <name>ExtractOperatorToken</name>
+        <qualifiedname>mu::ParserTokenReader::ExtractOperatorToken</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_sTok</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>a_iPos</declname>
+        </param>
+        <briefdescription>
+<para>Check Expression for the presence of a binary operator token. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Userdefined binary operator &quot;++&quot; gives inconsistent parsing result for the equations &quot;a++b&quot; and &quot;a ++ b&quot; if alphabetic characters are allowed in operator tokens. To avoid this this function checks specifically for operator tokens. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="113" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="392" bodyend="411"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1ac0d978a4959324d2b2f964ffe495262d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::ParserTokenReader::IsBuiltIn</definition>
+        <argsstring>(token_type &amp;a_Tok)</argsstring>
+        <name>IsBuiltIn</name>
+        <qualifiedname>mu::ParserTokenReader::IsBuiltIn</qualifiedname>
+        <param>
+          <type><ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &amp;</type>
+          <declname>a_Tok</declname>
+        </param>
+        <briefdescription>
+<para>Check if a built in operator or other token can be found. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_Tok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] Operator token if one is found. This can either be a binary operator or an infix operator token. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if an operator token has been found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="115" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="418" bodyend="514"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a03cb49020dcdfdb0d9704e5538f6780d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::ParserTokenReader::IsArgSep</definition>
+        <argsstring>(token_type &amp;a_Tok)</argsstring>
+        <name>IsArgSep</name>
+        <qualifiedname>mu::ParserTokenReader::IsArgSep</qualifiedname>
+        <param>
+          <type><ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &amp;</type>
+          <declname>a_Tok</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="116" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="517" bodyend="538"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1abb1920a0353646a5c902a4f31ba69f5e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::ParserTokenReader::IsEOF</definition>
+        <argsstring>(token_type &amp;a_Tok)</argsstring>
+        <name>IsEOF</name>
+        <qualifiedname>mu::ParserTokenReader::IsEOF</qualifiedname>
+        <param>
+          <type><ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &amp;</type>
+          <declname>a_Tok</declname>
+        </param>
+        <briefdescription>
+<para>Check for End of Formula. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if an end of formula is found false otherwise. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_Tok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] If an eof is found the corresponding token will be stored there. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>IsOprt, IsFunTok, IsStrFunTok, IsValTok, IsVarTok, IsString, IsInfixOpTok, IsPostOpTok </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="117" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="548" bodyend="567"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a95cd83dc5fa3a6deb973aef233ca133a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::ParserTokenReader::IsInfixOpTok</definition>
+        <argsstring>(token_type &amp;a_Tok)</argsstring>
+        <name>IsInfixOpTok</name>
+        <qualifiedname>mu::ParserTokenReader::IsInfixOpTok</qualifiedname>
+        <param>
+          <type><ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &amp;</type>
+          <declname>a_Tok</declname>
+        </param>
+        <briefdescription>
+<para>Check if a string position contains a unary infix operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if a function token has been found false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="118" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="573" bodyend="609"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a259bb3a5a78fd22febaba0d214627dda" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::ParserTokenReader::IsFunTok</definition>
+        <argsstring>(token_type &amp;a_Tok)</argsstring>
+        <name>IsFunTok</name>
+        <qualifiedname>mu::ParserTokenReader::IsFunTok</qualifiedname>
+        <param>
+          <type><ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &amp;</type>
+          <declname>a_Tok</declname>
+        </param>
+        <briefdescription>
+<para>Check whether the token at a given position is a function token. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_Tok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] If a value token is found it will be placed here. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ParserException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if Syntaxflags do not allow a function at a_iPos </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if a function token has been found false otherwise. </para>
+</simplesect>
+<simplesect kind="pre"><para>[assert] m_pParser!=0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="119" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="618" bodyend="642"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a0459bf4ae807503659c596c56f03a830" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::ParserTokenReader::IsPostOpTok</definition>
+        <argsstring>(token_type &amp;a_Tok)</argsstring>
+        <name>IsPostOpTok</name>
+        <qualifiedname>mu::ParserTokenReader::IsPostOpTok</qualifiedname>
+        <param>
+          <type><ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &amp;</type>
+          <declname>a_Tok</declname>
+        </param>
+        <briefdescription>
+<para>Check if a string position contains a unary post value operator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="120" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="709" bodyend="751"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a5475c6b01120fc4fffcde520ce7d3c17" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::ParserTokenReader::IsOprt</definition>
+        <argsstring>(token_type &amp;a_Tok)</argsstring>
+        <name>IsOprt</name>
+        <qualifiedname>mu::ParserTokenReader::IsOprt</qualifiedname>
+        <param>
+          <type><ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &amp;</type>
+          <declname>a_Tok</declname>
+        </param>
+        <briefdescription>
+<para>Check if a string position contains a binary operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_Tok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] Operator token if one is found. This can either be a binary operator or an infix operator token. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if an operator token has been found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="121" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="649" bodyend="705"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a2f1254b8dfb73518fe5d4b4da6a54fea" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::ParserTokenReader::IsValTok</definition>
+        <argsstring>(token_type &amp;a_Tok)</argsstring>
+        <name>IsValTok</name>
+        <qualifiedname>mu::ParserTokenReader::IsValTok</qualifiedname>
+        <param>
+          <type><ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &amp;</type>
+          <declname>a_Tok</declname>
+        </param>
+        <briefdescription>
+<para>Check whether the token at a given position is a value token. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Value tokens are either values or constants.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_Tok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] If a value token is found it will be placed here. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if a value token has been found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="122" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="761" bodyend="809"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a69eb56120c5c1a9de122bacfb78fa626" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::ParserTokenReader::IsVarTok</definition>
+        <argsstring>(token_type &amp;a_Tok)</argsstring>
+        <name>IsVarTok</name>
+        <qualifiedname>mu::ParserTokenReader::IsVarTok</qualifiedname>
+        <param>
+          <type><ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &amp;</type>
+          <declname>a_Tok</declname>
+        </param>
+        <briefdescription>
+<para>Check wheter a token at a given position is a variable token. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_Tok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] If a variable token has been found it will be placed here. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if a variable token has been found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="123" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="816" bodyend="844"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1aeed4d4071704d6912c9d477740855be5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::ParserTokenReader::IsStrVarTok</definition>
+        <argsstring>(token_type &amp;a_Tok)</argsstring>
+        <name>IsStrVarTok</name>
+        <qualifiedname>mu::ParserTokenReader::IsStrVarTok</qualifiedname>
+        <param>
+          <type><ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &amp;</type>
+          <declname>a_Tok</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="124" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="847" bodyend="872"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1afd65771383a5cb73a86b1d54052ac2b9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::ParserTokenReader::IsUndefVarTok</definition>
+        <argsstring>(token_type &amp;a_Tok)</argsstring>
+        <name>IsUndefVarTok</name>
+        <qualifiedname>mu::ParserTokenReader::IsUndefVarTok</qualifiedname>
+        <param>
+          <type><ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &amp;</type>
+          <declname>a_Tok</declname>
+        </param>
+        <briefdescription>
+<para>Check wheter a token at a given position is an undefined variable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_Tok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] If a variable tom_pParser-&gt;m_vStringBufken has been found it will be placed here. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if a variable token has been found. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="125" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="882" bodyend="924"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a7633149149dc464416ed1ee5bae654c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::ParserTokenReader::IsString</definition>
+        <argsstring>(token_type &amp;a_Tok)</argsstring>
+        <name>IsString</name>
+        <qualifiedname>mu::ParserTokenReader::IsString</qualifiedname>
+        <param>
+          <type><ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &amp;</type>
+          <declname>a_Tok</declname>
+        </param>
+        <briefdescription>
+<para>Check wheter a token at a given position is a string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_Tok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] If a variable token has been found it will be placed here. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if a string token has been found. </para>
+</simplesect>
+<simplesect kind="see"><para>IsOprt, IsFunTok, IsStrFunTok, IsValTok, IsVarTok, IsEOF, IsInfixOpTok, IsPostOpTok </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="126" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="934" bodyend="965"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1a619b988a00572242b5791d0d38e7c0fe" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserTokenReader::Error</definition>
+        <argsstring>(EErrorCodes a_iErrc, int a_iPos=-1, const string_type &amp;a_sTok=string_type()) const</argsstring>
+        <name>Error</name>
+        <qualifiedname>mu::ParserTokenReader::Error</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688a" kindref="member">EErrorCodes</ref></type>
+          <declname>a_iErrc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iPos</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_sTok</declname>
+          <defval><ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Create an error containing the parse error position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will create an <ref refid="classmu_1_1_parser" kindref="compound">Parser</ref> Exception object containing the error text and its position.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_iErrc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[in] The error code of type <ref refid="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688a" kindref="member">EErrorCodes</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_iPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[in] The position where the error was detected. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_strTok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[in] The token string representation associated with the error. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ParserException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>always throws thats the only purpose of this function. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="127" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="977" bodyend="980"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_token_reader_1ae6c5b17f5317421a9a84c3a5ceadc7cf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &amp;</type>
+        <definition>ParserTokenReader::token_type &amp; mu::ParserTokenReader::SaveBeforeReturn</definition>
+        <argsstring>(const token_type &amp;tok)</argsstring>
+        <name>SaveBeforeReturn</name>
+        <qualifiedname>mu::ParserTokenReader::SaveBeforeReturn</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &amp;</type>
+          <declname>tok</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="129" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp" bodystart="163" bodyend="167"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Token reader for the <ref refid="classmu_1_1_parser_base" kindref="compound">ParserBase</ref> class. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" line="54" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h" bodystart="55" bodyend="155"/>
+    <listofallmembers>
+      <member refid="classmu_1_1_parser_token_reader_1ae7c87757b4244e20b2c32c4173cc8284" prot="public" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>AddValIdent</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a516a7c5774390b3ae2ba6370758f37b4" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>Assign</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a6979e460c0191c6a46ced4712a2551aa" prot="public" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>Clone</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a619b988a00572242b5791d0d38e7c0fe" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>Error</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822f" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>ESynCodes</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a097589b1f95852990328436fbdee79f0" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>ExtractOperatorToken</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1ae82f9cade50b0f0d228e7bd00c831d11" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>ExtractToken</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a92ebf92a5758267cdc5dbfaebe1bec9b" prot="public" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>GetArgSep</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1af1da3f32817acefa4b5a290a66497cf6" prot="public" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>GetExpr</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a8d64ffb96860999f18234c4d2763f74f" prot="public" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>GetPos</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1ae7076f6bda1d7ea11a89e9bc11b92aa4" prot="public" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>GetUsedVar</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a62cd2361502098231dcb9893a09e9de0" prot="public" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>IgnoreUndefVar</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a03cb49020dcdfdb0d9704e5538f6780d" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>IsArgSep</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1ac0d978a4959324d2b2f964ffe495262d" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>IsBuiltIn</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1abb1920a0353646a5c902a4f31ba69f5e" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>IsEOF</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a259bb3a5a78fd22febaba0d214627dda" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>IsFunTok</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a95cd83dc5fa3a6deb973aef233ca133a" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>IsInfixOpTok</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a5475c6b01120fc4fffcde520ce7d3c17" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>IsOprt</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a0459bf4ae807503659c596c56f03a830" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>IsPostOpTok</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a7633149149dc464416ed1ee5bae654c0" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>IsString</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1aeed4d4071704d6912c9d477740855be5" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>IsStrVarTok</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1afd65771383a5cb73a86b1d54052ac2b9" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>IsUndefVarTok</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a2f1254b8dfb73518fe5d4b4da6a54fea" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>IsValTok</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a69eb56120c5c1a9de122bacfb78fa626" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>IsVarTok</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a4bc8a43b3249ab9b555f1499a4ea73fd" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_bIgnoreUndefVar</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1adfdd31335b42e28f4b46f831f67b801d" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_bracketStack</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a46f6ddfbbecc1487ef8bb7beaf8fb9c8" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_cArgSep</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a5a21a279b96fd257cc49b3eccd94969b" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_fZero</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a9f32109539922d2b3621fa729915db76" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_iPos</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a5321f9adf434821a498c3d9e9fd3ec6d" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_iSynFlags</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a8806dbafa4bb43e59b3925dbf29756ec" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_lastTok</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1afe8b95efd8cc7f4b672a37d409281442" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_pConstDef</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a31b53474962d2d340c0f07aa38d625b1" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_pFactory</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a4e26d32f82d78a003c9e4844722ecd97" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_pFactoryData</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a5f300768599075dcf25fe3a93bb79571" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_pFunDef</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a101b98165371f6540175f23eaa6017a8" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_pInfixOprtDef</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a6485c9177f8d698cbc5ce92aeac0ae44" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_pOprtDef</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1af97f22c7094f8abbb866d1232a668f30" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_pParser</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a0c7d0f716007eec860ad1dce2b3fce95" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_pPostOprtDef</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1aa90445a5391b90ddb8ea860e05dc4c10" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_pStrVarDef</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1aa8e5ef734f7fab8389417163f33bbb5b" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_pVarDef</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1abd973be0b28f134f481c384a1a89add1" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_strFormula</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a5310f87a9512bf0b827560f38f876db9" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_UsedVar</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a1614ef8679a2e6a6ea29107d6641e177" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>m_vIdentFun</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fad618057a4dd7aa51bdef7928d1b39362" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>noANY</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822faed5aa4791a640dbc1ca01299e77543f9" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>noARG_SEP</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fa221ca1a59d6e4d4b567f5dd36c1351ac" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>noASSIGN</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822faf857fb43778a0612a8891d5ea92e707a" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>noBC</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822faad7e9f81b8e964f8f1e2883e98d9d008" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>noBO</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fa7319e816ded8d35ce3d42db63fc8995c" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>noELSE</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fa566af141c9c351dcab1b9a3e08f02f43" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>noEND</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fafe16d52a27d59109cd46342de8943b5e" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>noFUN</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822faeff2e216849d471e2d1dca7ac9910b52" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>noIF</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fa82f21996422e6107588134d986d0cc22" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>noINFIXOP</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fac28d4f46932aec0d77e7c3bc93b3fbbc" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>noOPT</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fae1904024d9fe6cf19c183711d4c53068" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>noPOSTOP</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fa68e0202379f70d81b87218fac8e77eba" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>noSTR</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fae016ee5b95f305086421014fa14078ea" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>noVAL</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fa9db8d5756662945fd366db954ec1b4e5" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>noVAR</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a605423c3d6e1356a2b7fb0dd159b8003" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>operator=</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a1e72a60fc0bfccf885a066ed0578922d" prot="public" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>ParserTokenReader</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1ac10af9b71f614f118eff62ae0ca34bed" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>ParserTokenReader</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a36861d4d08fc658b210c1a18e80052e5" prot="public" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>ReadNextToken</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1ac991cffd605b837020a732a026b009bc" prot="public" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>ReInit</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1ae6c5b17f5317421a9a84c3a5ceadc7cf" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>SaveBeforeReturn</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a5c6df951c19e7cbbe381312a15ab3ddc" prot="public" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>SetArgSep</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a73c2f7d995520961afe22c9f3f4113d7" prot="public" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>SetFormula</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a3f26b0e02b519a139dd1c17005dfa915" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>SetParent</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a6275551cf90f88ee6e0b992cc8027fb2" prot="public" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>SetVarCreator</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a3d0b6a52fc20ae3fbbb8d876337a822fa31aeb288ab904d0ad98592c74d1f619a" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>sfSTART_OF_LINE</name></member>
+      <member refid="classmu_1_1_parser_token_reader_1a97392e7d7c3d0d5aabbf8a0b456bd3ef" prot="private" virt="non-virtual"><scope>mu::ParserTokenReader</scope><name>token_type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

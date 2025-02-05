@@ -1,0 +1,440 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_mesh" kind="class" language="C++" prot="public">
+    <compoundname>Mesh</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_mesh_1a57249509ddb0b0fcb8159b82f6cc8567" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="struct_cell" kindref="compound">Cell</ref> &gt;</type>
+        <definition>std::vector&lt;Cell&gt; Mesh::cells</definition>
+        <argsstring></argsstring>
+        <name>cells</name>
+        <qualifiedname>Mesh::cells</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="16" column="17" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.hxx" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mesh_1a05eb17a6df74f735b305bbe456d1d84f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Mesh::nx</definition>
+        <argsstring></argsstring>
+        <name>nx</name>
+        <qualifiedname>Mesh::nx</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="17" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.hxx" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mesh_1a51ea153995af1c4e51099209e5694eed" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Mesh::nvx</definition>
+        <argsstring></argsstring>
+        <name>nvx</name>
+        <qualifiedname>Mesh::nvx</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="18" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.hxx" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mesh_1af449d86842a4a9f235f57f7c49b4a73b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Mesh::nvy</definition>
+        <argsstring></argsstring>
+        <name>nvy</name>
+        <qualifiedname>Mesh::nvy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="19" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.hxx" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mesh_1a029fe8ef3ddbe8584e34a39003162d87" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Mesh::nvz</definition>
+        <argsstring></argsstring>
+        <name>nvz</name>
+        <qualifiedname>Mesh::nvz</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="20" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.hxx" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mesh_1aacce412ec7ff03d064647b199c154612" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Mesh::domainLengthX</definition>
+        <argsstring></argsstring>
+        <name>domainLengthX</name>
+        <qualifiedname>Mesh::domainLengthX</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="21" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.hxx" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mesh_1a1baf4d4c702dcfb9fd273a052146689a" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Mesh::domainMaxVX</definition>
+        <argsstring></argsstring>
+        <name>domainMaxVX</name>
+        <qualifiedname>Mesh::domainMaxVX</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="22" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.hxx" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mesh_1af62c4a49a0d97594f66270b085cda8ef" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Mesh::domainMaxVY</definition>
+        <argsstring></argsstring>
+        <name>domainMaxVY</name>
+        <qualifiedname>Mesh::domainMaxVY</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="23" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.hxx" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mesh_1ad2814adc11baf731ed23da3914ec4810" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Mesh::domainMaxVZ</definition>
+        <argsstring></argsstring>
+        <name>domainMaxVZ</name>
+        <qualifiedname>Mesh::domainMaxVZ</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="24" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.hxx" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mesh_1a71fa87885b82b644ddce87b24ffbb8af" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Mesh::bc</definition>
+        <argsstring></argsstring>
+        <name>bc</name>
+        <qualifiedname>Mesh::bc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="25" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.hxx" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mesh_1ac8a09055de19b242e5fcec4c57116b11" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Mesh::dvx</definition>
+        <argsstring></argsstring>
+        <name>dvx</name>
+        <qualifiedname>Mesh::dvx</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="26" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.hxx" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mesh_1a6051798ebc7c2dd4ab2ed6206c9c02b3" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Mesh::dvy</definition>
+        <argsstring></argsstring>
+        <name>dvy</name>
+        <qualifiedname>Mesh::dvy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="27" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.hxx" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mesh_1ac92aa3c6e4040de19ba49ade8cb2d8c9" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Mesh::dvz</definition>
+        <argsstring></argsstring>
+        <name>dvz</name>
+        <qualifiedname>Mesh::dvz</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="28" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.hxx" bodystart="28" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_mesh_1afc8133cd9909d9bfe055b186c81facb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Mesh::Mesh</definition>
+        <argsstring>(int nx, int nvx, int nvy, int nvz, double domainLengthX, double domainMaxVX, double domainMaxVY, double domainMaxVZ, int bc)</argsstring>
+        <name>Mesh</name>
+        <qualifiedname>Mesh::Mesh</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>nx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nvx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nvy</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nvz</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>domainLengthX</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>domainMaxVX</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>domainMaxVY</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>domainMaxVZ</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="32" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.cxx" bodystart="5" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mesh_1ad3f514a33d8ad63fcb8ca6877a430cb9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="struct_cell" kindref="compound">Cell</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; Cell &gt; &amp; Mesh::getCells</definition>
+        <argsstring>() const</argsstring>
+        <name>getCells</name>
+        <qualifiedname>Mesh::getCells</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="35" column="23" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.cxx" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mesh_1a0b7e0ea56afcc666812d9c4924594270" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const int &amp;</type>
+        <definition>const int &amp; Mesh::getNX</definition>
+        <argsstring>() const</argsstring>
+        <name>getNX</name>
+        <qualifiedname>Mesh::getNX</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="37" column="15" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.cxx" bodystart="63" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mesh_1a512cbf863882bf952482918472fc64de" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const int &amp;</type>
+        <definition>const int &amp; Mesh::getNVX</definition>
+        <argsstring>() const</argsstring>
+        <name>getNVX</name>
+        <qualifiedname>Mesh::getNVX</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="39" column="15" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.cxx" bodystart="69" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mesh_1a72264cf7b700251234cd838ab6c3faea" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const int &amp;</type>
+        <definition>const int &amp; Mesh::getNVY</definition>
+        <argsstring>() const</argsstring>
+        <name>getNVY</name>
+        <qualifiedname>Mesh::getNVY</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="41" column="15" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.cxx" bodystart="74" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mesh_1a99f0e28ee5afe0d6b8f578a8c54d66ac" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const int &amp;</type>
+        <definition>const int &amp; Mesh::getNVZ</definition>
+        <argsstring>() const</argsstring>
+        <name>getNVZ</name>
+        <qualifiedname>Mesh::getNVZ</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="43" column="15" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.cxx" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mesh_1a717fa5608d6d8fad8d455c47fbd71b32" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Mesh::getDVX</definition>
+        <argsstring>() const</argsstring>
+        <name>getDVX</name>
+        <qualifiedname>Mesh::getDVX</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="45" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.cxx" bodystart="84" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mesh_1a4e0d2b7d6c6b4d828b7bda45a11ef5b8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Mesh::getDVY</definition>
+        <argsstring>() const</argsstring>
+        <name>getDVY</name>
+        <qualifiedname>Mesh::getDVY</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="47" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.cxx" bodystart="89" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mesh_1a3ae903849d68c15fdb0f6a339215d5f8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Mesh::getDVZ</definition>
+        <argsstring>() const</argsstring>
+        <name>getDVZ</name>
+        <qualifiedname>Mesh::getDVZ</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="49" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.cxx" bodystart="94" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mesh_1a0b3c0bb4237ff2a14f5bc458ccef7017" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Mesh::getVelocityX</definition>
+        <argsstring>(int velocityIndex) const</argsstring>
+        <name>getVelocityX</name>
+        <qualifiedname>Mesh::getVelocityX</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>velocityIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="51" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.cxx" bodystart="99" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mesh_1a020f06f6dc3de1fdeed0c0db3f25f7bf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Mesh::getVelocityY</definition>
+        <argsstring>(int velocityIndex) const</argsstring>
+        <name>getVelocityY</name>
+        <qualifiedname>Mesh::getVelocityY</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>velocityIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="53" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.cxx" bodystart="104" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mesh_1a4223629475b7387a9af2041445e7dea8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Mesh::getVelocityZ</definition>
+        <argsstring>(int velocityIndex) const</argsstring>
+        <name>getVelocityZ</name>
+        <qualifiedname>Mesh::getVelocityZ</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>velocityIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="55" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.cxx" bodystart="109" bodyend="112"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="13" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.hxx" bodystart="14" bodyend="56"/>
+    <listofallmembers>
+      <member refid="class_mesh_1a71fa87885b82b644ddce87b24ffbb8af" prot="private" virt="non-virtual"><scope>Mesh</scope><name>bc</name></member>
+      <member refid="class_mesh_1a57249509ddb0b0fcb8159b82f6cc8567" prot="private" virt="non-virtual"><scope>Mesh</scope><name>cells</name></member>
+      <member refid="class_mesh_1aacce412ec7ff03d064647b199c154612" prot="private" virt="non-virtual"><scope>Mesh</scope><name>domainLengthX</name></member>
+      <member refid="class_mesh_1a1baf4d4c702dcfb9fd273a052146689a" prot="private" virt="non-virtual"><scope>Mesh</scope><name>domainMaxVX</name></member>
+      <member refid="class_mesh_1af62c4a49a0d97594f66270b085cda8ef" prot="private" virt="non-virtual"><scope>Mesh</scope><name>domainMaxVY</name></member>
+      <member refid="class_mesh_1ad2814adc11baf731ed23da3914ec4810" prot="private" virt="non-virtual"><scope>Mesh</scope><name>domainMaxVZ</name></member>
+      <member refid="class_mesh_1ac8a09055de19b242e5fcec4c57116b11" prot="private" virt="non-virtual"><scope>Mesh</scope><name>dvx</name></member>
+      <member refid="class_mesh_1a6051798ebc7c2dd4ab2ed6206c9c02b3" prot="private" virt="non-virtual"><scope>Mesh</scope><name>dvy</name></member>
+      <member refid="class_mesh_1ac92aa3c6e4040de19ba49ade8cb2d8c9" prot="private" virt="non-virtual"><scope>Mesh</scope><name>dvz</name></member>
+      <member refid="class_mesh_1ad3f514a33d8ad63fcb8ca6877a430cb9" prot="public" virt="non-virtual"><scope>Mesh</scope><name>getCells</name></member>
+      <member refid="class_mesh_1a717fa5608d6d8fad8d455c47fbd71b32" prot="public" virt="non-virtual"><scope>Mesh</scope><name>getDVX</name></member>
+      <member refid="class_mesh_1a4e0d2b7d6c6b4d828b7bda45a11ef5b8" prot="public" virt="non-virtual"><scope>Mesh</scope><name>getDVY</name></member>
+      <member refid="class_mesh_1a3ae903849d68c15fdb0f6a339215d5f8" prot="public" virt="non-virtual"><scope>Mesh</scope><name>getDVZ</name></member>
+      <member refid="class_mesh_1a512cbf863882bf952482918472fc64de" prot="public" virt="non-virtual"><scope>Mesh</scope><name>getNVX</name></member>
+      <member refid="class_mesh_1a72264cf7b700251234cd838ab6c3faea" prot="public" virt="non-virtual"><scope>Mesh</scope><name>getNVY</name></member>
+      <member refid="class_mesh_1a99f0e28ee5afe0d6b8f578a8c54d66ac" prot="public" virt="non-virtual"><scope>Mesh</scope><name>getNVZ</name></member>
+      <member refid="class_mesh_1a0b7e0ea56afcc666812d9c4924594270" prot="public" virt="non-virtual"><scope>Mesh</scope><name>getNX</name></member>
+      <member refid="class_mesh_1a0b3c0bb4237ff2a14f5bc458ccef7017" prot="public" virt="non-virtual"><scope>Mesh</scope><name>getVelocityX</name></member>
+      <member refid="class_mesh_1a020f06f6dc3de1fdeed0c0db3f25f7bf" prot="public" virt="non-virtual"><scope>Mesh</scope><name>getVelocityY</name></member>
+      <member refid="class_mesh_1a4223629475b7387a9af2041445e7dea8" prot="public" virt="non-virtual"><scope>Mesh</scope><name>getVelocityZ</name></member>
+      <member refid="class_mesh_1afc8133cd9909d9bfe055b186c81facb1" prot="public" virt="non-virtual"><scope>Mesh</scope><name>Mesh</name></member>
+      <member refid="class_mesh_1a51ea153995af1c4e51099209e5694eed" prot="private" virt="non-virtual"><scope>Mesh</scope><name>nvx</name></member>
+      <member refid="class_mesh_1af449d86842a4a9f235f57f7c49b4a73b" prot="private" virt="non-virtual"><scope>Mesh</scope><name>nvy</name></member>
+      <member refid="class_mesh_1a029fe8ef3ddbe8584e34a39003162d87" prot="private" virt="non-virtual"><scope>Mesh</scope><name>nvz</name></member>
+      <member refid="class_mesh_1a05eb17a6df74f735b305bbe456d1d84f" prot="private" virt="non-virtual"><scope>Mesh</scope><name>nx</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

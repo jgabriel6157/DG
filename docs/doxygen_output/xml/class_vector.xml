@@ -1,0 +1,342 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_vector" kind="class" language="C++" prot="public">
+    <compoundname>Vector</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_vector_1a98d29614599f58013607d67de3120e29" prot="private" static="no" mutable="no">
+        <type>double *</type>
+        <definition>double* Vector::mData</definition>
+        <argsstring></argsstring>
+        <name>mData</name>
+        <qualifiedname>Vector::mData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="7" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.hxx" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_vector_1a8556e9fece8076c1c98ddd380e5965e1" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Vector::mSize</definition>
+        <argsstring></argsstring>
+        <name>mSize</name>
+        <qualifiedname>Vector::mSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="8" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.hxx" bodystart="8" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_vector_1a9ad50e8ddbed695558a06b9c3883a803" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Vector::Vector</definition>
+        <argsstring>(const Vector &amp;otherVector)</argsstring>
+        <name>Vector</name>
+        <qualifiedname>Vector::Vector</qualifiedname>
+        <param>
+          <type>const <ref refid="class_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>otherVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="10" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.cxx" bodystart="9" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_vector_1aadf37a1a5621584d1a8c979423e97c00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Vector::Vector</definition>
+        <argsstring>(int size)</argsstring>
+        <name>Vector</name>
+        <qualifiedname>Vector::Vector</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="11" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.cxx" bodystart="22" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_vector_1a2eb3c49587a4f12cade7895ccb73f6a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Vector::~Vector</definition>
+        <argsstring>()</argsstring>
+        <name>~Vector</name>
+        <qualifiedname>Vector::~Vector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="12" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.cxx" bodystart="34" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_vector_1a1a26bfbe54475a8f61a9d50cea18a3e6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Vector::GetSize</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSize</name>
+        <qualifiedname>Vector::GetSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="13" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.cxx" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_vector_1afdd3a33ae6768d42b152af5da6462660" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Vector::Print</definition>
+        <argsstring>()</argsstring>
+        <name>Print</name>
+        <qualifiedname>Vector::Print</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="14" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.cxx" bodystart="45" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_vector_1a5c46a4cbb63d2ccdeae9f51255548e89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double &amp;</type>
+        <definition>double &amp; Vector::operator[]</definition>
+        <argsstring>(int i)</argsstring>
+        <name>operator[]</name>
+        <qualifiedname>Vector::operator[]</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="15" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.cxx" bodystart="56" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_vector_1acfd1c04b2f6437f1524fcb45b0598e97" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Vector::Read</definition>
+        <argsstring>(int i) const</argsstring>
+        <name>Read</name>
+        <qualifiedname>Vector::Read</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="17" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.cxx" bodystart="66" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_vector_1a6bc4e176fd6db577b0d9e9e16c5ab510" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref> &amp;</type>
+        <definition>Vector &amp; Vector::operator=</definition>
+        <argsstring>(const Vector &amp;otherVector)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Vector::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>otherVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="18" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.cxx" bodystart="74" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_vector_1a91fd3067d06c2283038637e0f6b9ff59" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector Vector::operator+</definition>
+        <argsstring>(double constant) const</argsstring>
+        <name>operator+</name>
+        <qualifiedname>Vector::operator+</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>constant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="19" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.cxx" bodystart="85" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="class_vector_1ad2201fcc06391f40f0501f43e847fbbf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector Vector::operator-</definition>
+        <argsstring>(double constant) const</argsstring>
+        <name>operator-</name>
+        <qualifiedname>Vector::operator-</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>constant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="20" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.cxx" bodystart="96" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_vector_1ae546bd742a95f1dc8dd612bfcb12b2af" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector Vector::operator+</definition>
+        <argsstring>(const Vector &amp;v1) const</argsstring>
+        <name>operator+</name>
+        <qualifiedname>Vector::operator+</qualifiedname>
+        <param>
+          <type>const <ref refid="class_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="21" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.cxx" bodystart="107" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="class_vector_1a3b6c98348c0d09bb2e48cb46ab721d56" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector Vector::operator-</definition>
+        <argsstring>(const Vector &amp;v1) const</argsstring>
+        <name>operator-</name>
+        <qualifiedname>Vector::operator-</qualifiedname>
+        <param>
+          <type>const <ref refid="class_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="22" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.cxx" bodystart="119" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_vector_1aac14b76e5633aba96b97c5c58ec2fd64" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector Vector::operator*</definition>
+        <argsstring>(double a) const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>Vector::operator*</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="24" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.cxx" bodystart="131" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="class_vector_1ac79a60cab9dc04bf104ac2194319a3ae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Vector::operator*</definition>
+        <argsstring>(const Vector &amp;v1) const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>Vector::operator*</qualifiedname>
+        <param>
+          <type>const <ref refid="class_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="26" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.cxx" bodystart="142" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="class_vector_1a14f8e3e8719ec408899848ab345a5504" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Vector::CalculateNorm</definition>
+        <argsstring>(int p=2) const</argsstring>
+        <name>CalculateNorm</name>
+        <qualifiedname>Vector::CalculateNorm</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>p</declname>
+          <defval>2</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="28" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.cxx" bodystart="155" bodyend="164"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_vector_1a7ba04e9fff99326b44f799437bfe9138" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int length</definition>
+        <argsstring>(const Vector &amp;v)</argsstring>
+        <name>length</name>
+        <qualifiedname>Vector::length</qualifiedname>
+        <param>
+          <type>const <ref refid="class_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="30" column="16" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.cxx" bodystart="167" bodyend="170"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="4" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.hxx" bodystart="5" bodyend="31"/>
+    <listofallmembers>
+      <member refid="class_vector_1a14f8e3e8719ec408899848ab345a5504" prot="public" virt="non-virtual"><scope>Vector</scope><name>CalculateNorm</name></member>
+      <member refid="class_vector_1a1a26bfbe54475a8f61a9d50cea18a3e6" prot="public" virt="non-virtual"><scope>Vector</scope><name>GetSize</name></member>
+      <member refid="class_vector_1a7ba04e9fff99326b44f799437bfe9138" prot="public" virt="non-virtual"><scope>Vector</scope><name>length</name></member>
+      <member refid="class_vector_1a98d29614599f58013607d67de3120e29" prot="private" virt="non-virtual"><scope>Vector</scope><name>mData</name></member>
+      <member refid="class_vector_1a8556e9fece8076c1c98ddd380e5965e1" prot="private" virt="non-virtual"><scope>Vector</scope><name>mSize</name></member>
+      <member refid="class_vector_1aac14b76e5633aba96b97c5c58ec2fd64" prot="public" virt="non-virtual"><scope>Vector</scope><name>operator*</name></member>
+      <member refid="class_vector_1ac79a60cab9dc04bf104ac2194319a3ae" prot="public" virt="non-virtual"><scope>Vector</scope><name>operator*</name></member>
+      <member refid="class_vector_1a91fd3067d06c2283038637e0f6b9ff59" prot="public" virt="non-virtual"><scope>Vector</scope><name>operator+</name></member>
+      <member refid="class_vector_1ae546bd742a95f1dc8dd612bfcb12b2af" prot="public" virt="non-virtual"><scope>Vector</scope><name>operator+</name></member>
+      <member refid="class_vector_1ad2201fcc06391f40f0501f43e847fbbf" prot="public" virt="non-virtual"><scope>Vector</scope><name>operator-</name></member>
+      <member refid="class_vector_1a3b6c98348c0d09bb2e48cb46ab721d56" prot="public" virt="non-virtual"><scope>Vector</scope><name>operator-</name></member>
+      <member refid="class_vector_1a6bc4e176fd6db577b0d9e9e16c5ab510" prot="public" virt="non-virtual"><scope>Vector</scope><name>operator=</name></member>
+      <member refid="class_vector_1a5c46a4cbb63d2ccdeae9f51255548e89" prot="public" virt="non-virtual"><scope>Vector</scope><name>operator[]</name></member>
+      <member refid="class_vector_1afdd3a33ae6768d42b152af5da6462660" prot="public" virt="non-virtual"><scope>Vector</scope><name>Print</name></member>
+      <member refid="class_vector_1acfd1c04b2f6437f1524fcb45b0598e97" prot="public" virt="non-virtual"><scope>Vector</scope><name>Read</name></member>
+      <member refid="class_vector_1a9ad50e8ddbed695558a06b9c3883a803" prot="public" virt="non-virtual"><scope>Vector</scope><name>Vector</name></member>
+      <member refid="class_vector_1aadf37a1a5621584d1a8c979423e97c00" prot="public" virt="non-virtual"><scope>Vector</scope><name>Vector</name></member>
+      <member refid="class_vector_1a2eb3c49587a4f12cade7895ccb73f6a0" prot="public" virt="non-virtual"><scope>Vector</scope><name>~Vector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

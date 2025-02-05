@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_newton_solver" kind="class" language="C++" prot="public">
+    <compoundname>NewtonSolver</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_newton_solver_1ae817a2e190a8009193407b1f584ae59c" prot="private" static="no" mutable="no">
+        <type><ref refid="class_newton_cotes" kindref="compound">NewtonCotes</ref></type>
+        <definition>NewtonCotes NewtonSolver::integrator</definition>
+        <argsstring></argsstring>
+        <name>integrator</name>
+        <qualifiedname>NewtonSolver::integrator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/NewtonSolver.hxx" line="19" column="17" bodyfile="/Users/jackgabriel/Desktop/DG/NewtonSolver.hxx" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_newton_solver_1a499e0aefd27b11137247f44abd7112e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>NewtonSolver::NewtonSolver</definition>
+        <argsstring>(const Mesh &amp;mesh)</argsstring>
+        <name>NewtonSolver</name>
+        <qualifiedname>NewtonSolver::NewtonSolver</qualifiedname>
+        <param>
+          <type>const <ref refid="class_mesh" kindref="compound">Mesh</ref> &amp;</type>
+          <declname>mesh</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/NewtonSolver.hxx" line="14" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/NewtonSolver.cxx" bodystart="10" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_newton_solver_1a868173c82d0db94d748a35f8ebe3e79d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix NewtonSolver::solve</definition>
+        <argsstring>(Matrix alpha, double nu, Vector rho, Vector u, Vector rt, double dx, Vector roots, Vector weights, double tolerance, int maxIteration, std::function&lt; double(int, double)&gt; basisFunction, int quadratureOrder, int lMax, bool test)</argsstring>
+        <name>solve</name>
+        <qualifiedname>NewtonSolver::solve</qualifiedname>
+        <param>
+          <type><ref refid="class_matrix" kindref="compound">Matrix</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>nu</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>rho</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>rt</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>roots</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>weights</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>tolerance</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxIteration</declname>
+        </param>
+        <param>
+          <type>std::function&lt; double(int, double)&gt;</type>
+          <declname>basisFunction</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>quadratureOrder</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lMax</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>test</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/NewtonSolver.hxx" line="16" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/NewtonSolver.cxx" bodystart="13" bodyend="53"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_newton_solver_1af35679fa36a23d3eaf4636883308f59f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector NewtonSolver::createF</definition>
+        <argsstring>(Matrix alpha, double nu, Vector rho, Vector u, Vector rt, double dx, Vector roots, Vector weights, std::function&lt; double(int, double)&gt; basisFunction, int quadratureOrder, int lMax)</argsstring>
+        <name>createF</name>
+        <qualifiedname>NewtonSolver::createF</qualifiedname>
+        <param>
+          <type><ref refid="class_matrix" kindref="compound">Matrix</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>nu</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>rho</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>rt</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>roots</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>weights</declname>
+        </param>
+        <param>
+          <type>std::function&lt; double(int, double)&gt;</type>
+          <declname>basisFunction</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>quadratureOrder</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lMax</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/NewtonSolver.hxx" line="21" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/NewtonSolver.cxx" bodystart="55" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_newton_solver_1aea1e8593191efa5bdc95a0238353fa2b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_matrix" kindref="compound">Matrix</ref></type>
+        <definition>Matrix NewtonSolver::createJ</definition>
+        <argsstring>(Matrix alpha, double nu, Vector rho, Vector u, Vector rt, double dx, Vector roots, Vector weights, std::function&lt; double(int, double)&gt; basisFunction, int quadratureOrder, int lMax)</argsstring>
+        <name>createJ</name>
+        <qualifiedname>NewtonSolver::createJ</qualifiedname>
+        <param>
+          <type><ref refid="class_matrix" kindref="compound">Matrix</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>nu</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>rho</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>rt</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>roots</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>weights</declname>
+        </param>
+        <param>
+          <type>std::function&lt; double(int, double)&gt;</type>
+          <declname>basisFunction</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>quadratureOrder</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lMax</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/NewtonSolver.hxx" line="23" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/NewtonSolver.cxx" bodystart="94" bodyend="125"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/NewtonSolver.hxx" line="11" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/NewtonSolver.hxx" bodystart="12" bodyend="24"/>
+    <listofallmembers>
+      <member refid="class_newton_solver_1af35679fa36a23d3eaf4636883308f59f" prot="private" virt="non-virtual"><scope>NewtonSolver</scope><name>createF</name></member>
+      <member refid="class_newton_solver_1aea1e8593191efa5bdc95a0238353fa2b" prot="private" virt="non-virtual"><scope>NewtonSolver</scope><name>createJ</name></member>
+      <member refid="class_newton_solver_1ae817a2e190a8009193407b1f584ae59c" prot="private" virt="non-virtual"><scope>NewtonSolver</scope><name>integrator</name></member>
+      <member refid="class_newton_solver_1a499e0aefd27b11137247f44abd7112e2" prot="public" virt="non-virtual"><scope>NewtonSolver</scope><name>NewtonSolver</name></member>
+      <member refid="class_newton_solver_1a868173c82d0db94d748a35f8ebe3e79d" prot="public" virt="non-virtual"><scope>NewtonSolver</scope><name>solve</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

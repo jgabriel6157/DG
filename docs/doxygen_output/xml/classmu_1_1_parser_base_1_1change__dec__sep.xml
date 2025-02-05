@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classmu_1_1_parser_base_1_1change__dec__sep" kind="class" language="C++" prot="protected">
+    <compoundname>mu::ParserBase::change_dec_sep</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::numpunct&lt; TChar &gt;</basecompoundref>
+    <includes refid="mu_parser_base_8h" local="no">muParserBase.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class TChar</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1_1change__dec__sep_1a256c2d40856ddba8b9022283700993bc" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mu::ParserBase::change_dec_sep&lt; TChar &gt;::m_nGroup</definition>
+        <argsstring></argsstring>
+        <name>m_nGroup</name>
+        <qualifiedname>mu::ParserBase::change_dec_sep::m_nGroup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="247" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1_1change__dec__sep_1ab7b998f03eed8bad6ab47b20788ce974" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref></type>
+        <definition>char_type mu::ParserBase::change_dec_sep&lt; TChar &gt;::m_cDecPoint</definition>
+        <argsstring></argsstring>
+        <name>m_cDecPoint</name>
+        <qualifiedname>mu::ParserBase::change_dec_sep::m_cDecPoint</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="248" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1_1change__dec__sep_1a99270f747fa497d2b3152ac8a2efa3dd" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref></type>
+        <definition>char_type mu::ParserBase::change_dec_sep&lt; TChar &gt;::m_cThousandsSep</definition>
+        <argsstring></argsstring>
+        <name>m_cThousandsSep</name>
+        <qualifiedname>mu::ParserBase::change_dec_sep::m_cThousandsSep</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="249" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="249" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmu_1_1_parser_base_1_1change__dec__sep_1a6aaadeeb490e4ea39751171bc01d2815" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserBase::change_dec_sep&lt; TChar &gt;::change_dec_sep</definition>
+        <argsstring>(char_type cDecSep, char_type cThousandsSep=0, int nGroup=3)</argsstring>
+        <name>change_dec_sep</name>
+        <qualifiedname>mu::ParserBase::change_dec_sep::change_dec_sep</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref></type>
+          <declname>cDecSep</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref></type>
+          <declname>cThousandsSep</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nGroup</declname>
+          <defval>3</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="216" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="216" bodyend="221"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classmu_1_1_parser_base_1_1change__dec__sep_1a5aeeea74a071247d8911ac8ce09b51a8" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref></type>
+        <definition>char_type mu::ParserBase::change_dec_sep&lt; TChar &gt;::do_decimal_point</definition>
+        <argsstring>() const override</argsstring>
+        <name>do_decimal_point</name>
+        <qualifiedname>mu::ParserBase::change_dec_sep::do_decimal_point</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="225" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="225" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1_1change__dec__sep_1a592de871afa20c3d156741ecfa0c671a" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref></type>
+        <definition>char_type mu::ParserBase::change_dec_sep&lt; TChar &gt;::do_thousands_sep</definition>
+        <argsstring>() const override</argsstring>
+        <name>do_thousands_sep</name>
+        <qualifiedname>mu::ParserBase::change_dec_sep::do_thousands_sep</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="230" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="230" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1_1change__dec__sep_1aac889fde2190b8df1a70aff798c9ab97" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string mu::ParserBase::change_dec_sep&lt; TChar &gt;::do_grouping</definition>
+        <argsstring>() const override</argsstring>
+        <name>do_grouping</name>
+        <qualifiedname>mu::ParserBase::change_dec_sep::do_grouping</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="235" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="235" bodyend="243"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A facet class used to change decimal and thousands separator. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>mu::ParserBase::change_dec_sep&lt; TChar &gt;</label>
+        <link refid="classmu_1_1_parser_base_1_1change__dec__sep"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::numpunct&lt; TChar &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>mu::ParserBase::change_dec_sep&lt; TChar &gt;</label>
+        <link refid="classmu_1_1_parser_base_1_1change__dec__sep"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::numpunct&lt; TChar &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="212" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="213" bodyend="250"/>
+    <listofallmembers>
+      <member refid="classmu_1_1_parser_base_1_1change__dec__sep_1a6aaadeeb490e4ea39751171bc01d2815" prot="public" virt="non-virtual"><scope>mu::ParserBase::change_dec_sep</scope><name>change_dec_sep</name></member>
+      <member refid="classmu_1_1_parser_base_1_1change__dec__sep_1a5aeeea74a071247d8911ac8ce09b51a8" prot="protected" virt="non-virtual"><scope>mu::ParserBase::change_dec_sep</scope><name>do_decimal_point</name></member>
+      <member refid="classmu_1_1_parser_base_1_1change__dec__sep_1aac889fde2190b8df1a70aff798c9ab97" prot="protected" virt="non-virtual"><scope>mu::ParserBase::change_dec_sep</scope><name>do_grouping</name></member>
+      <member refid="classmu_1_1_parser_base_1_1change__dec__sep_1a592de871afa20c3d156741ecfa0c671a" prot="protected" virt="non-virtual"><scope>mu::ParserBase::change_dec_sep</scope><name>do_thousands_sep</name></member>
+      <member refid="classmu_1_1_parser_base_1_1change__dec__sep_1ab7b998f03eed8bad6ab47b20788ce974" prot="private" virt="non-virtual"><scope>mu::ParserBase::change_dec_sep</scope><name>m_cDecPoint</name></member>
+      <member refid="classmu_1_1_parser_base_1_1change__dec__sep_1a99270f747fa497d2b3152ac8a2efa3dd" prot="private" virt="non-virtual"><scope>mu::ParserBase::change_dec_sep</scope><name>m_cThousandsSep</name></member>
+      <member refid="classmu_1_1_parser_base_1_1change__dec__sep_1a256c2d40856ddba8b9022283700993bc" prot="private" virt="non-virtual"><scope>mu::ParserBase::change_dec_sep</scope><name>m_nGroup</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

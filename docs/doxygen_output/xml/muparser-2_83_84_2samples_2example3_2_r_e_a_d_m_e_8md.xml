@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="muparser-2_83_84_2samples_2example3_2_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">The<sp/>example3<sp/>shows<sp/>how<sp/>to<sp/>import<sp/>and<sp/>use<sp/>muparser<sp/>as<sp/>an<sp/>installed<sp/>external</highlight></codeline>
+<codeline><highlight class="normal">dependency<sp/>using<sp/>cmake<sp/>`find_package()`.</highlight></codeline>
+    </programlisting>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/samples/example3/README.md"/>
+  </compounddef>
+</doxygen>

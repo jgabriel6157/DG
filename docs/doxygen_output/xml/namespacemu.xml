@@ -1,0 +1,2128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespacemu" kind="namespace" language="C++">
+    <compoundname>mu</compoundname>
+    <innerclass refid="structmu_1_1_cb_with_user_data" prot="public">mu::CbWithUserData</innerclass>
+    <innerclass refid="structmu_1_1generic__callable__type" prot="public">mu::generic_callable_type</innerclass>
+    <innerclass refid="structmu_1_1_math_impl" prot="public">mu::MathImpl</innerclass>
+    <innerclass refid="classmu_1_1_parser" prot="public">mu::Parser</innerclass>
+    <innerclass refid="classmu_1_1_parser_base" prot="public">mu::ParserBase</innerclass>
+    <innerclass refid="classmu_1_1_parser_byte_code" prot="public">mu::ParserByteCode</innerclass>
+    <innerclass refid="classmu_1_1_parser_callback" prot="public">mu::ParserCallback</innerclass>
+    <innerclass refid="classmu_1_1_parser_error" prot="public">mu::ParserError</innerclass>
+    <innerclass refid="classmu_1_1_parser_error_msg" prot="public">mu::ParserErrorMsg</innerclass>
+    <innerclass refid="classmu_1_1_parser_int" prot="public">mu::ParserInt</innerclass>
+    <innerclass refid="classmu_1_1_parser_token" prot="public">mu::ParserToken</innerclass>
+    <innerclass refid="classmu_1_1_parser_token_reader" prot="public">mu::ParserTokenReader</innerclass>
+    <innerclass refid="structmu_1_1_s_token" prot="public">mu::SToken</innerclass>
+    <innerclass refid="structmu_1_1_tpl_call_type" prot="public">mu::TplCallType</innerclass>
+    <innerclass refid="structmu_1_1_tpl_call_type_3_010_01_4" prot="public">mu::TplCallType&lt; 0 &gt;</innerclass>
+    <innerclass refid="structmu_1_1_tpl_call_type_3_011_01_4" prot="public">mu::TplCallType&lt; 1 &gt;</innerclass>
+    <innerclass refid="structmu_1_1_tpl_call_type_3_0110_01_4" prot="public">mu::TplCallType&lt; 10 &gt;</innerclass>
+    <innerclass refid="structmu_1_1_tpl_call_type_3_012_01_4" prot="public">mu::TplCallType&lt; 2 &gt;</innerclass>
+    <innerclass refid="structmu_1_1_tpl_call_type_3_013_01_4" prot="public">mu::TplCallType&lt; 3 &gt;</innerclass>
+    <innerclass refid="structmu_1_1_tpl_call_type_3_014_01_4" prot="public">mu::TplCallType&lt; 4 &gt;</innerclass>
+    <innerclass refid="structmu_1_1_tpl_call_type_3_015_01_4" prot="public">mu::TplCallType&lt; 5 &gt;</innerclass>
+    <innerclass refid="structmu_1_1_tpl_call_type_3_016_01_4" prot="public">mu::TplCallType&lt; 6 &gt;</innerclass>
+    <innerclass refid="structmu_1_1_tpl_call_type_3_017_01_4" prot="public">mu::TplCallType&lt; 7 &gt;</innerclass>
+    <innerclass refid="structmu_1_1_tpl_call_type_3_018_01_4" prot="public">mu::TplCallType&lt; 8 &gt;</innerclass>
+    <innerclass refid="structmu_1_1_tpl_call_type_3_019_01_4" prot="public">mu::TplCallType&lt; 9 &gt;</innerclass>
+    <innerclass refid="structmu_1_1_type_info" prot="public">mu::TypeInfo</innerclass>
+    <innerclass refid="structmu_1_1_type_info_3_01char_01_4" prot="public">mu::TypeInfo&lt; char &gt;</innerclass>
+    <innerclass refid="structmu_1_1_type_info_3_01int_01_4" prot="public">mu::TypeInfo&lt; int &gt;</innerclass>
+    <innerclass refid="structmu_1_1_type_info_3_01long_01_4" prot="public">mu::TypeInfo&lt; long &gt;</innerclass>
+    <innerclass refid="structmu_1_1_type_info_3_01short_01_4" prot="public">mu::TypeInfo&lt; short &gt;</innerclass>
+    <innerclass refid="structmu_1_1_type_info_3_01unsigned_01char_01_4" prot="public">mu::TypeInfo&lt; unsigned char &gt;</innerclass>
+    <innerclass refid="structmu_1_1_type_info_3_01unsigned_01int_01_4" prot="public">mu::TypeInfo&lt; unsigned int &gt;</innerclass>
+    <innerclass refid="structmu_1_1_type_info_3_01unsigned_01long_01_4" prot="public">mu::TypeInfo&lt; unsigned long &gt;</innerclass>
+    <innerclass refid="structmu_1_1_type_info_3_01unsigned_01short_01_4" prot="public">mu::TypeInfo&lt; unsigned short &gt;</innerclass>
+    <innernamespace refid="namespacemu_1_1_test">mu::Test</innernamespace>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40e" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ECmdCode</name>
+        <qualifiedname>mu::ECmdCode</qualifiedname>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea62da784138e45f161918ddc845ea4420" prot="public">
+          <name>cmLE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Operator item: less or equal. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea188c6fd8324762d1513f28ef359408d7" prot="public">
+          <name>cmGE</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Operator item: greater or equal. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eac34e5f492d8b0f4f2f46d7c261a02e4c" prot="public">
+          <name>cmNEQ</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Operator item: not equal. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eacedcb20eed5d83ea723cb47bb2c1cc0d" prot="public">
+          <name>cmEQ</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>Operator item: equals. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea1f455ded43de3f52ce0a39f9dde843e5" prot="public">
+          <name>cmLT</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+<para>Operator item: less than. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eac9cbc41a04d7b4dece063211d31ec5b3" prot="public">
+          <name>cmGT</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+<para>Operator item: greater than. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea127712855b500aff2b37a35c6767451a" prot="public">
+          <name>cmADD</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+<para>Operator item: add. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eadad0cd5d67567c1ad976e7d332537a9d" prot="public">
+          <name>cmSUB</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+<para>Operator item: subtract. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea703cb484ede1e3e4926c0a1fb3845679" prot="public">
+          <name>cmMUL</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+<para>Operator item: multiply. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea8923e5bebd1eb60c1436fa64a32492a0" prot="public">
+          <name>cmDIV</name>
+          <initializer>= 9</initializer>
+          <briefdescription>
+<para>Operator item: division. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea3fad2e00b3026f83d90b135fd55ba7e3" prot="public">
+          <name>cmPOW</name>
+          <initializer>= 10</initializer>
+          <briefdescription>
+<para>Operator item: y to the power of ... </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea502db65bd1b664c889bf8223c596cfd6" prot="public">
+          <name>cmLAND</name>
+          <initializer>= 11</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea8a136030771033042e8bdd8273746ae8" prot="public">
+          <name>cmLOR</name>
+          <initializer>= 12</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea471a75e04daaa2a387be5235484a3e01" prot="public">
+          <name>cmASSIGN</name>
+          <initializer>= 13</initializer>
+          <briefdescription>
+<para>Operator item: Assignment operator. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea677298c34553334aa70bfb87a58b7f0a" prot="public">
+          <name>cmBO</name>
+          <initializer>= 14</initializer>
+          <briefdescription>
+<para>Operator item: opening bracket. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eaacee8e4f918f65e180f8734f7e310aa1" prot="public">
+          <name>cmBC</name>
+          <initializer>= 15</initializer>
+          <briefdescription>
+<para>Operator item: closing bracket. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eab9e28b93b1f434a7660559728a749eda" prot="public">
+          <name>cmIF</name>
+          <initializer>= 16</initializer>
+          <briefdescription>
+<para>For use in the ternary if-then-else operator. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eaf8f2c4094f7d220bd850f789f6622526" prot="public">
+          <name>cmELSE</name>
+          <initializer>= 17</initializer>
+          <briefdescription>
+<para>For use in the ternary if-then-else operator. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea9115a14061048e465cc8c1b0132d6311" prot="public">
+          <name>cmENDIF</name>
+          <initializer>= 18</initializer>
+          <briefdescription>
+<para>For use in the ternary if-then-else operator. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea554881ce7928a56e6e97f8f1149b9d50" prot="public">
+          <name>cmARG_SEP</name>
+          <initializer>= 19</initializer>
+          <briefdescription>
+<para>function argument separator </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eafa2a28b5022d2454768c74e15d5ae377" prot="public">
+          <name>cmVAR</name>
+          <initializer>= 20</initializer>
+          <briefdescription>
+<para>variable item </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eab1cf4ef5d34d815bb016fef14c331622" prot="public">
+          <name>cmVAL</name>
+          <initializer>= 21</initializer>
+          <briefdescription>
+<para>value item </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea0484abbbb36506cac6748b6fa42285c9" prot="public">
+          <name>cmVARPOW2</name>
+          <initializer>= 22</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eae5e22685bf485df5b9f3be0e9a658501" prot="public">
+          <name>cmVARPOW3</name>
+          <initializer>= 23</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eaed4b4e62d5decffbac8b811d055c5b97" prot="public">
+          <name>cmVARPOW4</name>
+          <initializer>= 24</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea0383b2c00c33bdae17502b1f2f4a07fc" prot="public">
+          <name>cmVARMUL</name>
+          <initializer>= 25</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eaeacb1b1bb9859e8bc6147887a787feca" prot="public">
+          <name>cmFUNC</name>
+          <initializer>= 26</initializer>
+          <briefdescription>
+<para>Code for a generic function item. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eae8ed179475f79bed80d66d389007717a" prot="public">
+          <name>cmFUNC_STR</name>
+          <briefdescription>
+<para>Code for a function with a string parameter. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea052e0188c92157ef66581a31accfcab1" prot="public">
+          <name>cmFUNC_BULK</name>
+          <briefdescription>
+<para>Special callbacks for Bulk mode with an additional parameter for the bulk index. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea85db5789f85577dd5bcc21aea5b3244f" prot="public">
+          <name>cmSTRING</name>
+          <briefdescription>
+<para>Code for a string token. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eaacf35df01fc3b643b134e9d1ce3cc4e2" prot="public">
+          <name>cmOPRT_BIN</name>
+          <briefdescription>
+<para>user defined binary operator </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eaf866a95309b7573574b6e656045e4a2f" prot="public">
+          <name>cmOPRT_POSTFIX</name>
+          <briefdescription>
+<para>code for postfix operators </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea961fe96555e0f036e52496126f70c404" prot="public">
+          <name>cmOPRT_INFIX</name>
+          <briefdescription>
+<para>code for infix operators </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea76086ac235dadbe9ad8a184190b21c8b" prot="public">
+          <name>cmEND</name>
+          <briefdescription>
+<para>end of formula </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eabd8cbb2e08ff6806578535408feef0c3" prot="public">
+          <name>cmUNKNOWN</name>
+          <briefdescription>
+<para>uninitialized item </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Bytecode values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="attention"><para>The order of the operator entries must match the order in <ref refid="classmu_1_1_parser_base_1a0cb4d456e6a82da96786ec73044470ea" kindref="member">ParserBase::c_DefaultOprt</ref>! </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="135" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="136" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacemu_1ac3ccf6a749baacffd48fe97b9c2af302" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ETypeCode</name>
+        <qualifiedname>mu::ETypeCode</qualifiedname>
+        <enumvalue id="namespacemu_1ac3ccf6a749baacffd48fe97b9c2af302ac02584cb1ca179714a5ac8a951653ad4" prot="public">
+          <name>tpSTR</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>String type (Function arguments and constants only, no string variables) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ac3ccf6a749baacffd48fe97b9c2af302a38692f5e59ea960113e0de77ed9a9428" prot="public">
+          <name>tpDBL</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Floating point variables. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1ac3ccf6a749baacffd48fe97b9c2af302a2a6b3ae75a0e6a44a992a87d222b4481" prot="public">
+          <name>tpVOID</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Undefined type. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Types internally used by the parser. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="183" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="184" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacemu_1abc734ff078c5336d2a379d87537a5789" prot="public" static="no" strong="no">
+        <type></type>
+        <name>EParserVersionInfo</name>
+        <qualifiedname>mu::EParserVersionInfo</qualifiedname>
+        <enumvalue id="namespacemu_1abc734ff078c5336d2a379d87537a5789a344ba8a4705909938708d365484ca563" prot="public">
+          <name>pviBRIEF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1abc734ff078c5336d2a379d87537a5789a15f2fdade93277c8923e2384f184e1af" prot="public">
+          <name>pviFULL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="191" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="192" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacemu_1aff435b0c277f66041374f93a3803e1f1" prot="public" static="no" strong="no">
+        <type></type>
+        <name>EOprtAssociativity</name>
+        <qualifiedname>mu::EOprtAssociativity</qualifiedname>
+        <enumvalue id="namespacemu_1aff435b0c277f66041374f93a3803e1f1a4b1875076b2c85879e9596a7a98af7a6" prot="public">
+          <name>oaLEFT</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1aff435b0c277f66041374f93a3803e1f1ae10ad97402ffc0c524f5fd3919e4bbfa" prot="public">
+          <name>oaRIGHT</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1aff435b0c277f66041374f93a3803e1f1a91ec8ef41d1b2308e7fcd096bf9a7162" prot="public">
+          <name>oaNONE</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><ref refid="classmu_1_1_parser" kindref="compound">Parser</ref> operator precedence values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="199" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="200" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacemu_1af05119698ed9c62239c0b31ac9861d3d" prot="public" static="no" strong="no">
+        <type></type>
+        <name>EOprtPrecedence</name>
+        <qualifiedname>mu::EOprtPrecedence</qualifiedname>
+        <enumvalue id="namespacemu_1af05119698ed9c62239c0b31ac9861d3da2ef641de328c60277d2d1cb8e4e542b0" prot="public">
+          <name>prLOR</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1af05119698ed9c62239c0b31ac9861d3dafc5dd83c0caa263db1637b4b075b1a7d" prot="public">
+          <name>prLAND</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1af05119698ed9c62239c0b31ac9861d3da5a921789427276e8c641653459da2302" prot="public">
+          <name>prLOGIC</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>logic operators </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1af05119698ed9c62239c0b31ac9861d3da570966afb3a2a2e7c12bf0f0aff47d56" prot="public">
+          <name>prCMP</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+<para>comparsion operators </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1af05119698ed9c62239c0b31ac9861d3dac287fcda15dc853e73e3000f7da24c2a" prot="public">
+          <name>prADD_SUB</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+<para>addition </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1af05119698ed9c62239c0b31ac9861d3daf90e37568d297c82df0f908e6b0852e0" prot="public">
+          <name>prMUL_DIV</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+<para>multiplication/division </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1af05119698ed9c62239c0b31ac9861d3da706c8deebfec7a93ee879ab575b478c0" prot="public">
+          <name>prPOW</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+<para>power operator priority (highest) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1af05119698ed9c62239c0b31ac9861d3da50b576d79c0d155f703d409967ad3727" prot="public">
+          <name>prINFIX</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+<para>Signs have a higher priority than ADD_SUB, but lower than power operator. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1af05119698ed9c62239c0b31ac9861d3da1df5768036a033427841dfabe126e016" prot="public">
+          <name>prPOSTFIX</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+<para>Postfix operator priority (currently unused) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><ref refid="classmu_1_1_parser" kindref="compound">Parser</ref> operator precedence values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="208" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="209" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688a" prot="public" static="no" strong="no">
+        <type></type>
+        <name>EErrorCodes</name>
+        <qualifiedname>mu::EErrorCodes</qualifiedname>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa7154513fd624589812610c190497bb0a" prot="public">
+          <name>ecUNEXPECTED_OPERATOR</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Unexpected binary operator found. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa2c29f854b65e380ae4fcb4d4e00aaa22" prot="public">
+          <name>ecUNASSIGNABLE_TOKEN</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Token can&apos;t be identified. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa3995c6500fc04f8b203817a5d3443219" prot="public">
+          <name>ecUNEXPECTED_EOF</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Unexpected end of formula. (Example: &quot;2+sin(&quot;) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aaa010c6130e7cf45723740cff95757737" prot="public">
+          <name>ecUNEXPECTED_ARG_SEP</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>An unexpected comma has been found. (Example: &quot;1,23&quot;) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa64b2880f566f8b44050142c94a0207fb" prot="public">
+          <name>ecUNEXPECTED_ARG</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+<para>An unexpected argument has been found. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aaf832f767e3f1c50a024da57221a2416f" prot="public">
+          <name>ecUNEXPECTED_VAL</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+<para>An unexpected value token has been found. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa3de33dffb8946c3c4373aa3de3627759" prot="public">
+          <name>ecUNEXPECTED_VAR</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+<para>An unexpected variable token has been found. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa8c823a3bef7facd0d99cbfb4d2cd06e1" prot="public">
+          <name>ecUNEXPECTED_PARENS</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+<para>Unexpected Parenthesis, opening or closing. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa8a98a29c35c9b7744f4987476b0c3ca9" prot="public">
+          <name>ecUNEXPECTED_STR</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+<para>A string has been found at an inapropriate position. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa4446abbd60038e6a7f1d4aced202ad05" prot="public">
+          <name>ecSTRING_EXPECTED</name>
+          <initializer>= 9</initializer>
+          <briefdescription>
+<para>A string function has been called with a different type of argument. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa4e872315cffbc12a39947b60f9367088" prot="public">
+          <name>ecVAL_EXPECTED</name>
+          <initializer>= 10</initializer>
+          <briefdescription>
+<para>A numerical function has been called with a non value type of argument. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa34679c30e955b4c9c04ed36db8a288d0" prot="public">
+          <name>ecMISSING_PARENS</name>
+          <initializer>= 11</initializer>
+          <briefdescription>
+<para>Missing parens. (Example: &quot;3*sin(3&quot;) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa5132a541c023ecefe71e17fce886860e" prot="public">
+          <name>ecUNEXPECTED_FUN</name>
+          <initializer>= 12</initializer>
+          <briefdescription>
+<para>Unexpected function found. (Example: &quot;sin(8)cos(9)&quot;) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aaaf787ce3edd65d5f086ad298e158a4bf" prot="public">
+          <name>ecUNTERMINATED_STRING</name>
+          <initializer>= 13</initializer>
+          <briefdescription>
+<para>unterminated string constant. (Example: &quot;3*valueof(&quot;hello)") </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa4560405f6d8f871084a57e8e4633d496" prot="public">
+          <name>ecTOO_MANY_PARAMS</name>
+          <initializer>= 14</initializer>
+          <briefdescription>
+<para>Too many function parameters. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aac7b48aee91620edca3bb0ccbaaf31772" prot="public">
+          <name>ecTOO_FEW_PARAMS</name>
+          <initializer>= 15</initializer>
+          <briefdescription>
+<para>Too few function parameters. (Example: &quot;ite(1&lt;2,2)&quot;) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa73e9671ee2b553affeb628a40ae745d1" prot="public">
+          <name>ecOPRT_TYPE_CONFLICT</name>
+          <initializer>= 16</initializer>
+          <briefdescription>
+<para>binary operators may only be applied to value items of the same type </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa62f472030efcf7fda692e12a2da90338" prot="public">
+          <name>ecSTR_RESULT</name>
+          <initializer>= 17</initializer>
+          <briefdescription>
+<para>result is a string </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa125e953e3a9ab50e564cde8e981f56e9" prot="public">
+          <name>ecINVALID_NAME</name>
+          <initializer>= 18</initializer>
+          <briefdescription>
+<para>Invalid function, variable or constant name. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa1fd2c3dfe53727a267d386f57ea37af1" prot="public">
+          <name>ecINVALID_BINOP_IDENT</name>
+          <initializer>= 19</initializer>
+          <briefdescription>
+<para>Invalid binary operator identifier. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa723bd3d892e5fe4817f8acd71636a59f" prot="public">
+          <name>ecINVALID_INFIX_IDENT</name>
+          <initializer>= 20</initializer>
+          <briefdescription>
+<para>Invalid function, variable or constant name. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aad05cd43211abc3b9972ac2c9ffab2eed" prot="public">
+          <name>ecINVALID_POSTFIX_IDENT</name>
+          <initializer>= 21</initializer>
+          <briefdescription>
+<para>Invalid function, variable or constant name. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa34807cf30e3bb8ca4b348bd7742fa0a7" prot="public">
+          <name>ecBUILTIN_OVERLOAD</name>
+          <initializer>= 22</initializer>
+          <briefdescription>
+<para>Trying to overload builtin operator. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aab3f728ed3fbe1e49ff37fc78bff68355" prot="public">
+          <name>ecINVALID_FUN_PTR</name>
+          <initializer>= 23</initializer>
+          <briefdescription>
+<para>Invalid callback function pointer. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa9d815bf7cb3eafa3887e0ed7c2eaf85f" prot="public">
+          <name>ecINVALID_VAR_PTR</name>
+          <initializer>= 24</initializer>
+          <briefdescription>
+<para>Invalid variable pointer. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aad4ce9d26ad46c057b12100b16d6d26ae" prot="public">
+          <name>ecEMPTY_EXPRESSION</name>
+          <initializer>= 25</initializer>
+          <briefdescription>
+<para>The Expression is empty. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa40ffbd6629bb0ab70bbcbc5b15384274" prot="public">
+          <name>ecNAME_CONFLICT</name>
+          <initializer>= 26</initializer>
+          <briefdescription>
+<para>Name conflict. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aaad1847fc9b493d4cda79ea26ad09eb5a" prot="public">
+          <name>ecOPT_PRI</name>
+          <initializer>= 27</initializer>
+          <briefdescription>
+<para>Invalid operator priority. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa971535886e930176428166ab78778619" prot="public">
+          <name>ecDOMAIN_ERROR</name>
+          <initializer>= 28</initializer>
+          <briefdescription>
+<para>catch division by zero, sqrt(-1), log(0) (currently unused) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aaff779580d171527466424d4ecf75a1a8" prot="public">
+          <name>ecDIV_BY_ZERO</name>
+          <initializer>= 29</initializer>
+          <briefdescription>
+<para>Division by zero (currently unused) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aaece22de75a7be641a196123e7e9c322f" prot="public">
+          <name>ecGENERIC</name>
+          <initializer>= 30</initializer>
+          <briefdescription>
+<para>Generic error. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa7f2b93cc8c3de8e45b1d7489f2693804" prot="public">
+          <name>ecLOCALE</name>
+          <initializer>= 31</initializer>
+          <briefdescription>
+<para>Conflict with current locale. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aab38d12e1a8995c136661f18b0e259df3" prot="public">
+          <name>ecUNEXPECTED_CONDITIONAL</name>
+          <initializer>= 32</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aaa95a743178c27386926fdcb435ffab90" prot="public">
+          <name>ecMISSING_ELSE_CLAUSE</name>
+          <initializer>= 33</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa282864ddfeeb0846e6b79523dbbc3c38" prot="public">
+          <name>ecMISPLACED_COLON</name>
+          <initializer>= 34</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa482dd716c466b0cd1fda24d628c5c85b" prot="public">
+          <name>ecUNREASONABLE_NUMBER_OF_COMPUTATIONS</name>
+          <initializer>= 35</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aafdc978c611fe7d021c98340c49f539f1" prot="public">
+          <name>ecIDENTIFIER_TOO_LONG</name>
+          <initializer>= 36</initializer>
+          <briefdescription>
+<para>Thrown when an identifier with more then 255 characters is used. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa6126d4a307b37cd2edd48df748093212" prot="public">
+          <name>ecEXPRESSION_TOO_LONG</name>
+          <initializer>= 37</initializer>
+          <briefdescription>
+<para>Throw an exception if the expression has more than 10000 characters. (an arbitrary limit) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa00be8a34282a3e124bb2f4f5dfe45aea" prot="public">
+          <name>ecINVALID_CHARACTERS_FOUND</name>
+          <initializer>= 38</initializer>
+          <briefdescription>
+<para>The expression or identifier contains invalid non printable characters. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa91b338cf5e35059bb452f783aeb88a5f" prot="public">
+          <name>ecINTERNAL_ERROR</name>
+          <initializer>= 39</initializer>
+          <briefdescription>
+<para>Internal error of any kind. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aad0077acc7594040e4dd7fe5de229b455" prot="public">
+          <name>ecCOUNT</name>
+          <briefdescription>
+<para>This is no error code, It just stores just the total number of error codes. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688aa49ba8c4fa03b5e822bc4573f84d44062" prot="public">
+          <name>ecUNDEFINED</name>
+          <initializer>= -1</initializer>
+          <briefdescription>
+<para>Undefined message, placeholder to detect unassigned error messages. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Error codes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="226" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="227" bodyend="284"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacemu_1aa38fb627ca71e44a49de0f2fe4d9031d" prot="public" static="no">
+        <type>std::map&lt; <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref>, <ref refid="classmu_1_1_parser_callback" kindref="compound">ParserCallback</ref> &gt;</type>
+        <definition>typedef std::map&lt;string_type, ParserCallback&gt; mu::funmap_type</definition>
+        <argsstring></argsstring>
+        <name>funmap_type</name>
+        <qualifiedname>mu::funmap_type</qualifiedname>
+        <briefdescription>
+<para>Container for Callback objects. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="156" column="18" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" prot="public" static="no">
+        <type><ref refid="mu_parser_def_8h_1a5a22a812cf29b119506daad01152f93a" kindref="member">MUP_BASETYPE</ref></type>
+        <definition>typedef MUP_BASETYPE mu::value_type</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <qualifiedname>mu::value_type</qualifiedname>
+        <briefdescription>
+<para>The numeric datatype used by the parser. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Normally this is a floating point type either single or double precision. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="294" column="22" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="294" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" prot="public" static="no">
+        <type><ref refid="mu_parser_def_8h_1a1fc7b0394571c5a372932693798ba658" kindref="member">MUP_STRING_TYPE</ref></type>
+        <definition>typedef MUP_STRING_TYPE mu::string_type</definition>
+        <argsstring></argsstring>
+        <name>string_type</name>
+        <qualifiedname>mu::string_type</qualifiedname>
+        <briefdescription>
+<para>The stringtype used by the parser. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Depends on whether UNICODE is used or not. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="300" column="25" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="300" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" prot="public" static="no">
+        <type>string_type::value_type</type>
+        <definition>typedef string_type::value_type mu::char_type</definition>
+        <argsstring></argsstring>
+        <name>char_type</name>
+        <qualifiedname>mu::char_type</qualifiedname>
+        <briefdescription>
+<para>The character type used by the parser. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Depends on whether UNICODE is used or not. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="306" column="33" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="306" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1ab3b60f8311eb24cf437182a8d5125774" prot="public" static="no">
+        <type>std::basic_stringstream&lt; <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref>, std::char_traits&lt; <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> &gt;, std::allocator&lt; <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> &gt; &gt;</type>
+        <definition>typedef std::basic_stringstream&lt;char_type, std::char_traits&lt;char_type&gt;, std::allocator&lt;char_type&gt; &gt; mu::stringstream_type</definition>
+        <argsstring></argsstring>
+        <name>stringstream_type</name>
+        <qualifiedname>mu::stringstream_type</qualifiedname>
+        <briefdescription>
+<para>Typedef for easily using stringstream that respect the parser stringtype. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="309" column="33" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="309" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1ab57755354e948a664ad94d38546dbb10" prot="public" static="no">
+        <type>std::map&lt; <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref>, <ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> * &gt;</type>
+        <definition>typedef std::map&lt;string_type, value_type*&gt; mu::varmap_type</definition>
+        <argsstring></argsstring>
+        <name>varmap_type</name>
+        <qualifiedname>mu::varmap_type</qualifiedname>
+        <briefdescription>
+<para>Type used for storing variables. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="314" column="18" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="314" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a5940d281286a01342cf773f74481843c" prot="public" static="no">
+        <type>std::map&lt; <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref>, <ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> &gt;</type>
+        <definition>typedef std::map&lt;string_type, value_type&gt; mu::valmap_type</definition>
+        <argsstring></argsstring>
+        <name>valmap_type</name>
+        <qualifiedname>mu::valmap_type</qualifiedname>
+        <briefdescription>
+<para>Type used for storing constants. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="317" column="18" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="317" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1aea1c20093e51d3dc13de10f3c17ae5b1" prot="public" static="no">
+        <type>std::map&lt; <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref>, std::size_t &gt;</type>
+        <definition>typedef std::map&lt;string_type, std::size_t&gt; mu::strmap_type</definition>
+        <argsstring></argsstring>
+        <name>strmap_type</name>
+        <qualifiedname>mu::strmap_type</qualifiedname>
+        <briefdescription>
+<para>Type for assigning a string name to an index in the internal string table. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="320" column="18" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="320" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1af7f4a784819c9b4ab44b51f01205ec8f" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* mu::erased_fun_type) ()</definition>
+        <argsstring>)()</argsstring>
+        <name>erased_fun_type</name>
+        <qualifiedname>mu::erased_fun_type</qualifiedname>
+        <briefdescription>
+<para>Function type used to erase type. Voluntarily needs explicit cast with all other <emphasis>fun_type</emphasis>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="325" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="325" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1af74b1b05cca11b94eb7a478c6c1f8200" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_type0) ()</definition>
+        <argsstring>)()</argsstring>
+        <name>fun_type0</name>
+        <qualifiedname>mu::fun_type0</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions without arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="328" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="328" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1affeaec09801b502b9955d7248b7e2706" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_type1) (value_type)</definition>
+        <argsstring>)(value_type)</argsstring>
+        <name>fun_type1</name>
+        <qualifiedname>mu::fun_type1</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with a single arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="331" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="331" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1abd9aed5816d33116d687f5becd85b38f" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_type2) (value_type, value_type)</definition>
+        <argsstring>)(value_type, value_type)</argsstring>
+        <name>fun_type2</name>
+        <qualifiedname>mu::fun_type2</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with two arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="334" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="334" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1ac89cbeb049bfe0ac38464d9420bf3201" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_type3) (value_type, value_type, value_type)</definition>
+        <argsstring>)(value_type, value_type, value_type)</argsstring>
+        <name>fun_type3</name>
+        <qualifiedname>mu::fun_type3</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with three arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="337" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="337" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1ada318070796bde216079092cfdcf6fe1" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_type4) (value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(value_type, value_type, value_type, value_type)</argsstring>
+        <name>fun_type4</name>
+        <qualifiedname>mu::fun_type4</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with four arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="340" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="340" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a7a01724f9caaf71f99e46b49e75b3bc3" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_type5) (value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>fun_type5</name>
+        <qualifiedname>mu::fun_type5</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with five arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="343" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="343" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a575003f957a2a77d757e24fd04139001" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_type6) (value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>fun_type6</name>
+        <qualifiedname>mu::fun_type6</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with six arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="346" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="346" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1aa03550a6f05b1270e1e27214a63301ee" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_type7) (value_type, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(value_type, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>fun_type7</name>
+        <qualifiedname>mu::fun_type7</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with seven arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="349" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="349" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a17cfcdc39e8d1d95c1418e117eb923b8" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_type8) (value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>fun_type8</name>
+        <qualifiedname>mu::fun_type8</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with eight arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="352" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="352" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a04c92810aa2e6098af69f47474388d71" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_type9) (value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>fun_type9</name>
+        <qualifiedname>mu::fun_type9</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with nine arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="355" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="355" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a9d79a17c5171e8928f8c91964979e56c" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_type10) (value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>fun_type10</name>
+        <qualifiedname>mu::fun_type10</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with ten arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="358" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="358" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a939b6f34173fa1e76f97a1e5d5452a09" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_userdata_type0) (void *)</definition>
+        <argsstring>)(void *)</argsstring>
+        <name>fun_userdata_type0</name>
+        <qualifiedname>mu::fun_userdata_type0</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions without arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="361" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="361" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a0fd5d38f2fb3e6ef9be3472cb7613ff1" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_userdata_type1) (void *, value_type)</definition>
+        <argsstring>)(void *, value_type)</argsstring>
+        <name>fun_userdata_type1</name>
+        <qualifiedname>mu::fun_userdata_type1</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with a single arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="364" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="364" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a436c46ff8ebfa89c944425470a652ead" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_userdata_type2) (void *, value_type, value_type)</definition>
+        <argsstring>)(void *, value_type, value_type)</argsstring>
+        <name>fun_userdata_type2</name>
+        <qualifiedname>mu::fun_userdata_type2</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with two arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="367" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="367" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a07f71c315f4fadf9de650fc4382dd049" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_userdata_type3) (void *, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, value_type, value_type, value_type)</argsstring>
+        <name>fun_userdata_type3</name>
+        <qualifiedname>mu::fun_userdata_type3</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with three arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="370" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="370" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a0f9b17d4b1e59115bba63e6d53765625" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_userdata_type4) (void *, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, value_type, value_type, value_type, value_type)</argsstring>
+        <name>fun_userdata_type4</name>
+        <qualifiedname>mu::fun_userdata_type4</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with four arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="373" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="373" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1adcb1055d3531364e916f8bdf682a2b2f" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_userdata_type5) (void *, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>fun_userdata_type5</name>
+        <qualifiedname>mu::fun_userdata_type5</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with five arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="376" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="376" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a971c39af75dc6b5f7f20bbc1d66119dd" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_userdata_type6) (void *, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>fun_userdata_type6</name>
+        <qualifiedname>mu::fun_userdata_type6</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with six arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="379" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="379" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a3b3a81234fe3014679f0f74cdec612f6" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_userdata_type7) (void *, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>fun_userdata_type7</name>
+        <qualifiedname>mu::fun_userdata_type7</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with seven arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="382" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="382" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1ae17e82452f755411a245c67ce3268355" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_userdata_type8) (void *, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>fun_userdata_type8</name>
+        <qualifiedname>mu::fun_userdata_type8</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with eight arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="385" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="385" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1af7e4291312d366327078d127860541bf" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_userdata_type9) (void *, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>fun_userdata_type9</name>
+        <qualifiedname>mu::fun_userdata_type9</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with nine arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="388" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="388" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a04ed8cd829b59971c215edecdc9dfdee" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::fun_userdata_type10) (void *, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>fun_userdata_type10</name>
+        <qualifiedname>mu::fun_userdata_type10</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with ten arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="391" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="391" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1aff9adf757e90a2398326a3cb10585cf1" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_type0) (int, int)</definition>
+        <argsstring>)(int, int)</argsstring>
+        <name>bulkfun_type0</name>
+        <qualifiedname>mu::bulkfun_type0</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions without arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="394" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="394" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a2bd588710432e6e34eae3e2af4ba3862" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_type1) (int, int, value_type)</definition>
+        <argsstring>)(int, int, value_type)</argsstring>
+        <name>bulkfun_type1</name>
+        <qualifiedname>mu::bulkfun_type1</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with a single arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="397" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="397" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a9faa755ea34c6e8de3895013e649a713" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_type2) (int, int, value_type, value_type)</definition>
+        <argsstring>)(int, int, value_type, value_type)</argsstring>
+        <name>bulkfun_type2</name>
+        <qualifiedname>mu::bulkfun_type2</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with two arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="400" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="400" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a441194d09cb0e9331dbfdaf74f59efd3" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_type3) (int, int, value_type, value_type, value_type)</definition>
+        <argsstring>)(int, int, value_type, value_type, value_type)</argsstring>
+        <name>bulkfun_type3</name>
+        <qualifiedname>mu::bulkfun_type3</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with three arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="403" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="403" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a6b7ce6e1f888b02222d2765d1f521507" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_type4) (int, int, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(int, int, value_type, value_type, value_type, value_type)</argsstring>
+        <name>bulkfun_type4</name>
+        <qualifiedname>mu::bulkfun_type4</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with four arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="406" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="406" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a9343ce135e0a53897a67c6098d07a7b3" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_type5) (int, int, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(int, int, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>bulkfun_type5</name>
+        <qualifiedname>mu::bulkfun_type5</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with five arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="409" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="409" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a1259e71ee6f8b9e3985ef0cda16dd433" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_type6) (int, int, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(int, int, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>bulkfun_type6</name>
+        <qualifiedname>mu::bulkfun_type6</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with six arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="412" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="412" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a9726be97f12bc3b336884d462623ca8c" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_type7) (int, int, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(int, int, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>bulkfun_type7</name>
+        <qualifiedname>mu::bulkfun_type7</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with seven arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="415" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="415" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1aa4e562060c2c2377266ec1cf274856fe" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_type8) (int, int, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(int, int, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>bulkfun_type8</name>
+        <qualifiedname>mu::bulkfun_type8</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with eight arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="418" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="418" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a51c71d5698d29b40688feaa8e968efc9" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_type9) (int, int, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(int, int, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>bulkfun_type9</name>
+        <qualifiedname>mu::bulkfun_type9</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with nine arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="421" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="421" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1aebd99bafbd17761a9e13b8a7366ae1ce" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_type10) (int, int, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(int, int, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>bulkfun_type10</name>
+        <qualifiedname>mu::bulkfun_type10</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with ten arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="424" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="424" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a687d47059ad215c10bd8e968bd9528fb" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_userdata_type0) (void *, int, int)</definition>
+        <argsstring>)(void *, int, int)</argsstring>
+        <name>bulkfun_userdata_type0</name>
+        <qualifiedname>mu::bulkfun_userdata_type0</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions without arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="427" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="427" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a710d699842234a187170220e392ac68d" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_userdata_type1) (void *, int, int, value_type)</definition>
+        <argsstring>)(void *, int, int, value_type)</argsstring>
+        <name>bulkfun_userdata_type1</name>
+        <qualifiedname>mu::bulkfun_userdata_type1</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with a single arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="430" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="430" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1aeada4d73454e5aa78efe3629b65a4b87" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_userdata_type2) (void *, int, int, value_type, value_type)</definition>
+        <argsstring>)(void *, int, int, value_type, value_type)</argsstring>
+        <name>bulkfun_userdata_type2</name>
+        <qualifiedname>mu::bulkfun_userdata_type2</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with two arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="433" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="433" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a88e1a3aff85016f20bb75468e54fe977" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_userdata_type3) (void *, int, int, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, int, int, value_type, value_type, value_type)</argsstring>
+        <name>bulkfun_userdata_type3</name>
+        <qualifiedname>mu::bulkfun_userdata_type3</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with three arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="436" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="436" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1ae55700d01ee5a6d292e23fbff9b1db0d" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_userdata_type4) (void *, int, int, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, int, int, value_type, value_type, value_type, value_type)</argsstring>
+        <name>bulkfun_userdata_type4</name>
+        <qualifiedname>mu::bulkfun_userdata_type4</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with four arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="439" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="439" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a7a3d722afa477c7af751702d4cc909df" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_userdata_type5) (void *, int, int, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, int, int, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>bulkfun_userdata_type5</name>
+        <qualifiedname>mu::bulkfun_userdata_type5</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with five arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="442" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="442" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1aa8c7a8cb10eb84e21bae47dae6410a06" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_userdata_type6) (void *, int, int, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, int, int, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>bulkfun_userdata_type6</name>
+        <qualifiedname>mu::bulkfun_userdata_type6</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with six arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="445" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="445" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1aaa629b05b06b00be6631ea77f7f30e41" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_userdata_type7) (void *, int, int, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, int, int, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>bulkfun_userdata_type7</name>
+        <qualifiedname>mu::bulkfun_userdata_type7</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with seven arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="448" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="448" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1ad476874c1e09e5c8f16eaa0c8106b245" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_userdata_type8) (void *, int, int, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, int, int, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>bulkfun_userdata_type8</name>
+        <qualifiedname>mu::bulkfun_userdata_type8</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with eight arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="451" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="451" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a98e629b5446c2ecac669b5cb32b502da" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_userdata_type9) (void *, int, int, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, int, int, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>bulkfun_userdata_type9</name>
+        <qualifiedname>mu::bulkfun_userdata_type9</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with nine arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="454" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="454" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a2d5f2395090063a6947a85b9b6e8034b" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::bulkfun_userdata_type10) (void *, int, int, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, int, int, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>bulkfun_userdata_type10</name>
+        <qualifiedname>mu::bulkfun_userdata_type10</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions with ten arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="457" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="457" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a004a9a10d015a8e2e17604cb632cd6c1" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::multfun_type) (const value_type *, int)</definition>
+        <argsstring>)(const value_type *, int)</argsstring>
+        <name>multfun_type</name>
+        <qualifiedname>mu::multfun_type</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions with a variable argument list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="460" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="460" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a482b9409c3ba2e2dde72f716295a1ba4" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::multfun_userdata_type) (void *, const value_type *, int)</definition>
+        <argsstring>)(void *, const value_type *, int)</argsstring>
+        <name>multfun_userdata_type</name>
+        <qualifiedname>mu::multfun_userdata_type</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions and a variable argument list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="463" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="463" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a578b844842f577e78da3f520f9ee2f9a" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::strfun_type1) (const char_type *)</definition>
+        <argsstring>)(const char_type *)</argsstring>
+        <name>strfun_type1</name>
+        <qualifiedname>mu::strfun_type1</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions taking a string as an argument. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="466" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="466" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a14b9af8ec1e328b685221ca23fc9f765" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::strfun_type2) (const char_type *, value_type)</definition>
+        <argsstring>)(const char_type *, value_type)</argsstring>
+        <name>strfun_type2</name>
+        <qualifiedname>mu::strfun_type2</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions taking a string and a value as arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="469" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="469" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a1ce7a16b2a2b87f662819b7ee1d87bc0" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::strfun_type3) (const char_type *, value_type, value_type)</definition>
+        <argsstring>)(const char_type *, value_type, value_type)</argsstring>
+        <name>strfun_type3</name>
+        <qualifiedname>mu::strfun_type3</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions taking a string and two values as arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="472" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="472" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a03f5b99ef0a9e5f78ccf4d3e490704dc" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::strfun_type4) (const char_type *, value_type, value_type, value_type)</definition>
+        <argsstring>)(const char_type *, value_type, value_type, value_type)</argsstring>
+        <name>strfun_type4</name>
+        <qualifiedname>mu::strfun_type4</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions taking a string and three values as arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="475" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="475" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a55140d3b293bcb41e96b3f9a9fd2b2d7" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::strfun_type5) (const char_type *, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(const char_type *, value_type, value_type, value_type, value_type)</argsstring>
+        <name>strfun_type5</name>
+        <qualifiedname>mu::strfun_type5</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions taking a string and four values as arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="478" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="478" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a75f3a31f30e949ed0ca25a27ea5288b5" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::strfun_type6) (const char_type *, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(const char_type *, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>strfun_type6</name>
+        <qualifiedname>mu::strfun_type6</qualifiedname>
+        <briefdescription>
+<para>Callback type used for functions taking a string and five values as arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="481" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="481" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1ab8d93b4c1c711be329af76b9034112d9" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::strfun_userdata_type1) (void *, const char_type *)</definition>
+        <argsstring>)(void *, const char_type *)</argsstring>
+        <name>strfun_userdata_type1</name>
+        <qualifiedname>mu::strfun_userdata_type1</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions taking a string as an argument. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="484" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="484" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a84d92000f881f4bafe308f1b61c2841d" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::strfun_userdata_type2) (void *, const char_type *, value_type)</definition>
+        <argsstring>)(void *, const char_type *, value_type)</argsstring>
+        <name>strfun_userdata_type2</name>
+        <qualifiedname>mu::strfun_userdata_type2</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions taking a string and a value as arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="487" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="487" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1abb7b439633898a03668a4634b7a25bb5" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::strfun_userdata_type3) (void *, const char_type *, value_type, value_type)</definition>
+        <argsstring>)(void *, const char_type *, value_type, value_type)</argsstring>
+        <name>strfun_userdata_type3</name>
+        <qualifiedname>mu::strfun_userdata_type3</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions taking a string and two values as arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="490" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="490" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a426aeab3051321184d97abe4f6a59d5b" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::strfun_userdata_type4) (void *, const char_type *, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, const char_type *, value_type, value_type, value_type)</argsstring>
+        <name>strfun_userdata_type4</name>
+        <qualifiedname>mu::strfun_userdata_type4</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions taking a string and a value as arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="493" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="493" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1ac5e98a659656388aa301d22a7d66ed47" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::strfun_userdata_type5) (void *, const char_type *, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, const char_type *, value_type, value_type, value_type, value_type)</argsstring>
+        <name>strfun_userdata_type5</name>
+        <qualifiedname>mu::strfun_userdata_type5</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions taking a string and two values as arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="496" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="496" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a2e7e564ff77a7582f52855d4f38239db" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(*</type>
+        <definition>typedef value_type(* mu::strfun_userdata_type6) (void *, const char_type *, value_type, value_type, value_type, value_type, value_type)</definition>
+        <argsstring>)(void *, const char_type *, value_type, value_type, value_type, value_type, value_type)</argsstring>
+        <name>strfun_userdata_type6</name>
+        <qualifiedname>mu::strfun_userdata_type6</qualifiedname>
+        <briefdescription>
+<para>Callback type with user data (not null) used for functions taking a string and five values as arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="499" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="499" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a0e40974644c0e6488d76229ca0f4ce23" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int(* mu::identfun_type) (const char_type *sExpr, int *nPos, value_type *fVal)</definition>
+        <argsstring>)(const char_type *sExpr, int *nPos, value_type *fVal)</argsstring>
+        <name>identfun_type</name>
+        <qualifiedname>mu::identfun_type</qualifiedname>
+        <briefdescription>
+<para>Callback used for functions that identify values in a string. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="502" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="502" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemu_1a1fd46d8ffefdf8913e3c5e8dc499d031" prot="public" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *(*</type>
+        <definition>typedef value_type *(* mu::facfun_type) (const char_type *, void *)</definition>
+        <argsstring>)(const char_type *, void *)</argsstring>
+        <name>facfun_type</name>
+        <qualifiedname>mu::facfun_type</qualifiedname>
+        <briefdescription>
+<para>Callback used for variable creation factory functions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="505" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="505" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacemu_1a4a94be33570af670bb4399108b4aa95e" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int mu::MaxLenExpression</definition>
+        <argsstring></argsstring>
+        <name>MaxLenExpression</name>
+        <qualifiedname>mu::MaxLenExpression</qualifiedname>
+        <initializer>= 20000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="507" column="18" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="507" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemu_1a655746b76051e2d7b6e91a8ac026d6ba" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int mu::MaxLenIdentifier</definition>
+        <argsstring></argsstring>
+        <name>MaxLenIdentifier</name>
+        <qualifiedname>mu::MaxLenIdentifier</qualifiedname>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="508" column="18" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="508" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemu_1ac75e1313d45a8ad25bcb3d47454c4701" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref></type>
+        <definition>const string_type mu::ParserVersion</definition>
+        <argsstring></argsstring>
+        <name>ParserVersion</name>
+        <qualifiedname>mu::ParserVersion</qualifiedname>
+        <initializer>= <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref>(<ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;2.3.4 (Release)&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="509" column="26" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="509" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemu_1a8ec43d52cc74dc06eb8fc52841a0ed23" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref></type>
+        <definition>const string_type mu::ParserVersionDate</definition>
+        <argsstring></argsstring>
+        <name>ParserVersionDate</name>
+        <qualifiedname>mu::ParserVersionDate</qualifiedname>
+        <initializer>= <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref>(<ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;20221019&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="510" column="26" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="510" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemu_1a0f61e4da30622ecd97637ed90a295150" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>int</type>
+        <definition>int mu::CALLBACK_INTERNAL_VAR_ARGS</definition>
+        <argsstring></argsstring>
+        <name>CALLBACK_INTERNAL_VAR_ARGS</name>
+        <qualifiedname>mu::CALLBACK_INTERNAL_VAR_ARGS</qualifiedname>
+        <initializer>= 1 &lt;&lt; 14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" line="43" column="22" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemu_1a591899cfe826a12148df75d838d3b847" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>int</type>
+        <definition>int mu::CALLBACK_INTERNAL_FIXED_ARGS_MASK</definition>
+        <argsstring></argsstring>
+        <name>CALLBACK_INTERNAL_FIXED_ARGS_MASK</name>
+        <qualifiedname>mu::CALLBACK_INTERNAL_FIXED_ARGS_MASK</qualifiedname>
+        <initializer>= 0xf</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" line="44" column="22" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemu_1a90a97c9edd186d51641ee0db1fbdf5fd" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>int</type>
+        <definition>int mu::CALLBACK_INTERNAL_WITH_USER_DATA</definition>
+        <argsstring></argsstring>
+        <name>CALLBACK_INTERNAL_WITH_USER_DATA</name>
+        <qualifiedname>mu::CALLBACK_INTERNAL_WITH_USER_DATA</qualifiedname>
+        <initializer>= 1 &lt;&lt; 13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" line="45" column="22" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; mu::console</definition>
+        <argsstring>()</argsstring>
+        <name>console</name>
+        <qualifiedname>mu::console</qualifiedname>
+        <briefdescription>
+<para>Encapsulate cout. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used for supporting UNICODE more easily. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="115" column="21" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="115" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemu_1a0089cb676b9dc554085667d89f6ff48f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::istream &amp;</type>
+        <definition>std::istream &amp; mu::console_in</definition>
+        <argsstring>()</argsstring>
+        <name>console_in</name>
+        <qualifiedname>mu::console_in</qualifiedname>
+        <briefdescription>
+<para>Encapsulate cin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used for supporting UNICODE more easily. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" line="124" column="21" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserDef.h" bodystart="124" bodyend="127"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Namespace for mathematical applications. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParser.h" line="43" column="1"/>
+  </compounddef>
+</doxygen>

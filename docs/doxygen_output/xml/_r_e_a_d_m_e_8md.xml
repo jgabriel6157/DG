@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>DG<sp/>Code</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>Overview</highlight></codeline>
+<codeline><highlight class="normal">DG<sp/>code<sp/>is<sp/>the<sp/>temporary<sp/>name<sp/>for<sp/>this<sp/>code<sp/>which<sp/>solves<sp/>the<sp/>1D<sp/>advection<sp/>equation<sp/>du/dt+adu/dx=0<sp/>for<sp/>arbitrary<sp/>order<sp/>and<sp/>grid<sp/>size<sp/>along<sp/>with<sp/>a<sp/>python<sp/>script<sp/>to<sp/>plot<sp/>results.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Features</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Solves<sp/>1X0V<sp/>advection<sp/>equation<sp/>to<sp/>arbitrary<sp/>order</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Uniform,<sp/>structured<sp/>mesh</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Periodic<sp/>boundary<sp/>conditions</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Simple<sp/>minmod<sp/>slope<sp/>limiter</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Lax-Friedrichs<sp/>(Rusanov)<sp/>numerical<sp/>flux</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Input<sp/>parameters<sp/>specified<sp/>via<sp/>input.txt</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Results<sp/>can<sp/>be<sp/>animated<sp/>using<sp/>plot_results.py</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Requirements</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>C++<sp/>compiler<sp/>(supporting<sp/>C++17<sp/>or<sp/>higher)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Python</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Usage</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Compile<sp/>the<sp/>code<sp/>using<sp/>the<sp/>provided<sp/>Makefile:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Run<sp/>the<sp/>solver<sp/>executable:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">./dg1d</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>time<sp/>it<sp/>took<sp/>the<sp/>simulation<sp/>to<sp/>run<sp/>and<sp/>error<sp/>(if<sp/>test<sp/>=<sp/>true<sp/>in<sp/>input.txt)<sp/>are<sp/>output</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>After<sp/>running<sp/>the<sp/>solver,<sp/>animate<sp/>the<sp/>results<sp/>using<sp/>the<sp/>python<sp/>script:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">python3<sp/>plot_results.py</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>will<sp/>generate<sp/>an<sp/>animation<sp/>of<sp/>the<sp/>solution.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Input<sp/>File<sp/>Format</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>input<sp/>file<sp/>(input.txt)<sp/>must<sp/>contain<sp/>the<sp/>following<sp/>parameters:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Advection<sp/>speed<sp/>(a)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Number<sp/>of<sp/>cells<sp/>(jMax)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Order<sp/>of<sp/>solution<sp/>(lMax)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Number<sp/>of<sp/>time<sp/>steps<sp/>(tMax)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Order<sp/>of<sp/>Gaussian<sp/>Quadrature<sp/>(quadratureOrder)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Length<sp/>of<sp/>domain<sp/>(length)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Time<sp/>step<sp/>(dt)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Basis<sp/>function<sp/>(basis)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Only<sp/>options<sp/>are<sp/>legendre,<sp/>quadratic<sp/>(lMax<sp/>=<sp/>2),<sp/>linear<sp/>(lMax<sp/>=<sp/>1)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>the<sp/>error<sp/>should<sp/>be<sp/>output<sp/>(test)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>What<sp/>value<sp/>alpha<sp/>to<sp/>use<sp/>for<sp/>Lax-Friedrichs<sp/>numerical<sp/>flux</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>alpha<sp/>=<sp/>0<sp/>corresponds<sp/>to<sp/>upwind<sp/>flux</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>alpha<sp/>=<sp/>1<sp/>corresponds<sp/>to<sp/>centered<sp/>flux</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Initial<sp/>function<sp/>(input)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Only<sp/>options<sp/>are<sp/>sin<sp/>(a<sp/>sine<sp/>wave),<sp/>pulse<sp/>(a<sp/>Gaussian<sp/>pulse),<sp/>topHat<sp/>(a<sp/>discontinuous<sp/>top<sp/>hat<sp/>function)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>slope<sp/>limiter<sp/>should<sp/>be<sp/>used<sp/>(slopeLimiter)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Number<sp/>of<sp/>outputed<sp/>time<sp/>steps<sp/>(nout)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Code<sp/>Structure</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>dg1dAdvection.cxx:<sp/>Entry<sp/>point<sp/>of<sp/>the<sp/>program,<sp/>reads<sp/>input<sp/>parameters<sp/>and<sp/>orchestrates<sp/>the<sp/>simulation.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Solver.cxx:<sp/>Defines<sp/>the<sp/>solver<sp/>class<sp/>responsible<sp/>for<sp/>solving<sp/>the<sp/>advection<sp/>equation<sp/>and<sp/>other<sp/>relevant<sp/>tasks</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Mesh.cxx:<sp/>Defines<sp/>the<sp/>mesh<sp/>representing<sp/>the<sp/>computational<sp/>grid</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Matrix/Vector.cxx:<sp/>Defines<sp/>the<sp/>Matrix/Vector<sp/>types<sp/>and<sp/>operator<sp/>definitions</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>SpecialFunctions.cxx:<sp/>Defines<sp/>all<sp/>non-native<sp/>functions</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GaussianQuadrature.cxx:<sp/>Performs<sp/>Gaussian<sp/>quadrature<sp/>numerical<sp/>integration</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FunctionMapper.cxx:<sp/>Maps<sp/>string<sp/>of<sp/>function<sp/>name<sp/>to<sp/>function</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Author</highlight></codeline>
+<codeline><highlight class="normal">-[Jack<sp/>Gabriel](https://github.com/jgabriel6157)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="/Users/jackgabriel/Desktop/DG/README.md"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structmu_1_1_type_info_3_01short_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>mu::TypeInfo&lt; short &gt;</compoundname>
+    <templateparamlist>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structmu_1_1_type_info_3_01short_01_4_1a4af1c3ca279fdb8c956b0b5eaf5a4062" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool mu::TypeInfo&lt; short &gt;::IsInteger</definition>
+        <argsstring>()</argsstring>
+        <name>IsInteger</name>
+        <qualifiedname>mu::TypeInfo&lt; short &gt;::IsInteger</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="62" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_type_info_1a1f612ad3ff6b926ea74c39a9e841180d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool mu::TypeInfo&lt; short &gt;::IsInteger</definition>
+        <argsstring>()</argsstring>
+        <name>IsInteger</name>
+        <qualifiedname>mu::TypeInfo&lt; short &gt;::IsInteger</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="50" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="50" bodyend="50"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="60" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="61" bodyend="63"/>
+    <listofallmembers>
+      <member refid="structmu_1_1_type_info_3_01short_01_4_1a4af1c3ca279fdb8c956b0b5eaf5a4062" prot="public" virt="non-virtual"><scope>mu::TypeInfo&lt; short &gt;</scope><name>IsInteger</name></member>
+      <member refid="structmu_1_1_type_info_1a1f612ad3ff6b926ea74c39a9e841180d" prot="public" virt="non-virtual"><scope>mu::TypeInfo&lt; short &gt;</scope><name>IsInteger</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

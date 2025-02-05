@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_gaussian_quadrature" kind="class" language="C++" prot="public">
+    <compoundname>GaussianQuadrature</compoundname>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_gaussian_quadrature_1a447e68f185a525644567e81a48f85142" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double GaussianQuadrature::integrate</definition>
+        <argsstring>(std::function&lt; double(int, double)&gt; func1, int n_func1, std::function&lt; double(int, double)&gt; func2, int n_func2, int quadratureOrder, Vector roots, Vector weights)</argsstring>
+        <name>integrate</name>
+        <qualifiedname>GaussianQuadrature::integrate</qualifiedname>
+        <param>
+          <type>std::function&lt; double(int, double)&gt;</type>
+          <declname>func1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n_func1</declname>
+        </param>
+        <param>
+          <type>std::function&lt; double(int, double)&gt;</type>
+          <declname>func2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n_func2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>quadratureOrder</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>roots</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>weights</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/GaussianQuadrature.hxx" line="11" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/GaussianQuadrature.cxx" bodystart="10" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gaussian_quadrature_1aa18bc836c9bec913a4202a9603d8d5e0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double GaussianQuadrature::integrate</definition>
+        <argsstring>(std::function&lt; double(int, double)&gt; func1, int n_func1, std::function&lt; double(int, double)&gt; func2, int n_func2, std::function&lt; double(int, double)&gt; func3, int n_func3, int quadratureOrder, Vector roots, Vector weights)</argsstring>
+        <name>integrate</name>
+        <qualifiedname>GaussianQuadrature::integrate</qualifiedname>
+        <param>
+          <type>std::function&lt; double(int, double)&gt;</type>
+          <declname>func1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n_func1</declname>
+        </param>
+        <param>
+          <type>std::function&lt; double(int, double)&gt;</type>
+          <declname>func2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n_func2</declname>
+        </param>
+        <param>
+          <type>std::function&lt; double(int, double)&gt;</type>
+          <declname>func3</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n_func3</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>quadratureOrder</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>roots</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>weights</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/GaussianQuadrature.hxx" line="13" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/GaussianQuadrature.cxx" bodystart="48" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gaussian_quadrature_1a86c1edd862449a25fd430ccb996ad4b8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double GaussianQuadrature::integrate</definition>
+        <argsstring>(std::function&lt; double(int, double)&gt; func1, int n_func1, Matrix alpha, double vx, int lMax, int quadratureOrder, Vector roots, Vector weights)</argsstring>
+        <name>integrate</name>
+        <qualifiedname>GaussianQuadrature::integrate</qualifiedname>
+        <param>
+          <type>std::function&lt; double(int, double)&gt;</type>
+          <declname>func1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n_func1</declname>
+        </param>
+        <param>
+          <type><ref refid="class_matrix" kindref="compound">Matrix</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>vx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lMax</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>quadratureOrder</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>roots</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>weights</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/GaussianQuadrature.hxx" line="15" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/GaussianQuadrature.cxx" bodystart="23" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gaussian_quadrature_1aca6ca8e94de63ac7fe41e248d270d267" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+        <definition>Vector GaussianQuadrature::calculateWeights</definition>
+        <argsstring>(int quadratureOrder, Vector roots)</argsstring>
+        <name>calculateWeights</name>
+        <qualifiedname>GaussianQuadrature::calculateWeights</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>quadratureOrder</declname>
+        </param>
+        <param>
+          <type><ref refid="class_vector" kindref="compound">Vector</ref></type>
+          <declname>roots</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/GaussianQuadrature.hxx" line="16" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/GaussianQuadrature.cxx" bodystart="62" bodyend="78"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/GaussianQuadrature.hxx" line="8" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/GaussianQuadrature.hxx" bodystart="9" bodyend="17"/>
+    <listofallmembers>
+      <member refid="class_gaussian_quadrature_1aca6ca8e94de63ac7fe41e248d270d267" prot="public" virt="non-virtual"><scope>GaussianQuadrature</scope><name>calculateWeights</name></member>
+      <member refid="class_gaussian_quadrature_1a447e68f185a525644567e81a48f85142" prot="public" virt="non-virtual"><scope>GaussianQuadrature</scope><name>integrate</name></member>
+      <member refid="class_gaussian_quadrature_1aa18bc836c9bec913a4202a9603d8d5e0" prot="public" virt="non-virtual"><scope>GaussianQuadrature</scope><name>integrate</name></member>
+      <member refid="class_gaussian_quadrature_1a86c1edd862449a25fd430ccb996ad4b8" prot="public" virt="non-virtual"><scope>GaussianQuadrature</scope><name>integrate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,901 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespaceplot__density" kind="namespace" language="Python">
+    <compoundname>plot_density</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="plot__density_8py_1a921052ede6963cb1da7bc00329c28399" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.fig</definition>
+        <argsstring></argsstring>
+        <name>fig</name>
+        <qualifiedname>plot_density.fig</qualifiedname>
+        <initializer>=  plt.figure()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="68" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a5ec064cef57e6abfbd9aea0d97fb3d8d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.ax</definition>
+        <argsstring></argsstring>
+        <name>ax</name>
+        <qualifiedname>plot_density.ax</qualifiedname>
+        <initializer>=  fig.gca()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="69" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a25c5cdb51de8042e9861d805e57a01c8" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_density.fileName</definition>
+        <argsstring></argsstring>
+        <name>fileName</name>
+        <qualifiedname>plot_density.fileName</qualifiedname>
+        <initializer>=  &apos;Density.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="72" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a9d00f6a37f298fd0fd97e2d8286caa41" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.inputFile</definition>
+        <argsstring></argsstring>
+        <name>inputFile</name>
+        <qualifiedname>plot_density.inputFile</qualifiedname>
+        <initializer>=  open(&apos;input.txt&apos;,&apos;r&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="74" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a73578a1c1c71471b041dfb99cc9200b2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.inputParam</definition>
+        <argsstring></argsstring>
+        <name>inputParam</name>
+        <qualifiedname>plot_density.inputParam</qualifiedname>
+        <initializer>=  inputFile.readline()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="77" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a5ffde7727f8e4d5d27670f4592612eb6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.jMax</definition>
+        <argsstring></argsstring>
+        <name>jMax</name>
+        <qualifiedname>plot_density.jMax</qualifiedname>
+        <initializer>=  int(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="80" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a2cf488a9daed54b9c6237fa7632f8822" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>plot_density.value</qualifiedname>
+        <initializer>=  inputParam[inputParam.index(&apos;=&apos;)+2:-1]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="82" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a46f3781e9bb567d3f092335fcb76b568" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <qualifiedname>plot_density.length</qualifiedname>
+        <initializer>=  assignFloat(value)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="83" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a5d6e9b4a337e160dcedff367d4d74570" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.lMax</definition>
+        <argsstring></argsstring>
+        <name>lMax</name>
+        <qualifiedname>plot_density.lMax</qualifiedname>
+        <initializer>=  int(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="85" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a73040db27e2c4a624d6bdd483e808d4f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.basis</definition>
+        <argsstring></argsstring>
+        <name>basis</name>
+        <qualifiedname>plot_density.basis</qualifiedname>
+        <initializer>=  inputParam[inputParam.index(&apos;=&apos;)+2:-1]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="87" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1abee7803c87c1a37ed23f280b2d68f2fe" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.tMax</definition>
+        <argsstring></argsstring>
+        <name>tMax</name>
+        <qualifiedname>plot_density.tMax</qualifiedname>
+        <initializer>=  int(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="89" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1ae2ee7d80c17d79a5b8f275aae53d5f6d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.dt</definition>
+        <argsstring></argsstring>
+        <name>dt</name>
+        <qualifiedname>plot_density.dt</qualifiedname>
+        <initializer>=  float(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="91" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1aa5d08715f2ae39e061b3984eaf89c277" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.nout</definition>
+        <argsstring></argsstring>
+        <name>nout</name>
+        <qualifiedname>plot_density.nout</qualifiedname>
+        <initializer>=  int(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="93" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a66c8103b4582aee9883179d05bb336e8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.nvx</definition>
+        <argsstring></argsstring>
+        <name>nvx</name>
+        <qualifiedname>plot_density.nvx</qualifiedname>
+        <initializer>=  int(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="95" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a154db6fa86b4c94f12a2ccd320c8d0b9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.domainMaxVX</definition>
+        <argsstring></argsstring>
+        <name>domainMaxVX</name>
+        <qualifiedname>plot_density.domainMaxVX</qualifiedname>
+        <initializer>=  assignFloat(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="97" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a2fcbf68acac20befe18548b16e5f2efc" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float plot_density.A</definition>
+        <argsstring></argsstring>
+        <name>A</name>
+        <qualifiedname>plot_density.A</qualifiedname>
+        <initializer>=  0.291e-7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="104" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1abb5e743c2e479d8bed7234f2eab87033" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_density.P</definition>
+        <argsstring></argsstring>
+        <name>P</name>
+        <qualifiedname>plot_density.P</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="105" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a21c236dd4d70a5563c62d484fea14953" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float plot_density.U</definition>
+        <argsstring></argsstring>
+        <name>U</name>
+        <qualifiedname>plot_density.U</qualifiedname>
+        <initializer>=  13.6 / 20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="106" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a7b2172177ec79bdbcd2b8ec361a27974" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float plot_density.X</definition>
+        <argsstring></argsstring>
+        <name>X</name>
+        <qualifiedname>plot_density.X</qualifiedname>
+        <initializer>=  0.232</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="107" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a328e03199eb31d9c631bb2668932a9d8" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float plot_density.K</definition>
+        <argsstring></argsstring>
+        <name>K</name>
+        <qualifiedname>plot_density.K</qualifiedname>
+        <initializer>=  0.39</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="108" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a06e7915871a7b733b12d59ffc223310e" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_density.n0</definition>
+        <argsstring></argsstring>
+        <name>n0</name>
+        <qualifiedname>plot_density.n0</qualifiedname>
+        <initializer>=  5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="109" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a47425a7404dabed3a5f1f796eec22e1b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_density.Tw</definition>
+        <argsstring></argsstring>
+        <name>Tw</name>
+        <qualifiedname>plot_density.Tw</qualifiedname>
+        <initializer>=  2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="110" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a9632d7f9bbe387fceb2d701448bd9d65" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.csL</definition>
+        <argsstring></argsstring>
+        <name>csL</name>
+        <qualifiedname>plot_density.csL</qualifiedname>
+        <initializer>=  np.sqrt(20)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="111" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1aa71c837f31afe7b1f30a2abcd855a5c0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.csR</definition>
+        <argsstring></argsstring>
+        <name>csR</name>
+        <qualifiedname>plot_density.csR</qualifiedname>
+        <initializer>=  -np.sqrt(20)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="112" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a3bb7d45510612c3233f067672ccb27bd" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float plot_density.Crec</definition>
+        <argsstring></argsstring>
+        <name>Crec</name>
+        <qualifiedname>plot_density.Crec</qualifiedname>
+        <initializer>=  4.98</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="113" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1ade648f5d471116949dbbdc5dcda9efdc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.Lz</definition>
+        <argsstring></argsstring>
+        <name>Lz</name>
+        <qualifiedname>plot_density.Lz</qualifiedname>
+        <initializer>=  length</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="114" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a80314a9f89ba5cd8710f1d9a3515128d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_density.errorVal</definition>
+        <argsstring></argsstring>
+        <name>errorVal</name>
+        <qualifiedname>plot_density.errorVal</qualifiedname>
+        <initializer>=  1e-10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="115" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1aa7bb4e842c8a8b6f309ec857f6d30fe1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.values</definition>
+        <argsstring></argsstring>
+        <name>values</name>
+        <qualifiedname>plot_density.values</qualifiedname>
+        <initializer>=  pd.read_csv(fileName,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="133" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1ada95b43ac49731be097da15d62061f13" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.dx</definition>
+        <argsstring></argsstring>
+        <name>dx</name>
+        <qualifiedname>plot_density.dx</qualifiedname>
+        <initializer>=  length/jMax</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="139" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1aacd2cccf619bceba73276c67e5c200fa" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_density.dvx</definition>
+        <argsstring></argsstring>
+        <name>dvx</name>
+        <qualifiedname>plot_density.dvx</qualifiedname>
+        <initializer>=  2*domainMaxVX/(nvx-1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="140" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a70b96c1ae2c92e7892d3a1f987db2bb7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.u</definition>
+        <argsstring></argsstring>
+        <name>u</name>
+        <qualifiedname>plot_density.u</qualifiedname>
+        <initializer>=  np.zeros((lMax,jMax))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="142" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1ad67998b389a17a9b7c147ebd76ecc5e1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.uSol</definition>
+        <argsstring></argsstring>
+        <name>uSol</name>
+        <qualifiedname>plot_density.uSol</qualifiedname>
+        <initializer>=  np.zeros((lMax,jMax))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="143" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1ab5ac4f46b7610eac0d438165c5eeb144" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_density.m</definition>
+        <argsstring></argsstring>
+        <name>m</name>
+        <qualifiedname>plot_density.m</qualifiedname>
+        <initializer>=  m+1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="149" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a150d4cff6968c7aada4df0be8b525bfc" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_density.l2Norm</definition>
+        <argsstring></argsstring>
+        <name>l2Norm</name>
+        <qualifiedname>plot_density.l2Norm</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="152" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1ad18cc8757f09d4b4dca3f23b1187852b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_density.solution</definition>
+        <argsstring></argsstring>
+        <name>solution</name>
+        <qualifiedname>plot_density.solution</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="153" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a9cda730c5bf887116dfa3fdee31cc4c3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_density.res</definition>
+        <argsstring></argsstring>
+        <name>res</name>
+        <qualifiedname>plot_density.res</qualifiedname>
+        <initializer>=  9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="155" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1ac25154b6890d0cf0342dd1421420b09e" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_density.xj</definition>
+        <argsstring></argsstring>
+        <name>xj</name>
+        <qualifiedname>plot_density.xj</qualifiedname>
+        <initializer>=  j*dx+dx/2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="157" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1af09fbb67f5eb29562db73f72a58f6f82" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>plot_density.y</qualifiedname>
+        <initializer>=  np.zeros(res)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="158" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a63bad933a95cb307a4888acb682d7a27" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>plot_density.x</qualifiedname>
+        <initializer>=  np.zeros(res)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="159" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1adee7bfae4b19b549abb00d8962d22e21" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.sol</definition>
+        <argsstring></argsstring>
+        <name>sol</name>
+        <qualifiedname>plot_density.sol</qualifiedname>
+        <initializer>=  np.zeros(res)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="160" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a102990c80ca9f2a4c50baee9849ef4f9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.error</definition>
+        <argsstring></argsstring>
+        <name>error</name>
+        <qualifiedname>plot_density.error</qualifiedname>
+        <initializer>=  np.zeros(res)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="161" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a72a12c41d12c059046223ba49ccd4053" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.y2</definition>
+        <argsstring></argsstring>
+        <name>y2</name>
+        <qualifiedname>plot_density.y2</qualifiedname>
+        <initializer>=  np.zeros(res)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="162" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1a7a6404d929be62f220f6dc9b3d5dedfd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.e18</definition>
+        <argsstring></argsstring>
+        <name>e18</name>
+        <qualifiedname>plot_density.e18</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="173" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__density_8py_1ab11204cb27da5ccdfc9e415bbcb0866d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_density.color</definition>
+        <argsstring></argsstring>
+        <name>color</name>
+        <qualifiedname>plot_density.color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="173" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="173" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="plot__density_8py_1a545773c9aec6c0fb847946517f753611" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_density.getFunction</definition>
+        <argsstring>(basis, n, x)</argsstring>
+        <name>getFunction</name>
+        <qualifiedname>plot_density.getFunction</qualifiedname>
+        <param>
+          <type>basis</type>
+          <defname>basis</defname>
+        </param>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="12" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="12" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__density_8py_1a91e99b803fd89c3fa048139fa4deb3cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_density.LegendreP</definition>
+        <argsstring>(n, x)</argsstring>
+        <name>LegendreP</name>
+        <qualifiedname>plot_density.LegendreP</qualifiedname>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="24" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="24" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__density_8py_1a841b3d857ae02c9fca80b9870dcfbb83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_density.LegendrePorthonormal</definition>
+        <argsstring>(n, x)</argsstring>
+        <name>LegendrePorthonormal</name>
+        <qualifiedname>plot_density.LegendrePorthonormal</qualifiedname>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="32" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="32" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__density_8py_1a4d6f6d9b2beaf5ae9bb61986e76442ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_density.Quadratic</definition>
+        <argsstring>(n, x)</argsstring>
+        <name>Quadratic</name>
+        <qualifiedname>plot_density.Quadratic</qualifiedname>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="35" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="35" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__density_8py_1a79dd6c59885ab43adf26c74beb35c82b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_density.linear</definition>
+        <argsstring>(n, x)</argsstring>
+        <name>linear</name>
+        <qualifiedname>plot_density.linear</qualifiedname>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="43" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="43" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__density_8py_1add0203fbde8a3984bc8c0f9ebc668a82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_density.assignFloat</definition>
+        <argsstring>(varString)</argsstring>
+        <name>assignFloat</name>
+        <qualifiedname>plot_density.assignFloat</qualifiedname>
+        <param>
+          <type>varString</type>
+          <defname>varString</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="49" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="49" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__density_8py_1a608fa77f5748fdc32ec9390b759fa871" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_density.sigma</definition>
+        <argsstring>(A, P, U, X, K)</argsstring>
+        <name>sigma</name>
+        <qualifiedname>plot_density.sigma</qualifiedname>
+        <param>
+          <type>A</type>
+          <defname>A</defname>
+        </param>
+        <param>
+          <type>P</type>
+          <defname>P</defname>
+        </param>
+        <param>
+          <type>U</type>
+          <defname>U</defname>
+        </param>
+        <param>
+          <type>X</type>
+          <defname>X</defname>
+        </param>
+        <param>
+          <type>K</type>
+          <defname>K</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="117" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="117" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__density_8py_1a2ba9fbac1d17e550ba89d8fc79d4aa3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_density.integrand_1</definition>
+        <argsstring>(v, z)</argsstring>
+        <name>integrand_1</name>
+        <qualifiedname>plot_density.integrand_1</qualifiedname>
+        <param>
+          <type>v</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>z</type>
+          <defname>z</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="120" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="120" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__density_8py_1a123da0a6974ff0ad5f167133d084e903" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_density.integrand_2</definition>
+        <argsstring>(v, z)</argsstring>
+        <name>integrand_2</name>
+        <qualifiedname>plot_density.integrand_2</qualifiedname>
+        <param>
+          <type>v</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>z</type>
+          <defname>z</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="124" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="124" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__density_8py_1ac10f873c08f7130fbb76e8ac51ca4d88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_density.f</definition>
+        <argsstring>(z)</argsstring>
+        <name>f</name>
+        <qualifiedname>plot_density.f</qualifiedname>
+        <param>
+          <type>z</type>
+          <defname>z</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="128" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_density.py" bodystart="128" bodyend="132"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/plot_density.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

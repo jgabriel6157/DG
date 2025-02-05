@@ -1,0 +1,656 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classmu_1_1_parser_byte_code" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>mu::ParserByteCode</compoundname>
+    <includes refid="mu_parser_bytecode_8h" local="no">muParserBytecode.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classmu_1_1_parser_byte_code_1a581c3b0c4f363f9f9b5241e925ef75c7" prot="private" static="no">
+        <type><ref refid="classmu_1_1_parser_token" kindref="compound">ParserToken</ref>&lt; <ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>, <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &gt;</type>
+        <definition>typedef ParserToken&lt;value_type, string_type&gt; mu::ParserByteCode::token_type</definition>
+        <argsstring></argsstring>
+        <name>token_type</name>
+        <qualifiedname>mu::ParserByteCode::token_type</qualifiedname>
+        <briefdescription>
+<para>Token type for internal use only. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="92" column="21" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classmu_1_1_parser_byte_code_1ae0a963521f86a4674b16f8c2232c644e" prot="private" static="no">
+        <type>std::vector&lt; <ref refid="structmu_1_1_s_token" kindref="compound">SToken</ref> &gt;</type>
+        <definition>typedef std::vector&lt;SToken&gt; mu::ParserByteCode::rpn_type</definition>
+        <argsstring></argsstring>
+        <name>rpn_type</name>
+        <qualifiedname>mu::ParserByteCode::rpn_type</qualifiedname>
+        <briefdescription>
+<para>Token vector for storing the RPN. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="95" column="21" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmu_1_1_parser_byte_code_1aea0ed889f6e045cb2b72cb7df029c8b5" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned mu::ParserByteCode::m_iStackPos</definition>
+        <argsstring></argsstring>
+        <name>m_iStackPos</name>
+        <qualifiedname>mu::ParserByteCode::m_iStackPos</qualifiedname>
+        <briefdescription>
+<para>Position in the Calculation array. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="98" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_byte_code_1ae820f7daf44546d5a7b4a02b5b843392" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t mu::ParserByteCode::m_iMaxStackSize</definition>
+        <argsstring></argsstring>
+        <name>m_iMaxStackSize</name>
+        <qualifiedname>mu::ParserByteCode::m_iMaxStackSize</qualifiedname>
+        <briefdescription>
+<para>Maximum size needed for the stack. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="101" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_byte_code_1a0a0c70c76f920eb127b0c6b8e3006cf7" prot="private" static="no" mutable="no">
+        <type>rpn_type</type>
+        <definition>rpn_type mu::ParserByteCode::m_vRPN</definition>
+        <argsstring></argsstring>
+        <name>m_vRPN</name>
+        <qualifiedname>mu::ParserByteCode::m_vRPN</qualifiedname>
+        <briefdescription>
+<para>The actual rpn storage. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="104" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_byte_code_1aab8184e151d8e67ee973c14a7e31b1cf" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool mu::ParserByteCode::m_bEnableOptimizer</definition>
+        <argsstring></argsstring>
+        <name>m_bEnableOptimizer</name>
+        <qualifiedname>mu::ParserByteCode::m_bEnableOptimizer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="106" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1a1af550b4b2a1b0f05903302808845bac" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserByteCode::ConstantFolding</definition>
+        <argsstring>(ECmdCode a_Oprt)</argsstring>
+        <name>ConstantFolding</name>
+        <qualifiedname>mu::ParserByteCode::ConstantFolding</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40e" kindref="member">ECmdCode</ref></type>
+          <declname>a_Oprt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="108" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp" bodystart="150" bodyend="181"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1a9b03ff607c429dcad0a4d01eb155cb55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserByteCode::ParserByteCode</definition>
+        <argsstring>()</argsstring>
+        <name>ParserByteCode</name>
+        <qualifiedname>mu::ParserByteCode::ParserByteCode</qualifiedname>
+        <briefdescription>
+<para>Bytecode default constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="112" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp" bodystart="51" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1ac95bc49b5a31cfe2647f2bfc8b05b4c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserByteCode::ParserByteCode</definition>
+        <argsstring>(const ParserByteCode &amp;a_ByteCode)</argsstring>
+        <name>ParserByteCode</name>
+        <qualifiedname>mu::ParserByteCode::ParserByteCode</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_byte_code" kindref="compound">ParserByteCode</ref> &amp;</type>
+          <declname>a_ByteCode</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Implemented in Terms of <ref refid="classmu_1_1_parser_byte_code_1a8331da2289733a302233439e48e59bc7" kindref="member">Assign(const ParserByteCode &amp;a_ByteCode)</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="113" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp" bodystart="65" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1a10f20b14b190f65fbf854761308fabae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmu_1_1_parser_byte_code" kindref="compound">ParserByteCode</ref> &amp;</type>
+        <definition>ParserByteCode &amp; mu::ParserByteCode::operator=</definition>
+        <argsstring>(const ParserByteCode &amp;a_ByteCode)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>mu::ParserByteCode::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_byte_code" kindref="compound">ParserByteCode</ref> &amp;</type>
+          <declname>a_ByteCode</declname>
+        </param>
+        <briefdescription>
+<para>Assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Implemented in Terms of <ref refid="classmu_1_1_parser_byte_code_1a8331da2289733a302233439e48e59bc7" kindref="member">Assign(const ParserByteCode &amp;a_ByteCode)</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="114" column="16" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp" bodystart="75" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1a8331da2289733a302233439e48e59bc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserByteCode::Assign</definition>
+        <argsstring>(const ParserByteCode &amp;a_ByteCode)</argsstring>
+        <name>Assign</name>
+        <qualifiedname>mu::ParserByteCode::Assign</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_byte_code" kindref="compound">ParserByteCode</ref> &amp;</type>
+          <declname>a_ByteCode</declname>
+        </param>
+        <briefdescription>
+<para>Copy state of another object to this. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nowthrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="115" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp" bodystart="92" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1aca82e62831e3f62b1b0086b64622938b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserByteCode::AddVar</definition>
+        <argsstring>(value_type *a_pVar)</argsstring>
+        <name>AddVar</name>
+        <qualifiedname>mu::ParserByteCode::AddVar</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *</type>
+          <declname>a_pVar</declname>
+        </param>
+        <briefdescription>
+<para>Add a Variable pointer to bytecode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_pVar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to be added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="117" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp" bodystart="108" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1a8d24daef40331ddb1b69d3fe631181b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserByteCode::AddVal</definition>
+        <argsstring>(value_type a_fVal)</argsstring>
+        <name>AddVal</name>
+        <qualifiedname>mu::ParserByteCode::AddVal</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>a_fVal</declname>
+        </param>
+        <briefdescription>
+<para>Add a Variable pointer to bytecode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Value entries in byte code consist of: <itemizedlist>
+<listitem>
+<para>value array position of the value </para>
+</listitem>
+<listitem>
+<para>the operator code according to ParserToken::cmVAL </para>
+</listitem>
+<listitem>
+<para>the value stored in #mc_iSizeVal number of bytecode entries. </para>
+</listitem>
+</itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_pVal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to be added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="118" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp" bodystart="135" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1a28c5a8c3be833f6fbb5e8036b1504ad6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserByteCode::AddOp</definition>
+        <argsstring>(ECmdCode a_Oprt)</argsstring>
+        <name>AddOp</name>
+        <qualifiedname>mu::ParserByteCode::AddOp</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40e" kindref="member">ECmdCode</ref></type>
+          <declname>a_Oprt</declname>
+        </param>
+        <briefdescription>
+<para>Add an operator identifier to bytecode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Operator entries in byte code consist of: <itemizedlist>
+<listitem>
+<para>value array position of the result </para>
+</listitem>
+<listitem>
+<para>the operator code according to ParserToken::ECmdCode </para>
+</listitem>
+</itemizedlist>
+</para>
+<para><simplesect kind="see"><para>ParserToken::ECmdCode </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="119" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp" bodystart="194" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1afb9d010d603e0300737a50e1148049d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserByteCode::AddIfElse</definition>
+        <argsstring>(ECmdCode a_Oprt)</argsstring>
+        <name>AddIfElse</name>
+        <qualifiedname>mu::ParserByteCode::AddIfElse</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40e" kindref="member">ECmdCode</ref></type>
+          <declname>a_Oprt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="120" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp" bodystart="340" bodyend="345"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1af9e447fca3942ee5b145415dae78a821" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserByteCode::AddAssignOp</definition>
+        <argsstring>(value_type *a_pVar)</argsstring>
+        <name>AddAssignOp</name>
+        <qualifiedname>mu::ParserByteCode::AddAssignOp</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *</type>
+          <declname>a_pVar</declname>
+        </param>
+        <briefdescription>
+<para>Add an assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Operator entries in byte code consist of: <itemizedlist>
+<listitem>
+<para>cmASSIGN code </para>
+</listitem>
+<listitem>
+<para>the pointer of the destination variable </para>
+</listitem>
+</itemizedlist>
+</para>
+<para><simplesect kind="see"><para>ParserToken::ECmdCode </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="121" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp" bodystart="358" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1a380ae7fc970414b50753ffff75bfddf8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserByteCode::AddFun</definition>
+        <argsstring>(generic_callable_type a_pFun, int a_iArgc, bool isOptimizable)</argsstring>
+        <name>AddFun</name>
+        <qualifiedname>mu::ParserByteCode::AddFun</qualifiedname>
+        <param>
+          <type><ref refid="structmu_1_1generic__callable__type" kindref="compound">generic_callable_type</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iArgc</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isOptimizable</declname>
+          <defname>isFunctionOptimizable</defname>
+        </param>
+        <briefdescription>
+<para>Add function to bytecode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_iArgc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of arguments, negative numbers indicate multiarg functions. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_pFun</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to function callback. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="122" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp" bodystart="374" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1aeea1f2fed369ca996bc9d2995ba9aff9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserByteCode::AddBulkFun</definition>
+        <argsstring>(generic_callable_type a_pFun, int a_iArgc)</argsstring>
+        <name>AddBulkFun</name>
+        <qualifiedname>mu::ParserByteCode::AddBulkFun</qualifiedname>
+        <param>
+          <type><ref refid="structmu_1_1generic__callable__type" kindref="compound">generic_callable_type</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iArgc</declname>
+        </param>
+        <briefdescription>
+<para>Add a bulk function to bytecode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_iArgc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of arguments, negative numbers indicate multiarg functions. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_pFun</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to function callback. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="123" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp" bodystart="448" bodyend="458"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1ae255b764e760aa712473baa44cdf3aa1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserByteCode::AddStrFun</definition>
+        <argsstring>(generic_callable_type a_pFun, int a_iArgc, int a_iIdx)</argsstring>
+        <name>AddStrFun</name>
+        <qualifiedname>mu::ParserByteCode::AddStrFun</qualifiedname>
+        <param>
+          <type><ref refid="structmu_1_1generic__callable__type" kindref="compound">generic_callable_type</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iArgc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iIdx</declname>
+        </param>
+        <briefdescription>
+<para>Add Strung function entry to the parser bytecode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+A string function entry consists of the stack position of the return value, followed by a cmSTRFUNC code, the function pointer and an index into the string buffer maintained by the parser. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="124" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp" bodystart="468" bodyend="480"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1a1f852b418b0bdd0296bdcf2304d3c795" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserByteCode::EnableOptimizer</definition>
+        <argsstring>(bool bStat)</argsstring>
+        <name>EnableOptimizer</name>
+        <qualifiedname>mu::ParserByteCode::EnableOptimizer</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>bStat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="126" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp" bodystart="82" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1af68af4cb08ebaf3b12559574319dbb1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserByteCode::Finalize</definition>
+        <argsstring>()</argsstring>
+        <name>Finalize</name>
+        <qualifiedname>mu::ParserByteCode::Finalize</qualifiedname>
+        <briefdescription>
+<para>Add end marker to bytecode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="128" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp" bodystart="487" bodyend="522"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1a9cec7c19c5ebbc1eac31d3b93edae1e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserByteCode::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>mu::ParserByteCode::clear</qualifiedname>
+        <briefdescription>
+<para>Delete the bytecode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The name of this function is a violation of my own coding guidelines but this way it&apos;s more in line with the STL functions thus more intuitive. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="129" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp" bodystart="539" bodyend="544"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1a216cdd88a1b67b19af68fedfa9bbb387" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t mu::ParserByteCode::GetMaxStackSize</definition>
+        <argsstring>() const</argsstring>
+        <name>GetMaxStackSize</name>
+        <qualifiedname>mu::ParserByteCode::GetMaxStackSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="130" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp" bodystart="525" bodyend="528"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1aace74f638f84926ebf147eee75b29b9e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t mu::ParserByteCode::GetSize</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSize</name>
+        <qualifiedname>mu::ParserByteCode::GetSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="132" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" bodystart="132" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1a5799e2ab40d4f0d83ee9685c232db099" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="structmu_1_1_s_token" kindref="compound">SToken</ref> *</type>
+        <definition>const SToken * mu::ParserByteCode::GetBase</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBase</name>
+        <qualifiedname>mu::ParserByteCode::GetBase</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="137" column="21" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" bodystart="137" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_byte_code_1abe87dce6ba88f5ed87cfff70dfd6d035" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserByteCode::AsciiDump</definition>
+        <argsstring>()</argsstring>
+        <name>AsciiDump</name>
+        <qualifiedname>mu::ParserByteCode::AsciiDump</qualifiedname>
+        <briefdescription>
+<para>Dump bytecode (for debugging only!). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="145" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp" bodystart="548" bodyend="639"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Bytecode implementation of the Math <ref refid="classmu_1_1_parser" kindref="compound">Parser</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The bytecode contains the formula converted to revers polish notation stored in a continious memory area. Associated with this data are operator codes, variable pointers, constant values and function pointers. Those are necessary in order to calculate the result. All those data items will be casted to the underlying datatype of the bytecode. </para>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" line="87" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h" bodystart="88" bodyend="146"/>
+    <listofallmembers>
+      <member refid="classmu_1_1_parser_byte_code_1af9e447fca3942ee5b145415dae78a821" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>AddAssignOp</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1aeea1f2fed369ca996bc9d2995ba9aff9" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>AddBulkFun</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1a380ae7fc970414b50753ffff75bfddf8" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>AddFun</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1afb9d010d603e0300737a50e1148049d8" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>AddIfElse</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1a28c5a8c3be833f6fbb5e8036b1504ad6" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>AddOp</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1ae255b764e760aa712473baa44cdf3aa1" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>AddStrFun</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1a8d24daef40331ddb1b69d3fe631181b0" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>AddVal</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1aca82e62831e3f62b1b0086b64622938b" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>AddVar</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1abe87dce6ba88f5ed87cfff70dfd6d035" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>AsciiDump</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1a8331da2289733a302233439e48e59bc7" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>Assign</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1a9cec7c19c5ebbc1eac31d3b93edae1e4" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>clear</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1a1af550b4b2a1b0f05903302808845bac" prot="private" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>ConstantFolding</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1a1f852b418b0bdd0296bdcf2304d3c795" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>EnableOptimizer</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1af68af4cb08ebaf3b12559574319dbb1c" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>Finalize</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1a5799e2ab40d4f0d83ee9685c232db099" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>GetBase</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1a216cdd88a1b67b19af68fedfa9bbb387" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>GetMaxStackSize</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1aace74f638f84926ebf147eee75b29b9e" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>GetSize</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1aab8184e151d8e67ee973c14a7e31b1cf" prot="private" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>m_bEnableOptimizer</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1ae820f7daf44546d5a7b4a02b5b843392" prot="private" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>m_iMaxStackSize</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1aea0ed889f6e045cb2b72cb7df029c8b5" prot="private" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>m_iStackPos</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1a0a0c70c76f920eb127b0c6b8e3006cf7" prot="private" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>m_vRPN</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1a10f20b14b190f65fbf854761308fabae" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>operator=</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1a9b03ff607c429dcad0a4d01eb155cb55" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>ParserByteCode</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1ac95bc49b5a31cfe2647f2bfc8b05b4c9" prot="public" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>ParserByteCode</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1ae0a963521f86a4674b16f8c2232c644e" prot="private" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>rpn_type</name></member>
+      <member refid="classmu_1_1_parser_byte_code_1a581c3b0c4f363f9f9b5241e925ef75c7" prot="private" virt="non-virtual"><scope>mu::ParserByteCode</scope><name>token_type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_416f11bb2db8778e92de1c3197e9cf3c" kind="dir">
+    <compoundname>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/CMakeFiles/example2.dir/samples</compoundname>
+    <innerdir refid="dir_a3eef1ea7a1c5248146e602722f4d48a">/Users/jackgabriel/Desktop/DG/muparser-2.3.4/CMakeFiles/example2.dir/samples/example2</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/CMakeFiles/example2.dir/samples/"/>
+  </compounddef>
+</doxygen>

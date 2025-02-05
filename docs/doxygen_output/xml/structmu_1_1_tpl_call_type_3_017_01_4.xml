@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structmu_1_1_tpl_call_type_3_017_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>mu::TplCallType&lt; 7 &gt;</compoundname>
+    <templateparamlist>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structmu_1_1_tpl_call_type_3_017_01_4_1a64267ddf320f5ea6319826e3393a8121" prot="public" static="no">
+        <type><ref refid="namespacemu_1aa03550a6f05b1270e1e27214a63301ee" kindref="member">fun_type7</ref></type>
+        <definition>using mu::TplCallType&lt; 7 &gt;::fun_type =  fun_type7</definition>
+        <argsstring></argsstring>
+        <name>fun_type</name>
+        <qualifiedname>mu::TplCallType&lt; 7 &gt;::fun_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="62" column="30" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structmu_1_1_tpl_call_type_3_017_01_4_1a429e8bfcf7c00c99f1a0ae2308e183ef" prot="public" static="no">
+        <type><ref refid="namespacemu_1a3b3a81234fe3014679f0f74cdec612f6" kindref="member">fun_userdata_type7</ref></type>
+        <definition>using mu::TplCallType&lt; 7 &gt;::fun_userdata_type =  fun_userdata_type7</definition>
+        <argsstring></argsstring>
+        <name>fun_userdata_type</name>
+        <qualifiedname>mu::TplCallType&lt; 7 &gt;::fun_userdata_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="62" column="37" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structmu_1_1_tpl_call_type_3_017_01_4_1aa006aa1fdf59ed5b69ffe1aa4ac4d98d" prot="public" static="no">
+        <type><ref refid="namespacemu_1a9726be97f12bc3b336884d462623ca8c" kindref="member">bulkfun_type7</ref></type>
+        <definition>using mu::TplCallType&lt; 7 &gt;::bulkfun_type =  bulkfun_type7</definition>
+        <argsstring></argsstring>
+        <name>bulkfun_type</name>
+        <qualifiedname>mu::TplCallType&lt; 7 &gt;::bulkfun_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="62" column="44" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structmu_1_1_tpl_call_type_3_017_01_4_1a5fcbe87890972bbca7ae7c66050196e5" prot="public" static="no">
+        <type><ref refid="namespacemu_1aaa629b05b06b00be6631ea77f7f30e41" kindref="member">bulkfun_userdata_type7</ref></type>
+        <definition>using mu::TplCallType&lt; 7 &gt;::bulkfun_userdata_type =  bulkfun_userdata_type7</definition>
+        <argsstring></argsstring>
+        <name>bulkfun_userdata_type</name>
+        <qualifiedname>mu::TplCallType&lt; 7 &gt;::bulkfun_userdata_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="62" column="51" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="62" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="62" bodyend="62"/>
+    <listofallmembers>
+      <member refid="structmu_1_1_tpl_call_type_3_017_01_4_1aa006aa1fdf59ed5b69ffe1aa4ac4d98d" prot="public" virt="non-virtual"><scope>mu::TplCallType&lt; 7 &gt;</scope><name>bulkfun_type</name></member>
+      <member refid="structmu_1_1_tpl_call_type_3_017_01_4_1a5fcbe87890972bbca7ae7c66050196e5" prot="public" virt="non-virtual"><scope>mu::TplCallType&lt; 7 &gt;</scope><name>bulkfun_userdata_type</name></member>
+      <member refid="structmu_1_1_tpl_call_type_3_017_01_4_1a64267ddf320f5ea6319826e3393a8121" prot="public" virt="non-virtual"><scope>mu::TplCallType&lt; 7 &gt;</scope><name>fun_type</name></member>
+      <member refid="structmu_1_1_tpl_call_type_3_017_01_4_1a429e8bfcf7c00c99f1a0ae2308e183ef" prot="public" virt="non-virtual"><scope>mu::TplCallType&lt; 7 &gt;</scope><name>fun_userdata_type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

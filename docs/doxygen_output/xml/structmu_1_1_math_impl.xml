@@ -1,0 +1,613 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structmu_1_1_math_impl" kind="struct" language="C++" prot="public">
+    <compoundname>mu::MathImpl</compoundname>
+    <includes refid="mu_parser_template_magic_8h" local="no">muParserTemplateMagic.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structmu_1_1_math_impl_1a4aafa09a2e19ef405336c1f965f5c56e" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>T</type>
+        <definition>T mu::MathImpl&lt; T &gt;::CONST_PI</definition>
+        <argsstring></argsstring>
+        <name>CONST_PI</name>
+        <qualifiedname>mu::MathImpl::CONST_PI</qualifiedname>
+        <initializer>= (T)3.141592653589793238462643</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="191" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmu_1_1_math_impl_1a22ab25bfc87332ce6a20ec769875d3c3" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>T</type>
+        <definition>T mu::MathImpl&lt; T &gt;::CONST_E</definition>
+        <argsstring></argsstring>
+        <name>CONST_E</name>
+        <qualifiedname>mu::MathImpl::CONST_E</qualifiedname>
+        <initializer>= (T)2.718281828459045235360287</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="194" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structmu_1_1_math_impl_1a99e3fc1b9619b53c3c544d430c5eaf57" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Sin</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Sin</name>
+        <qualifiedname>mu::MathImpl::Sin</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="116" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="116" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1a8bb2e5d6cc53bf29dff76539db2689ec" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Cos</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Cos</name>
+        <qualifiedname>mu::MathImpl::Cos</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="117" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="117" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1a1178975495a4ea5ce610f7f2db9d2c15" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Tan</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Tan</name>
+        <qualifiedname>mu::MathImpl::Tan</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="118" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="118" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1a661805db02d0613b6b9a41c9fe4e864f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::ASin</definition>
+        <argsstring>(T v)</argsstring>
+        <name>ASin</name>
+        <qualifiedname>mu::MathImpl::ASin</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="119" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="119" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1abc33fc3bf395acbf8dad36cd96b2e55a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::ACos</definition>
+        <argsstring>(T v)</argsstring>
+        <name>ACos</name>
+        <qualifiedname>mu::MathImpl::ACos</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="120" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="120" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1a41b701834e2e4fbee78739e0d27e786d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::ATan</definition>
+        <argsstring>(T v)</argsstring>
+        <name>ATan</name>
+        <qualifiedname>mu::MathImpl::ATan</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="121" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="121" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1aebc8ca92f9ecff0504ae2feb81aa7c52" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::ATan2</definition>
+        <argsstring>(T v1, T v2)</argsstring>
+        <name>ATan2</name>
+        <qualifiedname>mu::MathImpl::ATan2</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="122" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="122" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1aae5ae2f9fb6c7c5eec87f06cb7d8e77f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Sinh</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Sinh</name>
+        <qualifiedname>mu::MathImpl::Sinh</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="123" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="123" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1a8e7d4d97eb32cd68247a8edbe8859873" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Cosh</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Cosh</name>
+        <qualifiedname>mu::MathImpl::Cosh</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="124" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="124" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1aaad1a25bf8f1b6c4aac5685b04e9afb3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Tanh</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Tanh</name>
+        <qualifiedname>mu::MathImpl::Tanh</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="125" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="125" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1a0bc5346ae5066e6cddca5deee1033595" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::ASinh</definition>
+        <argsstring>(T v)</argsstring>
+        <name>ASinh</name>
+        <qualifiedname>mu::MathImpl::ASinh</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="126" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="126" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1a3e8b1907f6126ab31f0d0b72b84fc747" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::ACosh</definition>
+        <argsstring>(T v)</argsstring>
+        <name>ACosh</name>
+        <qualifiedname>mu::MathImpl::ACosh</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="127" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="127" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1a3c07bdfdcb31027b4bee750504be94b7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::ATanh</definition>
+        <argsstring>(T v)</argsstring>
+        <name>ATanh</name>
+        <qualifiedname>mu::MathImpl::ATanh</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="128" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="128" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1aa5017afe7626eed91a04dd2ef8c352dd" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Log</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Log</name>
+        <qualifiedname>mu::MathImpl::Log</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="129" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="129" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1a51fae1af1e5ddcb9662fa1679bd200a2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Log2</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Log2</name>
+        <qualifiedname>mu::MathImpl::Log2</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="130" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="130" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1aa90a67a91bde6f61905914db7c0c5f5b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Log10</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Log10</name>
+        <qualifiedname>mu::MathImpl::Log10</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="131" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="131" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1a0ea44e0086e10c103c8ea29444f79ba7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Exp</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Exp</name>
+        <qualifiedname>mu::MathImpl::Exp</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="132" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="132" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1a9c353404e8e47a546307397eca4555ab" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Abs</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Abs</name>
+        <qualifiedname>mu::MathImpl::Abs</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="133" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="133" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1aa352cccdfd42b462928dda69d1b0bd83" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Sqrt</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Sqrt</name>
+        <qualifiedname>mu::MathImpl::Sqrt</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="134" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="134" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1a0fe3c35ade419db4cc7a3dc02b7d2a89" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Rint</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Rint</name>
+        <qualifiedname>mu::MathImpl::Rint</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="135" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="135" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1a11aeb28ee6b9bd7c617da3fd4cdd25e7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Sign</definition>
+        <argsstring>(T v)</argsstring>
+        <name>Sign</name>
+        <qualifiedname>mu::MathImpl::Sign</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="136" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="136" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1a51336cadb47f16536a578eb11d2b015c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Pow</definition>
+        <argsstring>(T v1, T v2)</argsstring>
+        <name>Pow</name>
+        <qualifiedname>mu::MathImpl::Pow</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="137" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="137" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1a6afb4450e1dc9ee696dca6e8707bf3ef" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::UnaryMinus</definition>
+        <argsstring>(T v)</argsstring>
+        <name>UnaryMinus</name>
+        <qualifiedname>mu::MathImpl::UnaryMinus</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="139" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="139" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1acccc849fb3d8b3c76499c17cd04ea0f5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::UnaryPlus</definition>
+        <argsstring>(T v)</argsstring>
+        <name>UnaryPlus</name>
+        <qualifiedname>mu::MathImpl::UnaryPlus</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="140" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="140" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1a8f8a8d88fdd328349184b7ff4efcbfcd" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Sum</definition>
+        <argsstring>(const T *a_afArg, int a_iArgc)</argsstring>
+        <name>Sum</name>
+        <qualifiedname>mu::MathImpl::Sum</qualifiedname>
+        <param>
+          <type>const T *</type>
+          <declname>a_afArg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iArgc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="142" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="142" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1abfb8b87fc675b7f7ac50870f8bfa2fe9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Avg</definition>
+        <argsstring>(const T *a_afArg, int a_iArgc)</argsstring>
+        <name>Avg</name>
+        <qualifiedname>mu::MathImpl::Avg</qualifiedname>
+        <param>
+          <type>const T *</type>
+          <declname>a_afArg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iArgc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="152" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="152" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1afbaefca15a8ebb0e714aa09df04e9542" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Min</definition>
+        <argsstring>(const T *a_afArg, int a_iArgc)</argsstring>
+        <name>Min</name>
+        <qualifiedname>mu::MathImpl::Min</qualifiedname>
+        <param>
+          <type>const T *</type>
+          <declname>a_afArg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iArgc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="162" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="162" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1_math_impl_1aa423dda58e795dab7c0b03e28364ce08" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T mu::MathImpl&lt; T &gt;::Max</definition>
+        <argsstring>(const T *a_afArg, int a_iArgc)</argsstring>
+        <name>Max</name>
+        <qualifiedname>mu::MathImpl::Max</qualifiedname>
+        <param>
+          <type>const T *</type>
+          <declname>a_afArg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iArgc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="174" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="174" bodyend="183"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A template class for providing wrappers for essential math functions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This template is spezialized for several types in order to provide a unified interface for parser internal math function calls regardless of the data type. </para>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" line="114" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTemplateMagic.h" bodystart="115" bodyend="195"/>
+    <listofallmembers>
+      <member refid="structmu_1_1_math_impl_1a9c353404e8e47a546307397eca4555ab" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Abs</name></member>
+      <member refid="structmu_1_1_math_impl_1abc33fc3bf395acbf8dad36cd96b2e55a" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>ACos</name></member>
+      <member refid="structmu_1_1_math_impl_1a3e8b1907f6126ab31f0d0b72b84fc747" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>ACosh</name></member>
+      <member refid="structmu_1_1_math_impl_1a661805db02d0613b6b9a41c9fe4e864f" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>ASin</name></member>
+      <member refid="structmu_1_1_math_impl_1a0bc5346ae5066e6cddca5deee1033595" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>ASinh</name></member>
+      <member refid="structmu_1_1_math_impl_1a41b701834e2e4fbee78739e0d27e786d" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>ATan</name></member>
+      <member refid="structmu_1_1_math_impl_1aebc8ca92f9ecff0504ae2feb81aa7c52" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>ATan2</name></member>
+      <member refid="structmu_1_1_math_impl_1a3c07bdfdcb31027b4bee750504be94b7" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>ATanh</name></member>
+      <member refid="structmu_1_1_math_impl_1abfb8b87fc675b7f7ac50870f8bfa2fe9" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Avg</name></member>
+      <member refid="structmu_1_1_math_impl_1a22ab25bfc87332ce6a20ec769875d3c3" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>CONST_E</name></member>
+      <member refid="structmu_1_1_math_impl_1a4aafa09a2e19ef405336c1f965f5c56e" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>CONST_PI</name></member>
+      <member refid="structmu_1_1_math_impl_1a8bb2e5d6cc53bf29dff76539db2689ec" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Cos</name></member>
+      <member refid="structmu_1_1_math_impl_1a8e7d4d97eb32cd68247a8edbe8859873" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Cosh</name></member>
+      <member refid="structmu_1_1_math_impl_1a0ea44e0086e10c103c8ea29444f79ba7" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Exp</name></member>
+      <member refid="structmu_1_1_math_impl_1aa5017afe7626eed91a04dd2ef8c352dd" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Log</name></member>
+      <member refid="structmu_1_1_math_impl_1aa90a67a91bde6f61905914db7c0c5f5b" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Log10</name></member>
+      <member refid="structmu_1_1_math_impl_1a51fae1af1e5ddcb9662fa1679bd200a2" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Log2</name></member>
+      <member refid="structmu_1_1_math_impl_1aa423dda58e795dab7c0b03e28364ce08" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Max</name></member>
+      <member refid="structmu_1_1_math_impl_1afbaefca15a8ebb0e714aa09df04e9542" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Min</name></member>
+      <member refid="structmu_1_1_math_impl_1a51336cadb47f16536a578eb11d2b015c" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Pow</name></member>
+      <member refid="structmu_1_1_math_impl_1a0fe3c35ade419db4cc7a3dc02b7d2a89" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Rint</name></member>
+      <member refid="structmu_1_1_math_impl_1a11aeb28ee6b9bd7c617da3fd4cdd25e7" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Sign</name></member>
+      <member refid="structmu_1_1_math_impl_1a99e3fc1b9619b53c3c544d430c5eaf57" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Sin</name></member>
+      <member refid="structmu_1_1_math_impl_1aae5ae2f9fb6c7c5eec87f06cb7d8e77f" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Sinh</name></member>
+      <member refid="structmu_1_1_math_impl_1aa352cccdfd42b462928dda69d1b0bd83" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Sqrt</name></member>
+      <member refid="structmu_1_1_math_impl_1a8f8a8d88fdd328349184b7ff4efcbfcd" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Sum</name></member>
+      <member refid="structmu_1_1_math_impl_1a1178975495a4ea5ce610f7f2db9d2c15" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Tan</name></member>
+      <member refid="structmu_1_1_math_impl_1aaad1a25bf8f1b6c4aac5685b04e9afb3" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>Tanh</name></member>
+      <member refid="structmu_1_1_math_impl_1a6afb4450e1dc9ee696dca6e8707bf3ef" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>UnaryMinus</name></member>
+      <member refid="structmu_1_1_math_impl_1acccc849fb3d8b3c76499c17cd04ea0f5" prot="public" virt="non-virtual"><scope>mu::MathImpl</scope><name>UnaryPlus</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

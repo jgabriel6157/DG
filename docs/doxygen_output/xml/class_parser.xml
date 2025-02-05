@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_parser" kind="class" language="C++" prot="public">
+    <compoundname>Parser</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_parser_1a44c55e651a06daf102e2525da61e2a4c" prot="private" static="no" mutable="no">
+        <type><ref refid="classmu_1_1_parser" kindref="compound">mu::Parser</ref></type>
+        <definition>mu::Parser Parser::parser</definition>
+        <argsstring></argsstring>
+        <name>parser</name>
+        <qualifiedname>Parser::parser</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Parser.hxx" line="12" column="16" bodyfile="/Users/jackgabriel/Desktop/DG/Parser.hxx" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_parser_1a8c571904942a159f18f7c2db415d3c11" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; double &gt;</type>
+        <definition>std::shared_ptr&lt;double&gt; Parser::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>Parser::x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Parser.hxx" line="13" column="21" bodyfile="/Users/jackgabriel/Desktop/DG/Parser.hxx" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_parser_1a899cb4b7873fa555ce695d222e7338f4" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; double &gt;</type>
+        <definition>std::shared_ptr&lt;double&gt; Parser::vx</definition>
+        <argsstring></argsstring>
+        <name>vx</name>
+        <qualifiedname>Parser::vx</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Parser.hxx" line="14" column="21" bodyfile="/Users/jackgabriel/Desktop/DG/Parser.hxx" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_parser_1abe5dbfa1a5b3df4595f7d40424ca45fc" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; double &gt;</type>
+        <definition>std::shared_ptr&lt;double&gt; Parser::vy</definition>
+        <argsstring></argsstring>
+        <name>vy</name>
+        <qualifiedname>Parser::vy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Parser.hxx" line="15" column="21" bodyfile="/Users/jackgabriel/Desktop/DG/Parser.hxx" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_parser_1a87cf5fd10e9c543158e97ab8b6d9c9b0" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; double &gt;</type>
+        <definition>std::shared_ptr&lt;double&gt; Parser::vz</definition>
+        <argsstring></argsstring>
+        <name>vz</name>
+        <qualifiedname>Parser::vz</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Parser.hxx" line="16" column="21" bodyfile="/Users/jackgabriel/Desktop/DG/Parser.hxx" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_parser_1a12234f6cd36b61af4b50c94a179422c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Parser::Parser</definition>
+        <argsstring>()</argsstring>
+        <name>Parser</name>
+        <qualifiedname>Parser::Parser</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Parser.hxx" line="20" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/Parser.cxx" bodystart="4" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_parser_1ae3b8645ba65f4c95fb173484389a6ddb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Parser::setExpression</definition>
+        <argsstring>(const std::string &amp;expression)</argsstring>
+        <name>setExpression</name>
+        <qualifiedname>Parser::setExpression</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>expression</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Parser.hxx" line="23" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/Parser.cxx" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_parser_1a49a314cd09fee7d8e17884eebf2f5271" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::function&lt; double(double, double, double, double)&gt;</type>
+        <definition>std::function&lt; double(double, double, double, double)&gt; Parser::getFunction</definition>
+        <argsstring>()</argsstring>
+        <name>getFunction</name>
+        <qualifiedname>Parser::getFunction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Parser.hxx" line="26" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/Parser.cxx" bodystart="19" bodyend="29"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/Parser.hxx" line="9" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/Parser.hxx" bodystart="10" bodyend="27"/>
+    <listofallmembers>
+      <member refid="class_parser_1a49a314cd09fee7d8e17884eebf2f5271" prot="public" virt="non-virtual"><scope>Parser</scope><name>getFunction</name></member>
+      <member refid="class_parser_1a12234f6cd36b61af4b50c94a179422c1" prot="public" virt="non-virtual"><scope>Parser</scope><name>Parser</name></member>
+      <member refid="class_parser_1a44c55e651a06daf102e2525da61e2a4c" prot="private" virt="non-virtual"><scope>Parser</scope><name>parser</name></member>
+      <member refid="class_parser_1ae3b8645ba65f4c95fb173484389a6ddb" prot="public" virt="non-virtual"><scope>Parser</scope><name>setExpression</name></member>
+      <member refid="class_parser_1a899cb4b7873fa555ce695d222e7338f4" prot="private" virt="non-virtual"><scope>Parser</scope><name>vx</name></member>
+      <member refid="class_parser_1abe5dbfa1a5b3df4595f7d40424ca45fc" prot="private" virt="non-virtual"><scope>Parser</scope><name>vy</name></member>
+      <member refid="class_parser_1a87cf5fd10e9c543158e97ab8b6d9c9b0" prot="private" virt="non-virtual"><scope>Parser</scope><name>vz</name></member>
+      <member refid="class_parser_1a8c571904942a159f18f7c2db415d3c11" prot="private" virt="non-virtual"><scope>Parser</scope><name>x</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

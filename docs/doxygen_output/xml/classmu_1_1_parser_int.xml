@@ -1,0 +1,923 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classmu_1_1_parser_int" kind="class" language="C++" prot="public">
+    <compoundname>mu::ParserInt</compoundname>
+    <basecompoundref refid="classmu_1_1_parser_base" prot="public" virt="non-virtual">mu::ParserBase</basecompoundref>
+    <includes refid="mu_parser_int_8h" local="no">muParserInt.h</includes>
+    <innerclass refid="classmu_1_1_parser_int_1_1change__dec__sep" prot="private">mu::ParserInt::change_dec_sep</innerclass>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classmu_1_1_parser_int_1afac0de5f130eb8760ae44a42a7856a20" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int mu::ParserInt::Round</definition>
+        <argsstring>(value_type v)</argsstring>
+        <name>Round</name>
+        <qualifiedname>mu::ParserInt::Round</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="52" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" bodystart="52" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a0881f500043d05b0def70aad10e721b2" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Abs</definition>
+        <argsstring>(value_type)</argsstring>
+        <name>Abs</name>
+        <qualifiedname>mu::ParserInt::Abs</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="54" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1ac6945989ec0902fd6f483a16b2eb5f8b" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Sign</definition>
+        <argsstring>(value_type)</argsstring>
+        <name>Sign</name>
+        <qualifiedname>mu::ParserInt::Sign</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="55" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="45" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1ab6857e05181885f685a2af57cc5d1607" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Ite</definition>
+        <argsstring>(value_type, value_type, value_type)</argsstring>
+        <name>Ite</name>
+        <qualifiedname>mu::ParserInt::Ite</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <defname>v1</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <defname>v2</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <defname>v3</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="56" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a4ca14c9ef660605d0454d7ff3f0020d9" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::UnaryMinus</definition>
+        <argsstring>(value_type)</argsstring>
+        <name>UnaryMinus</name>
+        <qualifiedname>mu::ParserInt::UnaryMinus</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="58" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1ae3190c8a442e3c4f1064bfb2440b792b" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Sum</definition>
+        <argsstring>(const value_type *a_afArg, int a_iArgc)</argsstring>
+        <name>Sum</name>
+        <qualifiedname>mu::ParserInt::Sum</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *</type>
+          <declname>a_afArg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iArgc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="60" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="78" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1ac2fa9e277a69fee8aa45837060aaf910" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Min</definition>
+        <argsstring>(const value_type *a_afArg, int a_iArgc)</argsstring>
+        <name>Min</name>
+        <qualifiedname>mu::ParserInt::Min</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *</type>
+          <declname>a_afArg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iArgc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="61" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="91" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a6f204a101a738d25c35e9416a06ef353" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Max</definition>
+        <argsstring>(const value_type *a_afArg, int a_iArgc)</argsstring>
+        <name>Max</name>
+        <qualifiedname>mu::ParserInt::Max</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *</type>
+          <declname>a_afArg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iArgc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="62" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="104" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a61f712bd374155cb02707336b0886d5b" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Add</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>Add</name>
+        <qualifiedname>mu::ParserInt::Add</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="64" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1aad9b03c1cd08f22c6fbac9a1544b7a92" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Sub</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>Sub</name>
+        <qualifiedname>mu::ParserInt::Sub</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="65" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a477a0a3a6f3ab6c493b53ee934e94702" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Mul</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>Mul</name>
+        <qualifiedname>mu::ParserInt::Mul</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="66" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="49" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a422b7a80636fe8d0567e17967cf35247" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Div</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>Div</name>
+        <qualifiedname>mu::ParserInt::Div</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="67" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="50" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a6df1f60728198358b49809724f0c53f1" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Mod</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>Mod</name>
+        <qualifiedname>mu::ParserInt::Mod</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="68" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="51" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1abcedf19436b67bd915dc9487533816d5" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Pow</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>Pow</name>
+        <qualifiedname>mu::ParserInt::Pow</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="69" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a4c5b8072dca1913b90d2ab07d7657eaf" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Shr</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>Shr</name>
+        <qualifiedname>mu::ParserInt::Shr</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="70" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="52" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a33e3f59945fe2c32316708ed363686af" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Shl</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>Shl</name>
+        <qualifiedname>mu::ParserInt::Shl</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="71" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1af1aee42a2ac2ae9cb40f9fbf0eac8000" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::LogAnd</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>LogAnd</name>
+        <qualifiedname>mu::ParserInt::LogAnd</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="72" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="54" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1ab06accd3f6f2d926ec4ba57b0228277b" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::LogOr</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>LogOr</name>
+        <qualifiedname>mu::ParserInt::LogOr</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="73" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="55" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a5ab6460aeb22577dab675316132e2461" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::And</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>And</name>
+        <qualifiedname>mu::ParserInt::And</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="74" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="56" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a4cc41682ebacd9aa7bc9f7a13421aece" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Or</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>Or</name>
+        <qualifiedname>mu::ParserInt::Or</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="75" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a0eb3c35069e3b4174c0e3da61f50dd5f" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>static value_type mu::ParserInt::Xor</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>Xor</name>
+        <qualifiedname>mu::ParserInt::Xor</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="76" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1aeff2fa3955463e09cecee113a8555702" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Less</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>Less</name>
+        <qualifiedname>mu::ParserInt::Less</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="77" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a4d7aaa6f81b3f07680370ef1a6e9be78" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Greater</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>Greater</name>
+        <qualifiedname>mu::ParserInt::Greater</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="78" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="59" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a231eb50441aa353e4a044b8032b6175a" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::LessEq</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>LessEq</name>
+        <qualifiedname>mu::ParserInt::LessEq</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="79" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="60" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a2b1aa2159069a034bc38cd3c06fc943a" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::GreaterEq</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>GreaterEq</name>
+        <qualifiedname>mu::ParserInt::GreaterEq</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="80" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="61" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1ac547a63e50b9e1923c92ae5e5ff44208" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Equal</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>Equal</name>
+        <qualifiedname>mu::ParserInt::Equal</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="81" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a4c35bb2bfc03daf74992d186a873e34e" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::NotEqual</definition>
+        <argsstring>(value_type v1, value_type v2)</argsstring>
+        <name>NotEqual</name>
+        <qualifiedname>mu::ParserInt::NotEqual</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="82" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="63" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a40b96f177fe15ff3bf64f2ec1d967c4b" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserInt::Not</definition>
+        <argsstring>(value_type v1)</argsstring>
+        <name>Not</name>
+        <qualifiedname>mu::ParserInt::Not</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="83" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="64" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a034a0966c0dfbdc5c7a7ea5da4a5c635" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::ParserInt::IsHexVal</definition>
+        <argsstring>(const char_type *a_szExpr, int *a_iPos, value_type *a_iVal)</argsstring>
+        <name>IsHexVal</name>
+        <qualifiedname>mu::ParserInt::IsHexVal</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+          <declname>a_szExpr</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>a_iPos</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *</type>
+          <declname>a_iVal</declname>
+          <defname>a_fVal</defname>
+        </param>
+        <briefdescription>
+<para>Check a given position in the expression for the presence of a hex value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_szExpr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the expression string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>[in/out]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a_iPos Pointer to an integer value holding the current parsing position in the expression. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">a_fVal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the position where the detected value shall be stored.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Hey values must be prefixed with &quot;0x&quot; in order to be detected properly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="85" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="154" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1af3ff3f0aded8ce548c3f509a147a1f1c" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::ParserInt::IsBinVal</definition>
+        <argsstring>(const char_type *a_szExpr, int *a_iPos, value_type *a_iVal)</argsstring>
+        <name>IsBinVal</name>
+        <qualifiedname>mu::ParserInt::IsBinVal</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+          <declname>a_szExpr</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>a_iPos</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *</type>
+          <declname>a_iVal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="86" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="176" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1af568520d01245642671b5521ff9ab7a4" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::ParserInt::IsVal</definition>
+        <argsstring>(const char_type *a_szExpr, int *a_iPos, value_type *a_iVal)</argsstring>
+        <name>IsVal</name>
+        <qualifiedname>mu::ParserInt::IsVal</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+          <declname>a_szExpr</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>a_iPos</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *</type>
+          <declname>a_iVal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="87" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="117" bodyend="142"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a2e2776f16a30d3f1aa698437f7c4cb5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserInt::ParserInt</definition>
+        <argsstring>()</argsstring>
+        <name>ParserInt</name>
+        <qualifiedname>mu::ParserInt::ParserInt</qualifiedname>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Call <ref refid="classmu_1_1_parser_base" kindref="compound">ParserBase</ref> class constructor and trigger Function, Operator and Constant initialization. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="132" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="205" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1ac4c088a1ca4e3489818f3b4bafde7e93" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void mu::ParserInt::InitFun</definition>
+        <argsstring>() override</argsstring>
+        <name>InitFun</name>
+        <qualifiedname>mu::ParserInt::InitFun</qualifiedname>
+        <reimplements refid="classmu_1_1_parser_base_1a1f94305e7b7e9abff6d41242dcf188ed">InitFun</reimplements>
+        <briefdescription>
+<para>Initialize the default functions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="134" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="232" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1ac2f14abb8716396d9a26e563b2e1ab49" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void mu::ParserInt::InitOprt</definition>
+        <argsstring>() override</argsstring>
+        <name>InitOprt</name>
+        <qualifiedname>mu::ParserInt::InitOprt</qualifiedname>
+        <reimplements refid="classmu_1_1_parser_base_1a4df16813c9002ff08c96929ba8f0d32b">InitOprt</reimplements>
+        <briefdescription>
+<para>Initialize operators. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="135" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="244" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a3c729a85c0473a071aef3c7a6ef9b0d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void mu::ParserInt::InitConst</definition>
+        <argsstring>() override</argsstring>
+        <name>InitConst</name>
+        <qualifiedname>mu::ParserInt::InitConst</qualifiedname>
+        <reimplements refid="classmu_1_1_parser_base_1aad904fb3df8f28659f36d7ce7db4a28c">InitConst</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="136" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="218" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_int_1a5c5844b50ae7bb0f2c775dd2d3b20b49" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void mu::ParserInt::InitCharSets</definition>
+        <argsstring>() override</argsstring>
+        <name>InitCharSets</name>
+        <qualifiedname>mu::ParserInt::InitCharSets</qualifiedname>
+        <reimplements refid="classmu_1_1_parser_base_1a3f5c53ef3cba6ab939261677dc2d9709">InitCharSets</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="137" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp" bodystart="223" bodyend="228"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Mathematical expressions parser. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This version of the parser handles only integer numbers. It disables the built in operators thus it is slower than muParser. Integer values are stored in the double <ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> and converted if needed. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>mu::ParserBase</label>
+        <link refid="classmu_1_1_parser_base"/>
+      </node>
+      <node id="1">
+        <label>mu::ParserInt</label>
+        <link refid="classmu_1_1_parser_int"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>mu::ParserBase</label>
+        <link refid="classmu_1_1_parser_base"/>
+      </node>
+      <node id="1">
+        <label>mu::ParserInt</label>
+        <link refid="classmu_1_1_parser_int"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" line="49" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h" bodystart="50" bodyend="138"/>
+    <listofallmembers>
+      <member refid="classmu_1_1_parser_int_1a0881f500043d05b0def70aad10e721b2" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Abs</name></member>
+      <member refid="classmu_1_1_parser_int_1a61f712bd374155cb02707336b0886d5b" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Add</name></member>
+      <member refid="classmu_1_1_parser_base_1a0b49dbe051415f9d2a9d5564c38609e3" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>AddValIdent</name></member>
+      <member refid="classmu_1_1_parser_int_1a5ab6460aeb22577dab675316132e2461" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>And</name></member>
+      <member refid="classmu_1_1_parser_base_1a0cb4d456e6a82da96786ec73044470ea" prot="protected" virt="non-virtual"><scope>mu::ParserInt</scope><name>c_DefaultOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1adbc445632a056820ff722ca18c1331e9" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>ClearConst</name></member>
+      <member refid="classmu_1_1_parser_base_1abc296c44f8a9522b2cf12a9ad36071b2" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>ClearFun</name></member>
+      <member refid="classmu_1_1_parser_base_1a7485eccf3281c879dad059966e3cbe22" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>ClearInfixOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1aa5fd05a7bb2b8bc9f9745c5377c0ebf3" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>ClearOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1ab8a8356532f0047d8a33a46bc77f4bc5" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>ClearPostfixOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1add23e405d36de71de6b386bc0eb4b57c" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>ClearVar</name></member>
+      <member refid="classmu_1_1_parser_base_1a8cbb0a5e193daeea647d80dc89f34c65" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>DefineConst</name></member>
+      <member refid="classmu_1_1_parser_base_1a19bff73a29e12bb1af90793ceb258059" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>DefineFun</name></member>
+      <member refid="classmu_1_1_parser_base_1a10665a30f3768a970401580f58f1aa70" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>DefineFunUserData</name></member>
+      <member refid="classmu_1_1_parser_base_1a5e26f06efc7564a85a5f5ab682ba5a23" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>DefineInfixOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1ac76d0ceb4ee58babc4f1d0a9ca1e4240" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>DefineInfixOprtChars</name></member>
+      <member refid="classmu_1_1_parser_base_1adf259477bbaa85e8dd7cb69ef4aa0a7a" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>DefineNameChars</name></member>
+      <member refid="classmu_1_1_parser_base_1a70483983b78f13d37e4f28962d86af34" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>DefineOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1aafd21c418397d5412a75e5b2c1d6db58" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>DefineOprtChars</name></member>
+      <member refid="classmu_1_1_parser_base_1ae9fb4d2348213a0e42dc07a4589ac654" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>DefinePostfixOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1a64bc1de3b6db42140fe6f4860c30e40a" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>DefineStrConst</name></member>
+      <member refid="classmu_1_1_parser_base_1a8350970819c77352af8d79ce3110393e" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>DefineVar</name></member>
+      <member refid="classmu_1_1_parser_int_1a422b7a80636fe8d0567e17967cf35247" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Div</name></member>
+      <member refid="classmu_1_1_parser_base_1adf5cb2ffd21f51fac2633a4976fe1e2d" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>EnableBuiltInOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1ae639f85175c67f67d461514f0c47fb73" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>EnableDebugDump</name></member>
+      <member refid="classmu_1_1_parser_base_1a43221e10afd17efe8d32898707763cb4" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>EnableOptimizer</name></member>
+      <member refid="classmu_1_1_parser_int_1ac547a63e50b9e1923c92ae5e5ff44208" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Equal</name></member>
+      <member refid="classmu_1_1_parser_base_1a487e5c7e13afe212746cc9b475aa0708" prot="protected" virt="non-virtual"><scope>mu::ParserInt</scope><name>Error</name></member>
+      <member refid="classmu_1_1_parser_base_1a7160b70c1a04fa79f216e5dcb8d1b9d3" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>Eval</name></member>
+      <member refid="classmu_1_1_parser_base_1a8f0465bf2dfbadeedb33fc93b2e89771" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>Eval</name></member>
+      <member refid="classmu_1_1_parser_base_1a70748ac6fc87f2821b356e79ec4a81eb" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>Eval</name></member>
+      <member refid="classmu_1_1_parser_base_1ab385f37be00cee7d8a68c3c41f6a5b64" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>exception_type</name></member>
+      <member refid="classmu_1_1_parser_base_1abe673a44e0ea620656422657cb3f6518" prot="protected" virt="non-virtual"><scope>mu::ParserInt</scope><name>g_DbgDumpCmdCode</name></member>
+      <member refid="classmu_1_1_parser_base_1a35349445f839ab8bc2cfb54488c45267" prot="protected" virt="non-virtual"><scope>mu::ParserInt</scope><name>g_DbgDumpStack</name></member>
+      <member refid="classmu_1_1_parser_base_1aee3c53805b70fb1a9716c1b89a055a10" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>GetArgSep</name></member>
+      <member refid="classmu_1_1_parser_base_1a3638455b36aaa084c81254513beadd41" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>GetByteCode</name></member>
+      <member refid="classmu_1_1_parser_base_1a534b83d199b0027de41082fea1b9f474" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>GetConst</name></member>
+      <member refid="classmu_1_1_parser_base_1a06f1faba7440a1eb7f5d72501344edc0" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>GetExpr</name></member>
+      <member refid="classmu_1_1_parser_base_1a7440a07214ee9e8533e21cc09003f0d2" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>GetFunDef</name></member>
+      <member refid="classmu_1_1_parser_base_1a273fd9b99d7eb8bceb2d2410282096f4" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>GetNumResults</name></member>
+      <member refid="classmu_1_1_parser_base_1a3bb91e07f11360e065359049663938bb" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>GetOprtDef</name></member>
+      <member refid="classmu_1_1_parser_base_1afca7a5016d8456985fbfbde8a6af30de" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>GetUsedVar</name></member>
+      <member refid="classmu_1_1_parser_base_1a239fad70b76b3f71843a10d35e831d76" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>GetVar</name></member>
+      <member refid="classmu_1_1_parser_base_1a3da71c2e01f3902286e796a12cfc7073" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>GetVersion</name></member>
+      <member refid="classmu_1_1_parser_int_1a4d7aaa6f81b3f07680370ef1a6e9be78" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Greater</name></member>
+      <member refid="classmu_1_1_parser_int_1a2b1aa2159069a034bc38cd3c06fc943a" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>GreaterEq</name></member>
+      <member refid="classmu_1_1_parser_base_1a37b96bc417ecaa2d8e06ebf7c44d6c22" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>HasBuiltInOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1a2741c5cc27b9de19af04ab5627abed5f" prot="protected" virt="non-virtual"><scope>mu::ParserInt</scope><name>Init</name></member>
+      <member refid="classmu_1_1_parser_int_1a5c5844b50ae7bb0f2c775dd2d3b20b49" prot="public" virt="virtual"><scope>mu::ParserInt</scope><name>InitCharSets</name></member>
+      <member refid="classmu_1_1_parser_int_1a3c729a85c0473a071aef3c7a6ef9b0d5" prot="public" virt="virtual"><scope>mu::ParserInt</scope><name>InitConst</name></member>
+      <member refid="classmu_1_1_parser_int_1ac4c088a1ca4e3489818f3b4bafde7e93" prot="public" virt="virtual"><scope>mu::ParserInt</scope><name>InitFun</name></member>
+      <member refid="classmu_1_1_parser_int_1ac2f14abb8716396d9a26e563b2e1ab49" prot="public" virt="virtual"><scope>mu::ParserInt</scope><name>InitOprt</name></member>
+      <member refid="classmu_1_1_parser_int_1af3ff3f0aded8ce548c3f509a147a1f1c" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>IsBinVal</name></member>
+      <member refid="classmu_1_1_parser_int_1a034a0966c0dfbdc5c7a7ea5da4a5c635" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>IsHexVal</name></member>
+      <member refid="classmu_1_1_parser_int_1af568520d01245642671b5521ff9ab7a4" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>IsVal</name></member>
+      <member refid="classmu_1_1_parser_int_1ab6857e05181885f685a2af57cc5d1607" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Ite</name></member>
+      <member refid="classmu_1_1_parser_int_1aeff2fa3955463e09cecee113a8555702" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Less</name></member>
+      <member refid="classmu_1_1_parser_int_1a231eb50441aa353e4a044b8032b6175a" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>LessEq</name></member>
+      <member refid="classmu_1_1_parser_int_1af1aee42a2ac2ae9cb40f9fbf0eac8000" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>LogAnd</name></member>
+      <member refid="classmu_1_1_parser_int_1ab06accd3f6f2d926ec4ba57b0228277b" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>LogOr</name></member>
+      <member refid="classmu_1_1_parser_int_1a6f204a101a738d25c35e9416a06ef353" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Max</name></member>
+      <member refid="classmu_1_1_parser_int_1ac2fa9e277a69fee8aa45837060aaf910" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Min</name></member>
+      <member refid="classmu_1_1_parser_int_1a6df1f60728198358b49809724f0c53f1" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Mod</name></member>
+      <member refid="classmu_1_1_parser_int_1a477a0a3a6f3ab6c493b53ee934e94702" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Mul</name></member>
+      <member refid="classmu_1_1_parser_int_1a40b96f177fe15ff3bf64f2ec1d967c4b" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Not</name></member>
+      <member refid="classmu_1_1_parser_int_1a4c35bb2bfc03daf74992d186a873e34e" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>NotEqual</name></member>
+      <member refid="classmu_1_1_parser_base_1aa8ec96622bf6777c1f20aecb16a84528" prot="protected" virt="virtual"><scope>mu::ParserInt</scope><name>OnDetectVar</name></member>
+      <member refid="classmu_1_1_parser_base_1aca7cf1ea7f82dfb3066ada8427295a4c" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>operator=</name></member>
+      <member refid="classmu_1_1_parser_int_1a4cc41682ebacd9aa7bc9f7a13421aece" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Or</name></member>
+      <member refid="classmu_1_1_parser_base_1a41d13be909945b892777ee6773fa1f69" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>ParserBase</name></member>
+      <member refid="classmu_1_1_parser_base_1a88d9367e1a71bc07fe587633060223a0" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>ParserBase</name></member>
+      <member refid="classmu_1_1_parser_int_1a2e2776f16a30d3f1aa698437f7c4cb5f" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>ParserInt</name></member>
+      <member refid="classmu_1_1_parser_int_1abcedf19436b67bd915dc9487533816d5" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Pow</name></member>
+      <member refid="classmu_1_1_parser_base_1a8e5a54620200dfbd42ec084c29249d94" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>RemoveVar</name></member>
+      <member refid="classmu_1_1_parser_base_1a389a2502aa52212975f4a959fad59a47" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>ResetLocale</name></member>
+      <member refid="classmu_1_1_parser_int_1afac0de5f130eb8760ae44a42a7856a20" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Round</name></member>
+      <member refid="classmu_1_1_parser_base_1ad594b199c33edf6962ba0e21010bc86e" prot="protected" virt="non-virtual"><scope>mu::ParserInt</scope><name>s_locale</name></member>
+      <member refid="classmu_1_1_parser_base_1ade4090449c9fd55759fffb933e0f92e3" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>SetArgSep</name></member>
+      <member refid="classmu_1_1_parser_base_1a1699841ae7a78b23f521f937f09fae21" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>SetDecSep</name></member>
+      <member refid="classmu_1_1_parser_base_1aed9d02dd04f8e163102f9a8e082c4b26" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>SetExpr</name></member>
+      <member refid="classmu_1_1_parser_base_1ab539db832b9af0e5940a0481201077e9" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>SetThousandsSep</name></member>
+      <member refid="classmu_1_1_parser_base_1a845e32d1cd6a8fdeb5c3510489f288d8" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>SetVarFactory</name></member>
+      <member refid="classmu_1_1_parser_int_1a33e3f59945fe2c32316708ed363686af" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Shl</name></member>
+      <member refid="classmu_1_1_parser_int_1a4c5b8072dca1913b90d2ab07d7657eaf" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Shr</name></member>
+      <member refid="classmu_1_1_parser_int_1ac6945989ec0902fd6f483a16b2eb5f8b" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Sign</name></member>
+      <member refid="classmu_1_1_parser_int_1aad9b03c1cd08f22c6fbac9a1544b7a92" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Sub</name></member>
+      <member refid="classmu_1_1_parser_int_1ae3190c8a442e3c4f1064bfb2440b792b" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Sum</name></member>
+      <member refid="classmu_1_1_parser_int_1a4ca14c9ef660605d0454d7ff3f0020d9" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>UnaryMinus</name></member>
+      <member refid="classmu_1_1_parser_base_1a07d5ceb535e963f4fda5e3890759373d" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>ValidInfixOprtChars</name></member>
+      <member refid="classmu_1_1_parser_base_1a7957dbea987631d17df83c5f27b77771" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>ValidNameChars</name></member>
+      <member refid="classmu_1_1_parser_base_1adc4e5a8fe8f2b290f567007cd4b85914" prot="public" virt="non-virtual"><scope>mu::ParserInt</scope><name>ValidOprtChars</name></member>
+      <member refid="classmu_1_1_parser_int_1a0eb3c35069e3b4174c0e3da61f50dd5f" prot="private" virt="non-virtual"><scope>mu::ParserInt</scope><name>Xor</name></member>
+      <member refid="classmu_1_1_parser_base_1a94ec173a26a5ffc96325287830a44caa" prot="public" virt="virtual"><scope>mu::ParserInt</scope><name>~ParserBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

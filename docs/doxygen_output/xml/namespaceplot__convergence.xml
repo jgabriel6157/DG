@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespaceplot__convergence" kind="namespace" language="Python">
+    <compoundname>plot_convergence</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="plot__convergence_8py_1a4ec5e108474f248cb0281234716eda87" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>plot_convergence.x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>plot_convergence.x</qualifiedname>
+        <initializer>=  [15,31,63,127]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_convergence.py" line="4" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_convergence.py" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__convergence_8py_1adfcaa20700660de7b0db15a557182088" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list plot_convergence.t1</definition>
+        <argsstring></argsstring>
+        <name>t1</name>
+        <qualifiedname>plot_convergence.t1</qualifiedname>
+        <initializer>=  [460,873,1706,3440.5,6790]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_convergence.py" line="7" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_convergence.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__convergence_8py_1aa83415e27237569045c107a70019cf3f" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>plot_convergence.y1</definition>
+        <argsstring></argsstring>
+        <name>y1</name>
+        <qualifiedname>plot_convergence.y1</qualifiedname>
+        <initializer>=  [0.0708,0.00303,0.00176,0.00171555]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_convergence.py" line="8" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_convergence.py" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__convergence_8py_1a23f145dfd53e5b2c8a810964febd249d" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list plot_convergence.t2</definition>
+        <argsstring></argsstring>
+        <name>t2</name>
+        <qualifiedname>plot_convergence.t2</qualifiedname>
+        <initializer>=  [98,163.5,292.5,563.7,1063.86]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_convergence.py" line="12" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_convergence.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__convergence_8py_1aadf8f829bf5fd6b6639a43f451ceb021" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list plot_convergence.y2</definition>
+        <argsstring></argsstring>
+        <name>y2</name>
+        <qualifiedname>plot_convergence.y2</qualifiedname>
+        <initializer>=  [0.07108,0.0062623,0.005621,0.005577]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_convergence.py" line="13" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_convergence.py" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__convergence_8py_1a134fe88093053dc1ee128e7b86f07c64" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list plot_convergence.t4</definition>
+        <argsstring></argsstring>
+        <name>t4</name>
+        <qualifiedname>plot_convergence.t4</qualifiedname>
+        <initializer>=  [241,439.8,851,1690,3343]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_convergence.py" line="17" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_convergence.py" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__convergence_8py_1a6842778cb7b7ca4301f3d8d504ea7def" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list plot_convergence.y4</definition>
+        <argsstring></argsstring>
+        <name>y4</name>
+        <qualifiedname>plot_convergence.y4</qualifiedname>
+        <initializer>=  [0.00429,0.000126,5.237e-6,9.7589e-7]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_convergence.py" line="18" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_convergence.py" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__convergence_8py_1ab119d06a51712e7cffc097791dc32089" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list plot_convergence.t8</definition>
+        <argsstring></argsstring>
+        <name>t8</name>
+        <qualifiedname>plot_convergence.t8</qualifiedname>
+        <initializer>=  [728,1417,2847,5662,11152]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_convergence.py" line="22" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_convergence.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__convergence_8py_1aae08029c2ce5eb92d0a9f3bd04894cf3" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list plot_convergence.y8</definition>
+        <argsstring></argsstring>
+        <name>y8</name>
+        <qualifiedname>plot_convergence.y8</qualifiedname>
+        <initializer>=  [7.887e-6,1.43e-6,6.965e-7,4.482e-7]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_convergence.py" line="23" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_convergence.py" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__convergence_8py_1a8949769e2abdb0c9008c3fd3a9d216d5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_convergence.marker</definition>
+        <argsstring></argsstring>
+        <name>marker</name>
+        <qualifiedname>plot_convergence.marker</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_convergence.py" line="26" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_convergence.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/plot_convergence.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

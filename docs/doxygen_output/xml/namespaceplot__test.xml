@@ -1,0 +1,497 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespaceplot__test" kind="namespace" language="Python">
+    <compoundname>plot_test</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="plot__test_8py_1a660771dab73271fdc51cf49601dd0814" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>plot_test.x</qualifiedname>
+        <initializer>=  np.array([4,8,16,32])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="5" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1a70d4a40f0ed0c3afedef23c29da1e2e2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.y1</definition>
+        <argsstring></argsstring>
+        <name>y1</name>
+        <qualifiedname>plot_test.y1</qualifiedname>
+        <initializer>=  np.array([4e-1,9.1e-2,2.3e-2,5.7e-3])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="7" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1ae7b42264de855e7bc059e8210d62efab" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.t1</definition>
+        <argsstring></argsstring>
+        <name>t1</name>
+        <qualifiedname>plot_test.t1</qualifiedname>
+        <initializer>=  np.array([2.19,3.5,8.13,19.6])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="8" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1a8d9dfa79c3c97ea9db317223cade9fa9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.y2</definition>
+        <argsstring></argsstring>
+        <name>y2</name>
+        <qualifiedname>plot_test.y2</qualifiedname>
+        <initializer>=  np.array([4.3e-2,6.3e-3,8e-4,1e-4])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="9" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1a543f12570322d13f98b6c115bb459255" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.t2</definition>
+        <argsstring></argsstring>
+        <name>t2</name>
+        <qualifiedname>plot_test.t2</qualifiedname>
+        <initializer>=  np.array([3.75,7.31,15.3,38.4])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="10" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1acd95a3f898a7c29360fb3d49c5c97d96" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.y4</definition>
+        <argsstring></argsstring>
+        <name>y4</name>
+        <qualifiedname>plot_test.y4</qualifiedname>
+        <initializer>=  np.array([3.1e-4,9.6e-6,3.2e-7,1e-8])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="11" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1a94f5493a06c4c184d67d3d24feb4a517" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.t4</definition>
+        <argsstring></argsstring>
+        <name>t4</name>
+        <qualifiedname>plot_test.t4</qualifiedname>
+        <initializer>=  np.array([8.94,20,45,115])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="12" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1af32fbd637a52b8c56ea0f83f3c3bc980" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.y8</definition>
+        <argsstring></argsstring>
+        <name>y8</name>
+        <qualifiedname>plot_test.y8</qualifiedname>
+        <initializer>=  np.array([2.5e-9,4.8e-12,2.2e-13,5e-13])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="13" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1ad579efc8e2c001fdb27f2ce3b93e139f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.t8</definition>
+        <argsstring></argsstring>
+        <name>t8</name>
+        <qualifiedname>plot_test.t8</qualifiedname>
+        <initializer>=  np.array([32,68.3,163,665])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="14" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1a24f3b2a2fae281b868253d1940c01dbe" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>plot_test.c1</definition>
+        <argsstring></argsstring>
+        <name>c1</name>
+        <qualifiedname>plot_test.c1</qualifiedname>
+        <initializer>=  [18.61,10.69,4.38]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="16" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1acb16fa0dbb519beeeadfdf8f95b3af54" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>plot_test.e1</definition>
+        <argsstring></argsstring>
+        <name>e1</name>
+        <qualifiedname>plot_test.e1</qualifiedname>
+        <initializer>=  [2.018e-2,4.448e-3,2.812e-4]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="17" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1a0de863ee48bf4438f09e81217731c8a5" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>plot_test.c2</definition>
+        <argsstring></argsstring>
+        <name>c2</name>
+        <qualifiedname>plot_test.c2</qualifiedname>
+        <initializer>=  [31.16,18.56,7.64]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="18" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1af07c653891e37825469c1bb85610318e" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>plot_test.e2</definition>
+        <argsstring></argsstring>
+        <name>e2</name>
+        <qualifiedname>plot_test.e2</qualifiedname>
+        <initializer>=  [6.605e-3,6.879e-4,3.676e-5]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="19" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1a0fe80cad0a18a07994f5e87c859bafbd" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>plot_test.c3</definition>
+        <argsstring></argsstring>
+        <name>c3</name>
+        <qualifiedname>plot_test.c3</qualifiedname>
+        <initializer>=  [26.18,11.2,3.78]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="20" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1a980b5c3b0a191e5a2c39215f95bb3eb1" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>plot_test.e3</definition>
+        <argsstring></argsstring>
+        <name>e3</name>
+        <qualifiedname>plot_test.e3</qualifiedname>
+        <initializer>=  [3.545e-4,5.888e-6,2.637e-9]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="21" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1aa232ee41f7be65321dc2edd4b906e6c0" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>plot_test.c4</definition>
+        <argsstring></argsstring>
+        <name>c4</name>
+        <qualifiedname>plot_test.c4</qualifiedname>
+        <initializer>=  [31.72,13.76,4.66]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="22" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1acbb24d4d9095c525b229a03e46e157e7" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>plot_test.e4</definition>
+        <argsstring></argsstring>
+        <name>e4</name>
+        <qualifiedname>plot_test.e4</qualifiedname>
+        <initializer>=  [1.121e-4,2.918e-6,2.088e-9]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="23" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1a79ef49b15435e55b06299d09099a7d70" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.time_interp_1st_order</definition>
+        <argsstring></argsstring>
+        <name>time_interp_1st_order</name>
+        <qualifiedname>plot_test.time_interp_1st_order</qualifiedname>
+        <initializer>=  interp1d(t1, x, kind=&apos;linear&apos;, fill_value=&quot;extrapolate&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="26" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1a4930368d0a32e0a84fce98af2cce229f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.error_interp_1st_order</definition>
+        <argsstring></argsstring>
+        <name>error_interp_1st_order</name>
+        <qualifiedname>plot_test.error_interp_1st_order</qualifiedname>
+        <initializer>=  interp1d(x, y1, kind=&apos;linear&apos;, fill_value=&quot;extrapolate&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="27" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1a5722cf98aae2b436b2dba9f116b7a082" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.time_interp_2nd_order</definition>
+        <argsstring></argsstring>
+        <name>time_interp_2nd_order</name>
+        <qualifiedname>plot_test.time_interp_2nd_order</qualifiedname>
+        <initializer>=  interp1d(t2, x, kind=&apos;linear&apos;, fill_value=&quot;extrapolate&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="29" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1aa273b46eac49ca527557f141d6d782bd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.error_interp_2nd_order</definition>
+        <argsstring></argsstring>
+        <name>error_interp_2nd_order</name>
+        <qualifiedname>plot_test.error_interp_2nd_order</qualifiedname>
+        <initializer>=  interp1d(x, y2, kind=&apos;linear&apos;, fill_value=&quot;extrapolate&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="30" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1aa31e4f24c755dd9521a2240705684398" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.time_interp_4th_order</definition>
+        <argsstring></argsstring>
+        <name>time_interp_4th_order</name>
+        <qualifiedname>plot_test.time_interp_4th_order</qualifiedname>
+        <initializer>=  interp1d(t4, x, kind=&apos;linear&apos;, fill_value=&quot;extrapolate&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="32" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1a5c8e809bb3d3c35494505e478525eaa0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.error_interp_4th_order</definition>
+        <argsstring></argsstring>
+        <name>error_interp_4th_order</name>
+        <qualifiedname>plot_test.error_interp_4th_order</qualifiedname>
+        <initializer>=  interp1d(x, y4, kind=&apos;linear&apos;, fill_value=&quot;extrapolate&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="33" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1a2f5969aa6c7285c803b02090c54b4540" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.time_interp_8th_order</definition>
+        <argsstring></argsstring>
+        <name>time_interp_8th_order</name>
+        <qualifiedname>plot_test.time_interp_8th_order</qualifiedname>
+        <initializer>=  interp1d(t8, x, kind=&apos;linear&apos;, fill_value=&quot;extrapolate&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="35" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1aa886833dc6ad3e4870e03a1234444cdd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.error_interp_8th_order</definition>
+        <argsstring></argsstring>
+        <name>error_interp_8th_order</name>
+        <qualifiedname>plot_test.error_interp_8th_order</qualifiedname>
+        <initializer>=  interp1d(x, y8, kind=&apos;linear&apos;, fill_value=&quot;extrapolate&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="36" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1a82a1c648e783fcc9adbb0831d550e008" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_test.desired_time</definition>
+        <argsstring></argsstring>
+        <name>desired_time</name>
+        <qualifiedname>plot_test.desired_time</qualifiedname>
+        <initializer>=  38</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="58" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1adda872f14213652535f4e2eafd5a26c2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.grid_cells</definition>
+        <argsstring></argsstring>
+        <name>grid_cells</name>
+        <qualifiedname>plot_test.grid_cells</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="61" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1a9e3ebb0d5a1ccabb06e13fced90428ed" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.accuracy</definition>
+        <argsstring></argsstring>
+        <name>accuracy</name>
+        <qualifiedname>plot_test.accuracy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="61" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1a9a95ce6368efbda52b6660d76fd69190" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.marker</definition>
+        <argsstring></argsstring>
+        <name>marker</name>
+        <qualifiedname>plot_test.marker</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="66" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1a7eaf343ede9fbfcea4ee5e038ea7ff48" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.linestyle</definition>
+        <argsstring></argsstring>
+        <name>linestyle</name>
+        <qualifiedname>plot_test.linestyle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="71" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__test_8py_1ab5a20a30e0ecb6c29fb118e635c389e4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_test.color</definition>
+        <argsstring></argsstring>
+        <name>color</name>
+        <qualifiedname>plot_test.color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="71" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="71" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="plot__test_8py_1a54a0a9a5fed930ea61bc77348fd2d261" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_test.query_simulation</definition>
+        <argsstring>(order, desired_time)</argsstring>
+        <name>query_simulation</name>
+        <qualifiedname>plot_test.query_simulation</qualifiedname>
+        <param>
+          <type>order</type>
+          <defname>order</defname>
+        </param>
+        <param>
+          <type>desired_time</type>
+          <defname>desired_time</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="39" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_test.py" bodystart="39" bodyend="57"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/plot_test.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

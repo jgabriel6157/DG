@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structmu_1_1generic__callable__type" kind="struct" language="C++" prot="public">
+    <compoundname>mu::generic_callable_type</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmu_1_1generic__callable__type_1a865489297b82262740da906418fcb5dc" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacemu_1af7f4a784819c9b4ab44b51f01205ec8f" kindref="member">erased_fun_type</ref></type>
+        <definition>erased_fun_type mu::generic_callable_type::_pRawFun</definition>
+        <argsstring></argsstring>
+        <name>_pRawFun</name>
+        <qualifiedname>mu::generic_callable_type::_pRawFun</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="71" column="17" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmu_1_1generic__callable__type_1a025af85db50e73db11df045d90f3ffdf" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* mu::generic_callable_type::_pUserData</definition>
+        <argsstring></argsstring>
+        <name>_pUserData</name>
+        <qualifiedname>mu::generic_callable_type::_pUserData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="72" column="16" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structmu_1_1generic__callable__type_1a668957aace1b33c21ff35b54db70395e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::size_t</type>
+            <declname>NbParams</declname>
+            <defname>NbParams</defname>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::generic_callable_type::call_fun</definition>
+        <argsstring>(Args &amp;&amp;... args) const</argsstring>
+        <name>call_fun</name>
+        <qualifiedname>mu::generic_callable_type::call_fun</qualifiedname>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="75" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="75" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1generic__callable__type_1a3bc73a3256f2fb4f2563a6412f7aa26c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::size_t</type>
+            <declname>NbParams</declname>
+            <defname>NbParams</defname>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::generic_callable_type::call_bulkfun</definition>
+        <argsstring>(Args &amp;&amp;... args) const</argsstring>
+        <name>call_bulkfun</name>
+        <qualifiedname>mu::generic_callable_type::call_bulkfun</qualifiedname>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="91" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="91" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1generic__callable__type_1a60180d3c48958858b67a51974b7126ab" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::generic_callable_type::call_multfun</definition>
+        <argsstring>(const value_type *a_afArg, int a_iArgc) const</argsstring>
+        <name>call_multfun</name>
+        <qualifiedname>mu::generic_callable_type::call_multfun</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *</type>
+          <declname>a_afArg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iArgc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="103" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="103" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1generic__callable__type_1a41f8ea6e9f1869dbbf208011162babde" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::size_t</type>
+            <declname>NbParams</declname>
+            <defname>NbParams</defname>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::generic_callable_type::call_strfun</definition>
+        <argsstring>(Args &amp;&amp;... args) const</argsstring>
+        <name>call_strfun</name>
+        <qualifiedname>mu::generic_callable_type::call_strfun</qualifiedname>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="115" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="115" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1generic__callable__type_1aa43dfe644ac671cedf05e3111a0be990" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::generic_callable_type::operator==</definition>
+        <argsstring>(generic_callable_type other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>mu::generic_callable_type::operator==</qualifiedname>
+        <param>
+          <type><ref refid="structmu_1_1generic__callable__type" kindref="compound">generic_callable_type</ref></type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="130" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="130" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1generic__callable__type_1afca06e0e10bab7deb728c4190db5d6a9" prot="public" static="no" const="yes" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>mu::generic_callable_type::operator bool</definition>
+        <argsstring>() const</argsstring>
+        <name>operator bool</name>
+        <qualifiedname>mu::generic_callable_type::operator bool</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="135" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="135" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1generic__callable__type_1a774d8b4d5fefc901de8ca493fab658f9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::generic_callable_type::operator==</definition>
+        <argsstring>(std::nullptr_t) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>mu::generic_callable_type::operator==</qualifiedname>
+        <param>
+          <type>std::nullptr_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="140" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="140" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="structmu_1_1generic__callable__type_1a4bf38478c89520b0c9a977e446620f2b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::generic_callable_type::operator!=</definition>
+        <argsstring>(std::nullptr_t) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>mu::generic_callable_type::operator!=</qualifiedname>
+        <param>
+          <type>std::nullptr_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="145" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="145" bodyend="148"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" line="67" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h" bodystart="68" bodyend="149"/>
+    <listofallmembers>
+      <member refid="structmu_1_1generic__callable__type_1a865489297b82262740da906418fcb5dc" prot="public" virt="non-virtual"><scope>mu::generic_callable_type</scope><name>_pRawFun</name></member>
+      <member refid="structmu_1_1generic__callable__type_1a025af85db50e73db11df045d90f3ffdf" prot="public" virt="non-virtual"><scope>mu::generic_callable_type</scope><name>_pUserData</name></member>
+      <member refid="structmu_1_1generic__callable__type_1a3bc73a3256f2fb4f2563a6412f7aa26c" prot="public" virt="non-virtual"><scope>mu::generic_callable_type</scope><name>call_bulkfun</name></member>
+      <member refid="structmu_1_1generic__callable__type_1a668957aace1b33c21ff35b54db70395e" prot="public" virt="non-virtual"><scope>mu::generic_callable_type</scope><name>call_fun</name></member>
+      <member refid="structmu_1_1generic__callable__type_1a60180d3c48958858b67a51974b7126ab" prot="public" virt="non-virtual"><scope>mu::generic_callable_type</scope><name>call_multfun</name></member>
+      <member refid="structmu_1_1generic__callable__type_1a41f8ea6e9f1869dbbf208011162babde" prot="public" virt="non-virtual"><scope>mu::generic_callable_type</scope><name>call_strfun</name></member>
+      <member refid="structmu_1_1generic__callable__type_1afca06e0e10bab7deb728c4190db5d6a9" prot="public" virt="non-virtual"><scope>mu::generic_callable_type</scope><name>operator bool</name></member>
+      <member refid="structmu_1_1generic__callable__type_1a4bf38478c89520b0c9a977e446620f2b" prot="public" virt="non-virtual"><scope>mu::generic_callable_type</scope><name>operator!=</name></member>
+      <member refid="structmu_1_1generic__callable__type_1aa43dfe644ac671cedf05e3111a0be990" prot="public" virt="non-virtual"><scope>mu::generic_callable_type</scope><name>operator==</name></member>
+      <member refid="structmu_1_1generic__callable__type_1a774d8b4d5fefc901de8ca493fab658f9" prot="public" virt="non-virtual"><scope>mu::generic_callable_type</scope><name>operator==</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

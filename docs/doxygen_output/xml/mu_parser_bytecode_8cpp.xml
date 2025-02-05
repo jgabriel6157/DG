@@ -1,0 +1,740 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="mu_parser_bytecode_8cpp" kind="file" language="C++">
+    <compoundname>muParserBytecode.cpp</compoundname>
+    <includes refid="mu_parser_bytecode_8h" local="yes">muParserBytecode.h</includes>
+    <includes local="no">algorithm</includes>
+    <includes local="no">string</includes>
+    <includes local="no">stack</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">iostream</includes>
+    <includes refid="mu_parser_def_8h" local="yes">muParserDef.h</includes>
+    <includes refid="mu_parser_error_8h" local="yes">muParserError.h</includes>
+    <includes refid="mu_parser_token_8h" local="yes">muParserToken.h</includes>
+    <includes refid="mu_parser_template_magic_8h" local="yes">muParserTemplateMagic.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>muParserBytecode.h</label>
+        <link refid="mu_parser_bytecode_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>muParserCallback.h</label>
+        <link refid="mu_parser_callback_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>muParserDef.h</label>
+        <link refid="mu_parser_def_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>muParserError.h</label>
+        <link refid="mu_parser_error_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>muParserFixes.h</label>
+        <link refid="mu_parser_fixes_8h"/>
+      </node>
+      <node id="20">
+        <label>muParserTemplateMagic.h</label>
+        <link refid="mu_parser_template_magic_8h_source"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>muParserToken.h</label>
+        <link refid="mu_parser_token_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp</label>
+        <link refid="mu_parser_bytecode_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>algorithm</label>
+      </node>
+      <node id="21">
+        <label>cmath</label>
+      </node>
+      <node id="17">
+        <label>cstddef</label>
+      </node>
+      <node id="7">
+        <label>iostream</label>
+      </node>
+      <node id="9">
+        <label>map</label>
+      </node>
+      <node id="13">
+        <label>memory</label>
+      </node>
+      <node id="8">
+        <label>sstream</label>
+      </node>
+      <node id="4">
+        <label>stack</label>
+      </node>
+      <node id="12">
+        <label>stdexcept</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="16">
+        <label>type_traits</label>
+      </node>
+      <node id="15">
+        <label>utility</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacemu">mu</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"></highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>_____<sp/><sp/>__<sp/>_____________<sp/>_______<sp/><sp/>______<sp/>___________</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>/<sp/><sp/><sp/><sp/><sp/>\|<sp/><sp/>|<sp/><sp/>\____<sp/>\__<sp/><sp/>\\_<sp/><sp/>__<sp/>\/<sp/><sp/>___//<sp/>__<sp/>\_<sp/><sp/>__<sp/>\</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/>|<sp/><sp/>Y<sp/>Y<sp/><sp/>\<sp/><sp/>|<sp/><sp/>/<sp/><sp/>|_&gt;<sp/>&gt;<sp/>__<sp/>\|<sp/><sp/>|<sp/>\/\___<sp/>\\<sp/><sp/>___/|<sp/><sp/>|<sp/>\/</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/>|__|_|<sp/><sp/>/____/|<sp/><sp/><sp/>__(____<sp/><sp/>/__|<sp/><sp/>/____<sp/><sp/>&gt;\___<sp/><sp/>&gt;__|</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\/<sp/><sp/><sp/><sp/><sp/><sp/>|__|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>\/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\/<sp/><sp/><sp/><sp/><sp/>\/</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/>Copyright<sp/>(C)<sp/>2004<sp/>-<sp/>2022<sp/>Ingo<sp/>Berg</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without<sp/>modification,<sp/>are<sp/>permitted</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/><sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/>this<sp/>list<sp/>of</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/>this<sp/>list<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/><sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/><sp/><sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/><sp/><sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDER<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/><sp/><sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/><sp/><sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/><sp/><sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/><sp/><sp/><sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/><sp/><sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mu_parser_bytecode_8h" kindref="compound">muParserBytecode.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stack&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mu_parser_def_8h" kindref="compound">muParserDef.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mu_parser_error_8h" kindref="compound">muParserError.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mu_parser_token_8h" kindref="compound">muParserToken.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;muParserTemplateMagic.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_MSC_VER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#pragma<sp/>warning(push)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#pragma<sp/>warning(disable<sp/>:<sp/>26812)<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemu" kindref="compound">mu</ref></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmu_1_1_parser_byte_code_1a9b03ff607c429dcad0a4d01eb155cb55" kindref="member">ParserByteCode::ParserByteCode</ref>()</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:m_iStackPos(0)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/>m_iMaxStackSize(0)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/>m_vRPN()</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/>m_bEnableOptimizer(true)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.reserve(50);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>ParserByteCode::ParserByteCode(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ParserByteCode&amp;<sp/>a_ByteCode)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Assign(a_ByteCode);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>ParserByteCode&amp;<sp/>ParserByteCode::operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ParserByteCode&amp;<sp/>a_ByteCode)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Assign(a_ByteCode);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ParserByteCode::EnableOptimizer(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bStat)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_bEnableOptimizer<sp/>=<sp/>bStat;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ParserByteCode::Assign(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ParserByteCode&amp;<sp/>a_ByteCode)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>==<sp/>&amp;a_ByteCode)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_iStackPos<sp/>=<sp/>a_ByteCode.m_iStackPos;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN<sp/>=<sp/>a_ByteCode.m_vRPN;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_iMaxStackSize<sp/>=<sp/>a_ByteCode.m_iMaxStackSize;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_bEnableOptimizer<sp/>=<sp/>a_ByteCode.m_bEnableOptimizer;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ParserByteCode::AddVar(value_type*<sp/>a_pVar)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++m_iStackPos;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_iMaxStackSize<sp/>=<sp/>std::max(m_iMaxStackSize,<sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">)m_iStackPos);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>optimization<sp/>does<sp/>not<sp/>apply</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SToken<sp/>tok;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Cmd<sp/>=<sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eafa2a28b5022d2454768c74e15d5ae377" kindref="member">cmVAR</ref>;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Val.ptr<sp/>=<sp/>a_pVar;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Val.data<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Val.data2<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.push_back(tok);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ParserByteCode::AddVal(value_type<sp/>a_fVal)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++m_iStackPos;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_iMaxStackSize<sp/>=<sp/>std::max(m_iMaxStackSize,<sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">)m_iStackPos);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>optimization<sp/>does<sp/>not<sp/>apply</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SToken<sp/>tok;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Cmd<sp/>=<sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eab1cf4ef5d34d815bb016fef14c331622" kindref="member">cmVAL</ref>;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Val.ptr<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Val.data<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Val.data2<sp/>=<sp/>a_fVal;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.push_back(tok);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ParserByteCode::ConstantFolding(ECmdCode<sp/>a_Oprt)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>sz<sp/>=<sp/>m_vRPN.size();</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>&amp;<sp/>x<sp/>=<sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data2;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>&amp;<sp/>y<sp/>=<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data2;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(a_Oprt)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>cmLAND:<sp/>x<sp/>=<sp/>(int)x<sp/>&amp;&amp;<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)y;<sp/>m_vRPN.pop_back();<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>cmLOR:<sp/><sp/>x<sp/>=<sp/>(int)x<sp/>||<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)y;<sp/>m_vRPN.pop_back();<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea1f455ded43de3f52ce0a39f9dde843e5" kindref="member">cmLT</ref>:<sp/><sp/><sp/>x<sp/>=<sp/>x<sp/>&lt;<sp/>y;<sp/><sp/>m_vRPN.pop_back();<sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eac9cbc41a04d7b4dece063211d31ec5b3" kindref="member">cmGT</ref>:<sp/><sp/><sp/>x<sp/>=<sp/>x<sp/>&gt;<sp/>y;<sp/><sp/>m_vRPN.pop_back();<sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea62da784138e45f161918ddc845ea4420" kindref="member">cmLE</ref>:<sp/><sp/><sp/>x<sp/>=<sp/>x<sp/>&lt;=<sp/>y;<sp/>m_vRPN.pop_back();<sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea188c6fd8324762d1513f28ef359408d7" kindref="member">cmGE</ref>:<sp/><sp/><sp/>x<sp/>=<sp/>x<sp/>&gt;=<sp/>y;<sp/>m_vRPN.pop_back();<sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eac34e5f492d8b0f4f2f46d7c261a02e4c" kindref="member">cmNEQ</ref>:<sp/><sp/>x<sp/>=<sp/>x<sp/>!=<sp/>y;<sp/>m_vRPN.pop_back();<sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eacedcb20eed5d83ea723cb47bb2c1cc0d" kindref="member">cmEQ</ref>:<sp/><sp/><sp/>x<sp/>=<sp/>x<sp/>==<sp/>y;<sp/>m_vRPN.pop_back();<sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea127712855b500aff2b37a35c6767451a" kindref="member">cmADD</ref>:<sp/><sp/>x<sp/>=<sp/>x<sp/>+<sp/>y;<sp/><sp/>m_vRPN.pop_back();<sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eadad0cd5d67567c1ad976e7d332537a9d" kindref="member">cmSUB</ref>:<sp/><sp/>x<sp/>=<sp/>x<sp/>-<sp/>y;<sp/><sp/>m_vRPN.pop_back();<sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea703cb484ede1e3e4926c0a1fb3845679" kindref="member">cmMUL</ref>:<sp/><sp/>x<sp/>=<sp/>x<sp/>*<sp/>y;<sp/><sp/>m_vRPN.pop_back();<sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea8923e5bebd1eb60c1436fa64a32492a0" kindref="member">cmDIV</ref>:</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>x<sp/>/<sp/>y;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.pop_back();</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea3fad2e00b3026f83d90b135fd55ba7e3" kindref="member">cmPOW</ref>:<sp/>x<sp/>=<sp/>MathImpl&lt;value_type&gt;::Pow(x,<sp/>y);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.pop_back();</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>switch<sp/>opcode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ParserByteCode::AddOp(ECmdCode<sp/>a_Oprt)</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bOptimized<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bEnableOptimizer)</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>sz<sp/>=<sp/>m_vRPN.size();</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>for<sp/>foldable<sp/>constants<sp/>like:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>cmVAL<sp/>cmVAL<sp/>cmADD<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>where<sp/>cmADD<sp/>can<sp/>stand<sp/>fopr<sp/>any<sp/>binary<sp/>operator<sp/>applied<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>two<sp/>constant<sp/>values.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sz<sp/>&gt;=<sp/>2<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>==<sp/>cmVAL<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>1].Cmd<sp/>==<sp/>cmVAL)</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ConstantFolding(a_Oprt);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bOptimized<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(a_Oprt)</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea3fad2e00b3026f83d90b135fd55ba7e3" kindref="member">cmPOW</ref>:</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Optimization<sp/>for<sp/>polynomials<sp/>of<sp/>low<sp/>order</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>==<sp/>cmVAR<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>1].Cmd<sp/>==<sp/>cmVAL)</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_vRPN[sz<sp/>-<sp/>1].Val.data2<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>=<sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eab1cf4ef5d34d815bb016fef14c331622" kindref="member">cmVAL</ref>;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Val.ptr<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data2<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_vRPN[sz<sp/>-<sp/>1].Val.data2<sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>=<sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eafa2a28b5022d2454768c74e15d5ae377" kindref="member">cmVAR</ref>;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_vRPN[sz<sp/>-<sp/>1].Val.data2<sp/>==<sp/>2)</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>=<sp/>cmVARPOW2;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_vRPN[sz<sp/>-<sp/>1].Val.data2<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>=<sp/>cmVARPOW3;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_vRPN[sz<sp/>-<sp/>1].Val.data2<sp/>==<sp/>4)</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>=<sp/>cmVARPOW4;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.pop_back();</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bOptimized<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eadad0cd5d67567c1ad976e7d332537a9d" kindref="member">cmSUB</ref>:</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea127712855b500aff2b37a35c6767451a" kindref="member">cmADD</ref>:</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Simple<sp/>optimization<sp/>based<sp/>on<sp/>pattern<sp/>recognition<sp/>for<sp/>a<sp/>shitload<sp/>of<sp/>different</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>bytecode<sp/>combinations<sp/>of<sp/>addition/subtraction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((m_vRPN[sz<sp/>-<sp/>1].Cmd<sp/>==<sp/>cmVAR<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>==<sp/>cmVAL)<sp/>||</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(m_vRPN[sz<sp/>-<sp/>1].Cmd<sp/>==<sp/>cmVAL<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>==<sp/>cmVAR)<sp/>||</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(m_vRPN[sz<sp/>-<sp/>1].Cmd<sp/>==<sp/>cmVAL<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>==<sp/>cmVARMUL)<sp/>||</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(m_vRPN[sz<sp/>-<sp/>1].Cmd<sp/>==<sp/>cmVARMUL<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>==<sp/>cmVAL)<sp/>||</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(m_vRPN[sz<sp/>-<sp/>1].Cmd<sp/>==<sp/>cmVAR<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>==<sp/>cmVAR<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Val.ptr<sp/>==<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.ptr)<sp/>||</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(m_vRPN[sz<sp/>-<sp/>1].Cmd<sp/>==<sp/>cmVAR<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>==<sp/>cmVARMUL<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Val.ptr<sp/>==<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.ptr)<sp/>||</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(m_vRPN[sz<sp/>-<sp/>1].Cmd<sp/>==<sp/>cmVARMUL<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>==<sp/>cmVAR<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Val.ptr<sp/>==<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.ptr)<sp/>||</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(m_vRPN[sz<sp/>-<sp/>1].Cmd<sp/>==<sp/>cmVARMUL<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>==<sp/>cmVARMUL<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Val.ptr<sp/>==<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.ptr))</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mu_parser_def_8h_1a12c08d62c4a278b4e2ca3aad8e7af5e5" kindref="member">MUP_ASSERT</ref>(</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(m_vRPN[sz<sp/>-<sp/>2].Val.ptr<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.ptr<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>||</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(m_vRPN[sz<sp/>-<sp/>2].Val.ptr<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.ptr<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>||</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(m_vRPN[sz<sp/>-<sp/>2].Val.ptr<sp/>==<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.ptr));</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>=<sp/>cmVARMUL;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Val.ptr<sp/>=<sp/>(<ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>*)((</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal">)(m_vRPN[sz<sp/>-<sp/>2].Val.ptr)<sp/>|<sp/>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal">)(m_vRPN[sz<sp/>-<sp/>1].Val.ptr));<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data2<sp/>+=<sp/>((a_Oprt<sp/>==<sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eadad0cd5d67567c1ad976e7d332537a9d" kindref="member">cmSUB</ref>)<sp/>?<sp/>-1<sp/>:<sp/>1)<sp/>*<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data2;<sp/><sp/></highlight><highlight class="comment">//<sp/>offset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data<sp/>+=<sp/>((a_Oprt<sp/>==<sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eadad0cd5d67567c1ad976e7d332537a9d" kindref="member">cmSUB</ref>)<sp/>?<sp/>-1<sp/>:<sp/>1)<sp/>*<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>multiplicand</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.pop_back();</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bOptimized<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea703cb484ede1e3e4926c0a1fb3845679" kindref="member">cmMUL</ref>:</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((m_vRPN[sz<sp/>-<sp/>1].Cmd<sp/>==<sp/>cmVAR<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>==<sp/>cmVAL)<sp/>||</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(m_vRPN[sz<sp/>-<sp/>1].Cmd<sp/>==<sp/>cmVAL<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>==<sp/>cmVAR))</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>=<sp/>cmVARMUL;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Val.ptr<sp/>=<sp/>(<ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>*)((</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal">)(m_vRPN[sz<sp/>-<sp/>2].Val.ptr)<sp/>|<sp/>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal">)(m_vRPN[sz<sp/>-<sp/>1].Val.ptr));</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data<sp/>=<sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data2<sp/>+<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data2;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data2<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.pop_back();</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bOptimized<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(m_vRPN[sz<sp/>-<sp/>1].Cmd<sp/>==<sp/>cmVAL<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>==<sp/>cmVARMUL)<sp/>||</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(m_vRPN[sz<sp/>-<sp/>1].Cmd<sp/>==<sp/>cmVARMUL<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>==<sp/>cmVAL))</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Optimization:<sp/>2*(3*b+1)<sp/>or<sp/>(3*b+1)*2<sp/>-&gt;<sp/>6*b+2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>=<sp/>cmVARMUL;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Val.ptr<sp/>=<sp/>(<ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>*)((</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal">)(m_vRPN[sz<sp/>-<sp/>2].Val.ptr)<sp/>|<sp/>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal">)(m_vRPN[sz<sp/>-<sp/>1].Val.ptr));</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_vRPN[sz<sp/>-<sp/>1].Cmd<sp/>==<sp/>cmVAL)</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data<sp/>*=<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data2;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data2<sp/>*=<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data2;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data<sp/>=<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data<sp/>*<sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data2;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data2<sp/>=<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data2<sp/>*<sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data2;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.pop_back();</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bOptimized<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>1].Cmd<sp/>==<sp/>cmVAR<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>==<sp/>cmVAR<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>1].Val.ptr<sp/>==<sp/>m_vRPN[sz<sp/>-<sp/>2].Val.ptr)</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Optimization:<sp/>a*a<sp/>-&gt;<sp/>a^2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>=<sp/>cmVARPOW2;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.pop_back();</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bOptimized<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea8923e5bebd1eb60c1436fa64a32492a0" kindref="member">cmDIV</ref>:</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_vRPN[sz<sp/>-<sp/>1].Cmd<sp/>==<sp/>cmVAL<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>2].Cmd<sp/>==<sp/>cmVARMUL<sp/>&amp;&amp;<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data2<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Optimization:<sp/>4*a/2<sp/>-&gt;<sp/>2*a</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data<sp/>/=<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data2;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data2<sp/>/=<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data2;</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.pop_back();</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bOptimized<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>no<sp/>optimization<sp/>for<sp/>other<sp/>opcodes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>switch<sp/>a_Oprt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>optimization<sp/>can&apos;t<sp/>be<sp/>applied<sp/>just<sp/>write<sp/>the<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!bOptimized)</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--m_iStackPos;</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SToken<sp/>tok;</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Cmd<sp/>=<sp/>a_Oprt;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.push_back(tok);</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ParserByteCode::AddIfElse(ECmdCode<sp/>a_Oprt)</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SToken<sp/>tok;</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Cmd<sp/>=<sp/>a_Oprt;</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.push_back(tok);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ParserByteCode::AddAssignOp(value_type*<sp/>a_pVar)</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--m_iStackPos;</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SToken<sp/>tok;</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Cmd<sp/>=<sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea471a75e04daaa2a387be5235484a3e01" kindref="member">cmASSIGN</ref>;</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Oprt.ptr<sp/>=<sp/>a_pVar;</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.push_back(tok);</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ParserByteCode::AddFun(generic_callable_type<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a_iArgc,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isFunctionOptimizable)</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>sz<sp/>=<sp/>m_vRPN.size();</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>optimize<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>only<sp/>optimize<sp/>functions<sp/>with<sp/>fixed<sp/>number<sp/>of<sp/>more<sp/>than<sp/>a<sp/>single<sp/>arguments</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isFunctionOptimizable<sp/>&amp;&amp;<sp/>m_bEnableOptimizer<sp/>&amp;&amp;<sp/>a_iArgc<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&lt;ibg<sp/>2020-06-10/&gt;<sp/>Unary<sp/>Plus<sp/>is<sp/>a<sp/>no-op</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(a_pFun<sp/>==<sp/>generic_callable_type{(<ref refid="namespacemu_1af7f4a784819c9b4ab44b51f01205ec8f" kindref="member">erased_fun_type</ref>)&amp;MathImpl&lt;value_type&gt;::UnaryPlus,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">})</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>optimize<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>std::abs(a_iArgc);<sp/>++i)</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_vRPN[sz<sp/>-<sp/>i<sp/>-<sp/>1].Cmd<sp/>!=<sp/>cmVAL)</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>optimize<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"></highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(optimize)</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref><sp/>val<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(a_iArgc)</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>1:<sp/><sp/>val<sp/>=<sp/>a_pFun.call_fun&lt;1&gt;(m_vRPN[sz<sp/>-<sp/>1].Val.data2);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>2:<sp/><sp/>val<sp/>=<sp/>a_pFun.call_fun&lt;2&gt;(m_vRPN[sz<sp/>-<sp/>2].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data2);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>3:<sp/><sp/>val<sp/>=<sp/>a_pFun.call_fun&lt;3&gt;(m_vRPN[sz<sp/>-<sp/>3].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data2);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>4:<sp/><sp/>val<sp/>=<sp/>a_pFun.call_fun&lt;4&gt;(m_vRPN[sz<sp/>-<sp/>4].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>3].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data2);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>5:<sp/><sp/>val<sp/>=<sp/>a_pFun.call_fun&lt;5&gt;(m_vRPN[sz<sp/>-<sp/>5].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>4].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>3].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data2);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>6:<sp/><sp/>val<sp/>=<sp/>a_pFun.call_fun&lt;6&gt;(m_vRPN[sz<sp/>-<sp/>6].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>5].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>4].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>3].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data2);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>7:<sp/><sp/>val<sp/>=<sp/>a_pFun.call_fun&lt;7&gt;(m_vRPN[sz<sp/>-<sp/>7].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>6].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>5].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>4].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>3].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data2);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>8:<sp/><sp/>val<sp/>=<sp/>a_pFun.call_fun&lt;8&gt;(m_vRPN[sz<sp/>-<sp/>8].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>7].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>6].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>5].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>4].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>3].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data2);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>9:<sp/><sp/>val<sp/>=<sp/>a_pFun.call_fun&lt;9&gt;(m_vRPN[sz<sp/>-<sp/>9].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>8].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>7].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>6].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>5].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>4].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>3].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data2);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>10:<sp/>val<sp/>=<sp/>a_pFun.call_fun&lt;10&gt;(m_vRPN[sz<sp/>-<sp/>10].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>9].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>8].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>7].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>6].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>5].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>4].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>3].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>2].Val.data2,<sp/>m_vRPN[sz<sp/>-<sp/>1].Val.data2);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>now<sp/>functions<sp/>with<sp/>unlimited<sp/>number<sp/>of<sp/>arguments<sp/>are<sp/>not<sp/>optimized</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>ParserError(ecINTERNAL_ERROR);</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"></highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>remove<sp/>the<sp/>folded<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.erase(m_vRPN.end()<sp/>-<sp/>a_iArgc,<sp/>m_vRPN.end());</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"></highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SToken<sp/>tok;</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Cmd<sp/>=<sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eab1cf4ef5d34d815bb016fef14c331622" kindref="member">cmVAL</ref>;</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Val.data<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Val.data2<sp/>=<sp/>val;</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Val.ptr<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.push_back(tok);</highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SToken<sp/>tok;</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Cmd<sp/>=<sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eaeacb1b1bb9859e8bc6147887a787feca" kindref="member">cmFUNC</ref>;</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Fun.argc<sp/>=<sp/>a_iArgc;</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Fun.cb<sp/>=<sp/>a_pFun;</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.push_back(tok);</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="436"><highlight class="normal"></highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_iStackPos<sp/>=<sp/>m_iStackPos<sp/>-<sp/>std::abs(a_iArgc)<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_iMaxStackSize<sp/>=<sp/>std::max(m_iMaxStackSize,<sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">)m_iStackPos);</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"></highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"></highlight></codeline>
+<codeline lineno="442"><highlight class="normal"></highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ParserByteCode::AddBulkFun(generic_callable_type<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a_iArgc)</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_iStackPos<sp/>=<sp/>m_iStackPos<sp/>-<sp/>a_iArgc<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_iMaxStackSize<sp/>=<sp/>std::max(m_iMaxStackSize,<sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">)m_iStackPos);</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"></highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SToken<sp/>tok;</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Cmd<sp/>=<sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea052e0188c92157ef66581a31accfcab1" kindref="member">cmFUNC_BULK</ref>;</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Fun.argc<sp/>=<sp/>a_iArgc;</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Fun.cb<sp/>=<sp/>a_pFun;</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.push_back(tok);</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"></highlight></codeline>
+<codeline lineno="460"><highlight class="normal"></highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ParserByteCode::AddStrFun(generic_callable_type<sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a_iArgc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a_iIdx)</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_iStackPos<sp/>=<sp/>m_iStackPos<sp/>-<sp/>a_iArgc<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"></highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SToken<sp/>tok;</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Cmd<sp/>=<sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eae8ed179475f79bed80d66d389007717a" kindref="member">cmFUNC_STR</ref>;</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Fun.argc<sp/>=<sp/>a_iArgc;</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Fun.idx<sp/>=<sp/>a_iIdx;</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Fun.cb<sp/>=<sp/>a_pFun;</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.push_back(tok);</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"></highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_iMaxStackSize<sp/>=<sp/>std::max(m_iMaxStackSize,<sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">)m_iStackPos);</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"></highlight></codeline>
+<codeline lineno="482"><highlight class="normal"></highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ParserByteCode::Finalize()</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SToken<sp/>tok;</highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tok.Cmd<sp/>=<sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea76086ac235dadbe9ad8a184190b21c8b" kindref="member">cmEND</ref>;</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.push_back(tok);</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rpn_type(m_vRPN).swap(m_vRPN);<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>shrink<sp/>bytecode<sp/>vector<sp/>to<sp/>fit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="493"><highlight class="normal"></highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Determine<sp/>the<sp/>if-then-else<sp/>jump<sp/>offsets</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::stack&lt;int&gt;<sp/>stIf,<sp/>stElse;</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idx;</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>(int)m_vRPN.size();<sp/>++i)</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(m_vRPN[i].Cmd)</highlight></codeline>
+<codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eab9e28b93b1f434a7660559728a749eda" kindref="member">cmIF</ref>:</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stIf.push(i);</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"></highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eaf8f2c4094f7d220bd850f789f6622526" kindref="member">cmELSE</ref>:</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stElse.push(i);</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>idx<sp/>=<sp/>stIf.top();</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stIf.pop();</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[idx].Oprt.offset<sp/>=<sp/>i<sp/>-<sp/>idx;</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"></highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea9115a14061048e465cc8c1b0132d6311" kindref="member">cmENDIF</ref>:</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>idx<sp/>=<sp/>stElse.top();</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stElse.pop();</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN[idx].Oprt.offset<sp/>=<sp/>i<sp/>-<sp/>idx;</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"></highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"></highlight></codeline>
+<codeline lineno="524"><highlight class="normal"></highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>ParserByteCode::GetMaxStackSize()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="526"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_iMaxStackSize<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"></highlight></codeline>
+<codeline lineno="530"><highlight class="normal"></highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ParserByteCode::clear()</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vRPN.clear();</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_iStackPos<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_iMaxStackSize<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"></highlight></codeline>
+<codeline lineno="546"><highlight class="normal"></highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ParserByteCode::AsciiDump()</highlight></codeline>
+<codeline lineno="549"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!m_vRPN.size())</highlight></codeline>
+<codeline lineno="551"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="552"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;No<sp/>bytecode<sp/>available\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="554"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"></highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;Number<sp/>of<sp/>RPN<sp/>tokens:&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>(int)m_vRPN.size()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>m_vRPN.size()<sp/>&amp;&amp;<sp/>m_vRPN[i].Cmd<sp/>!=<sp/>cmEND;<sp/>++i)</highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/>std::dec<sp/>&lt;&lt;<sp/>i<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;<sp/>:<sp/>\t&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(m_vRPN[i].Cmd)</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eab1cf4ef5d34d815bb016fef14c331622" kindref="member">cmVAL</ref>:<sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;VAL<sp/>\t&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;[&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>m_vRPN[i].Val.data2<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;]\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"></highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eafa2a28b5022d2454768c74e15d5ae377" kindref="member">cmVAR</ref>:<sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;VAR<sp/>\t&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;[ADDR:<sp/>0x&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::hex<sp/>&lt;&lt;<sp/>m_vRPN[i].Val.ptr<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;]\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"></highlight></codeline>
+<codeline lineno="570"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>cmVARPOW2:<sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;VARPOW2<sp/>\t&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;[ADDR:<sp/>0x&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::hex<sp/>&lt;&lt;<sp/>m_vRPN[i].Val.ptr<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;]\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="572"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"></highlight></codeline>
+<codeline lineno="574"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>cmVARPOW3:<sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;VARPOW3<sp/>\t&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="575"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;[ADDR:<sp/>0x&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::hex<sp/>&lt;&lt;<sp/>m_vRPN[i].Val.ptr<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;]\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="577"><highlight class="normal"></highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>cmVARPOW4:<sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;VARPOW4<sp/>\t&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;[ADDR:<sp/>0x&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::hex<sp/>&lt;&lt;<sp/>m_vRPN[i].Val.ptr<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;]\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="581"><highlight class="normal"></highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>cmVARMUL:<sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;VARMUL<sp/>\t&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;[ADDR:<sp/>0x&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::hex<sp/>&lt;&lt;<sp/>m_vRPN[i].Val.ptr<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;]&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;<sp/>*<sp/>[&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>m_vRPN[i].Val.data<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;]&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;<sp/>+<sp/>[&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>m_vRPN[i].Val.data2<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;]\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="587"><highlight class="normal"></highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eaeacb1b1bb9859e8bc6147887a787feca" kindref="member">cmFUNC</ref>:<sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;CALL\t&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;[ARG:&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::dec<sp/>&lt;&lt;<sp/>m_vRPN[i].Fun.argc<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;]&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;[ADDR:<sp/>0x&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::hex<sp/>&lt;&lt;<sp/>reinterpret_cast&lt;void*&gt;(m_vRPN[i].Fun.cb._pRawFun)<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;]&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;[USERDATA:<sp/>0x&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::hex<sp/>&lt;&lt;<sp/>reinterpret_cast&lt;void*&gt;(m_vRPN[i].Fun.cb._pUserData)<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;]&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="594"><highlight class="normal"></highlight></codeline>
+<codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eae8ed179475f79bed80d66d389007717a" kindref="member">cmFUNC_STR</ref>:</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;CALL<sp/>STRFUNC\t&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;[ARG:&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::dec<sp/>&lt;&lt;<sp/>m_vRPN[i].Fun.argc<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;]&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;[IDX:&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::dec<sp/>&lt;&lt;<sp/>m_vRPN[i].Fun.idx<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;]&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;[ADDR:<sp/>0x&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::hex<sp/>&lt;&lt;<sp/>reinterpret_cast&lt;void*&gt;(m_vRPN[i].Fun.cb._pRawFun)<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;]&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;[USERDATA:<sp/>0x&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::hex<sp/>&lt;&lt;<sp/>reinterpret_cast&lt;void*&gt;(m_vRPN[i].Fun.cb._pUserData)<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;]&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"></highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea1f455ded43de3f52ce0a39f9dde843e5" kindref="member">cmLT</ref>:<sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;LT\n&quot;</highlight><highlight class="normal">);<sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eac9cbc41a04d7b4dece063211d31ec5b3" kindref="member">cmGT</ref>:<sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;GT\n&quot;</highlight><highlight class="normal">);<sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea62da784138e45f161918ddc845ea4420" kindref="member">cmLE</ref>:<sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;LE\n&quot;</highlight><highlight class="normal">);<sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="607"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea188c6fd8324762d1513f28ef359408d7" kindref="member">cmGE</ref>:<sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;GE\n&quot;</highlight><highlight class="normal">);<sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="608"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eacedcb20eed5d83ea723cb47bb2c1cc0d" kindref="member">cmEQ</ref>:<sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;EQ\n&quot;</highlight><highlight class="normal">);<sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="609"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eac34e5f492d8b0f4f2f46d7c261a02e4c" kindref="member">cmNEQ</ref>:<sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;NEQ\n&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="610"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea127712855b500aff2b37a35c6767451a" kindref="member">cmADD</ref>:<sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;ADD\n&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>cmLAND:<sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;&amp;&amp;\n&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>cmLOR:<sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;||\n&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="613"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eadad0cd5d67567c1ad976e7d332537a9d" kindref="member">cmSUB</ref>:<sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;SUB\n&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea703cb484ede1e3e4926c0a1fb3845679" kindref="member">cmMUL</ref>:<sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;MUL\n&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea8923e5bebd1eb60c1436fa64a32492a0" kindref="member">cmDIV</ref>:<sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;DIV\n&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="616"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea3fad2e00b3026f83d90b135fd55ba7e3" kindref="member">cmPOW</ref>:<sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;POW\n&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="617"><highlight class="normal"></highlight></codeline>
+<codeline lineno="618"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eab9e28b93b1f434a7660559728a749eda" kindref="member">cmIF</ref>:<sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;IF\t&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;[OFFSET:&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::dec<sp/>&lt;&lt;<sp/>m_vRPN[i].Oprt.offset<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;]\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="621"><highlight class="normal"></highlight></codeline>
+<codeline lineno="622"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40eaf8f2c4094f7d220bd850f789f6622526" kindref="member">cmELSE</ref>:<sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;ELSE\t&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="623"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;[OFFSET:&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::dec<sp/>&lt;&lt;<sp/>m_vRPN[i].Oprt.offset<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;]\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="624"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="625"><highlight class="normal"></highlight></codeline>
+<codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea9115a14061048e465cc8c1b0132d6311" kindref="member">cmENDIF</ref>:<sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;ENDIF\n&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="627"><highlight class="normal"></highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40ea471a75e04daaa2a387be5235484a3e01" kindref="member">cmASSIGN</ref>:</highlight></codeline>
+<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;ASSIGN\t&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;[ADDR:<sp/>0x&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>m_vRPN[i].Oprt.ptr<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;]\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="631"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="632"><highlight class="normal"></highlight></codeline>
+<codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:<sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;(unknown<sp/>code:<sp/>&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>m_vRPN[i].Cmd<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;)\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>switch<sp/>cmdCode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="636"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>while<sp/>bytecode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="637"><highlight class="normal"></highlight></codeline>
+<codeline lineno="638"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1abd6c6c3c77edd6bbb59f01bf72fdd939" kindref="member">mu::console</ref>()<sp/>&lt;&lt;<sp/><ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(</highlight><highlight class="stringliteral">&quot;END&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="639"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="640"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>mu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="641"><highlight class="normal"></highlight></codeline>
+<codeline lineno="642"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_MSC_VER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="643"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#pragma<sp/>warning(pop)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="644"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBytecode.cpp"/>
+  </compounddef>
+</doxygen>

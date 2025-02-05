@@ -1,0 +1,2050 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classmu_1_1_parser_callback" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>mu::ParserCallback</compoundname>
+    <includes refid="mu_parser_callback_8h" local="no">muParserCallback.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmu_1_1_parser_callback_1a06511c20ac299781b674d4d0ba51b111" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* mu::ParserCallback::m_pFun</definition>
+        <argsstring></argsstring>
+        <name>m_pFun</name>
+        <qualifiedname>mu::ParserCallback::m_pFun</qualifiedname>
+        <briefdescription>
+<para>Pointer to the callback function or internal data, casted to void. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="144" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_callback_1a9fe30a9436fe25166239139bd86bb73d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mu::ParserCallback::m_iArgc</definition>
+        <argsstring></argsstring>
+        <name>m_iArgc</name>
+        <qualifiedname>mu::ParserCallback::m_iArgc</qualifiedname>
+        <briefdescription>
+<para>Internal representation of number of numeric function arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="146" column="7" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_callback_1a416ac9da0201505fb38a61c909fe414f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mu::ParserCallback::m_iPri</definition>
+        <argsstring></argsstring>
+        <name>m_iPri</name>
+        <qualifiedname>mu::ParserCallback::m_iPri</qualifiedname>
+        <briefdescription>
+<para>Valid only for binary and infix operators; Operator precedence. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="147" column="7" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_callback_1a8f518116409cdecceb7735138dd14028" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1aff435b0c277f66041374f93a3803e1f1" kindref="member">EOprtAssociativity</ref></type>
+        <definition>EOprtAssociativity mu::ParserCallback::m_eOprtAsct</definition>
+        <argsstring></argsstring>
+        <name>m_eOprtAsct</name>
+        <qualifiedname>mu::ParserCallback::m_eOprtAsct</qualifiedname>
+        <briefdescription>
+<para>Operator associativity; Valid only for binary operators. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="148" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_callback_1ae408e004fb09551d8bac414476ba239e" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40e" kindref="member">ECmdCode</ref></type>
+        <definition>ECmdCode mu::ParserCallback::m_iCode</definition>
+        <argsstring></argsstring>
+        <name>m_iCode</name>
+        <qualifiedname>mu::ParserCallback::m_iCode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="149" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_callback_1a8f18b3ab5a161602430c5292af4d27c3" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1ac3ccf6a749baacffd48fe97b9c2af302" kindref="member">ETypeCode</ref></type>
+        <definition>ETypeCode mu::ParserCallback::m_iType</definition>
+        <argsstring></argsstring>
+        <name>m_iType</name>
+        <qualifiedname>mu::ParserCallback::m_iType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="150" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_callback_1a8e7327b5c191a5fc8f6940324b60002c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool mu::ParserCallback::m_bAllowOpti</definition>
+        <argsstring></argsstring>
+        <name>m_bAllowOpti</name>
+        <qualifiedname>mu::ParserCallback::m_bAllowOpti</qualifiedname>
+        <briefdescription>
+<para>Flag indication optimizeability. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="151" column="7" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a3f203039da4fe6deaabd7ea289a82386" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_type0 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1af74b1b05cca11b94eb7a478c6c1f8200" kindref="member">fun_type0</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="55" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="54" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a821093ba026dbf05edb7f7723560be25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_type1 a_pFun, bool a_bAllowOpti, int a_iPrec, ECmdCode a_iCode)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1affeaec09801b502b9955d7248b7e2706" kindref="member">fun_type1</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iPrec</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40e" kindref="member">ECmdCode</ref></type>
+          <declname>a_iCode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="56" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="65" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1ac607bcc54ac452980521896e87e49e39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_type1 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1affeaec09801b502b9955d7248b7e2706" kindref="member">fun_type1</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="57" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="76" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a22e961968ba20b101d85cb923e77dd3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_type2 a_pFun, bool a_bAllowOpti, int a_iPrec, EOprtAssociativity a_eAssociativity)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1abd9aed5816d33116d687f5becd85b38f" kindref="member">fun_type2</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iPrec</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1aff435b0c277f66041374f93a3803e1f1" kindref="member">EOprtAssociativity</ref></type>
+          <declname>a_eAssociativity</declname>
+          <defname>a_eOprtAsct</defname>
+        </param>
+        <briefdescription>
+<para>Constructor for constructing binary operator callbacks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_pFun</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a static function taking two arguments </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_bAllowOpti</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A flag indicating this function can be optimized </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_iPrec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operator precedence </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_eOprtAsct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operators associativity </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="58" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="102" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1ab82fdaefcaa0bda28122768fa1eae317" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_type2 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1abd9aed5816d33116d687f5becd85b38f" kindref="member">fun_type2</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for constructing function callbacks taking two arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="59" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="84" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a9d151844c0da252efe528b39f5f2c401" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_type3 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1ac89cbeb049bfe0ac38464d9420bf3201" kindref="member">fun_type3</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="60" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="116" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a349b0be9ad797a629fa1bff1141fc03e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_type4 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1ada318070796bde216079092cfdcf6fe1" kindref="member">fun_type4</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="61" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="127" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1aeba7f6318f9efcadd2adc9a0aa9a6b90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_type5 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a7a01724f9caaf71f99e46b49e75b3bc3" kindref="member">fun_type5</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="62" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="138" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a7aedd247c4cb3356a9273158e0705678" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_type6 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a575003f957a2a77d757e24fd04139001" kindref="member">fun_type6</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="63" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="149" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a83af2994034ca224034492ceed5a6e09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_type7 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1aa03550a6f05b1270e1e27214a63301ee" kindref="member">fun_type7</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="64" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="160" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1ad7cb85d33f18dc907f65ffd570cf3b5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_type8 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17cfcdc39e8d1d95c1418e117eb923b8" kindref="member">fun_type8</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="65" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="171" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a19bf0a37fcf8cf8e5cfd72cc31551d2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_type9 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a04c92810aa2e6098af69f47474388d71" kindref="member">fun_type9</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="66" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="182" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a407a1c4350e27aafd690b748b2b1b6cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_type10 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a9d79a17c5171e8928f8c91964979e56c" kindref="member">fun_type10</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="67" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="193" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a635bce0e512570b3fc58a0c518c0a670" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_type0 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1aff9adf757e90a2398326a3cb10585cf1" kindref="member">bulkfun_type0</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="69" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="325" bodyend="333"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1ae5e973a9b5b89d6cae23b43a0c3b3d34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_type1 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a2bd588710432e6e34eae3e2af4ba3862" kindref="member">bulkfun_type1</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="70" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="336" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a442aafc38e0ea41313c1113aadaccbed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_type2 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a9faa755ea34c6e8de3895013e649a713" kindref="member">bulkfun_type2</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for constructing function callbacks taking two arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="71" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="350" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a69e08a2bb6d9511159c753e79e5b796f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_type3 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a441194d09cb0e9331dbfdaf74f59efd3" kindref="member">bulkfun_type3</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="72" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="361" bodyend="369"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a78d4499313404d45abbafc99045b9e41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_type4 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a6b7ce6e1f888b02222d2765d1f521507" kindref="member">bulkfun_type4</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="73" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="372" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1aa9f74c808df33651275e8e10f6065fb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_type5 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a9343ce135e0a53897a67c6098d07a7b3" kindref="member">bulkfun_type5</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="74" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="383" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a800f5b589bcef69cc990e039ecdb335b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_type6 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a1259e71ee6f8b9e3985ef0cda16dd433" kindref="member">bulkfun_type6</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="75" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="394" bodyend="402"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a5483b3ae6eb6329fd742799e0c0cfcd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_type7 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a9726be97f12bc3b336884d462623ca8c" kindref="member">bulkfun_type7</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="76" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="405" bodyend="413"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1ad42ddac0efd2cce6e79715e156fa31b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_type8 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1aa4e562060c2c2377266ec1cf274856fe" kindref="member">bulkfun_type8</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="77" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="416" bodyend="424"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a6fadf69565c3f7e295bc375eef298d89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_type9 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a51c71d5698d29b40688feaa8e968efc9" kindref="member">bulkfun_type9</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="78" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="427" bodyend="435"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a07bc6bb899842448beffde1c9b18cd7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_type10 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1aebd99bafbd17761a9e13b8a7366ae1ce" kindref="member">bulkfun_type10</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="79" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="438" bodyend="446"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1afd7a7863138953853ad08c49cb781ca9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(multfun_type a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a004a9a10d015a8e2e17604cb632cd6c1" kindref="member">multfun_type</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="81" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="570" bodyend="578"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a027d02e29d93c0cfccc0a3780b59b9fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(strfun_type1 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a578b844842f577e78da3f520f9ee2f9a" kindref="member">strfun_type1</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="83" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="592" bodyend="600"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1ae875518b280a457291178a204e538bcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(strfun_type2 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a14b9af8ec1e328b685221ca23fc9f765" kindref="member">strfun_type2</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="84" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="603" bodyend="611"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a5fcbcd39382aaa95b4bfd39c83f03be6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(strfun_type3 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a1ce7a16b2a2b87f662819b7ee1d87bc0" kindref="member">strfun_type3</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="85" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="614" bodyend="622"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1ac1a8384cd498f88a0aba3ddbba45ae3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(strfun_type4 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a03f5b99ef0a9e5f78ccf4d3e490704dc" kindref="member">strfun_type4</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="86" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="625" bodyend="633"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a267f912031560298019f8750002a717c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(strfun_type5 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a55140d3b293bcb41e96b3f9a9fd2b2d7" kindref="member">strfun_type5</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="87" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="636" bodyend="644"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1ac2923234bb2258a92701a1512ce90068" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(strfun_type6 a_pFun, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a75f3a31f30e949ed0ca25a27ea5288b5" kindref="member">strfun_type6</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="88" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="646" bodyend="654"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1acc0b8823c3a325e320b0ee84911fdd90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_userdata_type0 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a939b6f34173fa1e76f97a1e5d5452a09" kindref="member">fun_userdata_type0</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="91" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="204" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1afbcb2a86cac0ed4185f2e18f06c6be0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_userdata_type1 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a0fd5d38f2fb3e6ef9be3472cb7613ff1" kindref="member">fun_userdata_type1</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="92" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="215" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a798bea03b96c91fd27ca7ed1d2219596" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_userdata_type2 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a436c46ff8ebfa89c944425470a652ead" kindref="member">fun_userdata_type2</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="93" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="226" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1af3518e4e4b0992855734275f3f7df2d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_userdata_type3 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a07f71c315f4fadf9de650fc4382dd049" kindref="member">fun_userdata_type3</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="94" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="237" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a25252804036c6acf80e60b7fa8a9e859" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_userdata_type4 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a0f9b17d4b1e59115bba63e6d53765625" kindref="member">fun_userdata_type4</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="95" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="248" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a20d972325b75fe72353a70d8a1dcd42a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_userdata_type5 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1adcb1055d3531364e916f8bdf682a2b2f" kindref="member">fun_userdata_type5</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="96" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="259" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a860e08d7f7caa3c61e92d03675292739" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_userdata_type6 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a971c39af75dc6b5f7f20bbc1d66119dd" kindref="member">fun_userdata_type6</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="97" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="270" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a2bfe186302dfba32a9b0e74051cb20d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_userdata_type7 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a3b3a81234fe3014679f0f74cdec612f6" kindref="member">fun_userdata_type7</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="98" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="281" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1adabbcda7ceb2dde94e6269373c0db02a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_userdata_type8 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1ae17e82452f755411a245c67ce3268355" kindref="member">fun_userdata_type8</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="99" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="292" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a3f6ea721871b139f2481391f166d3112" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_userdata_type9 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1af7e4291312d366327078d127860541bf" kindref="member">fun_userdata_type9</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="100" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="303" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a0e0c8880181d3f936e3ec9e76617ee60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(fun_userdata_type10 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a04ed8cd829b59971c215edecdc9dfdee" kindref="member">fun_userdata_type10</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="101" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="314" bodyend="322"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a146f528ef0755e10fea7e141aacb669c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_userdata_type0 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a687d47059ad215c10bd8e968bd9528fb" kindref="member">bulkfun_userdata_type0</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="103" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="449" bodyend="457"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a0618b1eee40eb6f4f53d677a593c1280" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_userdata_type1 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a710d699842234a187170220e392ac68d" kindref="member">bulkfun_userdata_type1</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="104" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="460" bodyend="468"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1aac70335b9da98e483cf4b08db5bc2ae4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_userdata_type2 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1aeada4d73454e5aa78efe3629b65a4b87" kindref="member">bulkfun_userdata_type2</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="105" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="471" bodyend="479"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1afa67f9b8598ed6c9211a77ad90de05c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_userdata_type3 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a88e1a3aff85016f20bb75468e54fe977" kindref="member">bulkfun_userdata_type3</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="106" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="482" bodyend="490"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a60dab1bccb4de88cb02e7a0672db8b29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_userdata_type4 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1ae55700d01ee5a6d292e23fbff9b1db0d" kindref="member">bulkfun_userdata_type4</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="107" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="493" bodyend="501"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a397946b3d05c5b4675a04d6ef93e6419" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_userdata_type5 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a7a3d722afa477c7af751702d4cc909df" kindref="member">bulkfun_userdata_type5</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="108" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="504" bodyend="512"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a99e487948b404475e576b5625743707e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_userdata_type6 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1aa8c7a8cb10eb84e21bae47dae6410a06" kindref="member">bulkfun_userdata_type6</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="109" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="515" bodyend="523"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a92b4f1f39982c763e31677f1e4f75d69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_userdata_type7 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1aaa629b05b06b00be6631ea77f7f30e41" kindref="member">bulkfun_userdata_type7</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="110" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="526" bodyend="534"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a3f6236049c6bf09ddc96d62ee57e18dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_userdata_type8 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1ad476874c1e09e5c8f16eaa0c8106b245" kindref="member">bulkfun_userdata_type8</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="111" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="537" bodyend="545"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a866334c0441ed8590b9ba70f8768e9a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_userdata_type9 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a98e629b5446c2ecac669b5cb32b502da" kindref="member">bulkfun_userdata_type9</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="112" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="548" bodyend="556"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a8d1357569ac00451389925bc30769e5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(bulkfun_userdata_type10 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a2d5f2395090063a6947a85b9b6e8034b" kindref="member">bulkfun_userdata_type10</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="113" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="559" bodyend="567"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a385a23dd7762a0565b09706b44333529" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(multfun_userdata_type a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a482b9409c3ba2e2dde72f716295a1ba4" kindref="member">multfun_userdata_type</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="115" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="581" bodyend="589"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1ac93cc79826d7fe6c3b1de3121f0a229c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(strfun_userdata_type1 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1ab8d93b4c1c711be329af76b9034112d9" kindref="member">strfun_userdata_type1</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="117" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="657" bodyend="665"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1af76b7c2c35938b2d6190850b839e3c3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(strfun_userdata_type2 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a84d92000f881f4bafe308f1b61c2841d" kindref="member">strfun_userdata_type2</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="118" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="668" bodyend="676"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a57d4677c6d1c320f19f0b3c9d4a5a7d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(strfun_userdata_type3 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1abb7b439633898a03668a4634b7a25bb5" kindref="member">strfun_userdata_type3</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="119" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="679" bodyend="687"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a5e3f7976e17639713fa7ca13b25c3b75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(strfun_userdata_type4 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a426aeab3051321184d97abe4f6a59d5b" kindref="member">strfun_userdata_type4</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="120" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="690" bodyend="698"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a869ec95334c54a08763152fac432e314" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(strfun_userdata_type5 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1ac5e98a659656388aa301d22a7d66ed47" kindref="member">strfun_userdata_type5</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="121" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="701" bodyend="709"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a2c9d36dc6eacae5c0b860382e1869704" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(strfun_userdata_type6 a_pFun, void *a_pUserData, bool a_bAllowOpti)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a2e7e564ff77a7582f52855d4f38239db" kindref="member">strfun_userdata_type6</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpti</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="122" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="712" bodyend="720"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a2c460fd6954bfcb8416275cf660e5160" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>()</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <briefdescription>
+<para>Default constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="124" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="725" bodyend="733"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a689eab6da426078ed50e2794865f8cf9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::ParserCallback</definition>
+        <argsstring>(const ParserCallback &amp;a_Fun)</argsstring>
+        <name>ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::ParserCallback</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_callback" kindref="compound">ParserCallback</ref> &amp;</type>
+          <declname>a_Fun</declname>
+          <defname>ref</defname>
+        </param>
+        <briefdescription>
+<para>Copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="125" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="739" bodyend="743"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a24ab32a2b7c74fb36ad609c9dd842dfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmu_1_1_parser_callback" kindref="compound">ParserCallback</ref> &amp;</type>
+        <definition>ParserCallback &amp; mu::ParserCallback::operator=</definition>
+        <argsstring>(const ParserCallback &amp;a_Fun)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>mu::ParserCallback::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_callback" kindref="compound">ParserCallback</ref> &amp;</type>
+          <declname>a_Fun</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="126" column="17" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="745" bodyend="749"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a7bbce0a268260c1efce756115d742bf0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserCallback::~ParserCallback</definition>
+        <argsstring>()</argsstring>
+        <name>~ParserCallback</name>
+        <qualifiedname>mu::ParserCallback::~ParserCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="127" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="752" bodyend="756"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a0c29f5f12f1cdceba82e5aba3a96a79f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmu_1_1_parser_callback" kindref="compound">ParserCallback</ref> *</type>
+        <definition>ParserCallback * mu::ParserCallback::Clone</definition>
+        <argsstring>() const</argsstring>
+        <name>Clone</name>
+        <qualifiedname>mu::ParserCallback::Clone</qualifiedname>
+        <briefdescription>
+<para>Clone this instance and return a pointer to the new instance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="129" column="16" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="787" bodyend="790"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1aba8e85f5336449c4b2b4ac1304cfe21b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::ParserCallback::IsOptimizable</definition>
+        <argsstring>() const</argsstring>
+        <name>IsOptimizable</name>
+        <qualifiedname>mu::ParserCallback::IsOptimizable</qualifiedname>
+        <briefdescription>
+<para>Return tru if the function is conservative. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Conservative functions return always the same result for the same argument. <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="131" column="7" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="798" bodyend="801"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a63a4ad5627e5ffccf988d4a3dfbdb270" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::ParserCallback::IsValid</definition>
+        <argsstring>() const</argsstring>
+        <name>IsValid</name>
+        <qualifiedname>mu::ParserCallback::IsValid</qualifiedname>
+        <briefdescription>
+<para>Check that the callback looks valid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Check that the function pointer is not null, and if there are user data that they are not null. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="132" column="7" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="839" bodyend="844"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1abea23b8f31fb65086013b8382ca0674b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * mu::ParserCallback::GetAddr</definition>
+        <argsstring>() const</argsstring>
+        <name>GetAddr</name>
+        <qualifiedname>mu::ParserCallback::GetAddr</qualifiedname>
+        <briefdescription>
+<para>Get the callback address for the parser function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The type of the address is void. It needs to be recasted according to the argument number to the right type.</para>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="133" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="811" bodyend="817"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1adf5af527c7f8bf794451ba91ec6c8bc0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * mu::ParserCallback::GetUserData</definition>
+        <argsstring>() const</argsstring>
+        <name>GetUserData</name>
+        <qualifiedname>mu::ParserCallback::GetUserData</qualifiedname>
+        <briefdescription>
+<para>Get the user data if present, else nullptr. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="134" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="824" bodyend="830"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1aca4285a09eac65372691af3cb6f31fae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40e" kindref="member">ECmdCode</ref></type>
+        <definition>ECmdCode mu::ParserCallback::GetCode</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCode</name>
+        <qualifiedname>mu::ParserCallback::GetCode</qualifiedname>
+        <briefdescription>
+<para>Return the callback code. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="135" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="848" bodyend="851"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a8522c59af746fd6551ac54cc44f8df7a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1ac3ccf6a749baacffd48fe97b9c2af302" kindref="member">ETypeCode</ref></type>
+        <definition>ETypeCode mu::ParserCallback::GetType</definition>
+        <argsstring>() const</argsstring>
+        <name>GetType</name>
+        <qualifiedname>mu::ParserCallback::GetType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="136" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="854" bodyend="857"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a963963b5706072ad531fe0a9eb0ce65c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::ParserCallback::GetPri</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPri</name>
+        <qualifiedname>mu::ParserCallback::GetPri</qualifiedname>
+        <briefdescription>
+<para>Return the operator precedence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrown</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Only valid if the callback token is an operator token (binary or infix). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="137" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="865" bodyend="868"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a098e7b2dfb9f4e2d97d5e03254527b15" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1aff435b0c277f66041374f93a3803e1f1" kindref="member">EOprtAssociativity</ref></type>
+        <definition>EOprtAssociativity mu::ParserCallback::GetAssociativity</definition>
+        <argsstring>() const</argsstring>
+        <name>GetAssociativity</name>
+        <qualifiedname>mu::ParserCallback::GetAssociativity</qualifiedname>
+        <briefdescription>
+<para>Return the operators associativity. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrown</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Only valid if the callback token is a binary operator token. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="138" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="876" bodyend="879"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1a79aa23e9c6a63ea99601bae39f45d490" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::ParserCallback::GetArgc</definition>
+        <argsstring>() const</argsstring>
+        <name>GetArgc</name>
+        <qualifiedname>mu::ParserCallback::GetArgc</qualifiedname>
+        <briefdescription>
+<para>Returns the number of numeric function Arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This number is negative for functions with variable number of arguments. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="139" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="886" bodyend="889"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classmu_1_1_parser_callback_1abbda2ea4a098d89c888e70699f062c60" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserCallback::Assign</definition>
+        <argsstring>(const ParserCallback &amp;ref)</argsstring>
+        <name>Assign</name>
+        <qualifiedname>mu::ParserCallback::Assign</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_callback" kindref="compound">ParserCallback</ref> &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <briefdescription>
+<para>Copy callback from argument. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="142" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp" bodystart="763" bodyend="783"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Encapsulation of prototypes for a numerical parser function. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Encapsulates the prototyp for numerical parser functions. The class stores the number of arguments for parser functions as well as additional flags indication the function is non optimizeable. The pointer to the callback function pointer is stored as void* and needs to be casted according to the argument count. Negative argument counts indicate a parser function with a variable number of arguments. </para>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" line="52" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h" bodystart="53" bodyend="152"/>
+    <listofallmembers>
+      <member refid="classmu_1_1_parser_callback_1abbda2ea4a098d89c888e70699f062c60" prot="private" virt="non-virtual"><scope>mu::ParserCallback</scope><name>Assign</name></member>
+      <member refid="classmu_1_1_parser_callback_1a0c29f5f12f1cdceba82e5aba3a96a79f" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>Clone</name></member>
+      <member refid="classmu_1_1_parser_callback_1abea23b8f31fb65086013b8382ca0674b" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>GetAddr</name></member>
+      <member refid="classmu_1_1_parser_callback_1a79aa23e9c6a63ea99601bae39f45d490" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>GetArgc</name></member>
+      <member refid="classmu_1_1_parser_callback_1a098e7b2dfb9f4e2d97d5e03254527b15" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>GetAssociativity</name></member>
+      <member refid="classmu_1_1_parser_callback_1aca4285a09eac65372691af3cb6f31fae" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>GetCode</name></member>
+      <member refid="classmu_1_1_parser_callback_1a963963b5706072ad531fe0a9eb0ce65c" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>GetPri</name></member>
+      <member refid="classmu_1_1_parser_callback_1a8522c59af746fd6551ac54cc44f8df7a" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>GetType</name></member>
+      <member refid="classmu_1_1_parser_callback_1adf5af527c7f8bf794451ba91ec6c8bc0" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>GetUserData</name></member>
+      <member refid="classmu_1_1_parser_callback_1aba8e85f5336449c4b2b4ac1304cfe21b" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>IsOptimizable</name></member>
+      <member refid="classmu_1_1_parser_callback_1a63a4ad5627e5ffccf988d4a3dfbdb270" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>IsValid</name></member>
+      <member refid="classmu_1_1_parser_callback_1a8e7327b5c191a5fc8f6940324b60002c" prot="private" virt="non-virtual"><scope>mu::ParserCallback</scope><name>m_bAllowOpti</name></member>
+      <member refid="classmu_1_1_parser_callback_1a8f518116409cdecceb7735138dd14028" prot="private" virt="non-virtual"><scope>mu::ParserCallback</scope><name>m_eOprtAsct</name></member>
+      <member refid="classmu_1_1_parser_callback_1a9fe30a9436fe25166239139bd86bb73d" prot="private" virt="non-virtual"><scope>mu::ParserCallback</scope><name>m_iArgc</name></member>
+      <member refid="classmu_1_1_parser_callback_1ae408e004fb09551d8bac414476ba239e" prot="private" virt="non-virtual"><scope>mu::ParserCallback</scope><name>m_iCode</name></member>
+      <member refid="classmu_1_1_parser_callback_1a416ac9da0201505fb38a61c909fe414f" prot="private" virt="non-virtual"><scope>mu::ParserCallback</scope><name>m_iPri</name></member>
+      <member refid="classmu_1_1_parser_callback_1a8f18b3ab5a161602430c5292af4d27c3" prot="private" virt="non-virtual"><scope>mu::ParserCallback</scope><name>m_iType</name></member>
+      <member refid="classmu_1_1_parser_callback_1a06511c20ac299781b674d4d0ba51b111" prot="private" virt="non-virtual"><scope>mu::ParserCallback</scope><name>m_pFun</name></member>
+      <member refid="classmu_1_1_parser_callback_1a24ab32a2b7c74fb36ad609c9dd842dfe" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>operator=</name></member>
+      <member refid="classmu_1_1_parser_callback_1a3f203039da4fe6deaabd7ea289a82386" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a821093ba026dbf05edb7f7723560be25" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1ac607bcc54ac452980521896e87e49e39" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a22e961968ba20b101d85cb923e77dd3a" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1ab82fdaefcaa0bda28122768fa1eae317" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a9d151844c0da252efe528b39f5f2c401" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a349b0be9ad797a629fa1bff1141fc03e" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1aeba7f6318f9efcadd2adc9a0aa9a6b90" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a7aedd247c4cb3356a9273158e0705678" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a83af2994034ca224034492ceed5a6e09" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1ad7cb85d33f18dc907f65ffd570cf3b5b" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a19bf0a37fcf8cf8e5cfd72cc31551d2c" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a407a1c4350e27aafd690b748b2b1b6cd" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a635bce0e512570b3fc58a0c518c0a670" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1ae5e973a9b5b89d6cae23b43a0c3b3d34" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a442aafc38e0ea41313c1113aadaccbed" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a69e08a2bb6d9511159c753e79e5b796f" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a78d4499313404d45abbafc99045b9e41" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1aa9f74c808df33651275e8e10f6065fb8" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a800f5b589bcef69cc990e039ecdb335b" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a5483b3ae6eb6329fd742799e0c0cfcd7" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1ad42ddac0efd2cce6e79715e156fa31b1" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a6fadf69565c3f7e295bc375eef298d89" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a07bc6bb899842448beffde1c9b18cd7b" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1afd7a7863138953853ad08c49cb781ca9" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a027d02e29d93c0cfccc0a3780b59b9fb" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1ae875518b280a457291178a204e538bcf" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a5fcbcd39382aaa95b4bfd39c83f03be6" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1ac1a8384cd498f88a0aba3ddbba45ae3a" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a267f912031560298019f8750002a717c" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1ac2923234bb2258a92701a1512ce90068" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1acc0b8823c3a325e320b0ee84911fdd90" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1afbcb2a86cac0ed4185f2e18f06c6be0c" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a798bea03b96c91fd27ca7ed1d2219596" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1af3518e4e4b0992855734275f3f7df2d7" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a25252804036c6acf80e60b7fa8a9e859" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a20d972325b75fe72353a70d8a1dcd42a" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a860e08d7f7caa3c61e92d03675292739" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a2bfe186302dfba32a9b0e74051cb20d4" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1adabbcda7ceb2dde94e6269373c0db02a" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a3f6ea721871b139f2481391f166d3112" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a0e0c8880181d3f936e3ec9e76617ee60" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a146f528ef0755e10fea7e141aacb669c" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a0618b1eee40eb6f4f53d677a593c1280" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1aac70335b9da98e483cf4b08db5bc2ae4" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1afa67f9b8598ed6c9211a77ad90de05c5" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a60dab1bccb4de88cb02e7a0672db8b29" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a397946b3d05c5b4675a04d6ef93e6419" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a99e487948b404475e576b5625743707e" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a92b4f1f39982c763e31677f1e4f75d69" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a3f6236049c6bf09ddc96d62ee57e18dd" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a866334c0441ed8590b9ba70f8768e9a0" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a8d1357569ac00451389925bc30769e5d" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a385a23dd7762a0565b09706b44333529" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1ac93cc79826d7fe6c3b1de3121f0a229c" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1af76b7c2c35938b2d6190850b839e3c3f" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a57d4677c6d1c320f19f0b3c9d4a5a7d7" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a5e3f7976e17639713fa7ca13b25c3b75" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a869ec95334c54a08763152fac432e314" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a2c9d36dc6eacae5c0b860382e1869704" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a2c460fd6954bfcb8416275cf660e5160" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a689eab6da426078ed50e2794865f8cf9" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>ParserCallback</name></member>
+      <member refid="classmu_1_1_parser_callback_1a7bbce0a268260c1efce756115d742bf0" prot="public" virt="non-virtual"><scope>mu::ParserCallback</scope><name>~ParserCallback</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

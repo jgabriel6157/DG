@@ -1,29 +1,31 @@
-# Minimal makefile for Sphinx documentation
-#
+# Minimal makefile for Sphinx documentation with Doxygen integration
 
-# You can set these variables from the command line, and also
-# from the environment for the first two.
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
+DOXYGEN       ?= doxygen
 SOURCEDIR     = .
 BUILDDIR      = _build
 
-# Put it first so that "make" without argument is like "make help".
+.PHONY: help Makefile doxygen html publish
+
+# Default help command
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile publish
+# Run Doxygen to generate XML for Breathe
+doxygen:
+	@$(DOXYGEN) Doxyfile
+	@echo "Doxygen build completed."
 
-# Catch-all target: route all unknown targets to Sphinx using the new
-# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: Makefile
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-
-# Custom target to build, move files, clean up, and push changes
-publish:
+# Build HTML docs, ensuring Doxygen runs first
+html: doxygen
 	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+# Publish target for GitHub Pages
+publish: html
 	@cp -r $(BUILDDIR)/html/* .
 	@rm -rf $(BUILDDIR)
 	@git add .
-	@git commit -m "Update Sphinx docs"
+	@git commit -m "Update Sphinx and Doxygen docs"
 	@git push origin ghPages
+	@echo "Documentation successfully published to ghPages."

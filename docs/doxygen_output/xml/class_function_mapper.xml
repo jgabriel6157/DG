@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_function_mapper" kind="class" language="C++" prot="public">
+    <compoundname>FunctionMapper</compoundname>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="class_function_mapper_1a034e80a44cd1c1bfd458136185d4362a" prot="public" static="no">
+        <type>std::function&lt; double(int, double)&gt;</type>
+        <definition>using FunctionMapper::FunctionType1 =  std::function&lt;double(int, double)&gt;</definition>
+        <argsstring></argsstring>
+        <name>FunctionType1</name>
+        <qualifiedname>FunctionMapper::FunctionType1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" line="15" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="class_function_mapper_1a40a7c4ab9b798605953547fad5383cd6" prot="public" static="no">
+        <type>std::function&lt; double(double)&gt;</type>
+        <definition>using FunctionMapper::FunctionType2 =  std::function&lt;double(double)&gt;</definition>
+        <argsstring></argsstring>
+        <name>FunctionType2</name>
+        <qualifiedname>FunctionMapper::FunctionType2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" line="16" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_function_mapper_1a62dff815d3d8a6851d506f36e07cc821" prot="private" static="yes" mutable="no">
+        <type>std::map&lt; std::string, FunctionType1 &gt;</type>
+        <definition>std::map&lt; std::string, FunctionMapper::FunctionType1 &gt; FunctionMapper::functionMap1</definition>
+        <argsstring></argsstring>
+        <name>functionMap1</name>
+        <qualifiedname>FunctionMapper::functionMap1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" line="55" column="21" bodyfile="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_function_mapper_1a9cd332a34da563dd50f15afe06543ce2" prot="private" static="yes" mutable="no">
+        <type>std::map&lt; std::string, FunctionType1 &gt;</type>
+        <definition>std::map&lt; std::string, FunctionMapper::FunctionType1 &gt; FunctionMapper::derivativeMap</definition>
+        <argsstring></argsstring>
+        <name>derivativeMap</name>
+        <qualifiedname>FunctionMapper::derivativeMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" line="56" column="21" bodyfile="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_function_mapper_1a1db94a748838ba6267d18ab64bbf7dfa" prot="private" static="yes" mutable="no">
+        <type>std::map&lt; std::string, FunctionType2 &gt;</type>
+        <definition>std::map&lt; std::string, FunctionMapper::FunctionType2 &gt; FunctionMapper::functionMap2</definition>
+        <argsstring></argsstring>
+        <name>functionMap2</name>
+        <qualifiedname>FunctionMapper::functionMap2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" line="57" column="21" bodyfile="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" bodystart="57" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_function_mapper_1a07df5d4ed9d4568359d28e69d6b85f76" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FunctionMapper::initializeMap</definition>
+        <argsstring>()</argsstring>
+        <name>initializeMap</name>
+        <qualifiedname>FunctionMapper::initializeMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" line="19" column="17" bodyfile="/Users/jackgabriel/Desktop/DG/FunctionMapper.cxx" bodystart="8" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_function_mapper_1aae4ed3f1d4f014ba53e100211ce16978" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FunctionType</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>FunctionType</type>
+        <definition>static FunctionType FunctionMapper::getFunction</definition>
+        <argsstring>(const std::string &amp;functionName)</argsstring>
+        <name>getFunction</name>
+        <qualifiedname>FunctionMapper::getFunction</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>functionName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" line="24" column="25" bodyfile="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" bodystart="24" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_function_mapper_1a8cb137a00ea8ff7e08264f36d8adc38c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>FunctionType1</type>
+        <definition>FunctionMapper::FunctionType1 FunctionMapper::getDerivative</definition>
+        <argsstring>(const std::string &amp;functionName)</argsstring>
+        <name>getDerivative</name>
+        <qualifiedname>FunctionMapper::getDerivative</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>functionName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" line="48" column="26" bodyfile="/Users/jackgabriel/Desktop/DG/FunctionMapper.cxx" bodystart="27" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_function_mapper_1a1cd0261cb5a4b56e3e56325fc47aadf0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string FunctionMapper::getFunctionName</definition>
+        <argsstring>(const FunctionType1 &amp;function)</argsstring>
+        <name>getFunctionName</name>
+        <qualifiedname>FunctionMapper::getFunctionName</qualifiedname>
+        <param>
+          <type>const FunctionType1 &amp;</type>
+          <declname>function</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" line="51" column="24" bodyfile="/Users/jackgabriel/Desktop/DG/FunctionMapper.cxx" bodystart="41" bodyend="51"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_function_mapper_1a8772c82d14343e73e96886e72a535d55" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FunctionType</type>
+          </param>
+        </templateparamlist>
+        <type>auto &amp;</type>
+        <definition>static auto &amp; FunctionMapper::getFunctionMap</definition>
+        <argsstring>()</argsstring>
+        <name>getFunctionMap</name>
+        <qualifiedname>FunctionMapper::getFunctionMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" line="61" column="17" bodyfile="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" bodystart="61" bodyend="71"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" line="11" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx" bodystart="12" bodyend="72"/>
+    <listofallmembers>
+      <member refid="class_function_mapper_1a9cd332a34da563dd50f15afe06543ce2" prot="private" virt="non-virtual"><scope>FunctionMapper</scope><name>derivativeMap</name></member>
+      <member refid="class_function_mapper_1a62dff815d3d8a6851d506f36e07cc821" prot="private" virt="non-virtual"><scope>FunctionMapper</scope><name>functionMap1</name></member>
+      <member refid="class_function_mapper_1a1db94a748838ba6267d18ab64bbf7dfa" prot="private" virt="non-virtual"><scope>FunctionMapper</scope><name>functionMap2</name></member>
+      <member refid="class_function_mapper_1a034e80a44cd1c1bfd458136185d4362a" prot="public" virt="non-virtual"><scope>FunctionMapper</scope><name>FunctionType1</name></member>
+      <member refid="class_function_mapper_1a40a7c4ab9b798605953547fad5383cd6" prot="public" virt="non-virtual"><scope>FunctionMapper</scope><name>FunctionType2</name></member>
+      <member refid="class_function_mapper_1a8cb137a00ea8ff7e08264f36d8adc38c" prot="public" virt="non-virtual"><scope>FunctionMapper</scope><name>getDerivative</name></member>
+      <member refid="class_function_mapper_1aae4ed3f1d4f014ba53e100211ce16978" prot="public" virt="non-virtual"><scope>FunctionMapper</scope><name>getFunction</name></member>
+      <member refid="class_function_mapper_1a8772c82d14343e73e96886e72a535d55" prot="private" virt="non-virtual"><scope>FunctionMapper</scope><name>getFunctionMap</name></member>
+      <member refid="class_function_mapper_1a1cd0261cb5a4b56e3e56325fc47aadf0" prot="public" virt="non-virtual"><scope>FunctionMapper</scope><name>getFunctionName</name></member>
+      <member refid="class_function_mapper_1a07df5d4ed9d4568359d28e69d6b85f76" prot="public" virt="non-virtual"><scope>FunctionMapper</scope><name>initializeMap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

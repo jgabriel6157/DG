@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespaceplot__comp" kind="namespace" language="Python">
+    <compoundname>plot_comp</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="plot__comp_8py_1a464ca6cf5fc06fa1d84033375b2b482b" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_comp.fileName</definition>
+        <argsstring></argsstring>
+        <name>fileName</name>
+        <qualifiedname>plot_comp.fileName</qualifiedname>
+        <initializer>=  &apos;Moments.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_comp.py" line="5" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_comp.py" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__comp_8py_1ae0499c5f48951216aa964f1fe1e0a56c" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_comp.fileNameCons</definition>
+        <argsstring></argsstring>
+        <name>fileNameCons</name>
+        <qualifiedname>plot_comp.fileNameCons</qualifiedname>
+        <initializer>=  &apos;MomentsCons.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_comp.py" line="6" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_comp.py" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__comp_8py_1a9c51a6451d43660365f82a923c8e5d06" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_comp.values</definition>
+        <argsstring></argsstring>
+        <name>values</name>
+        <qualifiedname>plot_comp.values</qualifiedname>
+        <initializer>=  pd.read_csv(fileName,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_comp.py" line="8" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_comp.py" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__comp_8py_1aad32d48ef05540e751a496361c0a873c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_comp.mass</definition>
+        <argsstring></argsstring>
+        <name>mass</name>
+        <qualifiedname>plot_comp.mass</qualifiedname>
+        <initializer>=  np.zeros(int(len(values)/4))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_comp.py" line="10" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_comp.py" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__comp_8py_1acbe26b54ef784e52852dcddfd39a2256" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_comp.momentum</definition>
+        <argsstring></argsstring>
+        <name>momentum</name>
+        <qualifiedname>plot_comp.momentum</qualifiedname>
+        <initializer>=  np.zeros(int(len(values)/4))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_comp.py" line="11" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_comp.py" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__comp_8py_1a8ea7f106d95edd1c9401a390abe7e169" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_comp.energy</definition>
+        <argsstring></argsstring>
+        <name>energy</name>
+        <qualifiedname>plot_comp.energy</qualifiedname>
+        <initializer>=  np.zeros(int(len(values)/4))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_comp.py" line="12" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_comp.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__comp_8py_1a6cb30c2a8ed2d2a67b97abc81281e082" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_comp.entropy</definition>
+        <argsstring></argsstring>
+        <name>entropy</name>
+        <qualifiedname>plot_comp.entropy</qualifiedname>
+        <initializer>=  np.zeros(int(len(values)/4))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_comp.py" line="13" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_comp.py" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__comp_8py_1a276dffccc5b0b4e02f6aa1eb392ab641" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_comp.values2</definition>
+        <argsstring></argsstring>
+        <name>values2</name>
+        <qualifiedname>plot_comp.values2</qualifiedname>
+        <initializer>=  pd.read_csv(fileNameCons,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_comp.py" line="15" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_comp.py" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__comp_8py_1aea1e8317cb3daf4da3c53f13e783a3e6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_comp.mass2</definition>
+        <argsstring></argsstring>
+        <name>mass2</name>
+        <qualifiedname>plot_comp.mass2</qualifiedname>
+        <initializer>=  np.zeros(int(len(values2)/4))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_comp.py" line="17" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_comp.py" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__comp_8py_1a05912d6d92dd494ee00799330a612cad" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_comp.momentum2</definition>
+        <argsstring></argsstring>
+        <name>momentum2</name>
+        <qualifiedname>plot_comp.momentum2</qualifiedname>
+        <initializer>=  np.zeros(int(len(values2)/4))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_comp.py" line="18" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_comp.py" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__comp_8py_1adb5a8ccafb32c33c97f7860fd1e1d40a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_comp.energy2</definition>
+        <argsstring></argsstring>
+        <name>energy2</name>
+        <qualifiedname>plot_comp.energy2</qualifiedname>
+        <initializer>=  np.zeros(int(len(values2)/4))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_comp.py" line="19" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_comp.py" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__comp_8py_1a74c6d92f0b65a46a2d0410aa6ba33585" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_comp.entropy2</definition>
+        <argsstring></argsstring>
+        <name>entropy2</name>
+        <qualifiedname>plot_comp.entropy2</qualifiedname>
+        <initializer>=  np.zeros(int(len(values2)/4))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_comp.py" line="20" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_comp.py" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__comp_8py_1a746fdb0502eb04b4b0dacbcb0e231c41" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_comp::count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <qualifiedname>plot_comp.count</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_comp.py" line="22" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_comp.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__comp_8py_1af5d9d2295b6bad5dbd8d0b994d2aaf5d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_comp::counter</definition>
+        <argsstring></argsstring>
+        <name>counter</name>
+        <qualifiedname>plot_comp.counter</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_comp.py" line="23" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_comp.py" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/plot_comp.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,578 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classmu_1_1_parser_error" kind="class" language="C++" prot="public">
+    <compoundname>mu::ParserError</compoundname>
+    <includes refid="mu_parser_error_8h" local="no">muParserError.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmu_1_1_parser_error_1a2584eb4a4fefe34aef3c10a86ea84859" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref></type>
+        <definition>string_type mu::ParserError::m_strMsg</definition>
+        <argsstring></argsstring>
+        <name>m_strMsg</name>
+        <qualifiedname>mu::ParserError::m_strMsg</qualifiedname>
+        <briefdescription>
+<para>The message string. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="103" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_error_1a53c695ee945fdc48f95326cba3b2d61a" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref></type>
+        <definition>string_type mu::ParserError::m_strFormula</definition>
+        <argsstring></argsstring>
+        <name>m_strFormula</name>
+        <qualifiedname>mu::ParserError::m_strFormula</qualifiedname>
+        <briefdescription>
+<para>Formula string. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="104" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_error_1a464792569085b0f145b2d5b405ae34de" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref></type>
+        <definition>string_type mu::ParserError::m_strTok</definition>
+        <argsstring></argsstring>
+        <name>m_strTok</name>
+        <qualifiedname>mu::ParserError::m_strTok</qualifiedname>
+        <briefdescription>
+<para>Token related with the error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="105" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_error_1a46e64ff7ab42b0598b4ca950c4f3eb7f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mu::ParserError::m_iPos</definition>
+        <argsstring></argsstring>
+        <name>m_iPos</name>
+        <qualifiedname>mu::ParserError::m_iPos</qualifiedname>
+        <briefdescription>
+<para>Formula position related to the error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="106" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_error_1a6c31af9a2bd11bcd7b4d7edc74e31ccb" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688a" kindref="member">EErrorCodes</ref></type>
+        <definition>EErrorCodes mu::ParserError::m_iErrc</definition>
+        <argsstring></argsstring>
+        <name>m_iErrc</name>
+        <qualifiedname>mu::ParserError::m_iErrc</qualifiedname>
+        <briefdescription>
+<para>Error code. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="107" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_error_1a3d1d3d98150daf8f22d2abacfe93bf07" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classmu_1_1_parser_error_msg" kindref="compound">ParserErrorMsg</ref> &amp;</type>
+        <definition>const ParserErrorMsg&amp; mu::ParserError::m_ErrMsg</definition>
+        <argsstring></argsstring>
+        <name>m_ErrMsg</name>
+        <qualifiedname>mu::ParserError::m_ErrMsg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="108" column="22" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classmu_1_1_parser_error_1a2eb86fc9e272308bf13a8aeadfc8efd0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserError::ReplaceSubString</definition>
+        <argsstring>(string_type &amp;strSource, const string_type &amp;strFind, const string_type &amp;strReplaceWith)</argsstring>
+        <name>ReplaceSubString</name>
+        <qualifiedname>mu::ParserError::ReplaceSubString</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>strSource</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>strFind</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>strReplaceWith</declname>
+        </param>
+        <briefdescription>
+<para>Replace all ocuurences of a substring with another string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Replace all occurrences of a substring with another string.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strFind</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string that shall be replaced. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strReplaceWith</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string that should be inserted instead of strFind </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="79" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserError.cpp" bodystart="254" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_error_1ae10efc343b31f18c2d3e943cc120cb1d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserError::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <qualifiedname>mu::ParserError::Reset</qualifiedname>
+        <briefdescription>
+<para>Reset the error object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="80" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserError.cpp" bodystart="278" bodyend="285"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmu_1_1_parser_error_1ad7f1fb7501d606308cf41c3eeab49348" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserError::ParserError</definition>
+        <argsstring>()</argsstring>
+        <name>ParserError</name>
+        <qualifiedname>mu::ParserError::ParserError</qualifiedname>
+        <briefdescription>
+<para>Default constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="84" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserError.cpp" bodystart="113" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_error_1a3f37c865f1c609337114f19525f4e625" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserError::ParserError</definition>
+        <argsstring>(EErrorCodes a_iErrc)</argsstring>
+        <name>ParserError</name>
+        <qualifiedname>mu::ParserError::ParserError</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688a" kindref="member">EErrorCodes</ref></type>
+          <declname>a_iErrc</declname>
+        </param>
+        <briefdescription>
+<para>This Constructor is used for internal exceptions only. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It does not contain any information but the error code. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="85" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserError.cpp" bodystart="128" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_error_1a67297c47b34173e5a331b3ff964d1bfc" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserError::ParserError</definition>
+        <argsstring>(const string_type &amp;sMsg)</argsstring>
+        <name>ParserError</name>
+        <qualifiedname>mu::ParserError::ParserError</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>sMsg</declname>
+        </param>
+        <briefdescription>
+<para>Construct an error from a message text. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="86" column="10" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserError.cpp" bodystart="145" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_error_1a3edd0b1277dcb33238b55d0aead6a764" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserError::ParserError</definition>
+        <argsstring>(EErrorCodes a_iErrc, const string_type &amp;sTok, const string_type &amp;sFormula=string_type(), int a_iPos=-1)</argsstring>
+        <name>ParserError</name>
+        <qualifiedname>mu::ParserError::ParserError</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688a" kindref="member">EErrorCodes</ref></type>
+          <declname>a_iErrc</declname>
+          <defname>iErrc</defname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>sTok</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>sFormula</declname>
+          <defname>sExpr</defname>
+          <defval><ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref>()</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iPos</declname>
+          <defname>iPos</defname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+<para>Construct an error object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">a_iErrc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error code. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sTok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The token string related to this error. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sExpr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The expression related to the error. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">a_iPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the position in the expression where the error occurred. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="87" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserError.cpp" bodystart="159" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_error_1ab21ddceddd5ae816abc1060873a245b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserError::ParserError</definition>
+        <argsstring>(EErrorCodes a_iErrc, int a_iPos, const string_type &amp;sTok)</argsstring>
+        <name>ParserError</name>
+        <qualifiedname>mu::ParserError::ParserError</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688a" kindref="member">EErrorCodes</ref></type>
+          <declname>a_iErrc</declname>
+          <defname>iErrc</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iPos</declname>
+          <defname>iPos</defname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>sTok</declname>
+        </param>
+        <briefdescription>
+<para>Construct an error object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">iErrc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error code. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">iPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the position in the expression where the error occurred. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sTok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The token string related to this error. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="88" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserError.cpp" bodystart="183" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_error_1ac4f83d23ad5875683d4100a85f0fbdfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserError::ParserError</definition>
+        <argsstring>(const char_type *a_szMsg, int a_iPos=-1, const string_type &amp;sTok=string_type())</argsstring>
+        <name>ParserError</name>
+        <qualifiedname>mu::ParserError::ParserError</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+          <declname>a_szMsg</declname>
+          <defname>szMsg</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iPos</declname>
+          <defname>iPos</defname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>sTok</declname>
+          <defval><ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Construct an error object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">szMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error message text. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">iPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the position related to the error. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sTok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The token string related to this error. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="89" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserError.cpp" bodystart="204" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_error_1a0820d687ae9ed8eed5bad962b40d006c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserError::ParserError</definition>
+        <argsstring>(const ParserError &amp;a_Obj)</argsstring>
+        <name>ParserError</name>
+        <qualifiedname>mu::ParserError::ParserError</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_error" kindref="compound">ParserError</ref> &amp;</type>
+          <declname>a_Obj</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="90" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserError.cpp" bodystart="220" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_error_1ae2c28377fa08e425a5f3df2cfa221b33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmu_1_1_parser_error" kindref="compound">ParserError</ref> &amp;</type>
+        <definition>ParserError &amp; mu::ParserError::operator=</definition>
+        <argsstring>(const ParserError &amp;a_Obj)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>mu::ParserError::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_error" kindref="compound">ParserError</ref> &amp;</type>
+          <declname>a_Obj</declname>
+        </param>
+        <briefdescription>
+<para>Assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="92" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserError.cpp" bodystart="232" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_error_1aee52babeeffcf663365b551c3ea61e1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserError::~ParserError</definition>
+        <argsstring>()</argsstring>
+        <name>~ParserError</name>
+        <qualifiedname>mu::ParserError::~ParserError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="93" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserError.cpp" bodystart="246" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_error_1a1b7b4b511525f13f728c9c2942983b19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserError::SetFormula</definition>
+        <argsstring>(const string_type &amp;a_strFormula)</argsstring>
+        <name>SetFormula</name>
+        <qualifiedname>mu::ParserError::SetFormula</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_strFormula</declname>
+        </param>
+        <briefdescription>
+<para>Set the expression related to this error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="95" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserError.cpp" bodystart="289" bodyend="292"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_error_1ab3a95893756a928d7577a4d440a04e78" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+        <definition>const string_type &amp; mu::ParserError::GetExpr</definition>
+        <argsstring>() const</argsstring>
+        <name>GetExpr</name>
+        <qualifiedname>mu::ParserError::GetExpr</qualifiedname>
+        <briefdescription>
+<para>gets the expression related tp this error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="96" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserError.cpp" bodystart="296" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_error_1a7c8e9065dd397a897e3e3b64fe103c38" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+        <definition>const string_type &amp; mu::ParserError::GetMsg</definition>
+        <argsstring>() const</argsstring>
+        <name>GetMsg</name>
+        <qualifiedname>mu::ParserError::GetMsg</qualifiedname>
+        <briefdescription>
+<para>Returns the message string for this error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="97" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserError.cpp" bodystart="303" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_error_1a6e3faef47c1de39585846ad3327fb73e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::ParserError::GetPos</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPos</name>
+        <qualifiedname>mu::ParserError::GetPos</qualifiedname>
+        <briefdescription>
+<para>Return the formula position related to the error. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the error is not related to a distinct position this will return -1 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="98" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserError.cpp" bodystart="313" bodyend="316"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_error_1abf124c5bfe37f3e23f15ae423d9dfa0e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+        <definition>const string_type &amp; mu::ParserError::GetToken</definition>
+        <argsstring>() const</argsstring>
+        <name>GetToken</name>
+        <qualifiedname>mu::ParserError::GetToken</qualifiedname>
+        <briefdescription>
+<para>Return string related with this token (if available). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="99" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserError.cpp" bodystart="320" bodyend="323"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_error_1a1aec1d910b9b1a63ac480abc9229f76d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688a" kindref="member">EErrorCodes</ref></type>
+        <definition>EErrorCodes mu::ParserError::GetCode</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCode</name>
+        <qualifiedname>mu::ParserError::GetCode</qualifiedname>
+        <briefdescription>
+<para>Return the error code. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="100" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserError.cpp" bodystart="327" bodyend="330"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Error class of the parser. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Part of the math parser package. </para>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" line="74" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserError.h" bodystart="75" bodyend="109"/>
+    <listofallmembers>
+      <member refid="classmu_1_1_parser_error_1a1aec1d910b9b1a63ac480abc9229f76d" prot="public" virt="non-virtual"><scope>mu::ParserError</scope><name>GetCode</name></member>
+      <member refid="classmu_1_1_parser_error_1ab3a95893756a928d7577a4d440a04e78" prot="public" virt="non-virtual"><scope>mu::ParserError</scope><name>GetExpr</name></member>
+      <member refid="classmu_1_1_parser_error_1a7c8e9065dd397a897e3e3b64fe103c38" prot="public" virt="non-virtual"><scope>mu::ParserError</scope><name>GetMsg</name></member>
+      <member refid="classmu_1_1_parser_error_1a6e3faef47c1de39585846ad3327fb73e" prot="public" virt="non-virtual"><scope>mu::ParserError</scope><name>GetPos</name></member>
+      <member refid="classmu_1_1_parser_error_1abf124c5bfe37f3e23f15ae423d9dfa0e" prot="public" virt="non-virtual"><scope>mu::ParserError</scope><name>GetToken</name></member>
+      <member refid="classmu_1_1_parser_error_1a3d1d3d98150daf8f22d2abacfe93bf07" prot="private" virt="non-virtual"><scope>mu::ParserError</scope><name>m_ErrMsg</name></member>
+      <member refid="classmu_1_1_parser_error_1a6c31af9a2bd11bcd7b4d7edc74e31ccb" prot="private" virt="non-virtual"><scope>mu::ParserError</scope><name>m_iErrc</name></member>
+      <member refid="classmu_1_1_parser_error_1a46e64ff7ab42b0598b4ca950c4f3eb7f" prot="private" virt="non-virtual"><scope>mu::ParserError</scope><name>m_iPos</name></member>
+      <member refid="classmu_1_1_parser_error_1a53c695ee945fdc48f95326cba3b2d61a" prot="private" virt="non-virtual"><scope>mu::ParserError</scope><name>m_strFormula</name></member>
+      <member refid="classmu_1_1_parser_error_1a2584eb4a4fefe34aef3c10a86ea84859" prot="private" virt="non-virtual"><scope>mu::ParserError</scope><name>m_strMsg</name></member>
+      <member refid="classmu_1_1_parser_error_1a464792569085b0f145b2d5b405ae34de" prot="private" virt="non-virtual"><scope>mu::ParserError</scope><name>m_strTok</name></member>
+      <member refid="classmu_1_1_parser_error_1ae2c28377fa08e425a5f3df2cfa221b33" prot="public" virt="non-virtual"><scope>mu::ParserError</scope><name>operator=</name></member>
+      <member refid="classmu_1_1_parser_error_1ad7f1fb7501d606308cf41c3eeab49348" prot="public" virt="non-virtual"><scope>mu::ParserError</scope><name>ParserError</name></member>
+      <member refid="classmu_1_1_parser_error_1a3f37c865f1c609337114f19525f4e625" prot="public" virt="non-virtual"><scope>mu::ParserError</scope><name>ParserError</name></member>
+      <member refid="classmu_1_1_parser_error_1a67297c47b34173e5a331b3ff964d1bfc" prot="public" virt="non-virtual"><scope>mu::ParserError</scope><name>ParserError</name></member>
+      <member refid="classmu_1_1_parser_error_1a3edd0b1277dcb33238b55d0aead6a764" prot="public" virt="non-virtual"><scope>mu::ParserError</scope><name>ParserError</name></member>
+      <member refid="classmu_1_1_parser_error_1ab21ddceddd5ae816abc1060873a245b0" prot="public" virt="non-virtual"><scope>mu::ParserError</scope><name>ParserError</name></member>
+      <member refid="classmu_1_1_parser_error_1ac4f83d23ad5875683d4100a85f0fbdfc" prot="public" virt="non-virtual"><scope>mu::ParserError</scope><name>ParserError</name></member>
+      <member refid="classmu_1_1_parser_error_1a0820d687ae9ed8eed5bad962b40d006c" prot="public" virt="non-virtual"><scope>mu::ParserError</scope><name>ParserError</name></member>
+      <member refid="classmu_1_1_parser_error_1a2eb86fc9e272308bf13a8aeadfc8efd0" prot="private" virt="non-virtual"><scope>mu::ParserError</scope><name>ReplaceSubString</name></member>
+      <member refid="classmu_1_1_parser_error_1ae10efc343b31f18c2d3e943cc120cb1d" prot="private" virt="non-virtual"><scope>mu::ParserError</scope><name>Reset</name></member>
+      <member refid="classmu_1_1_parser_error_1a1b7b4b511525f13f728c9c2942983b19" prot="public" virt="non-virtual"><scope>mu::ParserError</scope><name>SetFormula</name></member>
+      <member refid="classmu_1_1_parser_error_1aee52babeeffcf663365b551c3ea61e1f" prot="public" virt="non-virtual"><scope>mu::ParserError</scope><name>~ParserError</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

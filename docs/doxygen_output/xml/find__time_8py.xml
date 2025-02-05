@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="find__time_8py" kind="file" language="Python">
+    <compoundname>find_time.py</compoundname>
+    <innernamespace refid="namespacefind__time">find_time</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">import</highlight><highlight class="normal"><sp/>matplotlib.pyplot<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>plt</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>np</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>scipy.interpolate<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>interp1d</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">plt.rcParams.update({</highlight><highlight class="stringliteral">&apos;font.size&apos;</highlight><highlight class="normal">:<sp/>22})</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">x<sp/>=<sp/>np.array([4,<sp/>8,<sp/>12,<sp/>16,<sp/>20,<sp/>24,<sp/>28,<sp/>32])</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Order<sp/>1<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">t1<sp/>=<sp/>np.array([0.00417163,<sp/>0.01456,<sp/>0.0322,<sp/>0.055,<sp/>0.085,<sp/>0.125,<sp/>0.1647,<sp/>0.213307])</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">y1<sp/>=<sp/>np.array([0.294571,<sp/>0.057,<sp/>0.0220482,<sp/>0.0115,<sp/>0.007,<sp/>0.004775,<sp/>0.00345,<sp/>0.00261685])</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Order<sp/>2<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">t2<sp/>=<sp/>np.array([0.0117978,<sp/>0.04304,<sp/>0.095,<sp/>0.166077,<sp/>0.258,<sp/>0.369,<sp/>0.509,<sp/>0.651782])</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">y2<sp/>=<sp/>np.array([0.0234314,<sp/>0.00286,<sp/>0.00085,<sp/>0.000358,<sp/>0.00018,<sp/>0.000106,<sp/>6.69e-5,<sp/>4.482e-5])</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Order<sp/>4<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">t4<sp/>=<sp/>np.array([0.05,<sp/>0.188867,<sp/>0.42368,<sp/>0.736451,<sp/>1.14436,<sp/>1.68,<sp/>2.24874,<sp/>3.01426])</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">y4<sp/>=<sp/>np.array([0.000206,<sp/>6.58286e-6,<sp/>8.75e-7,<sp/>2.09484e-7,<sp/>6.937e-8,<sp/>2.81658e-8,<sp/>1.333e-8,<sp/>7.06298e-9])</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Order<sp/>8<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">t8<sp/>=<sp/>np.array([0.287074,<sp/>1.07451,<sp/>2.4,<sp/>4.25398,<sp/>6.53409,<sp/>9.44362,<sp/>12.9971,<sp/>16.8101])</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">y8<sp/>=<sp/>np.array([2.08436e-7,<sp/>2.60434e-8,<sp/>6.945e-9,<sp/>3.25496e-9,<sp/>1.66679e-9,<sp/>9.65e-10,<sp/>6.07861e-10,<sp/>4.0747e-10])</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Create<sp/>interpolation<sp/>functions<sp/>for<sp/>time<sp/>and<sp/>error<sp/>for<sp/>each<sp/>order</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">time_interp_1st_order<sp/>=<sp/>interp1d(t1,<sp/>x,<sp/>kind=</highlight><highlight class="stringliteral">&apos;linear&apos;</highlight><highlight class="normal">,<sp/>fill_value=</highlight><highlight class="stringliteral">&quot;extrapolate&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">error_interp_1st_order<sp/>=<sp/>interp1d(x,<sp/>y1,<sp/>kind=</highlight><highlight class="stringliteral">&apos;linear&apos;</highlight><highlight class="normal">,<sp/>fill_value=</highlight><highlight class="stringliteral">&quot;extrapolate&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">time_interp_2nd_order<sp/>=<sp/>interp1d(t2,<sp/>x,<sp/>kind=</highlight><highlight class="stringliteral">&apos;linear&apos;</highlight><highlight class="normal">,<sp/>fill_value=</highlight><highlight class="stringliteral">&quot;extrapolate&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">error_interp_2nd_order<sp/>=<sp/>interp1d(x,<sp/>y2,<sp/>kind=</highlight><highlight class="stringliteral">&apos;linear&apos;</highlight><highlight class="normal">,<sp/>fill_value=</highlight><highlight class="stringliteral">&quot;extrapolate&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">time_interp_4th_order<sp/>=<sp/>interp1d(t4,<sp/>x,<sp/>kind=</highlight><highlight class="stringliteral">&apos;linear&apos;</highlight><highlight class="normal">,<sp/>fill_value=</highlight><highlight class="stringliteral">&quot;extrapolate&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">error_interp_4th_order<sp/>=<sp/>interp1d(x,<sp/>y4,<sp/>kind=</highlight><highlight class="stringliteral">&apos;linear&apos;</highlight><highlight class="normal">,<sp/>fill_value=</highlight><highlight class="stringliteral">&quot;extrapolate&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">time_interp_8th_order<sp/>=<sp/>interp1d(t8,<sp/>x,<sp/>kind=</highlight><highlight class="stringliteral">&apos;linear&apos;</highlight><highlight class="normal">,<sp/>fill_value=</highlight><highlight class="stringliteral">&quot;extrapolate&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">error_interp_8th_order<sp/>=<sp/>interp1d(x,<sp/>y8,<sp/>kind=</highlight><highlight class="stringliteral">&apos;linear&apos;</highlight><highlight class="normal">,<sp/>fill_value=</highlight><highlight class="stringliteral">&quot;extrapolate&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Function<sp/>to<sp/>get<sp/>grid<sp/>cells<sp/>and<sp/>accuracy<sp/>for<sp/>a<sp/>given<sp/>time<sp/>and<sp/>order</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">query_simulation(order,<sp/>desired_time):</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>order<sp/>==<sp/>1:</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grid_cells_for_time<sp/>=<sp/>time_interp_1st_order(desired_time)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accuracy_for_time<sp/>=<sp/>error_interp_1st_order(grid_cells_for_time)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>order<sp/>==<sp/>2:</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grid_cells_for_time<sp/>=<sp/>time_interp_2nd_order(desired_time)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accuracy_for_time<sp/>=<sp/>error_interp_2nd_order(grid_cells_for_time)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>order<sp/>==<sp/>4:</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grid_cells_for_time<sp/>=<sp/>time_interp_4th_order(desired_time)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accuracy_for_time<sp/>=<sp/>error_interp_4th_order(grid_cells_for_time)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>order<sp/>==<sp/>8:</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grid_cells_for_time<sp/>=<sp/>time_interp_8th_order(desired_time)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accuracy_for_time<sp/>=<sp/>error_interp_8th_order(grid_cells_for_time)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/>ValueError(</highlight><highlight class="stringliteral">&quot;Order<sp/>not<sp/>supported.<sp/>Choose<sp/>1,<sp/>2,<sp/>4,<sp/>or<sp/>8.&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>grid_cells_for_time,<sp/>accuracy_for_time</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Example:<sp/>Querying<sp/>for<sp/>1<sp/>second<sp/>at<sp/>different<sp/>orders</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">desired_time<sp/>=<sp/>0.8</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>order<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>[1,<sp/>2,<sp/>4,<sp/>8]:</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>grid_cells,<sp/>accuracy<sp/>=<sp/>query_simulation(order,<sp/>desired_time)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>print(f</highlight><highlight class="stringliteral">&quot;At<sp/>order<sp/>{order},<sp/>for<sp/>a<sp/>simulation<sp/>time<sp/>of<sp/>{desired_time:.2f}<sp/>seconds:&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>print(f</highlight><highlight class="stringliteral">&quot;<sp/>-<sp/>Number<sp/>of<sp/>grid<sp/>cells<sp/>used:<sp/>{grid_cells:.2f}&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>print(f</highlight><highlight class="stringliteral">&quot;<sp/>-<sp/>Corresponding<sp/>accuracy<sp/>(L2<sp/>error<sp/>norm):<sp/>{accuracy:.3e}\n&quot;</highlight><highlight class="normal">)</highlight></codeline>
+    </programlisting>
+    <location file="/Users/jackgabriel/Desktop/DG/find_time.py"/>
+  </compounddef>
+</doxygen>

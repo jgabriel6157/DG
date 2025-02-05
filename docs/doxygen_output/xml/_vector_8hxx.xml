@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_vector_8hxx" kind="file" language="C++">
+    <compoundname>Vector.hxx</compoundname>
+    <includedby refid="_gaussian_quadrature_8cxx" local="yes">/Users/jackgabriel/Desktop/DG/GaussianQuadrature.cxx</includedby>
+    <includedby refid="_gaussian_quadrature_8hxx" local="yes">/Users/jackgabriel/Desktop/DG/GaussianQuadrature.hxx</includedby>
+    <includedby refid="_matrix_8cxx" local="yes">/Users/jackgabriel/Desktop/DG/Matrix.cxx</includedby>
+    <includedby refid="_matrix_8hxx" local="yes">/Users/jackgabriel/Desktop/DG/Matrix.hxx</includedby>
+    <includedby refid="_newton_cotes_8cxx" local="yes">/Users/jackgabriel/Desktop/DG/NewtonCotes.cxx</includedby>
+    <includedby refid="_newton_cotes_8hxx" local="yes">/Users/jackgabriel/Desktop/DG/NewtonCotes.hxx</includedby>
+    <includedby refid="_newton_solver_8cxx" local="yes">/Users/jackgabriel/Desktop/DG/NewtonSolver.cxx</includedby>
+    <includedby refid="_newton_solver_8hxx" local="yes">/Users/jackgabriel/Desktop/DG/NewtonSolver.hxx</includedby>
+    <includedby refid="_solver_8cxx" local="yes">/Users/jackgabriel/Desktop/DG/Solver.cxx</includedby>
+    <includedby refid="_solver_8hxx" local="yes">/Users/jackgabriel/Desktop/DG/Solver.hxx</includedby>
+    <includedby refid="_special_functions_8cxx" local="yes">/Users/jackgabriel/Desktop/DG/SpecialFunctions.cxx</includedby>
+    <includedby refid="_special_functions_8hxx" local="yes">/Users/jackgabriel/Desktop/DG/SpecialFunctions.hxx</includedby>
+    <includedby refid="_vector_8cxx" local="yes">/Users/jackgabriel/Desktop/DG/Vector.cxx</includedby>
+    <includedby refid="dg1d_advection_8cxx" local="yes">/Users/jackgabriel/Desktop/DG/dg1dAdvection.cxx</includedby>
+    <invincdepgraph>
+      <node id="8">
+        <label>/Users/jackgabriel/Desktop/DG/FunctionMapper.hxx</label>
+        <link refid="_function_mapper_8hxx_source"/>
+      </node>
+      <node id="2">
+        <label>/Users/jackgabriel/Desktop/DG/GaussianQuadrature.hxx</label>
+        <link refid="_gaussian_quadrature_8hxx_source"/>
+      </node>
+      <node id="3">
+        <label>/Users/jackgabriel/Desktop/DG/Matrix.hxx</label>
+        <link refid="_matrix_8hxx_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/Users/jackgabriel/Desktop/DG/NewtonCotes.hxx</label>
+        <link refid="_newton_cotes_8hxx_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/Users/jackgabriel/Desktop/DG/NewtonSolver.hxx</label>
+        <link refid="_newton_solver_8hxx_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/Users/jackgabriel/Desktop/DG/Solver.hxx</label>
+        <link refid="_solver_8hxx_source"/>
+      </node>
+      <node id="7">
+        <label>/Users/jackgabriel/Desktop/DG/SpecialFunctions.hxx</label>
+        <link refid="_special_functions_8hxx_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/Users/jackgabriel/Desktop/DG/Vector.hxx</label>
+        <link refid="_vector_8hxx"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_vector" prot="public">Vector</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_vector_8hxx_1a7ba04e9fff99326b44f799437bfe9138" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int length</definition>
+        <argsstring>(const Vector &amp;v)</argsstring>
+        <name>length</name>
+        <param>
+          <type>const <ref refid="class_vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx" line="34" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/Vector.cxx" bodystart="167" bodyend="170" declfile="/Users/jackgabriel/Desktop/DG/Vector.hxx" declline="34" declcolumn="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>VECTORHEADERDEF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VECTORHEADERDEF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="class_vector" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Vector</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>mData;<sp/></highlight><highlight class="comment">//<sp/>data<sp/>stored<sp/>in<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mSize;<sp/></highlight><highlight class="comment">//<sp/>size<sp/>of<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&amp;<sp/>otherVector);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>~Vector();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>GetSize()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Print();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>operator[](</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i);<sp/></highlight><highlight class="comment">//<sp/>zero-based<sp/>indexing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>read-only<sp/>zero-based<sp/>indexing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Read(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&amp;<sp/>otherVector);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector<sp/>operator+(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>constant)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>unary<sp/>+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector<sp/>operator-(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>constant)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>unary<sp/>-</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector<sp/>operator+(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&amp;<sp/>v1)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>binary<sp/>+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector<sp/>operator-(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&amp;<sp/>v1)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>binary<sp/>-</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>scalar<sp/>multiplication</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector<sp/>operator*(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>vector<sp/>multiplication<sp/>(dot<sp/>product)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>operator*(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&amp;<sp/>v1)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>p-norm<sp/>method</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>CalculateNorm(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p=2)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>declare<sp/>length<sp/>function<sp/>as<sp/>a<sp/>friend</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&amp;<sp/>v);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Prototype<sp/>signature<sp/>of<sp/>length()<sp/>friend<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_vector" kindref="compound">Vector</ref>&amp;<sp/>v);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/jackgabriel/Desktop/DG/Vector.hxx"/>
+  </compounddef>
+</doxygen>

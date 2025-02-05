@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="mu_parser_callback_8h" kind="file" language="C++">
+    <compoundname>muParserCallback.h</compoundname>
+    <includes refid="mu_parser_def_8h" local="yes">muParserDef.h</includes>
+    <includedby refid="mu_parser_token_8h" local="yes">/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h</includedby>
+    <includedby refid="mu_parser_callback_8cpp" local="yes">/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h</label>
+        <link refid="mu_parser_callback_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>muParserDef.h</label>
+        <link refid="mu_parser_def_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>muParserFixes.h</label>
+        <link refid="mu_parser_fixes_8h"/>
+      </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+      <node id="6">
+        <label>map</label>
+      </node>
+      <node id="5">
+        <label>sstream</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>/Users/jackgabriel/Desktop/DG/Parser.hxx</label>
+        <link refid="_parser_8hxx_source"/>
+      </node>
+      <node id="5">
+        <label>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParser.h</label>
+        <link refid="mu_parser_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h</label>
+        <link refid="mu_parser_base_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBytecode.h</label>
+        <link refid="mu_parser_bytecode_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h</label>
+        <link refid="mu_parser_callback_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserInt.h</label>
+        <link refid="mu_parser_int_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTest.h</label>
+        <link refid="mu_parser_test_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserToken.h</label>
+        <link refid="mu_parser_token_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserTokenReader.h</label>
+        <link refid="mu_parser_token_reader_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParser.cpp</label>
+        <link refid="mu_parser_8cpp"/>
+      </node>
+      <node id="12">
+        <label>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp</label>
+        <link refid="mu_parser_base_8cpp"/>
+      </node>
+      <node id="15">
+        <label>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserCallback.cpp</label>
+        <link refid="mu_parser_callback_8cpp"/>
+      </node>
+      <node id="11">
+        <label>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserInt.cpp</label>
+        <link refid="mu_parser_int_8cpp"/>
+      </node>
+      <node id="8">
+        <label>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTest.cpp</label>
+        <link refid="mu_parser_test_8cpp"/>
+      </node>
+      <node id="13">
+        <label>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserTokenReader.cpp</label>
+        <link refid="mu_parser_token_reader_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classmu_1_1_parser_callback" prot="public">mu::ParserCallback</innerclass>
+    <innernamespace refid="namespacemu">mu</innernamespace>
+    <briefdescription>
+<para>Definition of the parser callback class. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"></highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>_____<sp/><sp/>__<sp/>_____________<sp/>_______<sp/><sp/>______<sp/>___________</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>/<sp/><sp/><sp/><sp/><sp/>\|<sp/><sp/>|<sp/><sp/>\____<sp/>\__<sp/><sp/>\\_<sp/><sp/>__<sp/>\/<sp/><sp/>___//<sp/>__<sp/>\_<sp/><sp/>__<sp/>\</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/>|<sp/><sp/>Y<sp/>Y<sp/><sp/>\<sp/><sp/>|<sp/><sp/>/<sp/><sp/>|_&gt;<sp/>&gt;<sp/>__<sp/>\|<sp/><sp/>|<sp/>\/\___<sp/>\\<sp/><sp/>___/|<sp/><sp/>|<sp/>\/</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/>|__|_|<sp/><sp/>/____/|<sp/><sp/><sp/>__(____<sp/><sp/>/__|<sp/><sp/>/____<sp/><sp/>&gt;\___<sp/><sp/>&gt;__|</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\/<sp/><sp/><sp/><sp/><sp/><sp/>|__|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>\/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\/<sp/><sp/><sp/><sp/><sp/>\/</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/>Copyright<sp/>(C)<sp/>2022<sp/>Ingo<sp/>Berg</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without<sp/>modification,<sp/>are<sp/>permitted</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/><sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/>this<sp/>list<sp/>of</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/>this<sp/>list<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/><sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/><sp/><sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/><sp/><sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDER<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/><sp/><sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/><sp/><sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/><sp/><sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/><sp/><sp/><sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/><sp/><sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MU_PARSER_CALLBACK_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MU_PARSER_CALLBACK_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mu_parser_def_8h" kindref="compound">muParserDef.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemu" kindref="compound">mu</ref></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="classmu_1_1_parser_callback" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">API_EXPORT_CXX<sp/>ParserCallback<sp/>final</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1af74b1b05cca11b94eb7a478c6c1f8200" kindref="member">fun_type0</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1affeaec09801b502b9955d7248b7e2706" kindref="member">fun_type1</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a_iPrec,<sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40e" kindref="member">ECmdCode</ref><sp/>a_iCode);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1affeaec09801b502b9955d7248b7e2706" kindref="member">fun_type1</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1abd9aed5816d33116d687f5becd85b38f" kindref="member">fun_type2</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a_iPrec,<sp/><ref refid="namespacemu_1aff435b0c277f66041374f93a3803e1f1" kindref="member">EOprtAssociativity</ref><sp/>a_eAssociativity);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1abd9aed5816d33116d687f5becd85b38f" kindref="member">fun_type2</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1ac89cbeb049bfe0ac38464d9420bf3201" kindref="member">fun_type3</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1ada318070796bde216079092cfdcf6fe1" kindref="member">fun_type4</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a7a01724f9caaf71f99e46b49e75b3bc3" kindref="member">fun_type5</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a575003f957a2a77d757e24fd04139001" kindref="member">fun_type6</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1aa03550a6f05b1270e1e27214a63301ee" kindref="member">fun_type7</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a17cfcdc39e8d1d95c1418e117eb923b8" kindref="member">fun_type8</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a04c92810aa2e6098af69f47474388d71" kindref="member">fun_type9</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a9d79a17c5171e8928f8c91964979e56c" kindref="member">fun_type10</ref><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1aff9adf757e90a2398326a3cb10585cf1" kindref="member">bulkfun_type0</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a2bd588710432e6e34eae3e2af4ba3862" kindref="member">bulkfun_type1</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a9faa755ea34c6e8de3895013e649a713" kindref="member">bulkfun_type2</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a441194d09cb0e9331dbfdaf74f59efd3" kindref="member">bulkfun_type3</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a6b7ce6e1f888b02222d2765d1f521507" kindref="member">bulkfun_type4</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a9343ce135e0a53897a67c6098d07a7b3" kindref="member">bulkfun_type5</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a1259e71ee6f8b9e3985ef0cda16dd433" kindref="member">bulkfun_type6</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a9726be97f12bc3b336884d462623ca8c" kindref="member">bulkfun_type7</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1aa4e562060c2c2377266ec1cf274856fe" kindref="member">bulkfun_type8</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a51c71d5698d29b40688feaa8e968efc9" kindref="member">bulkfun_type9</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1aebd99bafbd17761a9e13b8a7366ae1ce" kindref="member">bulkfun_type10</ref><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a004a9a10d015a8e2e17604cb632cd6c1" kindref="member">multfun_type</ref><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a578b844842f577e78da3f520f9ee2f9a" kindref="member">strfun_type1</ref><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a14b9af8ec1e328b685221ca23fc9f765" kindref="member">strfun_type2</ref><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a1ce7a16b2a2b87f662819b7ee1d87bc0" kindref="member">strfun_type3</ref><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a03f5b99ef0a9e5f78ccf4d3e490704dc" kindref="member">strfun_type4</ref><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a55140d3b293bcb41e96b3f9a9fd2b2d7" kindref="member">strfun_type5</ref><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a75f3a31f30e949ed0ca25a27ea5288b5" kindref="member">strfun_type6</ref><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>note:<sp/>a_pUserData<sp/>shall<sp/>not<sp/>be<sp/>nullptr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a939b6f34173fa1e76f97a1e5d5452a09" kindref="member">fun_userdata_type0</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a0fd5d38f2fb3e6ef9be3472cb7613ff1" kindref="member">fun_userdata_type1</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a436c46ff8ebfa89c944425470a652ead" kindref="member">fun_userdata_type2</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a07f71c315f4fadf9de650fc4382dd049" kindref="member">fun_userdata_type3</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a0f9b17d4b1e59115bba63e6d53765625" kindref="member">fun_userdata_type4</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1adcb1055d3531364e916f8bdf682a2b2f" kindref="member">fun_userdata_type5</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a971c39af75dc6b5f7f20bbc1d66119dd" kindref="member">fun_userdata_type6</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a3b3a81234fe3014679f0f74cdec612f6" kindref="member">fun_userdata_type7</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1ae17e82452f755411a245c67ce3268355" kindref="member">fun_userdata_type8</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1af7e4291312d366327078d127860541bf" kindref="member">fun_userdata_type9</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a04ed8cd829b59971c215edecdc9dfdee" kindref="member">fun_userdata_type10</ref><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a687d47059ad215c10bd8e968bd9528fb" kindref="member">bulkfun_userdata_type0</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a710d699842234a187170220e392ac68d" kindref="member">bulkfun_userdata_type1</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1aeada4d73454e5aa78efe3629b65a4b87" kindref="member">bulkfun_userdata_type2</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a88e1a3aff85016f20bb75468e54fe977" kindref="member">bulkfun_userdata_type3</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1ae55700d01ee5a6d292e23fbff9b1db0d" kindref="member">bulkfun_userdata_type4</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a7a3d722afa477c7af751702d4cc909df" kindref="member">bulkfun_userdata_type5</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1aa8c7a8cb10eb84e21bae47dae6410a06" kindref="member">bulkfun_userdata_type6</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1aaa629b05b06b00be6631ea77f7f30e41" kindref="member">bulkfun_userdata_type7</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1ad476874c1e09e5c8f16eaa0c8106b245" kindref="member">bulkfun_userdata_type8</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a98e629b5446c2ecac669b5cb32b502da" kindref="member">bulkfun_userdata_type9</ref><sp/><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a2d5f2395090063a6947a85b9b6e8034b" kindref="member">bulkfun_userdata_type10</ref><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a482b9409c3ba2e2dde72f716295a1ba4" kindref="member">multfun_userdata_type</ref><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1ab8d93b4c1c711be329af76b9034112d9" kindref="member">strfun_userdata_type1</ref><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a84d92000f881f4bafe308f1b61c2841d" kindref="member">strfun_userdata_type2</ref><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1abb7b439633898a03668a4634b7a25bb5" kindref="member">strfun_userdata_type3</ref><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a426aeab3051321184d97abe4f6a59d5b" kindref="member">strfun_userdata_type4</ref><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1ac5e98a659656388aa301d22a7d66ed47" kindref="member">strfun_userdata_type5</ref><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(<ref refid="namespacemu_1a2e7e564ff77a7582f52855d4f38239db" kindref="member">strfun_userdata_type6</ref><sp/>a_pFun,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>a_pUserData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>a_bAllowOpti);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback();</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ParserCallback&amp;<sp/>a_Fun);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback<sp/>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ParserCallback&amp;<sp/>a_Fun);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~ParserCallback();</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParserCallback*<sp/><ref refid="classmu_1_1_parser_callback_1a0c29f5f12f1cdceba82e5aba3a96a79f" kindref="member">Clone</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><ref refid="classmu_1_1_parser_callback_1aba8e85f5336449c4b2b4ac1304cfe21b" kindref="member">IsOptimizable</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><ref refid="classmu_1_1_parser_callback_1a63a4ad5627e5ffccf988d4a3dfbdb270" kindref="member">IsValid</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="classmu_1_1_parser_callback_1abea23b8f31fb65086013b8382ca0674b" kindref="member">GetAddr</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="classmu_1_1_parser_callback_1adf5af527c7f8bf794451ba91ec6c8bc0" kindref="member">GetUserData</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40e" kindref="member">ECmdCode</ref><sp/><sp/><ref refid="classmu_1_1_parser_callback_1aca4285a09eac65372691af3cb6f31fae" kindref="member">GetCode</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1ac3ccf6a749baacffd48fe97b9c2af302" kindref="member">ETypeCode</ref><sp/>GetType()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classmu_1_1_parser_callback_1a963963b5706072ad531fe0a9eb0ce65c" kindref="member">GetPri</ref>()<sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1aff435b0c277f66041374f93a3803e1f1" kindref="member">EOprtAssociativity</ref><sp/><ref refid="classmu_1_1_parser_callback_1a098e7b2dfb9f4e2d97d5e03254527b15" kindref="member">GetAssociativity</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classmu_1_1_parser_callback_1a79aa23e9c6a63ea99601bae39f45d490" kindref="member">GetArgc</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Assign(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ParserCallback&amp;<sp/>ref);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>m_pFun;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/>m_iArgc;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/>m_iPri;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1aff435b0c277f66041374f93a3803e1f1" kindref="member">EOprtAssociativity</ref><sp/>m_eOprtAsct;<sp/></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1ab77181e591bebd278bf9c7a2e30ad40e" kindref="member">ECmdCode</ref><sp/><sp/>m_iCode;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemu_1ac3ccf6a749baacffd48fe97b9c2af302" kindref="member">ETypeCode</ref><sp/>m_iType;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/>m_bAllowOpti;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="namespacemu_1aa38fb627ca71e44a49de0f2fe4d9031d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::map&lt;string_type,<sp/>ParserCallback&gt;<sp/><ref refid="namespacemu_1aa38fb627ca71e44a49de0f2fe4d9031d" kindref="member">funmap_type</ref>;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>mu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserCallback.h"/>
+  </compounddef>
+</doxygen>

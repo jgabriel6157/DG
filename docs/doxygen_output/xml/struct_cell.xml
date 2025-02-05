@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="struct_cell" kind="struct" language="C++" prot="public">
+    <compoundname>Cell</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_cell_1a511d8849a0b63c0896b3ed909e5cb0c0" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; Cell::vertices</definition>
+        <argsstring></argsstring>
+        <name>vertices</name>
+        <qualifiedname>Cell::vertices</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="8" column="17" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.hxx" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_cell_1acaaa7439a944b5a9fccf41cddf0d50df" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; Cell::neighbors</definition>
+        <argsstring></argsstring>
+        <name>neighbors</name>
+        <qualifiedname>Cell::neighbors</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="9" column="17" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.hxx" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_cell_1abe9d38806c313f4432ced84c67813474" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Cell::dx</definition>
+        <argsstring></argsstring>
+        <name>dx</name>
+        <qualifiedname>Cell::dx</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="10" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.hxx" bodystart="10" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/Mesh.hxx" line="6" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/Mesh.hxx" bodystart="7" bodyend="11"/>
+    <listofallmembers>
+      <member refid="struct_cell_1abe9d38806c313f4432ced84c67813474" prot="public" virt="non-virtual"><scope>Cell</scope><name>dx</name></member>
+      <member refid="struct_cell_1acaaa7439a944b5a9fccf41cddf0d50df" prot="public" virt="non-virtual"><scope>Cell</scope><name>neighbors</name></member>
+      <member refid="struct_cell_1a511d8849a0b63c0896b3ed909e5cb0c0" prot="public" virt="non-virtual"><scope>Cell</scope><name>vertices</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

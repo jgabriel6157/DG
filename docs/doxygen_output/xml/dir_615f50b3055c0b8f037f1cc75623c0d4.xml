@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_615f50b3055c0b8f037f1cc75623c0d4" kind="dir">
+    <compoundname>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src</compoundname>
+    <innerfile refid="mu_parser_8cpp">muParser.cpp</innerfile>
+    <innerfile refid="mu_parser_base_8cpp">muParserBase.cpp</innerfile>
+    <innerfile refid="mu_parser_bytecode_8cpp">muParserBytecode.cpp</innerfile>
+    <innerfile refid="mu_parser_callback_8cpp">muParserCallback.cpp</innerfile>
+    <innerfile refid="mu_parser_d_l_l_8cpp">muParserDLL.cpp</innerfile>
+    <innerfile refid="mu_parser_error_8cpp">muParserError.cpp</innerfile>
+    <innerfile refid="mu_parser_int_8cpp">muParserInt.cpp</innerfile>
+    <innerfile refid="mu_parser_test_8cpp">muParserTest.cpp</innerfile>
+    <innerfile refid="mu_parser_token_reader_8cpp">muParserTokenReader.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/"/>
+  </compounddef>
+</doxygen>

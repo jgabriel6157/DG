@@ -1,0 +1,2834 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classmu_1_1_parser_base" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>mu::ParserBase</compoundname>
+    <derivedcompoundref refid="classmu_1_1_parser" prot="public" virt="non-virtual">mu::Parser</derivedcompoundref>
+    <derivedcompoundref refid="classmu_1_1_parser_int" prot="public" virt="non-virtual">mu::ParserInt</derivedcompoundref>
+    <includes refid="mu_parser_base_8h" local="no">muParserBase.h</includes>
+    <innerclass refid="classmu_1_1_parser_base_1_1change__dec__sep" prot="protected">mu::ParserBase::change_dec_sep</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classmu_1_1_parser_base_1acd3f762c3e4f70fd7d4076944cf16422" prot="private" static="no">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>(ParserBase::*</type>
+        <definition>typedef value_type(ParserBase::* mu::ParserBase::ParseFunction) () const</definition>
+        <argsstring>)() const</argsstring>
+        <name>ParseFunction</name>
+        <qualifiedname>mu::ParserBase::ParseFunction</qualifiedname>
+        <briefdescription>
+<para>Typedef for the parse functions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The parse function do the actual work. The parser exchanges the function pointer to the parser function depending on which state it is in. (i.e. bytecode parser vs. string parser) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="80" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classmu_1_1_parser_base_1a387d8e7c9471625e320af9436997c5dd" prot="private" static="no">
+        <type>std::vector&lt; <ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> &gt;</type>
+        <definition>typedef std::vector&lt;value_type&gt; mu::ParserBase::valbuf_type</definition>
+        <argsstring></argsstring>
+        <name>valbuf_type</name>
+        <qualifiedname>mu::ParserBase::valbuf_type</qualifiedname>
+        <briefdescription>
+<para>Type used for storing an array of values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="83" column="21" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classmu_1_1_parser_base_1ad61cb7162a1a37e966675bb4222b5b55" prot="private" static="no">
+        <type>std::vector&lt; <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &gt;</type>
+        <definition>typedef std::vector&lt;string_type&gt; mu::ParserBase::stringbuf_type</definition>
+        <argsstring></argsstring>
+        <name>stringbuf_type</name>
+        <qualifiedname>mu::ParserBase::stringbuf_type</qualifiedname>
+        <briefdescription>
+<para>Type for a vector of strings. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="86" column="21" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classmu_1_1_parser_base_1a045af69a3ac1b09e76c34b403b3fed2e" prot="private" static="no">
+        <type><ref refid="classmu_1_1_parser_token_reader" kindref="compound">ParserTokenReader</ref></type>
+        <definition>typedef ParserTokenReader mu::ParserBase::token_reader_type</definition>
+        <argsstring></argsstring>
+        <name>token_reader_type</name>
+        <qualifiedname>mu::ParserBase::token_reader_type</qualifiedname>
+        <briefdescription>
+<para>Typedef for the token reader. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="89" column="27" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classmu_1_1_parser_base_1a59f35622623031cefbfe561f632a1021" prot="private" static="no">
+        <type><ref refid="classmu_1_1_parser_token" kindref="compound">ParserToken</ref>&lt; <ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref>, <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &gt;</type>
+        <definition>typedef ParserToken&lt;value_type, string_type&gt; mu::ParserBase::token_type</definition>
+        <argsstring></argsstring>
+        <name>token_type</name>
+        <qualifiedname>mu::ParserBase::token_type</qualifiedname>
+        <briefdescription>
+<para>Type used for parser tokens. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="92" column="21" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classmu_1_1_parser_base_1ab385f37be00cee7d8a68c3c41f6a5b64" prot="public" static="no">
+        <type><ref refid="classmu_1_1_parser_error" kindref="compound">ParserError</ref></type>
+        <definition>typedef ParserError mu::ParserBase::exception_type</definition>
+        <argsstring></argsstring>
+        <name>exception_type</name>
+        <qualifiedname>mu::ParserBase::exception_type</qualifiedname>
+        <briefdescription>
+<para>Type of the error class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Included for backwards compatibility. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="103" column="21" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classmu_1_1_parser_base_1a4a4908a2dc2cc3723b45602a3e722f79" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class ParserTokenReader</definition>
+        <argsstring></argsstring>
+        <name>ParserTokenReader</name>
+        <qualifiedname>mu::ParserBase::ParserTokenReader</qualifiedname>
+        <param>
+          <type><ref refid="classmu_1_1_parser_token_reader" kindref="compound">ParserTokenReader</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="70" column="14" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1a56b62a467347f00fb38a75e5dbcd4b39" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int mu::ParserBase::s_MaxNumOpenMPThreads</definition>
+        <argsstring></argsstring>
+        <name>s_MaxNumOpenMPThreads</name>
+        <qualifiedname>mu::ParserBase::s_MaxNumOpenMPThreads</qualifiedname>
+        <initializer>= 16</initializer>
+        <briefdescription>
+<para>Maximum number of threads spawned by OpenMP when using the bulk mode. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="95" column="18" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1a0cb4d456e6a82da96786ec73044470ea" prot="protected" static="yes" mutable="no">
+        <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+        <definition>const char_type * mu::ParserBase::c_DefaultOprt</definition>
+        <argsstring>[]</argsstring>
+        <name>c_DefaultOprt</name>
+        <qualifiedname>mu::ParserBase::c_DefaultOprt</qualifiedname>
+        <initializer>=
+	{
+	  <ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;&lt;=&quot;), <ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;&gt;=&quot;),  <ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;!=&quot;),
+	  <ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;==&quot;), <ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;&lt;&quot;),   <ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;&gt;&quot;),
+	  <ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;+&quot;),  <ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;-&quot;),   <ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;*&quot;),
+	  <ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;/&quot;),  <ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;^&quot;),   <ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;&amp;&amp;&quot;),
+	  <ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;||&quot;), <ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;=&quot;),   <ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;(&quot;),
+	  <ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;)&quot;),   <ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;?&quot;),  <ref refid="mu_parser_def_8h_1ae936e4c15227768f7da4e0951def89c8" kindref="member">_T</ref>(&quot;:&quot;), 0
+	}</initializer>
+        <briefdescription>
+<para>Identifiers for built in binary operators. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When defining custom binary operators with #AddOprt(...) make sure not to choose names conflicting with these definitions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="205" column="24" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1ad594b199c33edf6962ba0e21010bc86e" prot="protected" static="yes" mutable="no">
+        <type>std::locale</type>
+        <definition>std::locale mu::ParserBase::s_locale</definition>
+        <argsstring></argsstring>
+        <name>s_locale</name>
+        <qualifiedname>mu::ParserBase::s_locale</qualifiedname>
+        <initializer>= std::locale(std::locale::classic(), new <ref refid="classmu_1_1_parser_base_1_1change__dec__sep" kindref="compound">change_dec_sep</ref>&lt;<ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref>&gt;(&apos;.&apos;))</initializer>
+        <briefdescription>
+<para>The locale used by the parser. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="206" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1abe673a44e0ea620656422657cb3f6518" prot="protected" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool mu::ParserBase::g_DbgDumpCmdCode</definition>
+        <argsstring></argsstring>
+        <name>g_DbgDumpCmdCode</name>
+        <qualifiedname>mu::ParserBase::g_DbgDumpCmdCode</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="207" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1a35349445f839ab8bc2cfb54488c45267" prot="protected" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool mu::ParserBase::g_DbgDumpStack</definition>
+        <argsstring></argsstring>
+        <name>g_DbgDumpStack</name>
+        <qualifiedname>mu::ParserBase::g_DbgDumpStack</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="208" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="208" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1a14cd9acde5d6ad5f5ceeed6b63f4782d" prot="private" static="no" mutable="yes">
+        <type>ParseFunction</type>
+        <definition>ParseFunction mu::ParserBase::m_pParseFormula</definition>
+        <argsstring></argsstring>
+        <name>m_pParseFormula</name>
+        <qualifiedname>mu::ParserBase::m_pParseFormula</qualifiedname>
+        <briefdescription>
+<para>Pointer to the parser function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classmu_1_1_parser_base_1a7160b70c1a04fa79f216e5dcb8d1b9d3" kindref="member">Eval()</ref> calls the function whose address is stored there. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="285" column="24" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="285" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1ab873ae8af39988d5c9eeef773cb73543" prot="private" static="no" mutable="yes">
+        <type><ref refid="classmu_1_1_parser_byte_code" kindref="compound">ParserByteCode</ref></type>
+        <definition>ParserByteCode mu::ParserBase::m_vRPN</definition>
+        <argsstring></argsstring>
+        <name>m_vRPN</name>
+        <qualifiedname>mu::ParserBase::m_vRPN</qualifiedname>
+        <briefdescription>
+<para>The Bytecode class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="286" column="24" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="286" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1a29625dd3f0712081b59870750e91f07b" prot="private" static="no" mutable="yes">
+        <type>stringbuf_type</type>
+        <definition>stringbuf_type mu::ParserBase::m_vStringBuf</definition>
+        <argsstring></argsstring>
+        <name>m_vStringBuf</name>
+        <qualifiedname>mu::ParserBase::m_vStringBuf</qualifiedname>
+        <briefdescription>
+<para>String buffer, used for storing string function arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="287" column="25" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="287" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1af9e70c7dd73fe45f7fae4aceb31ed549" prot="private" static="no" mutable="no">
+        <type>stringbuf_type</type>
+        <definition>stringbuf_type mu::ParserBase::m_vStringVarBuf</definition>
+        <argsstring></argsstring>
+        <name>m_vStringVarBuf</name>
+        <qualifiedname>mu::ParserBase::m_vStringVarBuf</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="288" column="17" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="288" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1ade4992a11f0b684f48d5c6a686363871" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classmu_1_1_parser_token_reader" kindref="compound">token_reader_type</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;token_reader_type&gt; mu::ParserBase::m_pTokenReader</definition>
+        <argsstring></argsstring>
+        <name>m_pTokenReader</name>
+        <qualifiedname>mu::ParserBase::m_pTokenReader</qualifiedname>
+        <briefdescription>
+<para>Managed pointer to the token reader object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="290" column="17" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="290" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1a8f652ce8ddd065e5a08d6b046d5b710b" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1aa38fb627ca71e44a49de0f2fe4d9031d" kindref="member">funmap_type</ref></type>
+        <definition>funmap_type mu::ParserBase::m_FunDef</definition>
+        <argsstring></argsstring>
+        <name>m_FunDef</name>
+        <qualifiedname>mu::ParserBase::m_FunDef</qualifiedname>
+        <briefdescription>
+<para>Map of function names and pointers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="292" column="14" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="292" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1a98e3244048ecd4d1063fcc725015cea7" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1aa38fb627ca71e44a49de0f2fe4d9031d" kindref="member">funmap_type</ref></type>
+        <definition>funmap_type mu::ParserBase::m_PostOprtDef</definition>
+        <argsstring></argsstring>
+        <name>m_PostOprtDef</name>
+        <qualifiedname>mu::ParserBase::m_PostOprtDef</qualifiedname>
+        <briefdescription>
+<para>Postfix operator callbacks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="293" column="14" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="293" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1a476835969db49784ed0a0d750ecae902" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1aa38fb627ca71e44a49de0f2fe4d9031d" kindref="member">funmap_type</ref></type>
+        <definition>funmap_type mu::ParserBase::m_InfixOprtDef</definition>
+        <argsstring></argsstring>
+        <name>m_InfixOprtDef</name>
+        <qualifiedname>mu::ParserBase::m_InfixOprtDef</qualifiedname>
+        <briefdescription>
+<para>unary infix operator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="294" column="14" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="294" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1aa03bd4587a43a34d22b43594af3e654b" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1aa38fb627ca71e44a49de0f2fe4d9031d" kindref="member">funmap_type</ref></type>
+        <definition>funmap_type mu::ParserBase::m_OprtDef</definition>
+        <argsstring></argsstring>
+        <name>m_OprtDef</name>
+        <qualifiedname>mu::ParserBase::m_OprtDef</qualifiedname>
+        <briefdescription>
+<para>Binary operator callbacks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="295" column="14" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="295" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1a680d1b198302d8b94a0e78db32cfaf95" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1a5940d281286a01342cf773f74481843c" kindref="member">valmap_type</ref></type>
+        <definition>valmap_type mu::ParserBase::m_ConstDef</definition>
+        <argsstring></argsstring>
+        <name>m_ConstDef</name>
+        <qualifiedname>mu::ParserBase::m_ConstDef</qualifiedname>
+        <briefdescription>
+<para>user constants. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="296" column="14" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="296" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1ae569d26764857d01d33d01367e103f7c" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1aea1c20093e51d3dc13de10f3c17ae5b1" kindref="member">strmap_type</ref></type>
+        <definition>strmap_type mu::ParserBase::m_StrVarDef</definition>
+        <argsstring></argsstring>
+        <name>m_StrVarDef</name>
+        <qualifiedname>mu::ParserBase::m_StrVarDef</qualifiedname>
+        <briefdescription>
+<para>user defined string constants </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="297" column="14" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="297" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1a0280c6ebcf9c00c0fef2e03ca1e2cd49" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1ab57755354e948a664ad94d38546dbb10" kindref="member">varmap_type</ref></type>
+        <definition>varmap_type mu::ParserBase::m_VarDef</definition>
+        <argsstring></argsstring>
+        <name>m_VarDef</name>
+        <qualifiedname>mu::ParserBase::m_VarDef</qualifiedname>
+        <briefdescription>
+<para>user defind variables. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="298" column="14" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="298" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1af2f2b7c2f5632785b2f7f6454f86a0e4" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool mu::ParserBase::m_bBuiltInOp</definition>
+        <argsstring></argsstring>
+        <name>m_bBuiltInOp</name>
+        <qualifiedname>mu::ParserBase::m_bBuiltInOp</qualifiedname>
+        <briefdescription>
+<para>Flag that can be used for switching built in operators on and off. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="300" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="300" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1af1b0a7f239256a202361ea066564cf8e" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref></type>
+        <definition>string_type mu::ParserBase::m_sNameChars</definition>
+        <argsstring></argsstring>
+        <name>m_sNameChars</name>
+        <qualifiedname>mu::ParserBase::m_sNameChars</qualifiedname>
+        <briefdescription>
+<para>Charset for names. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="302" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1af5a805ab6b14106e77ad056a1c95da04" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref></type>
+        <definition>string_type mu::ParserBase::m_sOprtChars</definition>
+        <argsstring></argsstring>
+        <name>m_sOprtChars</name>
+        <qualifiedname>mu::ParserBase::m_sOprtChars</qualifiedname>
+        <briefdescription>
+<para>Charset for postfix/ binary operator tokens. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="303" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="303" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1aaf70a59329e7d79daa367190654e42f1" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref></type>
+        <definition>string_type mu::ParserBase::m_sInfixOprtChars</definition>
+        <argsstring></argsstring>
+        <name>m_sInfixOprtChars</name>
+        <qualifiedname>mu::ParserBase::m_sInfixOprtChars</qualifiedname>
+        <briefdescription>
+<para>Charset for infix operator tokens. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="304" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="304" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1aa2f9b4ce050b853c6e67a486fe0c3806" prot="private" static="no" mutable="yes">
+        <type>valbuf_type</type>
+        <definition>valbuf_type mu::ParserBase::m_vStackBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_vStackBuffer</name>
+        <qualifiedname>mu::ParserBase::m_vStackBuffer</qualifiedname>
+        <briefdescription>
+<para>This is merely a buffer used for the stack in the cmd parsing routine. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="307" column="21" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmu_1_1_parser_base_1ab36212d52200fdbe8dbf2bbbf67fcd1d" prot="private" static="no" mutable="yes">
+        <type>int</type>
+        <definition>int mu::ParserBase::m_nFinalResultIdx</definition>
+        <argsstring></argsstring>
+        <name>m_nFinalResultIdx</name>
+        <qualifiedname>mu::ParserBase::m_nFinalResultIdx</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="308" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="308" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classmu_1_1_parser_base_1ae639f85175c67f67d461514f0c47fb73" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::EnableDebugDump</definition>
+        <argsstring>(bool bDumpCmd, bool bDumpStack)</argsstring>
+        <name>EnableDebugDump</name>
+        <qualifiedname>mu::ParserBase::EnableDebugDump</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>bDumpCmd</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>bDumpStack</declname>
+        </param>
+        <briefdescription>
+<para>Enable the dumping of bytecode and stack content on the console. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bDumpCmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag to enable dumping of the current bytecode to the console. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bDumpStack</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag to enable dumping of the stack content is written to the console.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function is for debug purposes only! </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="105" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1672" bodyend="1676"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a41d13be909945b892777ee6773fa1f69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserBase::ParserBase</definition>
+        <argsstring>()</argsstring>
+        <name>ParserBase</name>
+        <qualifiedname>mu::ParserBase::ParserBase</qualifiedname>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_szFormula</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the formula to interpret. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ParserException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if a_szFormula is nullptr. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="107" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="90" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a88d9367e1a71bc07fe587633060223a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mu::ParserBase::ParserBase</definition>
+        <argsstring>(const ParserBase &amp;a_Parser)</argsstring>
+        <name>ParserBase</name>
+        <qualifiedname>mu::ParserBase::ParserBase</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_base" kindref="compound">ParserBase</ref> &amp;</type>
+          <declname>a_Parser</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The parser can be safely copy constructed but the bytecode is reset during copy construction. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="108" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="118" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1aca7cf1ea7f82dfb3066ada8427295a4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmu_1_1_parser_base" kindref="compound">ParserBase</ref> &amp;</type>
+        <definition>ParserBase &amp; mu::ParserBase::operator=</definition>
+        <argsstring>(const ParserBase &amp;a_Parser)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>mu::ParserBase::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_base" kindref="compound">ParserBase</ref> &amp;</type>
+          <declname>a_Parser</declname>
+        </param>
+        <briefdescription>
+<para>Assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Implemented by calling Assign(a_Parser). Self assignment is suppressed. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_Parser</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Object to copy to this. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>*this </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="109" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="151" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a94ec173a26a5ffc96325287830a44caa" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>mu::ParserBase::~ParserBase</definition>
+        <argsstring>()</argsstring>
+        <name>~ParserBase</name>
+        <qualifiedname>mu::ParserBase::~ParserBase</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="111" column="9" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="140" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a7160b70c1a04fa79f216e5dcb8d1b9d3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserBase::Eval</definition>
+        <argsstring>() const</argsstring>
+        <name>Eval</name>
+        <qualifiedname>mu::ParserBase::Eval</qualifiedname>
+        <briefdescription>
+<para>Calculate the result. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A note on const correctness: I consider it important that Calc is a const function. Due to caching operations Calc changes only the state of internal variables with one exception m_UsedVar this is reset during string parsing and accessible from the outside. Instead of making Calc non const GetUsedVar is non const because it explicitly calls <ref refid="classmu_1_1_parser_base_1a7160b70c1a04fa79f216e5dcb8d1b9d3" kindref="member">Eval()</ref> forcing this update.</para>
+<para><simplesect kind="pre"><para>A formula must be set. </para>
+</simplesect>
+<simplesect kind="pre"><para>Variables must have been set (if needed)</para>
+</simplesect>
+<simplesect kind="see"><para>m_pParseFormula </para>
+</simplesect>
+<simplesect kind="return"><para>The evaluation result </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ParseException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if no Formula is set or in case of any other error related to the formula. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="113" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1816" bodyend="1819"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a8f0465bf2dfbadeedb33fc93b2e89771" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *</type>
+        <definition>value_type * mu::ParserBase::Eval</definition>
+        <argsstring>(int &amp;nStackSize) const</argsstring>
+        <name>Eval</name>
+        <qualifiedname>mu::ParserBase::Eval</qualifiedname>
+        <param>
+          <type>int &amp;</type>
+          <declname>nStackSize</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate an expression containing comma separated subexpressions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">nStackSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The total number of results available </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the array containing all expression results</para>
+</simplesect>
+This member function can be used to retrieve all results of an expression made up of multiple comma separated subexpressions (i.e. &quot;x+y,sin(x),cos(y)&quot;) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="114" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1829" bodyend="1844"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a70748ac6fc87f2821b356e79ec4a81eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::Eval</definition>
+        <argsstring>(value_type *results, int nBulkSize)</argsstring>
+        <name>Eval</name>
+        <qualifiedname>mu::ParserBase::Eval</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *</type>
+          <declname>results</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nBulkSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="115" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1859" bodyend="1916"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a273fd9b99d7eb8bceb2d2410282096f4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::ParserBase::GetNumResults</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNumResults</name>
+        <qualifiedname>mu::ParserBase::GetNumResults</qualifiedname>
+        <briefdescription>
+<para>Return the number of results on the calculation stack. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the expression contains comma separated subexpressions (i.e. &quot;sin(y), x+y&quot;). There may be more than one return value. This function returns the number of available results. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="117" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1853" bodyend="1856"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1aed9d02dd04f8e163102f9a8e082c4b26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::SetExpr</definition>
+        <argsstring>(const string_type &amp;a_sExpr)</argsstring>
+        <name>SetExpr</name>
+        <qualifiedname>mu::ParserBase::SetExpr</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_sExpr</declname>
+        </param>
+        <briefdescription>
+<para>Set the formula. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_strFormula</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Formula as <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ParserException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>in case of syntax errors.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Triggers first time calculation thus the creation of the bytecode and scanning of used variables. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="119" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="417" bodyend="429"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a845e32d1cd6a8fdeb5c3510489f288d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::SetVarFactory</definition>
+        <argsstring>(facfun_type a_pFactory, void *pUserData=nullptr)</argsstring>
+        <name>SetVarFactory</name>
+        <qualifiedname>mu::ParserBase::SetVarFactory</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a1fd46d8ffefdf8913e3c5e8dc499d031" kindref="member">facfun_type</ref></type>
+          <declname>a_pFactory</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pUserData</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Set a function that can create variable pointer for unknown expression variables. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_pFactory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the variable factory. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pUserData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A user defined context pointer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="120" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="338" bodyend="341"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a1699841ae7a78b23f521f937f09fae21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::SetDecSep</definition>
+        <argsstring>(char_type cDecSep)</argsstring>
+        <name>SetDecSep</name>
+        <qualifiedname>mu::ParserBase::SetDecSep</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref></type>
+          <declname>cDecSep</declname>
+        </param>
+        <briefdescription>
+<para>Set the decimal separator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cDecSep</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Decimal separator as a character value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="classmu_1_1_parser_base_1ab539db832b9af0e5940a0481201077e9" kindref="member">SetThousandsSep</ref></para>
+</simplesect>
+By default muparser uses the &quot;C&quot; locale. The decimal separator of this locale is overwritten by the one provided here. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="122" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="204" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1ab539db832b9af0e5940a0481201077e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::SetThousandsSep</definition>
+        <argsstring>(char_type cThousandsSep=0)</argsstring>
+        <name>SetThousandsSep</name>
+        <qualifiedname>mu::ParserBase::SetThousandsSep</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref></type>
+          <declname>cThousandsSep</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Sets the thousands operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cThousandsSep</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thousands separator as a character </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="classmu_1_1_parser_base_1a1699841ae7a78b23f521f937f09fae21" kindref="member">SetDecSep</ref></para>
+</simplesect>
+By default muparser uses the &quot;C&quot; locale. The thousands separator of this locale is overwritten by the one provided here. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="123" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="218" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a389a2502aa52212975f4a959fad59a47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::ResetLocale</definition>
+        <argsstring>()</argsstring>
+        <name>ResetLocale</name>
+        <qualifiedname>mu::ParserBase::ResetLocale</qualifiedname>
+        <briefdescription>
+<para>Resets the locale. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default locale used &quot;.&quot; as decimal separator, no thousands separator and &quot;,&quot; as function argument separator. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="124" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="230" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a43221e10afd17efe8d32898707763cb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::EnableOptimizer</definition>
+        <argsstring>(bool a_bIsOn=true)</argsstring>
+        <name>EnableOptimizer</name>
+        <qualifiedname>mu::ParserBase::EnableOptimizer</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>a_bIsOn</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Enable or disable the formula optimization feature. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="post"><para>Resets the parser to string parser mode. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="126" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1659" bodyend="1663"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1adf5cb2ffd21f51fac2633a4976fe1e2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::EnableBuiltInOprt</definition>
+        <argsstring>(bool a_bIsOn=true)</argsstring>
+        <name>EnableBuiltInOprt</name>
+        <qualifiedname>mu::ParserBase::EnableBuiltInOprt</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>a_bIsOn</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Enable or disable the built in binary operators. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>m_bBuiltInOp, ReInit()</para>
+</simplesect>
+If you disable the built in binary operators there will be no binary operators defined. Thus you must add them manually one by one. It is not possible to disable built in operators selectively. This function will Reinitialize the parser by calling ReInit(). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="127" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1688" bodyend="1692"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a37b96bc417ecaa2d8e06ebf7c44d6c22" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mu::ParserBase::HasBuiltInOprt</definition>
+        <argsstring>() const</argsstring>
+        <name>HasBuiltInOprt</name>
+        <qualifiedname>mu::ParserBase::HasBuiltInOprt</qualifiedname>
+        <briefdescription>
+<para>Query status of built in variables. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>m_bBuiltInOp; true if built in operators are enabled. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="129" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1699" bodyend="1702"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a0b49dbe051415f9d2a9d5564c38609e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::AddValIdent</definition>
+        <argsstring>(identfun_type a_pCallback)</argsstring>
+        <name>AddValIdent</name>
+        <qualifiedname>mu::ParserBase::AddValIdent</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a0e40974644c0e6488d76229ca0f4ce23" kindref="member">identfun_type</ref></type>
+          <declname>a_pCallback</declname>
+        </param>
+        <briefdescription>
+<para>Add a value parsing function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When parsing an expression muParser tries to detect values in the expression string using different valident callbacks. Thus it&apos;s possible to parse for hex values, binary values and floating point values. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="130" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="328" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a19bff73a29e12bb1af90793ceb258059" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void mu::ParserBase::DefineFun</definition>
+        <argsstring>(const string_type &amp;a_strName, T a_pFun, bool a_bAllowOpt=true)</argsstring>
+        <name>DefineFun</name>
+        <qualifiedname>mu::ParserBase::DefineFun</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_strName</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpt</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Define a parser function without arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_strName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_pFun</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the callback function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_bAllowOpt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A flag indicating this function may be optimized </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="139" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="139" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a10665a30f3768a970401580f58f1aa70" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void mu::ParserBase::DefineFunUserData</definition>
+        <argsstring>(const string_type &amp;a_strName, T a_pFun, void *a_pUserData, bool a_bAllowOpt=true)</argsstring>
+        <name>DefineFunUserData</name>
+        <qualifiedname>mu::ParserBase::DefineFunUserData</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_strName</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>a_pUserData</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpt</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Define a parser function with user data (not null). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_strName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_pFun</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the callback function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_pUserData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer that will be passed back to callback (shall not be nullptr) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_bAllowOpt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A flag indicating this function may be optimized </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="152" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="152" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a70483983b78f13d37e4f28962d86af34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::DefineOprt</definition>
+        <argsstring>(const string_type &amp;a_strName, fun_type2 a_pFun, unsigned a_iPri=0, EOprtAssociativity a_eAssociativity=oaLEFT, bool a_bAllowOpt=false)</argsstring>
+        <name>DefineOprt</name>
+        <qualifiedname>mu::ParserBase::DefineOprt</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_strName</declname>
+          <defname>a_sName</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1abd9aed5816d33116d687f5becd85b38f" kindref="member">fun_type2</ref></type>
+          <declname>a_pFun</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>a_iPri</declname>
+          <defname>a_iPrec</defname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1aff435b0c277f66041374f93a3803e1f1" kindref="member">EOprtAssociativity</ref></type>
+          <declname>a_eAssociativity</declname>
+          <defval>oaLEFT</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpt</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Define a binary operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">a_sName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The identifier of the operator. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">a_pFun</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the callback function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">a_iPrec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Precedence of the operator. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">a_eAssociativity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The associativity of the operator. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">a_bAllowOpt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If this is true the operator may be optimized away.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Adds a new Binary operator the the parser instance. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="157" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="550" bodyend="565"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a8cbb0a5e193daeea647d80dc89f34c65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::DefineConst</definition>
+        <argsstring>(const string_type &amp;a_sName, value_type a_fVal)</argsstring>
+        <name>DefineConst</name>
+        <qualifiedname>mu::ParserBase::DefineConst</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_sName</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+          <declname>a_fVal</declname>
+        </param>
+        <briefdescription>
+<para>Add a user defined constant. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">a_sName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the constant. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">a_fVal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value of the constant. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="post"><para>Will reset the <ref refid="classmu_1_1_parser" kindref="compound">Parser</ref> to string parsing mode. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ParserException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>in case the name contains invalid signs. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="158" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="617" bodyend="625"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a64bc1de3b6db42140fe6f4860c30e40a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::DefineStrConst</definition>
+        <argsstring>(const string_type &amp;a_sName, const string_type &amp;a_strVal)</argsstring>
+        <name>DefineStrConst</name>
+        <qualifiedname>mu::ParserBase::DefineStrConst</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_sName</declname>
+          <defname>a_strName</defname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_strVal</declname>
+        </param>
+        <briefdescription>
+<para>Define a new string constant. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">a_strName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the constant. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">a_strVal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value of the constant. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="159" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="572" bodyend="584"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a8350970819c77352af8d79ce3110393e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::DefineVar</definition>
+        <argsstring>(const string_type &amp;a_sName, value_type *a_fVar)</argsstring>
+        <name>DefineVar</name>
+        <qualifiedname>mu::ParserBase::DefineVar</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_sName</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref> *</type>
+          <declname>a_fVar</declname>
+          <defname>a_pVar</defname>
+        </param>
+        <briefdescription>
+<para>Add a user defined variable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">a_sName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the variable name </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">a_pVar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the variable value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="post"><para>Will reset the <ref refid="classmu_1_1_parser" kindref="compound">Parser</ref> to string parsing mode. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ParserException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>in case the name contains invalid signs or a_pVar is nullptr. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="160" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="593" bodyend="608"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1ae9fb4d2348213a0e42dc07a4589ac654" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::DefinePostfixOprt</definition>
+        <argsstring>(const string_type &amp;a_strFun, fun_type1 a_pOprt, bool a_bAllowOpt=true)</argsstring>
+        <name>DefinePostfixOprt</name>
+        <qualifiedname>mu::ParserBase::DefinePostfixOprt</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_strFun</declname>
+          <defname>a_sName</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1affeaec09801b502b9955d7248b7e2706" kindref="member">fun_type1</ref></type>
+          <declname>a_pOprt</declname>
+          <defname>a_pFun</defname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpt</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Add a user defined operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="post"><para>Will reset the <ref refid="classmu_1_1_parser" kindref="compound">Parser</ref> to string parsing mode. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="161" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="501" bodyend="507"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a5e26f06efc7564a85a5f5ab682ba5a23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::DefineInfixOprt</definition>
+        <argsstring>(const string_type &amp;a_strName, fun_type1 a_pOprt, int a_iPrec=prINFIX, bool a_bAllowOpt=true)</argsstring>
+        <name>DefineInfixOprt</name>
+        <qualifiedname>mu::ParserBase::DefineInfixOprt</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_strName</declname>
+          <defname>a_sName</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1affeaec09801b502b9955d7248b7e2706" kindref="member">fun_type1</ref></type>
+          <declname>a_pOprt</declname>
+          <defname>a_pFun</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iPrec</declname>
+          <defval><ref refid="namespacemu_1af05119698ed9c62239c0b31ac9861d3da50b576d79c0d155f703d409967ad3727" kindref="member">prINFIX</ref></defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>a_bAllowOpt</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Add a user defined operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="post"><para>Will reset the <ref refid="classmu_1_1_parser" kindref="compound">Parser</ref> to string parsing mode. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">a_sName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>operator Identifier </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">a_pFun</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Operator callback function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">a_iPrec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Operator Precedence (default=prSIGN) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">a_bAllowOpt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if operator is volatile (default=false) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>EPrec </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="162" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="531" bodyend="537"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1add23e405d36de71de6b386bc0eb4b57c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::ClearVar</definition>
+        <argsstring>()</argsstring>
+        <name>ClearVar</name>
+        <qualifiedname>mu::ParserBase::ClearVar</qualifiedname>
+        <briefdescription>
+<para>Clear all user defined variables. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Resets the parser to string parsing mode by calling ReInit. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="165" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1574" bodyend="1578"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1abc296c44f8a9522b2cf12a9ad36071b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::ClearFun</definition>
+        <argsstring>()</argsstring>
+        <name>ClearFun</name>
+        <qualifiedname>mu::ParserBase::ClearFun</qualifiedname>
+        <briefdescription>
+<para>Clear all functions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="post"><para>Resets the parser to string parsing mode. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="166" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1601" bodyend="1605"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1adbc445632a056820ff722ca18c1331e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::ClearConst</definition>
+        <argsstring>()</argsstring>
+        <name>ClearConst</name>
+        <qualifiedname>mu::ParserBase::ClearConst</qualifiedname>
+        <briefdescription>
+<para>Clear all user defined constants. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Both numeric and string constants will be removed from the internal storage. <simplesect kind="post"><para>Resets the parser to string parsing mode. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="167" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1614" bodyend="1619"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a7485eccf3281c879dad059966e3cbe22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::ClearInfixOprt</definition>
+        <argsstring>()</argsstring>
+        <name>ClearInfixOprt</name>
+        <qualifiedname>mu::ParserBase::ClearInfixOprt</qualifiedname>
+        <briefdescription>
+<para>Clear the user defined Prefix operators. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="post"><para>Resets the parser to string parser mode. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="168" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1648" bodyend="1652"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1ab8a8356532f0047d8a33a46bc77f4bc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::ClearPostfixOprt</definition>
+        <argsstring>()</argsstring>
+        <name>ClearPostfixOprt</name>
+        <qualifiedname>mu::ParserBase::ClearPostfixOprt</qualifiedname>
+        <briefdescription>
+<para>Clear all user defined postfix operators. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="post"><para>Resets the parser to string parsing mode. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="169" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1626" bodyend="1630"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1aa5fd05a7bb2b8bc9f9745c5377c0ebf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::ClearOprt</definition>
+        <argsstring>()</argsstring>
+        <name>ClearOprt</name>
+        <qualifiedname>mu::ParserBase::ClearOprt</qualifiedname>
+        <briefdescription>
+<para>Clear all user defined binary operators. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="post"><para>Resets the parser to string parsing mode. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="170" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1637" bodyend="1641"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a8e5a54620200dfbd42ec084c29249d94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::RemoveVar</definition>
+        <argsstring>(const string_type &amp;a_strVarName)</argsstring>
+        <name>RemoveVar</name>
+        <qualifiedname>mu::ParserBase::RemoveVar</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_strVarName</declname>
+        </param>
+        <briefdescription>
+<para>Remove a variable from internal storage. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Removes a variable if it exists. If the Variable does not exist nothing will be done. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="172" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1586" bodyend="1594"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1afca7a5016d8456985fbfbde8a6af30de" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="namespacemu_1ab57755354e948a664ad94d38546dbb10" kindref="member">varmap_type</ref> &amp;</type>
+        <definition>const varmap_type &amp; mu::ParserBase::GetUsedVar</definition>
+        <argsstring>() const</argsstring>
+        <name>GetUsedVar</name>
+        <qualifiedname>mu::ParserBase::GetUsedVar</qualifiedname>
+        <briefdescription>
+<para>Return a map containing the used variables only. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="173" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="692" bodyend="712"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a239fad70b76b3f71843a10d35e831d76" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="namespacemu_1ab57755354e948a664ad94d38546dbb10" kindref="member">varmap_type</ref> &amp;</type>
+        <definition>const varmap_type &amp; mu::ParserBase::GetVar</definition>
+        <argsstring>() const</argsstring>
+        <name>GetVar</name>
+        <qualifiedname>mu::ParserBase::GetVar</qualifiedname>
+        <briefdescription>
+<para>Return a map containing the used variables only. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="174" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="716" bodyend="719"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a534b83d199b0027de41082fea1b9f474" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="namespacemu_1a5940d281286a01342cf773f74481843c" kindref="member">valmap_type</ref> &amp;</type>
+        <definition>const valmap_type &amp; mu::ParserBase::GetConst</definition>
+        <argsstring>() const</argsstring>
+        <name>GetConst</name>
+        <qualifiedname>mu::ParserBase::GetConst</qualifiedname>
+        <briefdescription>
+<para>Return a map containing all parser constants. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="175" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="723" bodyend="726"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a06f1faba7440a1eb7f5d72501344edc0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+        <definition>const string_type &amp; mu::ParserBase::GetExpr</definition>
+        <argsstring>() const</argsstring>
+        <name>GetExpr</name>
+        <qualifiedname>mu::ParserBase::GetExpr</qualifiedname>
+        <briefdescription>
+<para>Retrieve the formula. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="176" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="746" bodyend="749"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a7440a07214ee9e8533e21cc09003f0d2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="namespacemu_1aa38fb627ca71e44a49de0f2fe4d9031d" kindref="member">funmap_type</ref> &amp;</type>
+        <definition>const funmap_type &amp; mu::ParserBase::GetFunDef</definition>
+        <argsstring>() const</argsstring>
+        <name>GetFunDef</name>
+        <qualifiedname>mu::ParserBase::GetFunDef</qualifiedname>
+        <briefdescription>
+<para>Return prototypes of all parser functions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>m_FunDef </para>
+</simplesect>
+<simplesect kind="see"><para>FunProt </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The return type is a map of the public type <ref refid="namespacemu_1aa38fb627ca71e44a49de0f2fe4d9031d" kindref="member">funmap_type</ref> containing the prototype definitions for all numerical parser functions. String functions are not part of this map. The Prototype definition is encapsulated in objects of the class FunProt one per parser function each associated with function names via a map construct. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="177" column="19" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="739" bodyend="742"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a3da71c2e01f3902286e796a12cfc7073" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref></type>
+        <definition>string_type mu::ParserBase::GetVersion</definition>
+        <argsstring>(EParserVersionInfo eInfo=pviFULL) const</argsstring>
+        <name>GetVersion</name>
+        <qualifiedname>mu::ParserBase::GetVersion</qualifiedname>
+        <param>
+          <type>EParserVersionInfo</type>
+          <declname>eInfo</declname>
+          <defval>pviFULL</defval>
+        </param>
+        <briefdescription>
+<para>Returns the version of muparser. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>eInfo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A flag indicating whether the full version info should be returned or not.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Format is as follows: &quot;MAJOR.MINOR (COMPILER_FLAGS)&quot; The COMPILER_FLAGS are returned only if eInfo==pviFULL. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="178" column="13" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="284" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a3638455b36aaa084c81254513beadd41" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classmu_1_1_parser_byte_code" kindref="compound">ParserByteCode</ref> &amp;</type>
+        <definition>const ParserByteCode &amp; mu::ParserBase::GetByteCode</definition>
+        <argsstring>() const</argsstring>
+        <name>GetByteCode</name>
+        <qualifiedname>mu::ParserBase::GetByteCode</qualifiedname>
+        <briefdescription>
+<para>Returns the bytecode of the current expression. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="179" column="22" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="271" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a3bb91e07f11360e065359049663938bb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> **</type>
+        <definition>const char_type ** mu::ParserBase::GetOprtDef</definition>
+        <argsstring>() const</argsstring>
+        <name>GetOprtDef</name>
+        <qualifiedname>mu::ParserBase::GetOprtDef</qualifiedname>
+        <briefdescription>
+<para>Get the default symbols used for the built in operators. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classmu_1_1_parser_base_1a0cb4d456e6a82da96786ec73044470ea" kindref="member">c_DefaultOprt</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="181" column="17" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="435" bodyend="438"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1adf259477bbaa85e8dd7cb69ef4aa0a7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::DefineNameChars</definition>
+        <argsstring>(const char_type *a_szCharset)</argsstring>
+        <name>DefineNameChars</name>
+        <qualifiedname>mu::ParserBase::DefineNameChars</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+          <declname>a_szCharset</declname>
+        </param>
+        <briefdescription>
+<para>Define the set of valid characters to be used in names of functions, variables, constants. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="182" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="444" bodyend="447"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1aafd21c418397d5412a75e5b2c1d6db58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::DefineOprtChars</definition>
+        <argsstring>(const char_type *a_szCharset)</argsstring>
+        <name>DefineOprtChars</name>
+        <qualifiedname>mu::ParserBase::DefineOprtChars</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+          <declname>a_szCharset</declname>
+        </param>
+        <briefdescription>
+<para>Define the set of valid characters to be used in names of binary operators and postfix operators. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="183" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="453" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1ac76d0ceb4ee58babc4f1d0a9ca1e4240" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::DefineInfixOprtChars</definition>
+        <argsstring>(const char_type *a_szCharset)</argsstring>
+        <name>DefineInfixOprtChars</name>
+        <qualifiedname>mu::ParserBase::DefineInfixOprtChars</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+          <declname>a_szCharset</declname>
+        </param>
+        <briefdescription>
+<para>Define the set of valid characters to be used in names of infix operators. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="184" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="462" bodyend="465"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a7957dbea987631d17df83c5f27b77771" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+        <definition>const char_type * mu::ParserBase::ValidNameChars</definition>
+        <argsstring>() const</argsstring>
+        <name>ValidNameChars</name>
+        <qualifiedname>mu::ParserBase::ValidNameChars</qualifiedname>
+        <briefdescription>
+<para>Virtual function that defines the characters allowed in name identifiers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classmu_1_1_parser_base_1adc4e5a8fe8f2b290f567007cd4b85914" kindref="member">ValidOprtChars</ref>, #ValidPrefixOprtChars </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="186" column="17" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="471" bodyend="475"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1adc4e5a8fe8f2b290f567007cd4b85914" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+        <definition>const char_type * mu::ParserBase::ValidOprtChars</definition>
+        <argsstring>() const</argsstring>
+        <name>ValidOprtChars</name>
+        <qualifiedname>mu::ParserBase::ValidOprtChars</qualifiedname>
+        <briefdescription>
+<para>Virtual function that defines the characters allowed in operator definitions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classmu_1_1_parser_base_1a7957dbea987631d17df83c5f27b77771" kindref="member">ValidNameChars</ref>, #ValidPrefixOprtChars </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="187" column="17" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="481" bodyend="485"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a07d5ceb535e963f4fda5e3890759373d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+        <definition>const char_type * mu::ParserBase::ValidInfixOprtChars</definition>
+        <argsstring>() const</argsstring>
+        <name>ValidInfixOprtChars</name>
+        <qualifiedname>mu::ParserBase::ValidInfixOprtChars</qualifiedname>
+        <briefdescription>
+<para>Virtual function that defines the characters allowed in infix operator definitions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classmu_1_1_parser_base_1a7957dbea987631d17df83c5f27b77771" kindref="member">ValidNameChars</ref>, <ref refid="classmu_1_1_parser_base_1adc4e5a8fe8f2b290f567007cd4b85914" kindref="member">ValidOprtChars</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="188" column="17" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="491" bodyend="495"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1ade4090449c9fd55759fffb933e0f92e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::SetArgSep</definition>
+        <argsstring>(char_type cArgSep)</argsstring>
+        <name>SetArgSep</name>
+        <qualifiedname>mu::ParserBase::SetArgSep</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref></type>
+          <declname>cArgSep</declname>
+        </param>
+        <briefdescription>
+<para>Set argument separator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cArgSep</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the argument separator character. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="190" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1716" bodyend="1719"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1aee3c53805b70fb1a9716c1b89a055a10" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref></type>
+        <definition>char_type mu::ParserBase::GetArgSep</definition>
+        <argsstring>() const</argsstring>
+        <name>GetArgSep</name>
+        <qualifiedname>mu::ParserBase::GetArgSep</qualifiedname>
+        <briefdescription>
+<para>Get the argument separator character. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="191" column="11" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1707" bodyend="1710"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a2741c5cc27b9de19af04ab5627abed5f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <qualifiedname>mu::ParserBase::Init</qualifiedname>
+        <briefdescription>
+<para>Initialize user defined functions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Calls the virtual functions InitFun(), InitConst() and InitOprt(). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="195" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="514" bodyend="520"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a487e5c7e13afe212746cc9b475aa0708" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::Error</definition>
+        <argsstring>(EErrorCodes a_iErrc, int a_iPos=static_cast&lt; int &gt;(mu::string_type::npos), const string_type &amp;a_strTok=string_type()) const</argsstring>
+        <name>Error</name>
+        <qualifiedname>mu::ParserBase::Error</qualifiedname>
+        <param>
+          <type><ref refid="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688a" kindref="member">EErrorCodes</ref></type>
+          <declname>a_iErrc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_iPos</declname>
+          <defval>static_cast&lt; int &gt;(mu::string_type::npos)</defval>
+        </param>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_strTok</declname>
+          <defname>a_sTok</defname>
+          <defval><ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Create an error containing the parse error position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function will create an <ref refid="classmu_1_1_parser" kindref="compound">Parser</ref> Exception object containing the error text and its position.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_iErrc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[in] The error code of type <ref refid="namespacemu_1acf304a3ef5c4625d0eac5953aa1b688a" kindref="member">EErrorCodes</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_iPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[in] The position where the error was detected. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_strTok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[in] The token string representation associated with the error. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ParserException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>always throws that&apos;s the only purpose of this function. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="196" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1563" bodyend="1566"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a3f5c53ef3cba6ab939261677dc2d9709" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void mu::ParserBase::InitCharSets</definition>
+        <argsstring>()=0</argsstring>
+        <name>InitCharSets</name>
+        <qualifiedname>mu::ParserBase::InitCharSets</qualifiedname>
+        <reimplementedby refid="classmu_1_1_parser_1a7eabc6c469f0a6bb2f68d5bb4edf0801">InitCharSets</reimplementedby>
+        <reimplementedby refid="classmu_1_1_parser_int_1a5c5844b50ae7bb0f2c775dd2d3b20b49">InitCharSets</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="198" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a1f94305e7b7e9abff6d41242dcf188ed" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void mu::ParserBase::InitFun</definition>
+        <argsstring>()=0</argsstring>
+        <name>InitFun</name>
+        <qualifiedname>mu::ParserBase::InitFun</qualifiedname>
+        <reimplementedby refid="classmu_1_1_parser_1aab3f97d32db81dec3cce0fe55f44f1cb">InitFun</reimplementedby>
+        <reimplementedby refid="classmu_1_1_parser_int_1ac4c088a1ca4e3489818f3b4bafde7e93">InitFun</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="199" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1aad904fb3df8f28659f36d7ce7db4a28c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void mu::ParserBase::InitConst</definition>
+        <argsstring>()=0</argsstring>
+        <name>InitConst</name>
+        <qualifiedname>mu::ParserBase::InitConst</qualifiedname>
+        <reimplementedby refid="classmu_1_1_parser_1a9eddc99b84bcc4d568dec8f2f729d15b">InitConst</reimplementedby>
+        <reimplementedby refid="classmu_1_1_parser_int_1a3c729a85c0473a071aef3c7a6ef9b0d5">InitConst</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="200" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a4df16813c9002ff08c96929ba8f0d32b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void mu::ParserBase::InitOprt</definition>
+        <argsstring>()=0</argsstring>
+        <name>InitOprt</name>
+        <qualifiedname>mu::ParserBase::InitOprt</qualifiedname>
+        <reimplementedby refid="classmu_1_1_parser_1ad031e3621f1952be2fcca8c295d001ae">InitOprt</reimplementedby>
+        <reimplementedby refid="classmu_1_1_parser_int_1ac2f14abb8716396d9a26e563b2e1ab49">InitOprt</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="201" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1aa8ec96622bf6777c1f20aecb16a84528" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::OnDetectVar</definition>
+        <argsstring>(string_type *pExpr, int &amp;nStart, int &amp;nEnd)</argsstring>
+        <name>OnDetectVar</name>
+        <qualifiedname>mu::ParserBase::OnDetectVar</qualifiedname>
+        <reimplementedby refid="classmu_1_1_parser_1a0012bea1dd0856c7b626cc7a6f2c89dd">OnDetectVar</reimplementedby>
+        <param>
+          <type><ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> *</type>
+          <declname>pExpr</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>nStart</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>nEnd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="203" column="14" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="265" bodyend="266"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a0aee1c9c474a72ece1963ff9a24385cf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::Assign</definition>
+        <argsstring>(const ParserBase &amp;a_Parser)</argsstring>
+        <name>Assign</name>
+        <qualifiedname>mu::ParserBase::Assign</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_base" kindref="compound">ParserBase</ref> &amp;</type>
+          <declname>a_Parser</declname>
+        </param>
+        <briefdescription>
+<para>Copy state of a parser object to this. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Clears Variables and Functions of this parser. Copies the states of all internal variables. Resets parse function to string parse mode.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_Parser</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the source object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="254" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="166" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1aec2c821dddea93b638b33c7ab01131f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::InitTokenReader</definition>
+        <argsstring>()</argsstring>
+        <name>InitTokenReader</name>
+        <qualifiedname>mu::ParserBase::InitTokenReader</qualifiedname>
+        <briefdescription>
+<para>Initialize the token reader. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Create new token reader object and submit pointers to function, operator, constant and variable definitions.</para>
+<para><simplesect kind="post"><para>m_pTokenReader.get()!=0 </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="255" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="245" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1ae25a9288c72526494035ce7f23b2b588" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::ReInit</definition>
+        <argsstring>() const</argsstring>
+        <name>ReInit</name>
+        <qualifiedname>mu::ParserBase::ReInit</qualifiedname>
+        <briefdescription>
+<para>Reset parser to string parsing mode and clear internal buffers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Clear bytecode, reset the token reader. <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>nothrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="256" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="256" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a2a06b19df214b249c64dad6a5a5705be" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::AddCallback</definition>
+        <argsstring>(const string_type &amp;a_strName, const ParserCallback &amp;a_Callback, funmap_type &amp;a_Storage, const char_type *a_szCharSet)</argsstring>
+        <name>AddCallback</name>
+        <qualifiedname>mu::ParserBase::AddCallback</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_strName</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_callback" kindref="compound">ParserCallback</ref> &amp;</type>
+          <declname>a_Callback</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacemu_1aa38fb627ca71e44a49de0f2fe4d9031d" kindref="member">funmap_type</ref> &amp;</type>
+          <declname>a_Storage</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacemu_1a81cc89a81a8872430ab1799b5848c5ca" kindref="member">char_type</ref> *</type>
+          <declname>a_szCharSet</declname>
+        </param>
+        <briefdescription>
+<para>Add a function or operator callback to the parser. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="258" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="345" bodyend="372"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a7cb20cfcfd3c7c51d5c6b713014ec20c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::ApplyRemainingOprt</definition>
+        <argsstring>(std::stack&lt; token_type &gt; &amp;a_stOpt, std::stack&lt; token_type &gt; &amp;a_stVal) const</argsstring>
+        <name>ApplyRemainingOprt</name>
+        <qualifiedname>mu::ParserBase::ApplyRemainingOprt</qualifiedname>
+        <param>
+          <type>std::stack&lt; <ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &gt; &amp;</type>
+          <declname>a_stOpt</declname>
+          <defname>stOpt</defname>
+        </param>
+        <param>
+          <type>std::stack&lt; <ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &gt; &amp;</type>
+          <declname>a_stVal</declname>
+          <defname>stVal</defname>
+        </param>
+        <briefdescription>
+<para>Apply a binary operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_stOpt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operator stack </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_stVal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value stack </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="259" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="985" bodyend="1024"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a27a7ce668a27705e68663876a439b713" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::ApplyBinOprt</definition>
+        <argsstring>(std::stack&lt; token_type &gt; &amp;a_stOpt, std::stack&lt; token_type &gt; &amp;a_stVal) const</argsstring>
+        <name>ApplyBinOprt</name>
+        <qualifiedname>mu::ParserBase::ApplyBinOprt</qualifiedname>
+        <param>
+          <type>std::stack&lt; <ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &gt; &amp;</type>
+          <declname>a_stOpt</declname>
+        </param>
+        <param>
+          <type>std::stack&lt; <ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &gt; &amp;</type>
+          <declname>a_stVal</declname>
+        </param>
+        <briefdescription>
+<para>Performs the necessary steps to write code for the execution of binary operators into the bytecode. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="260" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="938" bodyend="978"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a7d179c591fd81a9671215aa1629dca53" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::ApplyIfElse</definition>
+        <argsstring>(std::stack&lt; token_type &gt; &amp;a_stOpt, std::stack&lt; token_type &gt; &amp;a_stVal) const</argsstring>
+        <name>ApplyIfElse</name>
+        <qualifiedname>mu::ParserBase::ApplyIfElse</qualifiedname>
+        <param>
+          <type>std::stack&lt; <ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &gt; &amp;</type>
+          <declname>a_stOpt</declname>
+        </param>
+        <param>
+          <type>std::stack&lt; <ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &gt; &amp;</type>
+          <declname>a_stVal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="261" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="890" bodyend="932"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a651c455fbaecab73ca2592b5c095996c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::ApplyFunc</definition>
+        <argsstring>(std::stack&lt; token_type &gt; &amp;a_stOpt, std::stack&lt; token_type &gt; &amp;a_stVal, int iArgCount) const</argsstring>
+        <name>ApplyFunc</name>
+        <qualifiedname>mu::ParserBase::ApplyFunc</qualifiedname>
+        <param>
+          <type>std::stack&lt; <ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &gt; &amp;</type>
+          <declname>a_stOpt</declname>
+        </param>
+        <param>
+          <type>std::stack&lt; <ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &gt; &amp;</type>
+          <declname>a_stVal</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iArgCount</declname>
+          <defname>a_iArgCount</defname>
+        </param>
+        <briefdescription>
+<para>Apply a function token. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iArgCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of Arguments actually gathered used only for multiarg functions. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="post"><para>The result is pushed to the value stack </para>
+</simplesect>
+<simplesect kind="post"><para>The function token is removed from the stack </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classmu_1_1_parser_base_1ab385f37be00cee7d8a68c3c41f6a5b64" kindref="member">exception_type</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if Argument count does not match function requirements. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="262" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="800" bodyend="887"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1abcbc1790fbc3ad3a5a3316b667bbc738" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref></type>
+        <definition>ParserBase::token_type mu::ParserBase::ApplyStrFunc</definition>
+        <argsstring>(const token_type &amp;a_FunTok, const std::vector&lt; token_type &gt; &amp;a_vArg) const</argsstring>
+        <name>ApplyStrFunc</name>
+        <qualifiedname>mu::ParserBase::ApplyStrFunc</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &amp;</type>
+          <declname>a_FunTok</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &gt; &amp;</type>
+          <declname>a_vArg</declname>
+        </param>
+        <briefdescription>
+<para>Execute a function that takes a single string argument. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_FunTok</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function token. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classmu_1_1_parser_base_1ab385f37be00cee7d8a68c3c41f6a5b64" kindref="member">exception_type</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the function token is not a string function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="264" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="756" bodyend="791"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1aa6258fd5314c3732773efaad9971fb1a" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mu::ParserBase::GetOprtPrecedence</definition>
+        <argsstring>(const token_type &amp;a_Tok) const</argsstring>
+        <name>GetOprtPrecedence</name>
+        <qualifiedname>mu::ParserBase::GetOprtPrecedence</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &amp;</type>
+          <declname>a_Tok</declname>
+        </param>
+        <briefdescription>
+<para>Get operator priority. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ParserException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if a_Oprt is no operator code </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="266" column="5" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="631" bodyend="661"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1ab6c99e3f9c64ea9922e62f7bda0f3a56" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1aff435b0c277f66041374f93a3803e1f1" kindref="member">EOprtAssociativity</ref></type>
+        <definition>EOprtAssociativity mu::ParserBase::GetOprtAssociativity</definition>
+        <argsstring>(const token_type &amp;a_Tok) const</argsstring>
+        <name>GetOprtAssociativity</name>
+        <qualifiedname>mu::ParserBase::GetOprtAssociativity</qualifiedname>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &amp;</type>
+          <declname>a_Tok</declname>
+        </param>
+        <briefdescription>
+<para>Get operator priority. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ParserException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if a_Oprt is no operator code </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="267" column="20" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="667" bodyend="688"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a367b1628a9ed288d93f0ced353b98ab9" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::CreateRPN</definition>
+        <argsstring>() const</argsstring>
+        <name>CreateRPN</name>
+        <qualifiedname>mu::ParserBase::CreateRPN</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="269" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1260" bodyend="1516"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a18994b737dfe6f2996792fa7320673b0" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserBase::ParseString</definition>
+        <argsstring>() const</argsstring>
+        <name>ParseString</name>
+        <qualifiedname>mu::ParserBase::ParseString</qualifiedname>
+        <briefdescription>
+<para>One of the two main parse functions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para>ParseCmdCode(...)</para>
+</simplesect>
+Parse expression from input string. Perform syntax checking and create bytecode. After parsing the string and creating the bytecode the function pointer m_pParseFormula will be changed to the second parse routine the uses bytecode instead of string parsing. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="271" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1527" bodyend="1550"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a8598fb069f56fccccb7b2964cc2fa694" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserBase::ParseCmdCode</definition>
+        <argsstring>() const</argsstring>
+        <name>ParseCmdCode</name>
+        <qualifiedname>mu::ParserBase::ParseCmdCode</qualifiedname>
+        <briefdescription>
+<para>Parse the command code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para>ParseString(...)</para>
+</simplesect>
+Command code contains precalculated stack positions of the values and the associated operators. The Stack is filled beginning from index one the value at index zero is not used at all. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="272" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1034" bodyend="1037"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a13385221d9bac94894e21ef187440f70" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserBase::ParseCmdCodeShort</definition>
+        <argsstring>() const</argsstring>
+        <name>ParseCmdCodeShort</name>
+        <qualifiedname>mu::ParserBase::ParseCmdCodeShort</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="273" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1039" bodyend="1078"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1ab19a6da888d37db81916e0ad2422e020" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacemu_1a17d4f113a4b88b8d971cca8ddbbe8a47" kindref="member">value_type</ref></type>
+        <definition>value_type mu::ParserBase::ParseCmdCodeBulk</definition>
+        <argsstring>(int nOffset, int nThreadID) const</argsstring>
+        <name>ParseCmdCodeBulk</name>
+        <qualifiedname>mu::ParserBase::ParseCmdCodeBulk</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>nOffset</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nThreadID</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate the RPN. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nOffset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The offset added to variable addresses (for bulk mode) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nThreadID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OpenMP Thread id of the calling thread </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="274" column="12" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1085" bodyend="1257"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a2392cb23c209867e7b4259ebc115869a" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::CheckName</definition>
+        <argsstring>(const string_type &amp;a_strName, const string_type &amp;a_CharSet) const</argsstring>
+        <name>CheckName</name>
+        <qualifiedname>mu::ParserBase::CheckName</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_strName</declname>
+          <defname>a_sName</defname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_CharSet</declname>
+          <defname>a_szCharSet</defname>
+        </param>
+        <briefdescription>
+<para>Check if a name contains invalid characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ParserException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the name contains invalid characters. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="276" column="7" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="400" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a133b3a0e476be0b53001ce5d8568e99b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::CheckOprt</definition>
+        <argsstring>(const string_type &amp;a_sName, const ParserCallback &amp;a_Callback, const string_type &amp;a_szCharSet) const</argsstring>
+        <name>CheckOprt</name>
+        <qualifiedname>mu::ParserBase::CheckOprt</qualifiedname>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_sName</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classmu_1_1_parser_callback" kindref="compound">ParserCallback</ref> &amp;</type>
+          <declname>a_Callback</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacemu_1ae9f8b44d9a97dd397180891e8390c3e9" kindref="member">string_type</ref> &amp;</type>
+          <declname>a_szCharSet</declname>
+        </param>
+        <briefdescription>
+<para>Check if a name contains invalid characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ParserException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the name contains invalid characters. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="277" column="7" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="379" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="function" id="classmu_1_1_parser_base_1a43b9f9b6f3fd8359a165b07e63731b8e" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mu::ParserBase::StackDump</definition>
+        <argsstring>(const std::stack&lt; token_type &gt; &amp;a_stVal, const std::stack&lt; token_type &gt; &amp;a_stOprt) const</argsstring>
+        <name>StackDump</name>
+        <qualifiedname>mu::ParserBase::StackDump</qualifiedname>
+        <param>
+          <type>const std::stack&lt; <ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &gt; &amp;</type>
+          <declname>a_stVal</declname>
+        </param>
+        <param>
+          <type>const std::stack&lt; <ref refid="classmu_1_1_parser_token" kindref="compound">token_type</ref> &gt; &amp;</type>
+          <declname>a_stOprt</declname>
+        </param>
+        <briefdescription>
+<para>Dump stack content. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is used for debugging only. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="279" column="6" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/src/muParserBase.cpp" bodystart="1726" bodyend="1799"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Mathematical expressions parser (base parser engine). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This is the implementation of a bytecode based mathematical expressions parser. The formula will be parsed from string and converted into a bytecode. Future calculations will be done with the bytecode instead the formula string resulting in a significant performance increase. Complementary to a set of internally implemented functions the parser is able to handle user defined functions and variables. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>mu::Parser</label>
+        <link refid="classmu_1_1_parser"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>mu::ParserBase</label>
+        <link refid="classmu_1_1_parser_base"/>
+      </node>
+      <node id="3">
+        <label>mu::ParserInt</label>
+        <link refid="classmu_1_1_parser_int"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" line="68" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/include/muParserBase.h" bodystart="69" bodyend="309"/>
+    <listofallmembers>
+      <member refid="classmu_1_1_parser_base_1a2a06b19df214b249c64dad6a5a5705be" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>AddCallback</name></member>
+      <member refid="classmu_1_1_parser_base_1a0b49dbe051415f9d2a9d5564c38609e3" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>AddValIdent</name></member>
+      <member refid="classmu_1_1_parser_base_1a27a7ce668a27705e68663876a439b713" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>ApplyBinOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1a651c455fbaecab73ca2592b5c095996c" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>ApplyFunc</name></member>
+      <member refid="classmu_1_1_parser_base_1a7d179c591fd81a9671215aa1629dca53" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>ApplyIfElse</name></member>
+      <member refid="classmu_1_1_parser_base_1a7cb20cfcfd3c7c51d5c6b713014ec20c" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>ApplyRemainingOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1abcbc1790fbc3ad3a5a3316b667bbc738" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>ApplyStrFunc</name></member>
+      <member refid="classmu_1_1_parser_base_1a0aee1c9c474a72ece1963ff9a24385cf" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>Assign</name></member>
+      <member refid="classmu_1_1_parser_base_1a0cb4d456e6a82da96786ec73044470ea" prot="protected" virt="non-virtual"><scope>mu::ParserBase</scope><name>c_DefaultOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1a2392cb23c209867e7b4259ebc115869a" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>CheckName</name></member>
+      <member refid="classmu_1_1_parser_base_1a133b3a0e476be0b53001ce5d8568e99b" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>CheckOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1adbc445632a056820ff722ca18c1331e9" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>ClearConst</name></member>
+      <member refid="classmu_1_1_parser_base_1abc296c44f8a9522b2cf12a9ad36071b2" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>ClearFun</name></member>
+      <member refid="classmu_1_1_parser_base_1a7485eccf3281c879dad059966e3cbe22" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>ClearInfixOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1aa5fd05a7bb2b8bc9f9745c5377c0ebf3" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>ClearOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1ab8a8356532f0047d8a33a46bc77f4bc5" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>ClearPostfixOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1add23e405d36de71de6b386bc0eb4b57c" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>ClearVar</name></member>
+      <member refid="classmu_1_1_parser_base_1a367b1628a9ed288d93f0ced353b98ab9" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>CreateRPN</name></member>
+      <member refid="classmu_1_1_parser_base_1a8cbb0a5e193daeea647d80dc89f34c65" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>DefineConst</name></member>
+      <member refid="classmu_1_1_parser_base_1a19bff73a29e12bb1af90793ceb258059" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>DefineFun</name></member>
+      <member refid="classmu_1_1_parser_base_1a10665a30f3768a970401580f58f1aa70" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>DefineFunUserData</name></member>
+      <member refid="classmu_1_1_parser_base_1a5e26f06efc7564a85a5f5ab682ba5a23" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>DefineInfixOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1ac76d0ceb4ee58babc4f1d0a9ca1e4240" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>DefineInfixOprtChars</name></member>
+      <member refid="classmu_1_1_parser_base_1adf259477bbaa85e8dd7cb69ef4aa0a7a" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>DefineNameChars</name></member>
+      <member refid="classmu_1_1_parser_base_1a70483983b78f13d37e4f28962d86af34" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>DefineOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1aafd21c418397d5412a75e5b2c1d6db58" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>DefineOprtChars</name></member>
+      <member refid="classmu_1_1_parser_base_1ae9fb4d2348213a0e42dc07a4589ac654" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>DefinePostfixOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1a64bc1de3b6db42140fe6f4860c30e40a" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>DefineStrConst</name></member>
+      <member refid="classmu_1_1_parser_base_1a8350970819c77352af8d79ce3110393e" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>DefineVar</name></member>
+      <member refid="classmu_1_1_parser_base_1adf5cb2ffd21f51fac2633a4976fe1e2d" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>EnableBuiltInOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1ae639f85175c67f67d461514f0c47fb73" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>EnableDebugDump</name></member>
+      <member refid="classmu_1_1_parser_base_1a43221e10afd17efe8d32898707763cb4" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>EnableOptimizer</name></member>
+      <member refid="classmu_1_1_parser_base_1a487e5c7e13afe212746cc9b475aa0708" prot="protected" virt="non-virtual"><scope>mu::ParserBase</scope><name>Error</name></member>
+      <member refid="classmu_1_1_parser_base_1a7160b70c1a04fa79f216e5dcb8d1b9d3" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>Eval</name></member>
+      <member refid="classmu_1_1_parser_base_1a8f0465bf2dfbadeedb33fc93b2e89771" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>Eval</name></member>
+      <member refid="classmu_1_1_parser_base_1a70748ac6fc87f2821b356e79ec4a81eb" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>Eval</name></member>
+      <member refid="classmu_1_1_parser_base_1ab385f37be00cee7d8a68c3c41f6a5b64" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>exception_type</name></member>
+      <member refid="classmu_1_1_parser_base_1abe673a44e0ea620656422657cb3f6518" prot="protected" virt="non-virtual"><scope>mu::ParserBase</scope><name>g_DbgDumpCmdCode</name></member>
+      <member refid="classmu_1_1_parser_base_1a35349445f839ab8bc2cfb54488c45267" prot="protected" virt="non-virtual"><scope>mu::ParserBase</scope><name>g_DbgDumpStack</name></member>
+      <member refid="classmu_1_1_parser_base_1aee3c53805b70fb1a9716c1b89a055a10" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>GetArgSep</name></member>
+      <member refid="classmu_1_1_parser_base_1a3638455b36aaa084c81254513beadd41" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>GetByteCode</name></member>
+      <member refid="classmu_1_1_parser_base_1a534b83d199b0027de41082fea1b9f474" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>GetConst</name></member>
+      <member refid="classmu_1_1_parser_base_1a06f1faba7440a1eb7f5d72501344edc0" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>GetExpr</name></member>
+      <member refid="classmu_1_1_parser_base_1a7440a07214ee9e8533e21cc09003f0d2" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>GetFunDef</name></member>
+      <member refid="classmu_1_1_parser_base_1a273fd9b99d7eb8bceb2d2410282096f4" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>GetNumResults</name></member>
+      <member refid="classmu_1_1_parser_base_1ab6c99e3f9c64ea9922e62f7bda0f3a56" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>GetOprtAssociativity</name></member>
+      <member refid="classmu_1_1_parser_base_1a3bb91e07f11360e065359049663938bb" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>GetOprtDef</name></member>
+      <member refid="classmu_1_1_parser_base_1aa6258fd5314c3732773efaad9971fb1a" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>GetOprtPrecedence</name></member>
+      <member refid="classmu_1_1_parser_base_1afca7a5016d8456985fbfbde8a6af30de" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>GetUsedVar</name></member>
+      <member refid="classmu_1_1_parser_base_1a239fad70b76b3f71843a10d35e831d76" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>GetVar</name></member>
+      <member refid="classmu_1_1_parser_base_1a3da71c2e01f3902286e796a12cfc7073" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>GetVersion</name></member>
+      <member refid="classmu_1_1_parser_base_1a37b96bc417ecaa2d8e06ebf7c44d6c22" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>HasBuiltInOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1a2741c5cc27b9de19af04ab5627abed5f" prot="protected" virt="non-virtual"><scope>mu::ParserBase</scope><name>Init</name></member>
+      <member refid="classmu_1_1_parser_base_1a3f5c53ef3cba6ab939261677dc2d9709" prot="protected" virt="pure-virtual"><scope>mu::ParserBase</scope><name>InitCharSets</name></member>
+      <member refid="classmu_1_1_parser_base_1aad904fb3df8f28659f36d7ce7db4a28c" prot="protected" virt="pure-virtual"><scope>mu::ParserBase</scope><name>InitConst</name></member>
+      <member refid="classmu_1_1_parser_base_1a1f94305e7b7e9abff6d41242dcf188ed" prot="protected" virt="pure-virtual"><scope>mu::ParserBase</scope><name>InitFun</name></member>
+      <member refid="classmu_1_1_parser_base_1a4df16813c9002ff08c96929ba8f0d32b" prot="protected" virt="pure-virtual"><scope>mu::ParserBase</scope><name>InitOprt</name></member>
+      <member refid="classmu_1_1_parser_base_1aec2c821dddea93b638b33c7ab01131f6" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>InitTokenReader</name></member>
+      <member refid="classmu_1_1_parser_base_1af2f2b7c2f5632785b2f7f6454f86a0e4" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>m_bBuiltInOp</name></member>
+      <member refid="classmu_1_1_parser_base_1a680d1b198302d8b94a0e78db32cfaf95" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>m_ConstDef</name></member>
+      <member refid="classmu_1_1_parser_base_1a8f652ce8ddd065e5a08d6b046d5b710b" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>m_FunDef</name></member>
+      <member refid="classmu_1_1_parser_base_1a476835969db49784ed0a0d750ecae902" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>m_InfixOprtDef</name></member>
+      <member refid="classmu_1_1_parser_base_1ab36212d52200fdbe8dbf2bbbf67fcd1d" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>m_nFinalResultIdx</name></member>
+      <member refid="classmu_1_1_parser_base_1aa03bd4587a43a34d22b43594af3e654b" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>m_OprtDef</name></member>
+      <member refid="classmu_1_1_parser_base_1a98e3244048ecd4d1063fcc725015cea7" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>m_PostOprtDef</name></member>
+      <member refid="classmu_1_1_parser_base_1a14cd9acde5d6ad5f5ceeed6b63f4782d" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>m_pParseFormula</name></member>
+      <member refid="classmu_1_1_parser_base_1ade4992a11f0b684f48d5c6a686363871" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>m_pTokenReader</name></member>
+      <member refid="classmu_1_1_parser_base_1aaf70a59329e7d79daa367190654e42f1" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>m_sInfixOprtChars</name></member>
+      <member refid="classmu_1_1_parser_base_1af1b0a7f239256a202361ea066564cf8e" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>m_sNameChars</name></member>
+      <member refid="classmu_1_1_parser_base_1af5a805ab6b14106e77ad056a1c95da04" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>m_sOprtChars</name></member>
+      <member refid="classmu_1_1_parser_base_1ae569d26764857d01d33d01367e103f7c" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>m_StrVarDef</name></member>
+      <member refid="classmu_1_1_parser_base_1a0280c6ebcf9c00c0fef2e03ca1e2cd49" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>m_VarDef</name></member>
+      <member refid="classmu_1_1_parser_base_1ab873ae8af39988d5c9eeef773cb73543" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>m_vRPN</name></member>
+      <member refid="classmu_1_1_parser_base_1aa2f9b4ce050b853c6e67a486fe0c3806" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>m_vStackBuffer</name></member>
+      <member refid="classmu_1_1_parser_base_1a29625dd3f0712081b59870750e91f07b" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>m_vStringBuf</name></member>
+      <member refid="classmu_1_1_parser_base_1af9e70c7dd73fe45f7fae4aceb31ed549" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>m_vStringVarBuf</name></member>
+      <member refid="classmu_1_1_parser_base_1aa8ec96622bf6777c1f20aecb16a84528" prot="protected" virt="virtual"><scope>mu::ParserBase</scope><name>OnDetectVar</name></member>
+      <member refid="classmu_1_1_parser_base_1aca7cf1ea7f82dfb3066ada8427295a4c" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>operator=</name></member>
+      <member refid="classmu_1_1_parser_base_1a8598fb069f56fccccb7b2964cc2fa694" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>ParseCmdCode</name></member>
+      <member refid="classmu_1_1_parser_base_1ab19a6da888d37db81916e0ad2422e020" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>ParseCmdCodeBulk</name></member>
+      <member refid="classmu_1_1_parser_base_1a13385221d9bac94894e21ef187440f70" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>ParseCmdCodeShort</name></member>
+      <member refid="classmu_1_1_parser_base_1acd3f762c3e4f70fd7d4076944cf16422" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>ParseFunction</name></member>
+      <member refid="classmu_1_1_parser_base_1a41d13be909945b892777ee6773fa1f69" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>ParserBase</name></member>
+      <member refid="classmu_1_1_parser_base_1a88d9367e1a71bc07fe587633060223a0" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>ParserBase</name></member>
+      <member refid="classmu_1_1_parser_base_1a4a4908a2dc2cc3723b45602a3e722f79" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>ParserTokenReader</name></member>
+      <member refid="classmu_1_1_parser_base_1a18994b737dfe6f2996792fa7320673b0" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>ParseString</name></member>
+      <member refid="classmu_1_1_parser_base_1ae25a9288c72526494035ce7f23b2b588" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>ReInit</name></member>
+      <member refid="classmu_1_1_parser_base_1a8e5a54620200dfbd42ec084c29249d94" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>RemoveVar</name></member>
+      <member refid="classmu_1_1_parser_base_1a389a2502aa52212975f4a959fad59a47" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>ResetLocale</name></member>
+      <member refid="classmu_1_1_parser_base_1ad594b199c33edf6962ba0e21010bc86e" prot="protected" virt="non-virtual"><scope>mu::ParserBase</scope><name>s_locale</name></member>
+      <member refid="classmu_1_1_parser_base_1a56b62a467347f00fb38a75e5dbcd4b39" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>s_MaxNumOpenMPThreads</name></member>
+      <member refid="classmu_1_1_parser_base_1ade4090449c9fd55759fffb933e0f92e3" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>SetArgSep</name></member>
+      <member refid="classmu_1_1_parser_base_1a1699841ae7a78b23f521f937f09fae21" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>SetDecSep</name></member>
+      <member refid="classmu_1_1_parser_base_1aed9d02dd04f8e163102f9a8e082c4b26" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>SetExpr</name></member>
+      <member refid="classmu_1_1_parser_base_1ab539db832b9af0e5940a0481201077e9" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>SetThousandsSep</name></member>
+      <member refid="classmu_1_1_parser_base_1a845e32d1cd6a8fdeb5c3510489f288d8" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>SetVarFactory</name></member>
+      <member refid="classmu_1_1_parser_base_1a43b9f9b6f3fd8359a165b07e63731b8e" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>StackDump</name></member>
+      <member refid="classmu_1_1_parser_base_1ad61cb7162a1a37e966675bb4222b5b55" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>stringbuf_type</name></member>
+      <member refid="classmu_1_1_parser_base_1a045af69a3ac1b09e76c34b403b3fed2e" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>token_reader_type</name></member>
+      <member refid="classmu_1_1_parser_base_1a59f35622623031cefbfe561f632a1021" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>token_type</name></member>
+      <member refid="classmu_1_1_parser_base_1a387d8e7c9471625e320af9436997c5dd" prot="private" virt="non-virtual"><scope>mu::ParserBase</scope><name>valbuf_type</name></member>
+      <member refid="classmu_1_1_parser_base_1a07d5ceb535e963f4fda5e3890759373d" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>ValidInfixOprtChars</name></member>
+      <member refid="classmu_1_1_parser_base_1a7957dbea987631d17df83c5f27b77771" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>ValidNameChars</name></member>
+      <member refid="classmu_1_1_parser_base_1adc4e5a8fe8f2b290f567007cd4b85914" prot="public" virt="non-virtual"><scope>mu::ParserBase</scope><name>ValidOprtChars</name></member>
+      <member refid="classmu_1_1_parser_base_1a94ec173a26a5ffc96325287830a44caa" prot="public" virt="virtual"><scope>mu::ParserBase</scope><name>~ParserBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

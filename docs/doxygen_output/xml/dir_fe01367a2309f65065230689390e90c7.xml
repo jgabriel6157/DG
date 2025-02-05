@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_fe01367a2309f65065230689390e90c7" kind="dir">
+    <compoundname>/Users/jackgabriel/Desktop/DG/muparser-2.3.4/CMakeFiles</compoundname>
+    <innerdir refid="dir_b5fa2dbf24f2f21142670aaaa7f58515">/Users/jackgabriel/Desktop/DG/muparser-2.3.4/CMakeFiles/3.30.2</innerdir>
+    <innerdir refid="dir_e633987d8fd36f15d3c201ab12da4ae6">/Users/jackgabriel/Desktop/DG/muparser-2.3.4/CMakeFiles/example1.dir</innerdir>
+    <innerdir refid="dir_01db9cb85e46442782f01513bdca3de8">/Users/jackgabriel/Desktop/DG/muparser-2.3.4/CMakeFiles/example2.dir</innerdir>
+    <innerdir refid="dir_41a6522fdb67f794314f99db733d7359">/Users/jackgabriel/Desktop/DG/muparser-2.3.4/CMakeFiles/muparser.dir</innerdir>
+    <innerdir refid="dir_19cd67068906f47f7a8570b5f88e262e">/Users/jackgabriel/Desktop/DG/muparser-2.3.4/CMakeFiles/t_ParserTest.dir</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/muparser-2.3.4/CMakeFiles/"/>
+  </compounddef>
+</doxygen>

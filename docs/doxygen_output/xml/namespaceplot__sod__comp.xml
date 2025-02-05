@@ -1,0 +1,1868 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespaceplot__sod__comp" kind="namespace" language="Python">
+    <compoundname>plot_sod_comp</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a7cbc775092309215cc091a2bdcca2091" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float plot_sod_comp.gamma</definition>
+        <argsstring></argsstring>
+        <name>gamma</name>
+        <qualifiedname>plot_sod_comp.gamma</qualifiedname>
+        <initializer>=  3.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="9" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a7a3c75a690b9b20306eb3507e52386fe" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float plot_sod_comp.time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <qualifiedname>plot_sod_comp.time</qualifiedname>
+        <initializer>=  0.1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="10" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a6be7d82af8fa49f7066cec7243fa1cee" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float plot_sod_comp.x0</definition>
+        <argsstring></argsstring>
+        <name>x0</name>
+        <qualifiedname>plot_sod_comp.x0</qualifiedname>
+        <initializer>=  0.5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="11" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a54fe2e76bd06a28cf615da8b17d73477" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float plot_sod_comp.P1</definition>
+        <argsstring></argsstring>
+        <name>P1</name>
+        <qualifiedname>plot_sod_comp.P1</qualifiedname>
+        <initializer>=  1.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="14" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a2c9742c55c075791a6464b8d5c070dbb" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float plot_sod_comp.rho1</definition>
+        <argsstring></argsstring>
+        <name>rho1</name>
+        <qualifiedname>plot_sod_comp.rho1</qualifiedname>
+        <initializer>=  1.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="15" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a087786f54c648c4b6257bfb4758e6e59" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float plot_sod_comp.P5</definition>
+        <argsstring></argsstring>
+        <name>P5</name>
+        <qualifiedname>plot_sod_comp.P5</qualifiedname>
+        <initializer>=  0.1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="18" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1ac3d265f824da914a5fa70cca6b34c7a7" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float plot_sod_comp.rho5</definition>
+        <argsstring></argsstring>
+        <name>rho5</name>
+        <qualifiedname>plot_sod_comp.rho5</qualifiedname>
+        <initializer>=  0.125</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="19" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a059550fb4cce34279e45a3889bcf2608" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.cs1</definition>
+        <argsstring></argsstring>
+        <name>cs1</name>
+        <qualifiedname>plot_sod_comp.cs1</qualifiedname>
+        <initializer>=  sqrt(gamma * P1 / rho1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="21" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1aff57484dafc3f09fb195e9232c69c600" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.cs5</definition>
+        <argsstring></argsstring>
+        <name>cs5</name>
+        <qualifiedname>plot_sod_comp.cs5</qualifiedname>
+        <initializer>=  sqrt(gamma * P5 / rho5)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="22" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a70acf1fa321b776b68d5db2d7084dbdc" prot="public" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple plot_sod_comp.G</definition>
+        <argsstring></argsstring>
+        <name>G</name>
+        <qualifiedname>plot_sod_comp.G</qualifiedname>
+        <initializer>=  (gamma - 1) / (gamma + 1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="25" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1ad768b98e7c0af6b7d9e3a99a27a7f2f7" prot="public" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple plot_sod_comp.beta</definition>
+        <argsstring></argsstring>
+        <name>beta</name>
+        <qualifiedname>plot_sod_comp.beta</qualifiedname>
+        <initializer>=  (gamma - 1) / (2 * gamma)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="26" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a2b5962da9081335a2c6c699b3d3b69ae" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float plot_sod_comp::P3</definition>
+        <argsstring></argsstring>
+        <name>P3</name>
+        <qualifiedname>plot_sod_comp.P3</qualifiedname>
+        <initializer>=  0.5 * (P5 + P1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="28" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a7d34d85d9bcc0efcc805f70d57e5b6e0" prot="public" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple plot_sod_comp.u4</definition>
+        <argsstring></argsstring>
+        <name>u4</name>
+        <qualifiedname>plot_sod_comp.u4</qualifiedname>
+        <initializer>=  (P3 - P5) * sqrt((1 - G) / (rho5 * (P3 + G * P5)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="30" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a83aa3da175308215fbdf0b3a92522bfa" prot="public" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple plot_sod_comp.u3</definition>
+        <argsstring></argsstring>
+        <name>u3</name>
+        <qualifiedname>plot_sod_comp.u3</qualifiedname>
+        <initializer>=  u4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="31" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a0251726163c978c806d36981b84216e1" prot="public" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple plot_sod_comp.P3_new</definition>
+        <argsstring></argsstring>
+        <name>P3_new</name>
+        <qualifiedname>plot_sod_comp.P3_new</qualifiedname>
+        <initializer>=  (P1 ** beta - u3 * sqrt(G**2 * rho1 / ((1 - G**2) * P1 ** (1 / gamma)))) ** (1 / beta)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="32" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a07f6caacccca3441881517aff40869f3" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float plot_sod_comp.P4</definition>
+        <argsstring></argsstring>
+        <name>P4</name>
+        <qualifiedname>plot_sod_comp.P4</qualifiedname>
+        <initializer>=  P3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="37" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a2554af407af6ed1c23f65eeb5657ee87" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>plot_sod_comp.rho3</definition>
+        <argsstring></argsstring>
+        <name>rho3</name>
+        <qualifiedname>plot_sod_comp.rho3</qualifiedname>
+        <initializer>=  rho1 * (P3 / P1) ** (1 / gamma)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="38" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1af6089c9c38f39643a20389bbc9a3c1d9" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>plot_sod_comp.rho4</definition>
+        <argsstring></argsstring>
+        <name>rho4</name>
+        <qualifiedname>plot_sod_comp.rho4</qualifiedname>
+        <initializer>=  rho5 * (P4 + G * P5) / (P5 + G * P4)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="39" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1aa1f521230e1611cf7ed82b3bde88e251" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float plot_sod_comp.pos12</definition>
+        <argsstring></argsstring>
+        <name>pos12</name>
+        <qualifiedname>plot_sod_comp.pos12</qualifiedname>
+        <initializer>=  x0 - cs1 * time</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="42" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a74dfc8595a5810df8f5742f25b12d727" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float plot_sod_comp.pos34</definition>
+        <argsstring></argsstring>
+        <name>pos34</name>
+        <qualifiedname>plot_sod_comp.pos34</qualifiedname>
+        <initializer>=  x0 + u3 * time</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="43" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a92d824ec1a2877216a0901a46f605f17" prot="public" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple plot_sod_comp.v_shock</definition>
+        <argsstring></argsstring>
+        <name>v_shock</name>
+        <qualifiedname>plot_sod_comp.v_shock</qualifiedname>
+        <initializer>=  u3 * ((rho4 / rho5) / ((rho4 / rho5) - 1))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="44" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a7a2bdf28bebc4b001a0f80b70fd6f2ba" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float plot_sod_comp.pos45</definition>
+        <argsstring></argsstring>
+        <name>pos45</name>
+        <qualifiedname>plot_sod_comp.pos45</qualifiedname>
+        <initializer>=  x0 + v_shock * time</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="45" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1ae93a8e0d8d6fb288705cceb19c8c4753" prot="public" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple plot_sod_comp.cs2</definition>
+        <argsstring></argsstring>
+        <name>cs2</name>
+        <qualifiedname>plot_sod_comp.cs2</qualifiedname>
+        <initializer>=  cs1 - ((gamma - 1) / 2) * u3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="47" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a98d94536c96e6eef9be4bde3d7d81d72" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float plot_sod_comp.pos23</definition>
+        <argsstring></argsstring>
+        <name>pos23</name>
+        <qualifiedname>plot_sod_comp.pos23</qualifiedname>
+        <initializer>=  x0 + (u3 - cs2) * time</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="48" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1aae94c9a556b0a240bc075d9418ec6dbb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_sod_comp.nx</definition>
+        <argsstring></argsstring>
+        <name>nx</name>
+        <qualifiedname>plot_sod_comp.nx</qualifiedname>
+        <initializer>=  400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="51" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1af3f68a125965ad71e5908ddf00a3ab84" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.xSol</definition>
+        <argsstring></argsstring>
+        <name>xSol</name>
+        <qualifiedname>plot_sod_comp.xSol</qualifiedname>
+        <initializer>=  np.linspace(0, 1, nx)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="52" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a6d7b4f4a06263e2bc4f4667d7fc9dc44" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.rhoSol</definition>
+        <argsstring></argsstring>
+        <name>rhoSol</name>
+        <qualifiedname>plot_sod_comp.rhoSol</qualifiedname>
+        <initializer>=  np.zeros_like(xSol)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="53" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1aa5128bd6d08a05fe5692301cf74fcf79" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.velocity</definition>
+        <argsstring></argsstring>
+        <name>velocity</name>
+        <qualifiedname>plot_sod_comp.velocity</qualifiedname>
+        <initializer>=  np.zeros_like(xSol)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="54" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a171d43c3ad22538a135c43870a49b9d4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.pressure</definition>
+        <argsstring></argsstring>
+        <name>pressure</name>
+        <qualifiedname>plot_sod_comp.pressure</qualifiedname>
+        <initializer>=  np.zeros_like(xSol)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="55" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a3938d73f0cced72d4b531b32323f6490" prot="public" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple plot_sod_comp.c</definition>
+        <argsstring></argsstring>
+        <name>c</name>
+        <qualifiedname>plot_sod_comp.c</qualifiedname>
+        <initializer>=  G * ((x0 - xi) / time) + (1 - G) * cs1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="63" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a1093100992150d41a7a1368f5afeecb3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.temperature</definition>
+        <argsstring></argsstring>
+        <name>temperature</name>
+        <qualifiedname>plot_sod_comp.temperature</qualifiedname>
+        <initializer>=  pressure / rhoSol</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="80" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1acc4a0c878aca5b791a5c7c2594b543a7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.rho_interp</definition>
+        <argsstring></argsstring>
+        <name>rho_interp</name>
+        <qualifiedname>plot_sod_comp.rho_interp</qualifiedname>
+        <initializer>=  interp1d(xSol,rhoSol,kind=&apos;cubic&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="82" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a8b2bb0dc3006acd4047a8f95c7f1ef20" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.vel_interp</definition>
+        <argsstring></argsstring>
+        <name>vel_interp</name>
+        <qualifiedname>plot_sod_comp.vel_interp</qualifiedname>
+        <initializer>=  interp1d(xSol,velocity,kind=&apos;cubic&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="83" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1aa46be00a228c91fc173b92a62b956ed9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.pressure_interp</definition>
+        <argsstring></argsstring>
+        <name>pressure_interp</name>
+        <qualifiedname>plot_sod_comp.pressure_interp</qualifiedname>
+        <initializer>=  interp1d(xSol,pressure,kind=&apos;cubic&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="84" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a5e29af5e78fd8cb7c28a37ec9ea3fe22" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.temp_interp</definition>
+        <argsstring></argsstring>
+        <name>temp_interp</name>
+        <qualifiedname>plot_sod_comp.temp_interp</qualifiedname>
+        <initializer>=  interp1d(xSol,temperature,kind=&apos;cubic&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="85" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1ae052f274ee067581dc5d40a84abb5c0c" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_sod_comp.fileNameDensity</definition>
+        <argsstring></argsstring>
+        <name>fileNameDensity</name>
+        <qualifiedname>plot_sod_comp.fileNameDensity</qualifiedname>
+        <initializer>=  &apos;Density1e1_2.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="143" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a46f6f6cada1ab596d4dbec7582cd2680" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_sod_comp.fileNameVelocity</definition>
+        <argsstring></argsstring>
+        <name>fileNameVelocity</name>
+        <qualifiedname>plot_sod_comp.fileNameVelocity</qualifiedname>
+        <initializer>=  &apos;Velocity1e1_2.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="144" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1ada2564464a621782d77af37a9fc76d33" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_sod_comp.fileNameTemperature</definition>
+        <argsstring></argsstring>
+        <name>fileNameTemperature</name>
+        <qualifiedname>plot_sod_comp.fileNameTemperature</qualifiedname>
+        <initializer>=  &apos;Temperature1e1_2.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="145" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a70acdee0b0d6c874a880d2b73d066efa" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_sod_comp.fileNameDensity2</definition>
+        <argsstring></argsstring>
+        <name>fileNameDensity2</name>
+        <qualifiedname>plot_sod_comp.fileNameDensity2</qualifiedname>
+        <initializer>=  &apos;Density1e2_2.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="146" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1ae08e0d987438be8aa2ac07d88d4cb1f6" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_sod_comp.fileNameVelocity2</definition>
+        <argsstring></argsstring>
+        <name>fileNameVelocity2</name>
+        <qualifiedname>plot_sod_comp.fileNameVelocity2</qualifiedname>
+        <initializer>=  &apos;Velocity1e2_2.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="147" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a7a39e7f475b6f9e242f14cff530e3b62" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_sod_comp.fileNameTemperature2</definition>
+        <argsstring></argsstring>
+        <name>fileNameTemperature2</name>
+        <qualifiedname>plot_sod_comp.fileNameTemperature2</qualifiedname>
+        <initializer>=  &apos;Temperature1e2_2.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="148" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a306c699c332a2040d10ab98387d14621" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_sod_comp.fileNameDensity3</definition>
+        <argsstring></argsstring>
+        <name>fileNameDensity3</name>
+        <qualifiedname>plot_sod_comp.fileNameDensity3</qualifiedname>
+        <initializer>=  &apos;Density1e3_2.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="149" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a6dc2f6a41997870e84b3a52a2656bbc7" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_sod_comp.fileNameVelocity3</definition>
+        <argsstring></argsstring>
+        <name>fileNameVelocity3</name>
+        <qualifiedname>plot_sod_comp.fileNameVelocity3</qualifiedname>
+        <initializer>=  &apos;Velocity1e3_2.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="150" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1adff615df467947804f12c21db6eb71b4" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_sod_comp.fileNameTemperature3</definition>
+        <argsstring></argsstring>
+        <name>fileNameTemperature3</name>
+        <qualifiedname>plot_sod_comp.fileNameTemperature3</qualifiedname>
+        <initializer>=  &apos;Temperature1e3_2.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="151" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a19c2905197c7aad3af6b8871af3075da" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_sod_comp.fileNameDensity4</definition>
+        <argsstring></argsstring>
+        <name>fileNameDensity4</name>
+        <qualifiedname>plot_sod_comp.fileNameDensity4</qualifiedname>
+        <initializer>=  &apos;Density1e3_2.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="152" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a07ad830dc1b86217d7dc532b894b92bd" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_sod_comp.fileNameVelocity4</definition>
+        <argsstring></argsstring>
+        <name>fileNameVelocity4</name>
+        <qualifiedname>plot_sod_comp.fileNameVelocity4</qualifiedname>
+        <initializer>=  &apos;Velocity1e3_2.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="153" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a5a02264fb0f2b6da875abc7552397aa5" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str plot_sod_comp.fileNameTemperature4</definition>
+        <argsstring></argsstring>
+        <name>fileNameTemperature4</name>
+        <qualifiedname>plot_sod_comp.fileNameTemperature4</qualifiedname>
+        <initializer>=  &apos;Temperature1e3_2.csv&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="154" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a8e23868f7e990db7f0494445f121379b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.inputFile</definition>
+        <argsstring></argsstring>
+        <name>inputFile</name>
+        <qualifiedname>plot_sod_comp.inputFile</qualifiedname>
+        <initializer>=  open(&apos;input.txt&apos;,&apos;r&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="155" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a71c84121b6a7cadb720c69667f8db4fc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.inputParam</definition>
+        <argsstring></argsstring>
+        <name>inputParam</name>
+        <qualifiedname>plot_sod_comp.inputParam</qualifiedname>
+        <initializer>=  inputFile.readline()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="158" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a659855517250a4930c390c73295926b5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.jMax</definition>
+        <argsstring></argsstring>
+        <name>jMax</name>
+        <qualifiedname>plot_sod_comp.jMax</qualifiedname>
+        <initializer>=  int(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="161" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a7074e225116857c1f63a268041151538" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>plot_sod_comp.value</qualifiedname>
+        <initializer>=  inputParam[inputParam.index(&apos;=&apos;)+2:-1]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="163" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1aaa3d91c78aeb9f4984926bc16c4c0ec7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <qualifiedname>plot_sod_comp.length</qualifiedname>
+        <initializer>=  assignFloat(value)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="164" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1ac76ee64c8013950d15c1e0ef27119450" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.lMax</definition>
+        <argsstring></argsstring>
+        <name>lMax</name>
+        <qualifiedname>plot_sod_comp.lMax</qualifiedname>
+        <initializer>=  int(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="166" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a0d9dd87095b39fa5517e85bc0a8eec12" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.basis</definition>
+        <argsstring></argsstring>
+        <name>basis</name>
+        <qualifiedname>plot_sod_comp.basis</qualifiedname>
+        <initializer>=  inputParam[inputParam.index(&apos;=&apos;)+2:-1]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="168" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1ab53eb210dd1a3665b2361b9b21c333e7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.tMax</definition>
+        <argsstring></argsstring>
+        <name>tMax</name>
+        <qualifiedname>plot_sod_comp.tMax</qualifiedname>
+        <initializer>=  int(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="170" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a6f6e9db839d2c35c66cffc778ee2744f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.dt</definition>
+        <argsstring></argsstring>
+        <name>dt</name>
+        <qualifiedname>plot_sod_comp.dt</qualifiedname>
+        <initializer>=  float(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="172" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a9fe84fb91743fcb0f9a657b30badbdfe" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.nout</definition>
+        <argsstring></argsstring>
+        <name>nout</name>
+        <qualifiedname>plot_sod_comp.nout</qualifiedname>
+        <initializer>=  int(inputParam[inputParam.index(&apos;=&apos;)+2:-1])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="174" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a08029ed317dd574aa20f1c29ce1beb50" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.valuesDensity</definition>
+        <argsstring></argsstring>
+        <name>valuesDensity</name>
+        <qualifiedname>plot_sod_comp.valuesDensity</qualifiedname>
+        <initializer>=  pd.read_csv(fileNameDensity,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="181" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a073f4c7d5e55d231023295ebcec0eac4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.valuesVelocity</definition>
+        <argsstring></argsstring>
+        <name>valuesVelocity</name>
+        <qualifiedname>plot_sod_comp.valuesVelocity</qualifiedname>
+        <initializer>=  pd.read_csv(fileNameVelocity,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="183" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1ab5a0e1a8bc4941e8b85c38bed93854d1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.valuesTemperature</definition>
+        <argsstring></argsstring>
+        <name>valuesTemperature</name>
+        <qualifiedname>plot_sod_comp.valuesTemperature</qualifiedname>
+        <initializer>=  pd.read_csv(fileNameTemperature,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="185" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a34aae7ec5abc1fd9ec71d720a0736e88" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.valuesDensity2</definition>
+        <argsstring></argsstring>
+        <name>valuesDensity2</name>
+        <qualifiedname>plot_sod_comp.valuesDensity2</qualifiedname>
+        <initializer>=  pd.read_csv(fileNameDensity2,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="187" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a4bf3fb355de904b04ceda80e8d41e253" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.valuesVelocity2</definition>
+        <argsstring></argsstring>
+        <name>valuesVelocity2</name>
+        <qualifiedname>plot_sod_comp.valuesVelocity2</qualifiedname>
+        <initializer>=  pd.read_csv(fileNameVelocity2,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="189" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a960529d7f2b78b44635702f081aba712" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.valuesTemperature2</definition>
+        <argsstring></argsstring>
+        <name>valuesTemperature2</name>
+        <qualifiedname>plot_sod_comp.valuesTemperature2</qualifiedname>
+        <initializer>=  pd.read_csv(fileNameTemperature2,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="191" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a03ac1f5e22f229bdfa15e2b365c3f4f5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.valuesDensity3</definition>
+        <argsstring></argsstring>
+        <name>valuesDensity3</name>
+        <qualifiedname>plot_sod_comp.valuesDensity3</qualifiedname>
+        <initializer>=  pd.read_csv(fileNameDensity3,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="193" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a76b6cc07ad7ce5393a4a4c768d5f84d7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.valuesVelocity3</definition>
+        <argsstring></argsstring>
+        <name>valuesVelocity3</name>
+        <qualifiedname>plot_sod_comp.valuesVelocity3</qualifiedname>
+        <initializer>=  pd.read_csv(fileNameVelocity3,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="195" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a0994379484bb90860134cd27a0d8567b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.valuesTemperature3</definition>
+        <argsstring></argsstring>
+        <name>valuesTemperature3</name>
+        <qualifiedname>plot_sod_comp.valuesTemperature3</qualifiedname>
+        <initializer>=  pd.read_csv(fileNameTemperature3,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="197" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a7ab54ae8957d0889308210a2f1ebcd82" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.valuesDensity4</definition>
+        <argsstring></argsstring>
+        <name>valuesDensity4</name>
+        <qualifiedname>plot_sod_comp.valuesDensity4</qualifiedname>
+        <initializer>=  pd.read_csv(fileNameDensity4,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="199" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a3b61b00edf83fed1e5568b030a8c0852" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.valuesVelocity4</definition>
+        <argsstring></argsstring>
+        <name>valuesVelocity4</name>
+        <qualifiedname>plot_sod_comp.valuesVelocity4</qualifiedname>
+        <initializer>=  pd.read_csv(fileNameVelocity4,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="201" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a7f333d0c37954ca41d6fe505c4f06032" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.valuesTemperature4</definition>
+        <argsstring></argsstring>
+        <name>valuesTemperature4</name>
+        <qualifiedname>plot_sod_comp.valuesTemperature4</qualifiedname>
+        <initializer>=  pd.read_csv(fileNameTemperature4,header=None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="203" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1aa8289e94af0cb7738035a3c92d6ee28f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_sod_comp::k</definition>
+        <argsstring></argsstring>
+        <name>k</name>
+        <qualifiedname>plot_sod_comp.k</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="205" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1ac9de8cbd8ffdd5f6dcab9c5a7ee9eb96" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.dx</definition>
+        <argsstring></argsstring>
+        <name>dx</name>
+        <qualifiedname>plot_sod_comp.dx</qualifiedname>
+        <initializer>=  length/jMax</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="206" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a9a8262a279819ce22d1d51347ee62b6e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.rho</definition>
+        <argsstring></argsstring>
+        <name>rho</name>
+        <qualifiedname>plot_sod_comp.rho</qualifiedname>
+        <initializer>=  np.zeros((lMax,jMax,nout))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="207" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a02c355360d29108503b535c860a39e72" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.rhou</definition>
+        <argsstring></argsstring>
+        <name>rhou</name>
+        <qualifiedname>plot_sod_comp.rhou</qualifiedname>
+        <initializer>=  np.zeros((lMax,jMax,nout))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="208" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a2373d21589279249a6efb99dbf6772da" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.rt</definition>
+        <argsstring></argsstring>
+        <name>rt</name>
+        <qualifiedname>plot_sod_comp.rt</qualifiedname>
+        <initializer>=  np.zeros((lMax,jMax,nout))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="209" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a3064ca75b0deea50136d39cb24eef180" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.rho2</definition>
+        <argsstring></argsstring>
+        <name>rho2</name>
+        <qualifiedname>plot_sod_comp.rho2</qualifiedname>
+        <initializer>=  np.zeros((lMax,jMax,nout))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="210" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a73f4cc4379fe1a84fd24a9dee8eaa295" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.rhou2</definition>
+        <argsstring></argsstring>
+        <name>rhou2</name>
+        <qualifiedname>plot_sod_comp.rhou2</qualifiedname>
+        <initializer>=  np.zeros((lMax,jMax,nout))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="211" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a73136e6a481ff26e4550b6db297f7ee1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.rt2</definition>
+        <argsstring></argsstring>
+        <name>rt2</name>
+        <qualifiedname>plot_sod_comp.rt2</qualifiedname>
+        <initializer>=  np.zeros((lMax,jMax,nout))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="212" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1accaba3b21bfd6b389fe2ffdf961df265" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.rhou3</definition>
+        <argsstring></argsstring>
+        <name>rhou3</name>
+        <qualifiedname>plot_sod_comp.rhou3</qualifiedname>
+        <initializer>=  np.zeros((lMax,jMax,nout))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="214" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1aac92d6d4a02a28c93d5afa0822db900c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.rt3</definition>
+        <argsstring></argsstring>
+        <name>rt3</name>
+        <qualifiedname>plot_sod_comp.rt3</qualifiedname>
+        <initializer>=  np.zeros((lMax,jMax,nout))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="215" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a0459d2873db05556deaff10b0dec4b03" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.rhou4</definition>
+        <argsstring></argsstring>
+        <name>rhou4</name>
+        <qualifiedname>plot_sod_comp.rhou4</qualifiedname>
+        <initializer>=  np.zeros((lMax,jMax,nout))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="217" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a61d87d55a94b5baffcfca294b01011bb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.rt4</definition>
+        <argsstring></argsstring>
+        <name>rt4</name>
+        <qualifiedname>plot_sod_comp.rt4</qualifiedname>
+        <initializer>=  np.zeros((lMax,jMax,nout))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="218" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1ae0c054e7c1b51d57f5ac79f7837e30c7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>plot_sod_comp.x</qualifiedname>
+        <initializer>=  np.zeros(10*jMax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="236" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1ae3d9e631e68af64dc4818989afa864fd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.densitySim</definition>
+        <argsstring></argsstring>
+        <name>densitySim</name>
+        <qualifiedname>plot_sod_comp.densitySim</qualifiedname>
+        <initializer>=  np.zeros(10*jMax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="237" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a686293e55e2bd611e1323dc4591c76a9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.velocitySim</definition>
+        <argsstring></argsstring>
+        <name>velocitySim</name>
+        <qualifiedname>plot_sod_comp.velocitySim</qualifiedname>
+        <initializer>=  np.zeros(10*jMax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="238" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1ae92ad17ae38fb324ebef13087286ee2e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.temperatureSim</definition>
+        <argsstring></argsstring>
+        <name>temperatureSim</name>
+        <qualifiedname>plot_sod_comp.temperatureSim</qualifiedname>
+        <initializer>=  np.zeros(10*jMax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="239" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1ab28fcd2931defa6d76fe89692a5b8c58" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.pressureSim</definition>
+        <argsstring></argsstring>
+        <name>pressureSim</name>
+        <qualifiedname>plot_sod_comp.pressureSim</qualifiedname>
+        <initializer>=  np.zeros(10*jMax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="240" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a4bbf1550a8122e7666114bb252227eba" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.densitySim2</definition>
+        <argsstring></argsstring>
+        <name>densitySim2</name>
+        <qualifiedname>plot_sod_comp.densitySim2</qualifiedname>
+        <initializer>=  np.zeros(10*jMax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="241" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a4fbb737a321d8d6116cd6f089df5d7ba" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.velocitySim2</definition>
+        <argsstring></argsstring>
+        <name>velocitySim2</name>
+        <qualifiedname>plot_sod_comp.velocitySim2</qualifiedname>
+        <initializer>=  np.zeros(10*jMax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="242" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="242" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1aca79bdfa2fd4a0cb595a472848bf0620" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.temperatureSim2</definition>
+        <argsstring></argsstring>
+        <name>temperatureSim2</name>
+        <qualifiedname>plot_sod_comp.temperatureSim2</qualifiedname>
+        <initializer>=  np.zeros(10*jMax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="243" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="243" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a29e109fce51bf7a604f4cc6115ebd246" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.pressureSim2</definition>
+        <argsstring></argsstring>
+        <name>pressureSim2</name>
+        <qualifiedname>plot_sod_comp.pressureSim2</qualifiedname>
+        <initializer>=  np.zeros(10*jMax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="244" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="244" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1aadbbf66dc590c712bf3a0cc938558cc0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.densitySim3</definition>
+        <argsstring></argsstring>
+        <name>densitySim3</name>
+        <qualifiedname>plot_sod_comp.densitySim3</qualifiedname>
+        <initializer>=  np.zeros(10*jMax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="245" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1aaa63fcf31883c6517439f8861096a537" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.velocitySim3</definition>
+        <argsstring></argsstring>
+        <name>velocitySim3</name>
+        <qualifiedname>plot_sod_comp.velocitySim3</qualifiedname>
+        <initializer>=  np.zeros(10*jMax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="246" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1ae6fa9a03dfa98933dd9c68b60141388a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.temperatureSim3</definition>
+        <argsstring></argsstring>
+        <name>temperatureSim3</name>
+        <qualifiedname>plot_sod_comp.temperatureSim3</qualifiedname>
+        <initializer>=  np.zeros(10*jMax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="247" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a0e6d5208d591bb0ee4ede0005753131f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.pressureSim3</definition>
+        <argsstring></argsstring>
+        <name>pressureSim3</name>
+        <qualifiedname>plot_sod_comp.pressureSim3</qualifiedname>
+        <initializer>=  np.zeros(10*jMax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="248" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a536e12928617254295e4690e03cb2ab4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.densitySim4</definition>
+        <argsstring></argsstring>
+        <name>densitySim4</name>
+        <qualifiedname>plot_sod_comp.densitySim4</qualifiedname>
+        <initializer>=  np.zeros(10*jMax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="249" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="249" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a7fc35f31a86e14a145012c3a8f2dbb88" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.velocitySim4</definition>
+        <argsstring></argsstring>
+        <name>velocitySim4</name>
+        <qualifiedname>plot_sod_comp.velocitySim4</qualifiedname>
+        <initializer>=  np.zeros(10*jMax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="250" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a4b1469a00570af6ae8c20b964d5f942e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.temperatureSim4</definition>
+        <argsstring></argsstring>
+        <name>temperatureSim4</name>
+        <qualifiedname>plot_sod_comp.temperatureSim4</qualifiedname>
+        <initializer>=  np.zeros(10*jMax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="251" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1accb7283219ca0c8bb175021d7b0e4978" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.pressureSim4</definition>
+        <argsstring></argsstring>
+        <name>pressureSim4</name>
+        <qualifiedname>plot_sod_comp.pressureSim4</qualifiedname>
+        <initializer>=  np.zeros(10*jMax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="252" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1aa4810861422f5e450ed9dbce242b4aa8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_sod_comp.t</definition>
+        <argsstring></argsstring>
+        <name>t</name>
+        <qualifiedname>plot_sod_comp.t</qualifiedname>
+        <initializer>=  100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="253" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="253" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a423e64b337315bc2f45cbd826d257ae3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_sod_comp.densityFoo</definition>
+        <argsstring></argsstring>
+        <name>densityFoo</name>
+        <qualifiedname>plot_sod_comp.densityFoo</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="257" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1af364d2bd9fb8b8e5c8c1da2041610db3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_sod_comp.velocityFoo</definition>
+        <argsstring></argsstring>
+        <name>velocityFoo</name>
+        <qualifiedname>plot_sod_comp.velocityFoo</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="258" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="258" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1adce124633bf379ccfa842077e06771bb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>tuple plot_sod_comp::temperatureFoo</definition>
+        <argsstring></argsstring>
+        <name>temperatureFoo</name>
+        <qualifiedname>plot_sod_comp.temperatureFoo</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="259" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a6cfb601b2ec713101a3dd5a05f27884d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_sod_comp.densityFoo2</definition>
+        <argsstring></argsstring>
+        <name>densityFoo2</name>
+        <qualifiedname>plot_sod_comp.densityFoo2</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="260" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="260" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a7b9e799dbea69dafb89080db063c2da7" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_sod_comp.velocityFoo2</definition>
+        <argsstring></argsstring>
+        <name>velocityFoo2</name>
+        <qualifiedname>plot_sod_comp.velocityFoo2</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="261" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="261" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a680fe9c0e1aa985da2dc59c9ac5f525e" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>tuple plot_sod_comp::temperatureFoo2</definition>
+        <argsstring></argsstring>
+        <name>temperatureFoo2</name>
+        <qualifiedname>plot_sod_comp.temperatureFoo2</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="262" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="262" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1ad260840d273c2797dc639749974d473c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_sod_comp.densityFoo3</definition>
+        <argsstring></argsstring>
+        <name>densityFoo3</name>
+        <qualifiedname>plot_sod_comp.densityFoo3</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="263" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a94fb5703f0a7c8311ec1b94429f71a65" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_sod_comp.velocityFoo3</definition>
+        <argsstring></argsstring>
+        <name>velocityFoo3</name>
+        <qualifiedname>plot_sod_comp.velocityFoo3</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="264" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="264" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a20463ee1b24802cfe8993124ff0d343f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>tuple plot_sod_comp::temperatureFoo3</definition>
+        <argsstring></argsstring>
+        <name>temperatureFoo3</name>
+        <qualifiedname>plot_sod_comp.temperatureFoo3</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="265" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="265" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a36633a1e5bcb09b54f221cb28494eb8d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_sod_comp.densityFoo4</definition>
+        <argsstring></argsstring>
+        <name>densityFoo4</name>
+        <qualifiedname>plot_sod_comp.densityFoo4</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="266" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1aaafdffa8011c56c1dd870eef1fad7d4d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plot_sod_comp.velocityFoo4</definition>
+        <argsstring></argsstring>
+        <name>velocityFoo4</name>
+        <qualifiedname>plot_sod_comp.velocityFoo4</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="267" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a196a08afd552af20f24c65df2fb19239" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>tuple plot_sod_comp::temperatureFoo4</definition>
+        <argsstring></argsstring>
+        <name>temperatureFoo4</name>
+        <qualifiedname>plot_sod_comp.temperatureFoo4</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="268" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="268" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1ad8781bd4faf075f88fb41bc105a3cdcb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.figsize</definition>
+        <argsstring></argsstring>
+        <name>figsize</name>
+        <qualifiedname>plot_sod_comp.figsize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="307" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a4e6a409233ce883d675fcb07a77f790f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.label</definition>
+        <argsstring></argsstring>
+        <name>label</name>
+        <qualifiedname>plot_sod_comp.label</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="310" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="310" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1a1a22af68a3808cb457443a205caaeed5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.color</definition>
+        <argsstring></argsstring>
+        <name>color</name>
+        <qualifiedname>plot_sod_comp.color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="310" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="310" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="plot__sod__comp_8py_1ac0b77bf809a50f598f239b318e312707" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plot_sod_comp.linestyle</definition>
+        <argsstring></argsstring>
+        <name>linestyle</name>
+        <qualifiedname>plot_sod_comp.linestyle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="310" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="310" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="plot__sod__comp_8py_1a52a4635920bd308f20501a423d3a6761" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_sod_comp.getFunction</definition>
+        <argsstring>(basis, n, x)</argsstring>
+        <name>getFunction</name>
+        <qualifiedname>plot_sod_comp.getFunction</qualifiedname>
+        <param>
+          <type>basis</type>
+          <defname>basis</defname>
+        </param>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="87" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="87" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__sod__comp_8py_1a2b559041284724d1fb9eacd3aec0f7a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_sod_comp.LegendreP</definition>
+        <argsstring>(n, x)</argsstring>
+        <name>LegendreP</name>
+        <qualifiedname>plot_sod_comp.LegendreP</qualifiedname>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="99" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="99" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__sod__comp_8py_1a9c447e55838dc050e37d67c2bdd550ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_sod_comp.LegendrePorthonormal</definition>
+        <argsstring>(n, x)</argsstring>
+        <name>LegendrePorthonormal</name>
+        <qualifiedname>plot_sod_comp.LegendrePorthonormal</qualifiedname>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="107" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="107" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__sod__comp_8py_1aa546523eeeaada5ae689dcf18bcb4b85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_sod_comp.Quadratic</definition>
+        <argsstring>(n, x)</argsstring>
+        <name>Quadratic</name>
+        <qualifiedname>plot_sod_comp.Quadratic</qualifiedname>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="110" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="110" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__sod__comp_8py_1a4f0359532d4822f296da67917fb0c404" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_sod_comp.linear</definition>
+        <argsstring>(n, x)</argsstring>
+        <name>linear</name>
+        <qualifiedname>plot_sod_comp.linear</qualifiedname>
+        <param>
+          <type>n</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="118" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="118" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="plot__sod__comp_8py_1ad0c264cfd644ad2276a969851fe0f86d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>plot_sod_comp.assignFloat</definition>
+        <argsstring>(varString)</argsstring>
+        <name>assignFloat</name>
+        <qualifiedname>plot_sod_comp.assignFloat</qualifiedname>
+        <param>
+          <type>varString</type>
+          <defname>varString</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="124" column="1" bodyfile="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" bodystart="124" bodyend="142"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jackgabriel/Desktop/DG/plot_sod_comp.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>
