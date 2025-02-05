@@ -191,6 +191,31 @@ int main(int argc, char* argv[])
 
         if ((t+1)%outputTimeStep==0)
         {
+            write_output.close();
+            write_density.close();
+            write_velocity_x.close();
+            write_velocity_y.close();
+            write_velocity_z.close();
+            write_temperature.close();
+            write_moments.close();
+            write_output.open("Output.csv", std::ios::app);
+            write_density.open("Density.csv", std::ios::app);
+            write_velocity_x.open("VelocityX.csv", std::ios::app);
+            write_velocity_y.open("VelocityY.csv", std::ios::app);
+            write_velocity_z.open("VelocityZ.csv", std::ios::app);
+            write_temperature.open("Temperature.csv", std::ios::app);
+            write_moments.open("Moments.csv", std::ios::app);
+            assert(write_output.is_open());
+            assert(write_density.is_open());
+            assert(write_velocity_x.is_open());
+            assert(write_velocity_y.is_open());
+            assert(write_velocity_z.is_open());
+            assert(write_temperature.is_open());
+            assert(write_moments.is_open());
+
+            std::ofstream write_lastOutput;
+            write_lastOutput.open("lastOutput.csv", std::ios::trunc);
+            assert(write_lastOutput.is_open());
             if (bc==0)
             {
                 Vector moments = solver.getMoments();
@@ -235,12 +260,14 @@ int main(int argc, char* argv[])
                             {
                                 double dum;
                                 dum = solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx); //checking for nan
-                                write_output << solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx) << "\n";
+                                // write_output << solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx) << "\n";
+                                write_lastOutput << solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx) << "\n";
                             }
                         }
                     }
                 }
             }
+            write_lastOutput.close();
             auto stopLoop = std::chrono::high_resolution_clock::now();
             auto durationLoop = std::chrono::duration<double>(stopLoop-startLoop);
             double timePerIter = (durationLoop.count()-lastTime)/outputTimeStep;
@@ -251,7 +278,7 @@ int main(int argc, char* argv[])
     }
 
     std::ofstream write_lastOutput;
-    write_lastOutput.open("lastOutput.csv");
+    write_lastOutput.open("lastOutput.csv", std::ios::trunc);
     assert(write_lastOutput.is_open());
     for (int j=0; j<jMax; j++)
     {

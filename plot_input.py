@@ -63,7 +63,7 @@ def assignFloat(varString):
         
     return number
 
-fileName = 'Output.csv'
+fileName = 'lastOutput.csv'
 # fileNameSol = 'lastOutputJS.csv'
 inputFile = open('input.txt','r')
 
@@ -103,7 +103,7 @@ values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
 # valuesSol = pd.read_csv(fileNameSol,header=None)
 # valuesSol = valuesSol[0].to_numpy()
-m = 9*5492115
+m = 0*5492115
 dx = length/jMax
 dvx = 2*domainMaxVX/(nvx-1)
 # dvx = 1.0/nvx

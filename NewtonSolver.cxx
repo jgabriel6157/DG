@@ -82,8 +82,8 @@ Matrix NewtonSolver::solve(Matrix alpha, double nu, Vector rho, Vector ux, Vecto
         norm = F.CalculateNorm(1);
         if (test)
         {
-            alpha.Print();
             F.Print();
+            alpha.Print();
             std::cout << norm << "\n";
         }
         if (norm != norm)

@@ -483,7 +483,6 @@ void Solver::initializeAlpha()
         Matrix bigX(10*nvx*nvy*nvz,5*lMax);        
         for (int kx=0; kx<nvx; kx++)
         {
-            std::cout << kx << "\n";
             double vx = mesh.getVelocityX(kx);
             for (int ky = 0; ky<nvy; ky++)
             {
@@ -855,9 +854,9 @@ void Solver::advance()
     //First stage of solver
     advanceStage(uPre, uPost, 0.0, 1.0);
     //Second stage of solver
-    // advanceStage(uPost, uIntermediate, 3.0/4.0, 1.0/4.0);
-    // //Third stage of solver
-    // advanceStage(uIntermediate, uPost, 1.0/3.0, 2.0/3.0);
+    advanceStage(uPost, uIntermediate, 3.0/4.0, 1.0/4.0);
+    //Third stage of solver
+    advanceStage(uIntermediate, uPost, 1.0/3.0, 2.0/3.0);
 
     uPre = uPost;
 }
