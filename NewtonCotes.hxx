@@ -19,18 +19,20 @@ public:
     Vector integrate3vzf(Matrix M, int lMax);
     Vector integrate3v2f(Matrix M, int lMax);
     Matrix integrateMoments(Matrix M, int lMax);
+    Vector integrateAlphaMoments(Matrix alpha, std::function<double(int,double)> basisFunction, double x, int lMax);
+    Vector getVelocityIntegrals(Matrix alpha, std::function<double(int,double)> basisFunction, double x, int lMax);
 
     Vector integrate3fnCXavg(Matrix M, int lMax, double Ti, double ui);
     Vector integrate3fnCX(Matrix M, int lMax, double vx, double vy, double vz);
 
     double integrate(Matrix f, int lMax, std::function<double(int,double)> basisFunction, double x);
 
-    double integrate(Matrix alpha, std::function<double(int,double)> basisFunction, int power, double x, int lMax);
+    // double integrate(Matrix alpha, std::function<double(int,double)> basisFunction, int power, double x, int lMax);
 
 private:
     const Mesh& mesh;
 
-    double testMaxwellian(Matrix alpha, std::function<double(int,double)> basisFunction, int power, double x, int k, int lMax);
+    double testMaxwellian(Matrix alpha, std::function<double(int,double)> basisFunction, double x, double vx, double vy, double vz, int lMax);
 
     Vector computeWeights(int nv);
 

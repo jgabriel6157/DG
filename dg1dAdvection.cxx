@@ -56,9 +56,9 @@ int main(int argc, char* argv[])
     FunctionMapper::initializeMap();
     auto basisFunction = FunctionMapper::getFunction<std::function<double(int,double)>>(basis);
 
-    Parser functionParser;
-    functionParser.setExpression(input);
-    auto inputFunction = functionParser.getFunction();
+    // Parser functionParser;
+    // functionParser.setExpression(input);
+    // auto inputFunction = functionParser.getFunction();
     
     lMax+=1;
     Mesh mesh(jMax, nvx, nvy, nvz, length, domainMaxVX, domainMaxVY, domainMaxVZ,bc);
@@ -119,20 +119,23 @@ int main(int argc, char* argv[])
     solver.createMatrices();
     if (resume)
     {
-        solver.resume(inputFunction, flattenedOutput);
+        solver.resume(flattenedOutput);
         delete[] flattenedOutput;
     }
     else
     {
-        solver.initialize(inputFunction);
+        solver.initialize(input);
     }
     std::cout << "initialization complete" << std::endl;
 
     solver.initializeSource();
     std::cout << "Source initialization complete" << std::endl;
 
-    solver.initializeIons();
-    std::cout << "Ion initialization complete" << std::endl;
+    if (cx)
+    {
+        solver.initializeIons();
+        std::cout << "Ion initialization complete" << std::endl;
+    }
     
     if (bgk)
     {
@@ -172,13 +175,13 @@ int main(int argc, char* argv[])
             // }
         }
     }
-    // Vector moments = solver.getMoments();
-    // double M0 = moments[0];
-    // double UX0 = moments[1];
-    // double UY0 = moments[2];
-    // double UZ0 = moments[3];
-    // double E0 = moments[4];
-    // double S0 = moments[5];
+    Vector moments = solver.getMoments();
+    double M0 = moments[0];
+    double UX0 = moments[1];
+    double UY0 = moments[2];
+    double UZ0 = moments[3];
+    double E0 = moments[4];
+    double S0 = moments[5];
     std::cout << "start" << std::endl;
     auto startLoop = std::chrono::high_resolution_clock::now();
     double lastTime = 0;
@@ -188,22 +191,25 @@ int main(int argc, char* argv[])
 
         if ((t+1)%outputTimeStep==0)
         {
-            // Vector moments = solver.getMoments();
-            // write_moments << (moments[0]-M0)/M0 << "\n";
-            // write_moments << (moments[1]-UX0)/UX0 << "\n";
-            // write_moments << (moments[2]-UY0)/UY0 << "\n";
-            // write_moments << (moments[3]-UZ0)/UZ0 << "\n";
-            // write_moments << (moments[4]-E0)/E0 << "\n";
-            // write_moments << (moments[5]-S0)/fabs(S0) << "\n";
-            // if (bc==0)
-            // {
-            //     std::cout << (moments[0]-M0)/M0 << "\n";
-            //     std::cout << (moments[1]-UX0)/UX0 << "\n";
-            //     std::cout << (moments[2]-UY0)/UY0 << "\n";
-            //     std::cout << (moments[3]-UZ0)/UZ0 << "\n";
-            //     std::cout << (moments[4]-E0)/E0 << "\n";
-            //     std::cout << (moments[5]-S0)/fabs(S0) << "\n";
-            // }
+            if (bc==0)
+            {
+                Vector moments = solver.getMoments();
+                write_moments << (moments[0]-M0)/M0 << "\n";
+                write_moments << (moments[1]-UX0)/UX0 << "\n";
+                write_moments << (moments[2]-UY0)/UY0 << "\n";
+                write_moments << (moments[3]-UZ0)/UZ0 << "\n";
+                write_moments << (moments[4]-E0)/E0 << "\n";
+                // write_moments << (moments[5]-S0)/fabs(S0) << "\n";
+                std::cout << (moments[0]-M0)/M0 << "\n";
+                // std::cout << (moments[1]-UX0)/UX0 << "\n";
+                // std::cout << (moments[2]-UY0)/UY0 << "\n";
+                // std::cout << (moments[3]-UZ0)/UZ0 << "\n";
+                std::cout << moments[1] << "\n";
+                std::cout << moments[2] << "\n";
+                std::cout << moments[3] << "\n";
+                std::cout << (moments[4]-E0)/E0 << "\n";
+                // std::cout << (moments[5]-S0)/fabs(S0) << "\n";
+            }
             for (int j=0; j<jMax; j++)
             {
                 Vector rho = solver.getRho(j);
@@ -229,7 +235,7 @@ int main(int argc, char* argv[])
                             {
                                 double dum;
                                 dum = solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx); //checking for nan
-                                // write_output << solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx) << "\n";
+                                write_output << solver.getSolution(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx) << "\n";
                             }
                         }
                     }

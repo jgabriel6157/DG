@@ -13,12 +13,14 @@
 #include "NewtonCotes.hxx"
 #include "NewtonSolver.hxx"
 #include "FunctionMapper.hxx"
+#include "muParser.h"
+#include "Parser.hxx"
 
 //constructor
 Solver::Solver(const Mesh& mesh, double dt, int lMax, std::function<double(int,double)> basisFunction, int quadratureOrder,
                bool ionization, int cx, bool bgk, int bc) 
     : mesh(mesh), integrator(mesh), newtonSolver(mesh), dt(dt), lMax(lMax), basisFunction(basisFunction), quadratureOrder(quadratureOrder), 
-      ionization(ionization), cx(cx), bgk(bgk), bc(bc), alphaDomain(3*mesh.getNX(), lMax),
+      ionization(ionization), cx(cx), bgk(bgk), bc(bc), alphaDomain(5*mesh.getNX(), lMax),
       M_invDiag(lMax), M_invS(lMax,lMax), M_invT(lMax,lMax*lMax),M_invF1Minus(lMax,lMax), M_invF0Minus(lMax,lMax), M_invF1Plus(lMax,lMax), M_invF0Plus(lMax,lMax),
       uPre(lMax,(mesh.getNX()+2)*mesh.getNVX()*mesh.getNVY()*mesh.getNVZ()), uIntermediate(lMax,(mesh.getNX()+2)*mesh.getNVX()*mesh.getNVY()*mesh.getNVZ()), 
       uPost(lMax,(mesh.getNX()+2)*mesh.getNVX()*mesh.getNVY()*mesh.getNVZ()), 
@@ -83,7 +85,7 @@ void Solver::createMatrices()
 }
 
 //initialize using the Least Squares method
-void Solver::initialize(std::function<double(double, double, double, double)> inputFunction)
+void Solver::initialize(const std::string& input)
 {
     const auto& cells = mesh.getCells();
 
@@ -91,8 +93,14 @@ void Solver::initialize(std::function<double(double, double, double, double)> in
     double nvx = mesh.getNVX();
     double nvy = mesh.getNVY();
     double nvz = mesh.getNVZ();
-    for (int j=0; j<nx; j++)
+    #pragma omp parallel for schedule(dynamic)
+    for (int j=0; j<mesh.getNX(); j++)
     {
+        // std::cout << j << "\n";
+        Parser threadParser;
+        threadParser.setExpression(input);
+        auto threadInputFunction = threadParser.getFunction();
+
         double dx = cells[j].dx;
         double leftVertex = cells[j].vertices[0];
         double xj = leftVertex+dx/2.0;
@@ -117,7 +125,13 @@ void Solver::initialize(std::function<double(double, double, double, double)> in
                     {
                         x = leftVertex+i*dx/9.0;
                         // x = leftVertex+(i+1)*dx/11.0;
-                        y[i] = inputFunction(x,vx,vy,vz);
+                        // double inputValue;
+                        // #pragma omp critical
+                        // {
+                        //     inputValue = inputFunction(x,vx,vy,vz);
+                        // }
+                        // y[i] = inputValue;
+                        y[i] = threadInputFunction(x,vx,vy,vz);
                         for (int l=0; l<lMax; l++)
                         {
                             bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
@@ -134,59 +148,63 @@ void Solver::initialize(std::function<double(double, double, double, double)> in
             }
         }
     }
-    double Crec = 21.60593301338712;
-    double cs = sqrt(30.0);
-    double Tn = 10.0;
-    for (int kx=0; kx<nvx; kx++)
-    {
-        double vx = mesh.getVelocityX(kx);
-        for (int ky = 0; ky<nvy; ky++)
-        {
-            double vy = mesh.getVelocityY(ky);
-            for (int kz = 0; kz<nvz; kz++)
-            {
-                double vz = mesh.getVelocityZ(kz);
-                Vector uInitialize(lMax);
-                Vector uInitialize2(lMax);
-                
-                double xNorm;
-                Vector y(10);
-                Matrix bigX(10,lMax);
-                Vector y2(10);
 
-                for (int i=0; i<10; i++)
+    if ((cx)||(ionization))
+    {
+        double Crec = 21.60593301338712;
+        double cs = sqrt(30.0);
+        double Tn = 10.0;
+        for (int kx=0; kx<nvx; kx++)
+        {
+            double vx = mesh.getVelocityX(kx);
+            for (int ky = 0; ky<nvy; ky++)
+            {
+                double vy = mesh.getVelocityY(ky);
+                for (int kz = 0; kz<nvz; kz++)
                 {
-                    // x = leftVertex+i*dx/9.0;
-                    xNorm = i/9.0;
-                    // y[i] = SpecialFunctions::computeMaxwellian3(Crec,cs,Tn,vx,vy,vz);
-                    // y2[i] = SpecialFunctions::computeMaxwellian3(Crec,-cs,Tn,vx,vy,vz);
-                    y[i] = SpecialFunctions::computeMaxwellian3(Crec,0,0,0,Tn,vx,vy,vz);
-                    y2[i] = SpecialFunctions::computeMaxwellian3(Crec,-0,0,0,Tn,vx,vy,vz);
+                    double vz = mesh.getVelocityZ(kz);
+                    Vector uInitialize(lMax);
+                    Vector uInitialize2(lMax);
+                    
+                    double xNorm;
+                    Vector y(10);
+                    Matrix bigX(10,lMax);
+                    Vector y2(10);
+
+                    for (int i=0; i<10; i++)
+                    {
+                        // x = leftVertex+i*dx/9.0;
+                        xNorm = i/9.0;
+                        // y[i] = SpecialFunctions::computeMaxwellian3(Crec,cs,Tn,vx,vy,vz);
+                        // y2[i] = SpecialFunctions::computeMaxwellian3(Crec,-cs,Tn,vx,vy,vz);
+                        y[i] = SpecialFunctions::computeMaxwellian3(Crec,0,0,0,Tn,vx,vy,vz);
+                        y2[i] = SpecialFunctions::computeMaxwellian3(Crec,-0,0,0,Tn,vx,vy,vz);
+                        for (int l=0; l<lMax; l++)
+                        {
+                            // bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
+                            bigX(i,l) = basisFunction(l,2.0*(xNorm-0.5));
+                        }
+                    }
+
+                    uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
+                    uInitialize2 = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y2;
+
                     for (int l=0; l<lMax; l++)
                     {
-                        // bigX(i,l) = basisFunction(l,2.0*(x-xj)/dx);
-                        bigX(i,l) = basisFunction(l,2.0*(xNorm-0.5));
+                        uPre(l,kz+ky*nvz+kx*nvz*nvy+nx*nvz*nvy*nvx) = uInitialize[l];
+                        uPre(l,kz+ky*nvz+kx*nvz*nvy+(nx+1)*nvz*nvy*nvx) = uInitialize2[l];
+                        uIntermediate(l,kz+ky*nvz+kx*nvz*nvy+nx*nvz*nvy*nvx) = uInitialize[l];
+                        uIntermediate(l,kz+ky*nvz+kx*nvz*nvy+(nx+1)*nvz*nvy*nvx) = uInitialize2[l];
+                        uPost(l,kz+ky*nvz+kx*nvz*nvy+nx*nvz*nvy*nvx) = uInitialize[l];
+                        uPost(l,kz+ky*nvz+kx*nvz*nvy+(nx+1)*nvz*nvy*nvx) = uInitialize2[l];
                     }
-                }
-
-                uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
-                uInitialize2 = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y2;
-
-                for (int l=0; l<lMax; l++)
-                {
-                    uPre(l,kz+ky*nvz+kx*nvz*nvy+nx*nvz*nvy*nvx) = uInitialize[l];
-                    uPre(l,kz+ky*nvz+kx*nvz*nvy+(nx+1)*nvz*nvy*nvx) = uInitialize2[l];
-                    uIntermediate(l,kz+ky*nvz+kx*nvz*nvy+nx*nvz*nvy*nvx) = uInitialize[l];
-                    uIntermediate(l,kz+ky*nvz+kx*nvz*nvy+(nx+1)*nvz*nvy*nvx) = uInitialize2[l];
-                    uPost(l,kz+ky*nvz+kx*nvz*nvy+nx*nvz*nvy*nvx) = uInitialize[l];
-                    uPost(l,kz+ky*nvz+kx*nvz*nvy+(nx+1)*nvz*nvy*nvx) = uInitialize2[l];
                 }
             }
         }
     }
 }
 
-void Solver::resume(std::function<double(double, double, double, double)> inputFunction, double* values)
+void Solver::resume(double* values)
 {
     const auto& cells = mesh.getCells();
 
@@ -421,63 +439,90 @@ void Solver::initializeAlpha()
 
     double nx = mesh.getNX();
     double nvx = mesh.getNVX();
-    for (int j=0; j<nx; j++)
+    double nvy = mesh.getNVY();
+    double nvz = mesh.getNVZ();
+    #pragma omp parallel for schedule(dynamic)
+    for (int j=0; j<mesh.getNX(); j++)
     {
         double dx = cells[j].dx;
         double leftVertex = cells[j].vertices[0];
         double xj = leftVertex+dx/2.0;
 
-        Matrix fj(lMax,nvx);
-        for (int k=0; k<nvx; k++)
+        Matrix fj(lMax,nvx*nvy*nvz);
+        for (int kx=0; kx<nvx; kx++)
         {
-            for (int l=0; l<lMax; l++)
+            for (int ky=0; ky<nvy; ky++)
             {
-                fj(l,k) = uPre(l,k+j*nvx);
-            }
-        }
-
-        Vector rho = integrator.integrate(fj, lMax, 0); //rho tilde
-        Vector u = integrator.integrate(fj, lMax, 1); //u tilde
-        Vector rt = integrator.integrate(fj, lMax, 2); //rt tilde
-
-        Vector uInitialize(3*lMax);
-        Vector y(10*nvx);
-        Matrix bigX(10*nvx,3*lMax);
-        
-        for (int k=0; k<nvx; k++)
-        {
-            double vx = mesh.getVelocityX(k);
-            double x;
-
-            for (int i=0; i<10; i++)
-            {
-                x = leftVertex+(i+1)*dx/11.0; //Ignores end points which are more likely to be NaN in certain edge cases
-                // x = leftVertex+(i+2)*dx/13.0; //Ignores end points which are more likely to be NaN in certain edge cases
-                double density = SpecialFunctions::computeMoment(rho, basisFunction,lMax,2.0*(x-xj)/dx);
-                double meanVelocity = SpecialFunctions::computeMoment(u, basisFunction,lMax,2.0*(x-xj)/dx)/density;
-                double temperature = (SpecialFunctions::computeMoment(rt, basisFunction,lMax,2.0*(x-xj)/dx)-density*pow(meanVelocity,2))/density;
-
-                double arg = SpecialFunctions::computeMaxwellian(density,meanVelocity,temperature,vx);
-                // std::cout << "i = " << i << "\n";
-                // std::cout << density << "\n";
-                // std::cout << meanVelocity << "\n";
-                // std::cout << temperature << "\n";
-                // std::cout << arg << "\n";
-
-                y[i+k*10] = log(arg);
-
-                for (int m=0; m<3; m++)
+                for (int kz=0; kz<nvz; kz++)
                 {
                     for (int l=0; l<lMax; l++)
                     {
-                        if (m==0)
+                        fj(l,kz+ky*nvz+kx*nvz*nvy) = uPre(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx);
+                    }
+                }
+            }
+        }
+
+        Vector rho(lMax);
+        Vector ux(lMax);
+        Vector uy(lMax);
+        Vector uz(lMax);
+        Vector rt(lMax);
+        Matrix moments = integrator.integrateMoments(fj, lMax);
+        for (int l=0; l<lMax; l++)
+        {
+            rho[l] = moments(l,0);
+            ux[l] = moments(l,1);
+            uy[l] = moments(l,2);
+            uz[l] = moments(l,3);
+            rt[l] = moments(l,4);
+        }
+
+        Vector uInitialize(5*lMax);
+        Vector y(10*nvx*nvy*nvz);
+        Matrix bigX(10*nvx*nvy*nvz,5*lMax);        
+        for (int kx=0; kx<nvx; kx++)
+        {
+            std::cout << kx << "\n";
+            double vx = mesh.getVelocityX(kx);
+            for (int ky = 0; ky<nvy; ky++)
+            {
+                double vy = mesh.getVelocityY(ky);
+                for (int kz = 0; kz<nvz; kz++)
+                {
+                    double vz = mesh.getVelocityZ(kz);
+                    double x;
+
+                    for (int i=0; i<10; i++)
+                    {
+                        x = leftVertex+(i+1)*dx/11.0; //Ignores end points which are more likely to be NaN in certain edge cases
+                        // x = leftVertex+(i+2)*dx/13.0; //Ignores end points which are more likely to be NaN in certain edge cases
+                        double density = SpecialFunctions::computeMoment(rho, basisFunction,lMax,2.0*(x-xj)/dx);
+                        double meanVelocityX = SpecialFunctions::computeMoment(ux, basisFunction,lMax,2.0*(x-xj)/dx)/density;
+                        double meanVelocityY = SpecialFunctions::computeMoment(uy, basisFunction,lMax,2.0*(x-xj)/dx)/density;
+                        double meanVelocityZ = SpecialFunctions::computeMoment(uz, basisFunction,lMax,2.0*(x-xj)/dx)/density;
+                        double temperature = (SpecialFunctions::computeMoment(rt, basisFunction,lMax,2.0*(x-xj)/dx)
+                                             -density*(meanVelocityX*meanVelocityX+meanVelocityY*meanVelocityY+meanVelocityZ*meanVelocityZ))/(3.0*density);
+
+                        double arg = SpecialFunctions::computeMaxwellian3(density,meanVelocityX,meanVelocityY,meanVelocityZ,temperature,vx,vy,vz);
+                        // std::cout << "i = " << i << "\n";
+                        // std::cout << density << "\n";
+                        // std::cout << meanVelocity << "\n";
+                        // std::cout << temperature << "\n";
+                        // std::cout << arg << "\n";
+
+                        y[i+(kz+ky*nvz+kx*nvz*nvy)*10] = log(arg);
+
+
+                        for (int l=0; l<lMax; l++)
                         {
-                            bigX(i+k*10,m+l*3) = basisFunction(l,2.0*(x-xj)/dx);
+                            bigX(i+(kz+ky*nvz+kx*nvz*nvy)*10,0+l*5) = basisFunction(l,2.0*(x-xj)/dx);
+                            bigX(i+(kz+ky*nvz+kx*nvz*nvy)*10,1+l*5) = vx*basisFunction(l,2.0*(x-xj)/dx);
+                            bigX(i+(kz+ky*nvz+kx*nvz*nvy)*10,2+l*5) = vy*basisFunction(l,2.0*(x-xj)/dx);
+                            bigX(i+(kz+ky*nvz+kx*nvz*nvy)*10,3+l*5) = vz*basisFunction(l,2.0*(x-xj)/dx);
+                            bigX(i+(kz+ky*nvz+kx*nvz*nvy)*10,4+l*5) = -(vx*vx+vy*vy+vz*vz)*basisFunction(l,2.0*(x-xj)/dx);
                         }
-                        else
-                        {
-                            bigX(i+k*10,m+l*3) = -basisFunction(l,2.0*(x-xj)/dx)*pow(vx,m);
-                        }
+                        
                     }
                 }
             }
@@ -485,16 +530,16 @@ void Solver::initializeAlpha()
 
         uInitialize = (bigX.Transpose()*bigX).CalculateInverse()*bigX.Transpose()*y;
 
-        for (int m=0; m<3; m++)
+        for (int m=0; m<5; m++)
         {
             for (int l=0; l<lMax; l++)
             {
-                alphaDomain(m+j*3,l) = uInitialize[m+l*3];
-                if (uInitialize[m+l*3]!=uInitialize[m+l*3])
+                alphaDomain(m+j*5,l) = uInitialize[m+l*5];
+                if (uInitialize[m+l*5]!=uInitialize[m+l*5])
                 {
                     std::cout << j << "\n";
                 }
-                assert(uInitialize[m+l*3]==uInitialize[m+l*3]);
+                assert(uInitialize[m+l*5]==uInitialize[m+l*5]);
             }
         }
     }
@@ -505,7 +550,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
 
-    double nu = 1000.0;
+    double nu = 1.0;
 
     double A = 2.91e-14;
     double P = 0;
@@ -574,6 +619,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             uz[l] = moments(l,3);
             rt[l] = moments(l,4);
         }
+        // moments.Print();
         // Vector rho = integrator.integrate3f(fj, lMax); //rho tilde
         // Vector ux = integrator.integrate3vxf(fj, lMax); //ux tilde
         // Vector uy = integrator.integrate3vyf(fj, lMax); //uy tilde
@@ -583,14 +629,14 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
         Vector rho_i(lMax);
         rho_i[0] = ni;
 
-        Matrix alpha(3,lMax);
+        Matrix alpha(5,lMax);
         if (bgk)
         {
-            for (int m=0; m<3; m++)
+            for (int m=0; m<5; m++)
             {
                 for (int l=0; l<lMax; l++)
                 {
-                    alpha(m,l) = alphaDomain(m+j*3,l);
+                    alpha(m,l) = alphaDomain(m+j*5,l);
                 }
             }
             bool test = false;
@@ -599,13 +645,13 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 test = false;
             }
             // std::cout << "Calculate Alphas" << "\n";
-            alpha = newtonSolver.solve(alpha, nu, rho, ux, rt, dx, roots, weights, pow(10,-13), 100, basisFunction, quadratureOrder, lMax, test);
+            alpha = newtonSolver.solve(alpha, nu, rho, ux, uy, uz, rt, dx, roots, weights, pow(10,-13), 10, basisFunction, quadratureOrder, lMax, test);
             // std::cout << "Alphas calculated" << "\n";
-            for (int m=0; m<3; m++)
+            for (int m=0; m<5; m++)
             {
                 for (int l=0; l<lMax; l++)
                 {
-                    alphaDomain(m+j*3,l) = alpha(m,l);
+                    alphaDomain(m+j*5,l) = alpha(m,l);
                 }
             }
         }
@@ -784,13 +830,14 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                         }
                         if (bgk)
                         {
-                            uAfter(l,k_index+j*nvx)+=nu*M_invDiag[l]*GaussianQuadrature::integrate(basisFunction,l,alpha,vx,lMax,quadratureOrder,roots,weights)/2.0; //BGK
-                            uAfter(l,k_index+j*nvx)-=nu*uBefore(l,k_index+j*nvx); //BGK
+                            uAfter(l,index)+=nu*M_invDiag[l]*GaussianQuadrature::integrate(basisFunction,l,alpha,vx,vy,vz,lMax,quadratureOrder,roots,weights)/2.0;
+                            uAfter(l,index)-=nu*uBefore(l,index); //BGK
                         }
-
-                        // uAfter(l,index)+=fSource[l];
-                        uAfter(l,index)+=fSource(l,k_index);
-
+                        if (cx) //Not sure if cx is the right condition or not but currently valid
+                        {
+                            // uAfter(l,index)+=fSource[l];
+                            uAfter(l,index)+=fSource(l,k_index);
+                        }
                         uAfter(l,index)*=dt;
                         uAfter(l,index)+=uBefore(l,index);
                         
@@ -808,9 +855,9 @@ void Solver::advance()
     //First stage of solver
     advanceStage(uPre, uPost, 0.0, 1.0);
     //Second stage of solver
-    advanceStage(uPost, uIntermediate, 3.0/4.0, 1.0/4.0);
-    //Third stage of solver
-    advanceStage(uIntermediate, uPost, 1.0/3.0, 2.0/3.0);
+    // advanceStage(uPost, uIntermediate, 3.0/4.0, 1.0/4.0);
+    // //Third stage of solver
+    // advanceStage(uIntermediate, uPost, 1.0/3.0, 2.0/3.0);
 
     uPre = uPost;
 }
@@ -862,8 +909,10 @@ Vector Solver::getMoments()
     double nvx = mesh.getNVX();
     double nvy = mesh.getNVY();
     double nvz = mesh.getNVZ();
+    #pragma omp parallel for reduction(+:mass, momentumX, momentumY, momentumZ, energy, entropy)
     for (int j=0; j<mesh.getNX(); j++)
     {
+        // std::cout << j << "\n";
         double dx = cells[j].dx;
         Matrix fj(lMax,nvz*nvy*nvx);
         for (int kx=0; kx<nvx; kx++)
@@ -904,7 +953,7 @@ Vector Solver::getMoments()
             momentumY += weights[i]*SpecialFunctions::computeMoment(uy, basisFunction, lMax, roots[i])*dx/2.0;
             momentumZ += weights[i]*SpecialFunctions::computeMoment(uz, basisFunction, lMax, roots[i])*dx/2.0;
             energy += weights[i]*SpecialFunctions::computeMoment(rt, basisFunction, lMax, roots[i])*dx/2.0;
-            entropy += weights[i]*integrator.integrate(fj, lMax, basisFunction, roots[i])*dx/2.0;
+            // entropy += weights[i]*integrator.integrate(fj, lMax, basisFunction, roots[i])*dx/2.0;
         }
     }
     moments[0] = mass; //return rho

@@ -50,6 +50,17 @@ void Vector::Print()
     }
 }
 
+void Vector::Clean()
+{
+    for (int i=0; i<mSize; i++)
+    {
+        if (fabs(mData[i])<1e-10)
+        {
+            mData[i] = 0;
+        }
+    }
+}
+
 // Overloading square brackets
 // Note that this uses ‘zero-based’ indexing,
 // and a check on the validity of the index

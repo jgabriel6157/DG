@@ -44,6 +44,30 @@ double GaussianQuadrature::integrate(std::function<double(int, double)> func1, i
     return integral;
 }
 
+double GaussianQuadrature::integrate(std::function<double(int, double)> func1, int n_func1, Matrix alpha, double vx, double vy, double vz, int lMax, int quadratureOrder, Vector roots, Vector weights)
+{
+    double integral = 0;
+
+    Vector alphaSum(lMax);
+
+    for (int l=0; l<lMax; l++)
+    {
+        alphaSum[l] = alpha(0,l)+vx*alpha(1,l)+vy*alpha(2,l)+vz*alpha(3,l)-(vx*vx+vy*vy+vz*vz)*alpha(4,l);
+    }
+
+    for (int i=0; i<quadratureOrder; i++)
+    {
+        double exponent = 0;
+        for (int l=0; l<lMax; l++)
+        {
+            exponent += func1(l,roots[i])*alphaSum[l];
+        }
+        integral += weights[i]*func1(n_func1,roots[i])*exp(exponent);
+    }
+
+    return integral;
+}
+
 //Perform Gaussian quadrature integration for three specified functions of order n_func1, n_func2, n_func3 to a certain quadrature order
 double GaussianQuadrature::integrate(std::function<double(int, double)> func1, int n_func1, std::function<double(int, double)> func2, int n_func2, 
                         std::function<double(int, double)> func3, int n_func3, int quadratureOrder, Vector roots, Vector weights)

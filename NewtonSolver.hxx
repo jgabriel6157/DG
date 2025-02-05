@@ -13,14 +13,17 @@ class NewtonSolver
     public:
     NewtonSolver(const Mesh& mesh);
 
-    Matrix solve(Matrix alpha, double nu, Vector rho, Vector u, Vector rt, double dx, Vector roots, Vector weights, double tolerance, int maxIteration, std::function<double(int,double)> basisFunction, int quadratureOrder, int lMax, bool test);
-
+    // Matrix solve(Matrix alpha, double nu, Vector rho, Vector u, Vector rt, double dx, Vector roots, Vector weights, double tolerance, int maxIteration, std::function<double(int,double)> basisFunction, int quadratureOrder, int lMax, bool test);
+    Matrix solve(Matrix alpha, double nu, Vector rho, Vector ux, Vector uy, Vector uz, Vector rt, double dx, Vector roots, Vector weights, double tolerance, int maxIteration, std::function<double(int,double)> basisFunction, int quadratureOrder, int lMax, bool test);
 private:
     NewtonCotes integrator;
 
-    Vector createF(Matrix alpha, double nu, Vector rho, Vector u, Vector rt, double dx, Vector roots, Vector weights, std::function<double(int,double)> basisFunction, int quadratureOrder, int lMax);
+    // Vector createF(Matrix alpha, double nu, Vector rho, Vector u, Vector rt, double dx, Vector roots, Vector weights, std::function<double(int,double)> basisFunction, int quadratureOrder, int lMax);
 
-    Matrix createJ(Matrix alpha, double nu, Vector rho, Vector u, Vector rt, double dx, Vector roots, Vector weights, std::function<double(int,double)> basisFunction, int quadratureOrder, int lMax);
+    Matrix createJ(Matrix alpha, double nu, double dx, Vector roots, Vector weights, std::function<double(int,double)> basisFunction, int quadratureOrder, int lMax);
+
+    Vector createF(Matrix alpha, double nu, Vector rho, Vector ux, Vector uy, Vector uz, Vector rt, double dx, Vector roots, Vector weights, std::function<double(int,double)> basisFunction, int quadratureOrder, int lMax);
+
 };
 
 

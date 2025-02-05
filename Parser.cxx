@@ -1,12 +1,12 @@
 #include "Parser.hxx"
 
 // Constructor
-Parser::Parser() : x(std::make_shared<double>(0.0)), vx(std::make_shared<double>(0.0)), vy(std::make_shared<double>(0.0)), vz(std::make_shared<double>(0.0)) 
+Parser::Parser() : x(0.0), vx(0.0), vy(0.0), vz(0.0)
 {
-    parser.DefineVar("x", x.get());
-    parser.DefineVar("vx", vx.get());
-    parser.DefineVar("vy", vy.get());
-    parser.DefineVar("vz", vz.get());
+    parser.DefineVar("x", &x);
+    parser.DefineVar("vx", &vx);
+    parser.DefineVar("vy", &vy);
+    parser.DefineVar("vz", &vz);
 }
 
 // Sets the expression
@@ -20,10 +20,10 @@ std::function<double(double, double, double, double)> Parser::getFunction()
 {
     return [this](double x_val, double vx_val, double vy_val, double vz_val) 
     {
-        *x = x_val;
-        *vx = vx_val;
-        *vy = vy_val;
-        *vz = vz_val;
+        x = x_val;
+        vx = vx_val;
+        vy = vy_val;
+        vz = vz_val;
         return parser.Eval();
     };
 }
