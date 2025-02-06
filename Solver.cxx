@@ -494,8 +494,9 @@ void Solver::initializeAlpha()
 
                     for (int i=0; i<10; i++)
                     {
-                        x = leftVertex+(i+1)*dx/11.0; //Ignores end points which are more likely to be NaN in certain edge cases
+                        // x = leftVertex+(i+1)*dx/11.0; //Ignores end points which are more likely to be NaN in certain edge cases
                         // x = leftVertex+(i+2)*dx/13.0; //Ignores end points which are more likely to be NaN in certain edge cases
+                        x = leftVertex+(i+3)*dx/15.0;
                         double density = SpecialFunctions::computeMoment(rho, basisFunction,lMax,2.0*(x-xj)/dx);
                         double meanVelocityX = SpecialFunctions::computeMoment(ux, basisFunction,lMax,2.0*(x-xj)/dx)/density;
                         double meanVelocityY = SpecialFunctions::computeMoment(uy, basisFunction,lMax,2.0*(x-xj)/dx)/density;
@@ -506,11 +507,16 @@ void Solver::initializeAlpha()
                         double arg = SpecialFunctions::computeMaxwellian3(density,meanVelocityX,meanVelocityY,meanVelocityZ,temperature,vx,vy,vz);
                         // std::cout << "i = " << i << "\n";
                         // std::cout << density << "\n";
-                        // std::cout << meanVelocity << "\n";
+                        // std::cout << meanVelocityX << "\n";
                         // std::cout << temperature << "\n";
                         // std::cout << arg << "\n";
 
                         y[i+(kz+ky*nvz+kx*nvz*nvy)*10] = log(arg);
+                        if (log(arg)!=log(arg))
+                        {
+                            std::cout << j << ", " << kx << ", " << ky << ", " << kz << "\n";
+                            assert(log(arg)==log(arg));
+                        }
 
 
                         for (int l=0; l<lMax; l++)
@@ -549,7 +555,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
     Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
     Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
 
-    double nu = 1.0;
+    double nu = 100.0;
 
     double A = 2.91e-14;
     double P = 0;
@@ -639,12 +645,12 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                 }
             }
             bool test = false;
-            if (j==0)
+            if (j==11)
             {
                 test = false;
             }
             // std::cout << "Calculate Alphas" << "\n";
-            alpha = newtonSolver.solve(alpha, nu, rho, ux, uy, uz, rt, dx, roots, weights, pow(10,-13), 10, basisFunction, quadratureOrder, lMax, test);
+            alpha = newtonSolver.solve(alpha, nu, rho, ux, uy, uz, rt, dx, roots, weights, pow(10,-10), 10, basisFunction, quadratureOrder, lMax, test);
             // std::cout << "Alphas calculated" << "\n";
             for (int m=0; m<5; m++)
             {

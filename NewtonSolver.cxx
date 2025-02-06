@@ -6,6 +6,7 @@
 #include <iostream>
 #include <functional>
 #include <chrono>
+#include <cassert>
 
 NewtonSolver::NewtonSolver(const Mesh& mesh) 
                          : integrator(mesh) {}
@@ -62,8 +63,9 @@ Matrix NewtonSolver::solve(Matrix alpha, double nu, Vector rho, Vector ux, Vecto
     F = createF(alpha, nu, rho, ux, uy, uz, rt, dx, roots, weights, basisFunction, quadratureOrder, lMax);
     if (test)
     {
-        F.Print();
-        alpha.Print();
+        // F.Print();
+        // alpha.Print();
+        std::cout << F.CalculateNorm(1) << "\n";
     }
     while (norm > tolerance)
     {
@@ -82,13 +84,14 @@ Matrix NewtonSolver::solve(Matrix alpha, double nu, Vector rho, Vector ux, Vecto
         norm = F.CalculateNorm(1);
         if (test)
         {
-            F.Print();
-            alpha.Print();
+            // F.Print();
+            // alpha.Print();
             std::cout << norm << "\n";
         }
         if (norm != norm)
         {
             std::cout << "norm is NaN" << "\n";
+            assert(norm==norm);
         }
         if (count > maxIteration)
         {

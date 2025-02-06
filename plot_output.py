@@ -62,12 +62,12 @@ fig = plt.figure()
 ax = fig.gca()
 
 # Define vectors for parameters and file suffixes
-suffixes = ['CXapprox','Gkeyll','JSFull','k','e']
+suffixes = ['CXapprox','Gkeyll','JSFull','k']
 labels = ["Janev-Smith approximation","Meier (Gkeyll)","Janev-Smith","Krstic and Schultz","ke"]
 jMaxVector = [112, 120, 60,60,96]
 lengthVector = [40.0, 40.0, 40.0,40,40]
 basisVector = ['legendre', 'legendre', 'legendre','legendre','legendre']
-noutVector = [100, 68, 47,80,116]
+noutVector = [100, 68, 47,47,116]
 tVector = [-1,-1,40,-1,-1]
 dxVector = [l / j for l, j in zip(lengthVector, jMaxVector)]
 colorVector = ['red','black','green','blue','orange']
@@ -141,16 +141,16 @@ for i, suffix in enumerate(suffixes):
             velocityZ /= density
             temperature = (temperature - density * (velocityX**2 + velocityY**2 + velocityZ**2)) / (3 * density)
 
-            y[idx] = temperature
-            # y[idx] = density*1E18
+            # y[idx] = temperature
+            y[idx] = density*1E18
 
         plt.plot(x - 20, y, color=color)
     
     plt.plot(0,0,color=color,label = f'{label}')
 
-# ax.set_yscale('log')
-# plt.ylim(5e13,2e19)
-plt.ylim(28,70)
+ax.set_yscale('log')
+plt.ylim(5e13,2e19)
+# plt.ylim(28,70)
 
 plt.xlim(-20,20)
 plt.legend()
