@@ -23,7 +23,7 @@ Solver::Solver(const Mesh& mesh, double dt, int lMax, std::function<double(int,d
       uPre(lMax,(mesh.getNX()+2)*mesh.getNVX()*mesh.getNVY()*mesh.getNVZ()), uIntermediate(lMax,(mesh.getNX()+2)*mesh.getNVX()*mesh.getNVY()*mesh.getNVZ()), 
       uPost(lMax,(mesh.getNX()+2)*mesh.getNVX()*mesh.getNVY()*mesh.getNVZ()), 
       fSource(lMax,mesh.getNVX()*mesh.getNVY()*mesh.getNVZ()),fi(lMax,mesh.getNX()*mesh.getNVX()*mesh.getNVY()*mesh.getNVZ()),
-      fiCX(lMax,mesh.getNX()*mesh.getNVX()*mesh.getNVY()*mesh.getNVZ()) {}
+      fiCX(lMax,mesh.getNX()*mesh.getNVX()*mesh.getNVY()*mesh.getNVZ()),fiCXavg(lMax,mesh.getNX()) {}
 
 //deconstructor
 Solver::~Solver() {}
@@ -367,12 +367,11 @@ void Solver::initializeIons()
         }
     }
 
-    if (cx==3) //Should be cx=3, changed to 2 for half plus approximation
+    if (cx==3)
     {
         #pragma omp parallel for schedule(dynamic)
         for (int j=0; j<mesh.getNX(); j++)
         {
-            // std::cout << j << "\n";
             double dx = cells[j].dx;
             double leftVertex = cells[j].vertices[0];
             double xj = leftVertex+dx/2.0;
@@ -410,6 +409,39 @@ void Solver::initializeIons()
                         }
                     }
                 }
+            }
+        }
+    }
+
+    if (cx==2)
+    {
+        #pragma omp parallel for schedule(dynamic)
+        for (int j=0; j<mesh.getNX(); j++)
+        {
+            double dx = cells[j].dx;
+            double leftVertex = cells[j].vertices[0];
+            double xj = leftVertex+dx/2.0;
+            double uxiAvg = cs*(cells[j].vertices[0]+dx/2.0-(cells.back().vertices[1]/2.0))/(cells.back().vertices[1]/2.0);
+
+            Matrix fj(lMax,nvx*nvy*nvz);
+            for (int kx=0; kx<nvx; kx++)
+            {
+                for (int ky=0; ky<nvy; ky++)
+                {
+                    for (int kz=0; kz<nvz; kz++)
+                    {
+                        for (int l=0; l<lMax; l++)
+                        {
+                            fj(l,kz+ky*nvz+kx*nvz*nvy) = fi(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx);
+                        }
+                    }
+                }
+            }
+
+            Vector fiCXavgVector = integrator.integrate3fnCXavg(fj,lMax,temperature_i,uxiAvg);
+            for (int l=0; l<lMax; l++)
+            {
+                fiCXavg(l,j) = fiCXavgVector[l];
             }
         }
     }
@@ -703,8 +735,6 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                         if (cx==3)
                         {
                             fnCX = integrator.integrate3fnCX(fj,lMax,vx-uxiAvg,vy,vz);
-                            // double E = 0.5*((vx-uxiAvg)*(vx-uxiAvg)+vy*vy+vz*vz);
-                            // sigmavg = ni*SpecialFunctions::computeSigmav(Ti,E)*(1.018043148e14);//*(1e18)/(9822.766369779)
                         }
                     }
 
@@ -744,12 +774,11 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                                     for (int m=0; m<lMax; m++)
                                     {
                                         M_invC(l,i)+=M_invT(l,i+m*lMax)*fi(m,index);
-                                        // M_invC2(l,i)+=M_invT(l,i+m*lMax)*fiCX(m,index); //Half plus approximation
+                                        M_invC2(l,i)+=M_invT(l,i+m*lMax)*fiCXavg(m,j);
                                     }
                                     uAfter(l,index)+=M_invC(l,i)*fnCXavg[i];
-                                    // uAfter(l,index)-=M_invC2(l,i)*uBefore(l,index); //Half plus approximation
+                                    uAfter(l,index)-=M_invC2(l,i)*uBefore(l,index);
                                 }
-                                uAfter(l,index)-=ni*sigmavg*uBefore(l,index);
                             }
 
                             //Janev-Smith w/out approximation
@@ -765,7 +794,6 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                                     uAfter(l,index)+=M_invC(l,i)*fnCX[i];
                                     uAfter(l,index)-=M_invC2(l,i)*uBefore(l,index);
                                 }
-                                // uAfter(l,index)-=sigmavg*uBefore(l,index); //sigmavg = ni*sigmavg
                             }
 
                             //Gkeyll (Meier 2011)
