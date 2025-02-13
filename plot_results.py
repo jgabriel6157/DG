@@ -172,6 +172,6 @@ def animate(t):
     ax.set_title(f"Timestep: {t}")
     return lines
 
-ani = FuncAnimation(fig, animate, frames=nout, init_func=init, repeat=False, interval = 100)
+ani = FuncAnimation(fig, animate, frames=nout, init_func=init, repeat=False, interval = 10)
 
 plt.show()

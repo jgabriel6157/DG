@@ -62,21 +62,23 @@ fig = plt.figure()
 ax = fig.gca()
 
 # Define vectors for parameters and file suffixes
-suffixes = ['CXapprox','Gkeyll','JSFull','k','e']
-labels = ["Janev-Smith approximation","Meier (Gkeyll)","Janev-Smith","Krstic and Schultz","ke"]
-jMaxVector = [112, 120, 60,60,96]
-lengthVector = [40.0, 40.0, 40.0,40,40]
-basisVector = ['legendre', 'legendre', 'legendre','legendre','legendre']
-noutVector = [100, 68, 47,80,116]
-tVector = [-1,-1,40,-1,-1]
+suffixes = ['CXapprox','Gkeyll','JSFull','k','e','c']
+labels = ["Janev-Smith approximation","Meier (Gkeyll)","Janev-Smith","Krstic and Schultz","Krstic and Schultz","approx"]
+jMaxVector = [240, 240, 60,60,96,240]
+lengthVector = [40.0, 40.0, 40.0,40,40,40]
+basisVector = ['legendre', 'legendre', 'legendre','legendre','legendre','legendre']
+noutVector = [156, 400, 47,80,116,150]
+tVector = [-1,-1,40,40,70,-1]
 dxVector = [l / j for l, j in zip(lengthVector, jMaxVector)]
-colorVector = ['red','black','green','blue','orange']
-lMaxVector = [2,2,2,2,2]
+colorVector = ['red','black','green','blue','orange','violet']
+lMaxVector = [2,2,2,2,2,2]
 
 # Initialize data structures
 results = []
 
 for i, suffix in enumerate(suffixes):
+    if suffix=='k':
+        continue
     # Set parameters for this iteration
     jMax = jMaxVector[i]
     length = lengthVector[i]
@@ -141,16 +143,16 @@ for i, suffix in enumerate(suffixes):
             velocityZ /= density
             temperature = (temperature - density * (velocityX**2 + velocityY**2 + velocityZ**2)) / (3 * density)
 
-            y[idx] = temperature
-            # y[idx] = density*1E18
+            # y[idx] = temperature
+            y[idx] = density*1E18
 
         plt.plot(x - 20, y, color=color)
     
     plt.plot(0,0,color=color,label = f'{label}')
 
-# ax.set_yscale('log')
-# plt.ylim(5e13,2e19)
-plt.ylim(28,70)
+ax.set_yscale('log')
+plt.ylim(5e13,2e19)
+# plt.ylim(28,70)
 
 plt.xlim(-20,20)
 plt.legend()
