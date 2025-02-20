@@ -51,21 +51,33 @@ void Solver::createMatrices()
             for (int k=0; k<lMax; k++)
             {
                 T(i,j+k*lMax) = GaussianQuadrature::integrate(basisFunction,i,basisFunction,j,basisFunction,k,quadratureOrder,roots,weights)/2;
+                if ((T(i,j+k*lMax)<1e-10)&&(T(i,j+k*lMax)>-1e-10))
+                {
+                    // T(i,j+k*lMax) = 0;
+                }
             }
             F1Minus(i,j) = (basisFunction(i,1))*(basisFunction(j,1));
             F0Minus(i,j) = (basisFunction(i,-1))*(basisFunction(j,1));
             F1Plus(i,j) = (basisFunction(i,1))*(basisFunction(j,-1));
             F0Plus(i,j) = (basisFunction(i,-1))*(basisFunction(j,-1));
-            if (fabs(M(i,j)) < 1e-10)
-            {
-                M(i,j) = 0;
-            }
-            if (fabs(S(i,j)) < 1e-10)
-            {
-                S(i,j) = 0;
-            }
+            // if (fabs(M(i,j)) < 1e-10)
+            // {
+            //     M(i,j) = 0;
+            // }
+            // if (fabs(S(i,j)) < 1e-10)
+            // {
+            //     S(i,j) = 0;
+            // }
         }
     }
+
+    M.Clean();
+    S.Clean();
+    F1Minus.Clean();
+    F1Plus.Clean();
+    F0Minus.Clean();
+    F0Plus.Clean();
+    T.Clean();
     
     M_inv = M.CalculateInverse();
 

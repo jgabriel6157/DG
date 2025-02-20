@@ -63,11 +63,13 @@ def assignFloat(varString):
         
     return number
 
-fileNameDensity = 'Density.csv'
-fileNameVelocityX = 'VelocityX.csv'
-fileNameVelocityY = 'VelocityY.csv'
-fileNameVelocityZ = 'VelocityZ.csv'
-fileNameTemperature = 'Temperature.csv'
+suffix = ''
+
+fileNameDensity = 'Density'+suffix+'.csv'
+fileNameVelocityX = 'VelocityX'+suffix+'.csv'
+fileNameVelocityY = 'VelocityY'+suffix+'.csv'
+fileNameVelocityZ = 'VelocityZ'+suffix+'.csv'
+fileNameTemperature = 'Temperature'+suffix+'.csv'
 inputFile = open('input.txt','r')
 
 while True:
@@ -94,8 +96,8 @@ nout+=1
 lMax+=1
 inputFile.close()
 
-# jMax = 96
-# nout = 116+1
+# jMax = 48
+# nout = 27+1
 
 fig,ax = plt.subplots()
 ax.set_yscale('log')

@@ -14,6 +14,7 @@ public:
     int GetNumberOfRows() const;
     int GetNumberOfColumns() const;
     void Print();
+    void Clean();
     double& operator()(int i, int j);
     //overloaded assignment operator
     Matrix& operator=(const Matrix& otherMatrix);

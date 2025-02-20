@@ -70,6 +70,20 @@ void Matrix::Print()
     }
 }
 
+void Matrix::Clean()
+{
+    for (int i=0; i<mNumRows; i++)
+    {
+        for (int j=0; j<mNumCols; j++)
+        {
+            if ((mData[i][j]<1e-10)&&(mData[i][j]>-1e-10))
+            {
+                mData[i][j] = 0;
+            }
+        }
+    } 
+}
+
 // Method to get number of rows of matrix
 int Matrix::GetNumberOfRows() const
 {
