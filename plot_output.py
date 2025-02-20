@@ -62,16 +62,16 @@ fig = plt.figure()
 ax = fig.gca()
 
 # Define vectors for parameters and file suffixes
-suffixes = ['CXapprox','Gkeyll','JSFull','k']
-labels = ["Janev-Smith approximation","Meier (Gkeyll)","Janev-Smith","Krstic and Schultz","ke"]
-jMaxVector = [112, 120, 60,60,96]
-lengthVector = [40.0, 40.0, 40.0,40,40]
-basisVector = ['legendre', 'legendre', 'legendre','legendre','legendre']
-noutVector = [100, 68, 47,47,116]
-tVector = [-1,-1,40,-1,-1]
+suffixes = ['CXapprox','Gkeyll','JSFull','k','e','c','hr']
+labels = ["Janev-Smith approximation","Meier (Gkeyll)","Janev-Smith","Krstic and Schultz","Krstic and Schultz","approx","approxHR"]
+jMaxVector = [240, 240, 60,60,96,240,240]
+lengthVector = [40.0, 40.0, 40.0,40,40,40,40]
+basisVector = ['legendre', 'legendre', 'legendre','legendre','legendre','legendre','legendre']
+noutVector = [156, 400, 47,80,116,150,156]
+tVector = [-1,-1,40,40,70,-1,-1]
 dxVector = [l / j for l, j in zip(lengthVector, jMaxVector)]
-colorVector = ['red','black','green','blue','orange']
-lMaxVector = [2,2,2,2,2]
+colorVector = ['red','black','green','blue','orange','violet','cyan']
+lMaxVector = [2,2,2,2,2,2,2]
 
 # Initialize data structures
 results = []

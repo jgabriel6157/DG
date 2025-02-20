@@ -62,12 +62,12 @@ def assignFloat(varString):
         
         
     return number
-
-fileNameDensity = 'Density.csv'
-fileNameVelocityX = 'VelocityX.csv'
-fileNameVelocityY = 'VelocityY.csv'
-fileNameVelocityZ = 'VelocityZ.csv'
-fileNameTemperature = 'Temperature.csv'
+suffix = 'Gkeyll'
+fileNameDensity = 'Density'+suffix+'.csv'
+fileNameVelocityX = 'VelocityX'+suffix+'.csv'
+fileNameVelocityY = 'VelocityY'+suffix+'.csv'
+fileNameVelocityZ = 'VelocityZ'+suffix+'.csv'
+fileNameTemperature = 'Temperature'+suffix+'.csv'
 inputFile = open('input.txt','r')
 
 while True:
@@ -94,15 +94,15 @@ nout+=1
 lMax+=1
 inputFile.close()
 
-# jMax = 192
-# nout = 177+1
+jMax = 240
+nout = 400+1
 
 fig,ax = plt.subplots()
-# ax.set_yscale('log')
+ax.set_yscale('log')
 lines = [ax.plot([], [], lw=2,color='red')[0] for _ in range(jMax)]
 plt.xlim(0,length)
-# plt.ylim(1e13,2e19)
-plt.ylim(-0.25,1.25)
+plt.ylim(5e13,1e14)
+# plt.ylim(-0.25,1.25)
 # plt.ylim(28,72)
 
 valuesDensity = pd.read_csv(fileNameDensity,header=None)
@@ -158,9 +158,10 @@ def generate_data(t,j):
         velocityY/=density
         velocityZ/=density
         temperature = (temperature-density*(velocityX**2+velocityY**2+velocityZ**2))/(3*density)
-        # y[i] = density*1e18
+        y[i] = density*1e18
         # y[i] = temperature
-        y[i] = density
+        # y[i] = density
+        # y[i] = velocityX
     return x,y
 
 x = np.zeros((jMax,10))

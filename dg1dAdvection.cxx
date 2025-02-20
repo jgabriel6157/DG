@@ -226,10 +226,10 @@ int main(int argc, char* argv[])
                 write_moments << (moments[4]-E0)/E0 << "\n";
                 // write_moments << (moments[5]-S0)/fabs(S0) << "\n";
                 std::cout << (moments[0]-M0)/M0 << "\n";
-                // std::cout << (moments[1]-UX0)/UX0 << "\n";
+                std::cout << (moments[1]-UX0)/UX0 << "\n";
                 // std::cout << (moments[2]-UY0)/UY0 << "\n";
                 // std::cout << (moments[3]-UZ0)/UZ0 << "\n";
-                std::cout << moments[1] << "\n";
+                // std::cout << moments[1] << "\n";
                 std::cout << moments[2] << "\n";
                 std::cout << moments[3] << "\n";
                 std::cout << (moments[4]-E0)/E0 << "\n";

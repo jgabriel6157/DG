@@ -5,8 +5,8 @@ import pandas as pd
 from scipy.interpolate import interp1d
 
 # Define constants
-# gamma = 5.0 / 3  # Ratio of specific heats
-gamma = 3.0
+gamma = 5.0 / 3  # Ratio of specific heats
+# gamma = 3.0
 time = 0.1  # Simulation time (seconds)
 x0 = 0.5  # Initial discontinuity position
 
@@ -141,7 +141,9 @@ def assignFloat(varString):
     return number
 
 fileNameDensity = 'Density.csv'
-fileNameVelocity = 'Velocity.csv'
+fileNameVelocityX = 'VelocityX.csv'
+fileNameVelocityY = 'VelocityY.csv'
+fileNameVelocityZ = 'VelocityZ.csv'
 fileNameTemperature = 'Temperature.csv'
 inputFile = open('input.txt','r')
 
@@ -171,43 +173,61 @@ inputFile.close()
 
 valuesDensity = pd.read_csv(fileNameDensity,header=None)
 valuesDensity = valuesDensity[0].to_numpy()
-valuesVelocity = pd.read_csv(fileNameVelocity,header=None)
-valuesVelocity = valuesVelocity[0].to_numpy()
+valuesVelocityX = pd.read_csv(fileNameVelocityX,header=None)
+valuesVelocityX = valuesVelocityX[0].to_numpy()
+valuesVelocityY = pd.read_csv(fileNameVelocityY,header=None)
+valuesVelocityY = valuesVelocityY[0].to_numpy()
+valuesVelocityZ = pd.read_csv(fileNameVelocityZ,header=None)
+valuesVelocityZ = valuesVelocityZ[0].to_numpy()
 valuesTemperature = pd.read_csv(fileNameTemperature,header=None)
 valuesTemperature = valuesTemperature[0].to_numpy()
 k = 0
 dx = length/jMax
 rho = np.zeros((lMax,jMax,nout))
-rhou = np.zeros((lMax,jMax,nout))
+rhouX = np.zeros((lMax,jMax,nout))
+rhouY = np.zeros((lMax,jMax,nout))
+rhouZ = np.zeros((lMax,jMax,nout))
 rt = np.zeros((lMax,jMax,nout))
 for t in range(nout):
     for j in range(jMax):
         for l in range(lMax):
             rho[l][j][t] = valuesDensity[k]
-            rhou[l][j][t] = valuesVelocity[k]
+            rhouX[l][j][t] = valuesVelocityX[k]
+            rhouY[l][j][t] = valuesVelocityY[k]
+            rhouZ[l][j][t] = valuesVelocityZ[k]
             rt[l][j][t] = valuesTemperature[k]
             k=k+1
 
 x = np.zeros(10*jMax)
 densitySim = np.zeros(10*jMax)
-velocitySim = np.zeros(10*jMax)
+velocityXSim = np.zeros(10*jMax)
+velocityYSim = np.zeros(10*jMax)
+velocityZSim = np.zeros(10*jMax)
 temperatureSim = np.zeros(10*jMax)
 pressureSim = np.zeros(10*jMax)
-t = 100
+t = -1
 for j in range(jMax):
     for i in range(10):
         x[i+j*10] = j*dx+i*dx/9.0
         densityFoo = 0
-        velocityFoo = 0
+        velocityXFoo = 0
+        velocityYFoo = 0
+        velocityZFoo = 0
         temperatureFoo = 0
         for l in range(lMax):
             densityFoo += rho[l][j][t]*getFunction(basis,l,(2/dx)*(x[i+j*10]-(j*dx+dx/2)))
-            velocityFoo += rhou[l][j][t]*getFunction(basis,l,(2/dx)*(x[i+j*10]-(j*dx+dx/2)))
+            velocityXFoo += rhouX[l][j][t]*getFunction(basis,l,(2/dx)*(x[i+j*10]-(j*dx+dx/2)))
+            velocityYFoo += rhouY[l][j][t]*getFunction(basis,l,(2/dx)*(x[i+j*10]-(j*dx+dx/2)))
+            velocityZFoo += rhouZ[l][j][t]*getFunction(basis,l,(2/dx)*(x[i+j*10]-(j*dx+dx/2)))
             temperatureFoo += rt[l][j][t]*getFunction(basis,l,(2/dx)*(x[i+j*10]-(j*dx+dx/2)))
-        velocityFoo/=densityFoo
-        temperatureFoo = (temperatureFoo-densityFoo*velocityFoo**2)/densityFoo
+        velocityXFoo/=densityFoo
+        velocityYFoo/=densityFoo
+        velocityZFoo/=densityFoo
+        temperatureFoo = (temperatureFoo-densityFoo*(velocityXFoo**2+velocityYFoo**2+velocityZFoo**2))/(3*densityFoo)
         densitySim[i+j*10] = densityFoo
-        velocitySim[i+j*10] = velocityFoo
+        velocityXSim[i+j*10] = velocityXFoo
+        velocityYSim[i+j*10] = velocityYFoo
+        velocityZSim[i+j*10] = velocityZFoo
         temperatureSim[i+j*10] = temperatureFoo
         pressureSim[i+j*10] = densityFoo*temperatureFoo
 
@@ -222,7 +242,7 @@ plt.legend()
 
 plt.subplot(4, 1, 2)
 plt.plot(xSol, velocity, label="Solution", color="orange", linestyle="--")
-plt.plot(x,velocitySim, label="Simulation", color="orange", linestyle="-")
+plt.plot(x,velocityXSim, label="Simulation", color="orange", linestyle="-")
 plt.ylabel("Velocity")
 plt.legend()
 
