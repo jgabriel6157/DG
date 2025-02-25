@@ -13,6 +13,7 @@ public:
     int GetSize() const;
     void Print();
     double& operator[](int i); // zero-based indexing
+    double operator[](int i) const;// zero-based indexing
     // read-only zero-based indexing
     double Read(int i) const;
     Vector& operator=(const Vector& otherVector);

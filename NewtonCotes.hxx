@@ -33,6 +33,7 @@ private:
     double testMaxwellian(Matrix alpha, std::function<double(int,double)> basisFunction, int power, double x, int k, int lMax);
 
     Vector computeWeights(int nv);
+    Vector computeHermiteWeights(int nv, double scale);
 
 
 };

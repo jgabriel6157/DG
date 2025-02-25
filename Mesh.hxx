@@ -2,6 +2,7 @@
 #define MESHHEADERDEF
 
 #include <vector>
+#include "Vector.hxx"
 
 struct Cell
 {
@@ -26,6 +27,8 @@ private:
     double dvx; //Distance between velocity points
     double dvy;
     double dvz;
+    Vector hermiteRootsY;
+    Vector hermiteRootsZ;
 
 public:
     //Constructor

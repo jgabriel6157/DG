@@ -19,8 +19,11 @@ public:
     static double quadraticDerivative(int n, double x);
     static double linear(int n, double x);
     static double linearDerivative(int n, double x);
+    static double hermite(int n, double x);
+    static double hermiteDerivative(int n, double x);
 
     static Vector legendreRoots(int n);
+    static Vector hermiteRoots(int n, double scale);
 
     static double topHat(double x);
     static double gaussianPulse(double x);
@@ -30,6 +33,7 @@ public:
     static double inelasticICvx(double x);
 
     static double sign(double x);
+    static double factorial(int x);
     static double min(double a, double b);
     static double minmod(double a, double b, double c);
 

@@ -51,23 +51,11 @@ void Solver::createMatrices()
             for (int k=0; k<lMax; k++)
             {
                 T(i,j+k*lMax) = GaussianQuadrature::integrate(basisFunction,i,basisFunction,j,basisFunction,k,quadratureOrder,roots,weights)/2;
-                if ((T(i,j+k*lMax)<1e-10)&&(T(i,j+k*lMax)>-1e-10))
-                {
-                    // T(i,j+k*lMax) = 0;
-                }
             }
             F1Minus(i,j) = (basisFunction(i,1))*(basisFunction(j,1));
             F0Minus(i,j) = (basisFunction(i,-1))*(basisFunction(j,1));
             F1Plus(i,j) = (basisFunction(i,1))*(basisFunction(j,-1));
             F0Plus(i,j) = (basisFunction(i,-1))*(basisFunction(j,-1));
-            // if (fabs(M(i,j)) < 1e-10)
-            // {
-            //     M(i,j) = 0;
-            // }
-            // if (fabs(S(i,j)) < 1e-10)
-            // {
-            //     S(i,j) = 0;
-            // }
         }
     }
 
@@ -667,8 +655,8 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             // Gkeyll (Meier 2011)
             if (cx==1)
             {
-                Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
-                Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
+                // Vector roots = SpecialFunctions::legendreRoots(quadratureOrder);
+                // Vector weights = GaussianQuadrature::calculateWeights(quadratureOrder, roots);
                 double vthn2=0;
                 for (int i=0; i<quadratureOrder; i++)
                 {

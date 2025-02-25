@@ -60,6 +60,13 @@ double& Vector::operator[](int i)
     return mData[i];
 }
 
+double Vector::operator[](int i) const
+{
+    assert(i > -1);
+    assert(i < mSize);
+    return mData[i];
+}
+
 // Read-only variant of []
 // Note that this uses ‘zero-based’ indexing,
 // and a check on the validity of the index

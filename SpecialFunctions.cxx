@@ -137,6 +137,36 @@ double SpecialFunctions::linearDerivative(int n, double x)
     }
 }
 
+// Compute the Hermite polynomial H_N(x) using recursion
+double SpecialFunctions::hermite(int n, double x) 
+{
+    assert(n>=0);
+    if (n == 0) return 1.0;
+    if (n == 1) return 2.0 * x;
+
+    double H0 = 1.0;
+    double H1 = 2.0 * x;
+    double H2;
+
+    for (int i = 1; i < n; i++) 
+    {
+        H2 = 2.0 * x * H1 - 2.0 * i * H0;
+        H0 = H1;
+        H1 = H2;
+    }
+    return H1;
+}
+
+// Compute the derivative of the Hermite polynomial H_N'(x) using recursion
+double SpecialFunctions::hermiteDerivative(int n, double x) 
+{
+    assert(n>=0);
+    if (n == 0) return 0.0;
+    if (n == 1) return 2.0;
+
+    return 2.0 * n * hermite(n - 1, x);
+}
+
 //Square pulse (top hat) function centered at pi with length 2
 double SpecialFunctions::topHat(double x)
 {
@@ -227,6 +257,112 @@ Vector SpecialFunctions::legendreRoots(int n)
     return roots;
 }
 
+// Compute Gauss-Hermite nodes (roots) using Newton's method
+Vector SpecialFunctions::hermiteRoots(int n, double scale)
+{
+    assert(n>2);
+    assert(n<16);
+    Vector roots(n);
+    const double tolerance = 1e-15;
+    const int maxIterations = 100;
+    Vector guess(n);
+    switch (n)
+    {
+    case 3:
+        guess[0] = 1.22474; guess[1] = 0;
+        break;
+    case 4:
+        guess[0] = 1.65; guess[1] = 0.52465;
+        break;
+    case 5:
+        guess[0] = 2.02; guess[1] = 0.96;
+        break;
+    case 6:
+        guess[0] = 2.35; guess[1] = 1.34; guess[2] = 0.43;
+        break;
+    case 7:
+        guess[0] = 2.65; guess[1] = 1.67; guess[2] = 0.81;
+        break;
+    case 8:
+        guess[0] = 2.93; guess[1] = 1.98; guess[2] = 1.16; guess[3] = 0.38;
+        break;
+    case 9:
+        guess[0] = 3.2; guess[1] = 2.3; guess[2] = 1.5; guess[3] = 0.7;
+        break;
+    case 10:
+        guess[0] = 3.4; guess[1] = 2.5; guess[2] = 1.75; guess[3] = 1.0; guess[4] = 0.34;
+        break;
+    case 11:
+        guess[0] = 3.7; guess[1] = 2.8; guess[2] = 2.0; guess[3] = 1.3; guess[4] = 0.65;
+        break;
+    case 12:
+        guess[0] = 3.9; guess[1] = 3.0; guess[2] = 2.3; guess[3] = 1.6; guess[4] = 0.9; guess[5] = 0.3;
+        break;
+    case 13:
+        guess[0] = 4.1; guess[1] = 3.2; guess[2] = 2.5; guess[3] = 1.85; guess[4] = 1.2; guess[5] = 0.6;
+        break;
+    case 14:
+        guess[0] = 4.3; guess[1] = 3.5; guess[2] = 2.75; guess[3] = 2.1; guess[4] = 1.5; guess[5] = 0.9; guess[6] = 0.3;
+        break;
+    case 15:
+        guess[0] = 4.5; guess[1] = 3.7; guess[2] = 2.96; guess[3] = 2.3; guess[4] = 1.7; guess[5] = 1.1; guess[6] = 0.56;
+        break;
+    
+    default:
+        break;
+    }
+    if (n%2!=0)
+    {
+        guess[(n-1)/2] = 0;
+    }
+    for (int i = 0; i < n / 2; i++) 
+    {
+        guess[n - 1 - i] = -guess[i];
+    }
+
+
+    for (int i = 0; i < n; i++) 
+    {
+        // std::cout << i << "\n";
+        // double x = (i < 2) ? 0.5*sqrt(4.0 * n + 2.0) * cos(M_PI * (i + 0.75) / (n + 0.5))
+        //                     : roots[i - 1] - 1.5 * (roots[i - 1] - roots[i - 2]);  // Initial guess
+        // double x = 0.5*sqrt(4.0 * n + 2.0) * cos(M_PI * (i + 0.75) / (n + 0.5));
+        double x = guess[i];
+
+        int iter = 0;
+        double dx;
+        do 
+        {
+            // std::cout << x << "\n";
+            double HN = hermite(n, x);
+            double dHN = hermiteDerivative(n, x);
+            dx = HN / dHN;
+            x -= dx;
+        } while (std::abs(dx) > tolerance && iter++ < maxIterations);
+
+        roots[i] = x;
+        if (i>0)
+        {
+            assert(x<roots[i-1]);
+        }
+
+    }
+
+    // Ensure symmetry
+    for (int i = 0; i < n / 2; i++) 
+    {
+        roots[n - 1 - i] = -roots[i];
+        if (abs(roots[n - 1 - i]+roots[i]) > 1e-10)
+        {
+            std::cerr << "Warning: Computed roots are not symmetric at index " << i << "with values of " << roots[n - 1 - i] << " and " << roots[i] << std::endl;
+        }
+    }
+
+    roots = roots*scale;
+
+    return roots;
+}
+
 //Return sign of value (0 returns 1)
 double SpecialFunctions::sign(double x)
 {
@@ -242,6 +378,17 @@ double SpecialFunctions::sign(double x)
     {
         return 1;
     }
+}
+
+double SpecialFunctions::factorial(int x)
+{
+    assert(x>=0);
+    double factorial = 1.0;
+    for (int i=1; i<=x; i++)
+    {
+        factorial*=i;
+    }
+    return factorial;
 }
 
 //Return smaller value between a,b

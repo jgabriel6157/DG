@@ -1,9 +1,12 @@
 #include "Mesh.hxx"
+#include "SpecialFunctions.hxx"
 #include <iostream>
+#include <cmath>
 
 //Constructor definition
 Mesh::Mesh(int nx, int nvx, int nvy, int nvz, double domainLengthX, double domainMaxVX, double domainMaxVY, double domainMaxVZ, int bc) : 
-            nx(nx), nvx(nvx), nvy(nvy), nvz(nvz), domainLengthX(domainLengthX), domainMaxVX(domainMaxVX), domainMaxVY(domainMaxVY), domainMaxVZ(domainMaxVZ), bc(bc)
+            nx(nx), nvx(nvx), nvy(nvy), nvz(nvz), domainLengthX(domainLengthX), domainMaxVX(domainMaxVX), domainMaxVY(domainMaxVY), domainMaxVZ(domainMaxVZ), bc(bc),
+            hermiteRootsY(nvy), hermiteRootsZ(nvz)
 {
     //Generate cells
     for (int i = 0; i < nx; i++) 
@@ -51,6 +54,10 @@ Mesh::Mesh(int nx, int nvx, int nvy, int nvz, double domainLengthX, double domai
     dvx = 2.0*domainMaxVX/(nvx-1.0); //Ensures velocity spans [-domainMaxVX, domainMaxVX]
     dvy = 2.0*domainMaxVY/(nvy-1.0);
     dvz = 2.0*domainMaxVZ/(nvz-1.0);
+    double scale = sqrt(60);
+    hermiteRootsY = SpecialFunctions::hermiteRoots(nvy,scale);
+    hermiteRootsZ = SpecialFunctions::hermiteRoots(nvz,scale);
+    // hermiteRootsY.Print();
 }
 
 //Accessor function definition for cells
@@ -103,10 +110,12 @@ double Mesh::getVelocityX(int velocityIndex) const
 
 double Mesh::getVelocityY(int velocityIndex) const
 {
-    return -domainMaxVY + velocityIndex*dvy;
+    // return -domainMaxVY + velocityIndex*dvy;
+    return hermiteRootsY[velocityIndex];
 }
 
 double Mesh::getVelocityZ(int velocityIndex) const
 {
-    return -domainMaxVZ + velocityIndex*dvz;
+    // return -domainMaxVZ + velocityIndex*dvz;
+    return hermiteRootsZ[velocityIndex];
 }

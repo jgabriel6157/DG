@@ -41,8 +41,11 @@ Vector NewtonCotes::integrate3f(Matrix M, int lMax)
     double dvz = mesh.getDVZ();
     int nvz = mesh.getNVZ();
     Vector weightsX = computeWeights(nvx);
-    Vector weightsY = computeWeights(nvy);
-    Vector weightsZ = computeWeights(nvz);
+    // Vector weightsY = computeWeights(nvy);
+    // Vector weightsZ = computeWeights(nvz);
+    double scale = sqrt(60);
+    Vector weightsY = computeHermiteWeights(nvy,scale);
+    Vector weightsZ = computeHermiteWeights(nvz,scale);
 
     Vector integral(lMax);
     for (int l=0; l<lMax; l++)
@@ -57,7 +60,8 @@ Vector NewtonCotes::integrate3f(Matrix M, int lMax)
                 }
             }
         }
-        integral[l] *= dvx*dvy*dvz/27.0;
+        // integral[l] *= dvx*dvy*dvz/27.0;
+        integral[l] *= dvx/3.0;
     }
     return integral;
 }
@@ -71,8 +75,11 @@ Vector NewtonCotes::integrate3vxf(Matrix M, int lMax)
     double dvz = mesh.getDVZ();
     int nvz = mesh.getNVZ();
     Vector weightsX = computeWeights(nvx);
-    Vector weightsY = computeWeights(nvy);
-    Vector weightsZ = computeWeights(nvz);
+    // Vector weightsY = computeWeights(nvy);
+    // Vector weightsZ = computeWeights(nvz);
+    double scale = sqrt(60);
+    Vector weightsY = computeHermiteWeights(nvy,scale);
+    Vector weightsZ = computeHermiteWeights(nvz,scale);
 
     Vector integral(lMax);
     for (int l=0; l<lMax; l++)
@@ -88,7 +95,8 @@ Vector NewtonCotes::integrate3vxf(Matrix M, int lMax)
                 }
             }
         }
-        integral[l] *= dvx*dvy*dvz/27.0;
+        // integral[l] *= dvx*dvy*dvz/27.0;
+        integral[l] *= dvx/3.0;
     }
     return integral;
 }
@@ -102,8 +110,11 @@ Vector NewtonCotes::integrate3vyf(Matrix M, int lMax)
     double dvz = mesh.getDVZ();
     int nvz = mesh.getNVZ();
     Vector weightsX = computeWeights(nvx);
-    Vector weightsY = computeWeights(nvy);
-    Vector weightsZ = computeWeights(nvz);
+    // Vector weightsY = computeWeights(nvy);
+    // Vector weightsZ = computeWeights(nvz);
+    double scale = sqrt(60);
+    Vector weightsY = computeHermiteWeights(nvy,scale);
+    Vector weightsZ = computeHermiteWeights(nvz,scale);
 
     Vector integral(lMax);
     for (int l=0; l<lMax; l++)
@@ -119,7 +130,8 @@ Vector NewtonCotes::integrate3vyf(Matrix M, int lMax)
                 }
             }
         }
-        integral[l] *= dvx*dvy*dvz/27.0;
+        // integral[l] *= dvx*dvy*dvz/27.0;
+        integral[l] *= dvx/3.0;
     }
     return integral;
 }
@@ -133,8 +145,11 @@ Vector NewtonCotes::integrate3vzf(Matrix M, int lMax)
     double dvz = mesh.getDVZ();
     int nvz = mesh.getNVZ();
     Vector weightsX = computeWeights(nvx);
-    Vector weightsY = computeWeights(nvy);
-    Vector weightsZ = computeWeights(nvz);
+    // Vector weightsY = computeWeights(nvy);
+    // Vector weightsZ = computeWeights(nvz);
+    double scale = sqrt(60);
+    Vector weightsY = computeHermiteWeights(nvy,scale);
+    Vector weightsZ = computeHermiteWeights(nvz,scale);
 
     Vector integral(lMax);
     for (int l=0; l<lMax; l++)
@@ -150,7 +165,8 @@ Vector NewtonCotes::integrate3vzf(Matrix M, int lMax)
                 }
             }
         }
-        integral[l] *= dvx*dvy*dvz/27.0;
+        // integral[l] *= dvx*dvy*dvz/27.0;
+        integral[l] *= dvx/3.0;
     }
     return integral;
 }
@@ -164,8 +180,11 @@ Vector NewtonCotes::integrate3v2f(Matrix M, int lMax)
     double dvz = mesh.getDVZ();
     int nvz = mesh.getNVZ();
     Vector weightsX = computeWeights(nvx);
-    Vector weightsY = computeWeights(nvy);
-    Vector weightsZ = computeWeights(nvz);
+    // Vector weightsY = computeWeights(nvy);
+    // Vector weightsZ = computeWeights(nvz);
+    double scale = sqrt(60);
+    Vector weightsY = computeHermiteWeights(nvy,scale);
+    Vector weightsZ = computeHermiteWeights(nvz,scale);
 
     Vector integral(lMax);
     for (int l=0; l<lMax; l++)
@@ -183,7 +202,8 @@ Vector NewtonCotes::integrate3v2f(Matrix M, int lMax)
                 }
             }
         }
-        integral[l] *= dvx*dvy*dvz/27.0;
+        // integral[l] *= dvx*dvy*dvz/27.0;
+        integral[l] *= dvx/3.0;
     }
     return integral;
 }
@@ -197,8 +217,11 @@ Matrix NewtonCotes::integrateMoments(Matrix M, int lMax)
     double dvz = mesh.getDVZ();
     int nvz = mesh.getNVZ();
     Vector weightsX = computeWeights(nvx);
-    Vector weightsY = computeWeights(nvy);
-    Vector weightsZ = computeWeights(nvz);
+    // Vector weightsY = computeWeights(nvy);
+    // Vector weightsZ = computeWeights(nvz);
+    double scale = sqrt(60);
+    Vector weightsY = computeHermiteWeights(nvy,scale);
+    Vector weightsZ = computeHermiteWeights(nvz,scale);
 
     Matrix integral(lMax, 5);
     for (int l=0; l<lMax; l++)
@@ -222,7 +245,8 @@ Matrix NewtonCotes::integrateMoments(Matrix M, int lMax)
             }
         }
     }
-    integral = integral * (dvx*dvy*dvz/27.0);
+    // integral = integral * (dvx*dvy*dvz/27.0);
+    integral = integral*(dvx/3.0);
     return integral;
 }
 
@@ -234,10 +258,14 @@ Vector NewtonCotes::integrate3fnCXavg(Matrix M, int lMax, double Ti, double ui)
     int nvy = mesh.getNVY();
     double dvz = mesh.getDVZ();
     int nvz = mesh.getNVZ();
-    double J = dvx*dvy*dvz/27.0;
+    // double J = dvx*dvy*dvz/27.0;
+    double J = dvx/3.0;
     Vector weightsX = computeWeights(nvx);
-    Vector weightsY = computeWeights(nvy);
-    Vector weightsZ = computeWeights(nvz);
+    // Vector weightsY = computeWeights(nvy);
+    // Vector weightsZ = computeWeights(nvz);
+    double scale = sqrt(60);
+    Vector weightsY = computeHermiteWeights(nvy,scale);
+    Vector weightsZ = computeHermiteWeights(nvz,scale);
 
     Vector integral(lMax);
     
@@ -274,10 +302,14 @@ Vector NewtonCotes::integrate3fnCX(Matrix M, int lMax, double vx, double vy, dou
     int nvy = mesh.getNVY();
     double dvz = mesh.getDVZ();
     int nvz = mesh.getNVZ();
-    double J = dvx*dvy*dvz/27.0;
+    // double J = dvx*dvy*dvz/27.0;
+    double J = dvx/3.0;
     Vector weightsX = computeWeights(nvx);
-    Vector weightsY = computeWeights(nvy);
-    Vector weightsZ = computeWeights(nvz);
+    // Vector weightsY = computeWeights(nvy);
+    // Vector weightsZ = computeWeights(nvz);
+    double scale = sqrt(60);
+    Vector weightsY = computeHermiteWeights(nvy,scale);
+    Vector weightsZ = computeHermiteWeights(nvz,scale);
 
     Vector integral(lMax);
     for (int kx=0; kx<nvx; kx++)
@@ -314,8 +346,11 @@ double NewtonCotes::integrate(Matrix f, int lMax, std::function<double(int,doubl
     double dvz = mesh.getDVZ();
     int nvz = mesh.getNVZ();
     Vector weightsX = computeWeights(nvx);
-    Vector weightsY = computeWeights(nvy);
-    Vector weightsZ = computeWeights(nvz);
+    // Vector weightsY = computeWeights(nvy);
+    // Vector weightsZ = computeWeights(nvz);
+    double scale = sqrt(60);
+    Vector weightsY = computeHermiteWeights(nvy,scale);
+    Vector weightsZ = computeHermiteWeights(nvz,scale);
     double integral;
 
     for (int kx=0; kx<nvx; kx++)
@@ -329,7 +364,8 @@ double NewtonCotes::integrate(Matrix f, int lMax, std::function<double(int,doubl
             }
         }
     }
-    integral *= -dvx*dvy*dvz/27.0;
+    // integral *= -dvx*dvy*dvz/27.0;
+    integral *= -dvx/3.0;
     
     return integral;
 }
@@ -383,6 +419,24 @@ Vector NewtonCotes::computeWeights(int nv)
     {
         weights[k] = 2.0;
     }
+
+    return weights;
+}
+
+Vector NewtonCotes::computeHermiteWeights(int nv, double scale)
+{
+    Vector weights(nv);
+    double factorial = SpecialFunctions::factorial(nv);
+
+    for (int i = 0; i < nv; ++i) 
+    {
+        double x = mesh.getVelocityY(i)/scale;
+        double HN_1 = SpecialFunctions::hermite(nv-1, x);
+        weights[i] = (pow(2,nv-1)*factorial*std::sqrt(M_PI))/(nv*nv*HN_1*HN_1);
+        weights[i] *= exp(x*x);
+    }
+
+    weights = weights*scale;
 
     return weights;
 }

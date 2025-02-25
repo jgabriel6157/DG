@@ -101,14 +101,14 @@ inputFile.close()
 
 values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
-valuesSol = pd.read_csv(fileNameSol,header=None)
-valuesSol = valuesSol[0].to_numpy()
+# valuesSol = pd.read_csv(fileNameSol,header=None)
+# valuesSol = valuesSol[0].to_numpy()
 m = 0*10009776
 dx = length/jMax
 dvx = 2*domainMaxVX/(nvx-1)
 # dvx = 1.0/nvx
 u = np.zeros((lMax,jMax,nvx,nvy,nvz))
-uSol = np.zeros((lMax,jMax,nvx,nvy,nvz))
+# uSol = np.zeros((lMax,jMax,nvx,nvy,nvz))
 
 fig = plt.figure()
 ax = fig.add_subplot(projection='3d')
@@ -119,7 +119,7 @@ for j in range(jMax):
             for kz in range(nvz):
                 for lx in range(lMax):
                     u[lx,j,kx,ky,kz] = values[m]
-                    uSol[lx,j,kx,ky,kz] = valuesSol[m]
+                    # uSol[lx,j,kx,ky,kz] = valuesSol[m]
                     m = m+1
 print(m)
 
@@ -158,7 +158,7 @@ for vx in range(nvx):
             x[i] = j*dx+i*dx/(res-1)
             for l in range(lMax):
                 y[i] += u[l][j][vx][vy][vz]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-                sol[i] += uSol[l][j][vx][vy][vz]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
+                # sol[i] += uSol[l][j][vx][vy][vz]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
 
         y_offset = -domainMaxVX + vx*dvx
         # y = np.zeros(nQuad)
@@ -189,7 +189,7 @@ for vx in range(nvx):
         
         # Plotting the results (optional)
         ax.plot(x, [y_offset] * len(x), y, color='red')
-        ax.plot(x, [y_offset] * len(x), sol, color='k')
+        # ax.plot(x, [y_offset] * len(x), sol, color='k')
     # print(np.sqrt(sumNum / sumDem))
 
 # Print the L2 error by taking the square root of the ratio

@@ -97,7 +97,7 @@ lMax+=1
 inputFile.close()
 
 # jMax = 48
-# nout = 27+1
+# nout = 116+1
 
 fig,ax = plt.subplots()
 ax.set_yscale('log')
