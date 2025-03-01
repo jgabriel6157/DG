@@ -62,32 +62,75 @@ fig = plt.figure()
 ax = fig.gca()
 
 # Define vectors for parameters and file suffixes
-suffixes = ['CXapprox','Gkeyll','JSFull','k','e','c']
-labels = ["Janev-Smith approximation","Meier (Gkeyll)","Janev-Smith","Krstic and Schultz","Krstic and Schultz","approx"]
-jMaxVector = [240, 240, 60,60,96,240]
-lengthVector = [40.0, 40.0, 40.0,40,40,40]
-basisVector = ['legendre', 'legendre', 'legendre','legendre','legendre','legendre']
-noutVector = [156, 400, 47,80,116,150]
-tVector = [-1,-1,40,40,70,-1]
-dxVector = [l / j for l, j in zip(lengthVector, jMaxVector)]
-colorVector = ['red','black','green','blue','orange','violet']
-lMaxVector = [2,2,2,2,2,2]
+# suffixes = ['CXapprox','Gkeyll','JSFull','k','e','c']
+# labels = ["Janev-Smith approximation","Meier (Gkeyll)","Janev-Smith","Krstic and Schultz","Krstic and Schultz","approx"]
+# jMaxVector = [240, 240, 60,60,96,240]
+# lengthVector = [40.0, 40.0, 40.0,40,40,40]
+# basisVector = ['legendre', 'legendre', 'legendre','legendre','legendre','legendre']
+# noutVector = [156, 400, 47,80,116,150]
+# tVector = [-1,-1,40,40,70,-1]
+# dxVector = [l / j for l, j in zip(lengthVector, jMaxVector)]
+# colorVector = ['red','black','green','blue','orange','violet']
+# lMaxVector = [2,2,2,2,2,2]
+
+
+data_dict = {
+    "CXapprox": ["Janev-Smith approximation", 240, 40.0, "legendre", 156, -1, "cyan", 2],
+    "g": ["Meier (Gkeyll)", 240, 40.0, "legendre", 440, -1, "blue", 2],
+    "JSFull": ["Janev-Smith", 60, 40.0, "legendre", 47, 40, "green", 2],
+    "k": ["Krstic and Schultz", 60, 40.0, "legendre", 80, 40, "blue", 2],
+    "e": ["Krstic and Schultz", 96, 40.0, "legendre", 116, -1, "orange", 2],
+    "c": ["approx", 240, 40.0, "legendre", 150, -1, "violet", 2],
+    "jss" : ["JS approx, nvx = 31", 240, 40, "legendre", 440, -1, "red", 2],
+    "jsl" : ["JS approx, nvx = 127", 240, 40, "legendre", 440, -1, "cyan", 2],
+    "jsf" : ["Krstic 7", 240, 40, "legendre", 168, -1, "purple", 2],
+    "iz" : ["GUERNICA", 60, 40, "legendre", 100, -1, "red", 2]
+}
+
+reaction = 0 #0 for CX, 1 for ionization
+
+plotting = 0 #0 for density, 1 for temperature
+
+if reaction == 0:
+    desiredPlot = {"jss","e","JSFull","g","jsl","jsf"}
+
+    if plotting == 0:
+        densityDegasData = np.loadtxt('d2-ndensity-cxonly.dat')
+        positionDegas = densityDegasData[:,0]
+        densityDegas = densityDegasData[:,1]
+    if plotting == 1:
+        temperatureDegasData = np.loadtxt('d2-ntemperature-cxonly.dat')
+        positionDegas = temperatureDegasData[:,0]
+        temperatureDegas = temperatureDegasData[:,1]
+
+if reaction == 1:
+    desiredPlot = {"iz"}
+
+    if plotting == 0:
+        densityDegasData = np.loadtxt('d2-ndensity-ionizonly.dat')
+        positionDegas = densityDegasData[:,0]
+        densityDegas = densityDegasData[:,1]
+    if plotting == 1:
+        temperatureDegasData = np.loadtxt('d2-ntemperature-ionizonly.dat')
+        positionDegas = temperatureDegasData[:,0]
+        temperatureDegas = temperatureDegasData[:,1]
 
 # Initialize data structures
 results = []
 
-for i, suffix in enumerate(suffixes):
-    if suffix=='k':
+# for i, suffix in enumerate(suffixes):
+for suffix, info in data_dict.items():
+    if suffix not in desiredPlot:
         continue
     # Set parameters for this iteration
-    jMax = jMaxVector[i]
-    length = lengthVector[i]
-    basis = basisVector[i]
-    nout = noutVector[i]+1
-    dx = dxVector[i]
-    lMax = lMaxVector[i]+1
-    color = colorVector[i]
-    label = labels[i]
+    jMax = info[1]
+    length = info[2]
+    basis = info[3]
+    nout = info[4]+1
+    dx = info[2]/info[1]
+    lMax = info[7]+1
+    color = info[6]
+    label = info[0]
 
     # Read data files dynamically
     valuesDensity = pd.read_csv(f'Density{suffix}.csv', header=None)[0].to_numpy()
@@ -116,7 +159,7 @@ for i, suffix in enumerate(suffixes):
                 k += 1
 
     # Evaluate and plot results for the current suffix
-    t = tVector[i]  # Output step
+    t = info[5]  # Output step
     if (t>nout):
         t = -1
         print(label+" output at t = "+str(nout))
@@ -142,17 +185,31 @@ for i, suffix in enumerate(suffixes):
             velocityY /= density
             velocityZ /= density
             temperature = (temperature - density * (velocityX**2 + velocityY**2 + velocityZ**2)) / (3 * density)
-
-            # y[idx] = temperature
-            y[idx] = density*1E18
+            if plotting == 1:
+                y[idx] = temperature
+            if plotting == 0:
+                y[idx] = density*1E18
 
         plt.plot(x - 20, y, color=color)
     
     plt.plot(0,0,color=color,label = f'{label}')
 
-ax.set_yscale('log')
-plt.ylim(5e13,2e19)
-# plt.ylim(28,70)
+if reaction == 0:
+    if plotting == 0:
+        plt.plot(positionDegas,densityDegas,'k--',label='DEGAS2')
+        ax.set_yscale('log')
+        plt.ylim(5e13,2e19)
+    if plotting == 1:
+        plt.plot(positionDegas,temperatureDegas,'k--',label='DEGAS2')
+        plt.ylim(28,70)
+if reaction == 1:
+    if plotting == 0:
+        plt.plot(positionDegas,densityDegas,'k--',label='DEGAS2')
+        ax.set_yscale('log')
+        plt.ylim(1e12,2e19)
+    if plotting == 1:
+        plt.plot(positionDegas,temperatureDegas,'k--',label='DEGAS2')
+        plt.ylim(7,19)
 
 plt.xlim(-20,20)
 plt.legend()
