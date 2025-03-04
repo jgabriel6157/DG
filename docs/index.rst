@@ -9,6 +9,7 @@ Guernica documentation
    :caption: Contents:
 
    introduction
+   neutral_neutral
 
 .. _API Documentation:
 
