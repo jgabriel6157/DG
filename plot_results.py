@@ -63,7 +63,7 @@ def assignFloat(varString):
         
     return number
 
-suffix = ''
+suffix = 'ks'
 
 fileNameDensity = 'Density'+suffix+'.csv'
 fileNameVelocityX = 'VelocityX'+suffix+'.csv'
@@ -96,17 +96,18 @@ nout+=1
 lMax+=1
 inputFile.close()
 
-# jMax = 240
-# nout = 168+1
+jMax = 60
+nout = 90+1
 
 fig,ax = plt.subplots()
 ax.set_yscale('log')
 lines = [ax.plot([], [], lw=2,color='red')[0] for _ in range(jMax)]
 plt.xlim(0,length)
-plt.ylim(1e13,2e19)
-# plt.ylim(5e13,1e14)
+# plt.ylim(1e13,2e19)
+plt.ylim(5e13,1e14)
 # plt.ylim(-0.25,1.25)
 # plt.ylim(28,72)
+# plt.ylim(6,20)
 
 valuesDensity = pd.read_csv(fileNameDensity,header=None)
 valuesDensity = valuesDensity[0].to_numpy()
@@ -175,6 +176,6 @@ def animate(t):
     ax.set_title(f"Timestep: {t}")
     return lines
 
-ani = FuncAnimation(fig, animate, frames=nout, init_func=init, repeat=False, interval = 10)
+ani = FuncAnimation(fig, animate, frames=nout, init_func=init, repeat=False, interval = 100)
 
 plt.show()

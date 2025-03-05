@@ -57,34 +57,26 @@ def assignFloat(varString):
         
         
     return number
-
-fig = plt.figure()
+plt.rcParams.update({'font.size': 12})
+plt.rcParams['lines.linewidth'] = 1.5
+fig = plt.figure(figsize=(6,6))
 ax = fig.gca()
-
-# Define vectors for parameters and file suffixes
-# suffixes = ['CXapprox','Gkeyll','JSFull','k','e','c']
-# labels = ["Janev-Smith approximation","Meier (Gkeyll)","Janev-Smith","Krstic and Schultz","Krstic and Schultz","approx"]
-# jMaxVector = [240, 240, 60,60,96,240]
-# lengthVector = [40.0, 40.0, 40.0,40,40,40]
-# basisVector = ['legendre', 'legendre', 'legendre','legendre','legendre','legendre']
-# noutVector = [156, 400, 47,80,116,150]
-# tVector = [-1,-1,40,40,70,-1]
-# dxVector = [l / j for l, j in zip(lengthVector, jMaxVector)]
-# colorVector = ['red','black','green','blue','orange','violet']
-# lMaxVector = [2,2,2,2,2,2]
-
 
 data_dict = {
     "CXapprox": ["Janev-Smith approximation", 240, 40.0, "legendre", 156, -1, "cyan", 2],
     "g": ["Meier (Gkeyll)", 240, 40.0, "legendre", 440, -1, "blue", 2],
-    "JSFull": ["Janev-Smith", 60, 40.0, "legendre", 47, 40, "green", 2],
-    "k": ["Krstic and Schultz", 60, 40.0, "legendre", 80, 40, "blue", 2],
+    "JSFull": ["Janev-Smith", 60, 40.0, "legendre", 47, -1, "green", 2],
+    "k": ["Krstic and Schultz", 60, 40.0, "legendre", 80, -1, "blue", 2],
     "e": ["Krstic and Schultz", 96, 40.0, "legendre", 116, -1, "orange", 2],
-    "c": ["approx", 240, 40.0, "legendre", 150, -1, "violet", 2],
-    "jss" : ["JS approx, nvx = 31", 240, 40, "legendre", 440, -1, "red", 2],
-    "jsl" : ["JS approx, nvx = 127", 240, 40, "legendre", 440, -1, "cyan", 2],
-    "jsf" : ["Krstic 7", 240, 40, "legendre", 168, -1, "purple", 2],
-    "iz" : ["GUERNICA", 60, 40, "legendre", 100, -1, "red", 2]
+    "bad": ["JS approx", 60, 40.0, "legendre", 110, -1, "red", 2],
+    "jss" : ["JS approx, nvx = 31", 240, 40, "legendre", 440, -1, "magenta", 2], #nvx = 31
+    "jsl" : ["JS approx, nvx = 127", 240, 40, "legendre", 440, -1, "cyan", 2], #nvx = 127
+    "kf" : ["Krstic & Schultz", 240, 40, "legendre", 440, -1, "purple", 2], #nvy/z = 7
+    "ks" : ["Krstic & Schultz", 60, 40, "legendre", 90, -1, "plum", 2], #nvy/z = 15
+    "a2" : ["Janev-Smith approx two", 60, 40.0, "legendre", 110, -1, "green", 2],
+    "a3" : ["Janev-Smith approx two", 60, 40.0, "legendre", 110, -1, "lime", 2],
+    "iz" : ["GUERNICA", 60, 40, "legendre", 100, -1, "red", 2],
+    "iz2" : ["GUERNICA", 60, 40, "legendre", 10, -1, "red", 2]
 }
 
 reaction = 0 #0 for CX, 1 for ionization
@@ -92,7 +84,7 @@ reaction = 0 #0 for CX, 1 for ionization
 plotting = 0 #0 for density, 1 for temperature
 
 if reaction == 0:
-    desiredPlot = {"jss","e","JSFull","g","jsl","jsf"}
+    desiredPlot = {"g","kf","bad","jsl","e","a2","jss","a3","ks"}
 
     if plotting == 0:
         densityDegasData = np.loadtxt('d2-ndensity-cxonly.dat')
@@ -104,7 +96,7 @@ if reaction == 0:
         temperatureDegas = temperatureDegasData[:,1]
 
 if reaction == 1:
-    desiredPlot = {"iz"}
+    desiredPlot = {"iz2"}
 
     if plotting == 0:
         densityDegasData = np.loadtxt('d2-ndensity-ionizonly.dat')
@@ -199,6 +191,7 @@ if reaction == 0:
         plt.plot(positionDegas,densityDegas,'k--',label='DEGAS2')
         ax.set_yscale('log')
         plt.ylim(5e13,2e19)
+        # plt.ylim(5e13,2e14)
     if plotting == 1:
         plt.plot(positionDegas,temperatureDegas,'k--',label='DEGAS2')
         plt.ylim(28,70)
@@ -212,5 +205,6 @@ if reaction == 1:
         plt.ylim(7,19)
 
 plt.xlim(-20,20)
-plt.legend()
+plt.tight_layout()
+# plt.legend()
 plt.show()

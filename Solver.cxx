@@ -613,7 +613,9 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
         // Vector rt = integrator.integrate3v2f(fj, lMax); //rt tilde
 
         Vector rho_i(lMax);
+        Vector rho_e(lMax);
         rho_i[0] = ni;
+        rho_e[0] = ne;
 
         Matrix alpha(3,lMax);
         if (bgk)
@@ -740,6 +742,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
 
                     Matrix M_invC(lMax,lMax*lMax);
                     Matrix M_invC2(lMax,lMax*lMax);
+                    Matrix M_invCiz(lMax,lMax*lMax);
 
                     // Vector fSource(lMax);
                     // fSource = fitMaxwellian3(0.000020361,0,10,vx,vy,vz); //0.000020361?
@@ -759,13 +762,17 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                         uAfter(l,index)/=dx;
                         if (ionization)
                         {
-                            uAfter(l,index)-=ne*uBefore(l,index)*sigma_iz; //This line for ionization
+                            for (int i=0; i<lMax; i++)
+                            {
+                                for (int m=0; m<lMax; m++)
+                                {
+                                    M_invCiz(l,i)+=M_invT(l,i+m*lMax)*sigma_iz*rho_e[m];
+                                }
+                                uAfter(l,index)-=M_invCiz(l,i)*uBefore(l,index);
+                            }
                         }
                         if (cx)
                         {
-                            //Using fitting (should be avoiding due to potential aliasing issues)
-                            // uAfter(l,index)-=fCX[l]; //This line for CX
-
                             //Janev-Smith w/ avg sigma approximation
                             if (cx==2)
                             {
@@ -775,10 +782,13 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                                     {
                                         M_invC(l,i)+=M_invT(l,i+m*lMax)*fi(m,index);
                                         M_invC2(l,i)+=M_invT(l,i+m*lMax)*fiCXavg(m,j);
+                                        // M_invC2(l,i)+=M_invT(l,i+m*lMax)*rho_i[m]*sigmavg;
                                     }
                                     uAfter(l,index)+=M_invC(l,i)*fnCXavg[i];
+                                    // uAfter(l,index)+=M_invC(l,i)*rho[i]*sigmavg;
                                     uAfter(l,index)-=M_invC2(l,i)*uBefore(l,index);
                                 }
+                                // uAfter(l,index)-=ni*sigmavg*uBefore(l,index);
                             }
 
                             //Janev-Smith w/out approximation
