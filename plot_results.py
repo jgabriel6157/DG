@@ -63,7 +63,7 @@ def assignFloat(varString):
         
     return number
 
-suffix = 'ks'
+suffix = ''
 
 fileNameDensity = 'Density'+suffix+'.csv'
 fileNameVelocityX = 'VelocityX'+suffix+'.csv'
@@ -96,15 +96,15 @@ nout+=1
 lMax+=1
 inputFile.close()
 
-jMax = 60
-nout = 90+1
+jMax = 48
+nout = 88+1
 
 fig,ax = plt.subplots()
 ax.set_yscale('log')
 lines = [ax.plot([], [], lw=2,color='red')[0] for _ in range(jMax)]
 plt.xlim(0,length)
-# plt.ylim(1e13,2e19)
-plt.ylim(5e13,1e14)
+plt.ylim(1e13,2e19)
+# plt.ylim(5e13,1e14)
 # plt.ylim(-0.25,1.25)
 # plt.ylim(28,72)
 # plt.ylim(6,20)
@@ -126,6 +126,7 @@ rhouX = np.zeros((lMax,jMax,nout))
 rhouY = np.zeros((lMax,jMax,nout))
 rhouZ = np.zeros((lMax,jMax,nout))
 rt = np.zeros((lMax,jMax,nout))
+print(nout*jMax*lMax)
 for t in range(nout):
     for j in range(jMax):
         for l in range(lMax):

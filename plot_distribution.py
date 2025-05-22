@@ -1,11 +1,7 @@
-import pandas as pd
-import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation, PillowWriter
-import fnmatch
 import numpy as np
-import os
-import random
-import time
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+import pandas as pd
 
 def getFunction(basis,n,x):
     if basis=='legendre':
@@ -63,7 +59,7 @@ def assignFloat(varString):
         
     return number
 
-fileName = 'lastOutputiz.csv'
+fileName = 'lastOutputjss.csv'
 fileNameSol = 'lastOutputJS.csv'
 inputFile = open('input.txt','r')
 
@@ -111,7 +107,7 @@ u = np.zeros((lMax,jMax,nvx,nvy,nvz))
 # uSol = np.zeros((lMax,jMax,nvx,nvy,nvz))
 
 fig = plt.figure()
-ax = fig.add_subplot(projection='3d')
+# ax = fig.add_subplot(projection='3d')
 
 for j in range(jMax):
     for kx in range(nvx):
@@ -123,77 +119,68 @@ for j in range(jMax):
                     m = m+1
 print(m)
 
-# vx = 0
-# for j in range(jMax):
-#     xj = j*dx+dx/2
-#     y = np.zeros(10)
-#     x = np.zeros(10)
-#     for i in range(10):
-#         x[i] = j*dx+i*dx/9.0
-#         for l in range(lMax):
-#             y[i] += u[l][j][vx]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-#     plt.plot(x,y,color='red')
-# sumNum = 0
-# sumDem = 0
+# Select velocity direction
+chosen_dim = "vx"  # Options: "vx", "vy", "vz"
+    
+x = 5
+j = int(np.floor(x/dx))
+xj = j*dx+dx/2
 
-# # Number of quadrature points
-# nQuad = 10
-# # Precompute quadrature points and weights on the reference interval [-1, 1]
-# quadPoints, quadWeights = np.polynomial.legendre.leggauss(nQuad)
+if chosen_dim == "vx":
+    y = np.zeros(nvx)
+    v = np.linspace(-domainMaxVX, domainMaxVX, nvx)  # Uniform grid for vx
+    vy = 7
+    vz = 7
+    for vx in range(nvx):
+        for l in range(lMax):
+            y[vx] += u[l][j][vx][vy][vz]*getFunction(basis,l,(2.0/dx)*(x-xj))
 
-res = 10
-vz = 7
-vy = 7
-for vx in range(nvx):
-    # sumNum = 0
-    # sumDem = 0
-    # for j in range(jMax):
-    # for j in [26,27,28,29,30,31,32,33,34]:
-    for j in [7]:
-        xj = j*dx+dx/2
-        y = np.zeros(res)
-        x = np.zeros(res)
-        sol = np.zeros(res)
-        for i in range(res):
-            x[i] = j*dx+i*dx/(res-1)
-            # for l in range(lMax):
-            for l in [0]:
-                y[i] += u[l][j][vx][vy][vz]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
-                # sol[i] += uSol[l][j][vx][vy][vz]*getFunction(basis,l,(2.0/dx)*(x[i]-xj))
+elif chosen_dim == "vy":
+    y = np.zeros(nvy)
+    gh_points, _ = np.polynomial.hermite.hermgauss(nvy)
+    gauss_hermite_points = gh_points * np.sqrt(60)
+    v = gauss_hermite_points * np.sqrt(60)  # Scale GH points
+    vx = 63
+    vz = 7
+    for vy in range(len(v)):
+        for l in range(lMax):
+            y[vy] += u[l][j][vx][vy][vz]*getFunction(basis,l,(2.0/dx)*(x-xj))
 
-        y_offset = -domainMaxVX + vx*dvx
-        # y = np.zeros(nQuad)
-        # sol = np.zeros(nQuad)
-        
-        # # Map quadrature points from [-1, 1] to [j*dx, (j+1)*dx]
-        # x = 0.5 * dx * (quadPoints + 1) + j * dx
-        
-        # for i in range(nQuad):
-        #     for l in range(lMax):
-        #         # Apply basis function and sum contributions
-        #         y[i] += u[l][j] * getFunction(basis, l, (2.0 / dx) * (x[i] - xj))
-            
-        #     # Define the solution to compare against
-        #     # sol[i] = max(
-        #     #     np.exp(-(x[i] - np.pi - tMax * dt * y_offset) ** 2),
-        #     #     np.exp(-(x[i] + np.pi - tMax * dt * y_offset) ** 2),
-        #     #     np.exp(-(x[i] - 3 * np.pi - tMax * dt * y_offset) ** 2)
-        #     # )
-        #     sol[i] = np.sin(x[i] - tMax * dt * y_offset)
-        
-        # # Use Gaussian quadrature weights in the error calculation
-        # for i in range(nQuad):
-        #     # L2 error requires squaring the difference for sumNum
-        #     sumNum += (y[i] - sol[i]) ** 2 * quadWeights[i] * (0.5 * dx)  # Account for the dx scaling in the transformation
-        #     # Also square the solution for sumDem
-        #     sumDem += sol[i] ** 2 * quadWeights[i] * (0.5 * dx)
-        
-        # Plotting the results (optional)
-        ax.plot(x, [y_offset] * len(x), y, color='red')
-        # ax.plot(x, [y_offset] * len(x), sol, color='k')
-    # print(np.sqrt(sumNum / sumDem))
+elif chosen_dim == "vz":
+    y = np.zeros(nvz)
+    gh_points, _ = np.polynomial.hermite.hermgauss(nvz)
+    gauss_hermite_points = gh_points * np.sqrt(60)
+    v = gauss_hermite_points * np.sqrt(60)  # Scale GH points
+    vx = 63
+    vy = 7
+    for vz in range(len(v)):
+        for l in range(lMax):
+            y[vz] += u[l][j][vx][vy][vz]*getFunction(basis,l,(2.0/dx)*(x-xj))
 
-# Print the L2 error by taking the square root of the ratio
-# print(np.sqrt(sumNum / sumDem))
+# Maxwellian function
+def maxwellian(v, rho, u, T):
+    return rho / np.sqrt(2 * np.pi * T) * np.exp(- (v - u) ** 2 / (2 * T))
 
+# Compute Moments
+def fit_maxwellian():
+    rho = np.trapz(y, v)
+    u_mean = np.trapz(v * y, v) / rho
+    T = np.trapz((v - u_mean) ** 2 * y, v) / rho
+
+    # Fit Maxwellian to Data
+    params, _ = curve_fit(lambda v, rho, u, T: maxwellian(v, rho, u, T), v, y, p0=[rho, u_mean, T])
+    rho_fit, u_fit, T_fit = params
+    y_maxwellian = maxwellian(v, rho_fit, u_fit, T_fit)
+
+    return y_maxwellian, rho_fit, u_fit, T_fit
+
+# Extract and process data
+y_maxwellian, rho_fit, u_fit, T_fit = fit_maxwellian()
+
+# Plot results
+plt.plot(v, y, label="Numerical Distribution")
+plt.plot(v, y_maxwellian, linestyle="--", label="Fitted Maxwellian")
+plt.xlabel(f"{chosen_dim} (Velocity)")
+plt.ylabel("Distribution Function")
+plt.legend()
 plt.show()

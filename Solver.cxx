@@ -781,14 +781,14 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                                     for (int m=0; m<lMax; m++)
                                     {
                                         M_invC(l,i)+=M_invT(l,i+m*lMax)*fi(m,index);
-                                        M_invC2(l,i)+=M_invT(l,i+m*lMax)*fiCXavg(m,j);
+                                        // M_invC2(l,i)+=M_invT(l,i+m*lMax)*fiCXavg(m,j);
                                         // M_invC2(l,i)+=M_invT(l,i+m*lMax)*rho_i[m]*sigmavg;
                                     }
                                     uAfter(l,index)+=M_invC(l,i)*fnCXavg[i];
                                     // uAfter(l,index)+=M_invC(l,i)*rho[i]*sigmavg;
-                                    uAfter(l,index)-=M_invC2(l,i)*uBefore(l,index);
+                                    // uAfter(l,index)-=M_invC2(l,i)*uBefore(l,index);
                                 }
-                                // uAfter(l,index)-=ni*sigmavg*uBefore(l,index);
+                                uAfter(l,index)-=ni*sigmavg*uBefore(l,index);
                             }
 
                             //Janev-Smith w/out approximation

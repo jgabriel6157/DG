@@ -140,18 +140,18 @@ def assignFloat(varString):
         
     return number
 
-fileNameDensity = 'Density1e1_2.csv'
-fileNameVelocity = 'Velocity1e1_2.csv'
-fileNameTemperature = 'Temperature1e1_2.csv'
-fileNameDensity2 = 'Density1e2_2.csv'
-fileNameVelocity2 = 'Velocity1e2_2.csv'
-fileNameTemperature2 = 'Temperature1e2_2.csv'
-fileNameDensity3 = 'Density1e3_2.csv'
-fileNameVelocity3 = 'Velocity1e3_2.csv'
-fileNameTemperature3 = 'Temperature1e3_2.csv'
-fileNameDensity4 = 'Density1e3_2.csv'
-fileNameVelocity4 = 'Velocity1e3_2.csv'
-fileNameTemperature4 = 'Temperature1e3_2.csv'
+fileNameDensity = 'Density1e1.csv'
+fileNameVelocity = 'Velocity1e1.csv'
+fileNameTemperature = 'Temperature1e1.csv'
+fileNameDensity2 = 'Density1e2.csv'
+fileNameVelocity2 = 'Velocity1e2.csv'
+fileNameTemperature2 = 'Temperature1e2.csv'
+fileNameDensity3 = 'Density1e3.csv'
+fileNameVelocity3 = 'Velocity1e3.csv'
+fileNameTemperature3 = 'Temperature1e3.csv'
+fileNameDensity4 = 'Density1e3.csv'
+fileNameVelocity4 = 'Velocity1e3.csv'
+fileNameTemperature4 = 'Temperature1e3.csv'
 inputFile = open('input.txt','r')
 
 while True:
@@ -204,9 +204,9 @@ valuesTemperature4 = pd.read_csv(fileNameTemperature4,header=None)
 valuesTemperature4 = valuesTemperature4[0].to_numpy()
 k = 0
 dx = length/jMax
-rho = np.zeros((lMax,jMax,nout))
-rhou = np.zeros((lMax,jMax,nout))
-rt = np.zeros((lMax,jMax,nout))
+rho = np.zeros((lMax,jMax,11))
+rhou = np.zeros((lMax,jMax,11))
+rt = np.zeros((lMax,jMax,11))
 rho2 = np.zeros((lMax,jMax,nout))
 rhou2 = np.zeros((lMax,jMax,nout))
 rt2 = np.zeros((lMax,jMax,nout))
@@ -219,9 +219,10 @@ rt4 = np.zeros((lMax,jMax,nout))
 for t in range(nout):
     for j in range(jMax):
         for l in range(lMax):
-            rho[l][j][t] = valuesDensity[k]
-            rhou[l][j][t] = valuesVelocity[k]
-            rt[l][j][t] = valuesTemperature[k]
+            if t < 11:
+                rho[l][j][t] = valuesDensity[k]
+                rhou[l][j][t] = valuesVelocity[k]
+                rt[l][j][t] = valuesTemperature[k]
             rho2[l][j][t] = valuesDensity2[k]
             rhou2[l][j][t] = valuesVelocity2[k]
             rt2[l][j][t] = valuesTemperature2[k]
@@ -250,7 +251,7 @@ densitySim4 = np.zeros(10*jMax)
 velocitySim4 = np.zeros(10*jMax)
 temperatureSim4 = np.zeros(10*jMax)
 pressureSim4 = np.zeros(10*jMax)
-t = 100
+t = -1
 for j in range(jMax):
     for i in range(10):
         x[i+j*10] = j*dx+i*dx/9.0
@@ -276,9 +277,9 @@ for j in range(jMax):
             densityFoo3 += rho3[l][j][t]*getFunction(basis,l,(2/dx)*(x[i+j*10]-(j*dx+dx/2)))
             velocityFoo3 += rhou3[l][j][t]*getFunction(basis,l,(2/dx)*(x[i+j*10]-(j*dx+dx/2)))
             temperatureFoo3 += rt3[l][j][t]*getFunction(basis,l,(2/dx)*(x[i+j*10]-(j*dx+dx/2)))
-            densityFoo4 += rho4[l][j][t]*getFunction(basis,l,(2/dx)*(x[i+j*10]-(j*dx+dx/2)))
-            velocityFoo4 += rhou4[l][j][t]*getFunction(basis,l,(2/dx)*(x[i+j*10]-(j*dx+dx/2)))
-            temperatureFoo4 += rt4[l][j][t]*getFunction(basis,l,(2/dx)*(x[i+j*10]-(j*dx+dx/2)))
+            densityFoo4 += rho4[l][j][0]*getFunction(basis,l,(2/dx)*(x[i+j*10]-(j*dx+dx/2)))
+            velocityFoo4 += rhou4[l][j][0]*getFunction(basis,l,(2/dx)*(x[i+j*10]-(j*dx+dx/2)))
+            temperatureFoo4 += rt4[l][j][0]*getFunction(basis,l,(2/dx)*(x[i+j*10]-(j*dx+dx/2)))
         velocityFoo/=densityFoo
         temperatureFoo = (temperatureFoo-densityFoo*velocityFoo**2)/densityFoo
         velocityFoo2/=densityFoo2
@@ -299,43 +300,57 @@ for j in range(jMax):
         velocitySim3[i+j*10] = velocityFoo3
         temperatureSim3[i+j*10] = temperatureFoo3
         pressureSim3[i+j*10] = densityFoo3*temperatureFoo3
+        if x[i+j*10] < 0.5:
+            densityFoo4 = 1
+            velocityFoo4 = 0
+            temperatureFoo4 = 1
+        else:
+            densityFoo4 = 0.125
+            velocityFoo4 = 0
+            temperatureFoo4 = 0.8
         densitySim4[i+j*10] = densityFoo4
         velocitySim4[i+j*10] = velocityFoo4
         temperatureSim4[i+j*10] = temperatureFoo4
         pressureSim4[i+j*10] = densityFoo4*temperatureFoo4
 # Plotting
+plt.rcParams.update({'font.size': 24})
+plt.rcParams['lines.linewidth'] = 4
 plt.figure(figsize=(12, 8))
 
 plt.subplot(2, 2, 1)
 plt.plot(x,densitySim, label="Kn = 1e-1", color="blue", linestyle="-")
 plt.plot(x,densitySim2, label="Kn = 1e-2", color="orange", linestyle="-")
 plt.plot(x,densitySim3, label="Kn = 1e-3", color="green", linestyle="-")
+plt.plot(x,densitySim4, label="t = 0", color="red", linestyle="-")
 plt.plot(xSol, rhoSol, label="Solution", color="black", linestyle="--")
 plt.ylabel("Density")
-plt.legend()
+# plt.legend()
 
 plt.subplot(2, 2, 2)
 plt.plot(x,velocitySim, label="Kn = 1e-1", color="blue", linestyle="-")
 plt.plot(x,velocitySim2, label="Kn = 1e-2", color="orange", linestyle="-")
 plt.plot(x,velocitySim3, label="Kn = 1e-3", color="green", linestyle="-")
+plt.plot(x,velocitySim4, label="t = 0", color="red", linestyle="-")
 plt.plot(xSol, velocity, label="Solution", color="black", linestyle="--")
 plt.ylabel("Velocity")
-plt.legend()
+# plt.legend()
 
 plt.subplot(2, 2, 3)
 plt.plot(x,temperatureSim, label="Kn = 1e-1", color="blue", linestyle="-")
 plt.plot(x,temperatureSim2, label="Kn = 1e-2", color="orange", linestyle="-")
 plt.plot(x,temperatureSim3, label="Kn = 1e-3", color="green", linestyle="-")
+plt.plot(x,temperatureSim4, label="t = 0", color="red", linestyle="-")
 plt.plot(xSol, temperature, label="Solution", color="black", linestyle="--")
 plt.ylabel("Temperature")
 plt.xlabel("Position")
-plt.legend()
+# plt.legend()
 
 plt.subplot(2, 2, 4)
 plt.plot(x,pressureSim, label="Kn = 1e-1", color="blue", linestyle="-")
 plt.plot(x,pressureSim2, label="Kn = 1e-2", color="orange", linestyle="-")
 plt.plot(x,pressureSim3, label="Kn = 1e-3", color="green", linestyle="-")
-plt.plot(xSol, temperature*rhoSol, label="Solution", color="black", linestyle="--")
+plt.plot(x,pressureSim4, label="Initial (t=0)", color="red", linestyle="-")
+plt.plot(xSol, temperature*rhoSol, label="Fluid Limit\nSolution", color="black", linestyle="--")
 plt.ylabel("Pressure")
 plt.xlabel("Position")
 plt.legend()

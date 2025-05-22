@@ -57,34 +57,41 @@ def assignFloat(varString):
         
         
     return number
-plt.rcParams.update({'font.size': 12})
-plt.rcParams['lines.linewidth'] = 1.5
-fig = plt.figure(figsize=(6,6))
+plt.rcParams.update({'font.size': 32})
+plt.rcParams['lines.linewidth'] = 4
+fig = plt.figure(figsize=(12,12))
 ax = fig.gca()
 
 data_dict = {
     "CXapprox": ["Janev-Smith approximation", 240, 40.0, "legendre", 156, -1, "cyan", 2],
-    "g": ["Meier (Gkeyll)", 240, 40.0, "legendre", 440, -1, "blue", 2],
+    "g": ["Meier", 240, 40.0, "legendre", 440, -1, "blue", 2],
     "JSFull": ["Janev-Smith", 60, 40.0, "legendre", 47, -1, "green", 2],
     "k": ["Krstic and Schultz", 60, 40.0, "legendre", 80, -1, "blue", 2],
-    "e": ["Krstic and Schultz", 96, 40.0, "legendre", 116, -1, "orange", 2],
-    "bad": ["JS approx", 60, 40.0, "legendre", 110, -1, "red", 2],
-    "jss" : ["JS approx, nvx = 31", 240, 40, "legendre", 440, -1, "magenta", 2], #nvx = 31
-    "jsl" : ["JS approx, nvx = 127", 240, 40, "legendre", 440, -1, "cyan", 2], #nvx = 127
-    "kf" : ["Krstic & Schultz", 240, 40, "legendre", 440, -1, "purple", 2], #nvy/z = 7
-    "ks" : ["Krstic & Schultz", 60, 40, "legendre", 90, -1, "plum", 2], #nvy/z = 15
+    "e": ["GUERNICA", 96, 40.0, "legendre", 116, -1, "red", 2],
+    "bad": ["KN1D approximation", 60, 40.0, "legendre", 110, -1, "orange", 2],
+    "badS": ["LaBombard", 48, 40.0, "legendre", 88, -1, "orange", 2],
+    "jss" : ["Averaging", 240, 40, "legendre", 440, -1, "green", 2], #nvx = 31
+    "jsl" : ["Averaging approximation", 240, 40, "legendre", 440, -1, "green", 2], #nvx = 127
+    "kf" : ["nvy/z=7", 240, 40, "legendre", 440, -1, "purple", 2], #nvy/z = 7
+    "ks" : ["nvy/z=15", 60, 40, "legendre", 110, -1, "plum", 2], #nvy/z = 15
+    "knc" : ["GUERNICA", 48, 40, "legendre", 88, -1, "red", 2], #nvy/z = 15
+    "knc2" : ["Krstic & Schultz", 48, 40, "legendre", 88, -1, "red", 2], #nvy/z = 20
+    "kgh" : ["Gauss-Hermite", 48, 40, "legendre", 88, -1, "deepskyblue", 2], #nvy/z = 15
+    "scaled" : ["KS, JS scaled", 96, 40, "legendre", 156, -1, "red", 2], #nvy/z = 15
+    "scaledSmall" : ["KS, JS scaled", 48, 40, "legendre", 88, -1, "maroon", 2], #nvy/z = 7
+    "ss" : ["under-resolved", 48, 40, "legendre", 88, -1, "maroon", 2], #nvy/z = 7
     "a2" : ["Janev-Smith approx two", 60, 40.0, "legendre", 110, -1, "green", 2],
-    "a3" : ["Janev-Smith approx two", 60, 40.0, "legendre", 110, -1, "lime", 2],
+    "a3" : ["Non-averaging approximation", 60, 40.0, "legendre", 110, -1, "lime", 2],
     "iz" : ["GUERNICA", 60, 40, "legendre", 100, -1, "red", 2],
     "iz2" : ["GUERNICA", 60, 40, "legendre", 10, -1, "red", 2]
 }
 
-reaction = 0 #0 for CX, 1 for ionization
+reaction = 1 #0 for CX, 1 for ionization
 
-plotting = 0 #0 for density, 1 for temperature
+plotting = 1 #0 for density, 1 for temperature, 2 for scaled pressure
 
 if reaction == 0:
-    desiredPlot = {"g","kf","bad","jsl","e","a2","jss","a3","ks"}
+    desiredPlot = {"e"}
 
     if plotting == 0:
         densityDegasData = np.loadtxt('d2-ndensity-cxonly.dat')
@@ -94,6 +101,11 @@ if reaction == 0:
         temperatureDegasData = np.loadtxt('d2-ntemperature-cxonly.dat')
         positionDegas = temperatureDegasData[:,0]
         temperatureDegas = temperatureDegasData[:,1]
+    if plotting == 2:
+        densityDegasData = np.loadtxt('d2-ndensity-cxonly.dat')
+        temperatureDegasData = np.loadtxt('d2-ntemperature-cxonly.dat')
+        positionDegas = temperatureDegasData[:,0]
+        pressureDegas = densityDegasData[:,1]*temperatureDegasData[:,1]
 
 if reaction == 1:
     desiredPlot = {"iz2"}
@@ -181,6 +193,8 @@ for suffix, info in data_dict.items():
                 y[idx] = temperature
             if plotting == 0:
                 y[idx] = density*1E18
+            if plotting == 2:
+                y[idx] = temperature*density*1E18
 
         plt.plot(x - 20, y, color=color)
     
@@ -188,23 +202,28 @@ for suffix, info in data_dict.items():
 
 if reaction == 0:
     if plotting == 0:
-        plt.plot(positionDegas,densityDegas,'k--',label='DEGAS2')
+        plt.plot(positionDegas,densityDegas,'k--',label='DEGAS2',dashes=(2,2))
         ax.set_yscale('log')
         plt.ylim(5e13,2e19)
         # plt.ylim(5e13,2e14)
     if plotting == 1:
-        plt.plot(positionDegas,temperatureDegas,'k--',label='DEGAS2')
+        plt.plot(positionDegas,temperatureDegas,'k--',label='DEGAS2',dashes=(2,2))
         plt.ylim(28,70)
+    if plotting == 2:
+        plt.plot(positionDegas,pressureDegas,'k--',label='DEGAS2',dashes=(2,2))
+        plt.ylim(5e14,2e20)
 if reaction == 1:
     if plotting == 0:
-        plt.plot(positionDegas,densityDegas,'k--',label='DEGAS2')
+        plt.plot(positionDegas,densityDegas,'k--',label='DEGAS2',dashes=(2,2))
         ax.set_yscale('log')
         plt.ylim(1e12,2e19)
     if plotting == 1:
-        plt.plot(positionDegas,temperatureDegas,'k--',label='DEGAS2')
+        plt.plot(positionDegas,temperatureDegas,'k--',label='DEGAS2',dashes=(2,2))
         plt.ylim(7,19)
 
+plt.xlabel(r'x [m]')
+plt.ylabel(r'$T_n$ [eV]')
 plt.xlim(-20,20)
 plt.tight_layout()
-# plt.legend()
+plt.legend()
 plt.show()
