@@ -560,13 +560,15 @@ double SpecialFunctions::computeSigma(double E)
         double A4 = 3.8068e-6;
         double A5 = 1.1832e-10;
         double A6 = 2.3713;
-        // double scalingFactor = 0.984066; //Adjusting Janev-Smith so it matches Krstic and Schultz at E = 100eV (What DEGAS2 does)
-        double scalingFactor = 2.704521936278488;
+        double scalingFactor = 1.08326; //Adjusting Janev-Smith so it matches Krstic and Schultz at E = 100eV (What DEGAS2 does)
+        // double scalingFactor = 2.10374; //Momentum transfer
+        // double scalingFactor = 2.97426; //Elastic
 
         // E = std::max(E,E_min);
         E = std::min(E,E_max);
 
-        E/=1000;
+        E/=1000; //convert from keV to eV
+        E*=1.985; //convert from eV to eV/amu
 
         return scalingFactor*(A1*log(A2/E+A6)/(1+(A3*E)+(A4*pow(E,3.5))+(A5*pow(E,5.4)))); //returns sigma in units of m^2
     }
@@ -575,18 +577,25 @@ double SpecialFunctions::computeSigma(double E)
         //Krstic and Schultz 1998 Pg.78
         double E_min = 0.1;
         // double E_max = 100;
-        // double a0 = 0.160892e3;
-        // double a1 = -0.156336e2;
-        // double b1 = 0.108112e-1;
+        //Spin Exchange
+        double a0 = 0.160892e3;
+        double a1 = -0.156336e2;
+        double b1 = 0.108112e-1;
 
-        double a0 = 0.591039e3;
-        double a1 = -0.877354e2;
-        double a2 = 0.25683e1;
+        //Momentum transfer
+        // double a0 = 0.324832e3;
+        // double a1 = -0.392017e2;
+        // double a2 = 0.124924e1;
+
+        //Elastic
+        // double a0 = 0.591039e3;
+        // double a1 = -0.877354e2;
+        // double a2 = 0.25683e1;
 
         E = std::max(E,E_min);
         // E = std::min(E,E_max);
 
-        // return ((a0+a1*log(E))/(1+b1*log(E)))*2.80028e-21; //2.80028e-17*1e-4 //returns sigma in units of m^2
-        return (a0+a1*log(E)+a2*log(E)*log(E))*2.80028e-21;
+        return ((a0+a1*log(E))/(1+b1*log(E)))*2.80028e-21; //2.80028e-17*1e-4 //returns sigma in units of m^2
+        // return (a0+a1*log(E)+a2*log(E)*log(E))*2.80028e-21;
     }
 }

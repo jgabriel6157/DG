@@ -324,7 +324,7 @@ Vector NewtonCotes::integrate3fnCX(Matrix M, int lMax, double vx, double vy, dou
                 double vzRel2 = (vz-mesh.getVelocityZ(kz))*(vz-mesh.getVelocityZ(kz));
                 double weightXYZ = weightXY*weightsZ[kz];
                 double relVelocity = sqrt(vxRel2+vyRel2+vzRel2);
-                double sigma = SpecialFunctions::computeSigma(0.5*relVelocity*relVelocity)*(1e18);
+                double sigma = SpecialFunctions::computeSigma(0.25*relVelocity*relVelocity)*(1e18); //0.25 bc CM frame (1/2 mu v_rel^2 with mu=1/2) [E in eV]
                 double sigmaVelocity = weightXYZ*relVelocity*sigma;
                 for (int l=0; l<lMax; l++)
                 {

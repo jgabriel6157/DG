@@ -63,7 +63,7 @@ def assignFloat(varString):
         
     return number
 
-suffix = ''
+suffix = 'smts'
 
 fileNameDensity = 'Density'+suffix+'.csv'
 fileNameVelocityX = 'VelocityX'+suffix+'.csv'

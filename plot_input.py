@@ -63,7 +63,7 @@ def assignFloat(varString):
         
     return number
 
-fileName = 'lastOutputiz.csv'
+fileName = 'lastOutputscaledSmall.csv'
 fileNameSol = 'lastOutputJS.csv'
 inputFile = open('input.txt','r')
 
@@ -142,8 +142,8 @@ print(m)
 # quadPoints, quadWeights = np.polynomial.legendre.leggauss(nQuad)
 
 res = 10
-vz = 7
-vy = 7
+vz = 3
+vy = 3
 for vx in range(nvx):
     # sumNum = 0
     # sumDem = 0

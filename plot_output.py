@@ -80,6 +80,7 @@ data_dict = {
     "scaled" : ["KS, JS scaled", 96, 40, "legendre", 156, -1, "maroon", 2], #nvy/z = 15
     "scaledSmall" : ["KS, JS scaled", 48, 40, "legendre", 88, -1, "red", 2], #nvy/z = 7
     "ss" : ["under-resolved", 48, 40, "legendre", 88, -1, "maroon", 2], #nvy/z = 7
+    "ses" : ["KS elastic, JS scaled", 48, 40, "legendre", 88, -1, "maroon", 2], #nvy/z = 7
     "a2" : ["Janev-Smith approx two", 60, 40.0, "legendre", 110, -1, "green", 2],
     "a3" : ["Non-averaging approximation", 60, 40.0, "legendre", 110, -1, "lime", 2],
     "iz" : ["GUERNICA", 60, 40, "legendre", 100, -1, "red", 2],
@@ -91,7 +92,7 @@ reaction = 0 #0 for CX, 1 for ionization
 plotting = 0 #0 for density, 1 for temperature, 2 for scaled pressure
 
 if reaction == 0:
-    desiredPlot = {"knc","knc2","jsl"}
+    desiredPlot = {"scaledSmall","scaled"}
 
     if plotting == 0:
         densityDegasData = np.loadtxt('d2-ndensity-cxonly.dat')

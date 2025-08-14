@@ -402,7 +402,7 @@ void Solver::initializeIons()
                     {
                         double vz = mesh.getVelocityZ(kz);
                         Vector fiCXv(lMax);
-                        fiCXv = integrator.integrate3fnCX(fj,lMax,vx-uxiAvg,vy,vz);
+                        fiCXv = integrator.integrate3fnCX(fj,lMax,vx,vy,vz);
                         for (int l=0; l<lMax; l++)
                         {
                             fiCX(l,kz+ky*nvz+kx*nvz*nvy+j*nvz*nvy*nvx) = fiCXv[l];
@@ -729,14 +729,14 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                         //Janev-Smith w/ approximation
                         if (cx==2)
                         {
-                            double E = 0.5*((vx-uxiAvg)*(vx-uxiAvg)+vy*vy+vz*vz);
+                            double E = 0.5*(vx*vx+vy*vy+vz*vz);
                             sigmavg = SpecialFunctions::computeSigmav(Ti,E)*(1e18)/(9822.766369779);
                         }
 
                         // Janev-Smith w/out approximation
                         if (cx==3)
                         {
-                            fnCX = integrator.integrate3fnCX(fj,lMax,vx-uxiAvg,vy,vz);
+                            fnCX = integrator.integrate3fnCX(fj,lMax,vx,vy,vz);
                         }
                     }
 

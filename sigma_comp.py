@@ -42,10 +42,10 @@ def krstic_shultz(E):
 # Example usage
 E_values = np.linspace(0.12, 2000, 100)  # Energy values in eV
 
-diff = krstic_shultz(100)/janev_smith(100)
-print(diff)
+# diff = krstic_shultz(100)/janev_smith(100)
+# print(diff)
 
-sigma_js = [janev_smith(E)*diff for E in E_values]
+sigma_js = [janev_smith(E) for E in E_values]
 sigma_ks = [krstic_shultz(E) for E in E_values]
 
 plt.figure(figsize=(10, 6))
