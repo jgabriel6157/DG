@@ -70,10 +70,12 @@ data_dict = {
     "e": ["GUERNICA", 96, 40.0, "legendre", 116, -1, "red", 2],
     "bad": ["LaBombard1", 60, 40.0, "legendre", 110, -1, "orange", 2],
     "badS": ["LaBombard2", 48, 40.0, "legendre", 88, -1, "orange", 2],
-    "lbd": ["LaBombard3", 96, 40.0, "legendre", 176, -1, "orange", 2], #nvy/nvz = 7
+    "la": ["LaBombard avg", 48, 40.0, "legendre", 88, -1, "orange", 2],
+    "lna": ["LaBombard not avg", 48, 40.0, "legendre", 88, -1, "orange", 2],
+    "lbd": ["LaBombard", 96, 40.0, "legendre", 176, -1, "orange", 2], #nvy/nvz = 7
     "jss" : ["Averaging", 240, 40, "legendre", 440, -1, "green", 2], #nvx = 31
     "jsl" : ["Averaging approximation", 240, 40, "legendre", 440, -1, "green", 2], #nvx = 127
-    "kf" : ["nvy/z=7", 240, 40, "legendre", 440, -1, "purple", 2], #nvy/z = 7
+    "kf" : ["nvy/z=7", 240, 40, "legendre", 440, -1, "pink", 2], #nvy/z = 7
     "ks" : ["nvy/z=15", 60, 40, "legendre", 110, -1, "plum", 2], #nvy/z = 15
     "knc" : ["Low v res", 48, 40, "legendre", 88, -1, "red", 2], #nvy/z = 15
     "knc2" : ["High v res", 48, 40, "legendre", 88, -1, "deepskyblue", 2], #nvy/z = 20
@@ -82,7 +84,8 @@ data_dict = {
     "scaledSmall" : ["KS, JS scaled", 48, 40, "legendre", 88, -1, "red", 2], #nvy/z = 7
     "ss" : ["under-resolved", 48, 40, "legendre", 88, -1, "maroon", 2], #nvy/z = 7
     "nss" : ["New", 48, 40, "legendre", 88, -1, "maroon", 2], #nvy/z = 7
-    "nsl" : ["Full Operator", 192, 40, "legendre", 440, -1, "purple", 2], #nvy/z = 7
+    "nsl" : ["Full Operator", 192, 40, "legendre", 440, -1, "red", 2], #nvy/z = 7
+    "nsv" : ["Full Operator v-res", 96, 40, "legendre", 141, -1, "maroon", 2], #nvy/z = 15
     "crec" : ["New2", 48, 40, "legendre", 88, -1, "red", 2], #nvy/z = 7, revised Crec
     "ses" : ["KS elastic, JS scaled", 48, 40, "legendre", 88, -1, "maroon", 2], #nvy/z = 7
     "a2" : ["Janev-Smith approx two", 60, 40.0, "legendre", 110, -1, "green", 2],
@@ -93,10 +96,10 @@ data_dict = {
 
 reaction = 0 #0 for CX, 1 for ionization
 
-plotting = 0 #0 for density, 1 for temperature, 2 for scaled pressure
+plotting = 1 #0 for density, 1 for temperature, 2 for scaled pressure
 
 if reaction == 0:
-    desiredPlot = {"lbd","bad","badS"}
+    desiredPlot = {"nsl",""}
 
     if plotting == 0:
         densityDegasData = np.loadtxt('d2-ndensity-cxonly.dat')
@@ -209,8 +212,8 @@ if reaction == 0:
     if plotting == 0:
         plt.plot(positionDegas,densityDegas,'k--',label='DEGAS2',dashes=(2,2))
         ax.set_yscale('log')
-        plt.ylim(5e13,2e19)
-        # plt.ylim(5e13,2e14)
+        # plt.ylim(5e13,2e19)
+        plt.ylim(5e13,2e14)
         plt.ylabel(r'$n_n$ [m$^{-3}$]')
     if plotting == 1:
         plt.plot(positionDegas,temperatureDegas,'k--',label='DEGAS2',dashes=(2,2))
@@ -233,5 +236,5 @@ if reaction == 1:
 plt.xlabel(r'x [m]')
 plt.xlim(-20,20)
 plt.tight_layout()
-plt.legend()
+# plt.legend()
 plt.show()

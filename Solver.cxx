@@ -377,7 +377,7 @@ void Solver::initializeIons()
             double dx = cells[j].dx;
             double leftVertex = cells[j].vertices[0];
             double xj = leftVertex+dx/2.0;
-            double uxiAvg = cs*(cells[j].vertices[0]+dx/2.0-(cells.back().vertices[1]/2.0))/(cells.back().vertices[1]/2.0);
+            // double uxiAvg = cs*(cells[j].vertices[0]+dx/2.0-(cells.back().vertices[1]/2.0))/(cells.back().vertices[1]/2.0);
 
             Matrix fj(lMax,nvx*nvy*nvz);
             for (int kx=0; kx<nvx; kx++)
@@ -424,7 +424,7 @@ void Solver::initializeIons()
             double leftVertex = cells[j].vertices[0];
             double xj = leftVertex+dx/2.0;
             double uxiAvg = cs*(cells[j].vertices[0]+dx/2.0-(cells.back().vertices[1]/2.0))/(cells.back().vertices[1]/2.0);
-            // uxiAvg = 0;
+            uxiAvg = 0;
 
             Matrix fj(lMax,nvx*nvy*nvz);
             for (int kx=0; kx<nvx; kx++)
@@ -654,7 +654,7 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
             if (cx==2)
             {
                 uxiAvg = cs*(cells[j].vertices[0]+dx/2.0-(cells.back().vertices[1]/2.0))/(cells.back().vertices[1]/2.0);
-                // uxiAvg = 0;
+                uxiAvg = 0;
                 fnCXavg = integrator.integrate3fnCXavg(fj,lMax,Ti,uxiAvg);
             }
 
@@ -733,8 +733,8 @@ void Solver::advanceStage(Matrix& uBefore, Matrix& uAfter, double plusFactor, do
                         //Janev-Smith w/ approximation
                         if (cx==2)
                         {
-                            double E = 0.5*((vx-uxiAvg)*(vx-uxiAvg)+vy*vy+vz*vz);
-                            // double E = 0.5*(vx*vx+vy*vy+vz*vz);
+                            // double E = 0.5*((vx-uxiAvg)*(vx-uxiAvg)+vy*vy+vz*vz);
+                            double E = 0.5*(vx*vx+vy*vy+vz*vz);
                             sigmavg = SpecialFunctions::computeSigmav(Ti,E)*(1e18)/(9822.766369779);
                         }
 

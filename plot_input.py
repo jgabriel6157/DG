@@ -63,7 +63,7 @@ def assignFloat(varString):
         
     return number
 
-fileName = 'lastOutputscaledSmall.csv'
+fileName = 'lastOutputnsv.csv'
 fileNameSol = 'lastOutputJS.csv'
 inputFile = open('input.txt','r')
 
@@ -103,7 +103,7 @@ values = pd.read_csv(fileName,header=None)
 values = values[0].to_numpy()
 # valuesSol = pd.read_csv(fileNameSol,header=None)
 # valuesSol = valuesSol[0].to_numpy()
-m = 0*20574000
+m = 0*2008800
 dx = length/jMax
 dvx = 2*domainMaxVX/(nvx-1)
 # dvx = 1.0/nvx
@@ -141,15 +141,15 @@ print(m)
 # # Precompute quadrature points and weights on the reference interval [-1, 1]
 # quadPoints, quadWeights = np.polynomial.legendre.leggauss(nQuad)
 
-res = 10
-vz = 3
-vy = 3
+res = 5
+vz = 7
+vy = 7
 for vx in range(nvx):
     # sumNum = 0
     # sumDem = 0
-    # for j in range(jMax):
+    for j in range(jMax):
     # for j in [26,27,28,29,30,31,32,33,34]:
-    for j in [7]:
+    # for j in [7]:
         xj = j*dx+dx/2
         y = np.zeros(res)
         x = np.zeros(res)

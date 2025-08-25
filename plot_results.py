@@ -96,15 +96,15 @@ nout+=1
 lMax+=1
 inputFile.close()
 
-jMax = 48
-nout = 88+1
+jMax = 96
+nout = 141+1
 
 fig,ax = plt.subplots()
 ax.set_yscale('log')
 lines = [ax.plot([], [], lw=2,color='red')[0] for _ in range(jMax)]
 plt.xlim(0,length)
-plt.ylim(1e13,2e19)
-# plt.ylim(5e13,1e14)
+# plt.ylim(1e13,2e19)
+plt.ylim(5e13,1e14)
 # plt.ylim(-0.25,1.25)
 # plt.ylim(28,72)
 # plt.ylim(6,20)
